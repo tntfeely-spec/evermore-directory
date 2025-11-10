@@ -37,7 +37,7 @@ export default async function StatesPage() {
     }
   });
 
-  const cityCounts: { [key: string]: number } = {};
+  const cityCounts: { [key: string]: Set<string> } = {};
   const { data: allHomes } = await supabase
     .from('funeral_homes')
     .select('state, city');
@@ -46,9 +46,9 @@ export default async function StatesPage() {
     if (home.state && home.city) {
       const key = home.state;
       if (!cityCounts[key]) {
-        cityCounts[key] = new Set();
+        cityCounts[key] = new Set<string>();
       }
-      (cityCounts[key] as any).add(home.city);
+      cityCounts[key].add(home.city);
     }
   });
 
