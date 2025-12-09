@@ -28,7 +28,7 @@ const stateNames: { [key: string]: string } = {
 export default async function StatesPage() {
   const { data: homes } = await supabase
     .from('funeral_homes')
-    .select('state');
+    .select('state').limit(10000);
 
   const stateCounts: { [key: string]: number } = {};
   homes?.forEach((home) => {
@@ -40,7 +40,7 @@ export default async function StatesPage() {
   const cityCounts: { [key: string]: Set<string> } = {};
   const { data: allHomes } = await supabase
     .from('funeral_homes')
-    .select('state, city');
+    .select('state, city').limit(10000);
   
   allHomes?.forEach((home) => {
     if (home.state && home.city) {
