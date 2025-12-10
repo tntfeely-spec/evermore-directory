@@ -1,9 +1,10 @@
-export const dynamic = "force-dynamic";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
 import PremiumBanner from '@/components/PremiumBanner';
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: 'Find Funeral Homes by State - Evermore Directory',
