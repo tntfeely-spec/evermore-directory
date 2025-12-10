@@ -27,49 +27,18 @@ const stateNames: { [key: string]: string } = {
   'wi': 'Wisconsin', 'wy': 'Wyoming'
 };
 
-async function getAllHomes() {
-  let allHomes: { state: string; city: string }[] = [];
-  let from = 0;
-  const pageSize = 1000;
-  
-  while (true) {
-    const { data, error } = await supabase
-      .from('funeral_homes')
-      .select('state, city')
-      .range(from, from + pageSize - 1);
-    
-    if (error || !data || data.length === 0) break;
-    allHomes = [...allHomes, ...data];
-    if (data.length < pageSize) break;
-    from += pageSize;
-  }
-  return allHomes;
-}
-
 export default async function StatesPage() {
-  const allHomes = await getAllHomes();
+  const { data: stateCounts, error } = await supabase.rpc('get_state_counts');
 
-  const stateCounts: { [key: string]: number } = {};
-  const cityCounts: { [key: string]: Set<string> } = {};
-
-  allHomes.forEach((home) => {
-    if (home.state) {
-      stateCounts[home.state] = (stateCounts[home.state] || 0) + 1;
-      if (home.city) {
-        if (!cityCounts[home.state]) {
-          cityCounts[home.state] = new Set<string>();
-        }
-        cityCounts[home.state].add(home.city);
-      }
-    }
-  });
-
-  const stateData = Object.entries(stateNames).map(([abbr, name]) => ({
-    abbreviation: abbr.toUpperCase(),
-    name,
-    count: stateCounts[abbr.toUpperCase()] || 0,
-    cityCount: cityCounts[abbr.toUpperCase()]?.size || 0,
-  })).filter(state => state.count > 0);
+  const stateData = Object.entries(stateNames).map(([abbr, name]) => {
+    const stateInfo = stateCounts?.find((s: any) => s.state === abbr.toUpperCase());
+    return {
+      abbreviation: abbr.toUpperCase(),
+      name,
+      count: stateInfo?.home_count || 0,
+      cityCount: stateInfo?.city_count || 0,
+    };
+  }).filter(state => state.count > 0);
 
   return (
     <>
