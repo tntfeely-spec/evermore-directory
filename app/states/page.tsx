@@ -25,30 +25,40 @@ const stateNames: { [key: string]: string } = {
   'wi': 'Wisconsin', 'wy': 'Wyoming'
 };
 
+async function getAllHomes() {
+  let allHomes: { state: string; city: string }[] = [];
+  let from = 0;
+  const pageSize = 1000;
+  
+  while (true) {
+    const { data, error } = await supabase
+      .from('funeral_homes')
+      .select('state, city')
+      .range(from, from + pageSize - 1);
+    
+    if (error || !data || data.length === 0) break;
+    allHomes = [...allHomes, ...data];
+    if (data.length < pageSize) break;
+    from += pageSize;
+  }
+  return allHomes;
+}
+
 export default async function StatesPage() {
-  const { data: homes } = await supabase
-    .from('funeral_homes')
-    .select('state').limit(10000);
+  const allHomes = await getAllHomes();
 
   const stateCounts: { [key: string]: number } = {};
-  homes?.forEach((home) => {
+  const cityCounts: { [key: string]: Set<string> } = {};
+
+  allHomes.forEach((home) => {
     if (home.state) {
       stateCounts[home.state] = (stateCounts[home.state] || 0) + 1;
-    }
-  });
-
-  const cityCounts: { [key: string]: Set<string> } = {};
-  const { data: allHomes } = await supabase
-    .from('funeral_homes')
-    .select('state, city').limit(10000);
-  
-  allHomes?.forEach((home) => {
-    if (home.state && home.city) {
-      const key = home.state;
-      if (!cityCounts[key]) {
-        cityCounts[key] = new Set<string>();
+      if (home.city) {
+        if (!cityCounts[home.state]) {
+          cityCounts[home.state] = new Set<string>();
+        }
+        cityCounts[home.state].add(home.city);
       }
-      cityCounts[key].add(home.city);
     }
   });
 
@@ -56,7 +66,7 @@ export default async function StatesPage() {
     abbreviation: abbr.toUpperCase(),
     name,
     count: stateCounts[abbr.toUpperCase()] || 0,
-    cityCount: cityCounts[abbr.toUpperCase()] ? (cityCounts[abbr.toUpperCase()] as any).size : 0,
+    cityCount: cityCounts[abbr.toUpperCase()]?.size || 0,
   })).filter(state => state.count > 0);
 
   return (
@@ -65,7 +75,6 @@ export default async function StatesPage() {
       <PremiumBanner />
       
       <div className="min-h-screen relative">
-        {/* Background Image */}
         <div 
           className="fixed inset-0 z-0"
           style={{
@@ -115,7 +124,6 @@ export default async function StatesPage() {
             ))}
           </div>
 
-          {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Benefits of Using the Evermore Directory
@@ -126,9 +134,7 @@ export default async function StatesPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Compare Local Funeral Homes
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Compare Local Funeral Homes</h3>
                 <p className="text-gray-600">
                   The Evermore Directory helps you compare funeral homes and cremation providers nationwide, allowing you to find 
                   services that match your needs and budget for burial, cremation, or memorial planning.
@@ -136,9 +142,7 @@ export default async function StatesPage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Verified Contact Information
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Verified Contact Information</h3>
                 <p className="text-gray-600">
                   All funeral homes in our directory are verified with accurate contact information, addresses, 
                   and service details to ensure you can reach trusted local providers when you need them most.
@@ -146,9 +150,7 @@ export default async function StatesPage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Nationwide Coverage
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Nationwide Coverage</h3>
                 <p className="text-gray-600">
                   Access funeral homes and cremation services in all 50 states, from major cities to small towns, 
                   ensuring you find compassionate care wherever you need it.
@@ -157,7 +159,6 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          {/* Complete Guide Section */}
           <div className="mb-20 bg-white rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Complete Guide to Finding Funeral Homes in America
@@ -166,14 +167,14 @@ export default async function StatesPage() {
               <p className="mb-4 leading-relaxed">
                 The Evermore Directory provides comprehensive coverage of funeral homes and cremation services across the United States. 
                 Our nationwide directory connects families with compassionate funeral directors, memorial chapels, and cremation providers 
-                in every state. Whether you're in a major metropolitan area or a rural community, you'll find licensed funeral service 
+                in every state. Whether you&apos;re in a major metropolitan area or a rural community, you&apos;ll find licensed funeral service 
                 providers who can assist with burial arrangements, cremation services, memorial planning, pre-arrangements, and grief support.
               </p>
               <p className="mb-4 leading-relaxed">
                 Funeral homes across America offer a full range of services including traditional funerals with viewing, direct burial, 
                 cremation services, memorial services, celebration of life ceremonies, green burial options, and pre-planning services. 
                 Many funeral directors are experienced with specific cultural and religious traditions and can provide personalized care 
-                that honors your family's wishes and values.
+                that honors your family&apos;s wishes and values.
               </p>
               <p className="leading-relaxed">
                 Browse our state-by-state directory to find funeral homes near you. Each state listing includes cities with funeral service 
@@ -184,11 +185,8 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          {/* Tips Section */}
           <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Tips for Choosing a Funeral Home
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Tips for Choosing a Funeral Home</h2>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -196,7 +194,7 @@ export default async function StatesPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Request the General Price List (GPL) from each funeral home - they're required by federal law to provide it</span>
+                <span>Request the General Price List (GPL) from each funeral home - they&apos;re required by federal law to provide it</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -204,7 +202,7 @@ export default async function StatesPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Inquire about pre-planning services if you're arranging future arrangements for yourself or loved ones</span>
+                <span>Inquire about pre-planning services if you&apos;re arranging future arrangements for yourself or loved ones</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -212,21 +210,16 @@ export default async function StatesPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Verify the funeral home's state licensing and ask about their experience with specific cultural or religious traditions</span>
+                <span>Verify the funeral home&apos;s state licensing and ask about their experience with specific cultural or religious traditions</span>
               </li>
             </ul>
           </div>
 
-          {/* Types of Funeral Homes Section */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Types of Funeral Service Providers
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Types of Funeral Service Providers</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Independent Funeral Homes
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Independent Funeral Homes</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-3">•</span>
@@ -248,9 +241,7 @@ export default async function StatesPage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  National Providers
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">National Providers</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-3">•</span>
@@ -273,16 +264,11 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          {/* Common Services Section */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Common Services Offered by Funeral Homes
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Common Services Offered by Funeral Homes</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Traditional Services
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-green-600 mr-3">•</span>
@@ -304,9 +290,7 @@ export default async function StatesPage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Modern & Alternative Services
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Modern &amp; Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-green-600 mr-3">•</span>
@@ -329,12 +313,11 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          {/* Pro Tip Box - NO LIGHTBULB */}
           <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for Families</h3>
               <p className="text-gray-700 leading-relaxed">
-                When contacting funeral homes, don't hesitate to ask detailed questions about their pricing, services, and experience 
+                When contacting funeral homes, don&apos;t hesitate to ask detailed questions about their pricing, services, and experience 
                 with your specific needs. Reputable funeral directors will be transparent about costs and happy to explain all available 
                 options without pressure. Taking time to compare services from multiple funeral homes ensures you make the best decision 
                 for your family during this difficult time.
