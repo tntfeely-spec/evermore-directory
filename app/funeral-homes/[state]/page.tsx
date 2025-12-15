@@ -71,8 +71,46 @@ export default async function StateCitiesPage({ params }: PageProps) {
     .map(([city, count]) => ({ city, count }))
     .sort((a, b) => b.count - a.count);
 
+  const totalListings = homes?.length || 0;
+
+  // Generate JSON-LD Schema
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": `Funeral Homes in ${stateName}`,
+        "description": `Find ${totalListings} funeral homes and cremation services across ${cities.length} cities in ${stateName}.`,
+        "url": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`
+      },
+      {
+        "@type": "ItemList",
+        "name": `Cities with Funeral Homes in ${stateName}`,
+        "numberOfItems": cities.length,
+        "itemListElement": cities.slice(0, 20).map((cityData, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": `${cityData.city}, ${stateName}`,
+          "url": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${cityData.city.toLowerCase().replace(/\s+/g, '-')}`
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+          { "@type": "ListItem", "position": 2, "name": "States", "item": "https://funeralhomedirectories.com/states" },
+          { "@type": "ListItem", "position": 3, "name": stateName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}` }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Navigation />
       <PremiumBanner />
       
