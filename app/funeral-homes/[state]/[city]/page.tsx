@@ -89,8 +89,53 @@ export default async function CityPage({ params }: PageProps) {
   const featuredHomes = funeralHomes.filter((home: FuneralHome) => home.is_featured);
   const regularHomes = funeralHomes.filter((home: FuneralHome) => !home.is_featured);
 
+  // Generate JSON-LD Schema
+  const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "name": `Funeral Homes in ${cityName}, ${stateName}`,
+        "numberOfItems": funeralHomes.length,
+        "itemListElement": funeralHomes.map((home: FuneralHome, index: number) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "FuneralHome",
+            "name": home.business_name,
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": home.address,
+              "addressLocality": home.city,
+              "addressRegion": home.state,
+              "postalCode": home.zip,
+              "addressCountry": "US"
+            },
+            ...(home.phone && { "telephone": home.phone }),
+            ...(home.website && { "url": home.website }),
+            "priceRange": home.price_range_cremation || "$$"
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+          { "@type": "ListItem", "position": 2, "name": "States", "item": "https://funeralhomedirectories.com/states" },
+          { "@type": "ListItem", "position": 3, "name": stateName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}` },
+          { "@type": "ListItem", "position": 4, "name": cityName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${citySlug}` }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Navigation />
       <PremiumBanner />
       
