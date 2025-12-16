@@ -236,21 +236,28 @@ export default async function CityPage({ params }: PageProps) {
                               {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
                               {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
                             </div>
-                          )}
+                          )}                              
                           {home.special_features && (
                             <div className="pt-3 mt-3 border-t border-gray-200">
                               <p className="font-semibold mb-1">Special Features: <span className="font-normal">{home.special_features}</span></p>
                             </div>
                           )}
+                          {/* Claim Listing Link */}
+                          <div className="pt-3 mt-3 border-t border-gray-200">
+                            <a 
+                              href="https://claim.funeralhomedirectories.com" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                            >
+                              Is this your business? Claim this listing →
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          )}
-
           {/* Regular Listings */}
           {regularHomes.length > 0 && (
             <div className="mb-20">
@@ -300,12 +307,23 @@ export default async function CityPage({ params }: PageProps) {
                           {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
                           {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
                         </div>
-                      )}
+                   )}
                       {home.special_features && (
                         <div className="pt-2 mt-2 border-t border-gray-200">
                           <p className="text-sm"><span className="font-semibold">Special Features:</span> {home.special_features}</p>
                         </div>
                       )}
+                      {/* Claim Listing Link */}
+                      <div className="pt-2 mt-2 border-t border-gray-200">
+                        <a 
+                          href="https://claim.funeralhomedirectories.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                        >
+                          Is this your business? Claim this listing →
+                        </a>
+                      </div>
                     </div>
                   </div>
                 ))}
