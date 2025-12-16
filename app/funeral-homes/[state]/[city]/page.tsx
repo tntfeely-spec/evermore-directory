@@ -258,6 +258,10 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+
           {/* Regular Listings */}
           {regularHomes.length > 0 && (
             <div className="mb-20">
