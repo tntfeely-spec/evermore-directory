@@ -1,47 +1,8 @@
-'use client';
-
-import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-const US_STATES = [
-  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
-  'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-  'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-  'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
-  'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
-  'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
+import Script from 'next/script';
 
 export default function FeaturedListingPage() {
-  const [formData, setFormData] = useState({
-    funeralHomeName: '',
-    contactName: '',
-    contactTitle: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    website: ''
-  });
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // TODO: Integrate with payment processor (Stripe/PayPal)
-    console.log('Form submitted:', formData);
-    alert('Payment integration coming soon! Your information has been logged.');
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   return (
     <div className="min-h-screen bg-[#F5F7FA]" style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Header */}
@@ -80,9 +41,9 @@ export default function FeaturedListingPage() {
             Reach More Families
           </h1>
           <p className="text-2xl mb-8" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
-            Get featured on America's trusted funeral home directory
+            Get featured on America&apos;s trusted funeral home directory
           </p>
-          <a
+          
             href="#pricing"
             className="inline-block bg-[#5D6D7E] text-white px-10 py-4 text-xl font-bold rounded-md font-['Montserrat'] transition-all hover:bg-[#4A5A6A] hover:-translate-y-[3px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)]"
           >
@@ -126,7 +87,7 @@ export default function FeaturedListingPage() {
           {/* Example Preview */}
           <h3 className="font-['Montserrat'] text-2xl text-[#2C3E50] font-bold mt-10 mb-5">See the Difference</h3>
           <p className="text-center text-lg text-[#5A6C7D] max-w-[800px] mx-auto mb-8 leading-relaxed">
-            Here's how your listing will appear to families searching in your area:
+            Here&apos;s how your listing will appear to families searching in your area:
           </p>
           
           <div className="relative bg-white border-[3px] border-[#5D6D7E] rounded-lg p-8 my-8 shadow-md">
@@ -193,189 +154,34 @@ export default function FeaturedListingPage() {
           <div className="text-[72px] font-bold font-['Montserrat'] my-5">$99</div>
           <div className="text-2xl opacity-95 mb-5">per month</div>
           
-          <p className="mt-5 text-lg">That's just <strong>$3.30 per day</strong> to reach more families.</p>
+          <p className="mt-5 text-lg">That&apos;s just <strong>$3.30 per day</strong> to reach more families.</p>
           
-          {/* Signup Form */}
-          <div className="bg-white rounded-lg p-10 mt-10 max-w-[600px] mx-auto">
+          {/* Signup Form - GHL Embed */}
+          <div className="bg-white rounded-lg p-10 mt-10 max-w-[700px] mx-auto">
             <h3 className="text-[#2C3E50] font-['Montserrat'] text-2xl font-bold mb-5 text-center">
               Start Your Featured Listing
             </h3>
             
-            <form onSubmit={handleSubmit}>
-              <div className="mb-5 text-left">
-                <label htmlFor="funeralHomeName" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                  Funeral Home Name *
-                </label>
-                <input
-                  type="text"
-                  id="funeralHomeName"
-                  name="funeralHomeName"
-                  required
-                  value={formData.funeralHomeName}
-                  onChange={handleChange}
-                  className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                />
-              </div>
-              
-              <div className="grid grid-cols-2 gap-5">
-                <div className="mb-5 text-left">
-                  <label htmlFor="contactName" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    Contact Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="contactName"
-                    name="contactName"
-                    required
-                    value={formData.contactName}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  />
-                </div>
-                <div className="mb-5 text-left">
-                  <label htmlFor="contactTitle" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    Title
-                  </label>
-                  <input
-                    type="text"
-                    id="contactTitle"
-                    name="contactTitle"
-                    value={formData.contactTitle}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-5">
-                <div className="mb-5 text-left">
-                  <label htmlFor="email" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  />
-                </div>
-                <div className="mb-5 text-left">
-                  <label htmlFor="phone" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  />
-                </div>
-              </div>
-              
-              <div className="mb-5 text-left">
-                <label htmlFor="address" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                  Street Address *
-                </label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  required
-                  value={formData.address}
-                  onChange={handleChange}
-                  className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                />
-              </div>
-              
-              <div className="grid grid-cols-2 gap-5">
-                <div className="mb-5 text-left">
-                  <label htmlFor="city" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    City *
-                  </label>
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    required
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  />
-                </div>
-                <div className="mb-5 text-left">
-                  <label htmlFor="state" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                    State *
-                  </label>
-                  <select
-                    id="state"
-                    name="state"
-                    required
-                    value={formData.state}
-                    onChange={handleChange}
-                    className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                  >
-                    <option value="">Select State</option>
-                    {US_STATES.map(state => (
-                      <option key={state} value={state}>{state}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              
-              <div className="mb-5 text-left">
-                <label htmlFor="zipCode" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                  ZIP Code *
-                </label>
-                <input
-                  type="text"
-                  id="zipCode"
-                  name="zipCode"
-                  pattern="[0-9]{5}"
-                  required
-                  value={formData.zipCode}
-                  onChange={handleChange}
-                  className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                />
-              </div>
-              
-              <div className="mb-5 text-left">
-                <label htmlFor="website" className="block text-[#2C3E50] font-semibold mb-2 text-sm">
-                  Website URL
-                </label>
-                <input
-                  type="url"
-                  id="website"
-                  name="website"
-                  placeholder="https://www.example.com"
-                  value={formData.website}
-                  onChange={handleChange}
-                  className="w-full p-3 border-2 border-[#E8EAED] rounded text-base text-[#2C3E50] transition-colors focus:outline-none focus:border-[#5D6D7E]"
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-[#5D6D7E] text-white px-10 py-4 text-lg font-bold rounded-md mt-5 font-['Montserrat'] transition-all hover:bg-[#4A5A6A] hover:-translate-y-[2px] hover:shadow-lg"
-              >
-                Continue to Payment →
-              </button>
-              
-              <p className="text-sm text-[#666] mt-5 text-center leading-normal">
-                By clicking Continue, you agree to our{' '}
-                <Link href="/terms" className="text-[#5D6D7E] font-semibold">Terms of Service</Link> and{' '}
-                <Link href="/privacy" className="text-[#5D6D7E] font-semibold">Privacy Policy</Link>. 
-                You'll be redirected to our secure payment processor to complete your subscription.
-              </p>
-            </form>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/js24LxZ50to0b8i1GWuw"
+              style={{ width: '100%', height: '1441px', border: 'none', borderRadius: '3px' }}
+              id="inline-js24LxZ50to0b8i1GWuw"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Featured Listing Signup"
+              data-height="1441"
+              data-layout-iframe-id="inline-js24LxZ50to0b8i1GWuw"
+              data-form-id="js24LxZ50to0b8i1GWuw"
+              title="Featured Listing Signup"
+            />
           </div>
           
-          <p className="mt-8 text-sm opacity-80">Have questions? Call us at (555) 123-4567</p>
+          <p className="mt-8 text-sm opacity-80">Have questions? Call us at (615) 555-1234</p>
         </div>
 
         {/* FAQ Section */}
@@ -429,6 +235,9 @@ export default function FeaturedListingPage() {
         </p>
         <p className="my-2.5 opacity-90">Providing compassionate guidance and support during difficult times.</p>
       </footer>
+
+      {/* GHL Form Embed Script */}
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </div>
   );
 }
