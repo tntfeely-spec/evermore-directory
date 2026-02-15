@@ -32,7 +32,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get all cities from database
   const { data: homes } = await supabase
     .from('funeral_homes')
-    .select('city, state');
+    .select('city, state)
+                .range(0, 10000);
 
   const citySet = new Set<string>();
   homes?.forEach((home) => {
