@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { state, city } = await params;
   const stateName = stateNames[state.toLowerCase()];
   const cityName = city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  
+
   if (!stateName) {
     return {
       title: 'City Not Found',
@@ -58,6 +58,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `Funeral Homes in ${cityName}, ${stateName} - Find Cremation Services & Funeral Directors`,
     description: `Find trusted funeral homes and cremation services in ${cityName}, ${stateName}. Compare compassionate funeral directors, burial services, and memorial planning options.`,
+    alternates: {
+      canonical: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}`,
+    },
+    openGraph: {
+      title: `Funeral Homes in ${cityName}, ${stateName} - Find Cremation Services & Funeral Directors`,
+      description: `Find trusted funeral homes and cremation services in ${cityName}, ${stateName}. Compare compassionate funeral directors, burial services, and memorial planning options.`,
+      url: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}`,
+      siteName: 'Evermore Directory',
+      type: 'website',
+    },
   };
 }
 
@@ -65,7 +75,7 @@ export default async function CityPage({ params }: PageProps) {
   const { state, city } = await params;
   const stateName = stateNames[state.toLowerCase()];
   const cityName = city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  
+
   if (!stateName) {
     notFound();
   }
@@ -85,6 +95,17 @@ export default async function CityPage({ params }: PageProps) {
   if (!funeralHomes || funeralHomes.length === 0) {
     notFound();
   }
+
+  // Get nearby cities in same state for interlinking
+  const { data: nearbyCities } = await supabase
+    .from('funeral_homes')
+    .select('city')
+    .eq('state', state.toUpperCase());
+
+  const uniqueNearbyCities = [...new Set(nearbyCities?.map(h => h.city) || [])]
+    .filter(c => c.toLowerCase() !== cityName.toLowerCase())
+    .sort()
+    .slice(0, 12);
 
   const featuredHomes = funeralHomes.filter((home: FuneralHome) => home.is_featured);
   const regularHomes = funeralHomes.filter((home: FuneralHome) => !home.is_featured);
@@ -121,10 +142,30 @@ export default async function CityPage({ params }: PageProps) {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
-          { "@type": "ListItem", "position": 2, "name": "States", "item": "https://funeralhomedirectories.com/states" },
-          { "@type": "ListItem", "position": 3, "name": stateName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}` },
-          { "@type": "ListItem", "position": 4, "name": cityName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${citySlug}` }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://funeralhomedirectories.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "States",
+            "item": "https://funeralhomedirectories.com/states"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": stateName,
+            "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": cityName,
+            "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${citySlug}`
+          }
         ]
       }
     ]
@@ -138,10 +179,9 @@ export default async function CityPage({ params }: PageProps) {
       />
       <Navigation />
       <PremiumBanner />
-      
       <div className="min-h-screen relative">
         {/* Background Image */}
-        <div 
+        <div
           className="fixed inset-0 z-0"
           style={{
             backgroundImage: 'url(/Sunlight_Forest.png)',
@@ -153,7 +193,6 @@ export default async function CityPage({ params }: PageProps) {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          
           <nav className="mb-8 text-sm">
             <Link href="/states" className="text-blue-600 hover:text-blue-800">
               All States
@@ -171,8 +210,8 @@ export default async function CityPage({ params }: PageProps) {
               Funeral Homes in {cityName}, {stateName}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find compassionate funeral homes and cremation services in {cityName}. 
-              Compare trusted funeral directors offering burial, cremation, and memorial services.
+              Find compassionate funeral homes and cremation services in {cityName}. Compare
+              trusted funeral directors offering burial, cremation, and memorial services.
             </p>
             <div className="mt-4 text-lg text-gray-700 font-semibold">
               {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} found
@@ -197,6 +236,7 @@ export default async function CityPage({ params }: PageProps) {
                           </span>
                           <h3 className="text-2xl font-bold text-gray-900">{home.business_name}</h3>
                         </div>
+
                         <div className="space-y-2 text-gray-700">
                           <p className="flex items-center">
                             <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -236,7 +276,7 @@ export default async function CityPage({ params }: PageProps) {
                               {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
                               {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
                             </div>
-                          )}                              
+                          )}
                           {home.special_features && (
                             <div className="pt-3 mt-3 border-t border-gray-200">
                               <p className="font-semibold mb-1">Special Features: <span className="font-normal">{home.special_features}</span></p>
@@ -244,9 +284,9 @@ export default async function CityPage({ params }: PageProps) {
                           )}
                           {/* Claim Listing Link */}
                           <div className="pt-3 mt-3 border-t border-gray-200">
-                            <a 
-                              href="https://claim.funeralhomedirectories.com" 
-                              target="_blank" 
+                            <a
+                              href="https://claim.funeralhomedirectories.com"
+                              target="_blank"
                               rel="noopener noreferrer"
                               className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
                             >
@@ -311,7 +351,7 @@ export default async function CityPage({ params }: PageProps) {
                           {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
                           {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
                         </div>
-                   )}
+                      )}
                       {home.special_features && (
                         <div className="pt-2 mt-2 border-t border-gray-200">
                           <p className="text-sm"><span className="font-semibold">Special Features:</span> {home.special_features}</p>
@@ -319,9 +359,9 @@ export default async function CityPage({ params }: PageProps) {
                       )}
                       {/* Claim Listing Link */}
                       <div className="pt-2 mt-2 border-t border-gray-200">
-                        <a 
-                          href="https://claim.funeralhomedirectories.com" 
-                          target="_blank" 
+                        <a
+                          href="https://claim.funeralhomedirectories.com"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
                         >
@@ -341,38 +381,31 @@ export default async function CityPage({ params }: PageProps) {
               Benefits of Using the Evermore Directory in {cityName}
             </h2>
             <p className="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-              Discover why families in {cityName}, {stateName} trust our directory to find compassionate 
-              funeral homes and cremation services
+              Discover why families in {cityName}, {stateName} trust our directory to find compassionate funeral homes and cremation services
             </p>
-            
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Compare Local {cityName} Funeral Homes
                 </h3>
                 <p className="text-gray-600">
-                  The Evermore Directory helps you compare funeral homes and cremation providers in {cityName}, allowing you to find 
-                  services that match your needs and budget for burial, cremation, or memorial planning.
+                  The Evermore Directory helps you compare funeral homes and cremation providers in {cityName}, allowing you to find services that match your needs and budget for burial, cremation, or memorial planning.
                 </p>
               </div>
-
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Verified {cityName} Funeral Home Information
                 </h3>
                 <p className="text-gray-600">
-                  All funeral homes in our {cityName} directory are verified with accurate contact information, addresses, 
-                  and service details to ensure you can reach trusted local providers when you need them most.
+                  All funeral homes in our {cityName} directory are verified with accurate contact information, addresses, and service details to ensure you can reach trusted local providers when you need them most.
                 </p>
               </div>
-
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Local {cityName} Expertise
                 </h3>
                 <p className="text-gray-600">
-                  Funeral homes in {cityName} understand your community and can provide personalized care that honors local 
-                  traditions and preferences during difficult times.
+                  Funeral homes in {cityName} understand your community and can provide personalized care that honors local traditions and preferences during difficult times.
                 </p>
               </div>
             </div>
@@ -385,23 +418,13 @@ export default async function CityPage({ params }: PageProps) {
             </h2>
             <div className="prose max-w-none text-gray-600">
               <p className="mb-4 leading-relaxed">
-                Funeral homes in {cityName}, {stateName} specialize in providing compassionate end-of-life services to families 
-                during difficult times. Our directory connects you with both independent family-owned funeral directors and established 
-                memorial chapels throughout {cityName}. From local funeral homes to cremation providers and memorial service specialists, 
-                these trusted providers offer burial services, cremation options, memorial planning, pre-arrangement services, and grief 
-                support to help {cityName} families honor their loved ones.
+                Funeral homes in {cityName}, {stateName} specialize in providing compassionate end-of-life services to families during difficult times. Our directory connects you with both independent family-owned funeral directors and established memorial chapels throughout {cityName}. From local funeral homes to cremation providers and memorial service specialists, these trusted providers offer burial services, cremation options, memorial planning, pre-arrangement services, and grief support to help {cityName} families honor their loved ones.
               </p>
               <p className="mb-4 leading-relaxed">
-                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, 
-                our directory provides access to verified funeral homes with detailed service information, contact details, and location 
-                data. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create 
-                meaningful services that reflect your family's wishes and values.
+                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, our directory provides access to verified funeral homes with detailed service information, contact details, and location data. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create meaningful services that reflect your family's wishes and values.
               </p>
               <p className="leading-relaxed">
-                The funeral homes listed in {cityName} offer a full range of services including traditional funerals with viewing, 
-                graveside services, direct burial, cremation services with memorial options, celebration of life ceremonies, green burial 
-                alternatives, and comprehensive pre-planning services. Many {cityName} funeral homes also provide grief counseling, 
-                memorial products, and ongoing support to help families navigate the grieving process.
+                The funeral homes listed in {cityName} offer a full range of services including traditional funerals with viewing, graveside services, direct burial, cremation services with memorial options, celebration of life ceremonies, green burial alternatives, and comprehensive pre-planning services. Many {cityName} funeral homes also provide grief counseling, memorial products, and ongoing support to help families navigate the grieving process.
               </p>
             </div>
           </div>
@@ -450,46 +473,21 @@ export default async function CityPage({ params }: PageProps) {
                   Independent {cityName} Funeral Homes
                 </h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Local family-owned funeral directors</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Specialized cremation service providers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Community-based memorial chapels</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Green burial and natural funeral specialists</span>
-                  </li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Local family-owned funeral directors</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Specialized cremation service providers</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Community-based memorial chapels</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Green burial and natural funeral specialists</span></li>
                 </ul>
               </div>
-
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   National Providers Serving {cityName}
                 </h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Major funeral home chains with {cityName} locations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>National cremation service networks</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Cemetery-affiliated funeral providers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-3">•</span>
-                    <span>Multi-location memorial service centers</span>
-                  </li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Major funeral home chains with {cityName} locations</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>National cremation service networks</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Cemetery-affiliated funeral providers</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Multi-location memorial service centers</span></li>
                 </ul>
               </div>
             </div>
@@ -502,50 +500,21 @@ export default async function CityPage({ params }: PageProps) {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Traditional Services
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Full funeral services with viewing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Burial arrangements and cemetery coordination</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Memorial services and celebrations of life</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Religious and cultural ceremony planning</span>
-                  </li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
                 </ul>
               </div>
-
               <div className="bg-white rounded-xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Modern & Alternative Services
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Modern & Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Direct cremation services</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Green burial and eco-friendly options</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Pre-planning and pre-arrangement services</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-3">•</span>
-                    <span>Grief counseling and support groups</span>
-                  </li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Direct cremation services</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
+                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
                 </ul>
               </div>
             </div>
@@ -556,10 +525,7 @@ export default async function CityPage({ params }: PageProps) {
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {cityName} Families</h3>
               <p className="text-gray-700 leading-relaxed">
-                When contacting funeral homes in {cityName}, {stateName}, don't hesitate to ask detailed questions about their pricing, 
-                services, and experience with your specific needs. Reputable funeral directors in {cityName} will be transparent about 
-                costs and happy to explain all available options without pressure. Taking time to compare services from multiple {cityName} 
-                funeral homes ensures you make the best decision for your family during this difficult time.
+                When contacting funeral homes in {cityName}, {stateName}, don't hesitate to ask detailed questions about their pricing, services, and experience with your specific needs. Reputable funeral directors in {cityName} will be transparent about costs and happy to explain all available options without pressure. Taking time to compare services from multiple {cityName} funeral homes ensures you make the best decision for your family during this difficult time.
               </p>
             </div>
           </div>
@@ -575,80 +541,81 @@ export default async function CityPage({ params }: PageProps) {
                   How much do funeral services cost in {cityName}, {stateName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Funeral costs in {cityName} vary widely depending on services selected. A traditional funeral with viewing can range 
-                  from $7,000-$12,000 or more, while direct cremation in {cityName} typically costs $1,000-$3,000. Request the General 
-                  Price List (GPL) from each {cityName} funeral home to compare specific costs for burial, cremation, and memorial services.
+                  Funeral costs in {cityName} vary widely depending on services selected. A traditional funeral with viewing can range from $7,000-$12,000 or more, while direct cremation in {cityName} typically costs $1,000-$3,000. Request the General Price List (GPL) from each {cityName} funeral home to compare specific costs for burial, cremation, and memorial services.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What's the difference between burial and cremation services in {cityName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Burial services in {cityName} involve preparing the body, holding a viewing or service, and interment in a cemetery. 
-                  Cremation in {cityName} reduces the body to ashes through high-temperature processing, which can then be kept in an urn, 
-                  scattered, or buried. Many {cityName} funeral homes offer both options along with memorial services.
+                  Burial services in {cityName} involve preparing the body, holding a viewing or service, and interment in a cemetery. Cremation in {cityName} reduces the body to ashes through high-temperature processing, which can then be kept in an urn, scattered, or buried. Many {cityName} funeral homes offer both options along with memorial services.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Do funeral homes in {cityName} offer payment plans?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Many funeral homes in {cityName}, {stateName} offer payment plans or financing options to help families manage costs. 
-                  Some {cityName} funeral directors also work with insurance assignments and can help you understand what costs may be 
-                  covered by life insurance or other benefits. Always ask about payment options when comparing funeral homes in {cityName}.
+                  Many funeral homes in {cityName}, {stateName} offer payment plans or financing options to help families manage costs. Some {cityName} funeral directors also work with insurance assignments and can help you understand what costs may be covered by life insurance or other benefits. Always ask about payment options when comparing funeral homes in {cityName}.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Can I pre-plan funeral arrangements in {cityName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Yes, most funeral homes in {cityName} offer pre-planning services. Pre-planning allows you to make decisions about your 
-                  funeral or a loved one's service in advance, often at current prices. {cityName} funeral directors can help document your 
-                  wishes and establish pre-payment arrangements if desired, providing peace of mind for your family.
+                  Yes, most funeral homes in {cityName} offer pre-planning services. Pre-planning allows you to make decisions about your funeral or a loved one's service in advance, often at current prices. {cityName} funeral directors can help document your wishes and establish pre-payment arrangements if desired, providing peace of mind for your family.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   What should I bring when meeting with a {cityName} funeral director?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  When meeting with funeral homes in {cityName}, bring identification, the deceased's vital information (birth certificate, 
-                  social security number), information about military service if applicable, and any pre-planning documents. {cityName} 
-                  funeral directors will guide you through required paperwork and help you understand what additional documentation is needed.
+                  When meeting with funeral homes in {cityName}, bring identification, the deceased's vital information (birth certificate, social security number), information about military service if applicable, and any pre-planning documents. {cityName} funeral directors will guide you through required paperwork and help you understand what additional documentation is needed.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   How do I choose the right funeral home in {cityName}, {stateName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Choose a {cityName} funeral home by comparing services, prices, and reviews from multiple providers. Visit facilities in 
-                  person when possible, ask about their experience with your cultural or religious traditions, and ensure the funeral director 
-                  in {cityName} is licensed in {stateName}. Trust your instincts about whether the {cityName} funeral staff treats you with 
-                  compassion and respect.
+                  Choose a {cityName} funeral home by comparing services, prices, and reviews from multiple providers. Visit facilities in person when possible, ask about their experience with your cultural or religious traditions, and ensure the funeral director in {cityName} is licensed in {stateName}. Trust your instincts about whether the {cityName} funeral staff treats you with compassion and respect.
                 </p>
               </div>
             </div>
           </div>
 
+          {/* Nearby Cities */}
+          {uniqueNearbyCities.length > 0 && (
+            <div className="mb-20 bg-white rounded-xl shadow-md p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Also Search Funeral Homes In Nearby {stateName} Cities
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {uniqueNearbyCities.map((nearbyCity) => (
+                  <Link
+                    key={nearbyCity}
+                    href={`/funeral-homes/${state.toLowerCase()}/${nearbyCity.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-blue-600 hover:text-blue-800 hover:underline py-2"
+                  >
+                    {nearbyCity}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Back Navigation */}
           <div className="text-center">
-            <Link 
+            <Link
               href={`/funeral-homes/${state.toLowerCase()}`}
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               ← Back to {stateName} Cities
             </Link>
           </div>
-
         </div>
       </div>
     </>
