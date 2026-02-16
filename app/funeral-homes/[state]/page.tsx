@@ -37,15 +37,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  // Fetch custom meta description from database
+  const { data: stateDesc } = await supabase
+    .from('state_descriptions')
+    .select('meta_description')
+    .eq('state_code', state.toUpperCase())
+    .single();
+
+  const description = stateDesc?.meta_description || `Find trusted funeral homes and cremation services in ${stateName}. Browse compassionate funeral directors, memorial chapels, and burial services across all cities in ${stateName}.`;
+
   return {
     title: `Funeral Homes in ${stateName} - Find Cremation Services & Funeral Directors | Evermore Directory`,
-    description: `Find trusted funeral homes and cremation services in ${stateName}. Browse compassionate funeral directors, memorial chapels, and burial services across all cities in ${stateName}.`,
+    description,
     alternates: {
       canonical: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`,
     },
     openGraph: {
       title: `Funeral Homes in ${stateName} - Find Cremation Services & Funeral Directors | Evermore Directory`,
-      description: `Find trusted funeral homes and cremation services in ${stateName}. Browse compassionate funeral directors, memorial chapels, and burial services across all cities in ${stateName}.`,
+      description,
       url: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`,
       siteName: 'Evermore Directory',
       type: 'website',
@@ -69,6 +78,13 @@ export default async function StateCitiesPage({ params }: PageProps) {
   if (error) {
     console.error('Error fetching cities:', error);
   }
+
+  // Fetch unique state description
+  const { data: stateDesc } = await supabase
+    .from('state_descriptions')
+    .select('intro_text')
+    .eq('state_code', state.toUpperCase())
+    .single();
 
   const cityCounts: { [key: string]: number } = {};
   homes?.forEach((home) => {
@@ -107,24 +123,9 @@ export default async function StateCitiesPage({ params }: PageProps) {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://funeralhomedirectories.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "States",
-            "item": "https://funeralhomedirectories.com/states"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": stateName,
-            "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+          { "@type": "ListItem", "position": 2, "name": "States", "item": "https://funeralhomedirectories.com/states" },
+          { "@type": "ListItem", "position": 3, "name": stateName, "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}` }
         ]
       }
     ]
@@ -138,6 +139,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
       />
       <Navigation />
       <PremiumBanner />
+
       <div className="min-h-screen relative">
         {/* Background Image */}
         <div
@@ -152,6 +154,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
           <nav className="mb-8 text-sm">
             <Link href="/states" className="text-blue-600 hover:text-blue-800">
               All States
@@ -165,7 +168,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
               Funeral Homes in {stateName}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find compassionate funeral homes and cremation services throughout {stateName}. Browse trusted funeral directors, memorial chapels, and burial services in cities across the state.
+              {stateDesc?.intro_text || `Find compassionate funeral homes and cremation services throughout ${stateName}. Browse trusted funeral directors, memorial chapels, and burial services in cities across the state.`}
             </p>
           </div>
 
@@ -173,7 +176,8 @@ export default async function StateCitiesPage({ params }: PageProps) {
             Funeral Homes by City in {stateName}
           </h2>
           <p className="text-gray-600 mb-8">
-            Browse funeral homes and cremation providers by city in {stateName}. Each city listing includes local funeral directors, cremation services, and memorial chapels with complete contact information and service details.
+            Browse {totalListings} funeral homes and cremation providers across {cities.length} cities in {stateName}. Each city listing includes
+            local funeral directors, cremation services, and memorial chapels with complete contact information and service details.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
@@ -196,56 +200,65 @@ export default async function StateCitiesPage({ params }: PageProps) {
             ))}
           </div>
 
-          {/* Benefits Section - NO EMOJIS */}
+          {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Benefits of Using the Evermore Directory in {stateName}
             </h2>
             <p className="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-              Discover why families throughout {stateName} trust our directory to find compassionate funeral homes and cremation services
+              Discover why families throughout {stateName} trust our directory to find compassionate
+              funeral homes and cremation services
             </p>
+
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Local {stateName} Funeral Homes
                 </h3>
                 <p className="text-gray-600">
-                  Find funeral homes and cremation services throughout {stateName}, from major cities to small towns. Our directory includes both family-owned funeral directors and established memorial chapels serving your community.
+                  Find funeral homes and cremation services throughout {stateName}, from major cities to small towns.
+                  Our directory includes both family-owned funeral directors and established memorial chapels serving your community.
                 </p>
               </div>
+
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Verified Contact Information
                 </h3>
                 <p className="text-gray-600">
-                  All funeral homes in our {stateName} directory are verified with current phone numbers, addresses, and service information so you can reach trusted providers immediately when needed.
+                  All funeral homes in our {stateName} directory are verified with current phone numbers, addresses,
+                  and service information so you can reach trusted providers immediately when needed.
                 </p>
               </div>
+
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Compare Services and Options
                 </h3>
                 <p className="text-gray-600">
-                  Compare funeral homes across {stateName} to find services that match your needs, whether traditional burial, cremation, memorial services, or pre-planning arrangements.
+                  Compare funeral homes across {stateName} to find services that match your needs, whether traditional burial,
+                  cremation, memorial services, or pre-planning arrangements.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Complete Guide Section */}
+          {/* About Funeral Services in State - UNIQUE CONTENT */}
           <div className="mb-20 bg-white rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Complete Guide to Finding Funeral Homes in {stateName}
+              About Funeral Services in {stateName}
             </h2>
             <div className="prose max-w-none text-gray-600">
               <p className="mb-4 leading-relaxed">
-                The Evermore Directory provides comprehensive coverage of funeral homes and cremation services throughout {stateName}. Our directory connects families with compassionate funeral directors, memorial chapels, and cremation providers in every corner of the state. Whether you're in a major metropolitan area or a rural community, you'll find licensed funeral service providers who can assist with burial arrangements, cremation services, memorial planning, pre-arrangements, and grief support.
+                {stateDesc?.intro_text || `The Evermore Directory provides comprehensive coverage of funeral homes and cremation services throughout ${stateName}.`}
               </p>
               <p className="mb-4 leading-relaxed">
-                {stateName} funeral homes in our directory offer a full range of services including traditional funerals with viewing, direct burial, cremation services, memorial services, celebration of life ceremonies, green burial options, and pre-planning services. Many funeral directors in {stateName} are experienced with specific cultural and religious traditions and can provide personalized care that honors your family's wishes.
+                The Evermore Directory lists {totalListings} funeral homes across {cities.length} cities in {stateName}, making it easy to compare local providers in your area.
+                Each listing includes verified contact information, service offerings, and location details to help you make informed decisions during a difficult time.
               </p>
               <p className="leading-relaxed">
-                Browse our city-by-city directory to find funeral homes near you in {stateName}. Each listing includes verified contact information, service offerings, and location details to help you make informed decisions during a difficult time.
+                Whether you need traditional burial services, cremation, memorial planning, pre-arrangements, or grief support,
+                our {stateName} funeral home directory connects you with licensed providers who can help.
               </p>
             </div>
           </div>
@@ -262,7 +275,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Request the General Price List (GPL) from each {stateName} funeral home - they're required by law to provide it</span>
+                <span>Request the General Price List (GPL) from each {stateName} funeral home - they&apos;re required by law to provide it</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -270,7 +283,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Verify the funeral home's licensing with the {stateName} state board and check their experience with your cultural or religious traditions</span>
+                <span>Verify the funeral home&apos;s licensing with the {stateName} state board and check their experience with your cultural or religious traditions</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -283,12 +296,15 @@ export default async function StateCitiesPage({ params }: PageProps) {
             </ul>
           </div>
 
-          {/* Pro Tip Box - NO LIGHTBULB */}
+          {/* Pro Tip Box */}
           <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {stateName} Families</h3>
               <p className="text-gray-700 leading-relaxed">
-                When contacting funeral homes in {stateName}, ask about their experience serving families in your specific community. Local funeral directors often have established relationships with cemeteries, crematoriums, florists, and other service providers in the area, which can help streamline arrangements and potentially reduce costs during an already difficult time.
+                When contacting funeral homes in {stateName}, ask about their experience serving families in your specific
+                community. Local funeral directors often have established relationships with cemeteries, crematoriums, florists,
+                and other service providers in the area, which can help streamline arrangements and potentially reduce costs
+                during an already difficult time.
               </p>
             </div>
           </div>
@@ -301,6 +317,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
               ← Back to All States
             </Link>
           </div>
+
         </div>
       </div>
     </>
