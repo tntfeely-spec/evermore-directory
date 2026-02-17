@@ -111,6 +111,17 @@ export default function SearchPage() {
     veterans: false
   });
 
+  // Read ?q= parameter from URL on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q) {
+        setSearchTerm(q);
+      }
+    }
+  }, []);
+
   // Load funeral homes from Supabase
   useEffect(() => {
     async function loadFuneralHomes() {
