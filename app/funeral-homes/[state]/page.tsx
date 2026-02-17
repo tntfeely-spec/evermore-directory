@@ -145,7 +145,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
         <div
           className="fixed inset-0 z-0"
           style={{
-            backgroundImage: 'url(/Mountain_Lake_Image.png)',
+            backgroundImage: 'url(/Mountain_Lake_Image.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
