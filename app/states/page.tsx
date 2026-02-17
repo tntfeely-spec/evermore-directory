@@ -90,7 +90,7 @@ export default async function StatesPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{state.name}</h3>
                 <p className="text-sm text-gray-600">{state.count} funeral homes</p>
-                <p className="text-sm text-gray-600">{state.cityCount} cities</p>
+                <p className="text-sm text-gray-600">{state.cityCount} city</p>
               </Link>
             ))}
           </div>
