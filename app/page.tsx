@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import PremiumBanner from '@/components/PremiumBanner';
+import SearchAutocomplete from '@/components/SearchAutocomplete';
 
 export const metadata: Metadata = {
   title: 'Evermore Directory - Find Funeral Homes & Cremation Services Nationwide',
@@ -32,10 +33,14 @@ export default function HomePage() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Find Compassionate Funeral Homes Nationwide
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
               The Evermore Directory connects families with trusted funeral homes and cremation services 
               across all 50 states.
             </p>
+
+            <div className="max-w-2xl mx-auto mb-12">
+              <SearchAutocomplete />
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
