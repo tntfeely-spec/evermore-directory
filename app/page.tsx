@@ -18,7 +18,7 @@ export default function HomePage() {
         <div 
           className="fixed inset-0 z-0"
           style={{
-            backgroundImage: 'url(/Ocean_Image.png)',
+            backgroundImage: 'url(/Ocean_Image.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
