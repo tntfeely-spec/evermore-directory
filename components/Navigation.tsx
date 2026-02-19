@@ -27,6 +27,9 @@ export default function Navigation() {
             <Link href="/states" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
               Browse States
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              Blog
+            </Link>
             <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
               About
             </Link>
