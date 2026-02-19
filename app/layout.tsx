@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Funeral Home Directory | Find Funeral Services Nationwide",
   description: "The Evermore Directory connects families with trusted funeral homes and cremation services across all 50 states. Find compassionate funeral services near you.",
+  alternates: {
+    canonical: "https://funeralhomedirectories.com",
+  },
 };
 
 export default function RootLayout({
