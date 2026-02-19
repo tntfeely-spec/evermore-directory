@@ -48,7 +48,7 @@ export default function BlogIndexPage() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <header className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Funeral & Cremation Planning Blog
+            Funeral &amp; Cremation Planning Blog
           </h1>
           <p className="text-xl text-gray-600">
             Guides, cost comparisons, and resources to help you make informed decisions about funeral and cremation services.
@@ -90,4 +90,10 @@ export default function BlogIndexPage() {
             href="/states"
             className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            B
+            Browse by State
+          </Link>
+        </section>
+      </div>
+    </main>
+  );
+}
