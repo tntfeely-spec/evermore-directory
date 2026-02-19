@@ -55,15 +55,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  // Get funeral home count for dynamic meta tags
+  const { count } = await supabase
+    .from('funeral_homes')
+    .select('*', { count: 'exact', head: true })
+    .eq('state', state.toUpperCase())
+    .ilike('city', cityName);
+
+  const homeCount = count || 0;
+  const currentYear = new Date().getFullYear();
+
+  const title = homeCount > 0
+    ? `${homeCount} Funeral Homes in ${cityName}, ${stateName} (${currentYear}) | Compare Prices & Services`
+    : `Funeral Homes in ${cityName}, ${stateName} (${currentYear}) | Compare Prices & Services`;
+
+  const description = homeCount > 0
+    ? `Compare ${homeCount} funeral homes in ${cityName}, ${stateName}. See phone numbers, addresses & services. Funeral costs in ${cityName}: $7,000-$12,000. Cremation from $1,000.`
+    : `Find funeral homes and cremation services in ${cityName}, ${stateName}. Compare prices, services & contact info. Funeral costs: $7,000-$12,000. Cremation from $1,000.`;
+
   return {
-    title: `Funeral Homes in ${cityName}, ${stateName} - Find Cremation Services & Funeral Directors`,
-    description: `Find trusted funeral homes and cremation services in ${cityName}, ${stateName}. Compare compassionate funeral directors, burial services, and memorial planning options.`,
+    title,
+    description,
     alternates: {
       canonical: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}`,
     },
     openGraph: {
-      title: `Funeral Homes in ${cityName}, ${stateName} - Find Cremation Services & Funeral Directors`,
-      description: `Find trusted funeral homes and cremation services in ${cityName}, ${stateName}. Compare compassionate funeral directors, burial services, and memorial planning options.`,
+      title,
+      description,
       url: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}`,
       siteName: 'Evermore Directory',
       type: 'website',
@@ -210,8 +228,7 @@ export default async function CityPage({ params }: PageProps) {
               Funeral Homes in {cityName}, {stateName}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find compassionate funeral homes and cremation services in {cityName}. Compare
-              trusted funeral directors offering burial, cremation, and memorial services.
+              Find compassionate funeral homes and cremation services in {cityName}. Compare trusted funeral directors offering burial, cremation, and memorial services.
             </p>
             <div className="mt-4 text-lg text-gray-700 font-semibold">
               {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} found
@@ -222,8 +239,7 @@ export default async function CityPage({ params }: PageProps) {
           {featuredHomes.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="text-yellow-500 mr-2">⭐</span>
-                Featured Funeral Homes in {cityName}
+                <span className="text-yellow-500 mr-2">⭐</span> Featured Funeral Homes in {cityName}
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
@@ -236,7 +252,6 @@ export default async function CityPage({ params }: PageProps) {
                           </span>
                           <h3 className="text-2xl font-bold text-gray-900">{home.business_name}</h3>
                         </div>
-
                         <div className="space-y-2 text-gray-700">
                           <p className="flex items-center">
                             <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -375,7 +390,7 @@ export default async function CityPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* Benefits Section - NO EMOJIS */}
+          {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Benefits of Using the Evermore Directory in {cityName}
@@ -441,7 +456,7 @@ export default async function CityPage({ params }: PageProps) {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Request the General Price List (GPL) from each {cityName} funeral home - they're required by federal law to provide it</span>
+                <span>Request the General Price List (GPL) from each {cityName} funeral home - they&apos;re required by federal law to provide it</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -449,7 +464,7 @@ export default async function CityPage({ params }: PageProps) {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Inquire about pre-planning services if you're arranging future arrangements in {cityName} for yourself or loved ones</span>
+                <span>Inquire about pre-planning services if you&apos;re arranging future arrangements in {cityName} for yourself or loved ones</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
@@ -457,7 +472,7 @@ export default async function CityPage({ params }: PageProps) {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 font-bold mr-3">•</span>
-                <span>Verify the funeral home's licensing in {stateName} and ask about their experience with specific cultural or religious traditions</span>
+                <span>Verify the funeral home&apos;s licensing in {stateName} and ask about their experience with specific cultural or religious traditions</span>
               </li>
             </ul>
           </div>
@@ -520,12 +535,12 @@ export default async function CityPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Pro Tip Box - NO LIGHTBULB */}
+          {/* Pro Tip Box */}
           <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {cityName} Families</h3>
               <p className="text-gray-700 leading-relaxed">
-                When contacting funeral homes in {cityName}, {stateName}, don't hesitate to ask detailed questions about their pricing, services, and experience with your specific needs. Reputable funeral directors in {cityName} will be transparent about costs and happy to explain all available options without pressure. Taking time to compare services from multiple {cityName} funeral homes ensures you make the best decision for your family during this difficult time.
+                When contacting funeral homes in {cityName}, {stateName}, don&apos;t hesitate to ask detailed questions about their pricing, services, and experience with your specific needs. Reputable funeral directors in {cityName} will be transparent about costs and happy to explain all available options without pressure. Taking time to compare services from multiple {cityName} funeral homes ensures you make the best decision for your family during this difficult time.
               </p>
             </div>
           </div>
@@ -546,7 +561,7 @@ export default async function CityPage({ params }: PageProps) {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  What's the difference between burial and cremation services in {cityName}?
+                  What&apos;s the difference between burial and cremation services in {cityName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Burial services in {cityName} involve preparing the body, holding a viewing or service, and interment in a cemetery. Cremation in {cityName} reduces the body to ashes through high-temperature processing, which can then be kept in an urn, scattered, or buried. Many {cityName} funeral homes offer both options along with memorial services.
@@ -565,7 +580,7 @@ export default async function CityPage({ params }: PageProps) {
                   Can I pre-plan funeral arrangements in {cityName}?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Yes, most funeral homes in {cityName} offer pre-planning services. Pre-planning allows you to make decisions about your funeral or a loved one's service in advance, often at current prices. {cityName} funeral directors can help document your wishes and establish pre-payment arrangements if desired, providing peace of mind for your family.
+                  Yes, most funeral homes in {cityName} offer pre-planning services. Pre-planning allows you to make decisions about your funeral or a loved one&apos;s service in advance, often at current prices. {cityName} funeral directors can help document your wishes and establish pre-payment arrangements if desired, providing peace of mind for your family.
                 </p>
               </div>
               <div>
@@ -573,7 +588,7 @@ export default async function CityPage({ params }: PageProps) {
                   What should I bring when meeting with a {cityName} funeral director?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  When meeting with funeral homes in {cityName}, bring identification, the deceased's vital information (birth certificate, social security number), information about military service if applicable, and any pre-planning documents. {cityName} funeral directors will guide you through required paperwork and help you understand what additional documentation is needed.
+                  When meeting with funeral homes in {cityName}, bring identification, the deceased&apos;s vital information (birth certificate, social security number), information about military service if applicable, and any pre-planning documents. {cityName} funeral directors will guide you through required paperwork and help you understand what additional documentation is needed.
                 </p>
               </div>
               <div>
