@@ -309,6 +309,43 @@ export default async function StateCitiesPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* Helpful Guides */}
+          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Helpful Funeral &amp; Cremation Guides
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link
+                href="/blog/cremation-costs-2026"
+                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
+              </Link>
+              <Link
+                href="/blog/cremation-near-me"
+                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
+              </Link>
+              <Link
+                href="/blog/direct-cremation-vs-traditional-funeral"
+                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <p className="text-sm text-gray-600">Compare costs, timelines, and services to decide which option is right for your family.</p>
+              </Link>
+              <Link
+                href="/blog"
+                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">View All Guides →</h3>
+                <p className="text-sm text-gray-600">Browse our complete library of funeral planning resources and cost guides.</p>
+              </Link>
+            </div>
+          </div>
+
           <div className="text-center">
             <Link
               href="/states"
