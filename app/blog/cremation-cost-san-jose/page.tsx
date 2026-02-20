@@ -258,6 +258,38 @@ export default function CremationSanJosePage() {
             </p>
           </section>
 
+          {/* Related Articles */}
+          <section className="mt-12 border-t border-gray-200 pt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
+              </Link>
+              <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
+              </Link>
+              <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
+              </Link>
+              <Link href="/blog/funeral-homes-los-angeles" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
+                <p className="text-sm text-gray-600">Compare funeral home prices in LA with tips for choosing the right provider.</p>
+              </Link>
+            </div>
+          </section>
+
+
+          {/* Browse by State CTA */}
+          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
+            <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
+            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+              Browse by State
+            </Link>
+          </section>
           <p className="text-sm text-gray-400 mt-8">Last updated: February 2026</p>
         </article>
       </div>
