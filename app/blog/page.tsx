@@ -44,6 +44,27 @@ const blogPosts = [
 
 export default function BlogIndexPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://funeralhomedirectories.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog"
+            }
+          ]
+        }) }}
+      />
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <header className="mb-10">
@@ -95,5 +116,6 @@ export default function BlogIndexPage() {
         </section>
       </div>
     </main>
+    </>
   );
 }
