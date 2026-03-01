@@ -40,6 +40,30 @@ const blogPosts = [
     description: 'Compare funeral home prices in Los Angeles. See actual cremation and burial costs from LA funeral homes, plus tips for choosing the right provider.',
     category: 'Local Prices',
   },
+  {
+    slug: 'funeral-costs-2026',
+    title: 'How Much Does a Funeral Cost in 2026? Complete Price Guide',
+    description: 'Funeral costs in 2026 range from $7,000 to $15,000+ for a traditional service. See average funeral prices by state, what is included, and how to save money.',
+    category: 'Funeral Costs',
+  },
+  {
+    slug: 'burial-vs-cremation',
+    title: 'Burial vs Cremation: Costs, Process & How to Decide',
+    description: 'Compare burial and cremation side by side. See costs, process, timeline, and pros and cons to help your family make the right decision.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'how-to-plan-a-funeral',
+    title: 'How to Plan a Funeral: A Step-by-Step Guide',
+    description: 'A practical step-by-step guide to planning a funeral. What to do first, how to choose a funeral home, what decisions to make, and how to manage costs.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'funeral-homes-near-me',
+    title: 'Funeral Homes Near Me: How to Choose the Right One',
+    description: 'How to find and compare funeral homes near you. What to look for, questions to ask, red flags to avoid, and how to get the best value for your family.',
+    category: 'Finding Services',
+  },
 ];
 
 export default function BlogIndexPage() {
