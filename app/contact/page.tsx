@@ -1,10 +1,7 @@
-'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
