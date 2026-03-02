@@ -1,10 +1,8 @@
-'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function AboutPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   return (
     <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(/Ocean_Image.png)' }}>
