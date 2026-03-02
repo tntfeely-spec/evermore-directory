@@ -5,8 +5,9 @@ export default function AboutPage() {
   
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(/Ocean_Image.png)' }}>
-     
+<div className="min-h-screen relative">
+      <div className="fixed inset-0 z-0" style={{ backgroundImage: 'url(/Ocean_Image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.4 }} />
+      <div className="relative z-10">     
 
       {/* Page Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -210,6 +211,7 @@ export default function AboutPage() {
           </div>
         </div>
       </footer>
+     </div>
     </div>
   );
 }
