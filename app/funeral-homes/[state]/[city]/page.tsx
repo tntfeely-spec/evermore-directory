@@ -202,11 +202,11 @@ export default async function CityPage({ params }: PageProps) {
         <div
           className="fixed inset-0 z-0"
           style={{
-            backgroundImage: 'url(/Sunlight_Forest.webp)',
+            backgroundImage: 'url(/Sunlight_Forest.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            opacity: 0.25
+            opacity: 0.35
           }}
         />
 
