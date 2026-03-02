@@ -1,10 +1,7 @@
-'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function ResourcesPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
