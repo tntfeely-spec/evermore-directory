@@ -1,55 +1,53 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Featured Listing for Funeral Homes | $99/Month | Evermore Directory',
+  description: 'Get your funeral home featured at the top of Evermore Directory. Reach more families in your area for just $99/month. No setup fees. Cancel anytime.',
+  alternates: {
+    canonical: 'https://funeralhomedirectories.com/featured-listing',
+  },
+};
 
 export default function FeaturedListingPage() {
   return (
     <div className="min-h-screen bg-[#F5F7FA]" style={{ fontFamily: 'Inter, sans-serif' }}>
-      <header className="bg-white shadow-md">
-        <nav className="max-w-[1200px] mx-auto px-8 py-5 flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/EVERMORE LOGO.png"
-              alt="Evermore"
-              width={160}
-              height={80}
-              className="h-20 w-auto"
-            />
-          </Link>
-          <ul className="flex gap-8">
-            <li><Link href="/" className="font-semibold text-[#2C3E50] hover:opacity-70 transition-opacity">Home</Link></li>
-            <li><Link href="/about" className="font-semibold text-[#2C3E50] hover:opacity-70 transition-opacity">About Us</Link></li>
-            <li><Link href="/how-it-works" className="font-semibold text-[#2C3E50] hover:opacity-70 transition-opacity">How It Works</Link></li>
-            <li><Link href="/resources" className="font-semibold text-[#2C3E50] hover:opacity-70 transition-opacity">Resources</Link></li>
-            <li><Link href="/contact" className="font-semibold text-[#2C3E50] hover:opacity-70 transition-opacity">Contact</Link></li>
-          </ul>
-        </nav>
-      </header>
 
-      <section 
-        className="relative text-white py-32 px-5 text-center"
+      {/* Hero */}
+      <section
+        className="relative text-white py-28 px-5 text-center"
         style={{
-          background: 'url(/Evermore_funreal_home_banner.png) no-repeat center center',
+          background: 'url(/Mountain_Lake_Image.webp) no-repeat center center',
           backgroundSize: 'cover'
         }}
       >
-        <div className="absolute inset-0 bg-black/45 z-[1]" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto">
-          <h1 className="text-5xl font-bold mb-5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+        <div className="absolute inset-0 bg-black/50 z-[1]" />
+        <div className="relative z-[2] max-w-[900px] mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
             Reach More Families
           </h1>
-          <p className="text-2xl mb-8" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
-            Get featured on Americas trusted funeral home directory
+          <p className="text-xl md:text-2xl mb-4 opacity-95" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
+            Get featured on America&apos;s trusted funeral home directory
           </p>
-          <a href="#pricing" className="inline-block bg-[#5D6D7E] text-white px-10 py-4 text-xl font-bold rounded-md transition-all hover:bg-[#4A5A6A]">
+          <p className="text-lg mb-8 opacity-90">
+            30-day money-back guarantee. No setup fees. Cancel anytime.
+          </p>
+          <a
+            href="#pricing"
+            className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 text-xl font-bold rounded-lg transition-all whitespace-nowrap"
+          >
             Get Started Today
           </a>
         </div>
       </section>
 
       <div className="max-w-[1200px] mx-auto px-5 py-16">
-        <div className="bg-white rounded-lg p-12 shadow-md mb-10">
-          <h2 className="text-4xl text-[#2C3E50] text-center font-bold mb-5">
+
+        {/* What You Get */}
+        <div className="bg-white rounded-lg p-8 md:p-12 shadow-md mb-10">
+          <h2 className="text-3xl md:text-4xl text-[#2C3E50] text-center font-bold mb-5">
             Stand Out from the Competition
           </h2>
           <p className="text-center text-lg text-[#5A6C7D] max-w-[800px] mx-auto mb-10 leading-relaxed">
@@ -57,131 +55,99 @@ export default function FeaturedListingPage() {
           </p>
 
           <h3 className="text-2xl text-[#2C3E50] font-bold mt-10 mb-5">What You Get</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10">
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Featured Badge</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Stand out with a prominent FEATURED badge that catches the eye of families searching for services in your area.</p>
-            </div>
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Top Placement</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Your listing appears at the top of search results, ensuring maximum visibility when families need you most.</p>
-            </div>
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Enhanced Styling</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Professional border and elevated design makes your listing immediately stand out from standard listings.</p>
-            </div>
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Increased Inquiries</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Featured listings receive significantly more phone calls, website visits, and email inquiries from families.</p>
-            </div>
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Statewide Reach</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Your featured listing appears across all relevant searches throughout your entire service area.</p>
-            </div>
-            <div className="bg-[#F5F7FA] p-9 rounded-lg border-l-4 border-[#5D6D7E] transition-all hover:bg-[#ECEFF1] hover:shadow-lg">
-              <h4 className="text-xl text-[#2C3E50] font-bold mb-3">Monthly Reports</h4>
-              <p className="text-[#5A6C7D] text-[15px] leading-relaxed">Track your performance with detailed analytics on views, clicks, and inquiries to measure your ROI.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+            {[
+              { title: 'Featured Badge', desc: 'Stand out with a prominent FEATURED badge that catches the eye of families searching for services in your area.' },
+              { title: 'Top Placement', desc: 'Your listing appears at the top of search results, ensuring maximum visibility when families need you most.' },
+              { title: 'Enhanced Styling', desc: 'Professional border and elevated design makes your listing immediately stand out from standard listings.' },
+              { title: 'Increased Inquiries', desc: 'Featured listings receive significantly more phone calls, website visits, and email inquiries from families.' },
+              { title: 'Statewide Reach', desc: 'Your featured listing appears across all relevant searches throughout your entire service area.' },
+              { title: 'Monthly Reports', desc: 'Track your performance with detailed analytics on views, clicks, and inquiries to measure your ROI.' },
+            ].map((item) => (
+              <div key={item.title} className="bg-[#F5F7FA] p-8 rounded-lg border-l-4 border-emerald-600 hover:shadow-lg transition-all">
+                <h4 className="text-xl text-[#2C3E50] font-bold mb-3">{item.title}</h4>
+                <p className="text-[#5A6C7D] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
 
+          {/* Sample Featured Listing */}
           <h3 className="text-2xl text-[#2C3E50] font-bold mt-10 mb-5">See the Difference</h3>
-          <p className="text-center text-lg text-[#5A6C7D] max-w-[800px] mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-[#5A6C7D] max-w-[800px] mx-auto mb-8 leading-relaxed">
             Here is how your listing will appear to families searching in your area:
           </p>
-          
-          <div className="relative bg-white border-[3px] border-[#5D6D7E] rounded-lg p-8 my-8 shadow-md">
-            <div className="absolute top-4 right-4 bg-[#5D6D7E] text-white px-5 py-2 rounded font-bold text-[11px] tracking-widest">
+
+          <div className="relative bg-white border-[3px] border-emerald-600 rounded-lg p-8 my-8 shadow-md max-w-2xl mx-auto">
+            <div className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-1 rounded font-bold text-xs tracking-widest">
               FEATURED
             </div>
-            <div className="text-[22px] font-bold text-[#2C3E50] mb-3">
-              Your Funeral Home Name
-            </div>
-            <div className="text-[#5A6C7D] mb-4 leading-normal">
-              123 Main Street<br />Your City, State 12345
-            </div>
-            <p className="text-[#5A6C7D] my-4 leading-relaxed">
-              Featured listings stand out with professional styling, premium badge placement, and top positioning in search results. Families see your funeral home first when searching for compassionate, trusted service.
+            <div className="text-xl font-bold text-[#2C3E50] mb-2">Nashville Family Funeral Home</div>
+            <div className="text-[#5A6C7D] mb-4">123 Main Street, Nashville, TN 37201</div>
+            <p className="text-[#5A6C7D] leading-relaxed mb-4">
+              Serving Nashville families with compassion and care for over 40 years. Traditional funerals, direct cremation, and pre-planning services available.
             </p>
-            <div className="mt-5 pt-5 border-t border-[#E8EAED]">
-              <span className="text-[#4A90B8] mr-5 font-medium">Phone: (555) 123-4567</span>
-              <span className="text-[#4A90B8] font-medium">Visit Website</span>
+            <div className="pt-4 border-t border-gray-100 flex flex-wrap gap-6">
+              <span className="text-emerald-700 font-medium">Cremation: $1,800 - $3,500</span>
+              <span className="text-emerald-700 font-medium">Burial: $7,000 - $12,000</span>
             </div>
           </div>
 
-          <h3 className="text-2xl text-[#2C3E50] font-bold mt-10 mb-5">
-            Standard vs Featured Comparison
-          </h3>
-          <table className="w-full border-collapse my-10">
-            <thead>
-              <tr className="bg-[#5D6D7E] text-white">
-                <th className="p-5 text-left font-semibold">Feature</th>
-                <th className="p-5 text-left font-semibold">Standard Listing</th>
-                <th className="p-5 text-left font-semibold">Featured Listing</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Listed in directory</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Contact information</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Services offered</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Featured badge</td>
-                <td className="p-5">-</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Top search placement</td>
-                <td className="p-5">-</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Enhanced styling</td>
-                <td className="p-5">-</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Priority support</td>
-                <td className="p-5">-</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-              <tr className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
-                <td className="p-5">Monthly analytics</td>
-                <td className="p-5">-</td>
-                <td className="p-5"><span className="text-[#5D6D7E] text-2xl font-bold">✓</span></td>
-              </tr>
-            </tbody>
-          </table>
+          {/* Comparison Table */}
+          <h3 className="text-2xl text-[#2C3E50] font-bold mt-12 mb-5">Standard vs Featured</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse my-6">
+              <thead>
+                <tr className="bg-[#2C3E50] text-white">
+                  <th className="p-4 text-left font-semibold">Feature</th>
+                  <th className="p-4 text-left font-semibold">Standard</th>
+                  <th className="p-4 text-left font-semibold">Featured</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Listed in directory', true, true],
+                  ['Contact information', true, true],
+                  ['Services offered', true, true],
+                  ['Featured badge', false, true],
+                  ['Top search placement', false, true],
+                  ['Enhanced styling', false, true],
+                  ['Priority support', false, true],
+                  ['Monthly analytics', false, true],
+                ].map(([feature, standard, featured]) => (
+                  <tr key={String(feature)} className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
+                    <td className="p-4 text-[#2C3E50]">{String(feature)}</td>
+                    <td className="p-4">{standard ? <span className="text-emerald-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
+                    <td className="p-4">{featured ? <span className="text-emerald-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
+        {/* Pricing */}
         <div
           id="pricing"
-          className="text-white py-16 px-12 rounded-lg text-center my-10 shadow-lg"
-          style={{ background: 'linear-gradient(135deg, #5D6D7E 0%, #4A5A6A 100%)' }}
+          className="text-white py-16 px-6 md:px-12 rounded-lg text-center my-10 shadow-lg"
+          style={{ background: 'linear-gradient(135deg, #2C3E50 0%, #3D5166 100%)' }}
         >
-          <h2 className="text-4xl font-bold mb-3">Simple, Transparent Pricing</h2>
-          <p className="text-lg opacity-90 mb-5">No setup fees. No long-term contracts. Cancel anytime.</p>
-          
-          <div className="text-[72px] font-bold my-5">$99</div>
-          <div className="text-2xl opacity-95 mb-5">per month</div>
-          
-          <p className="mt-5 text-lg">That is just <strong>$3.30 per day</strong> to reach more families.</p>
-          
-          <div className="bg-white rounded-lg p-10 mt-10 max-w-[700px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Simple, Transparent Pricing</h2>
+          <p className="text-lg opacity-90 mb-2">No setup fees. No long-term contracts. Cancel anytime.</p>
+
+          <div className="text-[72px] font-bold my-4">$99</div>
+          <div className="text-2xl opacity-95 mb-2">per month</div>
+          <p className="text-lg mb-2">That is just <strong>$3.30 per day</strong> to reach more families.</p>
+
+          {/* 30-day guarantee — moved above the form */}
+          <div className="inline-block bg-white/10 border border-white/30 rounded-lg px-8 py-4 mt-4 mb-8">
+            <p className="text-white font-semibold text-lg">30-Day Money-Back Guarantee</p>
+            <p className="text-white/80 text-sm mt-1">Not seeing results in your first month? We will refund you in full, no questions asked.</p>
+          </div>
+
+          <div className="bg-white rounded-lg p-8 md:p-10 mt-4 max-w-[700px] mx-auto">
             <h3 className="text-[#2C3E50] text-2xl font-bold mb-5 text-center">
               Start Your Featured Listing
             </h3>
-            
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/js24LxZ50to0b8i1GWuw"
               style={{ width: '100%', height: '1441px', border: 'none', borderRadius: '3px' }}
@@ -189,67 +155,39 @@ export default function FeaturedListingPage() {
               title="Featured Listing Signup"
             />
           </div>
-          
-          <p className="mt-8 text-sm opacity-80">Have questions? Call us at (615) 555-1234</p>
+
+          <p className="mt-8 text-sm opacity-80">
+            Questions? Email us at{' '}
+            <a href="mailto:listings@funeralhomedirectories.com" className="underline hover:opacity-100">
+              listings@funeralhomedirectories.com
+            </a>
+          </p>
         </div>
 
-        <div className="bg-white rounded-lg p-12 shadow-md">
-          <h2 className="text-4xl text-[#2C3E50] text-center font-bold mb-10">
+        {/* FAQ */}
+        <div className="bg-white rounded-lg p-8 md:p-12 shadow-md">
+          <h2 className="text-3xl md:text-4xl text-[#2C3E50] text-center font-bold mb-10">
             Frequently Asked Questions
           </h2>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              How long does it take to get featured?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">Your listing can be featured within 24-48 hours of signup. We will work with you to ensure all information is accurate and up-to-date.</p>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              Can I cancel anytime?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">Yes! There are no long-term contracts. You can cancel your featured listing at any time with 30 days notice.</p>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              What payment methods do you accept?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">We accept all major credit cards and ACH bank transfers. Payment is processed monthly and can be set up for automatic billing.</p>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              How do I know it is working?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">You will receive monthly analytics reports showing your listing views, clicks, and inquiries. Plus, you will notice the increase in phone calls and website traffic.</p>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              What if I am not satisfied?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">We offer a 30-day money-back guarantee. If you are not seeing results, we will refund your first month - no questions asked.</p>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl text-[#2C3E50] font-bold mt-8 mb-5">
-              Do you work with funeral homes of all sizes?
-            </h3>
-            <p className="text-[#5A6C7D] leading-relaxed">Absolutely! From independent family-owned funeral homes to larger operations, our featured listings benefit businesses of all sizes.</p>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            {[
+              { q: 'How long does it take to get featured?', a: 'Your listing can be featured within 24-48 hours of signup. We will work with you to ensure all information is accurate and up-to-date.' },
+              { q: 'Can I cancel anytime?', a: 'Yes. There are no long-term contracts. You can cancel your featured listing at any time with 30 days notice.' },
+              { q: 'What payment methods do you accept?', a: 'We accept all major credit cards and ACH bank transfers. Payment is processed monthly and can be set up for automatic billing.' },
+              { q: 'How do I know it is working?', a: 'You will receive monthly analytics reports showing your listing views, clicks, and inquiries. Plus, you will notice the increase in phone calls and website traffic.' },
+              { q: 'What if I am not satisfied?', a: 'We offer a 30-day money-back guarantee. If you are not seeing results, we will refund your first month with no questions asked.' },
+              { q: 'Do you work with funeral homes of all sizes?', a: 'Absolutely. From independent family-owned funeral homes to larger operations, our featured listings benefit businesses of all sizes.' },
+            ].map((faq) => (
+              <div key={faq.q} className="border-b border-gray-100 pb-8">
+                <h3 className="text-xl text-[#2C3E50] font-bold mb-3">{faq.q}</h3>
+                <p className="text-[#5A6C7D] leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      <footer className="bg-[#2C3E50] text-white text-center py-10 px-5 mt-16">
-        <p className="my-2.5 opacity-90">© 2024 Evermore Funeral Directories. All rights reserved.</p>
-        <p className="my-2.5 opacity-90">
-          <Link href="/privacy" className="text-white mx-2.5 hover:opacity-80">Privacy Policy</Link> | 
-          <Link href="/terms" className="text-white mx-2.5 hover:opacity-80">Terms of Service</Link>
-        </p>
-        <p className="my-2.5 opacity-90">Providing compassionate guidance and support during difficult times.</p>
-      </footer>
+      </div>
 
       <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </div>
