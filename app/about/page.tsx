@@ -19,8 +19,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Navigation />
-      <PremiumBanner />
       <div className="min-h-screen bg-gray-50">
 
         {/* Hero */}
