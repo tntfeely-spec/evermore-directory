@@ -89,8 +89,10 @@ export default function BlogIndexPage() {
           ]
         }) }}
       />
-    <main className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+<main className="min-h-screen relative">
+      <div className="fixed inset-0 z-0" style={{ backgroundImage: 'url(/Ocean_Image.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.35 }} />
+      <div className="relative z-10">     
+        <div className="max-w-4xl mx-auto px-4 py-12">
         <header className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Funeral &amp; Cremation Planning Blog
@@ -136,9 +138,10 @@ export default function BlogIndexPage() {
             className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Browse by State
-          </Link>
+        </Link>
         </section>
       </div>
+    </div>
     </main>
     </>
   );
