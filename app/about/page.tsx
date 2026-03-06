@@ -19,8 +19,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="min-h-screen bg-gray-50">
-
+<div className="min-h-screen relative">
+  <div className="fixed inset-0 z-0" style={{ backgroundImage: 'url(/Mountain_Lake_Image.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.35 }} />
+  <div className="relative z-10">
         {/* Hero */}
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
