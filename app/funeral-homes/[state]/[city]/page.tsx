@@ -409,11 +409,10 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </div>
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Verified {cityName} Funeral Home Information
+                  {cityName} Funeral Home Information
                 </h3>
                 <p className="text-gray-600">
-                  All funeral homes in our {cityName} directory are verified with accurate contact information, addresses, and service details to ensure you can reach trusted local providers when you need them most.
-                </p>
+All funeral homes in our {cityName} directory include contact information, addresses, and service details to help you reach local providers when you need them most.                </p>
               </div>
               <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -436,7 +435,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                 Funeral homes in {cityName}, {stateName} specialize in providing compassionate end-of-life services to families during difficult times. Our directory connects you with both independent family-owned funeral directors and established memorial chapels throughout {cityName}. From local funeral homes to cremation providers and memorial service specialists, these trusted providers offer burial services, cremation options, memorial planning, pre-arrangement services, and grief support to help {cityName} families honor their loved ones.
               </p>
               <p className="mb-4 leading-relaxed">
-                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, our directory provides access to verified funeral homes with detailed service information, contact details, and location data. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create meaningful services that reflect your family's wishes and values.
+                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, our directory provides access to funeral homes with detailed service information, contact details, and location data. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create meaningful services that reflect your family's wishes and values.
               </p>
               <p className="leading-relaxed">
                 The funeral homes listed in {cityName} offer a full range of services including traditional funerals with viewing, graveside services, direct burial, cremation services with memorial options, celebration of life ceremonies, green burial alternatives, and comprehensive pre-planning services. Many {cityName} funeral homes also provide grief counseling, memorial products, and ongoing support to help families navigate the grieving process.
