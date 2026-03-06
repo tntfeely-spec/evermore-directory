@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
