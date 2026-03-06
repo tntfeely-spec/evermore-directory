@@ -225,6 +225,7 @@ export default function AboutPage() {
 
         </div>
       </div>
+    </div>
     </>
   );
 }
