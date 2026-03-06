@@ -69,8 +69,8 @@ export default function HomePage() {
                 <div className="text-gray-600 font-semibold">Funeral Homes Listed</div>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
-                <div className="text-gray-600 font-semibold">Verified Information</div>
+               <div className="text-4xl font-bold text-blue-600 mb-2">2,082+</div>
+                <div className="text-gray-600 font-semibold">Cities Covered</div>
               </div>
             </div>
           </div>
