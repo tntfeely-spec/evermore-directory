@@ -189,6 +189,16 @@ export default async function CityPage({ params }: PageProps) {
     ]
   };
 
+
+  // Fetch unique city description
+  const { data: descData } = await supabase
+    .from('city_descriptions')
+    .select('description')
+    .eq('city', cityName)
+    .eq('state_abbr', state.toUpperCase())
+    .single();
+  const cityDescription = descData?.description ||
+    `Find compassionate funeral homes and cremation services in ${cityName}. Compare trusted funeral directors offering burial, cremation, and memorial services.`;
   return (
     <>
       <script
@@ -228,7 +238,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               Funeral Homes in {cityName}, {stateName}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find compassionate funeral homes and cremation services in {cityName}. Compare trusted funeral directors offering burial, cremation, and memorial services.
+              {cityDescription}
             </p>
             <div className="mt-4 text-lg text-gray-700 font-semibold">
               {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} found
