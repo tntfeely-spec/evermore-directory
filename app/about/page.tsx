@@ -25,7 +25,7 @@ export default function AboutPage() {
         {/* Hero */}
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
               Built by Someone Who Has Been There
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
           {/* Founding Story */}
           <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               The Story Behind Evermore
             </h2>
             <div className="space-y-5 text-gray-700 leading-relaxed">
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
           {/* How It Works */}
           <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               How Evermore Works
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -83,8 +83,8 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-emerald-700">1</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Free for Families</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-base font-bold text-gray-900 mb-2">Free for Families</h3>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Search and compare funeral homes in any city across all 50 states.
                   No account required. No cost.
                 </p>
@@ -93,8 +93,8 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-emerald-700">2</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Supported by the Funeral Profession</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-base font-bold text-gray-900 mb-2">Supported by the Funeral Profession</h3>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Funeral homes can claim their free listing or upgrade to a
                   featured placement for $99 per month. Resources and partners
                   on the site are chosen for their relevance to families
@@ -105,8 +105,8 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-emerald-700">3</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Families First, Always</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-base font-bold text-gray-900 mb-2">Families First, Always</h3>
+                <p className="text-gray-600 text-base leading-relaxed">
                   Every decision about how this directory works starts with one
                   question: does this serve families well? That has been the
                   guiding principle from day one.
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
           {/* Commitment */}
           <div className="bg-emerald-700 rounded-xl shadow-md p-10 text-white">
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-center">
               Our Commitment to Families
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -171,7 +171,7 @@ export default function AboutPage() {
 
           {/* For Funeral Homes */}
           <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               For Funeral Home Owners
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -197,7 +197,7 @@ export default function AboutPage() {
 
           {/* Get in Touch */}
           <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Get in Touch
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -214,7 +214,7 @@ export default function AboutPage() {
 
           {/* Based in Nashville */}
           <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Based in Nashville, Tennessee
             </h2>
             <p className="text-gray-600 leading-relaxed">
