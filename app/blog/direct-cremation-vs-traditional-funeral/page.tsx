@@ -69,7 +69,7 @@ export default function DirectCremationVsTraditionalFuneral() {
                 <li>Casket</li>
               </ul>
             </div>
-            <p className="text-lg font-semibold text-teal-700">Typical cost: $1,000 – $3,000</p>
+            <p className="text-lg font-semibold text-blue-700">Typical cost: $1,000 – $3,000</p>
           </section>
 
           <section className="mb-10">
@@ -89,7 +89,7 @@ export default function DirectCremationVsTraditionalFuneral() {
                 <li>Burial or cremation</li>
               </ul>
             </div>
-            <p className="text-lg font-semibold text-teal-700">Typical cost: $7,000 – $15,000+</p>
+            <p className="text-lg font-semibold text-blue-700">Typical cost: $7,000 – $15,000+</p>
           </section>
 
           <section className="mb-10">

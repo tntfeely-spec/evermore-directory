@@ -40,7 +40,7 @@ export default function FeaturedListingPage() {
             </p>
             <a
               href="#pricing"
-              className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 text-xl font-bold rounded-lg transition-all whitespace-nowrap"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-xl font-bold rounded-lg transition-all whitespace-nowrap"
             >
               Get Started Today
             </a>
@@ -68,7 +68,7 @@ export default function FeaturedListingPage() {
                 { title: 'Statewide Reach', desc: 'Your featured listing appears across all relevant searches throughout your entire service area.' },
                 { title: 'Monthly Reports', desc: 'Track your performance with detailed analytics on views, clicks, and inquiries to measure your ROI.' },
               ].map((item) => (
-                <div key={item.title} className="bg-[#F5F7FA] p-8 rounded-lg border-l-4 border-emerald-600 hover:shadow-lg transition-all">
+                <div key={item.title} className="bg-[#F5F7FA] p-8 rounded-lg border-l-4 border-blue-600 hover:shadow-lg transition-all">
                   <h4 className="text-xl text-[#2C3E50] font-bold mb-3">{item.title}</h4>
                   <p className="text-[#5A6C7D] leading-relaxed">{item.desc}</p>
                 </div>
@@ -81,8 +81,8 @@ export default function FeaturedListingPage() {
               Here is how your listing will appear to families searching in your area:
             </p>
 
-            <div className="relative bg-white border-[3px] border-emerald-600 rounded-lg p-8 my-8 shadow-md max-w-2xl mx-auto">
-              <div className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-1 rounded font-bold text-xs tracking-widest">
+            <div className="relative bg-white border-[3px] border-blue-600 rounded-lg p-8 my-8 shadow-md max-w-2xl mx-auto">
+              <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded font-bold text-xs tracking-widest">
                 FEATURED
               </div>
               <div className="text-xl font-bold text-[#2C3E50] mb-2">Nashville Family Funeral Home</div>
@@ -91,8 +91,8 @@ export default function FeaturedListingPage() {
                 Serving Nashville families with compassion and care for over 40 years. Traditional funerals, direct cremation, and pre-planning services available.
               </p>
               <div className="pt-4 border-t border-gray-100 flex flex-wrap gap-6">
-                <span className="text-emerald-700 font-medium">Cremation: $1,800 - $3,500</span>
-                <span className="text-emerald-700 font-medium">Burial: $7,000 - $12,000</span>
+                <span className="text-blue-700 font-medium">Cremation: $1,800 - $3,500</span>
+                <span className="text-blue-700 font-medium">Burial: $7,000 - $12,000</span>
               </div>
             </div>
 
@@ -120,8 +120,8 @@ export default function FeaturedListingPage() {
                   ].map(([feature, standard, featured]) => (
                     <tr key={String(feature)} className="border-b border-[#E8EAED] hover:bg-[#F5F7FA]">
                       <td className="p-4 text-[#2C3E50]">{String(feature)}</td>
-                      <td className="p-4">{standard ? <span className="text-emerald-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
-                      <td className="p-4">{featured ? <span className="text-emerald-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
+                      <td className="p-4">{standard ? <span className="text-blue-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
+                      <td className="p-4">{featured ? <span className="text-blue-600 text-xl font-bold">✓</span> : <span className="text-gray-300 text-xl">-</span>}</td>
                     </tr>
                   ))}
                 </tbody>

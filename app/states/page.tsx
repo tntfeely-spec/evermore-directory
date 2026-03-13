@@ -112,7 +112,7 @@ export default async function StatesPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Verified Contact Information</h3>
                 <p className="text-gray-600">
                   All funeral homes in our directory are verified with accurate contact information, addresses, 
@@ -120,7 +120,7 @@ export default async function StatesPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Nationwide Coverage</h3>
                 <p className="text-gray-600">
                   Access funeral homes and cremation services in all 50 states, from major cities to small towns, 
@@ -156,7 +156,7 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Tips for Choosing a Funeral Home</h2>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
@@ -242,19 +242,19 @@ export default async function StatesPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Full funeral services with viewing</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Burial arrangements and cemetery coordination</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Memorial services and celebrations of life</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Religious and cultural ceremony planning</span>
                   </li>
                 </ul>
@@ -264,19 +264,19 @@ export default async function StatesPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Modern &amp; Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Direct cremation services</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Green burial and eco-friendly options</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Pre-planning and pre-arrangement services</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-teal-600 mr-3">•</span>
+                    <span className="text-blue-600 mr-3">•</span>
                     <span>Grief counseling and support groups</span>
                   </li>
                 </ul>
@@ -284,7 +284,7 @@ export default async function StatesPage() {
             </div>
           </div>
 
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for Families</h3>
               <p className="text-gray-700 leading-relaxed">

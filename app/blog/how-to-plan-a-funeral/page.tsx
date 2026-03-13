@@ -113,15 +113,15 @@ export default function HowToPlanAFuneralPage() {
               This is one of the most important decisions you&apos;ll make. The funeral home you choose will guide you through the entire process and the cost can vary by thousands of dollars between providers in the same city.
             </p>
             <div className="space-y-4">
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Compare at least 3 funeral homes</h3>
                 <p className="text-gray-600 text-sm">Call or visit at least three funeral homes and request their General Price List (GPL). They are required by law to provide it. Compare the basic services fee, preparation costs, and facility fees. Prices can vary by $3,000-$5,000 for the same services.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Ask the right questions</h3>
                 <p className="text-gray-600 text-sm">How long have you been in business? Are you family-owned or corporate? Do you offer payment plans? Can you accommodate our cultural or religious traditions? What is your availability for the dates we&apos;re considering?</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Trust your instincts</h3>
                 <p className="text-gray-600 text-sm">A good funeral director will be patient, transparent about pricing, and never pressure you into services you don&apos;t need. If you feel rushed or pressured, go elsewhere.</p>
               </div>
@@ -241,16 +241,16 @@ export default function HowToPlanAFuneralPage() {
               Funeral costs can add up quickly. Here&apos;s how to stay in control:
             </p>
             <div className="space-y-3">
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Set a budget before meeting with the funeral home.</span> It&apos;s much harder to say no to add-ons when you&apos;re emotional and don&apos;t have a number in mind.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Only pay for services you actually want.</span> The FTC Funeral Rule protects your right to choose individual items rather than being forced into a package.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Ask about payment plans.</span> Many funeral homes offer financing or accept credit cards. Some also work with insurance assignments.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Check for benefits.</span> Veterans benefits, Social Security death benefit ($255), life insurance, employer benefits, and union or fraternal organization benefits may all apply.</p>
               </div>
             </div>

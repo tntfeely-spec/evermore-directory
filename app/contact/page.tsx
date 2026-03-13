@@ -46,7 +46,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
 
               {submitted && (
-                <div className="mb-6 bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
+                <div className="mb-6 bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded-lg">
                   Thank you for your message! We will get back to you soon.
                 </div>
               )}
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                     placeholder="John Doe"
                   />
                 </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -132,14 +132,14 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow-lg"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow-lg"
                 >
                   Send Message
                 </button>
@@ -153,14 +153,14 @@ export default function ContactPage() {
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="h-6 w-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 mb-1">Email</h3>
-                      <a href="mailto:listings@funeralhomedirectories.com" className="text-teal-600 hover:text-teal-700 font-medium">
+                      <a href="mailto:listings@funeralhomedirectories.com" className="text-blue-600 hover:text-blue-700 font-medium">
                         listings@funeralhomedirectories.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
@@ -168,8 +168,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="h-6 w-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -183,7 +183,7 @@ export default function ContactPage() {
               </div>
 
               {/* Business Inquiries */}
-              <div className="bg-gradient-to-br from-teal-600 to-blue-700 rounded-2xl shadow-xl p-8 text-white">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl p-8 text-white">
                 <h2 className="text-2xl font-bold mb-4">Business Inquiries</h2>
                 <p className="mb-6">
                   Interested in listing your funeral home or exploring partnership opportunities?
@@ -196,7 +196,7 @@ export default function ContactPage() {
                 </ul>
                 <Link
                   href="/featured-listing"
-                  className="inline-block bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                  className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
                 >
                   Learn More About Featured Listings
                 </Link>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                 </p>
                 <Link
                   href="/resources"
-                  className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
                 >
                   View Resources
                 </Link>

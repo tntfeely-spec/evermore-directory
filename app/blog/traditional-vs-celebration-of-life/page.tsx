@@ -71,11 +71,11 @@ export default function TraditionalVsCelebrationPage() {
               </p>
               <p className="text-gray-600 mb-3">They work well when:</p>
               <ul className="space-y-2 text-gray-600 mb-4 ml-4">
-                <li className="flex gap-2"><span className="text-purple-600 font-bold mt-0.5">+</span><span>The deceased requested something less formal</span></li>
-                <li className="flex gap-2"><span className="text-purple-600 font-bold mt-0.5">+</span><span>The family wants flexibility on timing</span></li>
-                <li className="flex gap-2"><span className="text-purple-600 font-bold mt-0.5">+</span><span>Friends and family are geographically scattered</span></li>
-                <li className="flex gap-2"><span className="text-purple-600 font-bold mt-0.5">+</span><span>The person's life story is best told through personality and relationships</span></li>
-                <li className="flex gap-2"><span className="text-purple-600 font-bold mt-0.5">+</span><span>The family wants a lighter tone that includes laughter and storytelling</span></li>
+                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The deceased requested something less formal</span></li>
+                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family wants flexibility on timing</span></li>
+                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>Friends and family are geographically scattered</span></li>
+                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The person's life story is best told through personality and relationships</span></li>
+                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family wants a lighter tone that includes laughter and storytelling</span></li>
               </ul>
             </section>
 
@@ -110,7 +110,7 @@ export default function TraditionalVsCelebrationPage() {
                   <div className="text-lg font-bold text-gray-900">$2,000 to $5,000</div>
                   <p className="text-xs text-gray-500 mt-1">No cemetery plot or burial costs</p>
                 </div>
-                <div className="border border-teal-200 bg-teal-50 rounded-lg p-5">
+                <div className="border border-blue-200 bg-blue-50 rounded-lg p-5">
                   <h3 className="text-base font-semibold text-gray-800 mb-3">DIY Celebration After Direct Cremation</h3>
                   <p className="text-sm text-gray-600 mb-3">Direct cremation plus home, park, or private dining room</p>
                   <div className="text-lg font-bold text-gray-900">Often under $2,500</div>

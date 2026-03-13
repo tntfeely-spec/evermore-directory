@@ -133,7 +133,7 @@ export default function SearchAutocomplete() {
           onKeyDown={handleKeyDown}
           onFocus={() => results.length > 0 && setOpen(true)}
           placeholder="Enter city, suburb, or ZIP code..."
-          className="w-full px-5 py-4 text-lg rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400"
+          className="w-full px-5 py-4 text-lg rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400"
           aria-label="Search for funeral homes by city, suburb, or ZIP code"
           aria-autocomplete="list"
           aria-expanded={open}
@@ -142,7 +142,7 @@ export default function SearchAutocomplete() {
         />
         <button
           onClick={handleSubmit}
-          className="px-6 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-r-lg transition-colors flex items-center gap-2 whitespace-nowrap"
+          className="px-6 py-4 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-r-lg transition-colors flex items-center gap-2 whitespace-nowrap"
           aria-label="Search"
         >
           {loading ? (
@@ -173,7 +173,7 @@ export default function SearchAutocomplete() {
               aria-selected={i === selected}
               onClick={() => handleSelect(result)}
               className={`w-full text-left px-5 py-3 flex items-center justify-between transition-colors ${
-                i === selected ? 'bg-emerald-50' : 'hover:bg-gray-50'
+                i === selected ? 'bg-blue-50' : 'hover:bg-gray-50'
               }`}
             >
               <div>

@@ -9,7 +9,7 @@ export default function PremiumBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 relative z-50">
+    <div className="bg-gradient-to-r from-blue-600 to-blue-600 text-white py-3 px-4 relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-3 flex-1">
           <span className="text-2xl">🌟</span>

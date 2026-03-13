@@ -65,7 +65,7 @@ export default function FuneralCosts2026Page() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Direct Burial (No Service)</p>
-                <p className="text-3xl font-bold text-teal-600">$1,500 - $4,000</p>
+                <p className="text-3xl font-bold text-blue-600">$1,500 - $4,000</p>
                 <p className="text-sm text-gray-500">Most affordable option</p>
               </div>
               <div className="bg-white rounded-lg p-4">
@@ -75,7 +75,7 @@ export default function FuneralCosts2026Page() {
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Full Service + Burial</p>
-                <p className="text-3xl font-bold text-purple-600">$10,000 - $15,000+</p>
+                <p className="text-3xl font-bold text-blue-600">$10,000 - $15,000+</p>
                 <p className="text-sm text-gray-500">With cemetery plot &amp; headstone</p>
               </div>
             </div>
@@ -189,31 +189,31 @@ export default function FuneralCosts2026Page() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">7 Ways to Reduce Funeral Costs</h2>
             <div className="space-y-4">
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">1. Get the General Price List (GPL)</h3>
                 <p className="text-gray-600 text-sm">Federal law (the FTC Funeral Rule) requires every funeral home to give you an itemized price list. Always request it and compare prices from at least 3 funeral homes before deciding.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">2. Consider Direct Burial</h3>
                 <p className="text-gray-600 text-sm">Direct burial skips the viewing, embalming, and formal service. The body is buried shortly after death in a simple container. This can save $3,000-$7,000 compared to a traditional funeral.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">3. Choose Cremation Instead</h3>
                 <p className="text-gray-600 text-sm">Direct cremation is the most affordable option at $500-$3,500. You can still hold a memorial service afterward with the ashes present. <Link href="/blog/cremation-costs-2026" className="text-blue-600 hover:underline">See cremation prices →</Link></p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">4. Buy the Casket Separately</h3>
                 <p className="text-gray-600 text-sm">Online retailers and wholesale clubs sell caskets for 50-70% less than funeral homes. Funeral homes are legally required to accept a casket purchased elsewhere without charging a handling fee.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">5. Skip Embalming</h3>
                 <p className="text-gray-600 text-sm">Embalming is almost never legally required. If you&apos;re having a closed-casket service or a quick burial, you can save $500-$1,000 by declining embalming. Refrigeration is a less expensive alternative.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">6. Use a Church or Community Space</h3>
                 <p className="text-gray-600 text-sm">Holding the funeral service at a church, community center, or even your home instead of the funeral home chapel can save $400-$800 in facility fees.</p>
               </div>
-              <div className="bg-teal-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">7. Pre-Plan to Lock In Prices</h3>
                 <p className="text-gray-600 text-sm">Funeral costs rise 2-4% per year. Pre-planning and pre-paying lets you lock in today&apos;s prices. Just make sure the funds are held in an irrevocable trust or insurance policy for protection.</p>
               </div>

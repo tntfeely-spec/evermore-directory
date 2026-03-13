@@ -248,15 +248,15 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
           {featuredHomes.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="text-yellow-500 mr-2">⭐</span> Featured Funeral Homes in {cityName}
+                <span className="text-blue-500 mr-2">⭐</span> Featured Funeral Homes in {cityName}
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <div key={home.id} className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl shadow-lg p-8 border-2 border-yellow-400">
+                  <div key={home.id} className="bg-gradient-to-r from-blue-50 to-amber-50 rounded-xl shadow-lg p-8 border-2 border-blue-400">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
-                          <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
+                          <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
                             FEATURED
                           </span>
                           <h3 className="text-2xl font-bold text-gray-900">{home.business_name}</h3>
@@ -416,14 +416,14 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                   The Evermore Directory helps you compare funeral homes and cremation providers in {cityName}, allowing you to find services that match your needs and budget for burial, cremation, or memorial planning.
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {cityName} Funeral Home Information
                 </h3>
                 <p className="text-gray-600">
 All funeral homes in our {cityName} directory include contact information, addresses, and service details to help you reach local providers when you need them most.                </p>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Local {cityName} Expertise
                 </h3>
@@ -453,7 +453,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
 
           {/* Tips Section */}
-          <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Tips for Choosing a Funeral Home in {cityName}, {stateName}
             </h2>
@@ -525,26 +525,26 @@ All funeral homes in our {cityName} directory include contact information, addre
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Modern & Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Direct cremation services</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
-                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Direct cremation services</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
+                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
                 </ul>
               </div>
             </div>
           </div>
 
           {/* Pro Tip Box */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {cityName} Families</h3>
               <p className="text-gray-700 leading-relaxed">

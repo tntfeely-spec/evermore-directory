@@ -20,18 +20,18 @@ export default function TermsPage() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-teal-600 font-medium transition">Home</Link>
-              <Link href="/about" className="text-gray-700 hover:text-teal-600 font-medium transition">About Us</Link>
-              <Link href="/how-it-works" className="text-gray-700 hover:text-teal-600 font-medium transition">How It Works</Link>
-              <Link href="/resources" className="text-gray-700 hover:text-teal-600 font-medium transition">Resources</Link>
-              <Link href="/contact" className="text-gray-700 hover:text-teal-600 font-medium transition">Contact</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition">Home</Link>
+              <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition">About Us</Link>
+              <Link href="/how-it-works" className="text-gray-700 hover:text-blue-600 font-medium transition">How It Works</Link>
+              <Link href="/resources" className="text-gray-700 hover:text-blue-600 font-medium transition">Resources</Link>
+              <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition">Contact</Link>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-teal-600 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 focus:outline-none"
               >
                 <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   {isMenuOpen ? (
@@ -49,11 +49,11 @@ export default function TermsPage() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Home</Link>
-              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">About Us</Link>
-              <Link href="/how-it-works" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">How It Works</Link>
-              <Link href="/resources" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Resources</Link>
-              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Contact</Link>
+              <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Home</Link>
+              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">About Us</Link>
+              <Link href="/how-it-works" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">How It Works</Link>
+              <Link href="/resources" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Resources</Link>
+              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Contact</Link>
             </div>
           </div>
         )}
@@ -378,7 +378,7 @@ export default function TermsPage() {
               </div>
             </section>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mt-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-8">
               <p className="font-semibold text-gray-800 mb-2">Important Notice:</p>
               <p className="text-gray-700">
                 By using Evermore Directory, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, please discontinue use of our Services immediately.

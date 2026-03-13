@@ -221,7 +221,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Verified Contact Information
                 </h3>
@@ -231,7 +231,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Compare Services and Options
                 </h3>
@@ -264,7 +264,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
           </div>
 
           {/* Tips Section */}
-          <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Tips for Choosing a Funeral Home in {stateName}
             </h2>
@@ -297,7 +297,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
           </div>
 
           {/* Pro Tip Box */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {stateName} Families</h3>
               <p className="text-gray-700 leading-relaxed">

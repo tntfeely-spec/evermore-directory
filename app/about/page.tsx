@@ -80,8 +80,8 @@ export default function AboutPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-emerald-700">1</span>
+                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-700">1</span>
                 </div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Free for Families</h3>
                 <p className="text-gray-600 text-base leading-relaxed">
@@ -90,8 +90,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-emerald-700">2</span>
+                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-700">2</span>
                 </div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Supported by the Funeral Profession</h3>
                 <p className="text-gray-600 text-base leading-relaxed">
@@ -102,8 +102,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-emerald-700">3</span>
+                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-700">3</span>
                 </div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Families First, Always</h3>
                 <p className="text-gray-600 text-base leading-relaxed">
@@ -116,14 +116,14 @@ export default function AboutPage() {
           </div>
 
           {/* Commitment */}
-          <div className="bg-emerald-700 rounded-xl shadow-md p-10 text-white">
+          <div className="bg-blue-700 rounded-xl shadow-md p-10 text-white">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Our Commitment to Families
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <h3 className="font-bold text-xl mb-3">Honest Information</h3>
-                <p className="text-emerald-100 text-sm leading-relaxed">
+                <p className="text-blue-100 text-sm leading-relaxed">
                   Listings include contact details, services offered, and price
                   ranges so families can make informed comparisons before making
                   any calls.
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-bold text-xl mb-3">Relevant Resources Only</h3>
-                <p className="text-emerald-100 text-sm leading-relaxed">
+                <p className="text-blue-100 text-sm leading-relaxed">
                   Any partners or resources on this site are chosen because they
                   are genuinely useful to families during this time. Funeral
                   planning, grief support, estate guidance. Nothing unrelated.
@@ -139,7 +139,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-bold text-xl mb-3">Built for This Moment</h3>
-                <p className="text-emerald-100 text-sm leading-relaxed">
+                <p className="text-blue-100 text-sm leading-relaxed">
                   We know families using this directory are often doing so under
                   enormous stress. Everything about how this site is designed
                   reflects that.
@@ -155,15 +155,15 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-emerald-700 mb-1">2,082+</div>
+                <div className="text-4xl font-bold text-blue-700 mb-1">2,082+</div>
                 <div className="text-gray-600 text-sm">Cities Covered</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-700 mb-1">50</div>
+                <div className="text-4xl font-bold text-blue-700 mb-1">50</div>
                 <div className="text-gray-600 text-sm">States + DC</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-700 mb-1">$0</div>
+                <div className="text-4xl font-bold text-blue-700 mb-1">$0</div>
                 <div className="text-gray-600 text-sm">Cost to Families</div>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/featured-listing"
-                className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center"
+                className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center"
               >
                 Learn About Featured Listings
               </Link>
@@ -206,7 +206,7 @@ export default function AboutPage() {
             </p>
             <a
               href="mailto:listings@funeralhomedirectories.com"
-              className="text-emerald-700 hover:text-emerald-800 font-semibold text-lg"
+              className="text-blue-700 hover:text-blue-800 font-semibold text-lg"
             >
               listings@funeralhomedirectories.com
             </a>

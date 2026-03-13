@@ -47,7 +47,7 @@ export default function Footer() {
               <p className="text-xs text-gray-500">For funeral home inquiries:</p>
               <a
                 href="mailto:listings@funeralhomedirectories.com"
-                className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+                className="text-sm text-blue-400 hover:text-blue-300 transition-colors"
               >
                 listings@funeralhomedirectories.com
               </a>

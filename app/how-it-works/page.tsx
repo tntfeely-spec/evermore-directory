@@ -20,18 +20,18 @@ export default function HowItWorksPage() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-teal-600 font-medium transition">Home</Link>
-              <Link href="/about" className="text-gray-700 hover:text-teal-600 font-medium transition">About Us</Link>
-              <Link href="/how-it-works" className="text-teal-600 font-semibold">How It Works</Link>
-              <Link href="/resources" className="text-gray-700 hover:text-teal-600 font-medium transition">Resources</Link>
-              <Link href="/contact" className="text-gray-700 hover:text-teal-600 font-medium transition">Contact</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition">Home</Link>
+              <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition">About Us</Link>
+              <Link href="/how-it-works" className="text-blue-600 font-semibold">How It Works</Link>
+              <Link href="/resources" className="text-gray-700 hover:text-blue-600 font-medium transition">Resources</Link>
+              <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition">Contact</Link>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-teal-600 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 focus:outline-none"
               >
                 <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   {isMenuOpen ? (
@@ -49,11 +49,11 @@ export default function HowItWorksPage() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Home</Link>
-              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">About Us</Link>
-              <Link href="/how-it-works" className="block px-3 py-2 bg-teal-50 text-teal-600 rounded-md font-semibold">How It Works</Link>
-              <Link href="/resources" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Resources</Link>
-              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 rounded-md font-medium">Contact</Link>
+              <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Home</Link>
+              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">About Us</Link>
+              <Link href="/how-it-works" className="block px-3 py-2 bg-blue-50 text-blue-600 rounded-md font-semibold">How It Works</Link>
+              <Link href="/resources" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Resources</Link>
+              <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md font-medium">Contact</Link>
             </div>
           </div>
         )}
@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
           {/* Step 1 */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-3 bg-gradient-to-br from-teal-500 to-teal-600 p-8 flex items-center justify-center">
+              <div className="lg:col-span-3 bg-gradient-to-br from-blue-500 to-blue-600 p-8 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-2">1</div>
                   <div className="text-white font-semibold text-lg">Search</div>
@@ -87,19 +87,19 @@ export default function HowItWorksPage() {
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Search by city, state, or zip code</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Filter by specific services you need</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Browse all available funeral homes in your area</span>
@@ -108,7 +108,7 @@ export default function HowItWorksPage() {
                 <div className="mt-6">
                   <Link 
                     href="/search"
-                    className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
                   >
                     Start Searching
                   </Link>
@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
           {/* Step 3 */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-3 bg-gradient-to-br from-teal-500 to-teal-600 p-8 flex items-center justify-center">
+              <div className="lg:col-span-3 bg-gradient-to-br from-blue-500 to-blue-600 p-8 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-2">3</div>
                   <div className="text-white font-semibold text-lg">Connect</div>
@@ -177,25 +177,25 @@ export default function HowItWorksPage() {
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Call directly using provided phone numbers</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Visit funeral home websites for more details</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Schedule consultations or visits</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Ask questions about services and pricing</span>
@@ -208,7 +208,7 @@ export default function HowItWorksPage() {
           {/* Step 4 */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-3 bg-gradient-to-br from-purple-500 to-purple-600 p-8 flex items-center justify-center lg:order-last">
+              <div className="lg:col-span-3 bg-gradient-to-br from-blue-500 to-blue-600 p-8 flex items-center justify-center lg:order-last">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-2">4</div>
                   <div className="text-white font-semibold text-lg">Decide</div>
@@ -221,25 +221,25 @@ export default function HowItWorksPage() {
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Select the funeral home that fits your needs</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Coordinate services and arrangements</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Work with professionals who understand your needs</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-purple-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Honor your loved one with dignity and compassion</span>
@@ -259,7 +259,7 @@ export default function HowItWorksPage() {
             </p>
             <Link 
               href="/resources"
-              className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
             >
               View Resources
             </Link>
@@ -280,7 +280,7 @@ export default function HowItWorksPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-teal-600 to-blue-700 rounded-2xl shadow-xl p-8 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Begin?
           </h2>
@@ -289,7 +289,7 @@ export default function HowItWorksPage() {
           </p>
           <Link 
             href="/search"
-            className="inline-block bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
           >
             Search Funeral Homes Now
           </Link>

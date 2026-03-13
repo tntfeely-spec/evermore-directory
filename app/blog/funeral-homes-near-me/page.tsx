@@ -202,24 +202,24 @@ export default function FuneralHomesNearMePage() {
               Most funeral homes are honest and compassionate, but it&apos;s important to know the warning signs:
             </p>
             <div className="space-y-3">
-              <div className="border border-red-200 rounded-lg p-4 bg-red-50">
-                <h3 className="font-semibold text-red-800 mb-1">Refusing to provide a price list</h3>
+              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h3 className="font-semibold text-blue-800 mb-1">Refusing to provide a price list</h3>
                 <p className="text-gray-600 text-sm">This is a violation of federal law. If a funeral home won&apos;t give you a GPL, walk away and report them to the FTC.</p>
               </div>
-              <div className="border border-red-200 rounded-lg p-4 bg-red-50">
-                <h3 className="font-semibold text-red-800 mb-1">Pressuring you toward expensive options</h3>
+              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h3 className="font-semibold text-blue-800 mb-1">Pressuring you toward expensive options</h3>
                 <p className="text-gray-600 text-sm">Comments like &quot;Don&apos;t you want the best for your loved one?&quot; to upsell a more expensive casket are manipulative. A good funeral director presents options without judgment.</p>
               </div>
-              <div className="border border-red-200 rounded-lg p-4 bg-red-50">
-                <h3 className="font-semibold text-red-800 mb-1">Claiming embalming is required by law</h3>
+              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h3 className="font-semibold text-blue-800 mb-1">Claiming embalming is required by law</h3>
                 <p className="text-gray-600 text-sm">Embalming is almost never legally required. If a funeral home insists it is, they are either misinformed or trying to add to your bill.</p>
               </div>
-              <div className="border border-red-200 rounded-lg p-4 bg-red-50">
-                <h3 className="font-semibold text-red-800 mb-1">Refusing to accept a casket purchased elsewhere</h3>
+              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h3 className="font-semibold text-blue-800 mb-1">Refusing to accept a casket purchased elsewhere</h3>
                 <p className="text-gray-600 text-sm">Federal law requires funeral homes to accept caskets bought from third parties without charging a handling fee. Any funeral home that refuses or adds a fee is violating the law.</p>
               </div>
-              <div className="border border-red-200 rounded-lg p-4 bg-red-50">
-                <h3 className="font-semibold text-red-800 mb-1">Rushing you into decisions</h3>
+              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                <h3 className="font-semibold text-blue-800 mb-1">Rushing you into decisions</h3>
                 <p className="text-gray-600 text-sm">While some decisions need to be made quickly, a good funeral director will give you space and time to think. If you feel rushed, ask for a day to consider your options.</p>
               </div>
             </div>
