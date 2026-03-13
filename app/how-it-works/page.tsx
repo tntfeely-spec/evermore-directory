@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
           {/* Step 3 */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-3 bg-gradient-to-br from-green-500 to-green-600 p-8 flex items-center justify-center">
+              <div className="lg:col-span-3 bg-gradient-to-br from-teal-500 to-teal-600 p-8 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-2">3</div>
                   <div className="text-white font-semibold text-lg">Connect</div>
@@ -177,25 +177,25 @@ export default function HowItWorksPage() {
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Call directly using provided phone numbers</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Visit funeral home websites for more details</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Schedule consultations or visits</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 text-teal-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Ask questions about services and pricing</span>

@@ -74,7 +74,7 @@ export default function CremationNearMePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border p-3">Funerals Your Way</td><td className="border p-3 text-green-600 font-semibold">$995 - $3,000</td></tr>
+                  <tr><td className="border p-3">Funerals Your Way</td><td className="border p-3 text-teal-600 font-semibold">$995 - $3,000</td></tr>
                   <tr><td className="border p-3">Bayview Crematory</td><td className="border p-3">$1,200 - $3,500</td></tr>
                   <tr><td className="border p-3">California Cremation & Burial</td><td className="border p-3">$1,500 - $4,000</td></tr>
                   <tr><td className="border p-3">Anderson-Ragsdale Mortuary</td><td className="border p-3">$2,500 - $5,500</td></tr>

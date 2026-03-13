@@ -57,7 +57,7 @@ export default function CremationSanJosePage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-green-50 rounded-lg p-6">
+          <section className="mb-10 bg-teal-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">San Jose Cremation Prices at a Glance</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded">
@@ -71,7 +71,7 @@ export default function CremationSanJosePage() {
                 <tbody>
                   <tr>
                     <td className="border p-3 font-semibold">Direct Cremation</td>
-                    <td className="border p-3 text-green-600 font-semibold">$1,095 - $3,200</td>
+                    <td className="border p-3 text-teal-600 font-semibold">$1,095 - $3,200</td>
                     <td className="border p-3 text-sm">Basic services, transportation, cremation, container for ashes</td>
                   </tr>
                   <tr>
@@ -151,7 +151,7 @@ export default function CremationSanJosePage() {
                 <tbody>
                   <tr>
                     <td className="border p-3">Budget-Friendly Provider</td>
-                    <td className="border p-3 text-green-600">$1,095 - $2,500</td>
+                    <td className="border p-3 text-teal-600">$1,095 - $2,500</td>
                     <td className="border p-3">$4,000 - $8,000</td>
                   </tr>
                   <tr>

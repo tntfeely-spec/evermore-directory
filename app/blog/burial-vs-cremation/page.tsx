@@ -284,7 +284,7 @@ export default function BurialVsCremationPage() {
                 <p className="text-gray-600 text-sm mb-2">A single cremation uses approximately 28 gallons of natural gas and releases about 540 pounds of carbon dioxide. However, cremation avoids the ongoing land use and chemical impacts of burial.</p>
               </div>
             </div>
-            <div className="mt-4 border border-green-200 rounded-lg p-4 bg-green-50">
+            <div className="mt-4 border border-teal-200 rounded-lg p-4 bg-teal-50">
               <h3 className="font-semibold text-gray-800 mb-2">Green Alternatives</h3>
               <p className="text-gray-600 text-sm">For environmentally conscious families, green burial (no embalming, biodegradable casket, natural cemetery) and alkaline hydrolysis (water cremation) are growing alternatives. Green burial costs are comparable to direct burial ($2,000-$5,000).</p>
             </div>

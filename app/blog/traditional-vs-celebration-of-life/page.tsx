@@ -110,7 +110,7 @@ export default function TraditionalVsCelebrationPage() {
                   <div className="text-lg font-bold text-gray-900">$2,000 to $5,000</div>
                   <p className="text-xs text-gray-500 mt-1">No cemetery plot or burial costs</p>
                 </div>
-                <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+                <div className="border border-teal-200 bg-teal-50 rounded-lg p-5">
                   <h3 className="text-base font-semibold text-gray-800 mb-3">DIY Celebration After Direct Cremation</h3>
                   <p className="text-sm text-gray-600 mb-3">Direct cremation plus home, park, or private dining room</p>
                   <div className="text-lg font-bold text-gray-900">Often under $2,500</div>

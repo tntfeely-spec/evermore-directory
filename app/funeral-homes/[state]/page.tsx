@@ -221,7 +221,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Verified Contact Information
                 </h3>

@@ -90,9 +90,9 @@ export default function FuneralHomesLosAngelesPage() {
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-green-50 rounded-lg p-6">
+              <div className="bg-teal-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Direct Cremation in LA</h3>
-                <p className="text-3xl font-bold text-green-600 mb-2">$995 - $3,500</p>
+                <p className="text-3xl font-bold text-teal-600 mb-2">$995 - $3,500</p>
                 <ul className="text-gray-600 text-sm space-y-1">
                   <li>• No viewing or service required</li>
                   <li>• Body cremated within 24-48 hours</li>

@@ -46,7 +46,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
 
               {submitted && (
-                <div className="mb-6 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                <div className="mb-6 bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
                   Thank you for your message! We will get back to you soon.
                 </div>
               )}
@@ -168,8 +168,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                      <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="h-6 w-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>

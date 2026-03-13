@@ -416,7 +416,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                   The Evermore Directory helps you compare funeral homes and cremation providers in {cityName}, allowing you to find services that match your needs and budget for burial, cremation, or memorial planning.
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-green-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-teal-500">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {cityName} Funeral Home Information
                 </h3>
@@ -525,19 +525,19 @@ All funeral homes in our {cityName} directory include contact information, addre
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Modern & Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Direct cremation services</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
-                  <li className="flex items-start"><span className="text-green-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Direct cremation services</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
+                  <li className="flex items-start"><span className="text-teal-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
                 </ul>
               </div>
             </div>
