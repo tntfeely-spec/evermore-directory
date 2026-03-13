@@ -57,7 +57,7 @@ export default function CremationNearMePage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Price Transparency Matters</h2>
             <p className="text-gray-600 mb-4">
               The funeral industry has historically lacked price transparency, making it difficult for families to compare costs during an already stressful time. Prices for the same service can vary by <strong>300% or more</strong> within the same city.
@@ -74,11 +74,11 @@ export default function CremationNearMePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border p-3">Funerals Your Way</td><td className="border p-3 text-blue-600 font-semibold">$995 - $3,000</td></tr>
+                  <tr><td className="border p-3">Funerals Your Way</td><td className="border p-3 text-slate-600 font-semibold">$995 - $3,000</td></tr>
                   <tr><td className="border p-3">Bayview Crematory</td><td className="border p-3">$1,200 - $3,500</td></tr>
                   <tr><td className="border p-3">California Cremation & Burial</td><td className="border p-3">$1,500 - $4,000</td></tr>
                   <tr><td className="border p-3">Anderson-Ragsdale Mortuary</td><td className="border p-3">$2,500 - $5,500</td></tr>
-                  <tr><td className="border p-3">Greenwood Memorial Park</td><td className="border p-3 text-blue-600">$2,500 - $6,000</td></tr>
+                  <tr><td className="border p-3">Greenwood Memorial Park</td><td className="border p-3 text-slate-600">$2,500 - $6,000</td></tr>
                 </tbody>
               </table>
             </div>
@@ -86,7 +86,7 @@ export default function CremationNearMePage() {
               That&apos;s a difference of over $1,500 for the lowest-cost option alone. The Evermore Directory shows actual price ranges for funeral homes nationwide so you can compare before you call.
             </p>
             <p className="mt-4">
-              <Link href="/funeral-homes/ca/san-diego" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/funeral-homes/ca/san-diego" className="text-slate-600 hover:underline font-semibold">
                 View all San Diego cremation prices →
               </Link>
             </p>
@@ -104,7 +104,7 @@ export default function CremationNearMePage() {
                 <p className="text-gray-600 mb-2">
                   The most affordable option. The body is cremated shortly after death with no viewing, visitation, or funeral service beforehand.
                 </p>
-                <p className="text-blue-600 font-semibold">Average cost: $1,000 - $3,000</p>
+                <p className="text-slate-600 font-semibold">Average cost: $1,000 - $3,000</p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-6">
@@ -112,7 +112,7 @@ export default function CremationNearMePage() {
                 <p className="text-gray-600 mb-2">
                   Cremation takes place first, followed by a memorial service with the urn present. No embalming required.
                 </p>
-                <p className="text-blue-600 font-semibold">Average cost: $2,000 - $4,000</p>
+                <p className="text-slate-600 font-semibold">Average cost: $2,000 - $4,000</p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-6">
@@ -120,7 +120,7 @@ export default function CremationNearMePage() {
                 <p className="text-gray-600 mb-2">
                   Includes embalming and a viewing or visitation before cremation. Similar to a traditional funeral but with cremation instead of burial.
                 </p>
-                <p className="text-blue-600 font-semibold">Average cost: $4,000 - $6,000</p>
+                <p className="text-slate-600 font-semibold">Average cost: $4,000 - $6,000</p>
               </div>
             </div>
           </section>
@@ -132,28 +132,28 @@ export default function CremationNearMePage() {
             </p>
             
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">1. Use a Funeral Home Directory with Price Data</h3>
                 <p className="text-gray-600">
                   The Evermore Directory shows actual cremation and burial price ranges for funeral homes across all 50 states. Unlike other directories, you can compare costs upfront before making a single phone call—saving you time and helping you avoid sticker shock.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">2. Request Price Lists</h3>
                 <p className="text-gray-600">
                   By law (the FTC Funeral Rule), funeral homes must provide itemized price lists. Request these from at least 3 providers before making a decision.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">3. Check for Hidden Fees</h3>
                 <p className="text-gray-600">
                   Ask about transportation fees, death certificate fees, urn costs, and any &quot;facility fees&quot; that might not be included in the base price.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">4. Consider Cremation Societies</h3>
                 <p className="text-gray-600">
                   Non-profit cremation societies often offer lower prices than for-profit funeral homes. They focus on simple, dignified cremation without upselling.
@@ -227,27 +227,27 @@ export default function CremationNearMePage() {
               The Evermore Directory shows cremation and burial price ranges for funeral homes in every major city. Click your city to see actual prices from local providers:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-blue-600 hover:underline">Los Angeles, CA</Link>
-              <Link href="/funeral-homes/ca/san-jose" className="text-blue-600 hover:underline">San Jose, CA</Link>
-              <Link href="/funeral-homes/ca/san-diego" className="text-blue-600 hover:underline">San Diego, CA</Link>
-              <Link href="/funeral-homes/tx/houston" className="text-blue-600 hover:underline">Houston, TX</Link>
-              <Link href="/funeral-homes/tx/dallas" className="text-blue-600 hover:underline">Dallas, TX</Link>
-              <Link href="/funeral-homes/fl/miami" className="text-blue-600 hover:underline">Miami, FL</Link>
-              <Link href="/funeral-homes/fl/tampa" className="text-blue-600 hover:underline">Tampa, FL</Link>
-              <Link href="/funeral-homes/il/chicago" className="text-blue-600 hover:underline">Chicago, IL</Link>
-              <Link href="/funeral-homes/tn/nashville" className="text-blue-600 hover:underline">Nashville, TN</Link>
-              <Link href="/funeral-homes/ga/atlanta" className="text-blue-600 hover:underline">Atlanta, GA</Link>
-              <Link href="/funeral-homes/az/phoenix" className="text-blue-600 hover:underline">Phoenix, AZ</Link>
-              <Link href="/funeral-homes/ny/new-york" className="text-blue-600 hover:underline">New York, NY</Link>
+              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline">Los Angeles, CA</Link>
+              <Link href="/funeral-homes/ca/san-jose" className="text-slate-600 hover:underline">San Jose, CA</Link>
+              <Link href="/funeral-homes/ca/san-diego" className="text-slate-600 hover:underline">San Diego, CA</Link>
+              <Link href="/funeral-homes/tx/houston" className="text-slate-600 hover:underline">Houston, TX</Link>
+              <Link href="/funeral-homes/tx/dallas" className="text-slate-600 hover:underline">Dallas, TX</Link>
+              <Link href="/funeral-homes/fl/miami" className="text-slate-600 hover:underline">Miami, FL</Link>
+              <Link href="/funeral-homes/fl/tampa" className="text-slate-600 hover:underline">Tampa, FL</Link>
+              <Link href="/funeral-homes/il/chicago" className="text-slate-600 hover:underline">Chicago, IL</Link>
+              <Link href="/funeral-homes/tn/nashville" className="text-slate-600 hover:underline">Nashville, TN</Link>
+              <Link href="/funeral-homes/ga/atlanta" className="text-slate-600 hover:underline">Atlanta, GA</Link>
+              <Link href="/funeral-homes/az/phoenix" className="text-slate-600 hover:underline">Phoenix, AZ</Link>
+              <Link href="/funeral-homes/ny/new-york" className="text-slate-600 hover:underline">New York, NY</Link>
             </div>
             <p className="mt-4">
-              <Link href="/states" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/states" className="text-slate-600 hover:underline font-semibold">
                 Browse all 50 states →
               </Link>
             </p>
           </section>
 
-          <section className="bg-blue-50 rounded-lg p-6 mb-10">
+          <section className="bg-slate-50 rounded-lg p-6 mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Planning Ahead?</h2>
             <p className="text-gray-600 mb-4">
               Pre-planning cremation services can save your family stress and money. Many providers offer pre-payment plans that lock in today&apos;s prices.
@@ -275,19 +275,19 @@ export default function CremationNearMePage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
               </Link>
               <Link href="/blog/cremation-cost-san-jose" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
                 <p className="text-sm text-gray-600">Compare actual cremation prices from San Jose funeral homes.</p>
               </Link>
               <Link href="/blog/funeral-homes-los-angeles" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
                 <p className="text-sm text-gray-600">Compare funeral home prices in LA with tips for choosing the right provider.</p>
               </Link>
             </div>
@@ -295,10 +295,10 @@ export default function CremationNearMePage() {
 
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

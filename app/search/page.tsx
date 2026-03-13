@@ -519,8 +519,8 @@ export default function SearchPage() {
                   return (
                     <div key={home.id} className={isNearbyStart ? 'col-span-full' : ''}>
                       {isNearbyStart && (
-                        <div className="col-span-full mb-4 mt-6 pb-2 border-b-2 border-blue-500/30">
-                          <h2 className="text-lg font-semibold text-blue-700 font-['Montserrat']">
+                        <div className="col-span-full mb-4 mt-6 pb-2 border-b-2 border-slate-400/30">
+                          <h2 className="text-lg font-semibold text-slate-700 font-['Montserrat']">
                             {nearbyLabel}
                           </h2>
                           <p className="text-sm text-[#636366] mt-1">

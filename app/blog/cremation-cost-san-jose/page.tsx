@@ -57,7 +57,7 @@ export default function CremationSanJosePage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">San Jose Cremation Prices at a Glance</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded">
@@ -71,7 +71,7 @@ export default function CremationSanJosePage() {
                 <tbody>
                   <tr>
                     <td className="border p-3 font-semibold">Direct Cremation</td>
-                    <td className="border p-3 text-blue-600 font-semibold">$1,095 - $3,200</td>
+                    <td className="border p-3 text-slate-600 font-semibold">$1,095 - $3,200</td>
                     <td className="border p-3 text-sm">Basic services, transportation, cremation, container for ashes</td>
                   </tr>
                   <tr>
@@ -104,28 +104,28 @@ export default function CremationSanJosePage() {
             </p>
             
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Facility Overhead</h3>
                 <p className="text-gray-600">
                   Funeral homes with large, elegant facilities in expensive areas of San Jose have higher operating costs—and pass those costs to families.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">On-Site vs. Outsourced Cremation</h3>
                 <p className="text-gray-600">
                   Funeral homes with their own crematory can often offer lower prices. Those that outsource cremation to a third party may charge more.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Corporate vs. Independent</h3>
                 <p className="text-gray-600">
                   Large corporate funeral home chains often charge more than independent, family-owned providers. Independent homes may also offer more personalized service.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">What&apos;s Actually Included</h3>
                 <p className="text-gray-600">
                   Some &quot;low price&quot; cremation quotes exclude transportation, death certificates, or the container for ashes. Always ask what&apos;s included in the total price.
@@ -151,7 +151,7 @@ export default function CremationSanJosePage() {
                 <tbody>
                   <tr>
                     <td className="border p-3">Budget-Friendly Provider</td>
-                    <td className="border p-3 text-blue-600">$1,095 - $2,500</td>
+                    <td className="border p-3 text-slate-600">$1,095 - $2,500</td>
                     <td className="border p-3">$4,000 - $8,000</td>
                   </tr>
                   <tr>
@@ -166,14 +166,14 @@ export default function CremationSanJosePage() {
                   </tr>
                   <tr>
                     <td className="border p-3">Premium Provider</td>
-                    <td className="border p-3 text-blue-600">$3,000 - $7,000+</td>
+                    <td className="border p-3 text-slate-600">$3,000 - $7,000+</td>
                     <td className="border p-3">$10,000 - $20,000+</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="mt-4">
-              <Link href="/funeral-homes/ca/san-jose" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/funeral-homes/ca/san-jose" className="text-slate-600 hover:underline font-semibold">
                 View all San Jose funeral homes with actual prices →
               </Link>
             </p>
@@ -238,8 +238,8 @@ export default function CremationSanJosePage() {
             <p className="text-gray-600 mb-4">
               Browse San Jose funeral homes with cremation price ranges in the Evermore Directory:
             </p>
-            <div className="bg-blue-50 rounded-lg p-6">
-              <Link href="/funeral-homes/ca/san-jose" className="text-blue-600 hover:underline text-xl font-semibold">
+            <div className="bg-slate-50 rounded-lg p-6">
+              <Link href="/funeral-homes/ca/san-jose" className="text-slate-600 hover:underline text-xl font-semibold">
                 View San Jose Funeral Homes & Prices →
               </Link>
               <p className="text-gray-600 mt-2">
@@ -254,18 +254,18 @@ export default function CremationSanJosePage() {
               Compare cremation prices in other Bay Area cities:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/ca/san-francisco" className="text-blue-600 hover:underline">San Francisco</Link>
-              <Link href="/funeral-homes/ca/oakland" className="text-blue-600 hover:underline">Oakland</Link>
-              <Link href="/funeral-homes/ca/fremont" className="text-blue-600 hover:underline">Fremont</Link>
-              <Link href="/funeral-homes/ca/santa-clara" className="text-blue-600 hover:underline">Santa Clara</Link>
-              <Link href="/funeral-homes/ca/sunnyvale" className="text-blue-600 hover:underline">Sunnyvale</Link>
-              <Link href="/funeral-homes/ca/hayward" className="text-blue-600 hover:underline">Hayward</Link>
-              <Link href="/funeral-homes/ca/palo-alto" className="text-blue-600 hover:underline">Palo Alto</Link>
-              <Link href="/funeral-homes/ca/mountain-view" className="text-blue-600 hover:underline">Mountain View</Link>
+              <Link href="/funeral-homes/ca/san-francisco" className="text-slate-600 hover:underline">San Francisco</Link>
+              <Link href="/funeral-homes/ca/oakland" className="text-slate-600 hover:underline">Oakland</Link>
+              <Link href="/funeral-homes/ca/fremont" className="text-slate-600 hover:underline">Fremont</Link>
+              <Link href="/funeral-homes/ca/santa-clara" className="text-slate-600 hover:underline">Santa Clara</Link>
+              <Link href="/funeral-homes/ca/sunnyvale" className="text-slate-600 hover:underline">Sunnyvale</Link>
+              <Link href="/funeral-homes/ca/hayward" className="text-slate-600 hover:underline">Hayward</Link>
+              <Link href="/funeral-homes/ca/palo-alto" className="text-slate-600 hover:underline">Palo Alto</Link>
+              <Link href="/funeral-homes/ca/mountain-view" className="text-slate-600 hover:underline">Mountain View</Link>
             </div>
           </section>
 
-          <section className="bg-blue-50 rounded-lg p-6 mb-10">
+          <section className="bg-slate-50 rounded-lg p-6 mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Pre-Planning Cremation in San Jose</h2>
             <p className="text-gray-600 mb-4">
               Pre-planning your cremation can lock in today&apos;s prices and remove the burden from your family. Many San Jose funeral homes offer pre-need arrangements with payment plans.
@@ -290,19 +290,19 @@ export default function CremationSanJosePage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
               </Link>
               <Link href="/blog/funeral-homes-los-angeles" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
                 <p className="text-sm text-gray-600">Compare funeral home prices in LA with tips for choosing the right provider.</p>
               </Link>
             </div>
@@ -310,10 +310,10 @@ export default function CremationSanJosePage() {
 
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

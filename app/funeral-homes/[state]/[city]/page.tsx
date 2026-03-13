@@ -221,11 +221,11 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <nav className="mb-8 text-sm">
-            <Link href="/states" className="text-blue-600 hover:text-blue-800">
+            <Link href="/states" className="text-slate-600 hover:text-slate-800">
               All States
             </Link>
             <span className="mx-2 text-gray-400">/</span>
-            <Link href={`/funeral-homes/${state.toLowerCase()}`} className="text-blue-600 hover:text-blue-800">
+            <Link href={`/funeral-homes/${state.toLowerCase()}`} className="text-slate-600 hover:text-slate-800">
               {stateName}
             </Link>
             <span className="mx-2 text-gray-400">/</span>
@@ -248,15 +248,15 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
           {featuredHomes.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="text-blue-500 mr-2">⭐</span> Featured Funeral Homes in {cityName}
+                <span className="text-slate-600 mr-2">⭐</span> Featured Funeral Homes in {cityName}
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <div key={home.id} className="bg-gradient-to-r from-blue-50 to-amber-50 rounded-xl shadow-lg p-8 border-2 border-blue-400">
+                  <div key={home.id} className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-8 border-2 border-blue-400">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
-                          <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
+                          <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
                             FEATURED
                           </span>
                           <h3 className="text-2xl font-bold text-gray-900">{home.business_name}</h3>
@@ -274,7 +274,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                               <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                               </svg>
-                              <a href={`tel:${home.phone}`} className="text-blue-600 hover:text-blue-800 font-semibold">
+                              <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">
                                 {home.phone}
                               </a>
                             </p>
@@ -284,7 +284,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                               <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                               </svg>
-                              <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+                              <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-800 font-semibold">
                                 Visit Website
                               </a>
                             </p>
@@ -312,7 +312,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                               href="https://claim.funeralhomedirectories.com"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                              className="text-sm text-gray-500 hover:text-slate-600 transition-colors"
                             >
                               Is this your business? Claim this listing →
                             </a>
@@ -349,7 +349,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                           <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                           </svg>
-                          <a href={`tel:${home.phone}`} className="text-blue-600 hover:text-blue-800 font-semibold">
+                          <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">
                             {home.phone}
                           </a>
                         </p>
@@ -359,7 +359,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                           <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                           </svg>
-                          <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+                          <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-800 font-semibold">
                             Visit Website
                           </a>
                         </p>
@@ -387,7 +387,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                           href="https://claim.funeralhomedirectories.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                          className="text-sm text-gray-500 hover:text-slate-600 transition-colors"
                         >
                           Is this your business? Claim this listing →
                         </a>
@@ -408,7 +408,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               Discover why families in {cityName}, {stateName} trust our directory to find compassionate funeral homes and cremation services
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Compare Local {cityName} Funeral Homes
                 </h3>
@@ -416,14 +416,14 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                   The Evermore Directory helps you compare funeral homes and cremation providers in {cityName}, allowing you to find services that match your needs and budget for burial, cremation, or memorial planning.
                 </p>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {cityName} Funeral Home Information
                 </h3>
                 <p className="text-gray-600">
 All funeral homes in our {cityName} directory include contact information, addresses, and service details to help you reach local providers when you need them most.                </p>
               </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Local {cityName} Expertise
                 </h3>
@@ -453,33 +453,33 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
 
           {/* Tips Section */}
-          <div className="mb-20 bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-br from-slate-50 to-slate-50 rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Tips for Choosing a Funeral Home in {cityName}, {stateName}
             </h2>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Contact multiple funeral homes in {cityName} to compare pricing - costs can vary significantly between providers</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Request the General Price List (GPL) from each {cityName} funeral home - they&apos;re required by federal law to provide it</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Ask {cityName} funeral directors about all available options including burial, cremation, memorial services, and green burial alternatives</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Inquire about pre-planning services if you&apos;re arranging future arrangements in {cityName} for yourself or loved ones</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Check if the {cityName} funeral home offers grief counseling, memorial products, and ongoing family support services</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Verify the funeral home&apos;s licensing in {stateName} and ask about their experience with specific cultural or religious traditions</span>
               </li>
             </ul>
@@ -496,10 +496,10 @@ All funeral homes in our {cityName} directory include contact information, addre
                   Independent {cityName} Funeral Homes
                 </h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Local family-owned funeral directors</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Specialized cremation service providers</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Community-based memorial chapels</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Green burial and natural funeral specialists</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Local family-owned funeral directors</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Specialized cremation service providers</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Community-based memorial chapels</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Green burial and natural funeral specialists</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-xl shadow-md p-8">
@@ -507,10 +507,10 @@ All funeral homes in our {cityName} directory include contact information, addre
                   National Providers Serving {cityName}
                 </h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Major funeral home chains with {cityName} locations</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>National cremation service networks</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Cemetery-affiliated funeral providers</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Multi-location memorial service centers</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Major funeral home chains with {cityName} locations</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>National cremation service networks</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Cemetery-affiliated funeral providers</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Multi-location memorial service centers</span></li>
                 </ul>
               </div>
             </div>
@@ -525,26 +525,26 @@ All funeral homes in our {cityName} directory include contact information, addre
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Full funeral services with viewing</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Burial arrangements and cemetery coordination</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Memorial services and celebrations of life</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Religious and cultural ceremony planning</span></li>
                 </ul>
               </div>
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Modern & Alternative Services</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Direct cremation services</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
-                  <li className="flex items-start"><span className="text-blue-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Direct cremation services</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Green burial and eco-friendly options</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Pre-planning and pre-arrangement services</span></li>
+                  <li className="flex items-start"><span className="text-slate-600 mr-3">•</span><span>Grief counseling and support groups</span></li>
                 </ul>
               </div>
             </div>
           </div>
 
           {/* Pro Tip Box */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-r from-amber-50 to-slate-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {cityName} Families</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -621,7 +621,7 @@ All funeral homes in our {cityName} directory include contact information, addre
                   <Link
                     key={nearbyCity}
                     href={`/funeral-homes/${state.toLowerCase()}/${nearbyCity.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-blue-600 hover:text-blue-800 hover:underline py-2"
+                    className="text-slate-600 hover:text-slate-800 hover:underline py-2"
                   >
                     {nearbyCity}
                   </Link>
@@ -640,28 +640,28 @@ All funeral homes in our {cityName} directory include contact information, addre
                 href="/blog/cremation-costs-2026"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link
                 href="/blog/cremation-near-me"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link
                 href="/blog/direct-cremation-vs-traditional-funeral"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to decide which option is right for your family.</p>
               </Link>
               <Link
                 href="/blog"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">View All Guides →</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">View All Guides →</h3>
                 <p className="text-sm text-gray-600">Browse our complete library of funeral planning resources and cost guides.</p>
               </Link>
             </div>
@@ -671,7 +671,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           <div className="text-center">
             <Link
               href={`/funeral-homes/${state.toLowerCase()}`}
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               ← Back to {stateName} Cities
             </Link>

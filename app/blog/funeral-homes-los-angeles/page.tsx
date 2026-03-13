@@ -57,7 +57,7 @@ export default function FuneralHomesLosAngelesPage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Do Funeral Services Cost in Los Angeles?</h2>
             <p className="text-gray-600 mb-4">
               Funeral costs in Los Angeles vary dramatically—sometimes by <strong>200-300%</strong> for the same service. Here&apos;s what you can expect to pay:
@@ -90,9 +90,9 @@ export default function FuneralHomesLosAngelesPage() {
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 rounded-lg p-6">
+              <div className="bg-slate-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Direct Cremation in LA</h3>
-                <p className="text-3xl font-bold text-blue-600 mb-2">$995 - $3,500</p>
+                <p className="text-3xl font-bold text-slate-600 mb-2">$995 - $3,500</p>
                 <ul className="text-gray-600 text-sm space-y-1">
                   <li>• No viewing or service required</li>
                   <li>• Body cremated within 24-48 hours</li>
@@ -131,7 +131,7 @@ export default function FuneralHomesLosAngelesPage() {
               <div className="bg-gray-50 p-3 rounded">Inglewood</div>
             </div>
             <p className="mt-4">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline font-semibold">
                 View all Los Angeles funeral homes with prices →
               </Link>
             </p>
@@ -141,28 +141,28 @@ export default function FuneralHomesLosAngelesPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Look for in a Los Angeles Funeral Home</h2>
             
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Transparent Pricing</h3>
                 <p className="text-gray-600">
                   By law, funeral homes must provide a General Price List (GPL). If a funeral home is evasive about costs or won&apos;t give you prices over the phone, that&apos;s a red flag. The Evermore Directory shows price ranges upfront so you can compare before calling.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Cultural & Religious Experience</h3>
                 <p className="text-gray-600">
                   LA&apos;s diversity means you may need a funeral home experienced with specific traditions—Catholic, Jewish, Buddhist, Hindu, Muslim, or secular celebrations of life. Ask about their experience with your family&apos;s customs.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">On-Site Crematory</h3>
                 <p className="text-gray-600">
                   Some LA funeral homes have their own crematory, which can reduce costs and provide peace of mind that your loved one never leaves their care. Others outsource cremation to third parties.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Family-Owned vs. Corporate</h3>
                 <p className="text-gray-600">
                   Many funeral homes are now owned by large corporations (like Service Corporation International). Family-owned funeral homes often provide more personalized service and competitive pricing, though this isn&apos;t always the case.
@@ -205,8 +205,8 @@ export default function FuneralHomesLosAngelesPage() {
             <p className="text-gray-600 mb-4">
               The Evermore Directory lists funeral homes throughout Los Angeles County with actual price ranges, services offered, and contact information. Compare providers before you call:
             </p>
-            <div className="bg-blue-50 rounded-lg p-6">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-blue-600 hover:underline text-xl font-semibold">
+            <div className="bg-slate-50 rounded-lg p-6">
+              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline text-xl font-semibold">
                 View All Los Angeles Funeral Homes →
               </Link>
               <p className="text-gray-600 mt-2">
@@ -221,18 +221,18 @@ export default function FuneralHomesLosAngelesPage() {
               Looking for funeral homes outside Los Angeles city limits? Browse nearby areas:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/ca/long-beach" className="text-blue-600 hover:underline">Long Beach</Link>
-              <Link href="/funeral-homes/ca/glendale" className="text-blue-600 hover:underline">Glendale</Link>
-              <Link href="/funeral-homes/ca/pasadena" className="text-blue-600 hover:underline">Pasadena</Link>
-              <Link href="/funeral-homes/ca/burbank" className="text-blue-600 hover:underline">Burbank</Link>
-              <Link href="/funeral-homes/ca/santa-monica" className="text-blue-600 hover:underline">Santa Monica</Link>
-              <Link href="/funeral-homes/ca/torrance" className="text-blue-600 hover:underline">Torrance</Link>
-              <Link href="/funeral-homes/ca/pomona" className="text-blue-600 hover:underline">Pomona</Link>
-              <Link href="/funeral-homes/ca/san-diego" className="text-blue-600 hover:underline">San Diego</Link>
+              <Link href="/funeral-homes/ca/long-beach" className="text-slate-600 hover:underline">Long Beach</Link>
+              <Link href="/funeral-homes/ca/glendale" className="text-slate-600 hover:underline">Glendale</Link>
+              <Link href="/funeral-homes/ca/pasadena" className="text-slate-600 hover:underline">Pasadena</Link>
+              <Link href="/funeral-homes/ca/burbank" className="text-slate-600 hover:underline">Burbank</Link>
+              <Link href="/funeral-homes/ca/santa-monica" className="text-slate-600 hover:underline">Santa Monica</Link>
+              <Link href="/funeral-homes/ca/torrance" className="text-slate-600 hover:underline">Torrance</Link>
+              <Link href="/funeral-homes/ca/pomona" className="text-slate-600 hover:underline">Pomona</Link>
+              <Link href="/funeral-homes/ca/san-diego" className="text-slate-600 hover:underline">San Diego</Link>
             </div>
           </section>
 
-          <section className="bg-blue-50 rounded-lg p-6 mb-10">
+          <section className="bg-slate-50 rounded-lg p-6 mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Planning Ahead in Los Angeles?</h2>
             <p className="text-gray-600 mb-4">
               Pre-planning funeral arrangements can lock in today&apos;s prices and spare your family from making difficult decisions during grief. Many Los Angeles funeral homes offer pre-need arrangements.
@@ -257,19 +257,19 @@ export default function FuneralHomesLosAngelesPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
               </Link>
               <Link href="/blog/cremation-cost-san-jose" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
                 <p className="text-sm text-gray-600">Compare actual cremation prices from San Jose funeral homes.</p>
               </Link>
             </div>
@@ -277,10 +277,10 @@ export default function FuneralHomesLosAngelesPage() {
 
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

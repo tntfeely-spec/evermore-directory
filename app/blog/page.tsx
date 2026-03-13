@@ -114,19 +114,19 @@ export default function BlogIndexPage() {
               {blogPosts.map((post) => (
                 <article key={post.slug} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                   <div className="mb-2">
-                    <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-slate-600 bg-slate-50 px-3 py-1 rounded-full">
                       {post.category}
                     </span>
                   </div>
                   <Link href={`/blog/${post.slug}`}>
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2 hover:text-slate-600 transition-colors">
                       {post.title}
                     </h2>
                   </Link>
                   <p className="text-gray-600 mb-4">{post.description}</p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-blue-600 font-medium hover:text-blue-700"
+                    className="text-slate-600 font-medium hover:text-slate-700"
                   >
                     Read More &rarr;
                   </Link>
@@ -134,7 +134,7 @@ export default function BlogIndexPage() {
               ))}
             </div>
 
-            <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+            <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                 Find Funeral Homes Near You
               </h2>
@@ -143,7 +143,7 @@ export default function BlogIndexPage() {
               </p>
               <Link
                 href="/states"
-                className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-block bg-slate-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors"
               >
                 Browse by State
               </Link>

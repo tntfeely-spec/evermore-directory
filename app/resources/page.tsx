@@ -32,8 +32,8 @@ export default function ResourcesPage() {
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-start p-4 bg-blue-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-blue-600 flex items-center justify-center mr-3 mt-0.5">
+              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
+                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
                   <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -49,8 +49,8 @@ export default function ResourcesPage() {
                 </div>
               </div>
 
-              <div className="flex items-start p-4 bg-blue-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-blue-600 flex items-center justify-center mr-3 mt-0.5">
+              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
+                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
                   <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -68,8 +68,8 @@ export default function ResourcesPage() {
                 </div>
               </div>
 
-              <div className="flex items-start p-4 bg-blue-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-blue-600 flex items-center justify-center mr-3 mt-0.5">
+              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
+                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
                   <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -119,7 +119,7 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
               <p className="text-gray-700">
                 <strong>Important:</strong> Funeral homes are required by law to provide a General Price List (GPL). Always request this to compare costs and make informed decisions.
               </p>
@@ -134,8 +134,8 @@ export default function ResourcesPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-blue-50 rounded-xl">
-                <div className="text-blue-600 mb-4">
+              <div className="text-center p-6 bg-slate-50 rounded-xl">
+                <div className="text-slate-600 mb-4">
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -144,8 +144,8 @@ export default function ResourcesPage() {
                 <p className="text-gray-700 text-sm">Lock in today&apos;s prices and avoid future inflation</p>
               </div>
 
-              <div className="text-center p-6 bg-blue-50 rounded-xl">
-                <div className="text-blue-600 mb-4">
+              <div className="text-center p-6 bg-slate-50 rounded-xl">
+                <div className="text-slate-600 mb-4">
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -154,8 +154,8 @@ export default function ResourcesPage() {
                 <p className="text-gray-700 text-sm">Relieve family from making difficult decisions during grief</p>
               </div>
 
-              <div className="text-center p-6 bg-blue-50 rounded-xl">
-                <div className="text-blue-600 mb-4">
+              <div className="text-center p-6 bg-slate-50 rounded-xl">
+                <div className="text-slate-600 mb-4">
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -170,23 +170,23 @@ export default function ResourcesPage() {
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Types of Funeral Services</h2>
             <div className="space-y-6">
-              <div className="border-l-4 border-blue-600 pl-6 py-2">
+              <div className="border-l-4 border-slate-500 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Traditional Funeral Service</h3>
                 <p className="text-gray-700">Includes viewing/visitation, formal funeral service, and burial or entombment. Often includes religious or cultural customs and traditions.</p>
               </div>
-              <div className="border-l-4 border-blue-600 pl-6 py-2">
+              <div className="border-l-4 border-slate-500 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Memorial Service</h3>
                 <p className="text-gray-700">Held after cremation or burial has taken place. The body is not present, allowing more flexibility in timing and location.</p>
               </div>
-              <div className="border-l-4 border-blue-600 pl-6 py-2">
+              <div className="border-l-4 border-slate-500 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Celebration of Life</h3>
                 <p className="text-gray-700">A more personalized, uplifting gathering focusing on celebrating the deceased&apos;s life and legacy rather than mourning their passing.</p>
               </div>
-              <div className="border-l-4 border-blue-600 pl-6 py-2">
+              <div className="border-l-4 border-slate-500 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Direct Cremation or Burial</h3>
                 <p className="text-gray-700">The most economical option with no formal viewing or ceremony. The body is cremated or buried shortly after death.</p>
               </div>
-              <div className="border-l-4 border-blue-600 pl-6 py-2">
+              <div className="border-l-4 border-slate-500 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Green/Natural Burial</h3>
                 <p className="text-gray-700">An environmentally-friendly option that minimizes environmental impact through biodegradable materials and natural processes.</p>
               </div>
@@ -207,8 +207,8 @@ export default function ResourcesPage() {
                 { title: 'Burial Flag', desc: 'American flag provided to drape the casket or accompany the urn' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 mt-1">
-                    <svg className="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center mr-3 mt-1">
+                    <svg className="h-4 w-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -220,7 +220,7 @@ export default function ResourcesPage() {
               ))}
             </div>
 
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
               <p className="text-gray-700">
                 <strong>For more information:</strong> Contact the VA at 1-800-827-1000 or visit va.gov/burials-memorials
               </p>
@@ -285,10 +285,10 @@ export default function ResourcesPage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl shadow-xl p-8 text-center">
+          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl shadow-xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Need to Find a Funeral Home?</h2>
             <p className="text-white mb-6">Search our directory to find caring professionals in your area</p>
-            <Link href="/states" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <Link href="/states" className="inline-block bg-white text-slate-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
               Search Now
             </Link>
           </div>

@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,23 +12,18 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/EVERMORE LOGO.png"
-              alt="Evermore Directory"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-            />
+            <span className="text-2xl font-bold text-slate-500">Ever</span>
+            <span className="text-2xl font-bold text-gray-900">more</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</Link>
-            <Link href="/states" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Browse States</Link>
-            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Blog</Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</Link>
-            <Link href="/resources" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Resources</Link>
+            <Link href="/" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Home</Link>
+            <Link href="/states" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Browse States</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Blog</Link>
+            <Link href="/about" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">About</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Contact</Link>
+            <Link href="/resources" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Resources</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -62,42 +56,42 @@ export default function Navigation() {
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               Home
             </Link>
             <Link
               href="/states"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               Browse States
             </Link>
             <Link
               href="/blog"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               Blog
             </Link>
             <Link
               href="/about"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               About
             </Link>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               Contact
             </Link>
             <Link
               href="/resources"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-colors"
+              className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >
               Resources
             </Link>

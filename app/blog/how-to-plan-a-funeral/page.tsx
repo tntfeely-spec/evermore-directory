@@ -60,27 +60,27 @@ export default function HowToPlanAFuneralPage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Funeral Planning at a Glance</h2>
             <div className="space-y-3 text-sm">
               <div className="flex gap-3 items-start">
-                <span className="font-bold text-blue-600 flex-shrink-0">Day 1</span>
+                <span className="font-bold text-slate-600 flex-shrink-0">Day 1</span>
                 <span className="text-gray-700">Notify authorities, contact funeral home, begin making decisions</span>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="font-bold text-blue-600 flex-shrink-0">Day 1-2</span>
+                <span className="font-bold text-slate-600 flex-shrink-0">Day 1-2</span>
                 <span className="text-gray-700">Meet with funeral director, choose burial or cremation, select casket/urn</span>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="font-bold text-blue-600 flex-shrink-0">Day 2-3</span>
+                <span className="font-bold text-slate-600 flex-shrink-0">Day 2-3</span>
                 <span className="text-gray-700">Plan the service, write obituary, notify family and friends</span>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="font-bold text-blue-600 flex-shrink-0">Day 3-7</span>
+                <span className="font-bold text-slate-600 flex-shrink-0">Day 3-7</span>
                 <span className="text-gray-700">Viewing/visitation, funeral service, burial or cremation</span>
               </div>
               <div className="flex gap-3 items-start">
-                <span className="font-bold text-blue-600 flex-shrink-0">After</span>
+                <span className="font-bold text-slate-600 flex-shrink-0">After</span>
                 <span className="text-gray-700">Thank-you notes, estate matters, grief support</span>
               </div>
             </div>
@@ -113,21 +113,21 @@ export default function HowToPlanAFuneralPage() {
               This is one of the most important decisions you&apos;ll make. The funeral home you choose will guide you through the entire process and the cost can vary by thousands of dollars between providers in the same city.
             </p>
             <div className="space-y-4">
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Compare at least 3 funeral homes</h3>
                 <p className="text-gray-600 text-sm">Call or visit at least three funeral homes and request their General Price List (GPL). They are required by law to provide it. Compare the basic services fee, preparation costs, and facility fees. Prices can vary by $3,000-$5,000 for the same services.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Ask the right questions</h3>
                 <p className="text-gray-600 text-sm">How long have you been in business? Are you family-owned or corporate? Do you offer payment plans? Can you accommodate our cultural or religious traditions? What is your availability for the dates we&apos;re considering?</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Trust your instincts</h3>
                 <p className="text-gray-600 text-sm">A good funeral director will be patient, transparent about pricing, and never pressure you into services you don&apos;t need. If you feel rushed or pressured, go elsewhere.</p>
               </div>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              <Link href="/states" className="text-blue-600 hover:underline">Compare funeral homes in your state →</Link>
+              <Link href="/states" className="text-slate-600 hover:underline">Compare funeral homes in your state →</Link>
             </p>
           </section>
 
@@ -139,7 +139,7 @@ export default function HowToPlanAFuneralPage() {
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Burial or Cremation?</h3>
-                <p className="text-gray-600 text-sm">This is the first major decision. Consider the deceased&apos;s wishes, religious requirements, family preferences, and budget. Traditional burial costs $7,000-$15,000+ while cremation ranges from $500-$7,000. <Link href="/blog/burial-vs-cremation" className="text-blue-600 hover:underline">See our complete comparison →</Link></p>
+                <p className="text-gray-600 text-sm">This is the first major decision. Consider the deceased&apos;s wishes, religious requirements, family preferences, and budget. Traditional burial costs $7,000-$15,000+ while cremation ranges from $500-$7,000. <Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:underline">See our complete comparison →</Link></p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Type of Service</h3>
@@ -166,23 +166,23 @@ export default function HowToPlanAFuneralPage() {
               The funeral service is how you honor and remember your loved one. It can be as formal or informal as you want.
             </p>
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Choose an officiant</h3>
                 <p className="text-gray-600 text-sm">This could be a clergy member, a celebrant, a family friend, or the funeral director. Some families have multiple speakers share memories.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Select readings and music</h3>
                 <p className="text-gray-600 text-sm">Choose readings, poems, scriptures, or songs that were meaningful to the deceased. Many funeral homes have audio/video equipment for slideshows or video tributes.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Invite speakers for eulogies</h3>
                 <p className="text-gray-600 text-sm">Ask 2-3 people who were close to the deceased if they&apos;d like to share memories. Give them a general time frame (3-5 minutes each) and let them know it&apos;s okay to write it down.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Arrange flowers and displays</h3>
                 <p className="text-gray-600 text-sm">Decide on floral arrangements, photo displays, or memory tables. Some families request donations to a charity instead of flowers—the funeral home can include this in the obituary.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Plan a reception</h3>
                 <p className="text-gray-600 text-sm">Many families hold a reception or gathering after the service. This can be at the funeral home, a restaurant, someone&apos;s home, or a community hall. Keep it simple—friends and extended family often help with food.</p>
               </div>
@@ -241,21 +241,21 @@ export default function HowToPlanAFuneralPage() {
               Funeral costs can add up quickly. Here&apos;s how to stay in control:
             </p>
             <div className="space-y-3">
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Set a budget before meeting with the funeral home.</span> It&apos;s much harder to say no to add-ons when you&apos;re emotional and don&apos;t have a number in mind.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Only pay for services you actually want.</span> The FTC Funeral Rule protects your right to choose individual items rather than being forced into a package.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Ask about payment plans.</span> Many funeral homes offer financing or accept credit cards. Some also work with insurance assignments.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <p className="text-gray-600 text-sm"><span className="font-semibold text-gray-800">Check for benefits.</span> Veterans benefits, Social Security death benefit ($255), life insurance, employer benefits, and union or fraternal organization benefits may all apply.</p>
               </div>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              <Link href="/blog/funeral-costs-2026" className="text-blue-600 hover:underline">See our complete funeral cost guide →</Link>
+              <Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:underline">See our complete funeral cost guide →</Link>
             </p>
           </section>
 
@@ -333,29 +333,29 @@ export default function HowToPlanAFuneralPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">Complete price guide for funeral services across the U.S.</p>
               </Link>
               <Link href="/blog/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Burial vs Cremation: How to Decide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Burial vs Cremation: How to Decide</h3>
                 <p className="text-sm text-gray-600">Compare costs, process, and considerations for both options.</p>
               </Link>
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with money-saving tips.</p>
               </Link>
               <Link href="/blog/funeral-homes-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes Near Me: How to Choose</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes Near Me: How to Choose</h3>
                 <p className="text-sm text-gray-600">What to look for when comparing funeral homes in your area.</p>
               </Link>
             </div>
           </section>
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

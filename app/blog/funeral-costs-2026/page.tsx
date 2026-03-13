@@ -60,27 +60,27 @@ export default function FuneralCosts2026Page() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Answer: Funeral Costs in 2026</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Direct Burial (No Service)</p>
-                <p className="text-3xl font-bold text-blue-600">$1,500 - $4,000</p>
+                <p className="text-3xl font-bold text-slate-600">$1,500 - $4,000</p>
                 <p className="text-sm text-gray-500">Most affordable option</p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Traditional Funeral</p>
-                <p className="text-3xl font-bold text-blue-600">$7,000 - $12,000</p>
+                <p className="text-3xl font-bold text-slate-600">$7,000 - $12,000</p>
                 <p className="text-sm text-gray-500">National average: ~$8,300</p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Full Service + Burial</p>
-                <p className="text-3xl font-bold text-blue-600">$10,000 - $15,000+</p>
+                <p className="text-3xl font-bold text-slate-600">$10,000 - $15,000+</p>
                 <p className="text-sm text-gray-500">With cemetery plot &amp; headstone</p>
               </div>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              For comparison, direct cremation costs $500 - $3,500, making it the most budget-friendly option. <Link href="/blog/cremation-costs-2026" className="text-blue-600 hover:underline">See our cremation cost guide →</Link>
+              For comparison, direct cremation costs $500 - $3,500, making it the most budget-friendly option. <Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:underline">See our cremation cost guide →</Link>
             </p>
           </section>
 
@@ -157,7 +157,7 @@ export default function FuneralCosts2026Page() {
               </table>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              Prices reflect 2026 estimates based on industry data and regional cost surveys. Actual prices vary by funeral home. <Link href="/states" className="text-blue-600 hover:underline">Compare funeral homes in your state →</Link>
+              Prices reflect 2026 estimates based on industry data and regional cost surveys. Actual prices vary by funeral home. <Link href="/states" className="text-slate-600 hover:underline">Compare funeral homes in your state →</Link>
             </p>
           </section>
 
@@ -167,19 +167,19 @@ export default function FuneralCosts2026Page() {
               You might find two funeral homes in the same city with prices that differ by thousands of dollars. Here&apos;s why:
             </p>
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Location</h3>
                 <p className="text-gray-600 text-sm">Funerals in major cities like New York, Los Angeles, and San Francisco cost 30-50% more than rural areas due to higher real estate costs, labor, and overhead.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Corporate vs. Independent</h3>
                 <p className="text-gray-600 text-sm">Large corporate chains often charge more than family-owned funeral homes. Independent funeral directors typically have lower overhead and more pricing flexibility.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Casket Selection</h3>
                 <p className="text-gray-600 text-sm">The casket can swing total cost by $5,000+. A basic steel casket costs around $2,000 while premium hardwood models exceed $10,000. Remember: you can legally purchase a casket from any retailer.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Services Selected</h3>
                 <p className="text-gray-600 text-sm">Every additional service—embalming, viewing, flowers, printed programs, limousine—adds cost. A funeral director is required by law to let you choose only the services you want.</p>
               </div>
@@ -189,31 +189,31 @@ export default function FuneralCosts2026Page() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">7 Ways to Reduce Funeral Costs</h2>
             <div className="space-y-4">
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">1. Get the General Price List (GPL)</h3>
                 <p className="text-gray-600 text-sm">Federal law (the FTC Funeral Rule) requires every funeral home to give you an itemized price list. Always request it and compare prices from at least 3 funeral homes before deciding.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">2. Consider Direct Burial</h3>
                 <p className="text-gray-600 text-sm">Direct burial skips the viewing, embalming, and formal service. The body is buried shortly after death in a simple container. This can save $3,000-$7,000 compared to a traditional funeral.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">3. Choose Cremation Instead</h3>
-                <p className="text-gray-600 text-sm">Direct cremation is the most affordable option at $500-$3,500. You can still hold a memorial service afterward with the ashes present. <Link href="/blog/cremation-costs-2026" className="text-blue-600 hover:underline">See cremation prices →</Link></p>
+                <p className="text-gray-600 text-sm">Direct cremation is the most affordable option at $500-$3,500. You can still hold a memorial service afterward with the ashes present. <Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:underline">See cremation prices →</Link></p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">4. Buy the Casket Separately</h3>
                 <p className="text-gray-600 text-sm">Online retailers and wholesale clubs sell caskets for 50-70% less than funeral homes. Funeral homes are legally required to accept a casket purchased elsewhere without charging a handling fee.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">5. Skip Embalming</h3>
                 <p className="text-gray-600 text-sm">Embalming is almost never legally required. If you&apos;re having a closed-casket service or a quick burial, you can save $500-$1,000 by declining embalming. Refrigeration is a less expensive alternative.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">6. Use a Church or Community Space</h3>
                 <p className="text-gray-600 text-sm">Holding the funeral service at a church, community center, or even your home instead of the funeral home chapel can save $400-$800 in facility fees.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">7. Pre-Plan to Lock In Prices</h3>
                 <p className="text-gray-600 text-sm">Funeral costs rise 2-4% per year. Pre-planning and pre-paying lets you lock in today&apos;s prices. Just make sure the funds are held in an irrevocable trust or insurance policy for protection.</p>
               </div>
@@ -264,7 +264,7 @@ export default function FuneralCosts2026Page() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Is it cheaper to be buried or cremated?</h3>
-                <p className="text-gray-600 text-sm">Cremation is significantly cheaper. Direct cremation averages $1,500 while a traditional funeral with burial averages $8,300+ (not including the cemetery plot). <Link href="/blog/burial-vs-cremation" className="text-blue-600 hover:underline">See our full comparison →</Link></p>
+                <p className="text-gray-600 text-sm">Cremation is significantly cheaper. Direct cremation averages $1,500 while a traditional funeral with burial averages $8,300+ (not including the cemetery plot). <Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:underline">See our full comparison →</Link></p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">How much does a cemetery plot cost?</h3>
@@ -294,29 +294,29 @@ export default function FuneralCosts2026Page() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link href="/blog/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Burial vs Cremation: How to Decide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Burial vs Cremation: How to Decide</h3>
                 <p className="text-sm text-gray-600">Compare costs, process, and considerations for both options.</p>
               </Link>
               <Link href="/blog/how-to-plan-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
                 <p className="text-sm text-gray-600">A practical guide to planning a funeral from start to finish.</p>
               </Link>
               <Link href="/blog/funeral-homes-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes Near Me: How to Choose</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes Near Me: How to Choose</h3>
                 <p className="text-sm text-gray-600">What to look for when comparing funeral homes in your area.</p>
               </Link>
             </div>
           </section>
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Compare Funeral Home Prices Near You</h2>
             <p className="text-gray-600 mb-4">Browse funeral homes and compare prices across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

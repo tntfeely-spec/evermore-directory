@@ -60,12 +60,12 @@ export default function FuneralHomesNearMePage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Find Funeral Homes in Your Area</h2>
             <div className="space-y-4">
               <div className="bg-white rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">1. Use a Funeral Home Directory</h3>
-                <p className="text-gray-600 text-sm">Directories like the Evermore Directory let you browse funeral homes by city and state, compare services, and see price ranges. This is the fastest way to see all your options in one place. <Link href="/states" className="text-blue-600 hover:underline">Browse funeral homes by state →</Link></p>
+                <p className="text-gray-600 text-sm">Directories like the Evermore Directory let you browse funeral homes by city and state, compare services, and see price ranges. This is the fastest way to see all your options in one place. <Link href="/states" className="text-slate-600 hover:underline">Browse funeral homes by state →</Link></p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">2. Ask for Recommendations</h3>
@@ -85,23 +85,23 @@ export default function FuneralHomesNearMePage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Look for in a Funeral Home</h2>
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Transparent Pricing</h3>
                 <p className="text-gray-600 text-sm">The single most important factor. A reputable funeral home will provide a clear, itemized General Price List (GPL) without hesitation. If they&apos;re vague about costs or try to steer you toward packages without explaining individual pricing, that&apos;s a red flag.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Compassionate Staff</h3>
                 <p className="text-gray-600 text-sm">You&apos;ll be working closely with the funeral director during one of the hardest times in your life. They should be patient, empathetic, and willing to answer every question. Pay attention to how they treat you during that first phone call or visit.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Services That Match Your Needs</h3>
                 <p className="text-gray-600 text-sm">Not all funeral homes offer the same services. If you need cremation, make sure they have their own crematory or a trusted partner. If you need specific cultural or religious accommodations, ask about their experience.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Clean, Well-Maintained Facilities</h3>
                 <p className="text-gray-600 text-sm">If possible, visit in person. The funeral home should be clean, comfortable, and well-maintained. The viewing rooms, chapel, and common areas should feel welcoming and dignified.</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Licensing and Reputation</h3>
                 <p className="text-gray-600 text-sm">All funeral homes must be licensed by the state. You can verify licensing through your state&apos;s funeral board. Check how long they&apos;ve been in business and whether they have any complaints filed against them.</p>
               </div>
@@ -202,24 +202,24 @@ export default function FuneralHomesNearMePage() {
               Most funeral homes are honest and compassionate, but it&apos;s important to know the warning signs:
             </p>
             <div className="space-y-3">
-              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
-                <h3 className="font-semibold text-blue-800 mb-1">Refusing to provide a price list</h3>
+              <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-1">Refusing to provide a price list</h3>
                 <p className="text-gray-600 text-sm">This is a violation of federal law. If a funeral home won&apos;t give you a GPL, walk away and report them to the FTC.</p>
               </div>
-              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
-                <h3 className="font-semibold text-blue-800 mb-1">Pressuring you toward expensive options</h3>
+              <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-1">Pressuring you toward expensive options</h3>
                 <p className="text-gray-600 text-sm">Comments like &quot;Don&apos;t you want the best for your loved one?&quot; to upsell a more expensive casket are manipulative. A good funeral director presents options without judgment.</p>
               </div>
-              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
-                <h3 className="font-semibold text-blue-800 mb-1">Claiming embalming is required by law</h3>
+              <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-1">Claiming embalming is required by law</h3>
                 <p className="text-gray-600 text-sm">Embalming is almost never legally required. If a funeral home insists it is, they are either misinformed or trying to add to your bill.</p>
               </div>
-              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
-                <h3 className="font-semibold text-blue-800 mb-1">Refusing to accept a casket purchased elsewhere</h3>
+              <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-1">Refusing to accept a casket purchased elsewhere</h3>
                 <p className="text-gray-600 text-sm">Federal law requires funeral homes to accept caskets bought from third parties without charging a handling fee. Any funeral home that refuses or adds a fee is violating the law.</p>
               </div>
-              <div className="border border-blue-200 rounded-lg p-4 bg-blue-50">
-                <h3 className="font-semibold text-blue-800 mb-1">Rushing you into decisions</h3>
+              <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-800 mb-1">Rushing you into decisions</h3>
                 <p className="text-gray-600 text-sm">While some decisions need to be made quickly, a good funeral director will give you space and time to think. If you feel rushed, ask for a day to consider your options.</p>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function FuneralHomesNearMePage() {
               </table>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              Prices vary by region. Urban areas and the Northeast/West Coast tend to be higher. <Link href="/blog/funeral-costs-2026" className="text-blue-600 hover:underline">See full funeral cost guide →</Link>
+              Prices vary by region. Urban areas and the Northeast/West Coast tend to be higher. <Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:underline">See full funeral cost guide →</Link>
             </p>
           </section>
 
@@ -285,29 +285,29 @@ export default function FuneralHomesNearMePage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">Complete price guide for funeral services across the U.S.</p>
               </Link>
               <Link href="/blog/how-to-plan-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
                 <p className="text-sm text-gray-600">A practical guide to planning a funeral from start to finish.</p>
               </Link>
               <Link href="/blog/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Burial vs Cremation: How to Decide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Burial vs Cremation: How to Decide</h3>
                 <p className="text-sm text-gray-600">Compare costs, process, and considerations for both options.</p>
               </Link>
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
             </div>
           </section>
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

@@ -45,13 +45,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/states"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
+                className="bg-slate-700 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
               >
                 Browse All States
               </Link>
               <Link 
                 href="/featured-listing"
-                className="bg-white hover:bg-gray-50 text-blue-600 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl border-2 border-blue-600"
+                className="bg-white hover:bg-gray-50 text-slate-600 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl border-2 border-slate-500"
               >
                 List Your Funeral Home
               </Link>
@@ -61,15 +61,15 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid md:grid-cols-3 gap-8 mb-20">
               <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">50</div>
+                <div className="text-4xl font-bold text-slate-600 mb-2">50</div>
                 <div className="text-gray-600 font-semibold">States Covered</div>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">4000+</div>
+                <div className="text-4xl font-bold text-slate-600 mb-2">4000+</div>
                 <div className="text-gray-600 font-semibold">Funeral Homes Listed</div>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-               <div className="text-4xl font-bold text-blue-600 mb-2">2,082+</div>
+               <div className="text-4xl font-bold text-slate-600 mb-2">2,082+</div>
                 <div className="text-gray-600 font-semibold">Cities Covered</div>
               </div>
             </div>

@@ -142,7 +142,7 @@ export default function SearchAutocomplete() {
         />
         <button
           onClick={handleSubmit}
-          className="px-6 py-4 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-r-lg transition-colors flex items-center gap-2 whitespace-nowrap"
+          className="px-6 py-4 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-r-lg transition-colors flex items-center gap-2 whitespace-nowrap"
           aria-label="Search"
         >
           {loading ? (
@@ -173,7 +173,7 @@ export default function SearchAutocomplete() {
               aria-selected={i === selected}
               onClick={() => handleSelect(result)}
               className={`w-full text-left px-5 py-3 flex items-center justify-between transition-colors ${
-                i === selected ? 'bg-blue-50' : 'hover:bg-gray-50'
+                i === selected ? 'bg-slate-50' : 'hover:bg-gray-50'
               }`}
             >
               <div>

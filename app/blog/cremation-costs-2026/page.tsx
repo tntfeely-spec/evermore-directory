@@ -57,17 +57,17 @@ export default function CremationCosts2026Page() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Answer: Cremation Costs in 2026</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Direct Cremation (No Services)</p>
-                <p className="text-3xl font-bold text-blue-600">$500 - $3,500</p>
+                <p className="text-3xl font-bold text-slate-600">$500 - $3,500</p>
                 <p className="text-sm text-gray-500">National average: ~$1,500</p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <p className="text-sm text-gray-500 mb-1">Cremation with Services</p>
-                <p className="text-3xl font-bold text-blue-600">$2,000 - $7,000+</p>
+                <p className="text-3xl font-bold text-slate-600">$2,000 - $7,000+</p>
                 <p className="text-sm text-gray-500">National average: ~$4,000</p>
               </div>
             </div>
@@ -96,67 +96,67 @@ export default function CremationCosts2026Page() {
                     <td className="border p-3">California</td>
                     <td className="border p-3">$995 - $3,500</td>
                     <td className="border p-3">$2,500 - $7,000</td>
-                    <td className="border p-3"><Link href="/funeral-homes/ca" className="text-blue-600 hover:underline">View CA</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/ca" className="text-slate-600 hover:underline">View CA</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Texas</td>
                     <td className="border p-3">$795 - $2,800</td>
                     <td className="border p-3">$2,000 - $5,500</td>
-                    <td className="border p-3"><Link href="/funeral-homes/tx" className="text-blue-600 hover:underline">View TX</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/tx" className="text-slate-600 hover:underline">View TX</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Florida</td>
                     <td className="border p-3">$595 - $2,500</td>
                     <td className="border p-3">$1,800 - $5,000</td>
-                    <td className="border p-3"><Link href="/funeral-homes/fl" className="text-blue-600 hover:underline">View FL</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/fl" className="text-slate-600 hover:underline">View FL</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">New York</td>
                     <td className="border p-3">$1,200 - $4,000</td>
                     <td className="border p-3">$3,000 - $8,000</td>
-                    <td className="border p-3"><Link href="/funeral-homes/ny" className="text-blue-600 hover:underline">View NY</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/ny" className="text-slate-600 hover:underline">View NY</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Illinois</td>
                     <td className="border p-3">$895 - $3,000</td>
                     <td className="border p-3">$2,200 - $6,000</td>
-                    <td className="border p-3"><Link href="/funeral-homes/il" className="text-blue-600 hover:underline">View IL</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/il" className="text-slate-600 hover:underline">View IL</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Tennessee</td>
                     <td className="border p-3">$695 - $2,400</td>
                     <td className="border p-3">$1,800 - $5,000</td>
-                    <td className="border p-3"><Link href="/funeral-homes/tn" className="text-blue-600 hover:underline">View TN</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/tn" className="text-slate-600 hover:underline">View TN</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Georgia</td>
                     <td className="border p-3">$695 - $2,600</td>
                     <td className="border p-3">$2,000 - $5,500</td>
-                    <td className="border p-3"><Link href="/funeral-homes/ga" className="text-blue-600 hover:underline">View GA</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/ga" className="text-slate-600 hover:underline">View GA</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Arizona</td>
                     <td className="border p-3">$595 - $2,200</td>
                     <td className="border p-3">$1,800 - $4,500</td>
-                    <td className="border p-3"><Link href="/funeral-homes/az" className="text-blue-600 hover:underline">View AZ</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/az" className="text-slate-600 hover:underline">View AZ</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Pennsylvania</td>
                     <td className="border p-3">$995 - $3,200</td>
                     <td className="border p-3">$2,500 - $6,500</td>
-                    <td className="border p-3"><Link href="/funeral-homes/pa" className="text-blue-600 hover:underline">View PA</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/pa" className="text-slate-600 hover:underline">View PA</Link></td>
                   </tr>
                   <tr>
                     <td className="border p-3">Ohio</td>
                     <td className="border p-3">$795 - $2,800</td>
                     <td className="border p-3">$2,000 - $5,500</td>
-                    <td className="border p-3"><Link href="/funeral-homes/oh" className="text-blue-600 hover:underline">View OH</Link></td>
+                    <td className="border p-3"><Link href="/funeral-homes/oh" className="text-slate-600 hover:underline">View OH</Link></td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="mt-4">
-              <Link href="/states" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/states" className="text-slate-600 hover:underline font-semibold">
                 View all 50 states →
               </Link>
             </p>
@@ -166,7 +166,7 @@ export default function CremationCosts2026Page() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Types of Cremation Services & Costs</h2>
             
             <div className="space-y-6">
-              <div className="bg-blue-50 rounded-lg p-6">
+              <div className="bg-slate-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Direct Cremation: $500 - $3,500</h3>
                 <p className="text-gray-600 mb-3">
                   The most affordable option. The body is cremated shortly after death with no viewing, visitation, or funeral service. This is the &quot;base&quot; cremation cost.
@@ -175,7 +175,7 @@ export default function CremationCosts2026Page() {
                 <p className="text-sm text-gray-500"><strong>Does NOT include:</strong> Viewing, embalming, funeral service, urn, death certificates</p>
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-6">
+              <div className="bg-slate-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Cremation with Memorial Service: $2,000 - $5,000</h3>
                 <p className="text-gray-600 mb-3">
                   Cremation takes place first, then a memorial service is held with the urn present. No embalming required since there&apos;s no viewing of the body.
@@ -202,35 +202,35 @@ export default function CremationCosts2026Page() {
             </p>
             
             <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Location, Location, Location</h3>
                 <p className="text-gray-600">
                   Cremation costs more in high cost-of-living areas. New York City prices are typically 50-100% higher than rural areas. Florida and Arizona tend to have lower prices due to competition and high cremation rates.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Competition</h3>
                 <p className="text-gray-600">
                   Areas with more cremation providers tend to have lower prices. This is why comparing multiple funeral homes is so important—prices can vary by $1,000+ within the same city.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">On-Site vs. Outsourced Cremation</h3>
                 <p className="text-gray-600">
                   Funeral homes with their own crematory can often offer lower prices than those that outsource cremation to a third party.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Corporate vs. Independent</h3>
                 <p className="text-gray-600">
                   Large corporate funeral home chains (like SCI/Dignity Memorial) often charge more than independent, family-owned providers. The service level may be similar, but pricing can differ significantly.
                 </p>
               </div>
 
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">What&apos;s Actually Included</h3>
                 <p className="text-gray-600">
                   A &quot;$595 cremation&quot; might not include transportation, death certificates, or the container for ashes. Always ask for an itemized price list that shows the total out-the-door cost.
@@ -313,27 +313,27 @@ export default function CremationCosts2026Page() {
               The Evermore Directory shows actual cremation and burial price ranges for funeral homes across all 50 states. Find providers in your area:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-blue-600 hover:underline">Los Angeles</Link>
-              <Link href="/funeral-homes/ny/new-york" className="text-blue-600 hover:underline">New York City</Link>
-              <Link href="/funeral-homes/il/chicago" className="text-blue-600 hover:underline">Chicago</Link>
-              <Link href="/funeral-homes/tx/houston" className="text-blue-600 hover:underline">Houston</Link>
-              <Link href="/funeral-homes/az/phoenix" className="text-blue-600 hover:underline">Phoenix</Link>
-              <Link href="/funeral-homes/fl/miami" className="text-blue-600 hover:underline">Miami</Link>
-              <Link href="/funeral-homes/tx/dallas" className="text-blue-600 hover:underline">Dallas</Link>
-              <Link href="/funeral-homes/ga/atlanta" className="text-blue-600 hover:underline">Atlanta</Link>
-              <Link href="/funeral-homes/ca/san-diego" className="text-blue-600 hover:underline">San Diego</Link>
-              <Link href="/funeral-homes/ca/san-jose" className="text-blue-600 hover:underline">San Jose</Link>
-              <Link href="/funeral-homes/tn/nashville" className="text-blue-600 hover:underline">Nashville</Link>
-              <Link href="/funeral-homes/fl/tampa" className="text-blue-600 hover:underline">Tampa</Link>
+              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline">Los Angeles</Link>
+              <Link href="/funeral-homes/ny/new-york" className="text-slate-600 hover:underline">New York City</Link>
+              <Link href="/funeral-homes/il/chicago" className="text-slate-600 hover:underline">Chicago</Link>
+              <Link href="/funeral-homes/tx/houston" className="text-slate-600 hover:underline">Houston</Link>
+              <Link href="/funeral-homes/az/phoenix" className="text-slate-600 hover:underline">Phoenix</Link>
+              <Link href="/funeral-homes/fl/miami" className="text-slate-600 hover:underline">Miami</Link>
+              <Link href="/funeral-homes/tx/dallas" className="text-slate-600 hover:underline">Dallas</Link>
+              <Link href="/funeral-homes/ga/atlanta" className="text-slate-600 hover:underline">Atlanta</Link>
+              <Link href="/funeral-homes/ca/san-diego" className="text-slate-600 hover:underline">San Diego</Link>
+              <Link href="/funeral-homes/ca/san-jose" className="text-slate-600 hover:underline">San Jose</Link>
+              <Link href="/funeral-homes/tn/nashville" className="text-slate-600 hover:underline">Nashville</Link>
+              <Link href="/funeral-homes/fl/tampa" className="text-slate-600 hover:underline">Tampa</Link>
             </div>
             <p className="mt-4">
-              <Link href="/states" className="text-blue-600 hover:underline font-semibold">
+              <Link href="/states" className="text-slate-600 hover:underline font-semibold">
                 Browse all 50 states →
               </Link>
             </p>
           </section>
 
-          <section className="bg-blue-50 rounded-lg p-6 mb-10">
+          <section className="bg-slate-50 rounded-lg p-6 mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Planning Ahead?</h2>
             <p className="text-gray-600 mb-4">
               Pre-planning cremation can lock in today&apos;s prices and spare your family from making difficult decisions during grief. It also ensures your wishes are documented and followed.
@@ -361,19 +361,19 @@ export default function CremationCosts2026Page() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
               </Link>
               <Link href="/blog/cremation-cost-san-jose" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
                 <p className="text-sm text-gray-600">Compare actual cremation prices from San Jose funeral homes.</p>
               </Link>
               <Link href="/blog/funeral-homes-los-angeles" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
                 <p className="text-sm text-gray-600">Compare funeral home prices in LA with tips for choosing the right provider.</p>
               </Link>
             </div>
@@ -381,10 +381,10 @@ export default function CremationCosts2026Page() {
 
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

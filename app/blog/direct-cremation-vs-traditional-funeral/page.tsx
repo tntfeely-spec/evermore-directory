@@ -35,7 +35,7 @@ export default function DirectCremationVsTraditionalFuneral() {
           ]
         }) }}
       />
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <article className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
           <h1 className="text-4xl font-bold text-gray-800 mb-6">
@@ -51,7 +51,7 @@ export default function DirectCremationVsTraditionalFuneral() {
             <p className="text-gray-600 mb-4">
               Direct cremation is the simplest and most affordable option. The body is cremated shortly after death, without embalming, viewing, or a formal funeral service beforehand.
             </p>
-            <div className="bg-blue-50 rounded-lg p-6 mb-4">
+            <div className="bg-slate-50 rounded-lg p-6 mb-4">
               <h3 className="font-semibold text-gray-800 mb-2">What&apos;s included:</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
                 <li>Transportation of the deceased</li>
@@ -69,7 +69,7 @@ export default function DirectCremationVsTraditionalFuneral() {
                 <li>Casket</li>
               </ul>
             </div>
-            <p className="text-lg font-semibold text-blue-700">Typical cost: $1,000 – $3,000</p>
+            <p className="text-lg font-semibold text-slate-700">Typical cost: $1,000 – $3,000</p>
           </section>
 
           <section className="mb-10">
@@ -77,7 +77,7 @@ export default function DirectCremationVsTraditionalFuneral() {
             <p className="text-gray-600 mb-4">
               A traditional funeral is a full-service option that typically includes embalming, a viewing or visitation period, a formal funeral ceremony, and burial or cremation.
             </p>
-            <div className="bg-blue-50 rounded-lg p-6 mb-4">
+            <div className="bg-slate-50 rounded-lg p-6 mb-4">
               <h3 className="font-semibold text-gray-800 mb-2">What&apos;s included:</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
                 <li>Transportation of the deceased</li>
@@ -89,7 +89,7 @@ export default function DirectCremationVsTraditionalFuneral() {
                 <li>Burial or cremation</li>
               </ul>
             </div>
-            <p className="text-lg font-semibold text-blue-700">Typical cost: $7,000 – $15,000+</p>
+            <p className="text-lg font-semibold text-slate-700">Typical cost: $7,000 – $15,000+</p>
           </section>
 
           <section className="mb-10">
@@ -178,10 +178,10 @@ export default function DirectCremationVsTraditionalFuneral() {
               Use the Evermore Directory to compare funeral homes and cremation services in your area:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/tn/nashville" className="text-blue-600 hover:underline">Nashville, TN</Link>
-              <Link href="/funeral-homes/tx/dallas" className="text-blue-600 hover:underline">Dallas, TX</Link>
-              <Link href="/funeral-homes/il/chicago" className="text-blue-600 hover:underline">Chicago, IL</Link>
-              <Link href="/funeral-homes/fl/tampa" className="text-blue-600 hover:underline">Tampa, FL</Link>
+              <Link href="/funeral-homes/tn/nashville" className="text-slate-600 hover:underline">Nashville, TN</Link>
+              <Link href="/funeral-homes/tx/dallas" className="text-slate-600 hover:underline">Dallas, TX</Link>
+              <Link href="/funeral-homes/il/chicago" className="text-slate-600 hover:underline">Chicago, IL</Link>
+              <Link href="/funeral-homes/fl/tampa" className="text-slate-600 hover:underline">Tampa, FL</Link>
             </div>
           </section>
 
@@ -191,7 +191,7 @@ export default function DirectCremationVsTraditionalFuneral() {
               Direct cremation and traditional funerals both honor the deceased—they simply do so in different ways. The best decision is the one that aligns with your loved one&apos;s wishes, your family&apos;s needs, and your budget.
             </p>
             <p className="text-gray-600">
-              For more guidance, visit our <Link href="/resources" className="text-blue-600 hover:underline">Funeral Planning Resources</Link> page.
+              For more guidance, visit our <Link href="/resources" className="text-slate-600 hover:underline">Funeral Planning Resources</Link> page.
             </p>
           </section>
 
@@ -200,19 +200,19 @@ export default function DirectCremationVsTraditionalFuneral() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link href="/blog/cremation-cost-san-jose" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
                 <p className="text-sm text-gray-600">Compare actual cremation prices from San Jose funeral homes.</p>
               </Link>
               <Link href="/blog/funeral-homes-los-angeles" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Homes in Los Angeles: Prices &amp; Services</h3>
                 <p className="text-sm text-gray-600">Compare funeral home prices in LA with tips for choosing the right provider.</p>
               </Link>
             </div>
@@ -220,10 +220,10 @@ export default function DirectCremationVsTraditionalFuneral() {
 
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Compare funeral homes and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

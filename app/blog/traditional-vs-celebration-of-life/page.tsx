@@ -53,11 +53,11 @@ export default function TraditionalVsCelebrationPage() {
               </p>
               <p className="text-gray-600 mb-3">Traditional services tend to work well when:</p>
               <ul className="space-y-2 text-gray-600 mb-4 ml-4">
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The deceased had strong religious or cultural ties</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>Extended family or community expects a formal goodbye</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family needs a clear, structured process during an overwhelming time</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>There are older family members for whom a viewing is important</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family wants a permanent gravesite for future visits</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The deceased had strong religious or cultural ties</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>Extended family or community expects a formal goodbye</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The family needs a clear, structured process during an overwhelming time</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>There are older family members for whom a viewing is important</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The family wants a permanent gravesite for future visits</span></li>
               </ul>
             </section>
 
@@ -71,11 +71,11 @@ export default function TraditionalVsCelebrationPage() {
               </p>
               <p className="text-gray-600 mb-3">They work well when:</p>
               <ul className="space-y-2 text-gray-600 mb-4 ml-4">
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The deceased requested something less formal</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family wants flexibility on timing</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>Friends and family are geographically scattered</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The person's life story is best told through personality and relationships</span></li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold mt-0.5">+</span><span>The family wants a lighter tone that includes laughter and storytelling</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The deceased requested something less formal</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The family wants flexibility on timing</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>Friends and family are geographically scattered</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The person's life story is best told through personality and relationships</span></li>
+                <li className="flex gap-2"><span className="text-slate-600 font-bold mt-0.5">+</span><span>The family wants a lighter tone that includes laughter and storytelling</span></li>
               </ul>
             </section>
 
@@ -110,7 +110,7 @@ export default function TraditionalVsCelebrationPage() {
                   <div className="text-lg font-bold text-gray-900">$2,000 to $5,000</div>
                   <p className="text-xs text-gray-500 mt-1">No cemetery plot or burial costs</p>
                 </div>
-                <div className="border border-blue-200 bg-blue-50 rounded-lg p-5">
+                <div className="border border-slate-200 bg-slate-50 rounded-lg p-5">
                   <h3 className="text-base font-semibold text-gray-800 mb-3">DIY Celebration After Direct Cremation</h3>
                   <p className="text-sm text-gray-600 mb-3">Direct cremation plus home, park, or private dining room</p>
                   <div className="text-lg font-bold text-gray-900">Often under $2,500</div>
@@ -121,9 +121,9 @@ export default function TraditionalVsCelebrationPage() {
                 The financial gap between a traditional funeral with burial and a DIY celebration of life can be $10,000 or more. For families under financial strain, honoring that reality is not disrespecting the person who died.
               </p>
               <p className="text-sm text-gray-500 mt-3">
-                <Link href="/blog/funeral-costs-2026" className="text-blue-600 hover:underline">See complete funeral cost breakdown</Link>
+                <Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:underline">See complete funeral cost breakdown</Link>
                 {' '}&middot;{' '}
-                <Link href="/blog/cremation-costs-2026" className="text-blue-600 hover:underline">See cremation costs by state</Link>
+                <Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:underline">See cremation costs by state</Link>
               </p>
             </section>
 
@@ -149,7 +149,7 @@ export default function TraditionalVsCelebrationPage() {
               </p>
             </section>
 
-            <section className="mb-10 bg-blue-50 rounded-lg p-6">
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">A Note on Planning Ahead</h2>
               <p className="text-gray-600 mb-4">
                 Even a basic conversation about preferences before the person passes helps the family grieve with more focus. The families who had no information to go on spent much more energy on decisions during a very difficult time.
@@ -163,28 +163,28 @@ export default function TraditionalVsCelebrationPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                   <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
                 </Link>
                 <Link href="/blog/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-semibold text-blue-600 mb-1">Burial vs Cremation: Costs, Process and How to Decide</h3>
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Burial vs Cremation: Costs, Process and How to Decide</h3>
                   <p className="text-sm text-gray-600">A side-by-side comparison to help your family make an informed decision.</p>
                 </Link>
                 <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
                   <p className="text-sm text-gray-600">Complete price guide for funeral services across the U.S.</p>
                 </Link>
                 <Link href="/blog/how-to-plan-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
                   <p className="text-sm text-gray-600">A practical guide to planning a funeral from start to finish.</p>
                 </Link>
               </div>
             </section>
 
-            <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+            <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
               <p className="text-gray-600 mb-4">Compare funeral homes offering traditional services and cremation across all 50 states.</p>
-              <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+              <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
                 Browse by State
               </Link>
             </section>

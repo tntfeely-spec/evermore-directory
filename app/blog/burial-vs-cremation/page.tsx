@@ -60,7 +60,7 @@ export default function BurialVsCremationPage() {
             </p>
           </section>
 
-          <section className="mb-10 bg-blue-50 rounded-lg p-6">
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Comparison: Burial vs Cremation</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse bg-white rounded-lg">
@@ -128,7 +128,7 @@ export default function BurialVsCremationPage() {
               </div>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              <Link href="/blog/funeral-costs-2026" className="text-blue-600 hover:underline">See complete funeral cost breakdown →</Link> | <Link href="/blog/cremation-costs-2026" className="text-blue-600 hover:underline">See cremation costs by state →</Link>
+              <Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:underline">See complete funeral cost breakdown →</Link> | <Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:underline">See cremation costs by state →</Link>
             </p>
           </section>
 
@@ -136,28 +136,28 @@ export default function BurialVsCremationPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Burial Process: What to Expect</h2>
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Transfer &amp; Preparation (Day 1)</h3>
                   <p className="text-gray-600 text-sm">The funeral home transfers the body from the place of death. Embalming is performed if a viewing is planned. The family meets with the funeral director to plan services.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Viewing/Visitation (Day 2-3)</h3>
                   <p className="text-gray-600 text-sm">Friends and family gather to pay respects. This can be an open or closed casket. Some families hold a wake or reception alongside the viewing.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Funeral Service (Day 3-5)</h3>
                   <p className="text-gray-600 text-sm">A formal ceremony at the funeral home, church, or other venue. May include eulogies, readings, music, and religious or cultural traditions.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Burial (Day 3-7)</h3>
                   <p className="text-gray-600 text-sm">A graveside service may be held at the cemetery. The casket is lowered into the grave, which is typically lined with a vault. A headstone or marker is placed later.</p>
@@ -170,28 +170,28 @@ export default function BurialVsCremationPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Cremation Process: What to Expect</h2>
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Transfer &amp; Paperwork (Day 1)</h3>
                   <p className="text-gray-600 text-sm">The body is transferred to the funeral home or crematory. Authorization forms are signed by next of kin. Some states require a waiting period (24-72 hours) before cremation.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Optional Viewing (Day 1-3)</h3>
                   <p className="text-gray-600 text-sm">A viewing can be held before cremation, with or without embalming. Some families opt for a brief identification viewing rather than a full visitation.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Cremation (Day 2-7)</h3>
                   <p className="text-gray-600 text-sm">The body is placed in a combustible container and cremated at 1,400-1,800°F. The process takes 2-3 hours. Remains are processed into fine fragments (ashes).</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
                 <div>
                   <h3 className="font-semibold text-gray-800">Return of Ashes (Day 3-14)</h3>
                   <p className="text-gray-600 text-sm">Ashes are returned to the family in a temporary container or selected urn. Options include keeping the urn at home, placing in a columbarium, scattering, or burying.</p>
@@ -284,7 +284,7 @@ export default function BurialVsCremationPage() {
                 <p className="text-gray-600 text-sm mb-2">A single cremation uses approximately 28 gallons of natural gas and releases about 540 pounds of carbon dioxide. However, cremation avoids the ongoing land use and chemical impacts of burial.</p>
               </div>
             </div>
-            <div className="mt-4 border border-blue-200 rounded-lg p-4 bg-blue-50">
+            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-slate-50">
               <h3 className="font-semibold text-gray-800 mb-2">Green Alternatives</h3>
               <p className="text-gray-600 text-sm">For environmentally conscious families, green burial (no embalming, biodegradable casket, natural cemetery) and alkaline hydrolysis (water cremation) are growing alternatives. Green burial costs are comparable to direct burial ($2,000-$5,000).</p>
             </div>
@@ -347,29 +347,29 @@ export default function BurialVsCremationPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">Complete price guide for funeral services across the U.S.</p>
               </Link>
               <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with money-saving tips.</p>
               </Link>
               <Link href="/blog/how-to-plan-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Plan a Funeral: Step-by-Step</h3>
                 <p className="text-sm text-gray-600">A practical guide to planning a funeral from start to finish.</p>
               </Link>
               <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
               </Link>
             </div>
           </section>
 
           {/* Browse by State CTA */}
-          <section className="mt-12 bg-blue-50 rounded-lg p-8 text-center">
+          <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Compare Funeral Homes Near You</h2>
             <p className="text-gray-600 mb-4">Browse funeral homes offering burial and cremation services across all 50 states.</p>
-            <Link href="/states" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+            <Link href="/states" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
               Browse by State
             </Link>
           </section>

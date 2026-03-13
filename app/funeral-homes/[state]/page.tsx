@@ -156,7 +156,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           <nav className="mb-8 text-sm">
-            <Link href="/states" className="text-blue-600 hover:text-blue-800">
+            <Link href="/states" className="text-slate-600 hover:text-slate-800">
               All States
             </Link>
             <span className="mx-2 text-gray-400">/</span>
@@ -185,14 +185,14 @@ export default async function StateCitiesPage({ params }: PageProps) {
               <Link
                 key={city.city}
                 href={`/funeral-homes/${state.toLowerCase()}/${city.city.toLowerCase().replace(/ /g, '-')}`}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-2 border-transparent hover:border-blue-500"
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-2 border-transparent hover:border-slate-400"
               >
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{city.city}</h3>
                     <p className="text-sm text-gray-600">{city.count} funeral homes</p>
                   </div>
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -211,7 +211,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Local {stateName} Funeral Homes
                 </h3>
@@ -221,7 +221,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Verified Contact Information
                 </h3>
@@ -231,7 +231,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500">
+              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Compare Services and Options
                 </h3>
@@ -264,40 +264,40 @@ export default async function StateCitiesPage({ params }: PageProps) {
           </div>
 
           {/* Tips Section */}
-          <div className="mb-20 bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-br from-slate-50 to-slate-50 rounded-xl shadow-md p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Tips for Choosing a Funeral Home in {stateName}
             </h2>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Contact multiple funeral homes in your {stateName} community to compare pricing and available services</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Request the General Price List (GPL) from each {stateName} funeral home - they&apos;re required by law to provide it</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Ask about all options including burial, cremation, green burial, and memorial services available in {stateName}</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Verify the funeral home&apos;s licensing with the {stateName} state board and check their experience with your cultural or religious traditions</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Inquire about additional services like grief counseling, pre-planning, and memorial products offered by {stateName} providers</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 font-bold mr-3">•</span>
+                <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Consider the location and accessibility of the funeral home for family and friends attending services in {stateName}</span>
               </li>
             </ul>
           </div>
 
           {/* Pro Tip Box */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
+          <div className="mb-20 bg-gradient-to-r from-amber-50 to-slate-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {stateName} Families</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -319,28 +319,28 @@ export default async function StateCitiesPage({ params }: PageProps) {
                 href="/blog/cremation-costs-2026"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
                 <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
               </Link>
               <Link
                 href="/blog/cremation-near-me"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">How to Find Affordable Cremation Near You</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
               </Link>
               <Link
                 href="/blog/direct-cremation-vs-traditional-funeral"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
                 <p className="text-sm text-gray-600">Compare costs, timelines, and services to decide which option is right for your family.</p>
               </Link>
               <Link
                 href="/blog"
                 className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-1">View All Guides →</h3>
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">View All Guides →</h3>
                 <p className="text-sm text-gray-600">Browse our complete library of funeral planning resources and cost guides.</p>
               </Link>
             </div>
@@ -349,7 +349,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
           <div className="text-center">
             <Link
               href="/states"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               ← Back to All States
             </Link>
