@@ -68,8 +68,8 @@ export default function ResourcesPage() {
                 </div>
               </div>
 
-              <div className="flex items-start p-4 bg-green-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-green-600 flex items-center justify-center mr-3 mt-0.5">
+              <div className="flex items-start p-4 bg-teal-50 rounded-lg">
+                <div className="flex-shrink-0 h-6 w-6 rounded bg-teal-600 flex items-center justify-center mr-3 mt-0.5">
                   <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -154,8 +154,8 @@ export default function ResourcesPage() {
                 <p className="text-gray-700 text-sm">Relieve family from making difficult decisions during grief</p>
               </div>
 
-              <div className="text-center p-6 bg-green-50 rounded-xl">
-                <div className="text-green-600 mb-4">
+              <div className="text-center p-6 bg-teal-50 rounded-xl">
+                <div className="text-teal-600 mb-4">
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -178,7 +178,7 @@ export default function ResourcesPage() {
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Memorial Service</h3>
                 <p className="text-gray-700">Held after cremation or burial has taken place. The body is not present, allowing more flexibility in timing and location.</p>
               </div>
-              <div className="border-l-4 border-green-600 pl-6 py-2">
+              <div className="border-l-4 border-teal-600 pl-6 py-2">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Celebration of Life</h3>
                 <p className="text-gray-700">A more personalized, uplifting gathering focusing on celebrating the deceased&apos;s life and legacy rather than mourning their passing.</p>
               </div>
