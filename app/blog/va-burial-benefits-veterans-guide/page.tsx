@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'VA Burial Benefits: What Every Veteran's Family Needs to Know | Evermore Directory',
+  title: 'VA Burial Benefits: What Every Veteran\'s Family Needs to Know | Evermore Directory',
   description: 'A former firefighter and paramedic explains every VA burial benefit available -- burial allowance, free national cemetery burial, free headstone, and how to claim them.',
   keywords: 'va burial benefits, veterans burial benefits, va funeral benefits, national cemetery burial, veterans funeral benefits',
   alternates: {
@@ -18,10 +18,10 @@ export default function VaBurialBenefitsVeteransGuidePage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                VA Burial Benefits: What Every Veteran's Family Needs to Know
+                VA Burial Benefits: What Every Veteran&#39;s Family Needs to Know
               </h1>
               <p className="text-xl text-gray-600 mb-4">
-                Every benefit available to veterans' families -- and how to claim each one before the moment you need it.
+                Every benefit available to veterans&#39; families -- and how to claim each one before the moment you need it.
               </p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span>
@@ -54,11 +54,11 @@ export default function VaBurialBenefitsVeteransGuidePage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Presidential Memorial Certificate</h2>
-        <p className="text-gray-600 mb-4">Every eligible veteran's family can receive a Presidential Memorial Certificate -- an engraved document signed by the President expressing the nation's gratitude. It costs nothing. Apply through any VA regional office or online at va.gov.</p>
+        <p className="text-gray-600 mb-4">Every eligible veteran&#39;s family can receive a Presidential Memorial Certificate -- an engraved document signed by the President expressing the nation&#39;s gratitude. It costs nothing. Apply through any VA regional office or online at va.gov.</p>
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Claim These Benefits</h2>
-        <p className="text-gray-600 mb-4">Tell the funeral home director that the deceased is a veteran as soon as possible. A good funeral home will help guide you through the paperwork. You will need the veteran's DD-214 (Certificate of Release or Discharge from Active Duty). If you cannot find it, you can request a copy through the National Archives at archives.gov/veterans.</p>
+        <p className="text-gray-600 mb-4">Tell the funeral home director that the deceased is a veteran as soon as possible. A good funeral home will help guide you through the paperwork. You will need the veteran&#39;s DD-214 (Certificate of Release or Discharge from Active Duty). If you cannot find it, you can request a copy through the National Archives at archives.gov/veterans.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">One More Thing</h2>

@@ -21,7 +21,7 @@ export default function VaPreNeedBurialEligibilityPage() {
                 VA Pre-Need Burial Eligibility: How to Apply Before You Need It
               </h1>
               <p className="text-xl text-gray-600 mb-4">
-                One 30-minute application that removes the hardest documentation task from your family's worst day.
+                One 30-minute application that removes the hardest documentation task from your family&#39;s worst day.
               </p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span>
@@ -33,7 +33,7 @@ export default function VaPreNeedBurialEligibilityPage() {
             </header>
 
       <section className="mb-10">
-        <p className="text-gray-600 mb-4">The hardest time to make decisions is when you are in the middle of grief. One of the most useful things a veteran or their family can do right now -- before anything happens -- is apply for advance burial eligibility through the VA Pre-Need program. It takes about 30 minutes, it costs nothing, and it removes one of the biggest decisions from a family's worst day.</p>
+        <p className="text-gray-600 mb-4">The hardest time to make decisions is when you are in the middle of grief. One of the most useful things a veteran or their family can do right now -- before anything happens -- is apply for advance burial eligibility through the VA Pre-Need program. It takes about 30 minutes, it costs nothing, and it removes one of the biggest decisions from a family&#39;s worst day.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Is the Pre-Need Program?</h2>
@@ -45,7 +45,7 @@ export default function VaPreNeedBurialEligibilityPage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Apply</h2>
-        <p className="text-gray-600 mb-4">Fill out VA Form 40-10007, which can be completed online at va.gov/burials-memorials/pre-need-eligibility or downloaded and mailed to the National Cemetery Scheduling Office. You will need the veteran's DD-214. Spouses applying on their own behalf will need documentation of their relationship to the eligible veteran.</p>
+        <p className="text-gray-600 mb-4">Fill out VA Form 40-10007, which can be completed online at va.gov/burials-memorials/pre-need-eligibility or downloaded and mailed to the National Cemetery Scheduling Office. You will need the veteran&#39;s DD-214. Spouses applying on their own behalf will need documentation of their relationship to the eligible veteran.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Happens After You Apply?</h2>

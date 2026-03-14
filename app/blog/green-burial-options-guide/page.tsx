@@ -37,7 +37,7 @@ export default function GreenBurialOptionsGuidePage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Is Green Burial?</h2>
-        <p className="text-gray-600 mb-4">Green burial is the practice of returning the body to the earth without embalming, without a metal or hardwood casket, and without a concrete vault. The body is typically wrapped in a shroud or placed in a biodegradable container -- a wicker casket, a plain pine box, or a cloth shroud -- and buried at a depth that allows natural decomposition.</p>
+        <p className="text-gray-600 mb-4">Green burial is the practice of returning the body to the earth without embalming, without a metal or hardwood casket, and without a concrete vault. The body is typically wrapped in a shroud or placed in a biodegradable container and buried at a depth that allows natural decomposition.</p>
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Makes a Cemetery Green?</h2>

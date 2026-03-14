@@ -38,11 +38,11 @@ export default function PrePlanningAFuneralPage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Pre-Planning Is</h2>
-        <p className="text-gray-600 mb-4">Pre-planning means recording your wishes for your funeral or memorial service before they are needed. At its simplest, it is a written document that tells your family what you want. At its most complete, it is a contract with a funeral home that locks in today's prices for services to be delivered in the future -- called a pre-need arrangement.</p>
+        <p className="text-gray-600 mb-4">Pre-planning means recording your wishes for your funeral or memorial service before they are needed. At its simplest, it is a written document that tells your family what you want. At its most complete, it is a contract with a funeral home that locks in today&#39;s prices for services to be delivered in the future -- called a pre-need arrangement.</p>
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why It Matters</h2>
-        <p className="text-gray-600 mb-4">Families who have no information about a loved one's wishes spend a significant portion of the funeral planning process making decisions they are not sure are right. Families who have even a basic set of recorded wishes -- burial vs cremation, type of service, specific songs or readings -- describe a meaningfully different experience.</p>
+        <p className="text-gray-600 mb-4">Families who have no information about a loved one&#39;s wishes spend a significant portion of the funeral planning process making decisions they are not sure are right. Families who have even a basic set of recorded wishes -- burial vs cremation, type of service, specific songs or readings -- describe a meaningfully different experience.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Basic Document</h2>

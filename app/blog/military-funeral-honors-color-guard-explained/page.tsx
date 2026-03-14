@@ -41,7 +41,7 @@ export default function MilitaryFuneralHonorsColorGuardExplainedPage() {
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Minimum Standard</h2>
-        <p className="text-gray-600 mb-4">Federal law requires that every eligible veteran receive at minimum two uniformed military members and the folding and presentation of an American flag to the next of kin. One of the two members must be from the veteran's own branch of service. A recorded version of Taps may be used if a live bugler is not available.</p>
+        <p className="text-gray-600 mb-4">Federal law requires that every eligible veteran receive at minimum two uniformed military members and the folding and presentation of an American flag to the next of kin. One of the two members must be from the veteran&#39;s own branch of service. A recorded version of Taps may be used if a live bugler is not available.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Full Military Honors</h2>
@@ -49,11 +49,11 @@ export default function MilitaryFuneralHonorsColorGuardExplainedPage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Flag Folding and Presentation</h2>
-        <p className="text-gray-600 mb-4">The flag is folded 13 times into a tight triangle, with only the blue field and stars visible. It is then presented to the next of kin with the words: "On behalf of the President of the United States, the United States [branch of service], and a grateful nation, please accept this flag as a symbol of our appreciation for your loved one's honorable and faithful service."</p>
+        <p className="text-gray-600 mb-4">The flag is folded 13 times into a tight triangle, with only the blue field and stars visible. It is then presented to the next of kin: &quot;On behalf of the President of the United States, the United States [branch of service], and a grateful nation, please accept this flag as a symbol of our appreciation for your loved one&#39;s honorable and faithful service.&quot;</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Request Military Funeral Honors</h2>
-        <p className="text-gray-600 mb-4">Contact your funeral home director as soon as possible and let them know military honors are requested. The funeral home is responsible for submitting the request to the appropriate military branch. You will need the veteran's DD-214 to confirm eligibility. Requests should be submitted at least 48 hours in advance when possible.</p>
+        <p className="text-gray-600 mb-4">Contact your funeral home director as soon as possible and let them know military honors are requested. The funeral home is responsible for submitting the request to the appropriate military branch. You will need the veteran&#39;s DD-214 to confirm eligibility. Requests should be submitted at least 48 hours in advance when possible.</p>
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Honor Guard Organizations</h2>

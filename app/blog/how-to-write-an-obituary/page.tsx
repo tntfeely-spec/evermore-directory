@@ -41,15 +41,15 @@ export default function HowToWriteAnObituaryPage() {
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Life Summary</h2>
-        <p className="text-gray-600 mb-4">This is the core of the obituary. Cover where the person grew up, their education if relevant, their career, the things they were known for, and any organizations or communities they were part of. Use specific details over general descriptions. "He coached Little League for 22 years at Shelby Park" tells a reader more about who a person was than "he loved the community." Specifics are what people remember.</p>
+        <p className="text-gray-600 mb-4">This is the core of the obituary. Cover where the person grew up, their education if relevant, their career, the things they were known for, and any organizations or communities they were part of. Use specific details over general descriptions. Specifics are what people remember.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Survivors</h2>
-        <p className="text-gray-600 mb-4">List the people who survive the deceased, starting with spouse or partner, then children, then grandchildren, then siblings. You may also note who preceded the deceased in death. Either listing every grandchild by name or keeping it to a summary is acceptable.</p>
+        <p className="text-gray-600 mb-4">List the people who survive the deceased, starting with spouse or partner, then children, then grandchildren, then siblings. You may also note who preceded the deceased in death.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Service Information</h2>
-        <p className="text-gray-600 mb-4">Include the date, time, and location of visitation and the funeral or memorial service. If there will be a graveside service, include the cemetery name and address. If the family prefers a private service, simply note that and include any public memorial information.</p>
+        <p className="text-gray-600 mb-4">Include the date, time, and location of visitation and the funeral or memorial service. If there will be a graveside service, include the cemetery name and address. If the family prefers a private service, simply note that.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">An Optional Closing</h2>
@@ -58,7 +58,7 @@ export default function HowToWriteAnObituaryPage() {
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Example Opening Lines</h2>
         <div className="bg-gray-50 rounded-lg p-5 mb-4">
-        <p className="text-gray-700 italic mb-2">"James Earl Mitchell, 78, of Nashville, Tennessee, passed away peacefully at home on March 8, 2026, surrounded by his family. Born in Knoxville on April 12, 1947, Jim spent 32 years as a letter carrier for the U.S. Postal Service and was known to every neighbor on his route by name."</p>
+        <p className="text-gray-700 italic mb-2">&quot;James Earl Mitchell, 78, of Nashville, Tennessee, passed away peacefully at home on March 8, 2026, surrounded by his family. Born in Knoxville on April 12, 1947, Jim spent 32 years as a letter carrier for the U.S. Postal Service and was known to every neighbor on his route by name.&quot;</p>
         <p className="text-gray-500 text-sm">57 words. Full name, age, location, date of death, birthplace, career, and one specific detail about who he was. That is all a first paragraph needs to do.</p>
       </div>
       </section>

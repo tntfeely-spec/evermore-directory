@@ -33,7 +33,7 @@ export default function NationalCemeteryBurialVeteransFreePage() {
             </header>
 
       <section className="mb-10">
-        <p className="text-gray-600 mb-4">One of the most overlooked benefits available to veterans' families is the right to burial in a national cemetery at no cost. No opening fee, no closing fee, no liner cost, no perpetual care fee. For families facing a funeral bill of $8,000 or more, this benefit can change everything.</p>
+        <p className="text-gray-600 mb-4">One of the most overlooked benefits available to veterans&#39; families is the right to burial in a national cemetery at no cost. No opening fee, no closing fee, no liner cost, no perpetual care fee. For families facing a funeral bill of $8,000 or more, this benefit can change everything.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who Is Eligible?</h2>
@@ -49,11 +49,11 @@ export default function NationalCemeteryBurialVeteransFreePage() {
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">State Veterans Cemeteries</h2>
-        <p className="text-gray-600 mb-4">Most states operate their own veterans cemeteries, also at little or no cost. Check your state's Department of Veterans Affairs website for locations and eligibility requirements.</p>
+        <p className="text-gray-600 mb-4">Most states operate their own veterans cemeteries, also at little or no cost. Check your state&#39;s Department of Veterans Affairs website for locations and eligibility requirements.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Schedule a Burial</h2>
-        <p className="text-gray-600 mb-4">Contact the National Cemetery Scheduling Office at 1-800-535-1117 as soon as possible after the veteran's death. You can also schedule online at va.gov. You will need the veteran's full name, dates of birth and death, Social Security number, and DD-214. Most national cemeteries can accommodate scheduling within a few days to two weeks.</p>
+        <p className="text-gray-600 mb-4">Contact the National Cemetery Scheduling Office at 1-800-535-1117 as soon as possible after the veteran&#39;s death. You will need the veteran&#39;s full name, dates of birth and death, Social Security number, and DD-214. Most national cemeteries can accommodate scheduling within a few days to two weeks.</p>
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Pre-Need Program</h2>

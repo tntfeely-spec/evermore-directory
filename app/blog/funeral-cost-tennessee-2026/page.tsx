@@ -42,19 +42,19 @@ export default function FuneralCostTennessee2026Page() {
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cremation Costs in Tennessee</h2>
-        <p className="text-gray-600 mb-4">Direct cremation typically runs $700 to $1,800 in Tennessee. Cremation with a memorial service adds the cost of the service and an urn, bringing the total to $2,500 to $5,000. A full traditional service followed by cremation typically costs $4,000 to $8,000.</p>
+        <p className="text-gray-600 mb-4">Direct cremation typically runs $700 to $1,800 in Tennessee. Cremation with a memorial service brings the total to $2,500 to $5,000. A full traditional service followed by cremation typically costs $4,000 to $8,000.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cost by Region</h2>
-        <p className="text-gray-600 mb-4">Funeral costs in Nashville and Knoxville tend to run higher than rural Tennessee. Memphis prices are similar to Nashville in urban areas. Markets like Cookeville, Murfreesboro, and Clarksville generally fall in the middle range. Every licensed funeral home is legally required to provide an itemized General Price List on request -- ask for it before deciding.</p>
+        <p className="text-gray-600 mb-4">Funeral costs in Nashville and Knoxville tend to run higher than rural Tennessee. Every licensed funeral home is legally required to provide an itemized General Price List on request -- ask for it before deciding.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Veteran Burial Benefits in Tennessee</h2>
-        <p className="text-gray-600 mb-4">Tennessee has state veterans cemeteries where eligible veterans can be buried at little to no cost. The Middle Tennessee State Veterans Cemetery in Nashville serves veterans from across the state. These benefits are significant and often go unclaimed. See our <Link href="/blog/va-burial-benefits-veterans-guide" className="text-slate-600 hover:underline">full guide to VA burial benefits</Link> for details.</p>
+        <p className="text-gray-600 mb-4">Tennessee has state veterans cemeteries where eligible veterans can be buried at little to no cost. The Middle Tennessee State Veterans Cemetery in Nashville serves veterans from across the state. See our <Link href="/blog/va-burial-benefits-veterans-guide" className="text-slate-600 hover:underline">full guide to VA burial benefits</Link> for details.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Financial Assistance Options</h2>
-        <p className="text-gray-600 mb-4">Direct cremation through a budget-focused funeral home is the most affordable dignified option, often under $1,000. Social Security provides a one-time $255 death benefit to eligible surviving spouses or children. County social services programs may cover burial costs for families who cannot afford them -- contact your county's Department of Human Services.</p>
+        <p className="text-gray-600 mb-4">Direct cremation through a budget-focused funeral home is often under $1,000. Social Security provides a one-time $255 death benefit to eligible surviving spouses or children. County social services programs may cover burial costs for families who cannot afford them.</p>
       <p className="text-gray-600 mb-4"><Link href="/funeral-homes/tn" className="text-slate-600 hover:underline">Browse funeral homes in Tennessee at funeralhomedirectories.com.</Link></p>
       </section>
             <section className="mt-12 border-t border-gray-200 pt-8">

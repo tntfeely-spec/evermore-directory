@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Funeral Home Red Flags: What to Watch Out For When You're Grieving | Evermore Directory',
+  title: 'Funeral Home Red Flags: What to Watch Out For When Grieving | Evermore Directory',
   description: 'A former paramedic walks families through the funeral home warning signs that matter most -- from refusing a price list to pressuring immediate decisions.',
   keywords: 'funeral home red flags, funeral home scams, bad funeral home, funeral home consumer rights, FTC funeral rule, funeral home warning signs',
   alternates: {
@@ -18,7 +18,7 @@ export default function FuneralHomeRedFlagsPage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Funeral Home Red Flags: What to Watch Out For When You're Grieving
+                Funeral Home Red Flags: What to Watch Out For When Grieving
               </h1>
               <p className="text-xl text-gray-600 mb-4">
                 The warning signs that matter most -- from a former paramedic who has seen what happens when families are not protected.
@@ -33,7 +33,7 @@ export default function FuneralHomeRedFlagsPage() {
             </header>
 
       <section className="mb-10">
-        <p className="text-gray-600 mb-4">The funeral industry is regulated by the FTC Funeral Rule, which gives families significant protections. Most funeral homes operate with genuine respect for families and follow the law. But not all of them do. And the people most vulnerable to bad practices are the ones who are grieving, who have never done this before, and who are making decisions under time pressure they have never experienced.</p>
+        <p className="text-gray-600 mb-4">The funeral industry is regulated by the FTC Funeral Rule, which gives families significant protections. Most funeral homes operate with genuine respect for families and follow the law. But not all of them do. And the people most vulnerable to bad practices are grieving, have never done this before, and are making decisions under time pressure they have never experienced.</p>
       </section>
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Refuse to Give You a Price List</h2>
@@ -57,7 +57,7 @@ export default function FuneralHomeRedFlagsPage() {
       </section>
       <section className="mb-10 bg-slate-50 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What To Do If Something Feels Wrong</h2>
-        <p className="text-gray-600 mb-4">Trust your instincts. You can move the body to a different funeral home if no contract has been signed. File a complaint with your state's funeral regulatory board if you believe a violation occurred. The FTC also accepts complaints at ftc.gov.</p>
+        <p className="text-gray-600 mb-4">Trust your instincts. You can move the body to a different funeral home if no contract has been signed. File a complaint with your state&#39;s funeral regulatory board if you believe a violation occurred. The FTC also accepts complaints at ftc.gov.</p>
       <p className="text-gray-600 mb-4"><Link href="/states" className="text-slate-600 hover:underline">Browse and compare funeral homes in your city at funeralhomedirectories.com.</Link></p>
       </section>
             <section className="mt-12 border-t border-gray-200 pt-8">
