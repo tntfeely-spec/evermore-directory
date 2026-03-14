@@ -3,13 +3,73 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Funeral & Cremation Planning Blog | Evermore Directory',
-  description: 'Guides and resources for funeral planning, cremation costs, and choosing the right funeral home. Compare prices, understand your options, and make informed decisions.',
+  description: 'Guides and resources for funeral planning, cremation costs, veterans burial benefits, and choosing the right funeral home.',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog',
   },
 };
 
 const blogPosts = [
+  {
+    slug: 'va-burial-benefits-veterans-guide',
+    title: "VA Burial Benefits: What Every Veteran's Family Needs to Know",
+    description: 'The VA provides burial allowances, free national cemetery burial, free headstones, and more for eligible veterans. A former paramedic explains every benefit and how to claim it.',
+    category: 'Veterans Benefits',
+  },
+  {
+    slug: 'military-funeral-honors-color-guard-explained',
+    title: 'Military Funeral Honors: Color Guard, Rifle Salute, and Flag Folding Explained',
+    description: 'What military funeral honors involve -- color guard, rifle salute, Taps, and flag presentation -- and exactly how to request them for a veteran at no cost.',
+    category: 'Veterans Benefits',
+  },
+  {
+    slug: 'national-cemetery-burial-veterans-free',
+    title: 'National Cemetery Burial: How to Bury a Veteran in a Federal Cemetery for Free',
+    description: 'Any veteran with an honorable discharge is eligible for burial in a national cemetery at no cost. Who qualifies, what is included, and how to schedule.',
+    category: 'Veterans Benefits',
+  },
+  {
+    slug: 'va-pre-need-burial-eligibility',
+    title: 'VA Pre-Need Burial Eligibility: How to Apply Before You Need It',
+    description: "The VA Pre-Need program lets veterans confirm burial eligibility in advance. One 30-minute application removes the hardest documentation task from your family's worst day.",
+    category: 'Veterans Benefits',
+  },
+  {
+    slug: 'what-to-do-when-someone-dies',
+    title: 'What to Do When Someone Dies: A Step-by-Step Guide for the First 72 Hours',
+    description: 'A former firefighter and paramedic walks families through exactly what needs to happen in the first 72 hours after a death -- in order, without overwhelm.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'funeral-cost-tennessee-2026',
+    title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide',
+    description: 'Funeral costs in Tennessee range from under $1,000 for direct cremation to $18,000+ for traditional burial. A complete breakdown by service type and region.',
+    category: 'Local Prices',
+  },
+  {
+    slug: 'green-burial-options-guide',
+    title: 'Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers',
+    description: 'Green burial skips embalming, vaults, and metal caskets -- and costs significantly less than conventional burial. What it involves and how to find a certified provider.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'how-to-write-an-obituary',
+    title: 'How to Write an Obituary: A Simple Guide With Examples',
+    description: 'A practical guide to writing an obituary -- what to include, how to structure it, how long it should be, and example opening lines that actually work.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'pre-planning-a-funeral',
+    title: 'Pre-Planning a Funeral: Why It Matters and How to Do It',
+    description: 'Pre-planning a funeral is one of the most generous things you can do for the people who will grieve you. A former paramedic explains why it matters and how to do it.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'funeral-home-red-flags',
+    title: 'Funeral Home Red Flags: What to Watch Out For When Grieving',
+    description: 'Most funeral homes operate with integrity. But families in grief are vulnerable. A former paramedic walks through the warning signs that matter most -- and your rights under FTC law.',
+    category: 'Consumer Guide',
+  },
   {
     slug: 'cremation-costs-2026',
     title: 'How Much Does Cremation Cost in 2026? Complete Price Guide',
@@ -67,7 +127,7 @@ const blogPosts = [
   {
     slug: 'traditional-vs-celebration-of-life',
     title: 'Traditional Funeral vs. Celebration of Life: How to Choose',
-    description: 'A former firefighter and paramedic explains the real emotional and financial difference between traditional funerals and celebrations of life -- and how to know which is right for your family.',
+    description: 'A former firefighter and paramedic explains the real emotional and financial difference between traditional funerals and celebrations of life.',
     category: 'Planning Guide',
   },
 ];
@@ -109,10 +169,9 @@ export default function BlogIndexPage() {
                 Guides, cost comparisons, and resources to help you make informed decisions about funeral and cremation services.
               </p>
             </header>
-
             <div className="space-y-8">
               {blogPosts.map((post) => (
-                <article key={post.slug} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                <article key={post.slug} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-white bg-opacity-90">
                   <div className="mb-2">
                     <span className="text-sm font-medium text-slate-600 bg-slate-50 px-3 py-1 rounded-full">
                       {post.category}
@@ -133,7 +192,6 @@ export default function BlogIndexPage() {
                 </article>
               ))}
             </div>
-
             <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                 Find Funeral Homes Near You
