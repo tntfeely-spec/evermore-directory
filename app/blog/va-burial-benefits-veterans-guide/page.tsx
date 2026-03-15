@@ -32,58 +32,65 @@ export default function VaBurialBenefitsVeteransGuidePage() {
               </div>
             </header>
 
-      <section className="mb-10">
-        <p className="text-gray-600 mb-4">I responded to a lot of calls involving veterans over the years. What I remember most is how often their families were unaware of the burial benefits their loved one had earned. Benefits that could have covered thousands of dollars in funeral costs were left on the table because nobody told them in time. This post exists so that does not happen to your family.</p>
-      <p className="text-gray-600 mb-4">The VA provides several burial benefits for eligible veterans, and most of them cost the family nothing. Here is what is available and how to access it.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Basic Burial Allowance</h2>
-        <p className="text-gray-600 mb-4">The VA offers a burial allowance of up to $796 for veterans who were receiving VA pension or compensation at the time of death, or who died in a VA facility. If the death was service-connected, the allowance increases to $2,000. This is a reimbursement -- a funeral home must be paid first, then the family submits VA Form 21P-530 to request reimbursement.</p>
-      </section>
-      <section className="mb-10 bg-slate-50 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Plot or Interment Allowance</h2>
-        <p className="text-gray-600 mb-4">If the veteran is not buried in a national cemetery, the VA also provides up to $796 toward the cost of a burial plot or interment in a state veterans cemetery. This is separate from the burial allowance and can be claimed in addition to it.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Free Burial in a National Cemetery</h2>
-        <p className="text-gray-600 mb-4">Any veteran with an honorable or general discharge is eligible for burial in a national cemetery at no cost. This includes the opening and closing of the grave, a liner, a grave marker, and perpetual care. Spouses and dependent children are also eligible. There are 155 national cemeteries across the country. To find one near you, visit va.gov or call 1-800-535-1117.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Headstone or Grave Marker</h2>
-        <p className="text-gray-600 mb-4">The VA will provide a headstone, grave marker, or medallion at no cost for any eligible veteran regardless of where they are buried -- including private cemeteries. The family is responsible for the cost of placing the marker in a private cemetery, but the marker itself is free. Submit VA Form 40-1330 to request one.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Presidential Memorial Certificate</h2>
-        <p className="text-gray-600 mb-4">Every eligible veteran&#39;s family can receive a Presidential Memorial Certificate -- an engraved document signed by the President expressing the nation&#39;s gratitude. It costs nothing. Apply through any VA regional office or online at va.gov.</p>
-      </section>
-      <section className="mb-10 bg-slate-50 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Claim These Benefits</h2>
-        <p className="text-gray-600 mb-4">Tell the funeral home director that the deceased is a veteran as soon as possible. A good funeral home will help guide you through the paperwork. You will need the veteran&#39;s DD-214 (Certificate of Release or Discharge from Active Duty). If you cannot find it, you can request a copy through the National Archives at archives.gov/veterans.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">One More Thing</h2>
-        <p className="text-gray-600 mb-4">These benefits exist because of service that cannot be repaid. Do not leave them unclaimed. A VA benefits counselor can walk you through all of this at no charge. Call 1-800-827-1000 or visit your nearest VA regional office.</p>
-      </section>
+            <section className="mb-10">
+              <p className="text-gray-600 mb-4">I responded to a lot of calls involving veterans over the years. What I remember most is how often their families were unaware of the burial benefits their loved one had earned. Benefits that could have covered thousands of dollars in funeral costs were left on the table because nobody told them in time. This post exists so that does not happen to your family.</p>
+              <p className="text-gray-600 mb-4">The VA provides several burial benefits for eligible veterans, and most of them cost the family nothing. Here is what is available and how to access it.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Basic Burial Allowance</h2>
+              <p className="text-gray-600 mb-4">For veterans who died on or after October 1, 2025, the VA pays up to <strong>$1,002</strong> for burial and funeral expenses. If the death was service-connected, the allowance increases to $2,000 regardless of when the death occurred. This is a reimbursement -- a funeral home must be paid first, then the family submits VA Form 21P-530EZ to request reimbursement. Amounts adjust annually based on the Consumer Price Index; check <a href="https://www.va.gov/burials-memorials/veterans-burial-allowance/" className="text-slate-600 hover:underline" target="_blank" rel="noopener noreferrer">va.gov</a> for the current rate.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Plot or Interment Allowance</h2>
+              <p className="text-gray-600 mb-4">If the veteran is not buried in a national cemetery, the VA also provides up to <strong>$1,002</strong> toward the cost of a burial plot or interment in a state veterans cemetery. This is a separate payment from the burial allowance and can be claimed in addition to it -- meaning an eligible family can receive up to $2,004 combined for burial and plot costs (for non-service-connected deaths occurring on or after October 1, 2025).</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Free Burial in a National Cemetery</h2>
+              <p className="text-gray-600 mb-4">Any veteran with an honorable or general discharge is eligible for burial in a national cemetery at no cost. This includes the opening and closing of the grave, a liner, a grave marker, and perpetual care. Spouses and dependent children are also eligible. There are 155 national cemeteries across the country. To find one near you, visit va.gov or call 1-800-535-1117.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Headstone or Grave Marker</h2>
+              <p className="text-gray-600 mb-4">The VA will provide a headstone, grave marker, or medallion at no cost for any eligible veteran regardless of where they are buried -- including private cemeteries. The family is responsible for the cost of placing the marker in a private cemetery, but the marker itself is free. Submit VA Form 40-1330 to request one.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Presidential Memorial Certificate</h2>
+              <p className="text-gray-600 mb-4">Every eligible veteran&#39;s family can receive a Presidential Memorial Certificate -- an engraved document signed by the President expressing the nation&#39;s gratitude. It costs nothing. Apply through any VA regional office or online at va.gov.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Claim These Benefits</h2>
+              <p className="text-gray-600 mb-4">Tell the funeral home director that the deceased is a veteran as soon as possible. A good funeral home will help guide you through the paperwork. You will need the veteran&#39;s DD-214 (Certificate of Release or Discharge from Active Duty). If you cannot find it, you can request a copy through the National Archives at archives.gov/veterans.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">One More Thing</h2>
+              <p className="text-gray-600 mb-4">These benefits exist because of service that cannot be repaid. Do not leave them unclaimed. A VA benefits counselor can walk you through all of this at no charge. Call 1-800-827-1000 or visit your nearest VA regional office.</p>
+            </section>
+
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">
-
-              <Link href="/blog/military-funeral-honors-color-guard-explained" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Military Funeral Honors Explained</h3>
-                <p className="text-sm text-gray-600">Color guard, rifle salute, and flag folding -- what to expect and how to request them.</p>
-              </Link>
-              <Link href="/blog/national-cemetery-burial-veterans-free" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">National Cemetery Burial: Free for Veterans</h3>
-                <p className="text-sm text-gray-600">How to schedule burial in a national cemetery and what is included at no cost.</p>
-              </Link>
-              <Link href="/blog/va-pre-need-burial-eligibility" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">VA Pre-Need Burial Eligibility</h3>
-                <p className="text-sm text-gray-600">How veterans can apply for burial eligibility before it is needed.</p>
-              </Link>
-              <Link href="/blog/what-to-do-when-someone-dies" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">What to Do When Someone Dies</h3>
-                <p className="text-sm text-gray-600">A step-by-step guide for the first 72 hours.</p>
-              </Link>
+                <Link href="/blog/military-funeral-honors-color-guard-explained" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Military Funeral Honors Explained</h3>
+                  <p className="text-sm text-gray-600">Color guard, rifle salute, and flag folding -- what to expect and how to request them.</p>
+                </Link>
+                <Link href="/blog/national-cemetery-burial-veterans-free" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">National Cemetery Burial: Free for Veterans</h3>
+                  <p className="text-sm text-gray-600">How to schedule burial in a national cemetery and what is included at no cost.</p>
+                </Link>
+                <Link href="/blog/va-pre-need-burial-eligibility" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">VA Pre-Need Burial Eligibility</h3>
+                  <p className="text-sm text-gray-600">How veterans can apply for burial eligibility before it is needed.</p>
+                </Link>
+                <Link href="/blog/what-to-do-when-someone-dies" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">What to Do When Someone Dies</h3>
+                  <p className="text-sm text-gray-600">A step-by-step guide for the first 72 hours.</p>
+                </Link>
               </div>
             </section>
 
