@@ -3,11 +3,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Funeral Home Red Flags: What to Watch Out For When Grieving | Evermore Directory',
-  description: 'A former paramedic walks families through the funeral home warning signs that matter most -- from refusing a price list to pressuring immediate decisions.',
-  keywords: 'funeral home red flags, funeral home scams, bad funeral home, funeral home consumer rights, FTC funeral rule, funeral home warning signs',
-  alternates: {
-    canonical: 'https://funeralhomedirectories.com/blog/funeral-home-red-flags',
-  },
+  description: '',
+  alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-home-red-flags' },
 };
 
 export default function FuneralHomeRedFlagsPage() {
@@ -17,12 +14,8 @@ export default function FuneralHomeRedFlagsPage() {
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
             <header className="mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Funeral Home Red Flags: What to Watch Out For When Grieving
-              </h1>
-              <p className="text-xl text-gray-600 mb-4">
-                The warning signs that matter most -- from a former paramedic who has seen what happens when families are not protected.
-              </p>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Home Red Flags: What to Watch Out For When Grieving</h1>
+              <p className="text-xl text-gray-600 mb-4">The warning signs that matter most -- from a former paramedic who has seen what happens when families are not protected.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span>
                 <span>|</span>
@@ -32,57 +25,56 @@ export default function FuneralHomeRedFlagsPage() {
               </div>
             </header>
 
-      <section className="mb-10">
-        <p className="text-gray-600 mb-4">The funeral industry is regulated by the FTC Funeral Rule, which gives families significant protections. Most funeral homes operate with genuine respect for families and follow the law. But not all of them do. And the people most vulnerable to bad practices are grieving, have never done this before, and are making decisions under time pressure they have never experienced.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Refuse to Give You a Price List</h2>
-        <p className="text-gray-600 mb-4">The FTC Funeral Rule requires every licensed funeral home to provide an itemized General Price List on request. If they tell you prices depend on the situation or try to get you to come in first, that is a red flag. A reputable funeral home will email or read you their price list over the phone without hesitation.</p>
-      </section>
-      <section className="mb-10 bg-slate-50 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Tell You Embalming Is Required</h2>
-        <p className="text-gray-600 mb-4">Embalming is not required by law in any state for a standard burial or cremation. It may be required in specific circumstances -- if the body is being transported across state lines or if there is a significant delay. A funeral home that tells you embalming is required without explaining the specific legal reason is adding an unnecessary charge.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Pressure You to Decide Immediately</h2>
-        <p className="text-gray-600 mb-4">You do not have to select a casket, confirm a service format, or make any major decisions the day someone dies. A reputable funeral home will take custody of the body and give you time. Pressure to make decisions before you are ready -- especially financial decisions -- is a warning sign.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Contract Is Unclear or Changes at Signing</h2>
-        <p className="text-gray-600 mb-4">Every charge should be itemized before you sign. If fees appear in the contract that were not discussed, ask for a written explanation before signing. The Funeral Rule gives you the right to select only the services you want. A package that bundles services you did not request is not compliant with FTC regulations.</p>
-      </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Discourage Comparison Shopping</h2>
-        <p className="text-gray-600 mb-4">You are entitled to call more than one funeral home. A funeral home that makes you feel guilty for asking -- implying it is disrespectful to your loved one -- is not acting in good faith. A funeral home confident in their service and pricing welcomes comparison.</p>
-      </section>
-      <section className="mb-10 bg-slate-50 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">What To Do If Something Feels Wrong</h2>
-        <p className="text-gray-600 mb-4">Trust your instincts. You can move the body to a different funeral home if no contract has been signed. File a complaint with your state&#39;s funeral regulatory board if you believe a violation occurred. The FTC also accepts complaints at ftc.gov.</p>
-      <p className="text-gray-600 mb-4"><Link href="/states" className="text-slate-600 hover:underline">Browse and compare funeral homes in your city at funeralhomedirectories.com.</Link></p>
-      </section>
+            <section className="mb-10">
+              <p className="text-gray-600 mb-4">The funeral industry is regulated by the FTC Funeral Rule, which gives families significant protections. Most funeral homes operate with genuine respect for families and follow the law. But not all of them do. And the people most vulnerable to bad practices are grieving, have never done this before, and are making decisions under time pressure they have never experienced.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Refuse to Give You a Price List</h2>
+              <p className="text-gray-600 mb-4">The FTC Funeral Rule requires every licensed funeral home to provide an itemized General Price List on request. If they tell you prices depend on the situation or try to get you to come in first, that is a red flag. A reputable funeral home will email or read you their price list over the phone without hesitation.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Tell You Embalming Is Required</h2>
+              <p className="text-gray-600 mb-4">Embalming is not required by law in any state for a standard burial or cremation. It may be required in specific circumstances -- if the body is being transported across state lines or if there is a significant delay. A funeral home that tells you embalming is required without explaining the specific legal reason is adding an unnecessary charge.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Pressure You to Decide Immediately</h2>
+              <p className="text-gray-600 mb-4">You do not have to select a casket, confirm a service format, or make any major decisions the day someone dies. A reputable funeral home will take custody of the body and give you time. Pressure to make decisions before you are ready -- especially financial decisions -- is a warning sign.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Contract Is Unclear or Changes at Signing</h2>
+              <p className="text-gray-600 mb-4">Every charge should be itemized before you sign. If fees appear in the contract that were not discussed, ask for a written explanation before signing. The Funeral Rule gives you the right to select only the services you want. A package that bundles services you did not request is not compliant with FTC regulations.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">They Discourage Comparison Shopping</h2>
+              <p className="text-gray-600 mb-4">You are entitled to call more than one funeral home. A funeral home that makes you feel guilty for asking -- implying it is disrespectful to your loved one -- is not acting in good faith. A funeral home confident in their service and pricing welcomes comparison.</p>
+            </section>
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">What To Do If Something Feels Wrong</h2>
+              <p className="text-gray-600 mb-4">Trust your instincts. You can move the body to a different funeral home if no contract has been signed. File a complaint with your state&#39;s funeral regulatory board if you believe a violation occurred. The FTC also accepts complaints at ftc.gov.</p>
+              <p className="text-gray-600 mb-4"><Link href="/states" className="text-slate-600 hover:underline">Browse and compare funeral homes in your city at funeralhomedirectories.com.</Link></p>
+            </section>
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">
 
-              <Link href="/blog/what-to-do-when-someone-dies" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">What to Do When Someone Dies</h3>
-                <p className="text-sm text-gray-600">A step-by-step guide for the first 72 hours.</p>
-              </Link>
-              <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
-                <p className="text-sm text-gray-600">Know what fair pricing looks like before you call.</p>
-              </Link>
-              <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
-                <p className="text-sm text-gray-600">Compare your options before you choose.</p>
-              </Link>
-              <Link href="/blog/pre-planning-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Pre-Planning a Funeral</h3>
-                <p className="text-sm text-gray-600">Remove the pressure from your family's worst day.</p>
-              </Link>
+                <Link href="/blog/what-to-do-when-someone-dies" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">What to Do When Someone Dies</h3>
+                  <p className="text-sm text-gray-600">A step-by-step guide for the first 72 hours.</p>
+                </Link>
+                <Link href="/blog/funeral-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does a Funeral Cost in 2026?</h3>
+                  <p className="text-sm text-gray-600">Know what fair pricing looks like before you call.</p>
+                </Link>
+                <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                  <p className="text-sm text-gray-600">Compare your options before you choose.</p>
+                </Link>
+                <Link href="/blog/pre-planning-a-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Pre-Planning a Funeral</h3>
+                  <p className="text-sm text-gray-600">Remove the pressure from your family's worst day.</p>
+                </Link>
               </div>
             </section>
-
             <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">Find Funeral Homes Near You</h2>
               <p className="text-gray-600 mb-4">Compare funeral homes offering burial and cremation services across all 50 states.</p>
@@ -90,7 +82,6 @@ export default function FuneralHomeRedFlagsPage() {
                 Browse by State
               </Link>
             </section>
-
             <p className="text-sm text-gray-400 mt-8">Last updated: March 2026</p>
           </article>
         </div>
