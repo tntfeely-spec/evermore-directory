@@ -188,7 +188,7 @@ export default function DirectCremationVsTraditionalFuneral() {
           <section className="bg-gray-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Bottom Line</h2>
             <p className="text-gray-600 mb-4">
-              Direct cremation and traditional funerals both honor the deceased—they simply do so in different ways. The best decision is the one that aligns with your loved one&apos;s wishes, your family&apos;s needs, and your budget.
+              Direct cremation and traditional funerals both honor the deceased-they simply do so in different ways. The best decision is the one that aligns with your loved one&apos;s wishes, your family&apos;s needs, and your budget.
             </p>
             <p className="text-gray-600">
               For more guidance, visit our <Link href="/resources" className="text-slate-600 hover:underline">Funeral Planning Resources</Link> page.

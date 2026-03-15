@@ -44,7 +44,7 @@ export default function CremationSanJosePage() {
               Cremation Cost in San Jose: 2026 Price Guide
             </h1>
             <p className="text-xl text-gray-600">
-              What San Jose families actually pay for cremation services—with real prices from local funeral homes.
+              What San Jose families actually pay for cremation services-with real prices from local funeral homes.
             </p>
           </header>
 
@@ -107,7 +107,7 @@ export default function CremationSanJosePage() {
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Facility Overhead</h3>
                 <p className="text-gray-600">
-                  Funeral homes with large, elegant facilities in expensive areas of San Jose have higher operating costs—and pass those costs to families.
+                  Funeral homes with large, elegant facilities in expensive areas of San Jose have higher operating costs-and pass those costs to families.
                 </p>
               </div>
 
@@ -192,7 +192,7 @@ export default function CremationSanJosePage() {
               <li>Basic container for cremated remains</li>
             </ul>
             <p className="text-gray-600 mt-4">
-              Direct cremation does <strong>not</strong> include embalming, viewing, funeral service, flowers, obituary, or upgraded urns. However, many families choose direct cremation and then hold a separate memorial service on their own—often at a church, park, or family home—which can save thousands of dollars.
+              Direct cremation does <strong>not</strong> include embalming, viewing, funeral service, flowers, obituary, or upgraded urns. However, many families choose direct cremation and then hold a separate memorial service on their own-often at a church, park, or family home-which can save thousands of dollars.
             </p>
           </section>
 
@@ -224,12 +224,12 @@ export default function CremationSanJosePage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Save on Cremation in San Jose</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li><strong>Compare at least 3 providers</strong> — prices vary by $1,000+ for the same service</li>
-              <li><strong>Choose direct cremation</strong> — hold a memorial separately to save thousands</li>
-              <li><strong>Buy your own urn</strong> — Amazon, Etsy, and specialty retailers sell urns for a fraction of funeral home prices</li>
-              <li><strong>Skip the obituary</strong> — or write it yourself and submit directly to the newspaper</li>
-              <li><strong>Ask about cash discounts</strong> — some funeral homes offer discounts for upfront payment</li>
-              <li><strong>Consider cremation societies</strong> — non-profit organizations often offer the lowest prices</li>
+              <li><strong>Compare at least 3 providers</strong> - prices vary by $1,000+ for the same service</li>
+              <li><strong>Choose direct cremation</strong> - hold a memorial separately to save thousands</li>
+              <li><strong>Buy your own urn</strong> - Amazon, Etsy, and specialty retailers sell urns for a fraction of funeral home prices</li>
+              <li><strong>Skip the obituary</strong> - or write it yourself and submit directly to the newspaper</li>
+              <li><strong>Ask about cash discounts</strong> - some funeral homes offer discounts for upfront payment</li>
+              <li><strong>Consider cremation societies</strong> - non-profit organizations often offer the lowest prices</li>
             </ul>
           </section>
 
@@ -278,7 +278,7 @@ export default function CremationSanJosePage() {
           <section className="bg-gray-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Bottom Line</h2>
             <p className="text-gray-600 mb-4">
-              Cremation in San Jose ranges from about $1,095 for direct cremation to $10,000+ for full funeral services with cremation. The biggest factor in what you&apos;ll pay is which funeral home you choose—prices vary dramatically even within the same city.
+              Cremation in San Jose ranges from about $1,095 for direct cremation to $10,000+ for full funeral services with cremation. The biggest factor in what you&apos;ll pay is which funeral home you choose-prices vary dramatically even within the same city.
             </p>
             <p className="text-gray-600">
               Use the Evermore Directory to compare San Jose cremation prices before making calls. A few minutes of research can save your family thousands of dollars.

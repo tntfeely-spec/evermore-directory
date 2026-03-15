@@ -50,7 +50,7 @@ export default function FuneralHomesLosAngelesPage() {
 
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              Los Angeles has over 300 funeral homes serving one of the most diverse populations in the country. With so many options, finding the right funeral home—at a fair price—can feel overwhelming, especially during an already difficult time.
+              Los Angeles has over 300 funeral homes serving one of the most diverse populations in the country. With so many options, finding the right funeral home-at a fair price-can feel overwhelming, especially during an already difficult time.
             </p>
             <p className="text-gray-600">
               This guide breaks down what funeral services actually cost in Los Angeles, what to look for in a provider, and how to avoid overpaying.
@@ -60,7 +60,7 @@ export default function FuneralHomesLosAngelesPage() {
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Do Funeral Services Cost in Los Angeles?</h2>
             <p className="text-gray-600 mb-4">
-              Funeral costs in Los Angeles vary dramatically—sometimes by <strong>200-300%</strong> for the same service. Here&apos;s what you can expect to pay:
+              Funeral costs in Los Angeles vary dramatically-sometimes by <strong>200-300%</strong> for the same service. Here&apos;s what you can expect to pay:
             </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded">
@@ -151,7 +151,7 @@ export default function FuneralHomesLosAngelesPage() {
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Cultural & Religious Experience</h3>
                 <p className="text-gray-600">
-                  LA&apos;s diversity means you may need a funeral home experienced with specific traditions—Catholic, Jewish, Buddhist, Hindu, Muslim, or secular celebrations of life. Ask about their experience with your family&apos;s customs.
+                  LA&apos;s diversity means you may need a funeral home experienced with specific traditions-Catholic, Jewish, Buddhist, Hindu, Muslim, or secular celebrations of life. Ask about their experience with your family&apos;s customs.
                 </p>
               </div>
 
@@ -191,12 +191,12 @@ export default function FuneralHomesLosAngelesPage() {
               Funeral costs add up quickly, but there are legitimate ways to reduce expenses:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li><strong>Compare prices from at least 3 funeral homes</strong> — prices vary significantly, even in the same neighborhood</li>
-              <li><strong>Consider direct cremation</strong> — you can still hold a meaningful memorial service separately</li>
-              <li><strong>Skip the casket for cremation</strong> — a simple container is all that&apos;s required by law</li>
-              <li><strong>Provide your own urn</strong> — funeral home urns are often marked up significantly</li>
-              <li><strong>Ask about package pricing</strong> — bundled services may cost less than à la carte</li>
-              <li><strong>Check for veteran benefits</strong> — eligible veterans may qualify for burial allowances and cemetery benefits</li>
+              <li><strong>Compare prices from at least 3 funeral homes</strong> - prices vary significantly, even in the same neighborhood</li>
+              <li><strong>Consider direct cremation</strong> - you can still hold a meaningful memorial service separately</li>
+              <li><strong>Skip the casket for cremation</strong> - a simple container is all that&apos;s required by law</li>
+              <li><strong>Provide your own urn</strong> - funeral home urns are often marked up significantly</li>
+              <li><strong>Ask about package pricing</strong> - bundled services may cost less than à la carte</li>
+              <li><strong>Check for veteran benefits</strong> - eligible veterans may qualify for burial allowances and cemetery benefits</li>
             </ul>
           </section>
 

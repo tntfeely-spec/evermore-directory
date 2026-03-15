@@ -135,7 +135,7 @@ export default function CremationNearMePage() {
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">1. Use a Funeral Home Directory with Price Data</h3>
                 <p className="text-gray-600">
-                  The Evermore Directory shows actual cremation and burial price ranges for funeral homes across all 50 states. Unlike other directories, you can compare costs upfront before making a single phone call—saving you time and helping you avoid sticker shock.
+                  The Evermore Directory shows actual cremation and burial price ranges for funeral homes across all 50 states. Unlike other directories, you can compare costs upfront before making a single phone call-saving you time and helping you avoid sticker shock.
                 </p>
               </div>
 
@@ -260,7 +260,7 @@ export default function CremationNearMePage() {
           <section className="bg-gray-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Bottom Line</h2>
             <p className="text-gray-600 mb-4">
-              Finding affordable cremation services near you doesn&apos;t have to be overwhelming. The key is price transparency—knowing what services actually cost before you walk into a funeral home.
+              Finding affordable cremation services near you doesn&apos;t have to be overwhelming. The key is price transparency-knowing what services actually cost before you walk into a funeral home.
             </p>
             <p className="text-gray-600 mb-4">
               Use the Evermore Directory to compare cremation prices in your city, request the General Price List from any provider you contact, and don&apos;t be afraid to ask questions. The FTC requires funeral homes to give you itemized prices, and you have the right to choose only the services you want.

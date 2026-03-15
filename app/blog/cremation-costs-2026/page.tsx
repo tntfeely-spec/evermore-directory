@@ -50,7 +50,7 @@ export default function CremationCosts2026Page() {
 
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              Cremation has become the most popular choice for end-of-life arrangements in the United States, with over 60% of Americans now choosing cremation over traditional burial. One of the biggest reasons? Cost. Cremation is significantly less expensive than burial—but prices vary widely depending on where you live and what services you choose.
+              Cremation has become the most popular choice for end-of-life arrangements in the United States, with over 60% of Americans now choosing cremation over traditional burial. One of the biggest reasons? Cost. Cremation is significantly less expensive than burial-but prices vary widely depending on where you live and what services you choose.
             </p>
             <p className="text-gray-600">
               This guide breaks down what cremation actually costs in 2026, why prices vary so much, and how to find affordable options in your area.
@@ -212,7 +212,7 @@ export default function CremationCosts2026Page() {
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Competition</h3>
                 <p className="text-gray-600">
-                  Areas with more cremation providers tend to have lower prices. This is why comparing multiple funeral homes is so important—prices can vary by $1,000+ within the same city.
+                  Areas with more cremation providers tend to have lower prices. This is why comparing multiple funeral homes is so important-prices can vary by $1,000+ within the same city.
                 </p>
               </div>
 
@@ -297,13 +297,13 @@ export default function CremationCosts2026Page() {
               Here are proven ways to reduce cremation costs without sacrificing dignity:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li><strong>Compare at least 3 funeral homes</strong> — Use the Evermore Directory to see prices before calling</li>
-              <li><strong>Choose direct cremation</strong> — Hold a memorial service separately (at home, church, or park) to save thousands</li>
-              <li><strong>Consider cremation societies</strong> — Non-profit organizations often offer the lowest prices</li>
-              <li><strong>Buy your own urn</strong> — Online retailers sell urns for $30-$100 vs. $300+ at funeral homes</li>
-              <li><strong>Ask about package pricing</strong> — Bundled services may cost less than itemized</li>
-              <li><strong>Check for veteran benefits</strong> — VA provides burial allowance and free cremation/burial at national cemeteries</li>
-              <li><strong>Look into state assistance</strong> — Some states offer help for low-income families</li>
+              <li><strong>Compare at least 3 funeral homes</strong> - Use the Evermore Directory to see prices before calling</li>
+              <li><strong>Choose direct cremation</strong> - Hold a memorial service separately (at home, church, or park) to save thousands</li>
+              <li><strong>Consider cremation societies</strong> - Non-profit organizations often offer the lowest prices</li>
+              <li><strong>Buy your own urn</strong> - Online retailers sell urns for $30-$100 vs. $300+ at funeral homes</li>
+              <li><strong>Ask about package pricing</strong> - Bundled services may cost less than itemized</li>
+              <li><strong>Check for veteran benefits</strong> - VA provides burial allowance and free cremation/burial at national cemeteries</li>
+              <li><strong>Look into state assistance</strong> - Some states offer help for low-income families</li>
             </ul>
           </section>
 
@@ -352,7 +352,7 @@ export default function CremationCosts2026Page() {
               The single biggest way to save money is to <strong>compare prices from multiple funeral homes</strong>. Costs can vary by $1,000 or more for the exact same service within the same city.
             </p>
             <p className="text-gray-600">
-              Use the Evermore Directory to see actual cremation prices from funeral homes in your area—before you make a single phone call.
+              Use the Evermore Directory to see actual cremation prices from funeral homes in your area-before you make a single phone call.
             </p>
           </section>
 

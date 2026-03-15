@@ -56,7 +56,7 @@ export default function BurialVsCremationPage() {
               Choosing between burial and cremation is one of the most significant decisions families face when planning end-of-life arrangements. In 2023, cremation surpassed burial for the first time in U.S. history, with over 60% of Americans now choosing cremation. But that doesn&apos;t mean it&apos;s the right choice for everyone.
             </p>
             <p className="text-gray-600">
-              This guide compares both options honestly—covering costs, process, timeline, religious considerations, and environmental impact—so you can decide what&apos;s right for your family.
+              This guide compares both options honestly-covering costs, process, timeline, religious considerations, and environmental impact-so you can decide what&apos;s right for your family.
             </p>
           </section>
 
@@ -321,7 +321,7 @@ export default function BurialVsCremationPage() {
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Can you have a funeral service with cremation?</h3>
-                <p className="text-gray-600 text-sm">Absolutely. You can hold a full traditional funeral with a viewing before cremation, or hold a memorial service after cremation with the urn present. Cremation gives you more flexibility in timing—the memorial can be days, weeks, or even months later.</p>
+                <p className="text-gray-600 text-sm">Absolutely. You can hold a full traditional funeral with a viewing before cremation, or hold a memorial service after cremation with the urn present. Cremation gives you more flexibility in timing-the memorial can be days, weeks, or even months later.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Is cremation more environmentally friendly than burial?</h3>

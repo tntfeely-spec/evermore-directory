@@ -53,7 +53,7 @@ export default function FuneralHomesNearMePage() {
 
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              Finding the right funeral home is one of the most important decisions you&apos;ll make during an incredibly difficult time. The funeral home you choose will guide you through every step—from paperwork and preparation to the service itself—and costs can vary by thousands of dollars between providers just miles apart.
+              Finding the right funeral home is one of the most important decisions you&apos;ll make during an incredibly difficult time. The funeral home you choose will guide you through every step-from paperwork and preparation to the service itself-and costs can vary by thousands of dollars between providers just miles apart.
             </p>
             <p className="text-gray-600">
               Whether you&apos;re planning ahead or making arrangements after a loss, this guide will help you find, compare, and choose a funeral home that serves your family with transparency, compassion, and fair pricing.
@@ -73,7 +73,7 @@ export default function FuneralHomesNearMePage() {
               </div>
               <div className="bg-white rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">3. Check Online Reviews</h3>
-                <p className="text-gray-600 text-sm">Google reviews and other platforms can reveal patterns—look for consistent praise for compassion, professionalism, and transparency. A few negative reviews among many positive ones are normal; watch for recurring complaints about pricing or pressure tactics.</p>
+                <p className="text-gray-600 text-sm">Google reviews and other platforms can reveal patterns-look for consistent praise for compassion, professionalism, and transparency. A few negative reviews among many positive ones are normal; watch for recurring complaints about pricing or pressure tactics.</p>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-1">4. Contact Your Hospital or Hospice</h3>
@@ -267,7 +267,7 @@ export default function FuneralHomesNearMePage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Should I visit the funeral home before choosing?</h3>
-                <p className="text-gray-600 text-sm">If time allows, an in-person visit is valuable. It lets you see the facilities, meet the staff, and get a feel for the atmosphere. But it&apos;s not required—many families make their initial selection by phone and are satisfied with their choice.</p>
+                <p className="text-gray-600 text-sm">If time allows, an in-person visit is valuable. It lets you see the facilities, meet the staff, and get a feel for the atmosphere. But it&apos;s not required-many families make their initial selection by phone and are satisfied with their choice.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">What&apos;s the difference between a funeral home and a mortuary?</h3>
@@ -275,7 +275,7 @@ export default function FuneralHomesNearMePage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">How do I compare funeral homes fairly?</h3>
-                <p className="text-gray-600 text-sm">Request the GPL from each funeral home and compare like-for-like services. Focus on the basic services fee, preparation costs, and facility fees—these make up the bulk of the bill. Don&apos;t compare packages unless they include identical services.</p>
+                <p className="text-gray-600 text-sm">Request the GPL from each funeral home and compare like-for-like services. Focus on the basic services fee, preparation costs, and facility fees-these make up the bulk of the bill. Don&apos;t compare packages unless they include identical services.</p>
               </div>
             </div>
           </section>

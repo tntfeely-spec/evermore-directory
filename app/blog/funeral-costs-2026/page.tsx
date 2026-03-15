@@ -53,7 +53,7 @@ export default function FuneralCosts2026Page() {
 
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              Planning a funeral is one of the most difficult things a family faces—and the cost can make it even more stressful. The average funeral in the United States costs between $7,000 and $12,000, but prices vary dramatically depending on location, services chosen, and the funeral home you work with.
+              Planning a funeral is one of the most difficult things a family faces-and the cost can make it even more stressful. The average funeral in the United States costs between $7,000 and $12,000, but prices vary dramatically depending on location, services chosen, and the funeral home you work with.
             </p>
             <p className="text-gray-600">
               This guide breaks down exactly what funerals cost in 2026, what&apos;s included (and what isn&apos;t), and how to find affordable funeral homes near you without sacrificing quality or dignity.
@@ -87,7 +87,7 @@ export default function FuneralCosts2026Page() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">What&apos;s Included in Funeral Home Prices?</h2>
             <p className="text-gray-600 mb-4">
-              The National Funeral Directors Association (NFDA) reports the median cost of a funeral with viewing and burial was $7,848 in recent years—and prices have continued to rise. But that number doesn&apos;t tell the whole story. Here&apos;s what typically drives the total cost:
+              The National Funeral Directors Association (NFDA) reports the median cost of a funeral with viewing and burial was $7,848 in recent years-and prices have continued to rise. But that number doesn&apos;t tell the whole story. Here&apos;s what typically drives the total cost:
             </p>
 
             <div className="space-y-4">
@@ -109,7 +109,7 @@ export default function FuneralCosts2026Page() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Casket: $2,000 - $10,000+</h3>
-                <p className="text-gray-600 text-sm">The casket is usually the single most expensive item. Basic metal caskets start around $2,000, while hardwood and premium models can exceed $10,000. You have the legal right to buy a casket from any source—not just the funeral home.</p>
+                <p className="text-gray-600 text-sm">The casket is usually the single most expensive item. Basic metal caskets start around $2,000, while hardwood and premium models can exceed $10,000. You have the legal right to buy a casket from any source-not just the funeral home.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Hearse &amp; Transportation: $300 - $800</h3>
@@ -181,7 +181,7 @@ export default function FuneralCosts2026Page() {
               </div>
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Services Selected</h3>
-                <p className="text-gray-600 text-sm">Every additional service—embalming, viewing, flowers, printed programs, limousine—adds cost. A funeral director is required by law to let you choose only the services you want.</p>
+                <p className="text-gray-600 text-sm">Every additional service-embalming, viewing, flowers, printed programs, limousine-adds cost. A funeral director is required by law to let you choose only the services you want.</p>
               </div>
             </div>
           </section>

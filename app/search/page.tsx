@@ -216,7 +216,7 @@ export default function SearchPage() {
             label = 'Nearby funeral homes';
           }
         } else if (parsed.stateCode) {
-          // No exact matches but we know the state — show state results
+          // No exact matches but we know the state - show state results
           nearby = filtered.filter(home =>
             home.state === parsed.stateCode
           );
@@ -255,7 +255,7 @@ export default function SearchPage() {
         setNearbyLabel('');
       }
     } else {
-      // No search term — show all (filtered by state/services)
+      // No search term - show all (filtered by state/services)
       filtered.sort((a, b) => {
         const aVal = a[sortBy as keyof FuneralHome] || '';
         const bVal = b[sortBy as keyof FuneralHome] || '';

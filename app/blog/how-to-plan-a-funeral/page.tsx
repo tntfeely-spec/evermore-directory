@@ -53,10 +53,10 @@ export default function HowToPlanAFuneralPage() {
 
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              When someone you love passes away, you&apos;re suddenly faced with dozens of decisions—often while grieving and under time pressure. Most people have never planned a funeral before and don&apos;t know where to start.
+              When someone you love passes away, you&apos;re suddenly faced with dozens of decisions-often while grieving and under time pressure. Most people have never planned a funeral before and don&apos;t know where to start.
             </p>
             <p className="text-gray-600">
-              This guide walks you through the process step by step, from the first phone call to the days after the service. You don&apos;t have to figure this out alone—funeral directors are there to help—but understanding the process puts you in a better position to make decisions that honor your loved one without overspending.
+              This guide walks you through the process step by step, from the first phone call to the days after the service. You don&apos;t have to figure this out alone-funeral directors are there to help-but understanding the process puts you in a better position to make decisions that honor your loved one without overspending.
             </p>
           </section>
 
@@ -94,15 +94,15 @@ export default function HowToPlanAFuneralPage() {
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">If the death occurs at home</h3>
-                <p className="text-gray-600 text-sm">If the person was under hospice care, call the hospice nurse first—they will guide you through next steps and can pronounce death. If the death was unexpected, call 911. Do not move the body until authorities or the funeral home arrive.</p>
+                <p className="text-gray-600 text-sm">If the person was under hospice care, call the hospice nurse first-they will guide you through next steps and can pronounce death. If the death was unexpected, call 911. Do not move the body until authorities or the funeral home arrive.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">If the death occurs at a hospital or care facility</h3>
-                <p className="text-gray-600 text-sm">The staff will handle the initial process and ask you to designate a funeral home. You do not need to decide immediately—you can ask for time to make calls and compare options before having the body transferred.</p>
+                <p className="text-gray-600 text-sm">The staff will handle the initial process and ask you to designate a funeral home. You do not need to decide immediately-you can ask for time to make calls and compare options before having the body transferred.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Obtain the death certificate</h3>
-                <p className="text-gray-600 text-sm">The funeral home typically handles obtaining the death certificate from the attending physician or medical examiner. Order at least 10-15 certified copies—you&apos;ll need them for insurance claims, bank accounts, property transfers, and other legal matters.</p>
+                <p className="text-gray-600 text-sm">The funeral home typically handles obtaining the death certificate from the attending physician or medical examiner. Order at least 10-15 certified copies-you&apos;ll need them for insurance claims, bank accounts, property transfers, and other legal matters.</p>
               </div>
             </div>
           </section>
@@ -143,7 +143,7 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Type of Service</h3>
-                <p className="text-gray-600 text-sm">Options include a traditional funeral with viewing, a memorial service (without the body present), a celebration of life, a graveside service only, or no formal service at all. There is no wrong choice—do what feels right for your family.</p>
+                <p className="text-gray-600 text-sm">Options include a traditional funeral with viewing, a memorial service (without the body present), a celebration of life, a graveside service only, or no formal service at all. There is no wrong choice-do what feels right for your family.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Casket or Urn Selection</h3>
@@ -180,11 +180,11 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Arrange flowers and displays</h3>
-                <p className="text-gray-600 text-sm">Decide on floral arrangements, photo displays, or memory tables. Some families request donations to a charity instead of flowers—the funeral home can include this in the obituary.</p>
+                <p className="text-gray-600 text-sm">Decide on floral arrangements, photo displays, or memory tables. Some families request donations to a charity instead of flowers-the funeral home can include this in the obituary.</p>
               </div>
               <div className="border-l-4 border-slate-400 pl-4">
                 <h3 className="font-semibold text-gray-800">Plan a reception</h3>
-                <p className="text-gray-600 text-sm">Many families hold a reception or gathering after the service. This can be at the funeral home, a restaurant, someone&apos;s home, or a community hall. Keep it simple—friends and extended family often help with food.</p>
+                <p className="text-gray-600 text-sm">Many families hold a reception or gathering after the service. This can be at the funeral home, a restaurant, someone&apos;s home, or a community hall. Keep it simple-friends and extended family often help with food.</p>
               </div>
             </div>
           </section>
@@ -218,7 +218,7 @@ export default function HowToPlanAFuneralPage() {
             <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Immediate family and close friends</h3>
-                <p className="text-gray-600 text-sm">Call or visit in person. Ask a close friend or family member to help with notifications—you don&apos;t have to make every call yourself.</p>
+                <p className="text-gray-600 text-sm">Call or visit in person. Ask a close friend or family member to help with notifications-you don&apos;t have to make every call yourself.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Employer and colleagues</h3>
@@ -230,7 +230,7 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Important institutions</h3>
-                <p className="text-gray-600 text-sm">Social Security Administration, banks, insurance companies, the post office, and the DMV. Most of these can be handled in the weeks following the funeral—focus on the service first.</p>
+                <p className="text-gray-600 text-sm">Social Security Administration, banks, insurance companies, the post office, and the DMV. Most of these can be handled in the weeks following the funeral-focus on the service first.</p>
               </div>
             </div>
           </section>
@@ -264,7 +264,7 @@ export default function HowToPlanAFuneralPage() {
             <div className="space-y-4">
               <div className="border-l-4 border-gray-300 pl-4">
                 <h3 className="font-semibold text-gray-800">Send thank-you notes</h3>
-                <p className="text-gray-600 text-sm">Thank those who attended, sent flowers, brought food, or helped in any way. A brief handwritten note is appreciated but not required—do what you can.</p>
+                <p className="text-gray-600 text-sm">Thank those who attended, sent flowers, brought food, or helped in any way. A brief handwritten note is appreciated but not required-do what you can.</p>
               </div>
               <div className="border-l-4 border-gray-300 pl-4">
                 <h3 className="font-semibold text-gray-800">Handle estate matters</h3>
@@ -272,7 +272,7 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border-l-4 border-gray-300 pl-4">
                 <h3 className="font-semibold text-gray-800">Take care of yourself</h3>
-                <p className="text-gray-600 text-sm">Grief is exhausting. Give yourself permission to rest. Consider joining a grief support group—many funeral homes offer free groups, or ask your doctor for a referral. There is no timeline for grief.</p>
+                <p className="text-gray-600 text-sm">Grief is exhausting. Give yourself permission to rest. Consider joining a grief support group-many funeral homes offer free groups, or ask your doctor for a referral. There is no timeline for grief.</p>
               </div>
             </div>
           </section>
@@ -311,7 +311,7 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Who is responsible for planning a funeral?</h3>
-                <p className="text-gray-600 text-sm">Typically the next of kin—spouse, adult children, or parents. If the deceased pre-planned their funeral, much of the work is already done. The legal authority to make decisions usually follows this order: spouse, adult children, parents, siblings.</p>
+                <p className="text-gray-600 text-sm">Typically the next of kin-spouse, adult children, or parents. If the deceased pre-planned their funeral, much of the work is already done. The legal authority to make decisions usually follows this order: spouse, adult children, parents, siblings.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Can I plan a funeral without a funeral home?</h3>
@@ -319,7 +319,7 @@ export default function HowToPlanAFuneralPage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">What if the deceased didn&apos;t leave instructions?</h3>
-                <p className="text-gray-600 text-sm">Make decisions based on what you knew about their values, personality, and preferences. If they were frugal, they likely wouldn&apos;t want an extravagant funeral. If they were social, a larger gathering makes sense. There is no wrong answer—do what feels right and what your family can afford.</p>
+                <p className="text-gray-600 text-sm">Make decisions based on what you knew about their values, personality, and preferences. If they were frugal, they likely wouldn&apos;t want an extravagant funeral. If they were social, a larger gathering makes sense. There is no wrong answer-do what feels right and what your family can afford.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Should I pre-plan my own funeral?</h3>
