@@ -55,11 +55,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   // Get funeral home count for dynamic meta tags
+  // Try spaces version first (e.g. "Sedro Woolley"), then hyphenated (e.g. "Sedro-Woolley")
+  const cityNameHyphenated = city.replace(/\b\w/g, (l: string) => l.toUpperCase());
   const { count } = await supabase
     .from('funeral_homes')
     .select('*', { count: 'exact', head: true })
     .eq('state', state.toUpperCase())
-    .ilike('city', cityName);
+    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated}`);
 
   const homeCount = count || 0;
   const currentYear = new Date().getFullYear();
@@ -97,11 +99,13 @@ export default async function CityPage({ params }: PageProps) {
     notFound();
   }
 
+  // Try spaces version first (e.g. "Sedro Woolley"), then hyphenated (e.g. "Sedro-Woolley")
+  const cityNameHyphenated2 = city.replace(/\b\w/g, (l: string) => l.toUpperCase());
   const { data: funeralHomes, error } = await supabase
     .from('funeral_homes')
     .select('*')
     .eq('state', state.toUpperCase())
-    .ilike('city', cityName)
+    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated2}`)
     .order('is_featured', { ascending: false })
     .order('business_name');
 
