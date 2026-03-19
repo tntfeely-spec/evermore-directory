@@ -145,8 +145,9 @@ async function getNearby(listing: FuneralHome): Promise<FuneralHome[]> {
             )
           : 999,
       }))
-      .sort((a: any, b: any) => a._dist - b._dist)
-      .slice(0, 4) as FuneralHome[]
+      .sort((a, b) => a._dist - b._dist)
+      .slice(0, 4)
+      .map(({ _dist, ...rest }) => rest) as unknown as FuneralHome[]
   }
 
   return data.slice(0, 4) as FuneralHome[]
