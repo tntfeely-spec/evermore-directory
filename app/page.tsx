@@ -16,7 +16,7 @@ export default function HomePage() {
       <PremiumBanner />
       
       <div className="min-h-screen relative">
-        <div 
+        <div
           className="fixed inset-0 z-0"
           style={{
             backgroundImage: 'url(/Ocean_Image.webp)',
@@ -26,6 +26,7 @@ export default function HomePage() {
             opacity: 0.4
           }}
         />
+        <div className="fixed inset-0 z-[1] bg-white/50" />
 
         <div className="relative z-10">
           
@@ -33,7 +34,7 @@ export default function HomePage() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Find Compassionate Funeral Homes Nationwide
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-800 max-w-4xl mx-auto mb-8 leading-relaxed">
               The Evermore Directory connects families with trusted funeral homes and cremation services 
               across all 50 states.
             </p>
