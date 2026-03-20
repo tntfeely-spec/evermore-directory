@@ -84,6 +84,7 @@ async function searchByCoords(lat: number, lng: number, inputLabel: string): Pro
 }
 
 export async function GET(request: NextRequest) {
+  try {
   const query = request.nextUrl.searchParams.get('q')?.trim() ?? '';
 
   if (!query || query.length < 2) {
@@ -197,4 +198,9 @@ export async function GET(request: NextRequest) {
 
   const results = unique.slice(0, 8).map(buildHomeResult);
   return NextResponse.json({ results });
+
+  } catch (err) {
+    console.error('Search error:', err);
+    return NextResponse.json({ results: [] });
+  }
 }
