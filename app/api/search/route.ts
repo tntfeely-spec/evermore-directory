@@ -22,7 +22,7 @@ const supabase = createClient(
 const RADIUS_DEG = 0.45;
 
 function isZipCode(q: string): boolean {
-  return /^\d{5}$/.test(q.trim());
+  return /^\d{3,5}$/.test(q.trim());
 }
 
 function slugify(str: string): string {
@@ -44,6 +44,20 @@ function buildCityResult(city: string, state: string, count: number, label?: str
     label: label ?? `${city}, ${state}`,
     sublabel: `${count} funeral home${count !== 1 ? 's' : ''}`,
     funeralHomeCount: count,
+  };
+}
+
+// Build a display result for an individual funeral home
+function buildHomeResult(home: { business_name: string; city: string; state: string }) {
+  return {
+    city: home.city,
+    state: home.state,
+    stateSlug: home.state.toLowerCase(),
+    citySlug: slugify(home.city),
+    url: `/funeral-homes/${home.state.toLowerCase()}/${slugify(home.city)}/${slugify(home.business_name)}`,
+    label: home.business_name,
+    sublabel: `${home.city}, ${home.state}`,
+    funeralHomeCount: 1,
   };
 }
 
@@ -89,6 +103,18 @@ export async function GET(request: NextRequest) {
   // PATH 1: ZIP CODE
   // ----------------------------------------------------------------
   if (isZipCode(query)) {
+    if (query.length < 5) {
+      const { data: partial } = await supabase
+        .from('funeral_homes')
+        .select('business_name, city, state')
+        .like('zip', `${query}%`)
+        .order('is_featured', { ascending: false })
+        .order('business_name')
+        .limit(8);
+      if (partial && partial.length > 0) return NextResponse.json({ results: partial.map(buildHomeResult) });
+      return NextResponse.json({ results: [] });
+    }
+
     const info = zipcodes.lookup(query);
 
     if (info?.latitude && info?.longitude) {
@@ -146,46 +172,37 @@ export async function GET(request: NextRequest) {
   }
 
   // ----------------------------------------------------------------
-  // PATH 3: CITY NAME MATCH IN DB (original behavior, enhanced)
+  // PATH 3: BUSINESS NAME + CITY NAME MATCH IN DB
   // ----------------------------------------------------------------
 
-  const { data: startsWith } = await supabase
-    .from('funeral_homes')
-    .select('city, state')
-    .ilike('city', `${cityQuery}%`)
-    .order('city')
-    .limit(100);
+  const [{ data: byName }, { data: byCity }] = await Promise.all([
+    supabase
+      .from('funeral_homes')
+      .select('business_name, city, state')
+      .ilike('business_name', `${cityQuery}%`)
+      .order('is_featured', { ascending: false })
+      .order('business_name')
+      .limit(5),
+    supabase
+      .from('funeral_homes')
+      .select('business_name, city, state')
+      .ilike('city', `${cityQuery}%`)
+      .order('is_featured', { ascending: false })
+      .order('business_name')
+      .limit(5),
+  ]);
 
-  const candidates = (startsWith && startsWith.length > 0)
-    ? startsWith
-    : ((await supabase
-        .from('funeral_homes')
-        .select('city, state')
-        .ilike('city', `%${cityQuery}%`)
-        .order('city')
-        .limit(100)
-      ).data ?? []);
-
-  if (candidates.length === 0) return NextResponse.json({ results: [] });
-
-  // Deduplicate by city+state
+  // Merge and deduplicate
+  const merged = [...(byName ?? []), ...(byCity ?? [])];
   const seen = new Set<string>();
-  const unique: { city: string; state: string }[] = [];
-  for (const row of candidates) {
-    const key = `${row.city.toLowerCase()}-${row.state}`;
+  const unique: { business_name: string; city: string; state: string }[] = [];
+  for (const row of merged) {
+    const key = `${row.business_name.toLowerCase()}-${row.city.toLowerCase()}-${row.state}`;
     if (!seen.has(key)) { seen.add(key); unique.push(row); }
   }
 
-  const results = await Promise.all(
-    unique.slice(0, 8).map(async ({ city, state }) => {
-      const { count } = await supabase
-        .from('funeral_homes')
-        .select('*', { count: 'exact', head: true })
-        .eq('city', city)
-        .eq('state', state);
-      return buildCityResult(city, state, count ?? 0);
-    })
-  );
+  if (unique.length === 0) return NextResponse.json({ results: [] });
 
+  const results = unique.slice(0, 8).map(buildHomeResult);
   return NextResponse.json({ results });
 }
