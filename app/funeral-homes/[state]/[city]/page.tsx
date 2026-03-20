@@ -131,6 +131,8 @@ export default async function CityPage({ params }: PageProps) {
   const featuredHomes = funeralHomes.filter((home: FuneralHome) => home.is_featured);
   const regularHomes = funeralHomes.filter((home: FuneralHome) => !home.is_featured);
 
+  const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+
   // Generate JSON-LD Schema
   const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
   const schemaData = {
@@ -263,7 +265,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                           <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
                             FEATURED
                           </span>
-                          <h3 className="text-2xl font-bold text-gray-900">{home.business_name}</h3>
+                          <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-2xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
                         </div>
                         <div className="space-y-2 text-gray-700">
                           <p className="flex items-center">
@@ -339,7 +341,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               <div className="space-y-4">
                 {regularHomes.map((home: FuneralHome) => (
                   <div key={home.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{home.business_name}</h3>
+                    <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-xl font-bold text-gray-900 mb-3 hover:text-slate-700 hover:underline">{home.business_name}</Link>
                     <div className="space-y-2 text-gray-700">
                       <p className="flex items-center">
                         <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
