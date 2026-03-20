@@ -258,74 +258,25 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <div key={home.id} className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-8 border-2 border-blue-400">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center mb-3">
-                          <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
-                            FEATURED
-                          </span>
-                          <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-2xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
-                        </div>
-                        <div className="space-y-2 text-gray-700">
-                          <p className="flex items-center">
-                            <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            {home.address}, {home.city}, {home.state} {home.zip}
-                          </p>
-                          {home.phone && (
-                            <p className="flex items-center">
-                              <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                              </svg>
-                              <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">
-                                {home.phone}
-                              </a>
-                            </p>
-                          )}
-                          {home.website && (
-                            <p className="flex items-center">
-                              <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                              </svg>
-                              <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-800 font-semibold">
-                                Visit Website
-                              </a>
-                            </p>
-                          )}
-                          {home.services_offered && (
-                            <div className="pt-3 mt-3 border-t border-gray-200">
-                              <p className="font-semibold mb-1">Services: <span className="font-normal">{home.services_offered}</span></p>
-                            </div>
-                          )}
-                          {(home.price_range_cremation || home.price_range_burial) && (
-                            <div className="pt-3 mt-3 border-t border-gray-200">
-                              <p className="font-semibold mb-1">Price Ranges:</p>
-                              {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
-                              {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
-                            </div>
-                          )}
-                          {home.special_features && (
-                            <div className="pt-3 mt-3 border-t border-gray-200">
-                              <p className="font-semibold mb-1">Special Features: <span className="font-normal">{home.special_features}</span></p>
-                            </div>
-                          )}
-                          {/* Claim Listing Link */}
-                          <div className="pt-3 mt-3 border-t border-gray-200">
-                            <a
-                              href="https://claim.funeralhomedirectories.com"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sm text-gray-500 hover:text-slate-600 transition-colors"
-                            >
-                              Is this your business? Claim this listing →
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                  <div key={home.id} className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-6 border-2 border-blue-400">
+                    <div className="flex items-center mb-2">
+                      <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
+                        FEATURED
+                      </span>
+                      <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-2xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
                     </div>
+                    <p className="text-gray-600 text-sm mb-1">{home.address}, {home.city}, {home.state} {home.zip}</p>
+                    {home.phone && (
+                      <p className="text-sm mb-1">
+                        <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">{home.phone}</a>
+                      </p>
+                    )}
+                    <Link
+                      href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
+                      className="text-sm text-slate-600 hover:text-slate-800 font-semibold"
+                    >
+                      View full listing →
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -341,64 +292,19 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               <div className="space-y-4">
                 {regularHomes.map((home: FuneralHome) => (
                   <div key={home.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-xl font-bold text-gray-900 mb-3 hover:text-slate-700 hover:underline">{home.business_name}</Link>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {home.address}, {home.city}, {home.state} {home.zip}
+                    <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
+                    <p className="text-gray-600 text-sm mt-1 mb-1">{home.address}, {home.city}, {home.state} {home.zip}</p>
+                    {home.phone && (
+                      <p className="text-sm mb-1">
+                        <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">{home.phone}</a>
                       </p>
-                      {home.phone && (
-                        <p className="flex items-center">
-                          <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                          <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">
-                            {home.phone}
-                          </a>
-                        </p>
-                      )}
-                      {home.website && (
-                        <p className="flex items-center">
-                          <svg className="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                          </svg>
-                          <a href={home.website.startsWith('http') ? home.website : `https://${home.website}`} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-800 font-semibold">
-                            Visit Website
-                          </a>
-                        </p>
-                      )}
-                      {home.services_offered && (
-                        <div className="pt-2 mt-2 border-t border-gray-200">
-                          <p className="text-sm"><span className="font-semibold">Services:</span> {home.services_offered}</p>
-                        </div>
-                      )}
-                      {(home.price_range_cremation || home.price_range_burial) && (
-                        <div className="pt-2 mt-2 border-t border-gray-200">
-                          <p className="text-sm font-semibold">Price Ranges:</p>
-                          {home.price_range_cremation && <p className="text-sm">Cremation: {home.price_range_cremation}</p>}
-                          {home.price_range_burial && <p className="text-sm">Burial: {home.price_range_burial}</p>}
-                        </div>
-                      )}
-                      {home.special_features && (
-                        <div className="pt-2 mt-2 border-t border-gray-200">
-                          <p className="text-sm"><span className="font-semibold">Special Features:</span> {home.special_features}</p>
-                        </div>
-                      )}
-                      {/* Claim Listing Link */}
-                      <div className="pt-2 mt-2 border-t border-gray-200">
-                        <a
-                          href="https://claim.funeralhomedirectories.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-gray-500 hover:text-slate-600 transition-colors"
-                        >
-                          Is this your business? Claim this listing →
-                        </a>
-                      </div>
-                    </div>
+                    )}
+                    <Link
+                      href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
+                      className="text-sm text-slate-600 hover:text-slate-800 font-semibold"
+                    >
+                      View full listing →
+                    </Link>
                   </div>
                 ))}
               </div>
