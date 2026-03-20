@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+export const revalidate = 86400
+export const dynamicParams = true
+
 // ─── Supabase client (server-side) ───────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -48,29 +51,7 @@ function citySlug(city: string): string {
   return city.toLowerCase().replace(/\s+/g, '-')
 }
 
-// ─── generateStaticParams ─────────────────────────────────────────────────────
-export async function generateStaticParams() {
-  const pageSize = 1000
-  let allListings: { state: string; city: string; business_name: string }[] = []
-  let from = 0
 
-  while (true) {
-    const { data, error } = await supabase
-      .from('funeral_homes')
-      .select('state, city, business_name')
-      .range(from, from + pageSize - 1)
-    if (error || !data || data.length === 0) break
-    allListings = allListings.concat(data)
-    if (data.length < pageSize) break
-    from += pageSize
-  }
-
-  return allListings.map((listing) => ({
-    state: stateSlug(listing.state),
-    city: citySlug(listing.city),
-    slug: slugify(listing.business_name),
-  }))
-}
 
 // ─── generateMetadata ─────────────────────────────────────────────────────────
 export async function generateMetadata({
