@@ -5,6 +5,8 @@ import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
 import PremiumBanner from '@/components/PremiumBanner';
 
+export const revalidate = 0
+
 interface PageProps {
   params: Promise<{
     state: string;
@@ -273,7 +275,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                     )}
                     <Link
                       href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
-                      className="text-sm text-slate-600 hover:text-slate-800 font-semibold"
+                      className="mt-4 inline-block bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
                     >
                       View full listing →
                     </Link>
@@ -301,7 +303,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                     )}
                     <Link
                       href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
-                      className="text-sm text-slate-600 hover:text-slate-800 font-semibold"
+                      className="mt-4 inline-block bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
                     >
                       View full listing →
                     </Link>
