@@ -62,25 +62,21 @@ function buildHomeResult(home: { business_name: string; city: string; state: str
 }
 
 // Search by lat/lng bounding box, return individual home results
-async function searchByCoords(lat: number, lng: number, inputLabel: string): Promise<ReturnType<typeof buildHomeResult>[]> {
+async function searchByCoords(lat: number, lng: number, inputLabel: string) {
   const { data, error } = await supabase.rpc('search_nearby', {
     center_lat: lat,
     center_lng: lng,
     radius_deg: RADIUS_DEG,
   });
 
-  if (error || !data || data.length === 0) return [];
+  if (error || !data || data.length === 0) return { results: [] };
 
-  // Deduplicate by business_name+city+state
-  const seen = new Set<string>();
-  const unique: { business_name: string; city: string; state: string }[] = [];
-  for (const row of data) {
-    if (!row.business_name) continue;
-    const key = `${row.business_name.toLowerCase()}-${row.city}-${row.state}`;
-    if (!seen.has(key)) { seen.add(key); unique.push(row); }
-  }
+  const results = (data as any[])
+    .filter((row) => row.business_name)
+    .slice(0, 8)
+    .map((row) => buildHomeResult({ business_name: row.business_name, city: row.city, state: row.state }));
 
-  return unique.slice(0, 8).map(buildHomeResult);
+  return { results };
 }
 
 export async function GET(request: NextRequest) {
@@ -110,8 +106,8 @@ export async function GET(request: NextRequest) {
     const info = zipcodes.lookup(query);
 
     if (info?.latitude && info?.longitude) {
-      const results = await searchByCoords(info.latitude, info.longitude, `ZIP ${query}`);
-      if (results.length > 0) return NextResponse.json({ results });
+      const payload = await searchByCoords(info.latitude, info.longitude, `ZIP ${query}`);
+      if (payload.results.length > 0) return NextResponse.json(payload);
     }
 
     // ZIP not in zipcodes dataset -- try prefix fallback in our DB
@@ -123,8 +119,8 @@ export async function GET(request: NextRequest) {
       .limit(1);
 
     if (fallback?.[0]?.latitude && fallback[0].longitude) {
-      const results = await searchByCoords(fallback[0].latitude, fallback[0].longitude, `ZIP ${query}`);
-      if (results.length > 0) return NextResponse.json({ results });
+      const payload = await searchByCoords(fallback[0].latitude, fallback[0].longitude, `ZIP ${query}`);
+      if (payload.results.length > 0) return NextResponse.json(payload);
     }
 
     return NextResponse.json({ results: [] });
@@ -157,9 +153,9 @@ export async function GET(request: NextRequest) {
     const avgLat = zipEntries.reduce((s, e) => s + e.latitude, 0) / zipEntries.length;
     const avgLng = zipEntries.reduce((s, e) => s + e.longitude, 0) / zipEntries.length;
 
-    const results = await searchByCoords(avgLat, avgLng, cityQuery);
-    if (results.length > 0) {
-      return NextResponse.json({ results });
+    const payload = await searchByCoords(avgLat, avgLng, cityQuery);
+    if (payload.results.length > 0) {
+      return NextResponse.json(payload);
     }
     // No funeral homes within radius -- fall through to city name match
   }
