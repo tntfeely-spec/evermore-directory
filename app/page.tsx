@@ -61,18 +61,18 @@ export default function HomePage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid md:grid-cols-3 gap-8 mb-20">
-              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <Link href="/states" className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow cursor-pointer">
                 <div className="text-4xl font-bold text-slate-600 mb-2">50</div>
                 <div className="text-gray-600 font-semibold">States Covered</div>
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              </Link>
+              <Link href="/states" className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow cursor-pointer">
                 <div className="text-4xl font-bold text-slate-600 mb-2">4000+</div>
                 <div className="text-gray-600 font-semibold">Funeral Homes Listed</div>
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-               <div className="text-4xl font-bold text-slate-600 mb-2">2,082+</div>
+              </Link>
+              <Link href="/states" className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow cursor-pointer">
+                <div className="text-4xl font-bold text-slate-600 mb-2">2,082+</div>
                 <div className="text-gray-600 font-semibold">Cities Covered</div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
