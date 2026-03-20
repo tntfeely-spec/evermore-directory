@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
+
 
 export const dynamic = "force-dynamic";
 
@@ -43,7 +43,7 @@ export default async function StatesPage() {
   return (
     <>
       <Navigation />
-      <PremiumBanner />
+
       
       <div className="min-h-screen relative">
         <div 

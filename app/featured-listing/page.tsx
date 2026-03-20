@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
+
 
 export const metadata: Metadata = {
   title: 'Featured Listing for Funeral Homes | $99/Month | Evermore Directory',
@@ -16,7 +16,6 @@ export default function FeaturedListingPage() {
   return (
     <>
       <Navigation />
-      <PremiumBanner />
       <div className="min-h-screen bg-[#F5F7FA]" style={{ fontFamily: 'Inter, sans-serif' }}>
 
         {/* Hero */}

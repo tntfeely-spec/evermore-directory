@@ -1,5 +1,4 @@
 import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
 
 export default function BlogLayout({
   children,
@@ -9,7 +8,6 @@ export default function BlogLayout({
   return (
     <>
       <Navigation />
-      <PremiumBanner />
       {children}
     </>
   );

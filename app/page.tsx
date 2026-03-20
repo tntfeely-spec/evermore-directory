@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
+
 import SearchAutocomplete from '@/components/SearchAutocomplete';
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Navigation />
-      <PremiumBanner />
+
       
       <div className="min-h-screen relative">
         <div

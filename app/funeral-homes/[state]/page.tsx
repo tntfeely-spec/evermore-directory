@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import PremiumBanner from '@/components/PremiumBanner';
+
 
 interface PageProps {
   params: Promise<{
@@ -138,7 +138,6 @@ export default async function StateCitiesPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <Navigation />
-      <PremiumBanner />
 
       <div className="min-h-screen relative">
         {/* Background Image */}
