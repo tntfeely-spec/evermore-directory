@@ -165,10 +165,14 @@ export async function GET(request: NextRequest) {
   // ----------------------------------------------------------------
 
   try {
-    const [{ data: byName }, { data: byCity }] = await Promise.all([
-      supabase.from('funeral_homes').select('business_name, city, state').ilike('business_name', `${cityQuery}%`).order('is_featured', { ascending: false }).order('business_name').limit(5),
-      supabase.from('funeral_homes').select('business_name, city, state').ilike('city', `${cityQuery}%`).order('is_featured', { ascending: false }).order('business_name').limit(5),
+    const [nameResult, cityResult] = await Promise.all([
+      supabase.from('funeral_homes').select('business_name, city, state, is_featured').ilike('business_name', `${cityQuery}%`).order('is_featured', { ascending: false, nullsFirst: false }).order('business_name').limit(5),
+      supabase.from('funeral_homes').select('business_name, city, state, is_featured').ilike('city', `${cityQuery}%`).order('is_featured', { ascending: false, nullsFirst: false }).order('business_name').limit(5),
     ]);
+    if (nameResult.error) console.error('PATH 3 byName error:', nameResult.error);
+    if (cityResult.error) console.error('PATH 3 byCity error:', cityResult.error);
+    const byName = nameResult.data;
+    const byCity = cityResult.data;
     console.log('PATH 3 debug:', { cityQuery, byNameCount: byName?.length, byCityCount: byCity?.length });
     const merged = [...(byName ?? []), ...(byCity ?? [])];
     const seen = new Set<string>();
