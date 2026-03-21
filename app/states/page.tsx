@@ -56,9 +56,10 @@ export default async function StatesPage() {
             opacity: 0.35
           }}
         />
+        <div className="fixed inset-0 z-[1] bg-white/65" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Find Funeral Homes and Cremation Services

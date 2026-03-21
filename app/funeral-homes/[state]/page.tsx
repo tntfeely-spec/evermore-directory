@@ -148,9 +148,10 @@ export default async function StateCitiesPage({ params }: PageProps) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            opacity: 0.7
+            opacity: 0.35
           }}
         />
+        <div className="fixed inset-0 z-[1] bg-white/65" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 

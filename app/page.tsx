@@ -23,7 +23,7 @@ export default function HomePage() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            opacity: 0.4
+            opacity: 0.35
           }}
         />
         <div className="fixed inset-0 z-[1] bg-white/65" />
