@@ -95,8 +95,7 @@ export async function GET(request: NextRequest) {
       const { data: partial } = await supabase
         .from('funeral_homes')
         .select('business_name, city, state')
-        .like('zip', `${query}%`)
-        .order('is_featured', { ascending: false })
+        .ilike('zip', `${query}%`)
         .order('business_name')
         .limit(8);
       if (partial && partial.length > 0) return NextResponse.json({ results: partial.map(buildHomeResult) });
