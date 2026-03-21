@@ -259,26 +259,18 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <div key={home.id} className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-6 border-2 border-blue-400">
+                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="block bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-6 border-2 border-blue-400 group cursor-pointer hover:shadow-xl transition-shadow">
                     <div className="flex items-center mb-2">
                       <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
                         FEATURED
                       </span>
-                      <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-2xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
+                      <span className="text-2xl font-bold text-gray-900 group-hover:text-slate-700">{home.business_name}</span>
                     </div>
                     <p className="text-gray-600 text-sm mb-1">{home.address}, {home.city}, {home.state} {home.zip}</p>
                     {home.phone && (
-                      <p className="text-sm mb-1">
-                        <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">{home.phone}</a>
-                      </p>
+                      <p className="text-sm mb-1 text-slate-600 font-semibold">{home.phone}</p>
                     )}
-                    <Link
-                      href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
-                      className="mt-4 inline-block bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-                    >
-                      View full listing →
-                    </Link>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -292,21 +284,13 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </h2>
               <div className="space-y-4">
                 {regularHomes.map((home: FuneralHome) => (
-                  <div key={home.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <Link href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="text-xl font-bold text-gray-900 hover:text-slate-700 hover:underline">{home.business_name}</Link>
+                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 group cursor-pointer">
+                    <span className="text-xl font-bold text-gray-900 group-hover:text-slate-700">{home.business_name}</span>
                     <p className="text-gray-600 text-sm mt-1 mb-1">{home.address}, {home.city}, {home.state} {home.zip}</p>
                     {home.phone && (
-                      <p className="text-sm mb-1">
-                        <a href={`tel:${home.phone}`} className="text-slate-600 hover:text-slate-800 font-semibold">{home.phone}</a>
-                      </p>
+                      <p className="text-sm mb-1 text-slate-600 font-semibold">{home.phone}</p>
                     )}
-                    <Link
-                      href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`}
-                      className="mt-4 inline-block bg-slate-700 hover:bg-slate-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-                    >
-                      View full listing →
-                    </Link>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
