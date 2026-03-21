@@ -164,36 +164,25 @@ export async function GET(request: NextRequest) {
   // PATH 3: BUSINESS NAME + CITY NAME MATCH IN DB
   // ----------------------------------------------------------------
 
-  const [{ data: byName }, { data: byCity }] = await Promise.all([
-    supabase
-      .from('funeral_homes')
-      .select('business_name, city, state')
-      .ilike('business_name', `${cityQuery}%`)
-      .order('is_featured', { ascending: false })
-      .order('business_name')
-      .limit(5),
-    supabase
-      .from('funeral_homes')
-      .select('business_name, city, state')
-      .ilike('city', `${cityQuery}%`)
-      .order('is_featured', { ascending: false })
-      .order('business_name')
-      .limit(5),
-  ]);
-
-  // Merge and deduplicate
-  const merged = [...(byName ?? []), ...(byCity ?? [])];
-  const seen = new Set<string>();
-  const unique: { business_name: string; city: string; state: string }[] = [];
-  for (const row of merged) {
-    const key = `${row.business_name.toLowerCase()}-${row.city.toLowerCase()}-${row.state}`;
-    if (!seen.has(key)) { seen.add(key); unique.push(row); }
+  try {
+    const [{ data: byName }, { data: byCity }] = await Promise.all([
+      supabase.from('funeral_homes').select('business_name, city, state').ilike('business_name', `${cityQuery}%`).order('is_featured', { ascending: false }).order('business_name').limit(5),
+      supabase.from('funeral_homes').select('business_name, city, state').ilike('city', `${cityQuery}%`).order('is_featured', { ascending: false }).order('business_name').limit(5),
+    ]);
+    console.log('PATH 3 debug:', { cityQuery, byNameCount: byName?.length, byCityCount: byCity?.length });
+    const merged = [...(byName ?? []), ...(byCity ?? [])];
+    const seen = new Set<string>();
+    const unique: { business_name: string; city: string; state: string }[] = [];
+    for (const row of merged) {
+      const key = `${row.business_name.toLowerCase()}-${row.city.toLowerCase()}-${row.state}`;
+      if (!seen.has(key)) { seen.add(key); unique.push(row); }
+    }
+    if (unique.length === 0) return NextResponse.json({ results: [] });
+    return NextResponse.json({ results: unique.slice(0, 8).map(buildHomeResult) });
+  } catch (pathErr) {
+    console.error('PATH 3 error:', pathErr);
+    return NextResponse.json({ results: [] });
   }
-
-  if (unique.length === 0) return NextResponse.json({ results: [] });
-
-  const results = unique.slice(0, 8).map(buildHomeResult);
-  return NextResponse.json({ results });
 
   } catch (err) {
     console.error('Search error:', err);
