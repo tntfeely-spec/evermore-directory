@@ -511,6 +511,55 @@ document.querySelectorAll('[id^="chk-"][id$="-${calcId}"]').forEach(el => {
 `,
         }}
       />
+
+      {/* Tab switching, contact form toggle, preference selector */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+function switchTab(name) {
+  var tabs = ['overview','reviews','photos','location'];
+  tabs.forEach(function(t) {
+    var el = document.getElementById('tab-' + t);
+    if (el) el.style.display = t === name ? 'block' : 'none';
+  });
+  var btns = document.querySelectorAll('[data-tab]');
+  btns.forEach(function(b) {
+    var active = b.getAttribute('data-tab') === name;
+    b.style.borderBottom = active ? '2px solid #1a1a2e' : '2px solid transparent';
+    b.style.color = active ? '#1a1a2e' : '#888';
+  });
+}
+function toggleContact(id) {
+  var form = document.getElementById('contact-form-' + id);
+  var toggle = document.getElementById('contact-toggle-' + id);
+  if (form && toggle) {
+    var show = form.style.display === 'none';
+    form.style.display = show ? 'block' : 'none';
+    toggle.style.display = show ? 'none' : 'block';
+  }
+}
+function selectPref(type, id) {
+  ['call','text','email'].forEach(function(t) {
+    var el = document.getElementById('pref-' + t + '-' + id);
+    if (el) {
+      el.style.border = t === type ? '1.5px solid #2a6496' : '1.5px solid #d0d9e5';
+      el.style.background = t === type ? '#f0f6ff' : '#fff';
+    }
+  });
+  var phoneField = document.getElementById('field-phone-' + id);
+  var emailField = document.getElementById('field-email-' + id);
+  if (phoneField) phoneField.style.display = type === 'email' ? 'none' : 'block';
+  if (emailField) emailField.style.display = type === 'email' ? 'block' : 'none';
+}
+function submitContact(id) {
+  var form = document.getElementById('contact-form-' + id);
+  if (form) {
+    form.innerHTML = '<div style="padding:16px;text-align:center;color:#2e7d32;font-weight:600;">✓ Request sent! They will be in touch soon.</div>';
+  }
+}
+`,
+        }}
+      />
     </>
   )
 }
@@ -524,6 +573,7 @@ function TabSection({ listing, services }: { listing: FuneralHome; services: str
         {['Overview', 'Reviews', 'Photos', 'Location'].map((tab, i) => (
           <button
             key={tab}
+            data-tab={tab.toLowerCase()}
             onClick={`switchTab('${tab.toLowerCase()}')` as any}
             style={{
               padding: '14px 20px',
