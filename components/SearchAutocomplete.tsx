@@ -177,10 +177,7 @@ export default function SearchAutocomplete() {
               }`}
             >
               <div>
-                <span className="font-semibold text-gray-800">{result.city}</span>
-                {result.state && (
-                  <span className="text-gray-500 ml-2 text-sm">{result.state}</span>
-                )}
+                <span className="font-semibold text-gray-800">{result.label}</span>
                 {result.sublabel && (
                   <span className="block text-sm text-gray-400 mt-0.5">{result.sublabel}</span>
                 )}
