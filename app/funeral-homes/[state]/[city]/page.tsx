@@ -270,6 +270,9 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                     {home.phone && (
                       <p className="text-sm mb-1 text-slate-600 font-semibold">{home.phone}</p>
                     )}
+                    <span className="mt-4 inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg group-hover:bg-slate-800 transition-colors">
+                      View full listing →
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -290,6 +293,9 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                     {home.phone && (
                       <p className="text-sm mb-1 text-slate-600 font-semibold">{home.phone}</p>
                     )}
+                    <span className="mt-4 inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg group-hover:bg-slate-800 transition-colors">
+                      View full listing →
+                    </span>
                   </Link>
                 ))}
               </div>
