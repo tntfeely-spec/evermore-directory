@@ -396,7 +396,7 @@ export default async function FuneralHomePage({
                             id={`chk-${item.id}-${calcId}`}
                             defaultChecked={item.defaultOn}
                             disabled={item.required}
-                            onChange={`recalc('${calcId}')` as any}
+                            {...{onchange: `recalc('${calcId}')`}}
                             style={{ width: 15, height: 15, accentColor: '#2a6496', cursor: 'pointer' }}
                           />
                         </td>
@@ -574,7 +574,7 @@ function TabSection({ listing, services }: { listing: FuneralHome; services: str
           <button
             key={tab}
             data-tab={tab.toLowerCase()}
-            onClick={`switchTab('${tab.toLowerCase()}')` as any}
+            {...{onclick: `switchTab('${tab.toLowerCase()}')`}}
             style={{
               padding: '14px 20px',
               fontSize: 14,
@@ -696,7 +696,7 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
     <div>
       <div
         id={`contact-toggle-${calcId}`}
-        onClick={`toggleContact('${calcId}')` as any}
+        {...{onclick: `toggleContact('${calcId}')`}}
         style={{ cursor: 'pointer', padding: 16 }}
       >
         <div style={{ background: '#f0f6ff', border: '1.5px solid #c2d9f5', borderRadius: 10, padding: '14px 16px' }}>
@@ -727,7 +727,7 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
             <label
               key={opt.type}
               id={`pref-${opt.type}-${calcId}`}
-              onClick={`selectPref('${opt.type}','${calcId}')` as any}
+              {...{onclick: `selectPref('${opt.type}','${calcId}')`}}
               style={{
                 border: opt.type === 'text' ? '1.5px solid #2a6496' : '1.5px solid #d0d9e5',
                 borderRadius: 8,
@@ -763,7 +763,7 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
         </select>
 
         <button
-          onClick={`submitContact('${calcId}')` as any}
+          {...{onclick: `submitContact('${calcId}')`}}
           style={{ width: '100%', padding: 11, background: '#2a6496', color: '#fff', border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
         >
           Send →
