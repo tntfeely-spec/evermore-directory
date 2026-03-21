@@ -26,7 +26,6 @@ export default function HomePage() {
             opacity: 0.35
           }}
         />
-        <div className="fixed inset-0 z-[1] bg-white/65" />
 
         <div className="relative z-10">
           
