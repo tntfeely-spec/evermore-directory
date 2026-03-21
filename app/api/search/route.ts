@@ -142,20 +142,28 @@ export async function GET(request: NextRequest) {
   interface ZipInfo { latitude: number; longitude: number; city: string; state: string }
   let zipEntries: ZipInfo[] = [];
 
-  if (stateSuffix) {
-    zipEntries = zipcodes.lookupByName(cityQuery, stateSuffix) || [];
-  } else {
-    zipEntries = zipcodes.lookupByName(cityQuery) || [];
+  try {
+    if (stateSuffix) {
+      zipEntries = zipcodes.lookupByName(cityQuery, stateSuffix) || [];
+    } else {
+      zipEntries = zipcodes.lookupByName(cityQuery) || [];
+    }
+  } catch (zipErr) {
+    console.error('PATH 2 zipcodes error:', zipErr);
+    zipEntries = [];
   }
 
   if (zipEntries.length > 0) {
-    // Average coordinates across all ZIPs for this city name
-    const avgLat = zipEntries.reduce((s, e) => s + e.latitude, 0) / zipEntries.length;
-    const avgLng = zipEntries.reduce((s, e) => s + e.longitude, 0) / zipEntries.length;
+    try {
+      const avgLat = zipEntries.reduce((s: number, e: ZipInfo) => s + e.latitude, 0) / zipEntries.length;
+      const avgLng = zipEntries.reduce((s: number, e: ZipInfo) => s + e.longitude, 0) / zipEntries.length;
 
-    const payload = await searchByCoords(avgLat, avgLng, cityQuery);
-    if (payload.results.length > 0) {
-      return NextResponse.json(payload);
+      const payload = await searchByCoords(avgLat, avgLng, cityQuery);
+      if (payload.results.length > 0) {
+        return NextResponse.json(payload);
+      }
+    } catch (coordErr) {
+      console.error('PATH 2 searchByCoords error:', coordErr);
     }
     // No funeral homes within radius -- fall through to city name match
   }
@@ -166,8 +174,8 @@ export async function GET(request: NextRequest) {
 
   try {
     const [nameResult, cityResult] = await Promise.all([
-      supabase.from('funeral_homes').select('business_name, city, state, is_featured').ilike('business_name', `${cityQuery}%`).order('is_featured', { ascending: false, nullsFirst: false }).order('business_name').limit(5),
-      supabase.from('funeral_homes').select('business_name, city, state, is_featured').ilike('city', `${cityQuery}%`).order('is_featured', { ascending: false, nullsFirst: false }).order('business_name').limit(5),
+      supabase.from('funeral_homes').select('business_name, city, state').ilike('business_name', `${cityQuery}%`).order('business_name').limit(5),
+      supabase.from('funeral_homes').select('business_name, city, state').ilike('city', `${cityQuery}%`).order('business_name').limit(5),
     ]);
     if (nameResult.error) console.error('PATH 3 byName error:', nameResult.error);
     if (cityResult.error) console.error('PATH 3 byCity error:', cityResult.error);
