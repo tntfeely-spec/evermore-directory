@@ -215,6 +215,93 @@ const DEFAULT_TOTAL = CALC_ITEMS
   .filter((i) => i.defaultOn)
   .reduce((sum, i) => sum + i.price, 0)
 
+// ─── Build tabs HTML string ──────────────────────────────────────────────────
+function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
+  const addr = [listing.address, listing.city, listing.state, listing.zip].filter(Boolean).join(', ')
+  const addrEncoded = encodeURIComponent(addr)
+  const phoneLink = listing.phone ? `<p style="font-size:14px;color:#444;">📞 <a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
+  const servicesHtml = services.length > 0
+    ? `<p style="font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Services offered</p>
+       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">${services.map(s => `<span style="background:#f0f4f8;color:#1a1a2e;font-size:13px;padding:6px 14px;border-radius:6px;border:1px solid #dde5ef;">${s}</span>`).join('')}</div>`
+    : ''
+  const specialDesc = listing.special_features ? ` ${listing.special_features}.` : ''
+  const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
+  const websiteLink = listing.website
+    ? `<a href="https://www.google.com/search?q=${googleSearch}" target="_blank" rel="noopener noreferrer" style="color:#2a6496;font-size:14px;text-decoration:none;">See reviews on Google →</a>`
+    : ''
+  const photoContent = listing.image
+    ? `<div style="background:#e8edf2;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px;margin-bottom:12px;">📷 Photo of ${listing.business_name}</div>`
+    : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#888;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#666;">No photos available</div><div style="font-size:13px;">Visit their website or call to learn about their facilities.</div></div>`
+
+  // Calculator rows
+  let calcHtml = ''
+  if (hasPricing) {
+    const rows = CALC_ITEMS.map((item, i) =>
+      `<tr style="border-bottom:1px solid #f5f5f5;background:${i % 2 === 0 ? '#fff' : '#fafafa'};">
+        <td style="padding:10px 16px;width:28px;"><input type="checkbox" id="chk-${item.id}-${calcId}" ${item.defaultOn ? 'checked' : ''} ${item.required ? 'disabled' : ''} style="width:15px;height:15px;accent-color:#2a6496;cursor:pointer;" /></td>
+        <td style="padding:10px 8px;font-size:14px;color:#1a1a2e;">${item.label}${item.required ? '<span style="font-size:10px;color:#bbb;margin-left:6px;">required</span>' : ''}</td>
+        <td style="padding:10px 16px;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;white-space:nowrap;">$${item.price.toLocaleString()}</td>
+      </tr>`
+    ).join('')
+    calcHtml = `
+      <div style="border-top:1px solid #e5e5e5;">
+        <div style="padding:14px 20px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-size:15px;font-weight:700;color:#1a1a2e;">Estimate your funeral cost</div><div style="font-size:12px;color:#999;margin-top:2px;">Select services below. Total updates instantly.</div></div>
+          <div style="text-align:right;"><div style="font-size:11px;color:#999;margin-bottom:2px;">Estimated total</div><div id="total-${calcId}" style="font-size:22px;font-weight:800;color:#1a1a2e;">$${DEFAULT_TOTAL.toLocaleString()}</div></div>
+        </div>
+        <div style="padding-bottom:12px;"><table style="width:100%;border-collapse:collapse;"><tbody>${rows}</tbody></table>
+        <div style="padding:10px 16px;"><p style="font-size:11px;color:#bbb;line-height:1.6;">Prices are estimated from this funeral home's General Price List. Cash advance items (cemetery fees, death certificates, obituaries) not included. Always request the current GPL before making arrangements.</p></div></div>
+      </div>`
+  } else {
+    calcHtml = `
+      <div style="border-top:1px solid #e5e5e5;padding:20px;">
+        <div style="background:#fff8e1;border:1px solid #fcd34d;border-radius:8px;padding:14px;margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:600;color:#92400e;margin-bottom:4px;">Pricing not published</div>
+          <div style="font-size:13px;color:#78350f;">This funeral home has not published prices online. Call directly to request their General Price List, which all funeral homes are required to provide.</div>
+        </div>
+        <p style="font-size:12px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">${cityLabel} area averages for reference</p>
+        <table style="width:100%;border-collapse:collapse;">
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Direct cremation</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$1,800 – $3,500</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Cremation with service</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$3,500 – $6,000</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Traditional burial</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$7,000 – $12,000</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Memorial service only</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$1,200 – $2,800</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px;color:#bbb;margin-top:10px;font-style:italic;">Area averages based on Evermore data. Always request a General Price List from the funeral home directly.</p>
+      </div>`
+  }
+
+  return `
+<div style="display:flex;border-bottom:1px solid #e5e5e5;background:#fff;">
+  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:14px;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
+  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
+  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos</button>
+  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
+</div>
+<div id="tab-overview" style="padding:20px;display:block;">
+  <p style="font-size:15px;color:#444;line-height:1.7;margin-bottom:20px;">${listing.business_name} is a funeral home serving families in ${listing.city}, ${listing.state}.${specialDesc} We are committed to helping families find compassionate, professional care during one of life's most difficult moments.</p>
+  ${servicesHtml}
+  ${phoneLink}
+</div>
+${calcHtml}
+<div id="tab-reviews" style="padding:20px;display:none;">
+  <p style="font-size:13px;color:#888;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
+  ${websiteLink}
+</div>
+<div id="tab-photos" style="padding:20px;display:none;">
+  ${photoContent}
+</div>
+<div id="tab-location" style="padding:20px;display:none;">
+  <iframe width="100%" height="400" style="border:0;border-radius:8px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=${addrEncoded}&output=embed"></iframe>
+  <p style="font-size:14px;color:#444;line-height:1.8;margin-top:14px;">
+    <strong>${listing.business_name}</strong><br />${addr}<br /><br />
+    ${listing.phone ? `<a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a><br />` : ''}
+    <a href="https://maps.google.com/?q=${addrEncoded}" target="_blank" rel="noopener noreferrer" style="color:#2a6496;text-decoration:none;">Get directions →</a>
+  </p>
+</div>`
+}
+
 // ─── Page component ───────────────────────────────────────────────────────────
 export default async function FuneralHomePage({
   params,
@@ -364,91 +451,10 @@ export default async function FuneralHomePage({
         {/* Left column */}
         <div>
 
-          {/* Tabs: Overview / Reviews / Photos / Location */}
-          <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', overflow: 'hidden', marginBottom: 20 }}>
-            <TabSection listing={listing} services={services} />
-
-          {/* Cost Calculator - inside tab-overview context */}
-          <div id="tab-overview-calc" style={{ borderTop: '1px solid #e5e5e5' }}>
-            <div style={{ padding: '14px 20px', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#1a1a2e' }}>Estimate your funeral cost</div>
-                <div style={{ fontSize: 12, color: '#999', marginTop: 2 }}>Select services below. Total updates instantly.</div>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 11, color: '#999', marginBottom: 2 }}>Estimated total</div>
-                <div id={`total-${calcId}`} style={{ fontSize: 22, fontWeight: 800, color: '#1a1a2e' }}>
-                  ${DEFAULT_TOTAL.toLocaleString()}
-                </div>
-              </div>
-            </div>
-
-            {hasPricing ? (
-              <div style={{ paddingBottom: 12 }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <tbody>
-                    {CALC_ITEMS.map((item, i) => (
-                      <tr key={item.id} style={{ borderBottom: '1px solid #f5f5f5', background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
-                        <td style={{ padding: '10px 16px', width: 28 }}>
-                          <input
-                            type="checkbox"
-                            id={`chk-${item.id}-${calcId}`}
-                            defaultChecked={item.defaultOn}
-                            disabled={item.required}
-                            style={{ width: 15, height: 15, accentColor: '#2a6496', cursor: 'pointer' }}
-                          />
-                        </td>
-                        <td style={{ padding: '10px 8px', fontSize: 14, color: '#1a1a2e' }}>
-                          {item.label}
-                          {item.required && <span style={{ fontSize: 10, color: '#bbb', marginLeft: 6 }}>required</span>}
-                        </td>
-                        <td style={{ padding: '10px 16px', fontSize: 14, fontWeight: 600, color: '#1a1a2e', textAlign: 'right', whiteSpace: 'nowrap' }}>
-                          ${item.price.toLocaleString()}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <div style={{ padding: '10px 16px' }}>
-                  <p style={{ fontSize: 11, color: '#bbb', lineHeight: 1.6 }}>
-                    Prices are estimated from this funeral home&apos;s General Price List. Cash advance items (cemetery fees, death certificates, obituaries) not included.
-                    Always request the current GPL before making arrangements.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div style={{ padding: 20 }}>
-                <div style={{ background: '#fff8e1', border: '1px solid #fcd34d', borderRadius: 8, padding: 14, marginBottom: 16 }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: '#92400e', marginBottom: 4 }}>Pricing not published</div>
-                  <div style={{ fontSize: 13, color: '#78350f' }}>
-                    This funeral home has not published prices online. Call directly to request their General Price List, which all funeral homes are required to provide.
-                  </div>
-                </div>
-                <p style={{ fontSize: 12, fontWeight: 700, color: '#999', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>
-                  {cityLabel} area averages for reference
-                </p>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <tbody>
-                    {[
-                      ['Direct cremation', '$1,800 – $3,500'],
-                      ['Cremation with service', '$3,500 – $6,000'],
-                      ['Traditional burial', '$7,000 – $12,000'],
-                      ['Memorial service only', '$1,200 – $2,800'],
-                    ].map(([label, price]) => (
-                      <tr key={label} style={{ borderBottom: '1px solid #f0f0f0' }}>
-                        <td style={{ padding: '10px 0', fontSize: 14, color: '#555' }}>{label}</td>
-                        <td style={{ padding: '10px 0', fontSize: 14, fontWeight: 600, color: '#1a1a2e', textAlign: 'right' }}>{price}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <p style={{ fontSize: 11, color: '#bbb', marginTop: 10, fontStyle: 'italic' }}>
-                  Area averages based on Evermore data. Always request a General Price List from the funeral home directly.
-                </p>
-              </div>
-            )}
-          </div>
-          </div>
+          {/* Tabs + Calculator - all rendered as raw HTML for onclick support */}
+          <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', overflow: 'hidden', marginBottom: 20 }}
+            dangerouslySetInnerHTML={{ __html: buildTabsHtml(listing, services, calcId, hasPricing, cityLabel) }}
+          />
         </div>
 
         {/* Right sidebar */}
@@ -563,124 +569,6 @@ function submitContact(id) {
       />
     </>
   )
-}
-
-// ─── Tab Section (client component) ──────────────────────────────────────────
-function TabSection({ listing, services }: { listing: FuneralHome; services: string[] }) {
-  const photoCount = listing.image ? 1 : 0;
-  return (
-    <div>
-      {/* Tab bar rendered as raw HTML so onclick attributes work in server component */}
-      <div dangerouslySetInnerHTML={{ __html: `
-<div style="display:flex;border-bottom:1px solid #e5e5e5;margin-bottom:0;background:#fff;">
-  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:14px;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
-  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
-  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos${photoCount > 0 ? ` (${photoCount})` : ''}</button>
-  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
-</div>
-` }} />
-
-      {/* Overview */}
-      <div id="tab-overview" style={{ padding: 20, display: 'block' }}>
-        <p style={{ fontSize: 15, color: '#444', lineHeight: 1.7, marginBottom: 20 }}>
-          {listing.business_name} is a funeral home serving families in {listing.city}, {listing.state}.
-          {listing.special_features ? ` ${listing.special_features}.` : ''}
-          {' '}We are committed to helping families find compassionate, professional care during one of life&apos;s most difficult moments.
-        </p>
-        {services.length > 0 && (
-          <>
-            <p style={{ fontSize: 11, fontWeight: 700, color: '#999', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>
-              Services offered
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
-              {services.map((s) => (
-                <span key={s} style={{ background: '#f0f4f8', color: '#1a1a2e', fontSize: 13, padding: '6px 14px', borderRadius: 6, border: '1px solid #dde5ef' }}>
-                  {s}
-                </span>
-              ))}
-            </div>
-          </>
-        )}
-        {listing.phone && (
-          <p style={{ fontSize: 14, color: '#444' }}>
-            📞 <a href={`tel:${listing.phone.replace(/\D/g, '')}`} style={{ color: '#2a6496' }}>{listing.phone}</a>
-          </p>
-        )}
-      </div>
-
-      {/* Reviews */}
-      <div id="tab-reviews" style={{ padding: 20, display: 'none' }}>
-        <p style={{ fontSize: 13, color: '#888', marginBottom: 16 }}>
-          Reviews are pulled from Google. Visit the funeral home&apos;s Google listing to read and leave reviews.
-        </p>
-        {listing.website && (
-          <a
-            href={`https://www.google.com/search?q=${encodeURIComponent(listing.business_name + ' ' + listing.city + ' ' + listing.state)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#2a6496', fontSize: 14, textDecoration: 'none' }}
-          >
-            See reviews on Google →
-          </a>
-        )}
-      </div>
-
-      {/* Photos */}
-      <div id="tab-photos" style={{ padding: 20, display: 'none' }}>
-        {listing.image ? (
-          <div>
-            <div style={{ background: '#e8edf2', borderRadius: 8, height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888', fontSize: 14, marginBottom: 12 }}>
-              📷 Photo of {listing.business_name}
-            </div>
-            {listing.website && (
-              <a href={listing.website} target="_blank" rel="noopener noreferrer" style={{ color: '#2a6496', fontSize: 14, textDecoration: 'none' }}>
-                See more photos on their website →
-              </a>
-            )}
-          </div>
-        ) : (
-          <div style={{ background: '#f0f4f8', borderRadius: 8, padding: 32, textAlign: 'center', color: '#888', border: '2px dashed #d0dae5' }}>
-            <div style={{ fontSize: 28, opacity: 0.25, marginBottom: 8 }}>📷</div>
-            <div style={{ fontWeight: 600, marginBottom: 4, color: '#666' }}>No photos available</div>
-            <div style={{ fontSize: 13 }}>This funeral home has not published photos. Visit their website or call to learn about their facilities.</div>
-          </div>
-        )}
-      </div>
-
-      {/* Location */}
-      <div id="tab-location" style={{ padding: 20, display: 'none' }}>
-        <div dangerouslySetInnerHTML={{ __html: `
-<iframe
-  width="100%"
-  height="400"
-  style="border:0;border-radius:8px;"
-  loading="lazy"
-  allowfullscreen
-  src="https://maps.google.com/maps?q=${encodeURIComponent(`${listing.address}, ${listing.city}, ${listing.state} ${listing.zip}`)}&output=embed">
-</iframe>
-` }} />
-        <p style={{ fontSize: 14, color: '#444', lineHeight: 1.8, marginTop: 14 }}>
-          <strong>{listing.business_name}</strong><br />
-          {fullAddressStr(listing)}<br /><br />
-          {listing.phone && (
-            <><a href={`tel:${listing.phone.replace(/\D/g, '')}`} style={{ color: '#2a6496' }}>{listing.phone}</a><br /></>
-          )}
-          <a
-            href={`https://maps.google.com/?q=${encodeURIComponent(fullAddressStr(listing))}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#2a6496', textDecoration: 'none' }}
-          >
-            Get directions →
-          </a>
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function fullAddressStr(listing: FuneralHome): string {
-  return [listing.address, listing.city, listing.state, listing.zip].filter(Boolean).join(', ')
 }
 
 // ─── Contact Form (sidebar) ───────────────────────────────────────────────────
