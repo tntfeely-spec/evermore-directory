@@ -649,10 +649,17 @@ function TabSection({ listing, services }: { listing: FuneralHome; services: str
 
       {/* Location */}
       <div id="tab-location" style={{ padding: 20, display: 'none' }}>
-        <div style={{ background: '#e8edf2', borderRadius: 8, height: 220, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888', fontSize: 14, marginBottom: 14 }}>
-          📍 Map — {fullAddressStr(listing)}
-        </div>
-        <p style={{ fontSize: 14, color: '#444', lineHeight: 1.8 }}>
+        <div dangerouslySetInnerHTML={{ __html: `
+<iframe
+  width="100%"
+  height="400"
+  style="border:0;border-radius:8px;"
+  loading="lazy"
+  allowfullscreen
+  src="https://maps.google.com/maps?q=${encodeURIComponent(`${listing.address}, ${listing.city}, ${listing.state} ${listing.zip}`)}&output=embed">
+</iframe>
+` }} />
+        <p style={{ fontSize: 14, color: '#444', lineHeight: 1.8, marginTop: 14 }}>
           <strong>{listing.business_name}</strong><br />
           {fullAddressStr(listing)}<br /><br />
           {listing.phone && (
