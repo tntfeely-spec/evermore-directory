@@ -367,10 +367,9 @@ export default async function FuneralHomePage({
           {/* Tabs: Overview / Reviews / Photos / Location */}
           <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', overflow: 'hidden', marginBottom: 20 }}>
             <TabSection listing={listing} services={services} />
-          </div>
 
-          {/* Cost Calculator */}
-          <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', overflow: 'hidden' }}>
+          {/* Cost Calculator - inside tab-overview context */}
+          <div id="tab-overview-calc" style={{ borderTop: '1px solid #e5e5e5' }}>
             <div style={{ padding: '14px 20px', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: '#1a1a2e' }}>Estimate your funeral cost</div>
@@ -449,13 +448,14 @@ export default async function FuneralHomePage({
               </div>
             )}
           </div>
+          </div>
         </div>
 
         {/* Right sidebar */}
         <div>
 
           {/* Get in touch card */}
-          <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', marginBottom: 16, overflow: 'hidden' }}>
+          <div id="tab-contact" style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', marginBottom: 16, overflow: 'hidden' }}>
             <ContactForm listing={listing} calcId={calcId} />
           </div>
 
@@ -516,11 +516,13 @@ document.querySelectorAll('[id^="chk-"][id$="-${calcId}"]').forEach(el => {
         dangerouslySetInnerHTML={{
           __html: `
 function switchTab(name) {
-  var tabs = ['overview','reviews','photos','location'];
+  var tabs = ['overview','reviews','photos','location','contact'];
   tabs.forEach(function(t) {
     var el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === name ? 'block' : 'none';
   });
+  var calc = document.getElementById('tab-overview-calc');
+  if (calc) calc.style.display = name === 'overview' ? 'block' : 'none';
   var btns = document.querySelectorAll('[data-tab]');
   btns.forEach(function(b) {
     var active = b.getAttribute('data-tab') === name;
