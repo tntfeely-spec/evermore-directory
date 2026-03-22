@@ -284,7 +284,6 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
   ${servicesHtml}
   ${phoneLink}
 </div>
-${calcHtml}
 <div id="tab-reviews" style="padding:20px;display:none;">
   <p style="font-size:13px;color:#888;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
   ${websiteLink}
@@ -299,7 +298,8 @@ ${calcHtml}
     ${listing.phone ? `<a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a><br />` : ''}
     <a href="https://maps.google.com/?q=${addrEncoded}" target="_blank" rel="noopener noreferrer" style="color:#2a6496;text-decoration:none;">Get directions →</a>
   </p>
-</div>`
+</div>
+${calcHtml}`
 }
 
 // ─── Page component ───────────────────────────────────────────────────────────
@@ -527,8 +527,6 @@ function switchTab(name) {
     var el = document.getElementById('tab-' + t);
     if (el) el.style.display = t === name ? 'block' : 'none';
   });
-  var calc = document.getElementById('tab-overview-calc');
-  if (calc) calc.style.display = name === 'overview' ? 'block' : 'none';
   var btns = document.querySelectorAll('[data-tab]');
   btns.forEach(function(b) {
     var active = b.getAttribute('data-tab') === name;
