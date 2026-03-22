@@ -396,7 +396,6 @@ export default async function FuneralHomePage({
                             id={`chk-${item.id}-${calcId}`}
                             defaultChecked={item.defaultOn}
                             disabled={item.required}
-                            {...{onchange: `recalc('${calcId}')`}}
                             style={{ width: 15, height: 15, accentColor: '#2a6496', cursor: 'pointer' }}
                           />
                         </td>
@@ -566,33 +565,18 @@ function submitContact(id) {
 
 // ─── Tab Section (client component) ──────────────────────────────────────────
 function TabSection({ listing, services }: { listing: FuneralHome; services: string[] }) {
+  const photoCount = listing.image ? 1 : 0;
   return (
     <div>
-      {/* Static tab bar - JS handles switching */}
-      <div style={{ display: 'flex', borderBottom: '2px solid #e5e5e5' }} id="tab-bar">
-        {['Overview', 'Reviews', 'Photos', 'Location'].map((tab, i) => (
-          <button
-            key={tab}
-            data-tab={tab.toLowerCase()}
-            {...{onclick: `switchTab('${tab.toLowerCase()}')`}}
-            style={{
-              padding: '14px 20px',
-              fontSize: 14,
-              color: i === 0 ? '#1a1a2e' : '#888',
-              background: 'none',
-              border: 'none',
-              borderBottom: i === 0 ? '2px solid #1a1a2e' : '2px solid transparent',
-              marginBottom: -2,
-              fontWeight: 500,
-              cursor: 'pointer',
-            }}
-            id={`tab-btn-${tab.toLowerCase()}`}
-          >
-            {tab === 'Reviews' ? `Reviews` : tab}
-            {tab === 'Photos' && listing.image ? ' (1)' : ''}
-          </button>
-        ))}
-      </div>
+      {/* Tab bar rendered as raw HTML so onclick attributes work in server component */}
+      <div dangerouslySetInnerHTML={{ __html: `
+<div style="display:flex;border-bottom:1px solid #e5e5e5;margin-bottom:0;background:#fff;">
+  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:14px;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
+  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
+  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos${photoCount > 0 ? ` (${photoCount})` : ''}</button>
+  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:14px;color:#666;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
+</div>
+` }} />
 
       {/* Overview */}
       <div id="tab-overview" style={{ padding: 20, display: 'block' }}>
@@ -692,86 +676,48 @@ function fullAddressStr(listing: FuneralHome): string {
 
 // ─── Contact Form (sidebar) ───────────────────────────────────────────────────
 function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string }) {
+  const shortName = listing.business_name.split(' ').slice(0, 2).join(' ');
+  const firstName = listing.business_name.split(' ')[0];
   return (
-    <div>
-      <div
-        id={`contact-toggle-${calcId}`}
-        {...{onclick: `toggleContact('${calcId}')`}}
-        style={{ cursor: 'pointer', padding: 16 }}
-      >
-        <div style={{ background: '#f0f6ff', border: '1.5px solid #c2d9f5', borderRadius: 10, padding: '14px 16px' }}>
-          <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 4 }}>
-            💬 Get in touch today
-          </div>
-          <div style={{ fontSize: 12, color: '#555', lineHeight: 1.5 }}>
-            Choose how you want to hear back. Call, text, or email.
-          </div>
-          <div style={{ marginTop: 10, background: '#2a6496', color: '#fff', borderRadius: 6, padding: '9px 14px', fontSize: 13, fontWeight: 700, textAlign: 'center' }}>
-            Contact this funeral home →
-          </div>
-        </div>
-      </div>
-
-      <div id={`contact-form-${calcId}`} style={{ display: 'none', padding: '0 16px 16px' }}>
-        <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>
-          Contact {listing.business_name.split(' ').slice(0, 2).join(' ')}
-        </div>
-        <div style={{ fontSize: 12, color: '#777', marginBottom: 12 }}>How would you like them to reach you?</div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 6, marginBottom: 12 }}>
-          {[
-            { type: 'call', icon: '📞', label: 'Call me', sub: 'Within the hour' },
-            { type: 'text', icon: '💬', label: 'Text me', sub: 'Reply when ready' },
-            { type: 'email', icon: '✉️', label: 'Email me', sub: 'No pressure' },
-          ].map((opt) => (
-            <label
-              key={opt.type}
-              id={`pref-${opt.type}-${calcId}`}
-              {...{onclick: `selectPref('${opt.type}','${calcId}')`}}
-              style={{
-                border: opt.type === 'text' ? '1.5px solid #2a6496' : '1.5px solid #d0d9e5',
-                borderRadius: 8,
-                padding: '10px 6px',
-                textAlign: 'center' as const,
-                cursor: 'pointer',
-                fontSize: 12,
-                color: '#444',
-                background: opt.type === 'text' ? '#f0f6ff' : '#fff',
-              }}
-            >
-              <div style={{ fontSize: 18, marginBottom: 4 }}>{opt.icon}</div>
-              <div style={{ fontWeight: 600 }}>{opt.label}</div>
-              <div style={{ fontSize: 10, color: '#888', marginTop: 2 }}>{opt.sub}</div>
-            </label>
-          ))}
-        </div>
-
-        <div id={`field-phone-${calcId}`}>
-          <input type="text" placeholder="Your name" style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' as const }} />
-          <input type="tel" placeholder="Best phone number" style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' as const }} />
-        </div>
-        <div id={`field-email-${calcId}`} style={{ display: 'none' }}>
-          <input type="text" placeholder="Your name" style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' as const }} />
-          <input type="email" placeholder="Your email address" style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' as const }} />
-        </div>
-
-        <select style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 10, color: '#444', boxSizing: 'border-box' as const, background: '#fff' }}>
-          <option value="now">We need services now</option>
-          <option value="soon">Planning within the next few days</option>
-          <option value="pricing">Just getting pricing information</option>
-          <option value="preplanning">Pre-planning for the future</option>
-        </select>
-
-        <button
-          {...{onclick: `submitContact('${calcId}')`}}
-          style={{ width: '100%', padding: 11, background: '#2a6496', color: '#fff', border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
-        >
-          Send →
-        </button>
-        <p style={{ fontSize: 11, color: '#999', marginTop: 8, textAlign: 'center' as const, lineHeight: 1.5 }}>
-          Goes directly to {listing.business_name.split(' ')[0]}. We never share your info.
-        </p>
-      </div>
-    </div>
+    <div dangerouslySetInnerHTML={{ __html: `
+<div id="contact-toggle-${calcId}" onclick="toggleContact('${calcId}')" style="cursor:pointer;padding:16px;">
+  <div style="background:#f0f6ff;border:1.5px solid #c2d9f5;border-radius:10px;padding:14px 16px;">
+    <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">💬 Get in touch today</div>
+    <div style="font-size:12px;color:#555;line-height:1.5;">Choose how you want to hear back. Call, text, or email.</div>
+    <div style="margin-top:10px;background:#2a6496;color:#fff;border-radius:6px;padding:9px 14px;font-size:13px;font-weight:700;text-align:center;">Contact this funeral home →</div>
+  </div>
+</div>
+<div id="contact-form-${calcId}" style="display:none;padding:0 16px 16px;">
+  <div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Contact ${shortName}</div>
+  <div style="font-size:12px;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+    <label id="pref-call-${calcId}" onclick="selectPref('call','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:12px;color:#444;background:#fff;">
+      <div style="font-size:18px;margin-bottom:4px;">📞</div><div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#888;margin-top:2px;">Within the hour</div>
+    </label>
+    <label id="pref-text-${calcId}" onclick="selectPref('text','${calcId}')" style="border:1.5px solid #2a6496;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:12px;color:#444;background:#f0f6ff;">
+      <div style="font-size:18px;margin-bottom:4px;">💬</div><div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#888;margin-top:2px;">Reply when ready</div>
+    </label>
+    <label id="pref-email-${calcId}" onclick="selectPref('email','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:12px;color:#444;background:#fff;">
+      <div style="font-size:18px;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#888;margin-top:2px;">No pressure</div>
+    </label>
+  </div>
+  <div id="field-phone-${calcId}">
+    <input type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+  </div>
+  <div id="field-email-${calcId}" style="display:none;">
+    <input type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+  </div>
+  <select style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:10px;color:#444;box-sizing:border-box;background:#fff;">
+    <option value="now">We need services now</option>
+    <option value="soon">Planning within the next few days</option>
+    <option value="pricing">Just getting pricing information</option>
+    <option value="preplanning">Pre-planning for the future</option>
+  </select>
+  <button onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">Send →</button>
+  <p style="font-size:11px;color:#999;margin-top:8px;text-align:center;line-height:1.5;">Goes directly to ${firstName}. We never share your info.</p>
+</div>
+` }} />
   )
 }
