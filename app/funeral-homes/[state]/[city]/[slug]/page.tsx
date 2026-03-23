@@ -558,9 +558,40 @@ function selectPref(type, id) {
 }
 function submitContact(id) {
   var form = document.getElementById('contact-form-' + id);
-  if (form) {
-    form.innerHTML = '<div style="padding:16px;text-align:center;color:#2e7d32;font-weight:600;">✓ Request sent! They will be in touch soon.</div>';
-  }
+  var btn = document.getElementById('contact-btn-' + id);
+  if (!form) return;
+  var name = document.getElementById('contact-name-' + id);
+  var phone = document.getElementById('contact-phone-' + id);
+  var email = document.getElementById('contact-email-' + id);
+  var msg = document.getElementById('contact-message-' + id);
+  var home = document.getElementById('contact-home-' + id);
+  var nameVal = name ? name.value.trim() : '';
+  if (!nameVal) { if (name) name.style.border = '1px solid #e53e3e'; return; }
+  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; btn.style.background = '#7aa5c4'; }
+  var activePref = document.querySelector('[id^="pref-"][style*="solid #2a6496"]');
+  var prefVal = activePref ? activePref.id.replace('pref-','').replace('-' + id,'') : 'text';
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: nameVal,
+      phone: phone ? phone.value : '',
+      email: email ? email.value : '',
+      message: msg ? msg.value : '',
+      preference: prefVal,
+      funeralHomeName: home ? home.value : '',
+      city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
+      state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : ''
+    })
+  }).then(function(res) {
+    if (res.ok) {
+      form.innerHTML = '<div style="padding:24px;text-align:center;"><div style="font-size:28px;margin-bottom:10px;">✓</div><div style="font-size:14px;font-weight:700;color:#2e7d32;margin-bottom:6px;">Message sent</div><div style="font-size:13px;color:#555;line-height:1.6;">This funeral home has your contact info and will reach out your preferred way. You can also call them directly anytime.</div></div>';
+    } else {
+      if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }
+    }
+  }).catch(function() {
+    if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }
+  });
 }
 `,
         }}
@@ -573,6 +604,9 @@ function submitContact(id) {
 function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string }) {
   const shortName = listing.business_name.split(' ').slice(0, 2).join(' ');
   const firstName = listing.business_name.split(' ')[0];
+  const escapedName = listing.business_name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const escapedCity = listing.city.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const escapedState = listing.state.replace(/'/g, "\\'").replace(/"/g, '&quot;');
   return (
     <div dangerouslySetInnerHTML={{ __html: `
 <div id="contact-toggle-${calcId}" onclick="toggleContact('${calcId}')" style="cursor:pointer;padding:16px;">
@@ -596,21 +630,18 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
       <div style="font-size:18px;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#888;margin-top:2px;">No pressure</div>
     </label>
   </div>
+  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   <div id="field-phone-${calcId}">
-    <input type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
-    <input type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   </div>
   <div id="field-email-${calcId}" style="display:none;">
-    <input type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
-    <input type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   </div>
-  <select style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:10px;color:#444;box-sizing:border-box;background:#fff;">
-    <option value="now">We need services now</option>
-    <option value="soon">Planning within the next few days</option>
-    <option value="pricing">Just getting pricing information</option>
-    <option value="preplanning">Pre-planning for the future</option>
-  </select>
-  <button onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">Send →</button>
+  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:13px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;"></textarea>
+  <input type="hidden" id="contact-home-${calcId}" value="${escapedName}" />
+  <input type="hidden" id="contact-city-${calcId}" value="${escapedCity}" />
+  <input type="hidden" id="contact-state-${calcId}" value="${escapedState}" />
+  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">Send →</button>
   <p style="font-size:11px;color:#999;margin-top:8px;text-align:center;line-height:1.5;">Goes directly to ${firstName}. We never share your info.</p>
 </div>
 ` }} />
