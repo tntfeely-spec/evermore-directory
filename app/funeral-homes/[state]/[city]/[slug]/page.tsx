@@ -227,9 +227,7 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
     : ''
   const specialDesc = listing.special_features ? ` ${listing.special_features}.` : ''
   const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
-  const websiteLink = listing.website
-    ? `<a href="https://www.google.com/search?q=${googleSearch}" target="_blank" rel="noopener noreferrer" style="color:#2a6496;font-size:14px;text-decoration:none;">See reviews on Google →</a>`
-    : ''
+  const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
   const photoContent = listing.image
     ? `<div style="background:#e8edf2;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px;margin-bottom:12px;">📷 Photo of ${listing.business_name}</div>`
     : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#888;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#666;">No photos available</div><div style="font-size:13px;">Visit their website or call to learn about their facilities.</div></div>`
@@ -287,7 +285,7 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
 </div>
 <div id="tab-reviews" style="padding:20px;display:none;">
   <p style="font-size:13px;color:#888;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
-  ${websiteLink}
+  ${reviewsLink}
 </div>
 <div id="tab-photos" style="padding:20px;display:none;">
   ${photoContent}
