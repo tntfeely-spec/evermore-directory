@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Navigation from '@/components/Navigation'
 
 export const revalidate = 86400
 export const dynamicParams = true
@@ -328,6 +329,7 @@ export default async function FuneralHomePage({
 
   return (
     <>
+      <Navigation />
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
