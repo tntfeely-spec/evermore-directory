@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 
-export const revalidate = 86400
+export const revalidate = 0
 export const dynamicParams = true
 
 // ─── Supabase client (server-side) ───────────────────────────────────────────
