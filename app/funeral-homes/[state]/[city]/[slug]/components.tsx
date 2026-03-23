@@ -265,6 +265,11 @@ export function ContactForm({ listing }: { listing: FuneralHome }) {
   const [open, setOpen] = useState(false)
   const [pref, setPref] = useState<ContactPref>('text')
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('now')
 
   const prefStyle = (p: ContactPref) => ({
     border: pref === p ? '1.5px solid #2a6496' : '1.5px solid #d0d9e5',
@@ -276,6 +281,34 @@ export function ContactForm({ listing }: { listing: FuneralHome }) {
     color: '#444',
     background: pref === p ? '#f0f6ff' : '#fff',
   })
+
+  const handleSubmit = async () => {
+    if (!name) return
+    setSending(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone: pref !== 'email' ? phone : '',
+          email: pref === 'email' ? email : '',
+          message,
+          preference: pref,
+          funeralHomeName: listing.business_name,
+          city: listing.city,
+          state: listing.state,
+        }),
+      })
+      if (res.ok) {
+        setSent(true)
+      }
+    } catch {
+      // silently fail — user sees the form still
+    } finally {
+      setSending(false)
+    }
+  }
 
   if (sent) {
     return (
@@ -330,23 +363,33 @@ export function ContactForm({ listing }: { listing: FuneralHome }) {
           <input
             type="text"
             placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' }}
           />
           {pref === 'email' ? (
             <input
               type="email"
               placeholder="Your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' }}
             />
           ) : (
             <input
               type="tel"
               placeholder="Best phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 8, display: 'block', boxSizing: 'border-box' }}
             />
           )}
 
-          <select style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 10, color: '#444', boxSizing: 'border-box', background: '#fff' }}>
+          <select
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            style={{ width: '100%', padding: '9px 10px', fontSize: 13, border: '1px solid #d0d9e5', borderRadius: 6, marginBottom: 10, color: '#444', boxSizing: 'border-box', background: '#fff' }}
+          >
             <option value="now">We need services now</option>
             <option value="soon">Planning within the next few days</option>
             <option value="pricing">Just getting pricing information</option>
@@ -354,10 +397,11 @@ export function ContactForm({ listing }: { listing: FuneralHome }) {
           </select>
 
           <button
-            onClick={() => setSent(true)}
-            style={{ width: '100%', padding: 11, background: '#2a6496', color: '#fff', border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
+            onClick={handleSubmit}
+            disabled={sending || !name}
+            style={{ width: '100%', padding: 11, background: sending ? '#7aa5c4' : '#2a6496', color: '#fff', border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 700, cursor: sending ? 'default' : 'pointer' }}
           >
-            Send →
+            {sending ? 'Sending...' : 'Send →'}
           </button>
           <p style={{ fontSize: 11, color: '#999', marginTop: 8, textAlign: 'center', lineHeight: 1.5 }}>
             Goes directly to {listing.business_name.split(' ')[0]}. We never share your info.
