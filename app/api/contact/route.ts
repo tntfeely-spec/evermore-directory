@@ -1,35 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-
-export async function POST(req: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
+export async function POST(request: Request) {
   try {
-    const body = await req.json()
-    const { name, phone, email, message, preference, funeralHomeName, city, state } = body
+    const body = await request.json()
+    const webhookUrl = process.env.GHL_WEBHOOK_URL
+    if (!webhookUrl) return Response.json({ error: 'Webhook not configured' }, { status: 500 })
 
-    if (!name || !funeralHomeName || !city || !state) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-    }
-
-    await resend.emails.send({
-      from: 'Evermore Directory <noreply@funeralhomedirectories.com>',
-      to: 'listings@funeralhomedirectories.com',
-      subject: `Family inquiry: ${funeralHomeName} - ${city}, ${state}`,
-      text: [
-        `Name: ${name}`,
-        phone ? `Phone: ${phone}` : null,
-        email ? `Email: ${email}` : null,
-        `Preferred contact: ${preference || 'not specified'}`,
-        message ? `Message: ${message}` : null,
-        '',
-        `Funeral Home: ${funeralHomeName}`,
-        `Location: ${city}, ${state}`,
-      ].filter(Boolean).join('\n'),
+    await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: body.name,
+        phone: body.phone,
+        email: body.email,
+        message: body.message,
+        preference: body.preference,
+        funeralHome: body.funeralHomeName,
+        city: body.city,
+        state: body.state,
+        source: 'Evermore Contact Form'
+      })
     })
 
-    return NextResponse.json({ success: true })
+    return Response.json({ success: true })
   } catch (err) {
-    console.error('Contact form error:', err)
-    return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
+    return Response.json({ error: 'Failed to send' }, { status: 500 })
   }
 }
