@@ -335,84 +335,65 @@ export default async function FuneralHomePage({
       />
 
       {/* Breadcrumb */}
-      <div style={{ background: '#fff', borderBottom: '1px solid #e5e5e5' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '10px 24px', fontSize: 13, color: '#888' }}>
-          <Link href="/states" style={{ color: '#2a6496', textDecoration: 'none' }}>All States</Link>
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-[1100px] mx-auto px-6 py-2.5 text-xs text-gray-400">
+          <Link href="/states" className="text-[#2a6496] no-underline">All States</Link>
           {' / '}
-          <Link href={`/funeral-homes/${stateSlug(stateLabel)}`} style={{ color: '#2a6496', textDecoration: 'none' }}>{stateLabel}</Link>
+          <Link href={`/funeral-homes/${stateSlug(stateLabel)}`} className="text-[#2a6496] no-underline">{stateLabel}</Link>
           {' / '}
-          <Link href={`/funeral-homes/${stateSlug(stateLabel)}/${citySlug(cityLabel)}`} style={{ color: '#2a6496', textDecoration: 'none' }}>{cityLabel}</Link>
+          <Link href={`/funeral-homes/${stateSlug(stateLabel)}/${citySlug(cityLabel)}`} className="text-[#2a6496] no-underline">{cityLabel}</Link>
           {' / '}
-          <span style={{ color: '#444' }}>{listing.business_name}</span>
+          <span className="text-gray-600">{listing.business_name}</span>
         </div>
       </div>
 
       {/* Hero */}
-      <div style={{ background: '#fff', borderBottom: '1px solid #e5e5e5' }}>
-        <div style={{
-          maxWidth: 1100,
-          margin: '0 auto',
-          padding: '28px 24px 24px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 300px',
-          gap: 24,
-          alignItems: 'center',
-        }}>
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-[1100px] mx-auto px-6 pt-7 pb-6 grid grid-cols-[1fr_300px] gap-6 items-center">
           {/* Left: NAP centered */}
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div className="text-center">
+            <div className="flex gap-2 mb-2 flex-wrap justify-center">
               {listing.is_featured && (
-                <span style={{ background: '#fff8e1', color: '#b45309', border: '1px solid #fcd34d', fontSize: 12, padding: '3px 10px', borderRadius: 20, fontWeight: 500 }}>
+                <span className="bg-amber-50 text-amber-700 border border-amber-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
                   ★ Featured listing
                 </span>
               )}
-              <span style={{ background: '#e8f5e9', color: '#2e7d32', border: '1px solid #a5d6a7', fontSize: 12, padding: '3px 10px', borderRadius: 20, fontWeight: 500 }}>
+              <span className="bg-green-50 text-green-700 border border-green-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
                 ✓ Verified
               </span>
             </div>
-            <h1 style={{ fontSize: 22, fontWeight: 700, color: '#1a1a2e', marginBottom: 6 }}>
+            <h1 className="text-[22px] font-bold text-[#1a1a2e] mb-1.5">
               {listing.business_name}
             </h1>
-            <p style={{ fontSize: 13, color: '#666', marginBottom: 8 }}>
+            <p className="text-xs text-gray-500 mb-2">
               📍 {fullAddress}
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8, justifyContent: 'center' }}>
-              <span style={{ color: '#f59e0b', fontSize: 14 }}>★★★★★</span>
-              <span style={{ fontSize: 12, color: '#555' }}>
-                <a href={listing.website ?? '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#2a6496', textDecoration: 'none' }}>
+            <div className="flex items-center gap-1.5 mb-2 justify-center">
+              <span className="text-amber-400 text-sm">★★★★★</span>
+              <span className="text-xs text-gray-500">
+                <a href={listing.website ?? '#'} target="_blank" rel="noopener noreferrer" className="text-[#2a6496] no-underline">
                   See reviews on Google
                 </a>
               </span>
             </div>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8, justifyContent: 'center' }}>
+            <div className="flex gap-2 flex-wrap mt-2 justify-center">
               {listing.special_features && (
-                <span style={{ background: '#f0f4f8', color: '#555', fontSize: 12, padding: '4px 10px', borderRadius: 20 }}>
+                <span className="bg-slate-100 text-gray-500 text-xs px-2.5 py-1 rounded-full">
                   {listing.special_features.split(',')[0]?.trim()}
                 </span>
               )}
-              <span style={{ background: '#f0f4f8', color: '#555', fontSize: 12, padding: '4px 10px', borderRadius: 20 }}>
+              <span className="bg-slate-100 text-gray-500 text-xs px-2.5 py-1 rounded-full">
                 Open 24 hours
               </span>
             </div>
           </div>
 
           {/* Right: Buttons */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch' }}>
+          <div className="flex flex-col gap-2.5 items-stretch">
             {listing.phone && (
               <a
                 href={`tel:${listing.phone.replace(/\D/g, '')}`}
-                style={{
-                  background: '#1a1a2e',
-                  color: '#fff',
-                  border: 'none',
-                  padding: '10px 20px',
-                  borderRadius: 6,
-                  fontSize: 14,
-                  fontWeight: 600,
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  display: 'block',
-                }}
+                className="bg-[#1a1a2e] text-white border-none px-5 py-2.5 rounded-md text-sm font-semibold text-center no-underline block"
               >
                 📞 Call {listing.phone}
               </a>
@@ -422,23 +403,12 @@ export default async function FuneralHomePage({
                 href={listing.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  background: '#fff',
-                  color: '#1a1a2e',
-                  border: '1.5px solid #1a1a2e',
-                  padding: '9px 20px',
-                  borderRadius: 6,
-                  fontSize: 13,
-                  fontWeight: 600,
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  display: 'block',
-                }}
+                className="bg-white text-[#1a1a2e] border-[1.5px] border-[#1a1a2e] px-5 py-2 rounded-md text-xs font-semibold text-center no-underline block"
               >
                 Visit Website
               </a>
             )}
-            <p style={{ textAlign: 'center', fontSize: 11, color: '#2e7d32', fontWeight: 500 }}>
+            <p className="text-center text-[11px] text-green-700 font-medium">
               ● Open 24 hours
             </p>
           </div>
@@ -446,13 +416,13 @@ export default async function FuneralHomePage({
       </div>
 
       {/* Main two-column layout */}
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 24, display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }}>
+      <div className="max-w-[1100px] mx-auto p-6 grid grid-cols-[1fr_300px] gap-6">
 
         {/* Left column */}
         <div>
 
           {/* Tabs + Calculator - all rendered as raw HTML for onclick support */}
-          <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', overflow: 'hidden', marginBottom: 20 }}
+          <div className="bg-white rounded-[10px] border border-gray-200 overflow-hidden mb-5"
             dangerouslySetInnerHTML={{ __html: buildTabsHtml(listing, services, calcId, hasPricing, cityLabel) }}
           />
         </div>
@@ -461,27 +431,27 @@ export default async function FuneralHomePage({
         <div>
 
           {/* Get in touch card */}
-          <div id="tab-contact" style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', marginBottom: 16, overflow: 'hidden' }}>
+          <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 overflow-hidden">
             <ContactForm listing={listing} calcId={calcId} />
           </div>
 
           {/* Nearby funeral homes */}
           {nearby.length > 0 && (
-            <div style={{ background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5', padding: 18 }}>
-              <p style={{ fontSize: 12, fontWeight: 700, color: '#999', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 12 }}>
+            <div className="bg-white rounded-[10px] border border-gray-200 p-4">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
                 Nearby funeral homes
               </p>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+              <ul className="list-none m-0 p-0">
                 {nearby.map((n) => (
-                  <li key={n.id} style={{ padding: '10px 0', borderBottom: '1px solid #f0f0f0' }}>
+                  <li key={n.id} className="py-2.5 border-b border-gray-100">
                     <Link
                       href={`/funeral-homes/${stateSlug(n.state)}/${citySlug(n.city)}/${slugify(n.business_name)}`}
-                      style={{ color: '#2a6496', textDecoration: 'none', fontSize: 14 }}
+                      className="text-[#2a6496] no-underline text-sm"
                     >
                       {n.business_name}
                     </Link>
                     <br />
-                    <span style={{ fontSize: 12, color: '#999' }}>
+                    <span className="text-xs text-gray-400">
                       {approxDistanceMiles(listing, n)}
                     </span>
                   </li>
