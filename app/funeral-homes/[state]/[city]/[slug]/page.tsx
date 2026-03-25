@@ -52,6 +52,13 @@ function citySlug(city: string): string {
   return city.toLowerCase().replace(/\s+/g, '-')
 }
 
+function parsePrice(range: string | null, fallback: number): number {
+  if (!range) return fallback
+  const match = range.match(/\$?([\d,]+)/)
+  if (!match) return fallback
+  return parseInt(match[1].replace(/,/g, ''), 10)
+}
+
 
 
 // ─── generateMetadata ─────────────────────────────────────────────────────────
@@ -197,24 +204,24 @@ function buildSchema(listing: FuneralHome) {
 }
 
 // ─── Calculator line items ────────────────────────────────────────────────────
-const CALC_ITEMS = [
-  { id: 'basic',      label: 'Basic services of funeral director & staff', price: 2690, required: true,  defaultOn: true },
-  { id: 'transport',  label: 'Transfer of remains to funeral home',         price: 395,  required: false, defaultOn: true },
-  { id: 'viewing',    label: 'Viewing / visitation (use of facilities)',     price: 495,  required: false, defaultOn: false },
-  { id: 'ceremony',   label: 'Funeral ceremony (use of facilities)',         price: 495,  required: false, defaultOn: false },
-  { id: 'graveside',  label: 'Graveside service',                           price: 395,  required: false, defaultOn: false },
-  { id: 'hearse',     label: 'Use of funeral coach (hearse)',                price: 295,  required: false, defaultOn: false },
-  { id: 'embalm',     label: 'Embalming',                                   price: 750,  required: false, defaultOn: false },
-  { id: 'directcrem', label: 'Direct cremation',                            price: 1595, required: false, defaultOn: false },
-  { id: 'directbur',  label: 'Direct burial',                               price: 2500, required: false, defaultOn: false },
-  { id: 'casket',     label: 'Casket (mid-range selection)',                 price: 2495, required: false, defaultOn: false },
-  { id: 'urn',        label: 'Cremation urn',                               price: 295,  required: false, defaultOn: false },
-  { id: 'burial',     label: 'Outer burial container',                      price: 1395, required: false, defaultOn: false },
-]
-
-const DEFAULT_TOTAL = CALC_ITEMS
-  .filter((i) => i.defaultOn)
-  .reduce((sum, i) => sum + i.price, 0)
+function getCalcItems(listing: FuneralHome) {
+  const cremPrice = parsePrice(listing.price_range_cremation, 1595)
+  const burialPrice = parsePrice(listing.price_range_burial, 2500)
+  return [
+    { id: 'basic',      label: 'Basic services of funeral director & staff', price: 2690, required: true,  defaultOn: true },
+    { id: 'transport',  label: 'Transfer of remains to funeral home',         price: 395,  required: false, defaultOn: true },
+    { id: 'viewing',    label: 'Viewing / visitation (use of facilities)',     price: 495,  required: false, defaultOn: false },
+    { id: 'ceremony',   label: 'Funeral ceremony (use of facilities)',         price: 495,  required: false, defaultOn: false },
+    { id: 'graveside',  label: 'Graveside service',                           price: 395,  required: false, defaultOn: false },
+    { id: 'hearse',     label: 'Use of funeral coach (hearse)',                price: 295,  required: false, defaultOn: false },
+    { id: 'embalm',     label: 'Embalming',                                   price: 750,  required: false, defaultOn: false },
+    { id: 'directcrem', label: 'Direct cremation',                            price: cremPrice, required: false, defaultOn: false },
+    { id: 'directbur',  label: 'Direct burial',                               price: burialPrice, required: false, defaultOn: false },
+    { id: 'casket',     label: 'Casket (mid-range selection)',                 price: 2495, required: false, defaultOn: false },
+    { id: 'urn',        label: 'Cremation urn',                               price: 295,  required: false, defaultOn: false },
+    { id: 'burial',     label: 'Outer burial container',                      price: 1395, required: false, defaultOn: false },
+  ]
+}
 
 // ─── Build tabs HTML string ──────────────────────────────────────────────────
 function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
@@ -233,9 +240,11 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
     : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#9ca3af;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#6b7280;">No photos available</div><div style="font-size:1rem;">Visit their website or call to learn about their facilities.</div></div>`
 
   // Calculator rows
+  const calcItems = getCalcItems(listing)
+  const defaultTotal = calcItems.filter((i) => i.defaultOn).reduce((sum, i) => sum + i.price, 0)
   let calcHtml = ''
   if (hasPricing) {
-    const rows = CALC_ITEMS.map((item, i) =>
+    const rows = calcItems.map((item, i) =>
       `<tr style="border-bottom:1px solid #f5f5f5;background:${i % 2 === 0 ? '#fff' : '#fafafa'};">
         <td style="padding:10px 16px;width:28px;"><input type="checkbox" id="chk-${item.id}-${calcId}" ${item.defaultOn ? 'checked' : ''} ${item.required ? 'disabled' : ''} style="width:15px;height:15px;accent-color:#2a6496;cursor:pointer;" /></td>
         <td style="padding:10px 8px;font-size:1rem;color:#1a1a2e;">${item.label}${item.required ? '<span style="font-size:10px;color:#bbb;margin-left:6px;">required</span>' : ''}</td>
@@ -246,7 +255,7 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
       <div style="border-top:1px solid #e5e5e5;">
         <div style="padding:14px 20px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;">
           <div><div style="font-size:1.125rem;font-weight:700;color:#1a1a2e;">Estimate your funeral cost</div><div style="font-size:1rem;color:#9ca3af;margin-top:2px;">Select services below. Total updates instantly.</div></div>
-          <div style="text-align:right;"><div style="font-size:11px;color:#9ca3af;margin-bottom:2px;">Estimated total</div><div id="total-${calcId}" style="font-size:22px;font-weight:800;color:#1a1a2e;">$${DEFAULT_TOTAL.toLocaleString()}</div></div>
+          <div style="text-align:right;"><div style="font-size:11px;color:#9ca3af;margin-bottom:2px;">Estimated total</div><div id="total-${calcId}" style="font-size:22px;font-weight:800;color:#1a1a2e;">$${defaultTotal.toLocaleString()}</div></div>
         </div>
         <div style="padding-bottom:12px;"><table style="width:100%;border-collapse:collapse;"><tbody>${rows}</tbody></table>
         <div style="padding:10px 16px;"><p style="font-size:11px;color:#bbb;line-height:1.6;">Prices are estimated from this funeral home's General Price List. Cash advance items (cemetery fees, death certificates, obituaries) not included. Always request the current GPL before making arrangements.</p></div></div>
@@ -468,8 +477,8 @@ export default async function FuneralHomePage({
           __html: `
 const _prices_${calcId} = {
   basic:2690,transport:395,viewing:495,ceremony:495,
-  graveside:395,hearse:295,embalm:750,directcrem:1595,
-  directbur:2500,casket:2495,urn:295,burial:1395
+  graveside:395,hearse:295,embalm:750,directcrem:${parsePrice(listing.price_range_cremation, 1595)},
+  directbur:${parsePrice(listing.price_range_burial, 2500)},casket:2495,urn:295,burial:1395
 };
 function recalc(id) {
   let total = 0;
