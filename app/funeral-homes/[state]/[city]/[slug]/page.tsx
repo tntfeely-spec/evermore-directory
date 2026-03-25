@@ -220,17 +220,17 @@ const DEFAULT_TOTAL = CALC_ITEMS
 function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
   const addr = [listing.address, listing.city, listing.state, listing.zip].filter(Boolean).join(', ')
   const addrEncoded = encodeURIComponent(addr)
-  const phoneLink = listing.phone ? `<p style="font-size:14px;color:#374151;">📞 <a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
+  const phoneLink = listing.phone ? `<p style="font-size:1rem;color:#374151;">📞 <a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
   const servicesHtml = services.length > 0
     ? `<p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Services offered</p>
-       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">${services.map(s => `<span style="background:#f0f4f8;color:#1a1a2e;font-size:14px;padding:6px 14px;border-radius:6px;border:1px solid #dde5ef;">${s}</span>`).join('')}</div>`
+       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">${services.map(s => `<span style="background:#f0f4f8;color:#1a1a2e;font-size:1rem;padding:6px 14px;border-radius:6px;border:1px solid #dde5ef;">${s}</span>`).join('')}</div>`
     : ''
   const specialDesc = listing.special_features ? ` ${listing.special_features}.` : ''
   const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
-  const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
+  const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
   const photoContent = listing.image
-    ? `<div style="background:#e8edf2;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:14px;margin-bottom:12px;">📷 Photo of ${listing.business_name}</div>`
-    : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#9ca3af;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#6b7280;">No photos available</div><div style="font-size:14px;">Visit their website or call to learn about their facilities.</div></div>`
+    ? `<div style="background:#e8edf2;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:1rem;margin-bottom:12px;">📷 Photo of ${listing.business_name}</div>`
+    : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#9ca3af;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#6b7280;">No photos available</div><div style="font-size:1rem;">Visit their website or call to learn about their facilities.</div></div>`
 
   // Calculator rows
   let calcHtml = ''
@@ -238,14 +238,14 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
     const rows = CALC_ITEMS.map((item, i) =>
       `<tr style="border-bottom:1px solid #f5f5f5;background:${i % 2 === 0 ? '#fff' : '#fafafa'};">
         <td style="padding:10px 16px;width:28px;"><input type="checkbox" id="chk-${item.id}-${calcId}" ${item.defaultOn ? 'checked' : ''} ${item.required ? 'disabled' : ''} style="width:15px;height:15px;accent-color:#2a6496;cursor:pointer;" /></td>
-        <td style="padding:10px 8px;font-size:14px;color:#1a1a2e;">${item.label}${item.required ? '<span style="font-size:10px;color:#bbb;margin-left:6px;">required</span>' : ''}</td>
-        <td style="padding:10px 16px;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;white-space:nowrap;">$${item.price.toLocaleString()}</td>
+        <td style="padding:10px 8px;font-size:1rem;color:#1a1a2e;">${item.label}${item.required ? '<span style="font-size:10px;color:#bbb;margin-left:6px;">required</span>' : ''}</td>
+        <td style="padding:10px 16px;font-size:1rem;font-weight:600;color:#1a1a2e;text-align:right;white-space:nowrap;">$${item.price.toLocaleString()}</td>
       </tr>`
     ).join('')
     calcHtml = `
       <div style="border-top:1px solid #e5e5e5;">
         <div style="padding:14px 20px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;">
-          <div><div style="font-size:16px;font-weight:700;color:#1a1a2e;">Estimate your funeral cost</div><div style="font-size:14px;color:#9ca3af;margin-top:2px;">Select services below. Total updates instantly.</div></div>
+          <div><div style="font-size:1.125rem;font-weight:700;color:#1a1a2e;">Estimate your funeral cost</div><div style="font-size:1rem;color:#9ca3af;margin-top:2px;">Select services below. Total updates instantly.</div></div>
           <div style="text-align:right;"><div style="font-size:11px;color:#9ca3af;margin-bottom:2px;">Estimated total</div><div id="total-${calcId}" style="font-size:22px;font-weight:800;color:#1a1a2e;">$${DEFAULT_TOTAL.toLocaleString()}</div></div>
         </div>
         <div style="padding-bottom:12px;"><table style="width:100%;border-collapse:collapse;"><tbody>${rows}</tbody></table>
@@ -255,16 +255,16 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
     calcHtml = `
       <div style="border-top:1px solid #e5e5e5;padding:20px;">
         <div style="background:#fff8e1;border:1px solid #fcd34d;border-radius:8px;padding:14px;margin-bottom:16px;">
-          <div style="font-size:14px;font-weight:600;color:#92400e;margin-bottom:4px;">Pricing not published</div>
-          <div style="font-size:14px;color:#78350f;">This funeral home has not published prices online. Call directly to request their General Price List, which all funeral homes are required to provide.</div>
+          <div style="font-size:1rem;font-weight:600;color:#92400e;margin-bottom:4px;">Pricing not published</div>
+          <div style="font-size:1rem;color:#78350f;">This funeral home has not published prices online. Call directly to request their General Price List, which all funeral homes are required to provide.</div>
         </div>
-        <p style="font-size:14px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">${cityLabel} area averages for reference</p>
+        <p style="font-size:1rem;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">${cityLabel} area averages for reference</p>
         <table style="width:100%;border-collapse:collapse;">
           <tbody>
-            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Direct cremation</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$1,800 – $3,500</td></tr>
-            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Cremation with service</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$3,500 – $6,000</td></tr>
-            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Traditional burial</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$7,000 – $12,000</td></tr>
-            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:14px;color:#555;">Memorial service only</td><td style="padding:10px 0;font-size:14px;font-weight:600;color:#1a1a2e;text-align:right;">$1,200 – $2,800</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:1rem;color:#555;">Direct cremation</td><td style="padding:10px 0;font-size:1rem;font-weight:600;color:#1a1a2e;text-align:right;">$1,800 – $3,500</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:1rem;color:#555;">Cremation with service</td><td style="padding:10px 0;font-size:1rem;font-weight:600;color:#1a1a2e;text-align:right;">$3,500 – $6,000</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:1rem;color:#555;">Traditional burial</td><td style="padding:10px 0;font-size:1rem;font-weight:600;color:#1a1a2e;text-align:right;">$7,000 – $12,000</td></tr>
+            <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:10px 0;font-size:1rem;color:#555;">Memorial service only</td><td style="padding:10px 0;font-size:1rem;font-weight:600;color:#1a1a2e;text-align:right;">$1,200 – $2,800</td></tr>
           </tbody>
         </table>
         <p style="font-size:11px;color:#bbb;margin-top:10px;font-style:italic;">Area averages based on Evermore data. Always request a General Price List from the funeral home directly.</p>
@@ -273,18 +273,18 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
 
   return `
 <div style="display:flex;border-bottom:1px solid #e5e5e5;background:#fff;">
-  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:14px;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
-  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:14px;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
-  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:14px;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos</button>
-  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:14px;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
+  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:1rem;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
+  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
+  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos</button>
+  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
 </div>
 <div id="tab-overview" style="padding:20px;display:block;">
-  <p style="font-size:16px;color:#374151;line-height:1.7;margin-bottom:20px;">${listing.business_name} is a funeral home serving families in ${listing.city}, ${listing.state}.${specialDesc} We are committed to helping families find compassionate, professional care during one of life's most difficult moments.</p>
+  <p style="font-size:1.125rem;color:#374151;line-height:1.7;margin-bottom:20px;">${listing.business_name} is a funeral home serving families in ${listing.city}, ${listing.state}.${specialDesc} We are committed to helping families find compassionate, professional care during one of life's most difficult moments.</p>
   ${servicesHtml}
   ${phoneLink}
 </div>
 <div id="tab-reviews" style="padding:20px;display:none;">
-  <p style="font-size:14px;color:#9ca3af;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
+  <p style="font-size:1rem;color:#9ca3af;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
   ${reviewsLink}
 </div>
 <div id="tab-photos" style="padding:20px;display:none;">
@@ -292,7 +292,7 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
 </div>
 <div id="tab-location" style="padding:20px;display:none;">
   <iframe width="100%" height="400" style="border:0;border-radius:8px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=${addrEncoded}&output=embed"></iframe>
-  <p style="font-size:14px;color:#374151;line-height:1.8;margin-top:14px;">
+  <p style="font-size:1rem;color:#374151;line-height:1.8;margin-top:14px;">
     <strong>${listing.business_name}</strong><br />${addr}<br /><br />
     ${listing.phone ? `<a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a><br />` : ''}
     <a href="https://maps.google.com/?q=${addrEncoded}" target="_blank" rel="noopener noreferrer" style="color:#2a6496;text-decoration:none;">Get directions →</a>
@@ -555,7 +555,7 @@ function submitContact(id) {
     })
   }).then(function(res) {
     if (res.ok) {
-      form.innerHTML = '<div style="padding:24px;text-align:center;"><div style="font-size:28px;margin-bottom:10px;">✓</div><div style="font-size:14px;font-weight:700;color:#2e7d32;margin-bottom:6px;">Message sent</div><div style="font-size:14px;color:#555;line-height:1.6;">This funeral home has your contact info and will reach out your preferred way. You can also call them directly anytime.</div></div>';
+      form.innerHTML = '<div style="padding:24px;text-align:center;"><div style="font-size:28px;margin-bottom:10px;">✓</div><div style="font-size:1rem;font-weight:700;color:#2e7d32;margin-bottom:6px;">Message sent</div><div style="font-size:1rem;color:#555;line-height:1.6;">This funeral home has your contact info and will reach out your preferred way. You can also call them directly anytime.</div></div>';
     } else {
       if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }
     }
@@ -581,37 +581,37 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
     <div dangerouslySetInnerHTML={{ __html: `
 <div id="contact-toggle-${calcId}" onclick="toggleContact('${calcId}')" style="cursor:pointer;padding:16px;">
   <div style="background:#f0f6ff;border:1.5px solid #c2d9f5;border-radius:10px;padding:14px 16px;">
-    <div style="font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">💬 Get in touch today</div>
-    <div style="font-size:14px;color:#555;line-height:1.5;">Choose how you want to hear back. Call, text, or email.</div>
-    <div style="margin-top:10px;background:#2a6496;color:#fff;border-radius:6px;padding:9px 14px;font-size:14px;font-weight:700;text-align:center;">Contact this funeral home →</div>
+    <div style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:4px;">💬 Get in touch today</div>
+    <div style="font-size:1rem;color:#555;line-height:1.5;">Choose how you want to hear back. Call, text, or email.</div>
+    <div style="margin-top:10px;background:#2a6496;color:#fff;border-radius:6px;padding:9px 14px;font-size:1rem;font-weight:700;text-align:center;">Contact this funeral home →</div>
   </div>
 </div>
 <div id="contact-form-${calcId}" style="display:none;padding:0 16px 16px;">
-  <div style="font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Contact ${shortName}</div>
-  <div style="font-size:14px;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
+  <div style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Contact ${shortName}</div>
+  <div style="font-size:1rem;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
-    <label id="pref-call-${calcId}" onclick="selectPref('call','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:14px;color:#374151;background:#fff;">
-      <div style="font-size:18px;margin-bottom:4px;">📞</div><div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Within the hour</div>
+    <label id="pref-call-${calcId}" onclick="selectPref('call','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
+      <div style="font-size:1.25rem;margin-bottom:4px;">📞</div><div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Within the hour</div>
     </label>
-    <label id="pref-text-${calcId}" onclick="selectPref('text','${calcId}')" style="border:1.5px solid #2a6496;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:14px;color:#374151;background:#f0f6ff;">
-      <div style="font-size:18px;margin-bottom:4px;">💬</div><div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Reply when ready</div>
+    <label id="pref-text-${calcId}" onclick="selectPref('text','${calcId}')" style="border:1.5px solid #2a6496;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#f0f6ff;">
+      <div style="font-size:1.25rem;margin-bottom:4px;">💬</div><div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Reply when ready</div>
     </label>
-    <label id="pref-email-${calcId}" onclick="selectPref('email','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:14px;color:#374151;background:#fff;">
-      <div style="font-size:18px;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
+    <label id="pref-email-${calcId}" onclick="selectPref('email','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
+      <div style="font-size:1.25rem;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
     </label>
   </div>
-  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:14px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   <div id="field-phone-${calcId}">
-    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:14px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   </div>
   <div id="field-email-${calcId}" style="display:none;">
-    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:14px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
   </div>
-  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:14px;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;"></textarea>
+  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;"></textarea>
   <input type="hidden" id="contact-home-${calcId}" value="${escapedName}" />
   <input type="hidden" id="contact-city-${calcId}" value="${escapedCity}" />
   <input type="hidden" id="contact-state-${calcId}" value="${escapedState}" />
-  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">Send →</button>
+  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;">Send →</button>
   <p style="font-size:11px;color:#9ca3af;margin-top:8px;text-align:center;line-height:1.5;">Goes directly to ${firstName}. We never share your info.</p>
 </div>
 ` }} />
