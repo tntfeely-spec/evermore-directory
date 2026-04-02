@@ -377,7 +377,7 @@ export default async function FuneralHomePage({
             <div className="flex items-center gap-1.5 mb-2 justify-center">
               <span className="text-amber-400 text-sm">★★★★★</span>
               <span className="text-xs text-gray-500">
-                <a href={listing.website ?? '#'} target="_blank" rel="noopener noreferrer" className="text-[#2a6496] no-underline">
+                <a href={`https://www.google.com/search?q=${encodeURIComponent(listing.business_name + ' ' + listing.city + ' ' + listing.state)}+reviews`} target="_blank" rel="noopener noreferrer" className="text-[#2a6496] no-underline">
                   See reviews on Google
                 </a>
               </span>
