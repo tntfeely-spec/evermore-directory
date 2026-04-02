@@ -8,14 +8,12 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface SearchResult {
+  type?: 'home' | 'city';
   city: string;
   state: string;
-  stateSlug: string;
-  citySlug: string;
   url: string;
   label: string;
   sublabel: string;
-  funeralHomeCount: number | null;
 }
 
 export default function SearchAutocomplete() {
@@ -132,9 +130,9 @@ export default function SearchAutocomplete() {
           onChange={e => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
           onFocus={() => results.length > 0 && setOpen(true)}
-          placeholder="Enter city, suburb, or ZIP code..."
+          placeholder="Search by name, city, or ZIP code..."
           className="w-full px-5 py-4 text-lg rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-800 placeholder-gray-400"
-          aria-label="Search for funeral homes by city, suburb, or ZIP code"
+          aria-label="Search for funeral homes by name, city, or ZIP code"
           aria-autocomplete="list"
           aria-expanded={open}
           aria-haspopup="listbox"

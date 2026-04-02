@@ -1,17 +1,12 @@
 // app/api/search/route.ts
-// Drop into: app/api/search/route.ts
-// Replaces any existing search route
 //
-// WHAT THIS DOES:
-//   "Brentwood"  -> zipcodes.lookupByName finds Brentwood TN -> lat/lng -> nearby funeral homes
-//   "37027"      -> zipcodes.lookup finds coords -> nearby funeral homes
-//   "Nashville"  -> city name match in DB (existing behavior) + coords for radius
-//   Any suburb   -> resolved to coords without adding it to the database
+// Three search paths:
+//   1. Business name  → individual listing pages  /funeral-homes/[state]/[city]/[slug]
+//   2. City name      → city pages                /funeral-homes/[state]/[city]
+//   3. ZIP / partial  → Nominatim geocode → nearby funeral homes via searchByCoords RPC
 
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
-// @ts-ignore
-import zipcodes from 'zipcodes';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -30,170 +25,206 @@ function slugify(str: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
     .trim()
-    .replace(/\s+/g, '-');
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
 }
 
-// Build a display result for a city
-function buildCityResult(city: string, state: string, count: number, label?: string) {
+// Build a display result for a city (routes to city page)
+function buildCityResult(city: string, state: string, count: number) {
   return {
+    type: 'city' as const,
     city,
     state,
-    stateSlug: state.toLowerCase(),
-    citySlug: slugify(city),
     url: `/funeral-homes/${state.toLowerCase()}/${slugify(city)}`,
-    label: label ?? `${city}, ${state}`,
+    label: `${city}, ${state}`,
     sublabel: `${count} funeral home${count !== 1 ? 's' : ''}`,
-    funeralHomeCount: count,
   };
 }
 
-// Build a display result for an individual funeral home
+// Build a display result for an individual funeral home (routes to listing page)
 function buildHomeResult(home: { business_name: string; city: string; state: string }) {
   return {
+    type: 'home' as const,
     city: home.city,
     state: home.state,
-    stateSlug: home.state.toLowerCase(),
-    citySlug: slugify(home.city),
     url: `/funeral-homes/${home.state.toLowerCase()}/${slugify(home.city)}/${slugify(home.business_name)}`,
     label: home.business_name,
     sublabel: `${home.city}, ${home.state}`,
-    funeralHomeCount: 1,
   };
 }
 
-// Search by lat/lng bounding box, return individual home results
-async function searchByCoords(lat: number, lng: number, inputLabel: string) {
+// Geocode a ZIP code or place name via Nominatim (free, no API key)
+async function geocodeWithNominatim(query: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const isZip = /^\d{3,5}$/.test(query.trim());
+    const params = new URLSearchParams({
+      format: 'json',
+      limit: '1',
+      countrycodes: 'us',
+    });
+    if (isZip) {
+      params.set('postalcode', query.trim());
+    } else {
+      params.set('q', query.trim());
+    }
+    const res = await fetch(`https://nominatim.openstreetmap.org/search?${params}`, {
+      headers: { 'User-Agent': 'Evermore Directory funeralhomedirectories.com' },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data || data.length === 0) return null;
+    return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+  } catch {
+    return null;
+  }
+}
+
+// Search by lat/lng using the existing RPC function, return individual home results
+async function searchByCoords(lat: number, lng: number) {
   const { data, error } = await supabase.rpc('search_nearby', {
     center_lat: lat,
     center_lng: lng,
     radius_deg: RADIUS_DEG,
   });
 
-  if (error || !data || data.length === 0) return { results: [] };
+  if (error || !data || data.length === 0) return [];
 
-  const results = (data as any[])
+  return (data as any[])
     .filter((row) => row.business_name)
     .slice(0, 8)
     .map((row) => buildHomeResult({ business_name: row.business_name, city: row.city, state: row.state }));
-
-  return { results };
 }
 
 export async function GET(request: NextRequest) {
   try {
-  const query = request.nextUrl.searchParams.get('q')?.trim() ?? '';
+    const query = request.nextUrl.searchParams.get('q')?.trim() ?? '';
 
-  if (!query || query.length < 2) {
-    return NextResponse.json({ results: [] });
-  }
-
-  // ----------------------------------------------------------------
-  // PATH 1: ZIP CODE
-  // ----------------------------------------------------------------
-  if (isZipCode(query)) {
-    if (query.length < 5) {
-      const { data: partial } = await supabase
-        .from('funeral_homes')
-        .select('business_name, city, state')
-        .ilike('zip', `${query}%`)
-        .order('business_name')
-        .limit(8);
-      if (partial && partial.length > 0) return NextResponse.json({ results: partial.map(buildHomeResult) });
+    if (!query || query.length < 2) {
       return NextResponse.json({ results: [] });
     }
 
-    const info = zipcodes.lookup(query);
-
-    if (info?.latitude && info?.longitude) {
-      const payload = await searchByCoords(info.latitude, info.longitude, `ZIP ${query}`);
-      if (payload.results.length > 0) return NextResponse.json(payload);
-    }
-
-    // ZIP not in zipcodes dataset -- try prefix fallback in our DB
-    const { data: fallback } = await supabase
-      .from('funeral_homes')
-      .select('city, state, latitude, longitude')
-      .like('zip', `${query.slice(0, 3)}%`)
-      .not('latitude', 'is', null)
-      .limit(1);
-
-    if (fallback?.[0]?.latitude && fallback[0].longitude) {
-      const payload = await searchByCoords(fallback[0].latitude, fallback[0].longitude, `ZIP ${query}`);
-      if (payload.results.length > 0) return NextResponse.json(payload);
-    }
-
-    return NextResponse.json({ results: [] });
-  }
-
-  // ----------------------------------------------------------------
-  // PATH 2: CITY/SUBURB NAME -- resolve via zipcodes package
-  // Handles suburbs like "Brentwood" that are not stored in our DB
-  // ----------------------------------------------------------------
-
-  // Check if user typed state abbreviation: "Brentwood TN" or "Brentwood, TN"
-  const stateMatch = query.match(/[,\s]+([A-Z]{2})\s*$/i);
-  const stateSuffix = stateMatch ? stateMatch[1].toUpperCase() : undefined;
-  const cityQuery = stateSuffix
-    ? query.replace(/[,\s]+[A-Z]{2}\s*$/i, '').trim()
-    : query;
-
-  // zipcodes.lookupByName(city, state?) returns array of ZIP objects with lat/lng
-  interface ZipInfo { latitude: number; longitude: number; city: string; state: string }
-  let zipEntries: ZipInfo[] = [];
-
-  try {
-    if (stateSuffix) {
-      zipEntries = zipcodes.lookupByName(cityQuery, stateSuffix) || [];
-    } else {
-      zipEntries = zipcodes.lookupByName(cityQuery) || [];
-    }
-  } catch (zipErr) {
-    console.error('PATH 2 zipcodes error:', zipErr);
-    zipEntries = [];
-  }
-
-  if (zipEntries.length > 0) {
-    try {
-      const avgLat = zipEntries.reduce((s: number, e: ZipInfo) => s + e.latitude, 0) / zipEntries.length;
-      const avgLng = zipEntries.reduce((s: number, e: ZipInfo) => s + e.longitude, 0) / zipEntries.length;
-
-      const payload = await searchByCoords(avgLat, avgLng, cityQuery);
-      if (payload.results.length > 0) {
-        return NextResponse.json(payload);
+    // ── PATH 1: ZIP CODE ──────────────────────────────────────────────
+    if (isZipCode(query)) {
+      // Partial ZIP (3-4 digits): search DB by zip prefix for individual homes
+      if (query.length < 5) {
+        const { data: partial } = await supabase
+          .from('funeral_homes')
+          .select('business_name, city, state')
+          .ilike('zip', `${query}%`)
+          .order('business_name')
+          .limit(8);
+        if (partial && partial.length > 0) {
+          return NextResponse.json({ results: partial.map(buildHomeResult) });
+        }
+        return NextResponse.json({ results: [] });
       }
-    } catch (coordErr) {
-      console.error('PATH 2 searchByCoords error:', coordErr);
+
+      // Full 5-digit ZIP: geocode with Nominatim then find nearby homes
+      const coords = await geocodeWithNominatim(query);
+      if (coords) {
+        const results = await searchByCoords(coords.lat, coords.lng);
+        if (results.length > 0) {
+          return NextResponse.json({ results });
+        }
+      }
+
+      // Fallback: try prefix match in our DB
+      const { data: fallback } = await supabase
+        .from('funeral_homes')
+        .select('business_name, city, state, latitude, longitude')
+        .like('zip', `${query.slice(0, 3)}%`)
+        .not('latitude', 'is', null)
+        .limit(1);
+
+      if (fallback?.[0]?.latitude && fallback[0].longitude) {
+        const results = await searchByCoords(
+          parseFloat(fallback[0].latitude),
+          parseFloat(fallback[0].longitude)
+        );
+        if (results.length > 0) {
+          return NextResponse.json({ results });
+        }
+      }
+
+      return NextResponse.json({ results: [] });
     }
-    // No funeral homes within radius -- fall through to city name match
-  }
 
-  // ----------------------------------------------------------------
-  // PATH 3: BUSINESS NAME + CITY NAME MATCH IN DB
-  // ----------------------------------------------------------------
+    // ── PATH 2 & 3: BUSINESS NAME + CITY NAME ────────────────────────
+    // Strip optional state suffix like "Brentwood TN" or "Brentwood, TN"
+    const stateMatch = query.match(/[,\s]+([A-Z]{2})\s*$/i);
+    const stateSuffix = stateMatch ? stateMatch[1].toUpperCase() : undefined;
+    const nameQuery = stateSuffix
+      ? query.replace(/[,\s]+[A-Z]{2}\s*$/i, '').trim()
+      : query;
 
-  try {
+    // Run business name search and city name search in parallel
+    const stateFilter = stateSuffix
+      ? (qb: any) => qb.ilike('state', stateSuffix)
+      : (qb: any) => qb;
+
     const [nameResult, cityResult] = await Promise.all([
-      supabase.from('funeral_homes').select('business_name, city, state').ilike('business_name', `${cityQuery}%`).order('business_name').limit(5),
-      supabase.from('funeral_homes').select('business_name, city, state').ilike('city', `${cityQuery}%`).order('business_name').limit(5),
+      // Business name matches
+      stateFilter(
+        supabase
+          .from('funeral_homes')
+          .select('business_name, city, state')
+          .ilike('business_name', `%${nameQuery}%`)
+          .order('business_name')
+      ).limit(5),
+      // City matches — get distinct cities with counts
+      stateFilter(
+        supabase
+          .from('funeral_homes')
+          .select('city, state')
+          .ilike('city', `${nameQuery}%`)
+      ).limit(50),
     ]);
-    if (nameResult.error) console.error('PATH 3 byName error:', nameResult.error);
-    if (cityResult.error) console.error('PATH 3 byCity error:', cityResult.error);
-    const byName = nameResult.data;
-    const byCity = cityResult.data;
-    console.log('PATH 3 debug:', { cityQuery, byNameCount: byName?.length, byCityCount: byCity?.length });
-    const merged = [...(byName ?? []), ...(byCity ?? [])];
-    const seen = new Set<string>();
-    const unique: { business_name: string; city: string; state: string }[] = [];
-    for (const row of merged) {
-      const key = `${row.business_name.toLowerCase()}-${row.city.toLowerCase()}-${row.state}`;
-      if (!seen.has(key)) { seen.add(key); unique.push(row); }
+
+    const results: ReturnType<typeof buildHomeResult | typeof buildCityResult>[] = [];
+
+    // Add business name matches (individual listing pages)
+    if (nameResult.data && nameResult.data.length > 0) {
+      const seen = new Set<string>();
+      for (const row of nameResult.data) {
+        const key = `${row.business_name.toLowerCase()}-${row.city.toLowerCase()}-${row.state}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          results.push(buildHomeResult(row));
+        }
+      }
     }
-    if (unique.length === 0) return NextResponse.json({ results: [] });
-    return NextResponse.json({ results: unique.slice(0, 8).map(buildHomeResult) });
-  } catch (pathErr) {
-    console.error('PATH 3 error:', pathErr);
+
+    // Add city matches (city pages), aggregated with counts
+    if (cityResult.data && cityResult.data.length > 0) {
+      const cityCounts = new Map<string, { city: string; state: string; count: number }>();
+      for (const row of cityResult.data) {
+        const key = `${row.city.toLowerCase()}-${row.state.toLowerCase()}`;
+        const existing = cityCounts.get(key);
+        if (existing) {
+          existing.count++;
+        } else {
+          cityCounts.set(key, { city: row.city, state: row.state, count: 1 });
+        }
+      }
+      for (const { city, state, count } of cityCounts.values()) {
+        results.push(buildCityResult(city, state, count));
+      }
+    }
+
+    if (results.length > 0) {
+      return NextResponse.json({ results: results.slice(0, 10) });
+    }
+
+    // ── FALLBACK: Nominatim geocode for suburbs/places not in our DB ─
+    const coords = await geocodeWithNominatim(stateSuffix ? `${nameQuery}, ${stateSuffix}` : nameQuery);
+    if (coords) {
+      const nearbyResults = await searchByCoords(coords.lat, coords.lng);
+      if (nearbyResults.length > 0) {
+        return NextResponse.json({ results: nearbyResults });
+      }
+    }
+
     return NextResponse.json({ results: [] });
-  }
 
   } catch (err) {
     console.error('Search error:', err);
