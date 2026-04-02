@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '10 Best Funeral Homes in Nashville, TN (2026) | Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in Nashville, TN (2026) | Compare Prices and Services | Evermore Directory',
   description: 'Looking for a funeral home in Nashville, TN? Compare the top 10 funeral homes in Nashville with pricing, services, and contact information. Updated for 2026.',
   keywords: 'best funeral homes nashville tn, nashville funeral homes, funeral homes nashville tennessee, cremation nashville tn, funeral services nashville',
   robots: { index: true, follow: true },
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://funeralhomedirectories.com/blog/best-funeral-homes-nashville-tn',
   },
   openGraph: {
-    title: '10 Best Funeral Homes in Nashville, TN (2026) | Prices & Services',
+    title: '10 Funeral Homes in Nashville, TN (2026) | Compare Prices and Services',
     description: 'Compare the top 10 funeral homes in Nashville with pricing, services, and contact information. Updated for 2026.',
     url: 'https://funeralhomedirectories.com/blog/best-funeral-homes-nashville-tn',
     type: 'article',
@@ -130,7 +130,7 @@ export default function BestFuneralHomesNashvillePage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                10 Best Funeral Homes in Nashville, TN (2026)
+                10 Funeral Homes in Nashville, TN (2026) | Compare Prices and Services
               </h1>
               <p className="text-xl text-gray-600">
                 Compare pricing, services, and contact information for Nashville&apos;s top funeral homes.
@@ -139,10 +139,10 @@ export default function BestFuneralHomesNashvillePage() {
 
             <section className="mb-10">
               <p className="text-gray-600 mb-4">
-                The best funeral homes in Nashville, TN include Marshall-Donnelly-Combs, Spring Hill Funeral Home & Cemetery, and Woodlawn-Roesch-Patton, all of which offer both cremation and traditional burial services. Cremation in Nashville typically costs between $3,500 and $7,000, while traditional burial ranges from $6,500 to $12,000.
+                Nashville, TN is served by a number of well-established funeral homes including Marshall-Donnelly-Combs, Spring Hill Funeral Home & Cemetery, and Woodlawn-Roesch-Patton, all of which offer both cremation and traditional burial services. Cremation in Nashville typically costs between $3,500 and $7,000, while traditional burial ranges from $6,500 to $12,000.
               </p>
               <p className="text-gray-600">
-                Below is our complete list of the 10 best funeral homes in Nashville, with real pricing, addresses, and direct contact information so you can compare options and make the right choice for your family.
+                Below is our complete list of 10 funeral homes in Nashville, with real pricing, addresses, and direct contact information so you can compare options and make the right choice for your family.
               </p>
             </section>
 
