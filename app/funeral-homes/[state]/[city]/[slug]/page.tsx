@@ -223,8 +223,8 @@ function getCalcItems(listing: FuneralHome) {
   ]
 }
 
-// ─── Build tabs HTML string ──────────────────────────────────────────────────
-function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
+// ─── Build sections HTML string ─────────────────────────────────────────────
+function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
   const addr = [listing.address, listing.city, listing.state, listing.zip].filter(Boolean).join(', ')
   const addrEncoded = encodeURIComponent(addr)
   const phoneLink = listing.phone ? `<p style="font-size:1rem;color:#374151;">📞 <a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
@@ -281,25 +281,22 @@ function buildTabsHtml(listing: FuneralHome, services: string[], calcId: string,
   }
 
   return `
-<div style="display:flex;border-bottom:1px solid #e5e5e5;background:#fff;">
-  <button onclick="switchTab('overview')" data-tab="overview" style="padding:14px 20px;font-size:1rem;color:#1a1a2e;background:none;border:none;border-bottom:2px solid #1a1a2e;margin-bottom:-2px;font-weight:500;cursor:pointer;">Overview</button>
-  <button onclick="switchTab('reviews')" data-tab="reviews" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Reviews</button>
-  <button onclick="switchTab('photos')" data-tab="photos" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Photos</button>
-  <button onclick="switchTab('location')" data-tab="location" style="padding:14px 20px;font-size:1rem;color:#6b7280;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:400;cursor:pointer;">Location</button>
-</div>
-<div id="tab-overview" style="padding:20px;display:block;">
+<div style="padding:20px;">
   <p style="font-size:1.125rem;color:#374151;line-height:1.7;margin-bottom:20px;">${listing.business_name} is a funeral home serving families in ${listing.city}, ${listing.state}.${specialDesc} We are committed to helping families find compassionate, professional care during one of life's most difficult moments.</p>
   ${servicesHtml}
   ${phoneLink}
 </div>
-<div id="tab-reviews" style="padding:20px;display:none;">
+<div style="border-top:1px solid #e5e5e5;padding:20px;">
+  <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Reviews</p>
   <p style="font-size:1rem;color:#9ca3af;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
   ${reviewsLink}
 </div>
-<div id="tab-photos" style="padding:20px;display:none;">
+<div style="border-top:1px solid #e5e5e5;padding:20px;">
+  <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
   ${photoContent}
 </div>
-<div id="tab-location" style="padding:20px;display:none;">
+<div style="border-top:1px solid #e5e5e5;padding:20px;">
+  <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Location</p>
   <iframe width="100%" height="400" style="border:0;border-radius:8px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=${addrEncoded}&output=embed"></iframe>
   <p style="font-size:1rem;color:#374151;line-height:1.8;margin-top:14px;">
     <strong>${listing.business_name}</strong><br />${addr}<br /><br />
@@ -430,9 +427,9 @@ export default async function FuneralHomePage({
         {/* Left column */}
         <div>
 
-          {/* Tabs + Calculator - all rendered as raw HTML for onclick support */}
+          {/* All sections rendered vertically */}
           <div className="bg-white rounded-[10px] border border-gray-200 overflow-hidden mb-5"
-            dangerouslySetInnerHTML={{ __html: buildTabsHtml(listing, services, calcId, hasPricing, cityLabel) }}
+            dangerouslySetInnerHTML={{ __html: buildSectionsHtml(listing, services, calcId, hasPricing, cityLabel) }}
           />
         </div>
 
@@ -496,23 +493,10 @@ document.querySelectorAll('[id^="chk-"][id$="-${calcId}"]').forEach(el => {
         }}
       />
 
-      {/* Tab switching, contact form toggle, preference selector */}
+      {/* Contact form toggle, preference selector */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
-function switchTab(name) {
-  var tabs = ['overview','reviews','photos','location','contact'];
-  tabs.forEach(function(t) {
-    var el = document.getElementById('tab-' + t);
-    if (el) el.style.display = t === name ? 'block' : 'none';
-  });
-  var btns = document.querySelectorAll('[data-tab]');
-  btns.forEach(function(b) {
-    var active = b.getAttribute('data-tab') === name;
-    b.style.borderBottom = active ? '2px solid #1a1a2e' : '2px solid transparent';
-    b.style.color = active ? '#1a1a2e' : '#888';
-  });
-}
 function toggleContact(id) {
   var form = document.getElementById('contact-form-' + id);
   var toggle = document.getElementById('contact-toggle-' + id);
