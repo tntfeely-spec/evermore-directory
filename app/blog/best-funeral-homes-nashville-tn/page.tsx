@@ -24,6 +24,7 @@ const funeralHomes = [
     phone: '615-327-1111',
     cremation: '$4,000 – $7,000',
     burial: '$7,000 – $12,000',
+    services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/tn/nashville/marshall-donnelly-combs-funeral-home',
   },
   {
@@ -32,6 +33,7 @@ const funeralHomes = [
     phone: '615-255-4193',
     cremation: '$4,000 – $7,000',
     burial: '$7,000 – $12,000',
+    services: 'Funeral Services, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/mount-olivet-funeral-home-cemetery',
   },
   {
@@ -40,6 +42,7 @@ const funeralHomes = [
     phone: '615-256-3608',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Pre-Planning, Memorial Services',
     url: '/funeral-homes/tn/nashville/patton-brothers-funeral-home',
   },
   {
@@ -48,6 +51,7 @@ const funeralHomes = [
     phone: '615-262-3312',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Natural Burial, Green Burial',
     url: '/funeral-homes/tn/nashville/phillips-robinson-funeral-home',
   },
   {
@@ -56,14 +60,16 @@ const funeralHomes = [
     phone: '615-726-1476',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Pre-Planning, Special Limousine Services',
     url: '/funeral-homes/tn/nashville/smith-brothers-funeral-directors-inc',
   },
   {
     name: 'Spring Hill Funeral Home & Cemetery',
     address: '5110 Gallatin Pike, Nashville, TN',
-    phone: '615-866-1419',
+    phone: '615-865-1101',
     cremation: '$4,000 – $7,000',
     burial: '$7,000 – $12,000',
+    services: 'Traditional Funeral, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/spring-hill-funeral-home-cemetery',
   },
   {
@@ -72,6 +78,7 @@ const funeralHomes = [
     phone: '615-244-4755',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Pre-Planning, Notary Services, Limousine Services',
     url: '/funeral-homes/tn/nashville/terrell-broady-funeral-home',
   },
   {
@@ -80,6 +87,7 @@ const funeralHomes = [
     phone: '615-832-1948',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Memorial Services, Graveside Services',
     url: '/funeral-homes/tn/nashville/woodbine-funeral-home',
   },
   {
@@ -88,6 +96,7 @@ const funeralHomes = [
     phone: '615-383-4754',
     cremation: '$4,000 – $7,000',
     burial: '$7,000 – $12,000',
+    services: 'Traditional Funeral, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/woodlawn-roesch-patton-funeral-home-memorial-park',
   },
   {
@@ -96,6 +105,7 @@ const funeralHomes = [
     phone: '615-331-1952',
     cremation: '$3,500 – $6,500',
     burial: '$6,500 – $11,000',
+    services: 'Traditional Funeral, Cremation, Memorial Services, Graveside Services',
     url: '/funeral-homes/tn/nashville/woodbine-funeral-home-hickory-chapel',
   },
 ];
@@ -148,6 +158,7 @@ export default function BestFuneralHomesNashvillePage() {
                       {home.phone}
                     </a>
                   </p>
+                  <p><strong>Services:</strong> {home.services}</p>
                   <p><strong>Cremation:</strong> {home.cremation}</p>
                   <p><strong>Burial:</strong> {home.burial}</p>
                 </div>
