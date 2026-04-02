@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'cremation-cost-san-jose',
     'direct-cremation-vs-traditional-funeral',
     'funeral-homes-los-angeles',
+    'best-funeral-homes-nashville-tn',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

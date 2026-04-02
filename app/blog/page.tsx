@@ -41,6 +41,12 @@ const blogPosts = [
     category: 'Planning Guide',
   },
   {
+    slug: 'best-funeral-homes-nashville-tn',
+    title: '10 Best Funeral Homes in Nashville, TN (2026) | Prices & Services',
+    description: 'Compare the top 10 funeral homes in Nashville with pricing, services, and contact information. Updated for 2026.',
+    category: 'Local Prices',
+  },
+  {
     slug: 'funeral-cost-tennessee-2026',
     title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide',
     description: 'Funeral costs in Tennessee range from under $1,000 for direct cremation to $18,000+ for traditional burial. A complete breakdown by service type and region.',
