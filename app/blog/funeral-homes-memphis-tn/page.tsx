@@ -125,6 +125,19 @@ export default function FuneralHomesMemphisPage() {
           ]
         }) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "10 Funeral Homes in Memphis, TN (2026) | Compare Prices & Services",
+          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
+          "datePublished": "2026-04-03",
+          "dateModified": "2026-04-03",
+          "url": "https://funeralhomedirectories.com/blog/funeral-homes-memphis-tn"
+        }) }}
+      />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
@@ -132,6 +145,9 @@ export default function FuneralHomesMemphisPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 10 Funeral Homes in Memphis, TN (2026) | Compare Prices &amp; Services
               </h1>
+              <p className="text-sm text-gray-500 mb-3">
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026
+              </p>
               <p className="text-xl text-gray-600">
                 Compare pricing, services, and contact information for Memphis&apos;s funeral homes.
               </p>

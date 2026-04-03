@@ -42,7 +42,7 @@ const blogPosts = [
   },
   {
     slug: 'best-funeral-homes-nashville-tn',
-    title: '10 Funeral Homes in Nashville, TN (2026) | Compare Prices and Services',
+    title: '10 Funeral Homes in Nashville, TN (2026) | Prices & Services',
     description: 'Compare the top 10 funeral homes in Nashville with pricing, services, and contact information. Updated for 2026.',
     category: 'Local Prices',
   },
