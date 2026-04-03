@@ -65,7 +65,7 @@ export default function HomePage() {
                 <div className="text-gray-600 font-semibold">States Covered</div>
               </Link>
               <Link href="/states" className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow cursor-pointer">
-                <div className="text-4xl font-bold text-slate-600 mb-2">4000+</div>
+                <div className="text-4xl font-bold text-slate-600 mb-2">4,800+</div>
                 <div className="text-gray-600 font-semibold">Funeral Homes Listed</div>
               </Link>
               <Link href="/states" className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow cursor-pointer">
