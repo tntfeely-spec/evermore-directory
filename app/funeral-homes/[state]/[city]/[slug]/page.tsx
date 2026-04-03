@@ -396,14 +396,6 @@ export default async function FuneralHomePage({
 
           {/* Right: Buttons */}
           <div className="flex flex-col gap-2.5 items-stretch">
-            {listing.phone && (
-              <a
-                href={`tel:${listing.phone.replace(/\D/g, '')}`}
-                className="bg-[#1a1a2e] text-white border-none px-5 py-2.5 rounded-md text-sm font-semibold text-center no-underline block"
-              >
-                📞 Call {listing.phone}
-              </a>
-            )}
             {listing.website && (
               <a
                 href={listing.website}
@@ -467,6 +459,18 @@ export default async function FuneralHomePage({
           )}
         </div>
       </div>
+
+      {/* Call button - below contact form */}
+      {listing.phone && (
+        <div className="max-w-[1100px] mx-auto px-6 pb-6">
+          <a
+            href={`tel:${listing.phone.replace(/\D/g, '')}`}
+            className="bg-[#1a1a2e] text-white border-none px-5 py-3 rounded-md text-sm font-semibold text-center no-underline block max-w-[400px]"
+          >
+            📞 Call {listing.phone}
+          </a>
+        </div>
+      )}
 
       {/* Calculator script */}
       <script
@@ -533,6 +537,9 @@ function submitContact(id) {
   if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; btn.style.background = '#7aa5c4'; }
   var activePref = document.querySelector('[id^="pref-"][style*="solid #2a6496"]');
   var prefVal = activePref ? activePref.id.replace('pref-','').replace('-' + id,'') : 'text';
+  var timeline = document.getElementById('contact-timeline-' + id);
+  var budget = document.getElementById('contact-budget-' + id);
+  var zip = document.getElementById('contact-zip-' + id);
   fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -542,6 +549,9 @@ function submitContact(id) {
       email: email ? email.value : '',
       message: msg ? msg.value : '',
       preference: prefVal,
+      timeline: timeline ? timeline.value : '',
+      budget: budget ? budget.value : '',
+      zip: zip ? zip.value : '',
       funeralHomeName: home ? home.value : '',
       city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
       state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : ''
@@ -593,14 +603,33 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
       <div style="font-size:1.25rem;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
     </label>
   </div>
-  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
   <div id="field-phone-${calcId}">
-    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
   </div>
   <div id="field-email-${calcId}" style="display:none;">
-    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;" />
+    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
   </div>
-  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #d0d9e5;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;"></textarea>
+  <label for="contact-timeline-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">Timeline</label>
+  <select id="contact-timeline-${calcId}" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;background:#fff;">
+    <option value="">Select timeline...</option>
+    <option value="immediate">Immediate need (within 24-48 hours)</option>
+    <option value="week">Within the next week</option>
+    <option value="month">Within the next month</option>
+    <option value="preplanning">Pre-planning for the future</option>
+  </select>
+  <label for="contact-budget-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">Budget</label>
+  <select id="contact-budget-${calcId}" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;background:#fff;">
+    <option value="">Select budget range...</option>
+    <option value="under5k">Under $5,000</option>
+    <option value="5k-10k">$5,000 to $10,000</option>
+    <option value="10k-15k">$10,000 to $15,000</option>
+    <option value="15k+">$15,000 or more</option>
+    <option value="unsure">Not sure yet</option>
+  </select>
+  <label for="contact-zip-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">ZIP code</label>
+  <input id="contact-zip-${calcId}" type="text" placeholder="Your ZIP code" maxlength="5" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
+  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;color:#1a1a2e;"></textarea>
   <input type="hidden" id="contact-home-${calcId}" value="${escapedName}" />
   <input type="hidden" id="contact-city-${calcId}" value="${escapedCity}" />
   <input type="hidden" id="contact-state-${calcId}" value="${escapedState}" />
