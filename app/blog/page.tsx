@@ -47,6 +47,30 @@ const blogPosts = [
     category: 'Local Prices',
   },
   {
+    slug: 'funeral-homes-atlanta-ga',
+    title: '12 Funeral Homes in Atlanta, GA (2026) | Compare Prices & Services',
+    description: 'Compare funeral homes in Atlanta, GA with real pricing, services, and contact info. Updated 2026.',
+    category: 'Local Prices',
+  },
+  {
+    slug: 'funeral-homes-houston-tx',
+    title: '13 Funeral Homes in Houston, TX (2026) | Compare Prices & Services',
+    description: 'Compare funeral homes in Houston, TX with real pricing, services, and contact info. Updated 2026.',
+    category: 'Local Prices',
+  },
+  {
+    slug: 'funeral-homes-memphis-tn',
+    title: '10 Funeral Homes in Memphis, TN (2026) | Compare Prices & Services',
+    description: 'Compare funeral homes in Memphis, TN with real pricing, services, and contact info. Updated 2026.',
+    category: 'Local Prices',
+  },
+  {
+    slug: 'funeral-homes-chicago-il',
+    title: '13 Funeral Homes in Chicago, IL (2026) | Compare Prices & Services',
+    description: 'Compare funeral homes in Chicago, IL with real pricing, services, and contact info. Updated 2026.',
+    category: 'Local Prices',
+  },
+  {
     slug: 'funeral-cost-tennessee-2026',
     title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide',
     description: 'Funeral costs in Tennessee range from under $1,000 for direct cremation to $18,000+ for traditional burial. A complete breakdown by service type and region.',

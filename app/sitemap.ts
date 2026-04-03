@@ -30,6 +30,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'direct-cremation-vs-traditional-funeral',
     'funeral-homes-los-angeles',
     'best-funeral-homes-nashville-tn',
+    'funeral-homes-atlanta-ga',
+    'funeral-homes-houston-tx',
+    'funeral-homes-memphis-tn',
+    'funeral-homes-chicago-il',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
