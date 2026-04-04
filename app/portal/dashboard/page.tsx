@@ -106,7 +106,7 @@ export default function DashboardPage() {
 
   return (
     <PortalLayout>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome back, {user.username}.</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome back, {user.username.toUpperCase()}.</h1>
 
       {/* Stat cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -247,6 +247,9 @@ export default function DashboardPage() {
           </table>
         </div>
       )}
+
+      {/* User Management (admin only) */}
+      {user.role === 'admin' && <UserManagement />}
     </PortalLayout>
   )
 }
@@ -256,6 +259,110 @@ function StatCard({ label, value }: { label: string; value: string }) {
     <div className="bg-white rounded-lg border border-gray-200 p-5">
       <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">{label}</div>
       <div className="text-2xl font-bold text-gray-900">{value}</div>
+    </div>
+  )
+}
+
+type PortalUser = { id: string; username: string; role: string; active: boolean; created_at: string }
+
+function UserManagement() {
+  const [users, setUsers] = useState<PortalUser[]>([])
+  const [showAdd, setShowAdd] = useState(false)
+  const [newUser, setNewUser] = useState('')
+  const [newPw, setNewPw] = useState('')
+  const [newRole, setNewRole] = useState('sales')
+  const [resetId, setResetId] = useState<string | null>(null)
+  const [resetPw, setResetPw] = useState('')
+
+  const loadUsers = useCallback(async () => {
+    const res = await fetch('/api/portal/users')
+    const data = await res.json()
+    if (data.users) setUsers(data.users)
+  }, [])
+
+  useEffect(() => { loadUsers() }, [loadUsers])
+
+  async function addUser() {
+    if (!newUser || !newPw) return
+    await fetch('/api/portal/users', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'add', username: newUser, password: newPw, role: newRole }),
+    })
+    setNewUser(''); setNewPw(''); setNewRole('sales'); setShowAdd(false); loadUsers()
+  }
+
+  async function resetPassword(id: string) {
+    if (!resetPw) return
+    await fetch('/api/portal/users', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'reset_password', id, password: resetPw }),
+    })
+    setResetId(null); setResetPw(''); loadUsers()
+  }
+
+  async function toggleActive(id: string, active: boolean) {
+    await fetch('/api/portal/users', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'toggle_active', id, active }),
+    })
+    loadUsers()
+  }
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden mt-6">
+      <div className="px-5 py-3 border-b border-gray-100 flex justify-between items-center">
+        <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">User Management</h2>
+        <button onClick={() => setShowAdd(!showAdd)} className="text-xs text-slate-600 hover:text-slate-800 font-medium">
+          {showAdd ? 'Cancel' : 'Add New User'}
+        </button>
+      </div>
+
+      {showAdd && (
+        <div className="px-5 py-3 border-b border-gray-100 flex gap-2 items-end">
+          <div><label className="block text-xs text-gray-500 mb-1">Username</label><input value={newUser} onChange={(e) => setNewUser(e.target.value)} className="px-2 py-1.5 border border-gray-300 rounded text-sm w-32" /></div>
+          <div><label className="block text-xs text-gray-500 mb-1">Password</label><input value={newPw} onChange={(e) => setNewPw(e.target.value)} className="px-2 py-1.5 border border-gray-300 rounded text-sm w-32" /></div>
+          <div><label className="block text-xs text-gray-500 mb-1">Role</label><select value={newRole} onChange={(e) => setNewRole(e.target.value)} className="px-2 py-1.5 border border-gray-300 rounded text-sm bg-white"><option value="sales">Sales</option><option value="admin">Admin</option></select></div>
+          <button onClick={addUser} className="bg-slate-800 text-white px-3 py-1.5 rounded text-sm font-semibold">Add</button>
+        </div>
+      )}
+
+      <table className="w-full text-sm">
+        <thead><tr className="bg-gray-50">
+          <th className="text-left px-4 py-2 text-gray-500 font-medium">Username</th>
+          <th className="text-left px-4 py-2 text-gray-500 font-medium">Role</th>
+          <th className="text-left px-4 py-2 text-gray-500 font-medium">Status</th>
+          <th className="text-left px-4 py-2 text-gray-500 font-medium">Created</th>
+          <th className="text-right px-4 py-2 text-gray-500 font-medium">Actions</th>
+        </tr></thead>
+        <tbody>
+          {users.map((u) => (
+            <tr key={u.id} className="border-b border-gray-50">
+              <td className="px-4 py-2.5 font-medium text-gray-800">{u.username}</td>
+              <td className="px-4 py-2.5">
+                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${u.role === 'admin' ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>{u.role}</span>
+              </td>
+              <td className="px-4 py-2.5">
+                <span className={`text-xs ${u.active ? 'text-green-600' : 'text-red-500'}`}>{u.active ? 'Active' : 'Inactive'}</span>
+              </td>
+              <td className="px-4 py-2.5 text-gray-500">{new Date(u.created_at).toLocaleDateString()}</td>
+              <td className="px-4 py-2.5 text-right space-x-2">
+                {resetId === u.id ? (
+                  <span className="inline-flex items-center gap-1">
+                    <input value={resetPw} onChange={(e) => setResetPw(e.target.value)} placeholder="New password" className="px-2 py-1 border border-gray-300 rounded text-xs w-28" />
+                    <button onClick={() => resetPassword(u.id)} className="text-xs text-green-600 font-medium">Save</button>
+                    <button onClick={() => { setResetId(null); setResetPw('') }} className="text-xs text-gray-400">Cancel</button>
+                  </span>
+                ) : (
+                  <button onClick={() => setResetId(u.id)} className="text-xs text-slate-600 hover:text-slate-800 font-medium">Reset Password</button>
+                )}
+                <button onClick={() => toggleActive(u.id, !u.active)} className={`text-xs font-medium ${u.active ? 'text-red-500 hover:text-red-700' : 'text-green-600 hover:text-green-800'}`}>
+                  {u.active ? 'Deactivate' : 'Reactivate'}
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
