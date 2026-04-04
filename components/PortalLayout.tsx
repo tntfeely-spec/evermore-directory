@@ -111,7 +111,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
               {user.username.charAt(0).toUpperCase()}
             </div>
             <div>
-              <div className="text-white text-sm font-medium">{user.username}</div>
+              <div className="text-white text-sm font-medium">{user.username.charAt(0).toUpperCase() + user.username.slice(1).toLowerCase()}</div>
               <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${
                 user.role === 'admin' ? 'bg-red-500/20 text-red-300' : 'bg-green-500/20 text-green-300'
               }`}>

@@ -106,7 +106,7 @@ export default function DashboardPage() {
 
   return (
     <PortalLayout>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome back, {user.username.toUpperCase()}.</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome back, {user.username.charAt(0).toUpperCase() + user.username.slice(1).toLowerCase()}.</h1>
 
       {/* Stat cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
