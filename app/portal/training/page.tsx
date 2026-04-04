@@ -1,6 +1,7 @@
 'use client'
 
 import PortalLayout from '@/components/PortalLayout'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const SECTIONS = [
@@ -259,6 +260,12 @@ export default function TrainingPage() {
           Everything you need to know to sell featured listings effectively.
         </p>
       </div>
+
+      <Link href="/portal/training/manual"
+        className="block bg-slate-800 text-white rounded-lg p-5 mb-6 hover:bg-slate-900 transition-colors">
+        <div className="font-semibold text-lg">Read the Full Training Manual</div>
+        <p className="text-slate-300 text-sm mt-1">Complete Sales Training Manual v3 with scripts, objection handling, and commission tables.</p>
+      </Link>
 
       <div className="space-y-3">
         {SECTIONS.map((section) => (
