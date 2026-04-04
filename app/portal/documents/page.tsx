@@ -93,6 +93,8 @@ For tax advice, consult a licensed CPA or tax professional.`
 export default function DocumentsPage() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({ agreement: true, w9: false, nec: false })
   const [agreementSigned, setAgreementSigned] = useState(false)
+  const [w9Submitted, setW9Submitted] = useState(false)
+  const [w9Date, setW9Date] = useState('')
   const [saving, setSaving] = useState(false)
   const [username, setUsername] = useState<string | null>(null)
 
@@ -106,6 +108,15 @@ export default function DocumentsPage() {
         .then(r => r.json())
         .then(d => {
           if (d.profile?.agreement_signed) setAgreementSigned(true)
+          if (d.profile?.w9_submitted) setW9Submitted(true)
+        })
+      fetch(`/api/portal/w9?username=${encodeURIComponent(user.username)}`)
+        .then(r => r.json())
+        .then(d => {
+          if (d.w9) {
+            setW9Submitted(true)
+            setW9Date(new Date(d.w9.submitted_at).toLocaleDateString())
+          }
         })
     } catch { /* ignore */ }
   }, [])
@@ -185,6 +196,17 @@ export default function DocumentsPage() {
         </button>
         {expanded.w9 && (
           <div className="px-6 pb-6">
+            {w9Submitted ? (
+              <div className="bg-green-50 border border-green-200 rounded-md px-4 py-3 mb-4 flex justify-between items-center">
+                <span className="text-sm text-green-700">W-9 on file. Submitted {w9Date}.</span>
+                <a href="/portal/profile#w9" className="text-xs text-green-800 font-medium hover:underline">Update W-9</a>
+              </div>
+            ) : (
+              <div className="bg-amber-50 border border-amber-200 rounded-md px-4 py-3 mb-4 flex justify-between items-center">
+                <span className="text-sm text-amber-800">W-9 not yet submitted. Required before your first commission payment.</span>
+                <a href="/portal/profile#w9" className="text-xs bg-slate-800 text-white px-3 py-1.5 rounded-md font-medium hover:bg-slate-900">Submit W-9 Now</a>
+              </div>
+            )}
             <div className="bg-gray-50 rounded-md p-5 border border-gray-100">
               <p className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">{W9_TEXT}</p>
             </div>

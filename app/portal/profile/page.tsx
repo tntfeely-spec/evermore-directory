@@ -211,6 +211,219 @@ export default function ProfilePage() {
           {saving ? 'Saving...' : saved ? 'Saved!' : 'Save Profile'}
         </button>
       </div>
+
+      {/* W-9 Submission */}
+      <div id="w9" className="mt-10 scroll-mt-8">
+        <W9Form username={user!.username} defaultLegalName={form.full_legal_name || ''} defaultAddress={{ street: form.address_street, city: form.address_city, state: form.address_state, zip: form.address_zip }} />
+      </div>
     </PortalLayout>
+  )
+}
+
+const TAX_CLASSIFICATIONS = [
+  'Individual / Sole Proprietor',
+  'Single-member LLC',
+  'C Corporation',
+  'S Corporation',
+  'Partnership',
+  'Trust / Estate',
+  'LLC (C corp)',
+  'LLC (S corp)',
+  'LLC (Partnership)',
+  'Other',
+]
+
+function W9Form({ username, defaultLegalName, defaultAddress }: {
+  username: string
+  defaultLegalName: string
+  defaultAddress: { street?: string; city?: string; state?: string; zip?: string }
+}) {
+  const [legalName, setLegalName] = useState(defaultLegalName)
+  const [businessName, setBusinessName] = useState('')
+  const [taxClass, setTaxClass] = useState('')
+  const [exemptCode, setExemptCode] = useState('')
+  const [street, setStreet] = useState(defaultAddress.street || '')
+  const [city, setCity] = useState(defaultAddress.city || '')
+  const [addrState, setAddrState] = useState(defaultAddress.state || '')
+  const [zip, setZip] = useState(defaultAddress.zip || '')
+  const [ssnFull, setSsnFull] = useState('')
+  const [ein, setEin] = useState('')
+  const [signature, setSignature] = useState('')
+  const [certified, setCertified] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [existingW9, setExistingW9] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`/api/portal/w9?username=${username}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.w9) {
+          setExistingW9(d.w9)
+          setLegalName(d.w9.legal_name || defaultLegalName)
+          setBusinessName(d.w9.business_name || '')
+          setTaxClass(d.w9.tax_classification || '')
+          setExemptCode(d.w9.exempt_payee_code || '')
+          setStreet(d.w9.address_street || defaultAddress.street || '')
+          setCity(d.w9.address_city || defaultAddress.city || '')
+          setAddrState(d.w9.address_state || defaultAddress.state || '')
+          setZip(d.w9.address_zip || defaultAddress.zip || '')
+          setEin(d.w9.ein || '')
+        }
+      })
+  }, [username])
+
+  useEffect(() => {
+    if (!legalName && defaultLegalName) setLegalName(defaultLegalName)
+    if (!street && defaultAddress.street) setStreet(defaultAddress.street)
+    if (!city && defaultAddress.city) setCity(defaultAddress.city)
+    if (!addrState && defaultAddress.state) setAddrState(defaultAddress.state)
+    if (!zip && defaultAddress.zip) setZip(defaultAddress.zip)
+  }, [defaultLegalName, defaultAddress])
+
+  async function handleSubmit() {
+    if (!legalName || !taxClass || !street || !city || !addrState || !zip || !signature || !certified) return
+    if (!ssnFull && !ein) return
+    setSubmitting(true)
+    await fetch('/api/portal/w9', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username,
+        legal_name: legalName,
+        business_name: businessName || null,
+        tax_classification: taxClass,
+        exempt_payee_code: exemptCode || null,
+        address_street: street,
+        address_city: city,
+        address_state: addrState,
+        address_zip: zip,
+        ssn_full: ssnFull || null,
+        ein: ein || null,
+        electronic_signature: signature,
+      }),
+    })
+    setSubmitting(false)
+    setSubmitted(true)
+    setSsnFull('')
+  }
+
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+
+  if (submitted) {
+    return (
+      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+        <div className="text-2xl mb-2">&#10003;</div>
+        <h3 className="text-lg font-bold text-green-800 mb-2">W-9 Submitted</h3>
+        <p className="text-sm text-green-700">Your W-9 has been submitted. You can update this information at any time by resubmitting.</p>
+        <button onClick={() => setSubmitted(false)} className="mt-4 text-sm text-slate-600 hover:text-slate-800 font-medium">Update W-9</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <h2 className="text-lg font-bold text-gray-900 mb-1">W-9 Submission</h2>
+      <p className="text-sm text-gray-500 mb-6">Complete your W-9 information below. This is required before your first commission payment is processed. Your information is stored securely and used only for IRS reporting.</p>
+
+      {existingW9 && (
+        <div className="bg-green-50 border border-green-200 rounded-md px-4 py-3 mb-6 text-sm text-green-700">
+          W-9 on file. Submitted {new Date(existingW9.submitted_at).toLocaleDateString()}. You may resubmit to update.
+        </div>
+      )}
+
+      <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Legal Name *</label>
+            <input required value={legalName} onChange={(e) => setLegalName(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Business Name (if different)</label>
+            <input value={businessName} onChange={(e) => setBusinessName(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Federal Tax Classification *</label>
+            <select required value={taxClass} onChange={(e) => setTaxClass(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white">
+              <option value="">Select...</option>
+              {TAX_CLASSIFICATIONS.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Exempt Payee Code</label>
+            <input value={exemptCode} onChange={(e) => setExemptCode(e.target.value)} placeholder="Leave blank if unsure"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Address *</label>
+          <input required value={street} onChange={(e) => setStreet(e.target.value)} placeholder="Street"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2" />
+          <div className="grid grid-cols-3 gap-2">
+            <input required value={city} onChange={(e) => setCity(e.target.value)} placeholder="City"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+            <select required value={addrState} onChange={(e) => setAddrState(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white">
+              <option value="">State</option>
+              {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+            <input required value={zip} onChange={(e) => setZip(e.target.value)} placeholder="ZIP" maxLength={5}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Social Security Number *</label>
+            {existingW9?.ssn_last4 && !ssnFull ? (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600 font-mono">***-**-{existingW9.ssn_last4}</span>
+                <button onClick={() => setSsnFull('')} type="button" className="text-xs text-slate-600 hover:text-slate-800">Update</button>
+              </div>
+            ) : (
+              <input type="password" value={ssnFull} onChange={(e) => setSsnFull(e.target.value)} placeholder="Only last 4 digits stored"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">EIN (if applicable)</label>
+            <input value={ein} onChange={(e) => setEin(e.target.value)} placeholder="XX-XXXXXXX"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" />
+          </div>
+        </div>
+
+        <div className="border-t border-gray-100 pt-4 mt-4">
+          <label className="flex items-start gap-2 cursor-pointer mb-4">
+            <input type="checkbox" checked={certified} onChange={(e) => setCertified(e.target.checked)}
+              className="accent-slate-800 mt-0.5" />
+            <span className="text-sm text-gray-700">Under penalties of perjury, I certify that the information provided is accurate and complete.</span>
+          </label>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Electronic Signature *</label>
+              <input required value={signature} onChange={(e) => setSignature(e.target.value)} placeholder="Type your full legal name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm italic" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
+              <input readOnly value={today} className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-md text-sm text-gray-500" />
+            </div>
+          </div>
+        </div>
+
+        <button onClick={handleSubmit} disabled={submitting || !certified || !signature || !legalName || !taxClass || (!ssnFull && !ein && !existingW9?.ssn_last4)}
+          className="bg-slate-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-slate-900 disabled:opacity-50">
+          {submitting ? 'Submitting...' : existingW9 ? 'Resubmit W-9' : 'Submit W-9'}
+        </button>
+      </div>
+    </div>
   )
 }

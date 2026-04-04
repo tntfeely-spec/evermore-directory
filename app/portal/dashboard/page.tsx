@@ -1,6 +1,7 @@
 'use client'
 
 import PortalLayout, { usePortalUser } from '@/components/PortalLayout'
+import Link from 'next/link'
 import { useState, useEffect, useCallback } from 'react'
 
 type Sale = { id: string; business_name: string; city: string; state: string; plan: string; billing_term: string; price: number; salesperson: string; created_at: string; custom_price: number | null }
@@ -136,6 +137,9 @@ export default function DashboardPage() {
               <div key={c.label} className="flex items-center gap-2">
                 <span className={`text-sm ${c.done ? 'text-green-600' : 'text-gray-400'}`}>{c.done ? '\u2713' : '\u25CB'}</span>
                 <span className={`text-sm ${c.done ? 'text-gray-600 line-through' : 'text-gray-800'}`}>{c.label}</span>
+                {c.label === 'W-9 submitted' && !c.done && (
+                  <Link href="/portal/profile#w9" className="text-xs text-amber-700 hover:text-amber-900 font-medium ml-1">Submit your W-9 &rarr;</Link>
+                )}
               </div>
             ))}
           </div>
