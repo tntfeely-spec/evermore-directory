@@ -31,22 +31,32 @@ type Sale = {
 
 /* ── Main component ───────────────────────────────────────────────────────── */
 export default function SalesAdminPage() {
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [authenticated, setAuthenticated] = useState(false)
   const [authError, setAuthError] = useState('')
   const [verifying, setVerifying] = useState(false)
+  const [userRole, setUserRole] = useState<'admin' | 'sales'>('sales')
+  const [displayName, setDisplayName] = useState('')
 
   async function handleLogin() {
     setVerifying(true)
     setAuthError('')
     try {
       const res = await fetch('/api/sales?action=verify', {
-        headers: { 'x-sales-password': password },
+        headers: {
+          'x-sales-username': username,
+          'x-sales-password': password,
+        },
       })
-      if (res.ok) {
+      const data = await res.json()
+      if (res.ok && data.ok) {
         setAuthenticated(true)
+        setUserRole(data.role || 'sales')
+        setDisplayName(data.username || username)
       } else {
-        setAuthError('Invalid password')
+        setAuthError(data.error || 'Invalid username or password')
       }
     } catch {
       setAuthError('Connection error')
@@ -59,19 +69,47 @@ export default function SalesAdminPage() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full">
           <h1 className="text-xl font-bold text-gray-900 mb-1">Evermore Sales</h1>
-          <p className="text-sm text-gray-500 mb-6">Enter your password to continue</p>
+          <p className="text-sm text-gray-500 mb-6">Sign in to continue</p>
           <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
-            placeholder="Password"
+            placeholder="Username"
+            autoComplete="username"
             className="w-full px-4 py-2.5 border border-gray-300 rounded-md text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-slate-500"
           />
+          <div className="relative mb-3">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+              placeholder="Password"
+              autoComplete="current-password"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-md text-sm pr-16 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-gray-600 font-medium select-none"
+            >
+              {showPassword ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12c1.292 4.338 5.31 7.5 10.066 7.5.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              )}
+            </button>
+          </div>
           {authError && <p className="text-red-600 text-sm mb-3">{authError}</p>}
           <button
             onClick={handleLogin}
-            disabled={verifying || !password}
+            disabled={verifying || !username || !password}
             className="w-full bg-slate-800 text-white py-2.5 rounded-md text-sm font-semibold hover:bg-slate-900 disabled:opacity-50"
           >
             {verifying ? 'Checking...' : 'Sign In'}
@@ -81,11 +119,17 @@ export default function SalesAdminPage() {
     )
   }
 
-  return <SalesDashboard password={password} />
+  return (
+    <SalesDashboard
+      username={displayName}
+      password={password}
+      role={userRole}
+    />
+  )
 }
 
 /* ── Dashboard (after auth) ───────────────────────────────────────────────── */
-function SalesDashboard({ password }: { password: string }) {
+function SalesDashboard({ username, password, role }: { username: string; password: string; role: 'admin' | 'sales' }) {
   const [step, setStep] = useState<'form' | 'confirm' | 'done'>('form')
 
   // Form fields
@@ -99,7 +143,7 @@ function SalesDashboard({ password }: { password: string }) {
   const [billingTerm, setBillingTerm] = useState<'monthly' | 'annual'>('monthly')
   const [customPrice, setCustomPrice] = useState('')
   const [customTerm, setCustomTerm] = useState('')
-  const [salesperson, setSalesperson] = useState('')
+  const [salesperson, setSalesperson] = useState(username)
   const [notes, setNotes] = useState('')
 
   // Result
@@ -111,7 +155,10 @@ function SalesDashboard({ password }: { password: string }) {
   // Recent sales
   const [recentSales, setRecentSales] = useState<Sale[]>([])
 
-  const headers = { 'x-sales-password': password }
+  const headers: Record<string, string> = {
+    'x-sales-username': username,
+    'x-sales-password': password,
+  }
 
   const loadSales = useCallback(async () => {
     try {
@@ -119,7 +166,7 @@ function SalesDashboard({ password }: { password: string }) {
       const data = await res.json()
       if (data.sales) setRecentSales(data.sales)
     } catch {}
-  }, [password])
+  }, [username, password])
 
   useEffect(() => { loadSales() }, [loadSales])
 
@@ -190,6 +237,7 @@ function SalesDashboard({ password }: { password: string }) {
     setBillingTerm('monthly')
     setCustomPrice('')
     setCustomTerm('')
+    setSalesperson(username)
     setNotes('')
     setStripeLink('')
     setError('')
@@ -207,8 +255,17 @@ function SalesDashboard({ password }: { password: string }) {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 py-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">New Sale</h1>
-          <p className="text-sm text-gray-500 mb-8">Enter funeral home details and generate a Stripe payment link.</p>
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 mb-1">New Sale</h1>
+              <p className="text-sm text-gray-500">Enter funeral home details and generate a Stripe payment link.</p>
+            </div>
+            <div className="text-right">
+              <span className="text-sm text-gray-500">Signed in as </span>
+              <span className="text-sm font-semibold text-gray-800">{username}</span>
+              <span className="ml-2 text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">{role}</span>
+            </div>
+          </div>
 
           <form onSubmit={handleReview} className="space-y-6">
             {/* Funeral home details */}

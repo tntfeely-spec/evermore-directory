@@ -36,32 +36,59 @@ function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!)
 }
 
-function checkPassword(req: NextRequest): boolean {
-  const pw = req.headers.get('x-sales-password') || ''
-  const salesPw = process.env.SALES_ADMIN_PASSWORD || ''
-  return pw === salesPw && salesPw !== ''
+type SalesUser = { username: string; password: string; role: 'admin' | 'sales' }
+
+function getSalesUsers(): SalesUser[] {
+  const raw = process.env.SALES_USERS || ''
+  if (!raw) return []
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return []
+  }
 }
 
-// GET — verify password or fetch recent sales
+function authenticateUser(req: NextRequest): SalesUser | null {
+  const username = (req.headers.get('x-sales-username') || '').trim().toLowerCase()
+  const password = (req.headers.get('x-sales-password') || '').trim()
+  if (!username || !password) return null
+  const users = getSalesUsers()
+  return users.find(
+    (u) => u.username.trim().toLowerCase() === username && u.password.trim() === password
+  ) || null
+}
+
+// GET — verify login or fetch recent sales
 export async function GET(req: NextRequest) {
   const action = req.nextUrl.searchParams.get('action')
 
   if (action === 'verify') {
-    if (!checkPassword(req)) {
-      return NextResponse.json({ error: 'Invalid password' }, { status: 401 })
+    const user = authenticateUser(req)
+    if (!user) {
+      return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 })
     }
-    return NextResponse.json({ ok: true })
+    return NextResponse.json({ ok: true, username: user.username, role: user.role })
   }
 
   if (action === 'recent') {
-    if (!checkPassword(req)) {
+    const user = authenticateUser(req)
+    if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    const { data, error } = await getSupabase()
+
+    const sb = getSupabase()
+    let query = sb
       .from('sales_leads')
       .select('*')
       .order('created_at', { ascending: false })
       .limit(20)
+
+    // Sales users only see their own entries
+    if (user.role === 'sales') {
+      query = query.ilike('salesperson', user.username)
+    }
+
+    const { data, error } = await query
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
     return NextResponse.json({ sales: data })
@@ -72,7 +99,8 @@ export async function GET(req: NextRequest) {
 
 // POST — create Stripe payment link and save to Supabase
 export async function POST(req: NextRequest) {
-  if (!checkPassword(req)) {
+  const user = authenticateUser(req)
+  if (!user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -90,14 +118,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid price' }, { status: 400 })
     }
 
-    const isRecurring = !custom_term // standard plans are recurring; custom term is one-time
+    const isRecurring = !custom_term
     const intervalLabel = billing_term === 'annual' ? 'year' : 'month'
 
     const description = custom_term
       ? `${business_name} — ${custom_term}`
       : `${business_name} — ${plan} (${billing_term})`
 
-    // Create a Stripe product + price on the fly
     const stripe = getStripe()
     const product = await stripe.products.create({
       name: `Evermore Featured Listing — ${plan || 'Custom'}`,
@@ -120,7 +147,6 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    // Create a payment link
     const paymentLink = await stripe.paymentLinks.create({
       line_items: [{ price: stripePrice.id, quantity: 1 }],
       metadata: {
@@ -131,7 +157,6 @@ export async function POST(req: NextRequest) {
       ...(contact_email ? { after_completion: { type: 'redirect', redirect: { url: 'https://funeralhomedirectories.com/featured-listing?success=true' } } } : {}),
     })
 
-    // Save to Supabase
     const { error: dbError } = await getSupabase().from('sales_leads').insert({
       business_name,
       contact_name,
@@ -151,7 +176,6 @@ export async function POST(req: NextRequest) {
 
     if (dbError) {
       console.error('Supabase insert error:', dbError)
-      // Still return the link even if DB fails
     }
 
     return NextResponse.json({
