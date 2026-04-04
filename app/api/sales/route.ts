@@ -25,20 +25,21 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import Stripe from 'stripe'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-04-30.basil',
-})
-
-const SALES_PASSWORD = process.env.SALES_ADMIN_PASSWORD || ''
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!)
+}
 
 function checkPassword(req: NextRequest): boolean {
   const pw = req.headers.get('x-sales-password') || ''
-  return pw === SALES_PASSWORD && SALES_PASSWORD !== ''
+  const salesPw = process.env.SALES_ADMIN_PASSWORD || ''
+  return pw === salesPw && salesPw !== ''
 }
 
 // GET — verify password or fetch recent sales
@@ -56,7 +57,7 @@ export async function GET(req: NextRequest) {
     if (!checkPassword(req)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('sales_leads')
       .select('*')
       .order('created_at', { ascending: false })
@@ -97,6 +98,7 @@ export async function POST(req: NextRequest) {
       : `${business_name} — ${plan} (${billing_term})`
 
     // Create a Stripe product + price on the fly
+    const stripe = getStripe()
     const product = await stripe.products.create({
       name: `Evermore Featured Listing — ${plan || 'Custom'}`,
       description,
@@ -130,7 +132,7 @@ export async function POST(req: NextRequest) {
     })
 
     // Save to Supabase
-    const { error: dbError } = await supabase.from('sales_leads').insert({
+    const { error: dbError } = await getSupabase().from('sales_leads').insert({
       business_name,
       contact_name,
       contact_email,
