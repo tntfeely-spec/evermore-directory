@@ -1,7 +1,7 @@
 'use client'
 
 import PortalLayout, { usePortalUser } from '@/components/PortalLayout'
-import { useState, useEffect, useCallback } from 'react'
+import { Suspense, useState, useEffect, useCallback } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 type CallLog = {
@@ -31,6 +31,14 @@ function todayString() {
 }
 
 export default function CallsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><p className="text-gray-400 text-sm">Loading...</p></div>}>
+      <CallsPageContent />
+    </Suspense>
+  )
+}
+
+function CallsPageContent() {
   const user = usePortalUser()
   const searchParams = useSearchParams()
 
