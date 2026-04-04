@@ -350,6 +350,16 @@ export default function HowToPlanAFuneralPage() {
               </Link>
             </div>
           </section>
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              You Might Also Find Helpful
+            </h2>
+            <ul className="space-y-2">
+              <li><Link href="/blog/pre-planning-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Pre-Planning a Funeral: Why It Matters and How to Do It &rarr;</Link></li>
+              <li><Link href="/blog/funeral-home-red-flags" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Red Flags: What to Watch Out For When Grieving &rarr;</Link></li>
+              <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies: A Step-by-Step Guide &rarr;</Link></li>
+            </ul>
+          </section>
           {/* Find Funeral Homes CTA */}
           <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>

@@ -433,6 +433,30 @@ export default async function FuneralHomePage({
             <ContactForm listing={listing} calcId={calcId} />
           </div>
 
+          {/* Helpful resources */}
+          <div className="bg-white rounded-[10px] border border-gray-200 p-4 mb-4">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+              Helpful Planning Resources
+            </p>
+            <ul className="list-none m-0 p-0">
+              <li className="py-2 border-b border-gray-100">
+                <Link href="/blog/how-to-plan-a-funeral" className="text-[#2a6496] no-underline text-sm">
+                  How to Plan a Funeral: A Step-by-Step Guide
+                </Link>
+              </li>
+              <li className="py-2 border-b border-gray-100">
+                <Link href="/blog/funeral-costs-2026" className="text-[#2a6496] no-underline text-sm">
+                  How Much Does a Funeral Cost in 2026?
+                </Link>
+              </li>
+              <li className="py-2">
+                <Link href="/blog/what-to-do-when-someone-dies" className="text-[#2a6496] no-underline text-sm">
+                  What to Do When Someone Dies
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Nearby funeral homes */}
           {nearby.length > 0 && (
             <div className="bg-white rounded-[10px] border border-gray-200 p-4">

@@ -72,6 +72,16 @@ export default function FuneralCostTennessee2026Page() {
                 </Link>
               </div>
             </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                You Might Also Find Helpful
+              </h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/best-funeral-homes-nashville-tn" className="text-slate-600 hover:text-slate-800 font-medium">10 Funeral Homes in Nashville, TN (2026) | Prices &amp; Services &rarr;</Link></li>
+                <li><Link href="/blog/funeral-homes-memphis-tn" className="text-slate-600 hover:text-slate-800 font-medium">10 Funeral Homes in Memphis, TN (2026) | Compare Prices &amp; Services &rarr;</Link></li>
+                <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
+              </ul>
+            </section>
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>
             <p className="text-slate-600 text-sm mb-5">Search 4,800+ funeral homes across all 50 states. Compare prices, services, and locations. Free for families. No referral fees.</p>

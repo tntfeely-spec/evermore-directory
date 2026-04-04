@@ -285,6 +285,18 @@ export default function FuneralHomesChicagoPage() {
                 <li><Link href="/funeral-homes/il/naperville" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Naperville, IL &rarr;</Link></li>
                 <li><Link href="/funeral-homes/il/schaumburg" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Schaumburg, IL &rarr;</Link></li>
                 <li><Link href="/funeral-homes/il/joliet" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Joliet, IL &rarr;</Link></li>
+                <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/il" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Illinois Funeral Homes &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Related Reading
+              </h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Guide &rarr;</Link></li>
+                <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? Complete Price Guide &rarr;</Link></li>
+                <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
               </ul>
             </section>
 

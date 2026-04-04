@@ -285,6 +285,18 @@ export default function FuneralHomesHoustonPage() {
                 <li><Link href="/funeral-homes/tx/pasadena" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Pasadena, TX &rarr;</Link></li>
                 <li><Link href="/funeral-homes/tx/katy" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Katy, TX &rarr;</Link></li>
                 <li><Link href="/funeral-homes/tx/the-woodlands" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in The Woodlands, TX &rarr;</Link></li>
+                <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/tx" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Texas Funeral Homes &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Related Reading
+              </h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Guide &rarr;</Link></li>
+                <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
+                <li><Link href="/blog/pre-planning-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Pre-Planning a Funeral: Why It Matters and How to Do It &rarr;</Link></li>
               </ul>
             </section>
 

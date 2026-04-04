@@ -258,6 +258,18 @@ export default function FuneralHomesAtlantaPage() {
                 <li><Link href="/funeral-homes/ga/sandy-springs" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Sandy Springs, GA &rarr;</Link></li>
                 <li><Link href="/funeral-homes/ga/smyrna" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Smyrna, GA &rarr;</Link></li>
                 <li><Link href="/funeral-homes/ga/roswell" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Roswell, GA &rarr;</Link></li>
+                <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/ga" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Georgia Funeral Homes &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Related Reading
+              </h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Guide &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? Complete Price Guide &rarr;</Link></li>
               </ul>
             </section>
 
