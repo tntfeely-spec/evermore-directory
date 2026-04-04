@@ -51,11 +51,15 @@ function getSalesUsers(): SalesUser[] {
 function authenticateUser(req: NextRequest): SalesUser | null {
   const username = (req.headers.get('x-sales-username') || '').trim().toLowerCase()
   const password = (req.headers.get('x-sales-password') || '').trim()
-  if (!username || !password) return null
+  if (!username) return null
   const users = getSalesUsers()
-  return users.find(
-    (u) => u.username.trim().toLowerCase() === username && u.password.trim() === password
-  ) || null
+  // If password provided, do full auth; otherwise just verify username exists (portal mode)
+  if (password) {
+    return users.find(
+      (u) => u.username.trim().toLowerCase() === username && u.password.trim() === password
+    ) || null
+  }
+  return users.find((u) => u.username.trim().toLowerCase() === username) || null
 }
 
 // GET — verify login or fetch recent sales
