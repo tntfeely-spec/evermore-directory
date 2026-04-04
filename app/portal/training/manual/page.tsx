@@ -1,6 +1,31 @@
 'use client'
 
 import PortalLayout from '@/components/PortalLayout'
+import { useState } from 'react'
+
+function EmailTemplate({ title, subject, body }: { title: string; subject: string; body: string }) {
+  const [copied, setCopied] = useState(false)
+  const fullText = `Subject: ${subject}\n\n${body}`
+  function copy() {
+    navigator.clipboard.writeText(fullText)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+  return (
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="text-base font-semibold text-gray-900">{title}</h3>
+        <button onClick={copy} className="text-xs text-slate-600 hover:text-slate-800 font-medium px-3 py-1 border border-gray-200 rounded-md">
+          {copied ? '\u2713 Copied' : 'Copy'}
+        </button>
+      </div>
+      <div className="bg-gray-50 rounded-md p-4 text-sm font-mono whitespace-pre-wrap text-gray-700">
+        <div className="text-gray-500 mb-2">Subject: {subject}</div>
+        {body}
+      </div>
+    </div>
+  )
+}
 
 function Callout({ children }: { children: React.ReactNode }) {
   return (
@@ -178,19 +203,64 @@ export default function TrainingManualPage() {
           <p className="mb-6">These scripts are starting points, not rigid scripts. Learn the structure, then make it your own. The best reps sound like themselves, not like they are reading.</p>
 
           <h3 className="text-lg font-semibold text-gray-900 mb-3">Script A: Standard Opening Call</h3>
-          <div className="bg-gray-50 rounded-md p-4 mb-6 text-sm">
+          <div className="bg-gray-50 rounded-md p-4 mb-4 text-sm">
             &ldquo;Hi, is this [Owner Name]? My name is [Your Name] and I am calling about [Business Name]&apos;s listing on Evermore Funeral Home Directory. Your funeral home is already listed on our site and families in [City] are finding it right now when they search on Google. I wanted to reach out because we have a featured listing option that puts you at the top of your city page. It is $79 a month, and honestly one family that finds you through the directory more than covers that. Is that something you would want to take a look at?&rdquo;
           </div>
+
+          <Callout>
+            <strong>The Silence Rule:</strong> After you ask the closing question, stop talking. The next person who speaks loses. Most reps cannot handle five seconds of silence and fill it themselves, which kills the close. Ask the question. Put the pen down. Wait. Let them answer.
+          </Callout>
 
           <h3 className="text-lg font-semibold text-gray-900 mb-3">Script B: Voicemail</h3>
           <div className="bg-gray-50 rounded-md p-4 mb-6 text-sm">
             &ldquo;Hi, this is [Your Name] calling for [Owner Name] at [Business Name]. I am reaching out because your funeral home is already listed on Evermore Funeral Home Directory and I wanted to let you know families in [City] are finding it on Google. I have a quick question about your listing. You can reach me at [Your Number]. I will also try you again [specific day]. Thanks.&rdquo;
           </div>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Script C: Gatekeeper</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-3">Script C: Second Call / Follow-Up</h3>
+          <div className="bg-gray-50 rounded-md p-4 mb-6 text-sm">
+            &ldquo;Hi [Owner Name], this is [Your Name] calling back as promised. I wanted to follow up on our conversation about your listing on Evermore Funeral Home Directory. Have you had a chance to pull it up? [Pause.] The reason I wanted to reconnect is that the featured listing puts you at the top of the page when families in [City] are searching right now. A lot of funeral homes in other cities have already claimed their spot. I can get you set up today if you want to move forward. Should I send you the link?&rdquo;
+          </div>
+
+          <h3 className="text-lg font-semibold text-gray-900 mb-3">Script D: Gatekeeper</h3>
           <div className="bg-gray-50 rounded-md p-4 text-sm">
             &ldquo;Hi, I am calling for the owner or manager regarding your funeral home&apos;s listing on Evermore Directory. It is a quick call about something that is already live on your listing. Is [Owner Name] available?&rdquo;
           </div>
+        </section>
+
+        {/* ── Section 5B: Email Templates ────────────────────────────── */}
+        <section className="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Section 5B: Email Templates</h2>
+          <p className="mb-6">Copy these templates and personalize the bracketed fields. Each has a copy button.</p>
+
+          <EmailTemplate title="Email 1: Cold Outreach" subject="Your [City] funeral home listing on Evermore" body={`Hi [First Name],
+
+[Business Name] is already listed on Evermore Funeral Home Directory at funeralhomedirectories.com. Families in [City] are finding your listing right now when they search Google.
+
+I wanted to reach out because we have a featured listing option that puts you at the top of your city page. It is $749 for the year. One family covers that cost many times over.
+
+Your listing is live here: [listing URL]
+
+Would you want to take a look at the upgrade? I can send you the link now.
+
+[Your Name]`} />
+
+          <EmailTemplate title="Email 2: Follow-Up (no response)" subject="Re: Your [City] funeral home listing" body={`Hi [First Name],
+
+Just following up on my note from [X] days ago about your Evermore listing.
+
+Your funeral home is still showing up in Google searches for families in [City]. The featured spot at the top of your city page is still available.
+
+Happy to answer any questions. Just reply here or call me at [Your Number].
+
+[Your Name]`} />
+
+          <EmailTemplate title="Email 3: Breakup" subject="Last note about your Evermore listing" body={`Hi [First Name],
+
+I will not keep following up after this. If the timing is ever right to talk about getting your listing featured, I am here.
+
+Your free listing stays live regardless.
+
+[Your Name]`} />
         </section>
 
         {/* ── Section 6 ──────────────────────────────────────────────── */}

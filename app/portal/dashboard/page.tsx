@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback } from 'react'
 type Sale = { id: string; business_name: string; city: string; state: string; plan: string; billing_term: string; price: number; salesperson: string; created_at: string; custom_price: number | null }
 type Profile = { w9_submitted: boolean; agreement_signed: boolean; training_completed: boolean; full_legal_name: string }
 type Announcement = { id: string; title: string; body: string; created_at: string; created_by: string }
+type CallLog = { id: string; business_name: string; city_state: string; call_date: string; result: string; follow_up_date: string }
 
 const COMMISSION_RATES: Record<string, number> = {
   'Essential_monthly': 0.20, 'Essential_annual': 0.25,
@@ -30,23 +31,27 @@ export default function DashboardPage() {
   const [sales, setSales] = useState<Sale[]>([])
   const [profile, setProfile] = useState<Profile | null>(null)
   const [announcements, setAnnouncements] = useState<Announcement[]>([])
+  const [followups, setFollowups] = useState<CallLog[]>([])
   const [newTitle, setNewTitle] = useState('')
   const [newBody, setNewBody] = useState('')
   const [showAnnForm, setShowAnnForm] = useState(false)
 
   const load = useCallback(async () => {
     if (!user) return
-    const [salesRes, profileRes, annRes] = await Promise.all([
+    const [salesRes, profileRes, annRes, fuRes] = await Promise.all([
       fetch(`/api/portal/sales?username=${user.username}&role=${user.role}&limit=999`),
       fetch(`/api/portal/profile?username=${user.username}`),
       fetch('/api/portal/announcements'),
+      fetch(`/api/portal/calls?username=${user.username}&role=${user.role}&followups=true`),
     ])
     const salesData = await salesRes.json()
     const profileData = await profileRes.json()
     const annData = await annRes.json()
+    const fuData = await fuRes.json()
     setSales(salesData.sales || [])
     setProfile(profileData.profile)
     setAnnouncements(annData.announcements || [])
+    setFollowups(fuData.calls || [])
   }, [user])
 
   useEffect(() => { load() }, [load])
@@ -190,6 +195,29 @@ export default function DashboardPage() {
           {!showAnnForm && <p className="text-sm text-gray-400">No announcements yet.</p>}
         </div>
       )}
+
+      {/* Follow-ups due */}
+      <div className="bg-white rounded-lg border border-gray-200 p-5 mb-6">
+        <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Follow-Ups Due</h2>
+        {followups.length === 0 ? (
+          <p className="text-sm text-gray-400">No follow-ups due today.</p>
+        ) : (
+          <div className="space-y-2">
+            {followups.map((f) => (
+              <div key={f.id} className="flex items-center justify-between bg-amber-50 border border-amber-200 rounded-md px-4 py-2">
+                <div>
+                  <span className="text-sm font-medium text-gray-800">{f.business_name}</span>
+                  <span className="text-xs text-gray-500 ml-2">{f.city_state}</span>
+                </div>
+                <div className="text-right">
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${f.result === 'CB' ? 'bg-yellow-100 text-yellow-700' : 'bg-gray-100 text-gray-600'}`}>{f.result}</span>
+                  <span className="text-xs text-gray-400 ml-2">called {f.call_date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Last 5 closes */}
       {last5.length > 0 && (
