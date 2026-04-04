@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Military Funeral Honors: Color Guard, Rifle Salute, and Flag Folding Explained | Evermore Directory',
@@ -74,6 +75,22 @@ export default function MilitaryFuneralHonorsColorGuardExplainedPage() {
                 </Link>
               </div>
             </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/va-burial-benefits-veterans-guide" className="text-slate-600 hover:text-slate-800 font-medium">VA Burial Benefits Guide &rarr;</Link></li>
+                <li><Link href="/blog/national-cemetery-burial-veterans-free" className="text-slate-600 hover:text-slate-800 font-medium">National Cemetery Burial for Veterans &rarr;</Link></li>
+                <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies &rarr;</Link></li>
+              </ul>
+            </section>
+            <section className="mb-10">
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Veterans Resources by State</p>
+              <ul className="space-y-2">
+                <li><Link href="/funeral-homes/tn" className="text-slate-600 hover:text-slate-800 font-medium">Browse Tennessee Funeral Homes &rarr;</Link></li>
+                <li><Link href="/states" className="text-slate-600 hover:text-slate-800 font-medium">Browse All States &rarr;</Link></li>
+              </ul>
+            </section>
+            <BlogFooterLinks />
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>
             <p className="text-slate-600 text-sm mb-5">Search 4,800+ funeral homes across all 50 states. Compare prices, services, and locations. Free for families. No referral fees.</p>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'How to Plan a Funeral: Step-by-Step Guide (2026) | Evermore Directory',
@@ -360,6 +361,7 @@ export default function HowToPlanAFuneralPage() {
               <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies: A Step-by-Step Guide &rarr;</Link></li>
             </ul>
           </section>
+          <BlogFooterLinks />
           {/* Find Funeral Homes CTA */}
           <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>

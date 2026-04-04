@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: '13 Funeral Homes in Chicago, IL (2026) | Compare Prices & Services | Evermore Directory',
@@ -299,6 +300,8 @@ export default function FuneralHomesChicagoPage() {
                 <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
               </ul>
             </section>
+
+            <BlogFooterLinks />
 
             <section className="text-center mt-12">
               <Link

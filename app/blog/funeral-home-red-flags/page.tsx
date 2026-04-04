@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Funeral Home Red Flags: What to Watch Out For When Grieving | Evermore Directory',
@@ -53,6 +54,17 @@ export default function FuneralHomeRedFlagsPage() {
               <p className="text-gray-600 mb-4">Trust your instincts. You can move the body to a different funeral home if no contract has been signed. File a complaint with your state&#39;s funeral regulatory board if you believe a violation occurred. The FTC also accepts complaints at ftc.gov.</p>
               <p className="text-gray-600 mb-4"><Link href="/states" className="text-slate-600 hover:underline">Browse and compare funeral homes in your city at funeralhomedirectories.com.</Link></p>
             </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? &rarr;</Link></li>
+                <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <BlogFooterLinks />
+
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">

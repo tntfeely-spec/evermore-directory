@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: '12 Funeral Homes in Atlanta, GA (2026) | Compare Prices & Services | Evermore Directory',
@@ -272,6 +273,8 @@ export default function FuneralHomesAtlantaPage() {
                 <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? Complete Price Guide &rarr;</Link></li>
               </ul>
             </section>
+
+            <BlogFooterLinks />
 
             <section className="text-center mt-12">
               <Link

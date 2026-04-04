@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Direct Cremation vs Traditional Funeral: How to Choose | Evermore Directory',
@@ -217,6 +218,15 @@ export default function DirectCremationVsTraditionalFuneral() {
               </Link>
             </div>
           </section>
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+            <ul className="space-y-2">
+              <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
+              <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
+              <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+            </ul>
+          </section>
+          <BlogFooterLinks />
           {/* Find Funeral Homes CTA */}
           <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>

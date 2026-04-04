@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: '10 Funeral Homes in Memphis, TN (2026) | Compare Prices & Services | Evermore Directory',
@@ -272,6 +273,8 @@ export default function FuneralHomesMemphisPage() {
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
               </ul>
             </section>
+
+            <BlogFooterLinks />
 
             <section className="text-center mt-12">
               <Link

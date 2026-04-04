@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: '10 Funeral Homes in Nashville, TN (2026) | Prices & Services | Evermore Directory',
@@ -292,6 +293,8 @@ export default function BestFuneralHomesNashvillePage() {
                 <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
               </ul>
             </section>
+
+            <BlogFooterLinks />
 
             <section className="text-center mt-12">
               <Link

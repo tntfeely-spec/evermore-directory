@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Funeral Homes Near Me: How to Choose the Right One (2026) | Evermore Directory',
@@ -279,6 +280,17 @@ export default function FuneralHomesNearMePage() {
               </div>
             </div>
           </section>
+
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+            <ul className="space-y-2">
+              <li><Link href="/blog/funeral-home-red-flags" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Red Flags: What to Watch Out For &rarr;</Link></li>
+              <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? &rarr;</Link></li>
+              <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+            </ul>
+          </section>
+
+          <BlogFooterLinks />
 
           {/* Related Articles */}
           <section className="mt-12 border-t border-gray-200 pt-8">

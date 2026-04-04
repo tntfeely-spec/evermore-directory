@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers | Evermore Directory',
@@ -53,6 +54,17 @@ export default function GreenBurialOptionsGuidePage() {
               <p className="text-gray-600 mb-4">The Green Burial Council maintains a searchable directory at greenburialcouncil.org. Ask funeral homes specifically about their practices -- do they use refrigeration instead of embalming, what container options do they offer, and do they work with natural burial cemeteries in the area.</p>
               <p className="text-gray-600 mb-4"><Link href="/states" className="text-slate-600 hover:underline">Find funeral homes near you at funeralhomedirectories.com.</Link></p>
             </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <BlogFooterLinks />
+
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">

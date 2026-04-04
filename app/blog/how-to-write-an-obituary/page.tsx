@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'How to Write an Obituary: A Simple Guide With Examples | Evermore Directory',
@@ -55,6 +56,17 @@ export default function HowToWriteAnObituaryPage() {
                 <p className="text-gray-500 text-sm">57 words. Full name, age, location, date of death, birthplace, career, and one specific detail about who he was. That is all a first paragraph needs to do.</p>
               </div>
             </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies &rarr;</Link></li>
+                <li><Link href="/blog/pre-planning-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Pre-Planning a Funeral: Why It Matters &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <BlogFooterLinks />
+
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-4">

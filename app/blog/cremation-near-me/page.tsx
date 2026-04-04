@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Cremation Near Me: How to Find Affordable Cremation Services | Evermore Directory',
@@ -269,6 +270,17 @@ export default function CremationNearMePage() {
               <strong>Remember:</strong> Prices can vary by thousands of dollars for the exact same service. A few minutes of comparison shopping can save your family significant money during an already difficult time.
             </p>
           </section>
+
+          <section className="mb-10 bg-slate-50 rounded-lg p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+            <ul className="space-y-2">
+              <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
+              <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral &rarr;</Link></li>
+              <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+            </ul>
+          </section>
+
+          <BlogFooterLinks />
 
           {/* Related Articles */}
           <section className="mt-12 border-t border-gray-200 pt-8">

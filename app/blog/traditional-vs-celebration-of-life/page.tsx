@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'Traditional Funeral vs. Celebration of Life: How to Choose (2026) | Evermore Directory',
@@ -158,6 +159,17 @@ export default function TraditionalVsCelebrationPage() {
                 If you are reading this while planning for someone who has just passed, I hope this helps you find the answer that fits your family. If you are reading this for yourself or someone you love who is still here, please write it down. It is one of the most generous things you can do for the people who will miss you.
               </p>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? &rarr;</Link></li>
+                <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <BlogFooterLinks />
 
             <section className="mt-12 border-t border-gray-200 pt-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>

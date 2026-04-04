@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
   title: 'What to Do When Someone Dies: A Step-by-Step Guide for the First 72 Hours | Evermore Directory',
@@ -85,6 +86,7 @@ export default function WhatToDoWhenSomeoneDiesPage() {
                 <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
               </ul>
             </section>
+            <BlogFooterLinks />
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>
             <p className="text-slate-600 text-sm mb-5">Search 4,800+ funeral homes across all 50 states. Compare prices, services, and locations. Free for families. No referral fees.</p>
