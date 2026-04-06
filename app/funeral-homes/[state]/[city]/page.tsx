@@ -137,6 +137,62 @@ export default async function CityPage({ params }: PageProps) {
 
   // Generate JSON-LD Schema
   const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
+
+  const faqSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `How much does a funeral cost in ${cityName}, ${stateName}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Funeral costs in ${cityName} typically range from $1,500 for direct cremation to $15,000 or more for a traditional funeral with burial. Request a General Price List from each funeral home to compare exact costs.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How many funeral homes are in ${cityName}, ${stateName}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Evermore Directory lists ${funeralHomes.length} funeral homes in ${cityName}, ${stateName}. Browse the full list above to compare services, pricing, and contact information.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the cheapest funeral option in ${cityName}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Direct cremation is typically the least expensive option in ${cityName}, often ranging from $1,500 to $3,500. This includes transportation, cremation, and return of remains without a formal service.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Are funeral homes in ${cityName} required to provide price lists?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes. Under the FTC Funeral Rule, all funeral homes in ${cityName} are legally required to provide an itemized General Price List to anyone who requests one, in person or by phone, at no charge.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Can I pre-plan a funeral in ${cityName}, ${stateName}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes. Most funeral homes in ${cityName} offer pre-planning services that let you arrange and often pre-pay for your funeral in advance, locking in today's prices and relieving your family of difficult decisions.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the difference between a funeral home and a cremation provider in ${cityName}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Most funeral homes in ${cityName} offer both burial and cremation services. Dedicated cremation providers typically offer lower prices for direct cremation but may not offer full funeral services or viewing facilities.`
+        }
+      }
+    ]
+  };
+
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -212,6 +268,10 @@ export default async function CityPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
       <Navigation />
       <div className="min-h-screen relative">
         {/* Background Image */}
@@ -259,10 +319,13 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="block bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-lg p-6 border-2 border-blue-400 group cursor-pointer hover:shadow-xl transition-shadow">
-                    <div className="flex items-center mb-2">
-                      <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full mr-3">
+                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="block bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-sm p-6 border border-green-200 group cursor-pointer hover:shadow-lg transition-shadow">
+                    <div className="flex items-center flex-wrap gap-2 mb-2">
+                      <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full">
                         FEATURED
+                      </span>
+                      <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
+                        GPL Verified ✓
                       </span>
                       <span className="text-2xl font-bold text-gray-900 group-hover:text-slate-700">{home.business_name}</span>
                     </div>
@@ -511,6 +574,36 @@ All funeral homes in our {cityName} directory include contact information, addre
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Price Summary Table */}
+          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
+            <h3 className="text-lg font-semibold text-gray-700 mb-2">
+              How much does a funeral cost in {cityName}?
+            </h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Average Funeral Costs in {cityName}, {stateName}
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="text-left px-4 py-3 font-semibold text-gray-700">Service Type</th>
+                    <th className="text-left px-4 py-3 font-semibold text-gray-700">Estimated Cost Range</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Direct Cremation</td><td className="px-4 py-3 text-gray-700">$1,500 – $3,500</td></tr>
+                  <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Cremation with Memorial Service</td><td className="px-4 py-3 text-gray-700">$3,500 – $6,500</td></tr>
+                  <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Traditional Burial</td><td className="px-4 py-3 text-gray-700">$7,000 – $12,000</td></tr>
+                  <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Full Funeral with Viewing</td><td className="px-4 py-3 text-gray-700">$8,000 – $15,000+</td></tr>
+                  <tr><td className="px-4 py-3 text-gray-700">Graveside Service Only</td><td className="px-4 py-3 text-gray-700">$2,500 – $5,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-500 italic mt-4">
+              Prices are estimates based on national averages and publicly available General Price Lists. Always request the current GPL from each funeral home before making arrangements.
+            </p>
           </div>
 
           {/* Nearby Cities */}
