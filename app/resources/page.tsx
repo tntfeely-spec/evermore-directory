@@ -1,299 +1,134 @@
-'use client';
-
 import Link from 'next/link';
-import { useState } from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Funeral Planning Resources | Evermore Directory',
+  description: 'Guides, cost breakdowns, and practical tools to help families make informed decisions about funeral and cremation services.',
+  alternates: {
+    canonical: 'https://funeralhomedirectories.com/resources',
+  },
+};
+
+type Resource = {
+  title: string;
+  description: string;
+  href: string;
+};
+
+const SECTIONS: { heading: string; resources: Resource[] }[] = [
+  {
+    heading: 'Planning Guides',
+    resources: [
+      { title: 'How to Plan a Funeral: A Step-by-Step Guide', description: 'What to do first, how to choose a funeral home, and how to manage costs without getting overwhelmed.', href: '/blog/how-to-plan-a-funeral' },
+      { title: 'What to Do When Someone Dies: The First 72 Hours', description: 'A paramedic\u2019s step-by-step guide to the first three days after a loss.', href: '/blog/what-to-do-when-someone-dies' },
+      { title: 'Pre-Planning a Funeral: Why It Matters', description: 'How pre-planning protects your family from making hard decisions during grief.', href: '/blog/pre-planning-a-funeral' },
+      { title: 'Traditional Funeral vs. Celebration of Life', description: 'The real emotional and financial difference between the two options.', href: '/blog/traditional-vs-celebration-of-life' },
+      { title: 'How to Write an Obituary', description: 'What to include, how long it should be, and example opening lines.', href: '/blog/how-to-write-an-obituary' },
+    ],
+  },
+  {
+    heading: 'Understanding Costs',
+    resources: [
+      { title: 'How Much Does a Funeral Cost in 2026?', description: 'National averages by state and what drives the price difference.', href: '/blog/funeral-costs-2026' },
+      { title: 'How Much Does Cremation Cost in 2026?', description: 'State-by-state cremation prices and how to save money.', href: '/blog/cremation-costs-2026' },
+      { title: 'How Much Does a Funeral Cost in Tennessee?', description: 'Regional breakdown for Tennessee families.', href: '/blog/funeral-cost-tennessee-2026' },
+      { title: 'Cremation Cost in San Jose', description: 'Local pricing guide for San Jose area families.', href: '/blog/cremation-cost-san-jose' },
+    ],
+  },
+  {
+    heading: 'Burial vs. Cremation',
+    resources: [
+      { title: 'Burial vs. Cremation: Costs, Process & How to Decide', description: 'Side-by-side comparison with cost ranges and pros and cons.', href: '/blog/burial-vs-cremation' },
+      { title: 'Direct Cremation vs. Traditional Funeral', description: 'The most affordable vs. the most traditional option, compared clearly.', href: '/blog/direct-cremation-vs-traditional-funeral' },
+      { title: 'Green Burial Options: What It Is and How Much It Costs', description: 'Eco-friendly burial explained for families considering alternatives.', href: '/blog/green-burial-options-guide' },
+    ],
+  },
+  {
+    heading: 'Finding a Funeral Home',
+    resources: [
+      { title: 'Funeral Homes Near Me: How to Choose the Right One', description: 'What to look for, questions to ask, and red flags to avoid.', href: '/blog/funeral-homes-near-me' },
+      { title: 'Funeral Home Red Flags: What to Watch Out For', description: 'Warning signs that protect grieving families from bad actors.', href: '/blog/funeral-home-red-flags' },
+      { title: 'Cremation Near Me: How to Find Affordable Services', description: 'How to find and compare local cremation providers.', href: '/blog/cremation-near-me' },
+    ],
+  },
+  {
+    heading: 'Local Price Guides',
+    resources: [
+      { title: 'Funeral Homes in Nashville, TN', description: 'Compare 10 Nashville funeral homes with pricing and services.', href: '/blog/best-funeral-homes-nashville-tn' },
+      { title: 'Funeral Homes in Atlanta, GA', description: 'Compare 12 Atlanta funeral homes.', href: '/blog/funeral-homes-atlanta-ga' },
+      { title: 'Funeral Homes in Houston, TX', description: 'Compare 13 Houston funeral homes.', href: '/blog/funeral-homes-houston-tx' },
+      { title: 'Funeral Homes in Memphis, TN', description: 'Compare 10 Memphis funeral homes.', href: '/blog/funeral-homes-memphis-tn' },
+      { title: 'Funeral Homes in Chicago, IL', description: 'Compare 13 Chicago funeral homes.', href: '/blog/funeral-homes-chicago-il' },
+      { title: 'Funeral Homes in Los Angeles', description: 'Prices, services, and how to choose in LA.', href: '/blog/funeral-homes-los-angeles' },
+    ],
+  },
+  {
+    heading: 'Veterans Benefits',
+    resources: [
+      { title: 'VA Burial Benefits: What Every Veteran\u2019s Family Needs to Know', description: 'Full breakdown of every benefit and how to claim it.', href: '/blog/va-burial-benefits-veterans-guide' },
+      { title: 'Military Funeral Honors: Color Guard, Rifle Salute, and Flag Folding', description: 'How to request honors at no cost.', href: '/blog/military-funeral-honors-color-guard-explained' },
+      { title: 'National Cemetery Burial: How to Bury a Veteran for Free', description: 'Who qualifies and how to schedule.', href: '/blog/national-cemetery-burial-veterans-free' },
+      { title: 'VA Pre-Need Burial Eligibility: How to Apply Before You Need It', description: 'One application that removes the hardest task from your family\u2019s worst day.', href: '/blog/va-pre-need-burial-eligibility' },
+    ],
+  },
+];
 
 export default function ResourcesPage() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
-
   return (
-    <div className="min-h-screen relative">
-      <div className="fixed inset-0 z-0" style={{ backgroundImage: 'url(/Ocean_Image.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.4 }} />
-      <div className="relative z-10">
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-12 text-center">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">Funeral Planning Resources</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Helpful guides and information to assist you during difficult times
-            </p>
-          </div>
-
-          {/* Funeral Planning Checklist */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Funeral Planning Checklist</h2>
-            <p className="text-gray-700 mb-6">
-              Planning a funeral can feel overwhelming. Use this checklist to help guide you through the essential steps:
-            </p>
-
-            <div className="space-y-4">
-              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
-                  <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Immediate Steps (First 24-48 Hours)</h3>
-                  <ul className="text-gray-700 space-y-1 ml-4">
-                    <li>• Contact a funeral home to arrange for care of the deceased</li>
-                    <li>• Notify close family members and friends</li>
-                    <li>• Obtain multiple copies of the death certificate</li>
-                    <li>• Locate important documents (will, insurance policies, etc.)</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
-                  <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Service Planning (First Week)</h3>
-                  <ul className="text-gray-700 space-y-1 ml-4">
-                    <li>• Decide on burial or cremation</li>
-                    <li>• Choose between traditional funeral, memorial service, or celebration of life</li>
-                    <li>• Select casket, urn, or other memorial products</li>
-                    <li>• Plan the service details (music, readings, speakers)</li>
-                    <li>• Write or approve the obituary</li>
-                    <li>• Arrange for flowers and reception</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="flex items-start p-4 bg-slate-50 rounded-lg">
-                <div className="flex-shrink-0 h-6 w-6 rounded bg-slate-700 flex items-center justify-center mr-3 mt-0.5">
-                  <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-1">Administrative Tasks (First Month)</h3>
-                  <ul className="text-gray-700 space-y-1 ml-4">
-                    <li>• Notify Social Security Administration</li>
-                    <li>• Contact insurance companies and employers</li>
-                    <li>• Close or transfer accounts and utilities</li>
-                    <li>• File life insurance claims</li>
-                    <li>• Arrange for probate if necessary</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Understanding Costs */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Understanding Funeral Costs</h2>
-            <p className="text-gray-700 mb-6">
-              Funeral costs can vary significantly based on location and services chosen. Here is what to expect:
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Basic Services</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Professional service fees: $2,000 - $3,000</li>
-                  <li>• Transportation: $300 - $500</li>
-                  <li>• Embalming: $700 - $1,000</li>
-                  <li>• Viewing/visitation: $400 - $600</li>
-                  <li>• Funeral ceremony: $400 - $600</li>
-                </ul>
-              </div>
-
-              <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Additional Costs</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Casket: $2,000 - $10,000+</li>
-                  <li>• Burial plot: $1,000 - $4,000</li>
-                  <li>• Vault: $1,000 - $3,000</li>
-                  <li>• Headstone: $1,000 - $3,000</li>
-                  <li>• Cremation: $1,000 - $3,000</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
-              <p className="text-gray-700">
-                <strong>Important:</strong> Funeral homes are required by law to provide a General Price List (GPL). Always request this to compare costs and make informed decisions.
-              </p>
-            </div>
-          </div>
-
-          {/* Pre-Planning Benefits */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Benefits of Pre-Planning</h2>
-            <p className="text-gray-700 mb-6">
-              Many people choose to pre-plan their funeral arrangements. Here are the advantages:
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <div className="text-slate-600 mb-4">
-                  <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Financial Peace</h3>
-                <p className="text-gray-700 text-sm">Lock in today&apos;s prices and avoid future inflation</p>
-              </div>
-
-              <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <div className="text-slate-600 mb-4">
-                  <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Ease Burden</h3>
-                <p className="text-gray-700 text-sm">Relieve family from making difficult decisions during grief</p>
-              </div>
-
-              <div className="text-center p-6 bg-slate-50 rounded-xl">
-                <div className="text-slate-600 mb-4">
-                  <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Your Wishes</h3>
-                <p className="text-gray-700 text-sm">Ensure your preferences are known and honored</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Types of Services */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Types of Funeral Services</h2>
-            <div className="space-y-6">
-              <div className="border-l-4 border-slate-500 pl-6 py-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Traditional Funeral Service</h3>
-                <p className="text-gray-700">Includes viewing/visitation, formal funeral service, and burial or entombment. Often includes religious or cultural customs and traditions.</p>
-              </div>
-              <div className="border-l-4 border-slate-500 pl-6 py-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Memorial Service</h3>
-                <p className="text-gray-700">Held after cremation or burial has taken place. The body is not present, allowing more flexibility in timing and location.</p>
-              </div>
-              <div className="border-l-4 border-slate-500 pl-6 py-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Celebration of Life</h3>
-                <p className="text-gray-700">A more personalized, uplifting gathering focusing on celebrating the deceased&apos;s life and legacy rather than mourning their passing.</p>
-              </div>
-              <div className="border-l-4 border-slate-500 pl-6 py-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Direct Cremation or Burial</h3>
-                <p className="text-gray-700">The most economical option with no formal viewing or ceremony. The body is cremated or buried shortly after death.</p>
-              </div>
-              <div className="border-l-4 border-slate-500 pl-6 py-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Green/Natural Burial</h3>
-                <p className="text-gray-700">An environmentally-friendly option that minimizes environmental impact through biodegradable materials and natural processes.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Veterans Benefits */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Veterans Benefits</h2>
-            <p className="text-gray-700 mb-6">Veterans and their families may be eligible for funeral and burial benefits:</p>
-
-            <div className="space-y-4">
-              {[
-                { title: 'Burial in a VA National Cemetery', desc: 'Free burial plot, opening and closing of grave, and perpetual care' },
-                { title: 'Burial Allowance', desc: 'Partial reimbursement for burial and funeral costs (service-connected death: up to $2,000; non-service-connected: up to $796)' },
-                { title: 'Headstone or Marker', desc: 'Free government headstone or marker with inscription' },
-                { title: 'Presidential Memorial Certificate', desc: 'Engraved certificate signed by the current president honoring the veteran\'s service' },
-                { title: 'Burial Flag', desc: 'American flag provided to drape the casket or accompany the urn' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center mr-3 mt-1">
-                    <svg className="h-4 w-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-gray-800">{item.title}:</span>
-                    <span className="text-gray-700"> {item.desc}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
-              <p className="text-gray-700">
-                <strong>For more information:</strong> Contact the VA at 1-800-827-1000 or visit va.gov/burials-memorials
-              </p>
-            </div>
-          </div>
-
-          {/* Important Contacts */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Important Contacts</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Government Agencies</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li><strong>Social Security Administration</strong><br />1-800-772-1213<br />ssa.gov</li>
-                  <li><strong>Veterans Affairs</strong><br />1-800-827-1000<br />va.gov</li>
-                  <li><strong>Federal Trade Commission (FTC)</strong><br />Funeral Rule Information<br />consumer.ftc.gov</li>
-                </ul>
-              </div>
-              <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Support Resources</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li><strong>National Funeral Directors Association</strong><br />1-800-228-6332<br />nfda.org</li>
-                  <li><strong>GriefShare</strong><br />Grief support groups<br />griefshare.org</li>
-                  <li><strong>National Hospice Foundation</strong><br />1-800-338-8619<br />nationalhospicefoundation.org</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                { question: "How soon do I need to make funeral arrangements?", answer: "While there's no strict deadline, most arrangements should be made within a few days. Many states require burial or cremation within a certain timeframe (typically 7-10 days). Your funeral director can guide you on timing." },
-                { question: "Can I personalize a funeral service?", answer: "Absolutely. Modern funeral services are highly customizable. You can incorporate personal touches like favorite music, photos, hobbies, special readings, unique locations, and more." },
-                { question: "What's the difference between a funeral and a memorial service?", answer: "A funeral typically includes the body present in a casket and occurs before burial or cremation. A memorial service takes place after the body has been buried or cremated, so the body is not present." },
-                { question: "Do I have to use the casket provided by the funeral home?", answer: "No. Under the FTC Funeral Rule, funeral homes must accept caskets purchased from third-party vendors and cannot charge a handling fee." },
-                { question: "What should I bring to my first meeting with a funeral director?", answer: "Bring: death certificate (if available), insurance policies, Social Security number, military discharge papers (DD-214) for veterans, and any pre-planning documents." },
-                { question: "Are funeral costs tax deductible?", answer: "Generally, personal funeral expenses are not tax deductible. However, they may be deductible from the deceased's estate if paid from estate funds. Consult with a tax professional for specific guidance." },
-                { question: "What is embalming and is it required?", answer: "Embalming is a process that temporarily preserves the body. It is generally NOT required by law except in specific circumstances like interstate transport." },
-                { question: "Can I pre-pay for my funeral?", answer: "Yes, many funeral homes offer pre-payment options. Make sure any prepaid plan is protected by state law and understand the cancellation and refund policies." },
-              ].map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg">
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition"
-                  >
-                    <span className="font-semibold text-gray-800">{faq.question}</span>
-                    <svg className={`w-5 h-5 text-gray-500 transition-transform ${openFAQ === index ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {openFAQ === index && (
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-700">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl shadow-xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">Need to Find a Funeral Home?</h2>
-            <p className="text-white mb-6">Search our directory to find caring professionals in your area</p>
-            <Link href="/states" className="inline-block bg-white text-slate-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-              Search Now
-            </Link>
-          </div>
+    <main className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-slate-50 to-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Funeral Planning Resources
+          </h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Practical guides written by a former firefighter and paramedic who has responded to 400+ death scenes. No fluff. Just what families actually need to know.
+          </p>
         </div>
+      </section>
+
+      {/* Sections */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-14">
+        {SECTIONS.map((section) => (
+          <section key={section.heading}>
+            <h2 className="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b border-gray-100">
+              {section.heading}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {section.resources.map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  className="block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md hover:border-slate-300 transition-all"
+                >
+                  <h3 className="text-lg font-semibold text-slate-700 mb-2">{r.title}</h3>
+                  <p className="text-sm text-gray-500 mb-4 leading-relaxed">{r.description}</p>
+                  <span className="text-sm text-slate-600 font-medium hover:underline">
+                    Read Guide &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
-    </div>
+
+      {/* Bottom CTA */}
+      <section className="bg-slate-50 border-t border-gray-100 mt-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">Find a Funeral Home Near You</h2>
+          <p className="text-gray-600 mb-6">
+            Browse 4,800+ funeral homes across all 50 states. Free for families. No pressure.
+          </p>
+          <Link
+            href="/states"
+            className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+          >
+            Browse by State
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
