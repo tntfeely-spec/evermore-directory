@@ -10,7 +10,7 @@ const TIERS = [
     savings: 'Save $199',
     monthlyHref: process.env.NEXT_PUBLIC_STRIPE_ESSENTIAL_MONTHLY || '/contact?plan=essential-monthly',
     annualHref: process.env.NEXT_PUBLIC_STRIPE_ESSENTIAL_ANNUAL || '/contact?plan=essential-annual',
-    badge: '',
+    badge: 'Most Affordable',
     headerClass: 'bg-slate-50 border-slate-300',
     titleColor: 'text-slate-700',
     btnClass: 'bg-slate-700 hover:bg-slate-800 text-white',
@@ -77,7 +77,7 @@ export default function PricingCards({ showHeading = true }: { showHeading?: boo
           <div key={tier.name} className={`rounded-2xl border-2 p-6 ${tier.headerClass}`}>
             {tier.badge && (
               <div className="text-center mb-2">
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-white'}`}>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : tier.name === 'Essential' ? 'bg-green-600 text-white' : 'bg-slate-700 text-white'}`}>
                   {tier.badge}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function PricingCards({ showHeading = true }: { showHeading?: boo
                   <th key={tier.name} className={`p-4 text-center border-2 ${tier.headerClass} relative align-top overflow-visible`}>
                     {tier.badge && (
                       <div className="absolute -top-3 left-0 right-0 flex justify-center">
-                        <span className={`text-xs font-bold px-3 py-1 rounded-full ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-white'}`}>
+                        <span className={`text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : tier.name === 'Essential' ? 'bg-green-600 text-white' : 'bg-slate-700 text-white'}`}>
                           {tier.badge}
                         </span>
                       </div>
