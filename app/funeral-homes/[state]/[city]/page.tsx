@@ -319,11 +319,11 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
               </h2>
               <div className="space-y-6">
                 {featuredHomes.map((home: FuneralHome) => (
-                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="block bg-gradient-to-r from-slate-50 to-amber-50 rounded-xl shadow-sm p-6 border border-green-200 group cursor-pointer hover:shadow-lg transition-shadow">
-                    <div className="flex items-center flex-wrap gap-2 mb-2">
-                      <span className="bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        FEATURED
-                      </span>
+                  <Link key={home.id} href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}/${slugify(home.business_name)}`} className="relative block bg-white rounded-xl shadow-sm p-6 border border-green-200 group cursor-pointer hover:shadow-md transition-shadow">
+                    <span className="absolute top-4 right-4 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">
+                      FEATURED
+                    </span>
+                    <div className="flex items-center flex-wrap gap-2 mb-2 pr-24">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
                         GPL Verified ✓
                       </span>

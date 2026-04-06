@@ -254,6 +254,7 @@ export default function DashboardPage() {
 
       {/* User Management (admin only) */}
       {user.role === 'admin' && <UserManagement />}
+      {user.role === 'admin' && <FeaturedListingsManagement />}
     </PortalLayout>
   )
 }
@@ -367,6 +368,71 @@ function UserManagement() {
           ))}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+type FeaturedListing = { id: string; business_name: string; city: string; state: string; listing_tier: string; featured_until: string | null }
+
+function FeaturedListingsManagement() {
+  const [listings, setListings] = useState<FeaturedListing[]>([])
+
+  const load = useCallback(async () => {
+    const res = await fetch('/api/portal/featured-listings')
+    const data = await res.json()
+    if (data.listings) setListings(data.listings)
+  }, [])
+
+  useEffect(() => { load() }, [load])
+
+  async function deactivate(id: string) {
+    await fetch('/api/portal/featured-listings', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, action: 'deactivate' }),
+    })
+    load()
+  }
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden mt-6">
+      <div className="px-5 py-3 border-b border-gray-100 flex justify-between items-center">
+        <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">Active Featured Listings</h2>
+        <span className="text-xs text-gray-500">{listings.length} active</span>
+      </div>
+      {listings.length === 0 ? (
+        <p className="px-5 py-4 text-sm text-gray-400">No active featured listings.</p>
+      ) : (
+        <table className="w-full text-sm">
+          <thead><tr className="bg-gray-50">
+            <th className="text-left px-4 py-2 text-gray-500 font-medium">Business</th>
+            <th className="text-left px-4 py-2 text-gray-500 font-medium">Location</th>
+            <th className="text-left px-4 py-2 text-gray-500 font-medium">Tier</th>
+            <th className="text-left px-4 py-2 text-gray-500 font-medium">Expires</th>
+            <th className="text-right px-4 py-2 text-gray-500 font-medium">Actions</th>
+          </tr></thead>
+          <tbody>
+            {listings.map((l) => (
+              <tr key={l.id} className="border-b border-gray-50">
+                <td className="px-4 py-2.5 font-medium text-gray-800">{l.business_name}</td>
+                <td className="px-4 py-2.5 text-gray-600">{l.city}, {l.state}</td>
+                <td className="px-4 py-2.5">
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium capitalize ${
+                    l.listing_tier === 'exclusive' ? 'bg-amber-50 text-amber-700' :
+                    l.listing_tier === 'premier' ? 'bg-slate-100 text-slate-700' :
+                    'bg-green-50 text-green-700'
+                  }`}>{l.listing_tier || 'free'}</span>
+                </td>
+                <td className="px-4 py-2.5 text-gray-500">{l.featured_until || 'Monthly'}</td>
+                <td className="px-4 py-2.5 text-right">
+                  <button onClick={() => deactivate(l.id)} className="text-xs text-red-500 hover:text-red-700 font-medium">
+                    Deactivate
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   )
 }

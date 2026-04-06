@@ -33,6 +33,9 @@ export default function PortalSalesPage() {
   const [copied, setCopied] = useState(false)
   const [recentSales, setRecentSales] = useState<Sale[]>([])
   const [copiedId, setCopiedId] = useState<string | null>(null)
+  const [exclusiveCheck, setExclusiveCheck] = useState<{ available: boolean; message: string } | null>(null)
+  const [activating, setActivating] = useState(false)
+  const [activateResult, setActivateResult] = useState<string | null>(null)
 
   useEffect(() => { if (user && !salesperson) setSalesperson(user.username) }, [user])
 
@@ -44,6 +47,55 @@ export default function PortalSalesPage() {
   }, [user])
 
   useEffect(() => { loadSales() }, [loadSales])
+
+  // City availability check for Exclusive tier
+  useEffect(() => {
+    if (plan !== 'Exclusive' || !city || !state) {
+      setExclusiveCheck(null)
+      return
+    }
+    const t = setTimeout(async () => {
+      try {
+        const res = await fetch('/api/portal/check-city-availability', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ city, state }),
+        })
+        const data = await res.json()
+        setExclusiveCheck(data)
+      } catch {
+        setExclusiveCheck(null)
+      }
+    }, 500)
+    return () => clearTimeout(t)
+  }, [plan, city, state])
+
+  async function activateListing() {
+    setActivating(true)
+    setActivateResult(null)
+    try {
+      const res = await fetch('/api/portal/activate-listing', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          business_name: businessName,
+          city,
+          state,
+          tier: customPrice ? 'essential' : plan.toLowerCase(),
+          plan_type: customPrice ? 'monthly' : billingTerm,
+        }),
+      })
+      const data = await res.json()
+      if (data.ok) {
+        setActivateResult(`✓ ${data.message}`)
+      } else {
+        setActivateResult(`✗ ${data.error}`)
+      }
+    } catch (e: any) {
+      setActivateResult(`✗ ${e.message}`)
+    }
+    setActivating(false)
+  }
 
   if (!user) return null
 
@@ -101,6 +153,21 @@ export default function PortalSalesPage() {
               {copied ? 'Copied!' : 'Copy Payment Link'}
             </button>
           </div>
+
+          {/* Activate Listing */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-4 text-left">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">After payment is confirmed</p>
+            <button onClick={activateListing} disabled={activating}
+              className="w-full bg-green-600 text-white py-2.5 rounded-md font-semibold hover:bg-green-700 disabled:opacity-50 mb-2">
+              {activating ? 'Activating...' : 'Activate Listing'}
+            </button>
+            {activateResult && (
+              <p className={`text-sm ${activateResult.startsWith('✓') ? 'text-green-700' : 'text-red-700'}`}>
+                {activateResult}
+              </p>
+            )}
+          </div>
+
           <button onClick={reset} className="text-slate-600 hover:text-slate-800 text-sm font-medium">Enter Another Sale</button>
         </div>
       </PortalLayout>
@@ -170,6 +237,17 @@ export default function PortalSalesPage() {
               </label>
             ))}
           </div>
+
+          {/* Exclusive city availability check */}
+          {plan === 'Exclusive' && exclusiveCheck && (
+            <div className={`mb-4 px-4 py-3 rounded-md text-sm font-medium ${
+              exclusiveCheck.available
+                ? 'bg-green-50 border border-green-200 text-green-800'
+                : 'bg-red-50 border border-red-200 text-red-800'
+            }`}>
+              {exclusiveCheck.available ? '✓' : '⚠'} {exclusiveCheck.message}
+            </div>
+          )}
           <div className="border-t border-gray-100 pt-4 mt-4">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Custom Override</p>
             <div className="grid grid-cols-2 gap-3">

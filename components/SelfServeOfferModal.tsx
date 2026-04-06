@@ -78,7 +78,7 @@ export default function SelfServeOfferModal() {
             Founding Member Rate
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">You found us without a referral.</h2>
-          <p className="text-gray-600 text-sm">Here&apos;s your reward.</p>
+          <p className="text-gray-600 text-sm">Direct sign-ups save on overhead. We pass the savings on to you.</p>
         </div>
 
         <p className="text-center text-gray-700 mb-6">

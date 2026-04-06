@@ -360,13 +360,15 @@ export default async function FuneralHomePage({
           <div className="text-center">
             <div className="flex gap-2 mb-2 flex-wrap justify-center">
               {listing.is_featured && (
-                <span className="bg-amber-50 text-amber-700 border border-amber-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
-                  ★ Featured listing
+                <span className="bg-green-50 text-green-700 border border-green-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
+                  ✓ Verified Featured Listing
                 </span>
               )}
-              <span className="bg-green-50 text-green-700 border border-green-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
-                ✓ Verified
-              </span>
+              {!listing.is_featured && (
+                <span className="bg-green-50 text-green-700 border border-green-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
+                  ✓ Verified
+                </span>
+              )}
             </div>
             <h1 className="text-[22px] font-bold text-[#1a1a2e] mb-1.5">
               {listing.business_name}
