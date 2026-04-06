@@ -112,15 +112,15 @@ export default function PricingCards({ showHeading = true }: { showHeading?: boo
 
       {/* Desktop: comparison table */}
       <div className="hidden lg:block">
-        <div className="overflow-x-auto">
+        <div className="pt-6 overflow-visible">
           <table className="w-full border-collapse bg-white">
             <thead>
               <tr>
                 <th className="p-4 text-left font-semibold text-gray-700 border-b border-gray-200 w-1/4"></th>
                 {TIERS.map((tier) => (
-                  <th key={tier.name} className={`p-4 text-center border-2 ${tier.headerClass} relative align-top`}>
+                  <th key={tier.name} className={`p-4 text-center border-2 ${tier.headerClass} relative align-top overflow-visible`}>
                     {tier.badge && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <div className="absolute -top-3 left-0 right-0 flex justify-center">
                         <span className={`text-xs font-bold px-3 py-1 rounded-full ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-white'}`}>
                           {tier.badge}
                         </span>
