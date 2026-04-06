@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
+import PricingCards from '@/components/PricingCards';
 
 
 export const metadata: Metadata = {
@@ -129,42 +130,33 @@ export default function FeaturedListingPage() {
           </div>
 
           {/* Pricing */}
-          <div
-            id="pricing"
-            className="text-white py-16 px-6 md:px-12 rounded-lg text-center my-10 shadow-lg"
-            style={{ background: 'linear-gradient(135deg, #2C3E50 0%, #3D5166 100%)' }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Simple, Transparent Pricing</h2>
-            <p className="text-lg opacity-90 mb-2">No setup fees. No long-term contracts. Cancel anytime.</p>
-
-            <div className="text-[72px] font-bold my-4">$99</div>
-            <div className="text-2xl opacity-95 mb-2">per month</div>
-            <p className="text-lg mb-2">That is just <strong>$3.30 per day</strong> to reach more families.</p>
+          <div id="pricing" className="bg-white rounded-lg p-8 md:p-12 shadow-md my-10">
+            <PricingCards />
 
             {/* 30-day guarantee */}
-            <div className="inline-block bg-white/10 border border-white/30 rounded-lg px-8 py-4 mt-4 mb-8">
-              <p className="text-white font-semibold text-lg">30-Day Money-Back Guarantee</p>
-              <p className="text-white/80 text-sm mt-1">Not seeing results in your first month? We will refund you in full, no questions asked.</p>
+            <div className="bg-green-50 border border-green-200 rounded-lg px-8 py-5 mt-10 text-center max-w-2xl mx-auto">
+              <p className="text-green-800 font-semibold text-lg">30-Day Money-Back Guarantee</p>
+              <p className="text-green-700 text-sm mt-1">Not seeing results in your first month? We will refund you in full, no questions asked.</p>
             </div>
 
-            <div className="bg-white rounded-lg p-8 md:p-10 mt-4 max-w-[700px] mx-auto">
-              <h3 className="text-[#2C3E50] text-2xl font-bold mb-5 text-center">
-                Start Your Featured Listing
+            <p className="mt-6 text-center text-sm text-gray-600">
+              Questions? Email us at{' '}
+              <a href="mailto:listings@funeralhomedirectories.com" className="text-slate-700 hover:text-slate-900 underline">
+                listings@funeralhomedirectories.com
+              </a>
+            </p>
+
+            <div className="mt-10 max-w-[700px] mx-auto">
+              <h3 className="text-[#2C3E50] text-xl font-bold mb-5 text-center">
+                Have Questions? Contact Us First
               </h3>
               <iframe
                 src="https://api.leadconnectorhq.com/widget/form/js24LxZ50to0b8i1GWuw"
                 style={{ width: '100%', height: '1441px', border: 'none', borderRadius: '3px' }}
                 id="inline-js24LxZ50to0b8i1GWuw"
-                title="Featured Listing Signup"
+                title="Featured Listing Inquiry"
               />
             </div>
-
-            <p className="mt-8 text-sm opacity-80">
-              Questions? Email us at{' '}
-              <a href="mailto:listings@funeralhomedirectories.com" className="underline hover:opacity-100">
-                listings@funeralhomedirectories.com
-              </a>
-            </p>
           </div>
 
           {/* FAQ */}
@@ -189,6 +181,11 @@ export default function FeaturedListingPage() {
               ))}
             </div>
           </div>
+
+          {/* Direct link */}
+          <p className="text-center text-xs text-gray-400 mt-8">
+            Direct link to this page: funeralhomedirectories.com/featured-listing
+          </p>
 
         </div>
       </div>
