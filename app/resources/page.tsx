@@ -83,7 +83,7 @@ export default function ResourcesPage() {
             Funeral Planning Resources
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Practical guides written by a former firefighter and paramedic who has responded to 400+ death scenes. No fluff. Just what families actually need to know.
+            Practical guides by a former firefighter and paramedic. Just what families actually need to know.
           </p>
         </div>
       </section>
