@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PricingCards from '@/components/PricingCards'
+import SelfServeOfferModal from '@/components/SelfServeOfferModal'
 
 export const metadata: Metadata = {
   title: 'Upgrade Your Evermore Listing',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function UpgradePage() {
   return (
     <main className="min-h-screen bg-white">
+      <SelfServeOfferModal />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         {/* Wordmark */}
         <div className="mb-12 text-center">

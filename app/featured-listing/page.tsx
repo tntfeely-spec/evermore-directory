@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import PricingCards from '@/components/PricingCards';
+import SelfServeOfferModal from '@/components/SelfServeOfferModal';
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function FeaturedListingPage() {
   return (
     <>
       <Navigation />
+      <SelfServeOfferModal />
       <div className="min-h-screen bg-[#F5F7FA]" style={{ fontFamily: 'Inter, sans-serif' }}>
 
         {/* Hero */}
