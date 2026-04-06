@@ -6,8 +6,8 @@ import PricingCards from '@/components/PricingCards';
 
 
 export const metadata: Metadata = {
-  title: 'Featured Listing for Funeral Homes | $99/Month | Evermore Directory',
-  description: 'Get your funeral home featured at the top of Evermore Directory. Reach more families in your area for just $99/month. No setup fees. Cancel anytime.',
+  title: 'Featured Listing for Funeral Homes | Evermore Directory',
+  description: 'Get your funeral home featured at the top of Evermore Directory. Three pricing tiers — Essential, Premier, and Exclusive. No setup fees. Cancel anytime.',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/featured-listing',
   },

@@ -1,103 +1,67 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 
-const PLACEHOLDER_LINK = 'https://link.fastpaydirect.com/payment-link/6945a3de2024d451ed29cee0'
-
-const PLANS = [
-  {
-    name: 'Free Standard',
-    monthly: 0,
-    annual: 0,
-    priceLabel: { monthly: 'Free', annual: 'Free' },
-    savings: '',
-    features: [
-      'City page listing',
-      'Contact information',
-      'Basic services display',
-    ],
-    cta: { label: 'Claim Free Listing', href: '/' },
-    badge: '',
-    style: 'border border-gray-200 bg-gray-50',
-    titleColor: 'text-gray-700',
-    isExternal: false,
-  },
+const TIERS = [
   {
     name: 'Essential',
-    monthly: 79,
-    annual: 749,
-    priceLabel: { monthly: '$79/mo', annual: '$749/yr' },
+    monthly: '$79/mo',
+    annual: '$749/yr',
     savings: 'Save $199',
-    features: [
-      'Everything in Free',
-      'Featured badge',
-      'Top of city page',
-      'Statewide visibility',
-      'Basic monthly report',
-    ],
-    cta: { label: 'Get Started', monthlyEnv: 'NEXT_PUBLIC_STRIPE_ESSENTIAL_MONTHLY', annualEnv: 'NEXT_PUBLIC_STRIPE_ESSENTIAL_ANNUAL' },
+    monthlyHref: 'https://link.fastpaydirect.com/payment-link/6945a3de2024d451ed29cee0',
+    annualHref: '/contact?plan=essential-annual',
     badge: '',
-    style: 'border-2 border-slate-300 bg-white',
+    headerClass: 'bg-slate-50 border-slate-300',
     titleColor: 'text-slate-700',
-    isExternal: true,
+    btnClass: 'bg-slate-700 hover:bg-slate-800 text-white',
   },
   {
     name: 'Premier',
-    monthly: 149,
-    annual: 1399,
-    priceLabel: { monthly: '$149/mo', annual: '$1,399/yr' },
+    monthly: '$149/mo',
+    annual: '$1,399/yr',
     savings: 'Save $389',
-    features: [
-      'Everything in Essential',
-      'Enhanced listing + photos',
-      'Priority support',
-      'Detailed analytics',
-    ],
-    cta: { label: 'Get Started', monthlyEnv: 'NEXT_PUBLIC_STRIPE_PREMIER_MONTHLY', annualEnv: 'NEXT_PUBLIC_STRIPE_PREMIER_ANNUAL' },
+    monthlyHref: '/contact?plan=premier-monthly',
+    annualHref: '/contact?plan=premier-annual',
     badge: 'Most Popular',
-    style: 'border-2 border-slate-700 bg-white shadow-xl scale-[1.02]',
+    headerClass: 'bg-slate-100 border-slate-700 ring-2 ring-slate-700',
     titleColor: 'text-slate-900',
-    isExternal: true,
+    btnClass: 'bg-slate-800 hover:bg-slate-900 text-white',
   },
   {
     name: 'Exclusive',
-    monthly: 449,
-    annual: 4699,
-    priceLabel: { monthly: '$449/mo', annual: '$4,699/yr' },
+    monthly: '$449/mo',
+    annual: '$4,699/yr',
     savings: 'Save $689',
-    features: [
-      'Everything in Premier',
-      'Individual listing page',
-      'GPL Verified badge',
-      'Exclusive city placement (1 per city)',
-      'Dedicated account manager',
-    ],
-    cta: { label: 'Claim Exclusive Slot', monthlyEnv: 'NEXT_PUBLIC_STRIPE_EXCLUSIVE_MONTHLY', annualEnv: 'NEXT_PUBLIC_STRIPE_EXCLUSIVE_ANNUAL' },
+    monthlyHref: '/contact?plan=exclusive-monthly',
+    annualHref: '/contact?plan=exclusive-annual',
     badge: 'Limited — 1 Per City',
-    style: 'border-2 border-amber-500 bg-gradient-to-br from-amber-50 to-white',
+    headerClass: 'bg-amber-50 border-amber-500',
     titleColor: 'text-amber-900',
-    isExternal: true,
+    btnClass: 'bg-amber-600 hover:bg-amber-700 text-white',
   },
 ]
 
-function getEnvLink(envName: string): string {
-  if (typeof window === 'undefined') return PLACEHOLDER_LINK
-  // NEXT_PUBLIC_ vars are inlined at build time, look them up via process.env
-  const map: Record<string, string | undefined> = {
-    NEXT_PUBLIC_STRIPE_ESSENTIAL_MONTHLY: process.env.NEXT_PUBLIC_STRIPE_ESSENTIAL_MONTHLY,
-    NEXT_PUBLIC_STRIPE_ESSENTIAL_ANNUAL: process.env.NEXT_PUBLIC_STRIPE_ESSENTIAL_ANNUAL,
-    NEXT_PUBLIC_STRIPE_PREMIER_MONTHLY: process.env.NEXT_PUBLIC_STRIPE_PREMIER_MONTHLY,
-    NEXT_PUBLIC_STRIPE_PREMIER_ANNUAL: process.env.NEXT_PUBLIC_STRIPE_PREMIER_ANNUAL,
-    NEXT_PUBLIC_STRIPE_EXCLUSIVE_MONTHLY: process.env.NEXT_PUBLIC_STRIPE_EXCLUSIVE_MONTHLY,
-    NEXT_PUBLIC_STRIPE_EXCLUSIVE_ANNUAL: process.env.NEXT_PUBLIC_STRIPE_EXCLUSIVE_ANNUAL,
-  }
-  return map[envName] || PLACEHOLDER_LINK
+const FEATURES: { label: string; values: (string | boolean)[] }[] = [
+  { label: 'City page listing', values: [true, true, true] },
+  { label: 'Featured badge + top of city page', values: [true, true, true] },
+  { label: 'Statewide visibility', values: [true, true, true] },
+  { label: 'Basic monthly report', values: [true, true, true] },
+  { label: 'Enhanced listing + photos', values: [false, true, true] },
+  { label: 'Priority support', values: [false, true, true] },
+  { label: 'Detailed analytics', values: [false, true, true] },
+  { label: 'Individual listing page', values: [false, false, true] },
+  { label: 'GPL Verified badge', values: [false, false, true] },
+  { label: 'Exclusive city placement', values: [false, false, '1 per city'] },
+  { label: 'Dedicated account manager', values: [false, false, true] },
+]
+
+function Cell({ value }: { value: string | boolean }) {
+  if (value === true) return <span className="text-green-600 text-xl">✓</span>
+  if (value === false) return <span className="text-gray-300">—</span>
+  return <span className="text-sm font-semibold text-gray-800">{value}</span>
 }
 
 export default function PricingCards({ showHeading = true }: { showHeading?: boolean }) {
-  const [billingTerm, setBillingTerm] = useState<'monthly' | 'annual'>('annual')
-
   return (
     <div className="my-10">
       {showHeading && (
@@ -107,102 +71,124 @@ export default function PricingCards({ showHeading = true }: { showHeading?: boo
         </div>
       )}
 
-      {/* Toggle */}
-      <div className="flex justify-center mb-10">
-        <div className="inline-flex items-center bg-gray-100 rounded-full p-1 relative">
-          <button
-            onClick={() => setBillingTerm('monthly')}
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-              billingTerm === 'monthly' ? 'bg-white text-gray-900 shadow' : 'text-gray-600'
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => setBillingTerm('annual')}
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all relative ${
-              billingTerm === 'annual' ? 'bg-white text-gray-900 shadow' : 'text-gray-600'
-            }`}
-          >
-            Annual
-            <span className="ml-2 text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full font-bold">
-              Save ~20%
-            </span>
-          </button>
+      {/* Mobile: stacked cards */}
+      <div className="lg:hidden space-y-6">
+        {TIERS.map((tier, i) => (
+          <div key={tier.name} className={`rounded-2xl border-2 p-6 ${tier.headerClass}`}>
+            {tier.badge && (
+              <div className="text-center mb-2">
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-white'}`}>
+                  {tier.badge}
+                </span>
+              </div>
+            )}
+            <h3 className={`text-2xl font-bold text-center ${tier.titleColor}`}>{tier.name}</h3>
+            <div className="text-center my-4">
+              <div className="text-3xl font-bold text-gray-900">{tier.annual}</div>
+              <div className="text-sm text-green-700 font-semibold">{tier.savings}</div>
+              <div className="text-sm text-gray-500 mt-1">or {tier.monthly}</div>
+            </div>
+            <ul className="space-y-2 mb-6 text-sm text-gray-700">
+              {FEATURES.filter(f => f.values[i]).map(f => (
+                <li key={f.label} className="flex items-start gap-2">
+                  <span className="text-green-600 mt-0.5">✓</span>
+                  <span>{f.label}{typeof f.values[i] === 'string' ? ` — ${f.values[i]}` : ''}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="space-y-2">
+              <a href={tier.annualHref} target="_blank" rel="noopener noreferrer"
+                className={`block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm ${tier.btnClass}`}>
+                Start Annual
+              </a>
+              <a href={tier.monthlyHref} target="_blank" rel="noopener noreferrer"
+                className="block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm border border-gray-300 text-gray-700 hover:bg-gray-50">
+                Start Monthly
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: comparison table */}
+      <div className="hidden lg:block">
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse bg-white">
+            <thead>
+              <tr>
+                <th className="p-4 text-left font-semibold text-gray-700 border-b border-gray-200 w-1/4"></th>
+                {TIERS.map((tier) => (
+                  <th key={tier.name} className={`p-4 text-center border-2 ${tier.headerClass} relative align-top`}>
+                    {tier.badge && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                        <span className={`text-xs font-bold px-3 py-1 rounded-full ${tier.name === 'Exclusive' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-white'}`}>
+                          {tier.badge}
+                        </span>
+                      </div>
+                    )}
+                    <div className={`text-2xl font-bold mt-2 ${tier.titleColor}`}>{tier.name}</div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-gray-50">
+                <td className="p-4 font-semibold text-gray-700 border-b border-gray-200">Monthly</td>
+                {TIERS.map((tier) => (
+                  <td key={tier.name} className="p-4 text-center text-lg font-bold text-gray-900 border-b border-gray-200">{tier.monthly}</td>
+                ))}
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold text-gray-700 border-b border-gray-200">Annual</td>
+                {TIERS.map((tier) => (
+                  <td key={tier.name} className="p-4 text-center text-lg font-bold text-gray-900 border-b border-gray-200">{tier.annual}</td>
+                ))}
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="p-4 font-semibold text-gray-700 border-b border-gray-200">Annual savings</td>
+                {TIERS.map((tier) => (
+                  <td key={tier.name} className="p-4 text-center text-sm text-green-700 font-semibold border-b border-gray-200">{tier.savings}</td>
+                ))}
+              </tr>
+              {FEATURES.map((feature, fi) => (
+                <tr key={feature.label} className={fi % 2 === 0 ? '' : 'bg-gray-50'}>
+                  <td className="p-4 text-gray-700 text-sm border-b border-gray-200">{feature.label}</td>
+                  {feature.values.map((value, i) => (
+                    <td key={i} className="p-4 text-center border-b border-gray-200">
+                      <Cell value={value} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+              <tr>
+                <td className="p-4"></td>
+                {TIERS.map((tier) => (
+                  <td key={tier.name} className="p-4 text-center align-top">
+                    <div className="space-y-2">
+                      <a href={tier.annualHref} target="_blank" rel="noopener noreferrer"
+                        className={`block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm ${tier.btnClass}`}>
+                        Start Annual
+                      </a>
+                      <a href={tier.monthlyHref} target="_blank" rel="noopener noreferrer"
+                        className="block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        Start Monthly
+                      </a>
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      {/* Plan cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {PLANS.map((plan) => {
-          const isFree = plan.name === 'Free Standard'
-          const ctaHref = isFree
-            ? plan.cta.href!
-            : getEnvLink(billingTerm === 'monthly' ? plan.cta.monthlyEnv! : plan.cta.annualEnv!)
+      {/* Note */}
+      <p className="text-center text-sm text-gray-600 mt-6 max-w-2xl mx-auto">
+        Annual plans and Premier/Exclusive tiers are invoiced directly. Click to start the process and we will send your payment link within one business day.
+      </p>
 
-          return (
-            <div key={plan.name} className={`relative rounded-2xl p-6 flex flex-col ${plan.style}`}>
-              {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                    plan.badge === 'Most Popular' ? 'bg-slate-700 text-white' : 'bg-amber-500 text-white'
-                  }`}>
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
-              <div className="text-center mb-4 mt-2">
-                <h3 className={`text-xl font-bold ${plan.titleColor}`}>{plan.name}</h3>
-              </div>
-
-              <div className="text-center mb-1">
-                <div className="text-3xl font-bold text-gray-900">
-                  {plan.priceLabel[billingTerm]}
-                </div>
-              </div>
-
-              {plan.savings && billingTerm === 'annual' && (
-                <div className="text-center mb-4">
-                  <span className="text-xs text-green-700 font-semibold">{plan.savings}</span>
-                </div>
-              )}
-
-              {!plan.savings && <div className="mb-4" />}
-
-              <ul className="space-y-2 mb-6 flex-grow text-sm">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-gray-700">
-                    <span className="text-green-600 mt-0.5">✓</span>
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {isFree ? (
-                <Link href={ctaHref}
-                  className="block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 transition-colors">
-                  {plan.cta.label}
-                </Link>
-              ) : (
-                <a href={ctaHref} target="_blank" rel="noopener noreferrer"
-                  className={`block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm transition-colors ${
-                    plan.name === 'Exclusive'
-                      ? 'bg-amber-600 hover:bg-amber-700 text-white'
-                      : plan.name === 'Premier'
-                      ? 'bg-slate-800 hover:bg-slate-900 text-white'
-                      : 'bg-slate-700 hover:bg-slate-800 text-white'
-                  }`}>
-                  {plan.cta.label}
-                </a>
-              )}
-            </div>
-          )
-        })}
-      </div>
-
-      {/* Scarcity line */}
-      <p className="text-center text-sm text-amber-700 italic mt-6">
+      {/* Scarcity */}
+      <p className="text-center text-sm text-amber-700 italic mt-3">
         Exclusive slots are limited to one funeral home per city. Once claimed, competitors cannot take your spot.
       </p>
     </div>

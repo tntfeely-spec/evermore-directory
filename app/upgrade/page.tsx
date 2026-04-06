@@ -14,7 +14,7 @@ export default function UpgradePage() {
         {/* Wordmark */}
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-bold text-gray-900">Evermore Directory</h2>
-          <p className="text-sm text-gray-500 mt-1">funeralhomedirectories.com</p>
+          <p className="text-xs text-gray-400 mt-1">funeralhomedirectories.com/upgrade</p>
         </div>
 
         {/* Headline */}
