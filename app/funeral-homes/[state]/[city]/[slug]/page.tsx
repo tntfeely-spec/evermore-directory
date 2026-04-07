@@ -527,15 +527,6 @@ document.querySelectorAll('[id^="chk-"][id$="-${calcId}"]').forEach(el => {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-function toggleContact(id) {
-  var form = document.getElementById('contact-form-' + id);
-  var toggle = document.getElementById('contact-toggle-' + id);
-  if (form && toggle) {
-    var show = form.style.display === 'none';
-    form.style.display = show ? 'block' : 'none';
-    toggle.style.display = show ? 'none' : 'block';
-  }
-}
 function selectPref(type, id) {
   ['call','text','email'].forEach(function(t) {
     var el = document.getElementById('pref-' + t + '-' + id);
@@ -608,14 +599,7 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
   const escapedState = listing.state.replace(/'/g, "\\'").replace(/"/g, '&quot;');
   return (
     <div dangerouslySetInnerHTML={{ __html: `
-<div id="contact-toggle-${calcId}" onclick="toggleContact('${calcId}')" style="cursor:pointer;padding:16px;">
-  <div style="background:#f0f6ff;border:1.5px solid #c2d9f5;border-radius:10px;padding:14px 16px;">
-    <div style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:4px;">💬 Get in touch today</div>
-    <div style="font-size:1rem;color:#555;line-height:1.5;">Choose how you want to hear back. Call, text, or email.</div>
-    <div style="margin-top:10px;background:#2a6496;color:#fff;border-radius:6px;padding:9px 14px;font-size:1rem;font-weight:700;text-align:center;">Contact this funeral home →</div>
-  </div>
-</div>
-<div id="contact-form-${calcId}" style="display:none;padding:0 16px 16px;">
+<div id="contact-form-${calcId}" style="padding:16px;">
   <div style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Contact ${shortName}</div>
   <div style="font-size:1rem;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
@@ -659,7 +643,7 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
   <input type="hidden" id="contact-home-${calcId}" value="${escapedName}" />
   <input type="hidden" id="contact-city-${calcId}" value="${escapedCity}" />
   <input type="hidden" id="contact-state-${calcId}" value="${escapedState}" />
-  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;">Send →</button>
+  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;">Send my request</button>
   <p style="font-size:11px;color:#9ca3af;margin-top:8px;text-align:center;line-height:1.5;">Goes directly to ${firstName}. We never share your info.</p>
 </div>
 ` }} />
