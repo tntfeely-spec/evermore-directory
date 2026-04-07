@@ -29,6 +29,7 @@ type FuneralHome = {
   special_features: string | null
   email: string | null
   image: string | null
+  photo_url: string | null
   is_featured: boolean | null
   latitude: string | null
   longitude: string | null
@@ -235,9 +236,13 @@ function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: str
   const specialDesc = listing.special_features ? ` ${listing.special_features}.` : ''
   const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
   const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
-  const photoContent = listing.image
-    ? `<div style="background:#e8edf2;border-radius:8px;height:200px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:1rem;margin-bottom:12px;">📷 Photo of ${listing.business_name}</div>`
-    : `<div style="background:#f0f4f8;border-radius:8px;padding:32px;text-align:center;color:#9ca3af;border:2px dashed #d0dae5;"><div style="font-size:28px;opacity:0.25;margin-bottom:8px;">📷</div><div style="font-weight:600;margin-bottom:4px;color:#6b7280;">No photos available</div><div style="font-size:1rem;">Visit their website or call to learn about their facilities.</div></div>`
+  const escapedBizName = listing.business_name.replace(/"/g, '&quot;')
+  const photosSection = listing.photo_url
+    ? `<div style="border-top:1px solid #e5e5e5;padding:20px;">
+  <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
+  <img src="${listing.photo_url}" alt="${escapedBizName}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />
+</div>`
+    : ''
 
   // Calculator rows
   const calcItems = getCalcItems(listing)
@@ -291,10 +296,7 @@ function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: str
   <p style="font-size:1rem;color:#9ca3af;margin-bottom:16px;">Reviews are pulled from Google. Visit the funeral home's Google listing to read and leave reviews.</p>
   ${reviewsLink}
 </div>
-<div style="border-top:1px solid #e5e5e5;padding:20px;">
-  <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
-  ${photoContent}
-</div>
+${photosSection}
 <div style="border-top:1px solid #e5e5e5;padding:20px;">
   <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Location</p>
   <iframe width="100%" height="400" style="border:0;border-radius:8px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=${addrEncoded}&output=embed"></iframe>
