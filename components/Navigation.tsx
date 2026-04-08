@@ -12,7 +12,7 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center text-slate-800 dark:text-slate-100" aria-label="Evermore Funeral Home Directory">
-            <svg width="160" height="52" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
+            <svg width="220" height="72" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
               <line x1="160" y1="72" x2="520" y2="72" stroke="#cbd5e1" strokeWidth="0.5"/>
               <text x="340" y="130" fontFamily="Georgia, 'Times New Roman', serif" fontSize="62" fontWeight="400" textAnchor="middle" letterSpacing="3" fill="currentColor">Evermore</text>
               <line x1="160" y1="152" x2="318" y2="152" stroke="#cbd5e1" strokeWidth="0.5"/>
