@@ -237,12 +237,13 @@ function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: str
   const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
   const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
   const escapedBizName = listing.business_name.replace(/"/g, '&quot;')
-  const photosSection = listing.photo_url
-    ? `<div style="border-top:1px solid #e5e5e5;padding:20px;">
+  const photoImg = listing.photo_url
+    ? `<img src="${listing.photo_url}" alt="${escapedBizName}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />`
+    : `<img src="/Sunlight_Forest.png" alt="Funeral home exterior" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" /><p style="font-size:0.75rem;color:#9ca3af;margin-top:8px;text-align:center;">Photo coming soon</p>`
+  const photosSection = `<div style="border-top:1px solid #e5e5e5;padding:20px;">
   <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
-  <img src="${listing.photo_url}" alt="${escapedBizName}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />
+  ${photoImg}
 </div>`
-    : ''
 
   // Calculator rows
   const calcItems = getCalcItems(listing)
