@@ -239,7 +239,7 @@ function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: str
   const escapedBizName = listing.business_name.replace(/"/g, '&quot;')
   const photoImg = listing.photo_url
     ? `<img src="${listing.photo_url}" alt="${escapedBizName}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />`
-    : `<img src="/Sunlight_Forest.png" alt="Funeral home exterior" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" /><p style="font-size:0.75rem;color:#9ca3af;margin-top:8px;text-align:center;">Photo coming soon</p>`
+    : `<div style="position:relative;"><img src="/Sunlight_Forest.png" alt="Funeral home exterior" style="width:100%;height:280px;object-fit:cover;border-radius:8px;display:block;" loading="lazy" /><div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.55);color:white;font-size:13px;padding:5px 14px;border-radius:20px;white-space:nowrap;">Photo coming soon</div></div>`
   const photosSection = `<div style="border-top:1px solid #e5e5e5;padding:20px;">
   <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
   ${photoImg}
