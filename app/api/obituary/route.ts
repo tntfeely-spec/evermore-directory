@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 
 const SYSTEM_PROMPT =
-  'You are a compassionate obituary writer. Write a heartfelt, dignified obituary based on the information provided. The obituary should be 3 to 5 paragraphs, written in third person, past tense. Match the tone requested by the user.';
+  'You are a compassionate obituary writer. Write a heartfelt, dignified obituary based on the information provided. The obituary should be 3 to 5 paragraphs, written in third person, past tense. Match the tone requested by the user: Formal means professional and traditional. Warm and personal means conversational and intimate. Religious means faith-centered with appropriate references. Celebratory means uplifting and focused on a life well lived.';
 
 export async function POST(request: Request) {
   try {
@@ -29,7 +29,7 @@ Hobbies and interests: ${hobbies}
 Tone: ${tone}`;
 
     const msg = await client.messages.create({
-      model: 'claude-sonnet-4-6',
+      model: 'claude-sonnet-4-20250514',
       max_tokens: 1500,
       system: SYSTEM_PROMPT,
       messages: [{ role: 'user', content: userPrompt }],

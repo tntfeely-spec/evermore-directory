@@ -9,9 +9,35 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/how-to-write-an-obituary' },
 };
 
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Write an Obituary',
+    description: 'A step-by-step guide to writing a meaningful obituary, with examples and a free AI obituary generator.',
+    step: [
+      { '@type': 'HowToStep', name: 'Gather essential information', text: 'Collect the full name, age, date and place of death, date of birth, and surviving family members.' },
+      { '@type': 'HowToStep', name: 'Write the life summary', text: 'Cover where the person grew up, their education, career, and what they were known for.' },
+      { '@type': 'HowToStep', name: 'List the survivors', text: 'List family members who survive the deceased, starting with spouse, then children, grandchildren, and siblings.' },
+      { '@type': 'HowToStep', name: 'Add service information', text: 'Include the date, time, and location of the funeral or memorial service, and any donation requests.' },
+      { '@type': 'HowToStep', name: 'Choose a closing', text: 'Optionally end with a meaningful quote, a favorite saying, or a line that captures who the person was.' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Free AI Obituary Writer',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    description: 'Generate a heartfelt, personalized obituary draft in seconds. Free, no signup required.',
+  },
+];
+
 export default function HowToWriteAnObituaryPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

@@ -67,6 +67,7 @@ export default function Footer() {
               <li><Link href="/resources" className="hover:text-white transition-colors">Planning Resources</Link></li>
               <li><Link href="/funeral-costs" className="hover:text-white transition-colors">Funeral Costs by State</Link></li>
               <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
+              <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">Free AI Obituary Writer</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
