@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'how-long-can-a-funeral-home-hold-a-body',
+    title: 'How Long Can a Funeral Home Hold a Body? (2026 Guide)',
+    description: 'Most funeral homes can hold a body for 1 to 2 weeks without embalming, and 4 to 6 weeks with embalming. State rules, daily storage fees, and questions to ask.',
+    category: 'Planning Guide',
+  },
+  {
     slug: 'va-burial-benefits-veterans-guide',
     title: "VA Burial Benefits: What Every Veteran's Family Needs to Know",
     description: 'The VA provides burial allowances, free national cemetery burial, free headstones, and more for eligible veterans. A former paramedic explains every benefit and how to claim it.',

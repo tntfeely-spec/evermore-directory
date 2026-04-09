@@ -45,6 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'funeral-homes-memphis-tn',
     'funeral-homes-chicago-il',
     'how-to-write-an-obituary',
+    'how-long-can-a-funeral-home-hold-a-body',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
