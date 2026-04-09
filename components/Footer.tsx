@@ -65,6 +65,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
               <li><Link href="/resources" className="hover:text-white transition-colors">Planning Resources</Link></li>
+              <li><Link href="/funeral-costs" className="hover:text-white transition-colors">Funeral Costs by State</Link></li>
+              <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>

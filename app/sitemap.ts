@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabase';
+import { allStateSlugs } from '@/lib/state-pricing';
 
 const stateAbbreviations = [
     'al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'fl', 'ga',
@@ -20,7 +21,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${baseUrl}/resources`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${baseUrl}/funeral-costs`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/veteran-burial-benefits`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
       ];
+
+  const funeralCostStatePages = allStateSlugs.map((slug) => ({
+    url: `${baseUrl}/funeral-costs/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   // Blog posts
   const blogPosts = [
@@ -71,5 +81,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPosts, ...statePages, ...cityPages];
+  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages];
 }
