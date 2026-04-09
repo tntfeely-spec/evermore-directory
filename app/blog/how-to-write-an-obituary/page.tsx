@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import ObituaryGenerator from '@/components/ObituaryGenerator';
 
 export const metadata: Metadata = {
-  title: 'How to Write an Obituary: A Simple Guide With Examples | Evermore Directory',
-  description: '',
+  title: 'How to Write an Obituary (2026) | Free AI Obituary Generator',
+  description: 'Learn how to write a meaningful obituary step by step. Use our free AI obituary writer to create a personalized tribute in minutes.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/how-to-write-an-obituary' },
 };
 
@@ -15,7 +16,7 @@ export default function HowToWriteAnObituaryPage() {
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
             <header className="mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Write an Obituary: A Simple Guide With Examples</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Write an Obituary: A Complete Guide + Free AI Obituary Writer</h1>
               <p className="text-xl text-gray-600 mb-4">What to include, how to structure it, and example opening lines that actually work.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span>
@@ -56,6 +57,10 @@ export default function HowToWriteAnObituaryPage() {
                 <p className="text-gray-500 text-sm">57 words. Full name, age, location, date of death, birthplace, career, and one specific detail about who he was. That is all a first paragraph needs to do.</p>
               </div>
             </section>
+            <section className="mb-12">
+              <ObituaryGenerator />
+            </section>
+
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
