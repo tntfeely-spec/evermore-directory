@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Q1 = [
   'I need to arrange a funeral soon',
@@ -26,6 +27,7 @@ type Status = 'idle' | 'sending' | 'done' | 'error';
 const TOTAL_STEPS = 5;
 
 export default function HomeQuiz() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [intent, setIntent] = useState<string | null>(null);
   const [serviceType, setServiceType] = useState<string | null>(null);
@@ -70,6 +72,21 @@ export default function HomeQuiz() {
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
+      try {
+        const z = await fetch(`https://api.zippopotam.us/us/${zip.trim()}`);
+        if (z.ok) {
+          const data = await z.json();
+          const place = data?.places?.[0];
+          const cityName: string | undefined = place?.['place name'];
+          const stateAbbr: string | undefined = place?.['state abbreviation'];
+          if (cityName && stateAbbr) {
+            const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
+            router.push(`/funeral-homes/${stateAbbr.toLowerCase()}/${citySlug}`);
+          }
+        }
+      } catch {
+        /* fall back to success message */
+      }
     } catch {
       setStatus('error');
     }
