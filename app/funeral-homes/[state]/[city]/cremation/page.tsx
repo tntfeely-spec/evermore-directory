@@ -149,7 +149,7 @@ export default async function CremationPage({ params }: PageProps) {
             </p>
             <div className="mt-6">
               <Link href={cityHref} className="text-slate-600 hover:text-slate-800 font-semibold underline">
-                ← View all funeral homes in {cityName}
+                View all funeral homes and cremation services in {cityName}
               </Link>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default async function CremationPage({ params }: PageProps) {
 
           <div className="mb-12 text-center">
             <Link href={cityHref} className="inline-block bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold">
-              View all funeral homes in {cityName} →
+              View all funeral homes and cremation services in {cityName}
             </Link>
           </div>
         </div>
