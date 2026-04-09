@@ -314,7 +314,7 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
                 href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}/cremation`}
                 className="inline-block bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-5 py-2.5 rounded-lg font-semibold"
               >
-                🔥 Cremation Services in {cityName} →
+                Cremation Services in {cityName} →
               </Link>
             </div>
           </div>

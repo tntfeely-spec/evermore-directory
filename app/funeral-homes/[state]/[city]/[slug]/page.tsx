@@ -228,7 +228,7 @@ function getCalcItems(listing: FuneralHome) {
 function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: string, hasPricing: boolean, cityLabel: string): string {
   const addr = [listing.address, listing.city, listing.state, listing.zip].filter(Boolean).join(', ')
   const addrEncoded = encodeURIComponent(addr)
-  const phoneLink = listing.phone ? `<p style="font-size:1rem;color:#374151;">📞 <a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
+  const phoneLink = listing.phone ? `<p style="font-size:1rem;color:#374151;"><a href="tel:${listing.phone.replace(/\D/g, '')}" style="color:#2a6496;">${listing.phone}</a></p>` : ''
   const servicesHtml = services.length > 0
     ? `<p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Services offered</p>
        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">${services.map(s => `<span style="background:#f0f4f8;color:#1a1a2e;font-size:1rem;padding:6px 14px;border-radius:6px;border:1px solid #dde5ef;">${s}</span>`).join('')}</div>`
@@ -381,7 +381,7 @@ export default async function FuneralHomePage({
               {listing.business_name}
             </h1>
             <p className="text-xs text-gray-500 mb-2">
-              📍 {fullAddress}
+              {fullAddress}
             </p>
             <div className="flex items-center gap-1.5 mb-2 justify-center">
               <span className="text-amber-400 text-sm">★★★★★</span>
@@ -500,7 +500,7 @@ export default async function FuneralHomePage({
             href={`tel:${listing.phone.replace(/\D/g, '')}`}
             className="bg-[#1a1a2e] text-white border-none px-5 py-3 rounded-md text-sm font-semibold text-center no-underline block max-w-[400px]"
           >
-            📞 Call {listing.phone}
+            Call {listing.phone}
           </a>
         </div>
       )}
@@ -611,13 +611,13 @@ function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string
   <div style="font-size:1rem;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
     <label id="pref-call-${calcId}" onclick="selectPref('call','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
-      <div style="font-size:1.25rem;margin-bottom:4px;">📞</div><div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Within the hour</div>
+      <div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Within the hour</div>
     </label>
     <label id="pref-text-${calcId}" onclick="selectPref('text','${calcId}')" style="border:1.5px solid #2a6496;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#f0f6ff;">
-      <div style="font-size:1.25rem;margin-bottom:4px;">💬</div><div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Reply when ready</div>
+      <div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Reply when ready</div>
     </label>
     <label id="pref-email-${calcId}" onclick="selectPref('email','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
-      <div style="font-size:1.25rem;margin-bottom:4px;">✉️</div><div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
+      <div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
     </label>
   </div>
   <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
