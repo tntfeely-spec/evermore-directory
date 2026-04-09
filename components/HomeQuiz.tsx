@@ -32,6 +32,7 @@ export default function HomeQuiz() {
   const [budget, setBudget] = useState<string | null>(null);
   const [zip, setZip] = useState('');
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
 
@@ -50,7 +51,7 @@ export default function HomeQuiz() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) return;
+    if (!name.trim() || !email.trim()) return;
     setStatus('sending');
     try {
       const res = await fetch('/api/contact', {
@@ -58,6 +59,7 @@ export default function HomeQuiz() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: name.trim(),
+          email: email.trim(),
           phone: phone.trim(),
           timeline: intent,
           serviceType,
@@ -154,13 +156,23 @@ export default function HomeQuiz() {
             className={inputClass}
           />
           <input
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Best phone number"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Your email address"
             required
             className={inputClass}
           />
+          <div>
+            <label className="block text-xs text-gray-500 mb-1">Want to be contacted directly? Add your phone number.</label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Your phone number"
+              className={inputClass}
+            />
+          </div>
           <button
             type="submit"
             disabled={status === 'sending'}
