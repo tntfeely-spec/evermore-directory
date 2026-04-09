@@ -81,7 +81,17 @@ export default function HomeQuiz() {
           const stateAbbr: string | undefined = place?.['state abbreviation'];
           if (cityName && stateAbbr) {
             const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
-            router.push(`/funeral-homes/${stateAbbr.toLowerCase()}/${citySlug}`);
+            const stateSlug = stateAbbr.toLowerCase();
+            try {
+              const check = await fetch(`/api/check-city?state=${stateSlug}&city=${citySlug}`);
+              if (check.ok) {
+                router.push(`/funeral-homes/${stateSlug}/${citySlug}`);
+              } else {
+                router.push(`/funeral-homes/${stateSlug}`);
+              }
+            } catch {
+              router.push(`/funeral-homes/${stateSlug}`);
+            }
           }
         }
       } catch {
