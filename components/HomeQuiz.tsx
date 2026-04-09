@@ -8,6 +8,13 @@ const Q1 = [
 ];
 
 const Q2 = [
+  'Traditional funeral service',
+  'Cremation only',
+  'Graveside service only',
+  'Not sure yet',
+];
+
+const Q3 = [
   'Under $5,000',
   '$5,000 to $10,000',
   '$10,000 to $15,000',
@@ -16,12 +23,30 @@ const Q2 = [
 
 type Status = 'idle' | 'sending' | 'done' | 'error';
 
+const TOTAL_STEPS = 5;
+
 export default function HomeQuiz() {
+  const [step, setStep] = useState(1);
   const [intent, setIntent] = useState<string | null>(null);
+  const [serviceType, setServiceType] = useState<string | null>(null);
   const [budget, setBudget] = useState<string | null>(null);
+  const [zip, setZip] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
+
+  function pick(setter: (v: string) => void, next: number) {
+    return (v: string) => {
+      setter(v);
+      setStep(next);
+    };
+  }
+
+  function continueZip(e: React.FormEvent) {
+    e.preventDefault();
+    if (zip.trim().length < 5) return;
+    setStep(5);
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -35,7 +60,9 @@ export default function HomeQuiz() {
           name: name.trim(),
           phone: phone.trim(),
           timeline: intent,
+          serviceType,
           budget,
+          zip: zip.trim(),
           source: 'homepage_quiz',
         }),
       });
@@ -46,44 +73,77 @@ export default function HomeQuiz() {
     }
   }
 
+  const inputClass = 'w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500';
+  const optionClass = 'px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:border-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-colors';
+
   return (
     <div className="bg-white/90 backdrop-blur rounded-xl shadow-md border border-gray-200 p-5 text-left max-w-2xl mx-auto">
-      {!intent && (
-        <div className="transition-opacity duration-300 opacity-100">
+      {status !== 'done' && (
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Step {step} of {TOTAL_STEPS}</p>
+          <div className="flex-1 ml-3 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-slate-600 transition-all duration-300"
+              style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
+            />
+          </div>
+        </div>
+      )}
+
+      {step === 1 && (
+        <div key="s1" className="transition-opacity duration-300 opacity-100">
           <p className="text-base font-semibold text-gray-900 mb-3 text-center">What brings you here today?</p>
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex flex-col gap-2">
             {Q1.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => setIntent(opt)}
-                className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:border-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-colors"
-              >
-                {opt}
-              </button>
+              <button key={opt} onClick={() => pick(setIntent, 2)(opt)} className={optionClass}>{opt}</button>
             ))}
           </div>
         </div>
       )}
 
-      {intent && !budget && (
-        <div className="transition-opacity duration-300 opacity-100">
-          <p className="text-base font-semibold text-gray-900 mb-3 text-center">What is your approximate budget?</p>
-          <div className="grid grid-cols-2 gap-2">
+      {step === 2 && (
+        <div key="s2" className="transition-opacity duration-300 opacity-100">
+          <p className="text-base font-semibold text-gray-900 mb-3 text-center">What type of service are you looking for?</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {Q2.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => setBudget(opt)}
-                className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:border-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-colors"
-              >
-                {opt}
-              </button>
+              <button key={opt} onClick={() => pick(setServiceType, 3)(opt)} className={optionClass}>{opt}</button>
             ))}
           </div>
         </div>
       )}
 
-      {intent && budget && status !== 'done' && (
-        <form onSubmit={submit} className="transition-opacity duration-300 opacity-100 space-y-3">
+      {step === 3 && (
+        <div key="s3" className="transition-opacity duration-300 opacity-100">
+          <p className="text-base font-semibold text-gray-900 mb-3 text-center">What is your approximate budget?</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {Q3.map((opt) => (
+              <button key={opt} onClick={() => pick(setBudget, 4)(opt)} className={optionClass}>{opt}</button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {step === 4 && (
+        <form key="s4" onSubmit={continueZip} className="transition-opacity duration-300 opacity-100 space-y-3">
+          <p className="text-base font-semibold text-gray-900 text-center">What is your ZIP code?</p>
+          <input
+            type="text"
+            inputMode="numeric"
+            maxLength={5}
+            value={zip}
+            onChange={(e) => setZip(e.target.value.replace(/\D/g, ''))}
+            placeholder="Enter your ZIP code"
+            required
+            className={inputClass}
+          />
+          <button type="submit" className="w-full px-4 py-3 text-sm font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-lg transition-colors">
+            Continue
+          </button>
+        </form>
+      )}
+
+      {step === 5 && status !== 'done' && (
+        <form key="s5" onSubmit={submit} className="transition-opacity duration-300 opacity-100 space-y-3">
           <p className="text-base font-semibold text-gray-900 text-center">Where should we send your matches?</p>
           <input
             type="text"
@@ -91,7 +151,7 @@ export default function HomeQuiz() {
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name"
             required
-            className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500"
+            className={inputClass}
           />
           <input
             type="tel"
@@ -99,7 +159,7 @@ export default function HomeQuiz() {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Best phone number"
             required
-            className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500"
+            className={inputClass}
           />
           <button
             type="submit"
