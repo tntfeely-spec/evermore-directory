@@ -237,9 +237,13 @@ function buildSectionsHtml(listing: FuneralHome, services: string[], calcId: str
   const googleSearch = encodeURIComponent(`${listing.business_name} ${listing.city} ${listing.state}`)
   const reviewsLink = `<a href="https://www.google.com/search?q=${googleSearch}+reviews" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background:#334155;color:#fff;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;">See reviews on Google →</a>`
   const escapedBizName = listing.business_name.replace(/"/g, '&quot;')
+  const escapedCity = listing.city.replace(/"/g, '&quot;')
+  const escapedState = listing.state.replace(/"/g, '&quot;')
+  const photoAlt = `${escapedBizName} funeral home in ${escapedCity}, ${escapedState}`
+  const fallbackAlt = `Funeral home in ${escapedCity}, ${escapedState}`
   const photoImg = listing.photo_url
-    ? `<img src="${listing.photo_url}" alt="${escapedBizName}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />`
-    : `<div style="position:relative;"><img src="/Sunlight_Forest.png" alt="Funeral home exterior" style="width:100%;height:280px;object-fit:cover;border-radius:8px;display:block;" loading="lazy" /><div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.55);color:white;font-size:13px;padding:5px 14px;border-radius:20px;white-space:nowrap;">Photo coming soon</div></div>`
+    ? `<img src="${listing.photo_url}" alt="${photoAlt}" style="width:100%;height:auto;border-radius:8px;display:block;" loading="lazy" />`
+    : `<div style="position:relative;"><img src="/Sunlight_Forest.png" alt="${fallbackAlt}" style="width:100%;height:280px;object-fit:cover;border-radius:8px;display:block;" loading="lazy" /><div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.55);color:white;font-size:13px;padding:5px 14px;border-radius:20px;white-space:nowrap;">Photo coming soon</div></div>`
   const photosSection = `<div style="border-top:1px solid #e5e5e5;padding:20px;">
   <p style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Photos</p>
   ${photoImg}

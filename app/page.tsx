@@ -73,6 +73,42 @@ export default function HomePage() {
                 <div className="text-gray-600 font-semibold">Cities Covered</div>
               </Link>
             </div>
+
+            <div className="mb-20">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Browse Top Cities</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+                {[
+                  { city: 'New York', state: 'NY', slug: 'ny/new-york' },
+                  { city: 'Los Angeles', state: 'CA', slug: 'ca/los-angeles' },
+                  { city: 'Chicago', state: 'IL', slug: 'il/chicago' },
+                  { city: 'Houston', state: 'TX', slug: 'tx/houston' },
+                  { city: 'Phoenix', state: 'AZ', slug: 'az/phoenix' },
+                  { city: 'Philadelphia', state: 'PA', slug: 'pa/philadelphia' },
+                  { city: 'San Antonio', state: 'TX', slug: 'tx/san-antonio' },
+                  { city: 'San Diego', state: 'CA', slug: 'ca/san-diego' },
+                  { city: 'Dallas', state: 'TX', slug: 'tx/dallas' },
+                  { city: 'San Jose', state: 'CA', slug: 'ca/san-jose' },
+                  { city: 'Austin', state: 'TX', slug: 'tx/austin' },
+                  { city: 'Jacksonville', state: 'FL', slug: 'fl/jacksonville' },
+                  { city: 'Fort Worth', state: 'TX', slug: 'tx/fort-worth' },
+                  { city: 'Columbus', state: 'OH', slug: 'oh/columbus' },
+                  { city: 'Charlotte', state: 'NC', slug: 'nc/charlotte' },
+                ].map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/funeral-homes/${c.slug}`}
+                    className="bg-white rounded-lg border border-gray-200 px-4 py-3 text-center text-gray-700 hover:text-slate-700 hover:border-slate-400 hover:shadow-sm transition-all font-medium"
+                  >
+                    {c.city}, {c.state}
+                  </Link>
+                ))}
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/states" className="text-slate-600 hover:text-slate-800 font-semibold">
+                  View all states →
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
