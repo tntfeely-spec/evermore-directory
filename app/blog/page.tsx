@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 type Post = { slug: string; title: string; description: string };
 
-const categories: { name: string; posts: Post[] }[] = [
+const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
   {
     name: 'Planning a Funeral',
     posts: [
@@ -39,6 +39,13 @@ const categories: { name: string; posts: Post[] }[] = [
     ],
   },
   {
+    name: 'Funeral Home Operations',
+    subtitle: 'What families need to know about how funeral homes work.',
+    posts: [
+      { slug: 'how-long-can-a-funeral-home-hold-a-body', title: 'How Long Can a Funeral Home Hold a Body?', description: '1 to 2 weeks without embalming, 4 to 6 weeks with embalming. State rules and daily storage fees.' },
+    ],
+  },
+  {
     name: 'Cremation',
     posts: [
       { slug: 'what-to-do-with-ashes-after-cremation', title: 'What to Do with Ashes After Cremation: 10 Options', description: '10 meaningful options for cremated remains, from scattering to keepsakes.' },
@@ -54,7 +61,6 @@ const categories: { name: string; posts: Post[] }[] = [
     posts: [
       { slug: 'how-to-write-an-obituary', title: 'How to Write an Obituary: A Complete Guide', description: 'What to include, how to structure it, example opening lines, and a free AI obituary writer.' },
       { slug: 'eulogy-for-friend-samples', title: 'Eulogy for a Friend: Samples, Tips, and How to Write One', description: 'Three sample eulogies in different tones, plus practical tips for writing and delivering yours.' },
-      { slug: 'how-long-can-a-funeral-home-hold-a-body', title: 'How Long Can a Funeral Home Hold a Body?', description: '1 to 2 weeks without embalming, 4 to 6 weeks with embalming. State rules and daily storage fees.' },
       { slug: 'obituary-examples', title: 'Obituary Examples: Good, Simple, and Meaningful Templates', description: 'Sample obituaries in short, traditional, and celebration of life styles.' },
       { slug: 'thank-you-notes-after-funeral', title: 'Thank You Notes After a Funeral: What to Write and When', description: 'What to write, when to send them, and examples for different situations.' },
       { slug: 'memorial-service-bulletins', title: 'Memorial Service Bulletins: What to Include', description: 'How to create a memorial service bulletin that guides guests and serves as a keepsake.' },
@@ -160,7 +166,8 @@ export default function BlogIndexPage() {
 
             {categories.map((cat) => (
               <section key={cat.name} className="mb-14">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">{cat.name}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 border-b border-gray-200 pb-2">{cat.name}</h2>
+                {cat.subtitle && <p className="text-sm text-gray-500 mb-6">{cat.subtitle}</p>}
                 <div className="grid md:grid-cols-2 gap-4">
                   {cat.posts.map((post) => (
                     <Link key={post.slug} href={postHref(post.slug)} className="block bg-white bg-opacity-90 border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
