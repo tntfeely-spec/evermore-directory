@@ -20,6 +20,8 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'end-of-life-planning-checklist', title: 'End of Life Planning Checklist', description: 'Covers wills, advance directives, funeral preferences, financial accounts, digital assets, and what to share with your family.' },
       { slug: 'questions-to-ask-a-funeral-director', title: '20 Questions to Ask a Funeral Director Before You Decide', description: 'The right questions save money, prevent surprises, and help your family make confident decisions.' },
       { slug: 'what-happens-if-you-cant-afford-a-funeral', title: "What Happens If You Can't Afford a Funeral?", description: 'Low cost options, government assistance, and what funeral homes are required to offer.' },
+      { slug: 'how-to-choose-a-funeral-home', title: 'How to Choose a Funeral Home: What Families Need to Know', description: 'What to look for, what to ask, and how to compare your options.' },
+      { slug: 'free-funeral-planning-guide', title: 'Free Funeral Planning Guide: Step by Step for Families', description: 'Every step of funeral planning in one guide so nothing gets missed.' },
     ],
   },
   {
@@ -32,6 +34,7 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'best-prepaid-funeral-plans', title: 'Best Prepaid Funeral Plans: What to Know Before You Buy', description: 'How prepaid plans work, irrevocable vs. revocable, risks to watch for, and alternatives.' },
       { slug: 'cremation-near-me', title: 'Cremation Near Me: How to Find Affordable Services', description: 'How to find and compare affordable cremation services in your area.' },
       { slug: 'cremation-cost-san-jose', title: 'Cremation Cost in San Jose: 2026 Price Guide', description: 'Compare actual cremation prices from San Jose funeral homes.' },
+      { slug: 'average-burial-cost', title: 'Average Burial Cost in 2026: What Families Should Expect to Pay', description: 'Full breakdown of burial costs, what drives prices up, and how to save.' },
     ],
   },
   {
@@ -39,6 +42,8 @@ const categories: { name: string; posts: Post[] }[] = [
     posts: [
       { slug: 'what-to-do-with-ashes-after-cremation', title: 'What to Do with Ashes After Cremation: 10 Options', description: '10 meaningful options for cremated remains, from scattering to keepsakes.' },
       { slug: 'cremation-near-me', title: 'Cremation Near Me: How to Find Affordable Services', description: 'How to find and compare affordable cremation services in your area.' },
+      { slug: 'what-happens-to-the-body-during-cremation', title: 'What Happens to the Body During Cremation?', description: 'A clear, respectful explanation of the cremation process from start to finish.' },
+      { slug: 'green-burial-options', title: 'Green Burial Options: What They Are and How to Plan One', description: 'A natural, environmentally friendly alternative to traditional burial.' },
     ],
   },
   {
@@ -47,6 +52,9 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'how-to-write-an-obituary', title: 'How to Write an Obituary: A Complete Guide', description: 'What to include, how to structure it, example opening lines, and a free AI obituary writer.' },
       { slug: 'eulogy-for-friend-samples', title: 'Eulogy for a Friend: Samples, Tips, and How to Write One', description: 'Three sample eulogies in different tones, plus practical tips for writing and delivering yours.' },
       { slug: 'how-long-can-a-funeral-home-hold-a-body', title: 'How Long Can a Funeral Home Hold a Body?', description: '1 to 2 weeks without embalming, 4 to 6 weeks with embalming. State rules and daily storage fees.' },
+      { slug: 'obituary-examples', title: 'Obituary Examples: Good, Simple, and Meaningful Templates', description: 'Sample obituaries in short, traditional, and celebration of life styles.' },
+      { slug: 'thank-you-notes-after-funeral', title: 'Thank You Notes After a Funeral: What to Write and When', description: 'What to write, when to send them, and examples for different situations.' },
+      { slug: 'memorial-service-bulletins', title: 'Memorial Service Bulletins: What to Include', description: 'How to create a memorial service bulletin that guides guests and serves as a keepsake.' },
     ],
   },
   {
@@ -54,6 +62,11 @@ const categories: { name: string; posts: Post[] }[] = [
     posts: [
       { slug: 'traditional-vs-celebration-of-life', title: 'Traditional Funeral vs. Celebration of Life: How to Choose', description: 'The real emotional and financial difference between traditional funerals and celebrations of life.' },
       { slug: 'what-is-a-celebration-of-life', title: 'What Is a Celebration of Life Service?', description: 'How it differs from a funeral, what to expect, and how to plan one.' },
+      { slug: 'what-is-a-graveside-service', title: 'What Is a Graveside Service?', description: 'A simple, meaningful ceremony held at the burial site. What to expect and how to plan one.' },
+      { slug: 'what-is-a-funeral-celebrant', title: 'What Is a Funeral Celebrant?', description: 'How celebrants differ from clergy and when to consider one for a personalized service.' },
+      { slug: 'jewish-funeral-etiquette', title: 'Jewish Funeral Etiquette for Non-Jews', description: 'What to expect, what to wear, and how to show respect at a Jewish funeral.' },
+      { slug: 'pallbearer-guide', title: 'Pallbearer Guide: What to Wear, What to Do, and What to Expect', description: 'Everything you need to know about serving as a pallbearer.' },
+      { slug: 'christian-funeral-songs', title: 'Modern Christian Funeral Songs', description: 'Meaningful modern and traditional Christian funeral songs to consider.' },
     ],
   },
   {
@@ -61,6 +74,9 @@ const categories: { name: string; posts: Post[] }[] = [
     posts: [
       { slug: '/veteran-burial-benefits', title: 'Veteran Burial Benefits and Military Funeral Assistance', description: 'VA burial allowances, national cemetery eligibility, military funeral honors, and how to apply.', },
       { slug: 'bible-verses-for-funerals', title: 'Bible Verses for Funerals: Comfort, Hope, and Remembrance', description: 'A collection of scripture passages for funerals and memorial services.' },
+      { slug: 'words-of-comfort-for-grieving-family', title: 'Words of Comfort for a Grieving Family', description: 'Sincere things to say, messages that bring comfort, and phrases to avoid.' },
+      { slug: 'pet-loss-grief', title: 'Pet Loss: Poems, Quotes, and How to Cope', description: 'Comforting poems, meaningful quotes, and practical ways to honor your companion.' },
+      { slug: 'what-happens-to-hsa-when-you-die', title: 'What Happens to Your HSA When You Die?', description: 'How HSA funds are handled, spouse vs. non-spouse inheritance, and estate planning tips.' },
     ],
   },
   {
