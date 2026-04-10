@@ -209,7 +209,7 @@ export default function ContactPage() {
                   Looking for quick answers? Check out our resources page for helpful information.
                 </p>
                 <Link
-                  href="/resources"
+                  href="/blog"
                   className="inline-block bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition"
                 >
                   View Resources

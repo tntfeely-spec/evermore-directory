@@ -192,7 +192,7 @@ export default function DirectCremationVsTraditionalFuneral() {
               Direct cremation and traditional funerals both honor the deceased-they simply do so in different ways. The best decision is the one that aligns with your loved one&apos;s wishes, your family&apos;s needs, and your budget.
             </p>
             <p className="text-gray-600">
-              For more guidance, visit our <Link href="/resources" className="text-slate-600 hover:underline">Funeral Planning Resources</Link> page.
+              For more guidance, visit our <Link href="/blog" className="text-slate-600 hover:underline">planning resources</Link>.
             </p>
           </section>
 

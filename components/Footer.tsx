@@ -64,7 +64,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link href="/resources" className="hover:text-white transition-colors">Planning Resources</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">Planning Resources</Link></li>
               <li><Link href="/funeral-costs" className="hover:text-white transition-colors">Funeral Costs by State</Link></li>
               <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
               <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">Free AI Obituary Writer</Link></li>

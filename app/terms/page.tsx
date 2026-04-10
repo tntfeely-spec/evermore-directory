@@ -23,7 +23,7 @@ export default function TermsPage() {
               <Link href="/" className="text-gray-700 hover:text-slate-600 font-medium transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-slate-600 font-medium transition">About Us</Link>
               <Link href="/how-it-works" className="text-gray-700 hover:text-slate-600 font-medium transition">How It Works</Link>
-              <Link href="/resources" className="text-gray-700 hover:text-slate-600 font-medium transition">Resources</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition">Resources</Link>
               <Link href="/contact" className="text-gray-700 hover:text-slate-600 font-medium transition">Contact</Link>
             </div>
 
@@ -52,7 +52,7 @@ export default function TermsPage() {
               <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Home</Link>
               <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">About Us</Link>
               <Link href="/how-it-works" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">How It Works</Link>
-              <Link href="/resources" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Resources</Link>
+              <Link href="/blog" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Resources</Link>
               <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Contact</Link>
             </div>
           </div>
@@ -426,7 +426,7 @@ export default function TermsPage() {
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li><Link href="/how-it-works" className="text-gray-400 hover:text-white transition">How It Works</Link></li>
-                <li><Link href="/resources" className="text-gray-400 hover:text-white transition">Planning Resources</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition">Planning Resources</Link></li>
                 <li><Link href="/about" className="text-gray-400 hover:text-white transition">About Us</Link></li>
               </ul>
             </div>

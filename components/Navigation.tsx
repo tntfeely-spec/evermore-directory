@@ -29,7 +29,7 @@ export default function Navigation() {
             <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Blog</Link>
             <Link href="/about" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">About</Link>
             <Link href="/contact" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Contact</Link>
-            <Link href="/resources" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Resources</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Resources</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,7 +95,7 @@ export default function Navigation() {
               Contact
             </Link>
             <Link
-              href="/resources"
+              href="/blog"
               onClick={() => setMobileOpen(false)}
               className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors"
             >

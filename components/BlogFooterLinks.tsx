@@ -27,7 +27,7 @@ export default function BlogFooterLinks() {
         <ul className="space-y-2">
           <li><Link href="/states" className="text-slate-600 hover:text-slate-800 font-medium">Browse All States &rarr;</Link></li>
           <li><Link href="/" className="text-slate-600 hover:text-slate-800 font-medium">Find Funeral Homes Near You &rarr;</Link></li>
-          <li><Link href="/resources" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Planning Resources &rarr;</Link></li>
+          <li><Link href="/blog" className="text-slate-600 hover:text-slate-800 font-medium">All Planning Resources</Link></li>
           <li><Link href="/featured-listing" className="text-slate-600 hover:text-slate-800 font-medium">List Your Funeral Home &rarr;</Link></li>
         </ul>
       </section>
