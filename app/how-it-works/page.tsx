@@ -23,7 +23,6 @@ export default function HowItWorksPage() {
               <Link href="/" className="text-gray-700 hover:text-slate-600 font-medium transition">Home</Link>
               <Link href="/about" className="text-gray-700 hover:text-slate-600 font-medium transition">About Us</Link>
               <Link href="/how-it-works" className="text-slate-600 font-semibold">How It Works</Link>
-              <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition">Resources</Link>
               <Link href="/contact" className="text-gray-700 hover:text-slate-600 font-medium transition">Contact</Link>
             </div>
 
@@ -52,7 +51,6 @@ export default function HowItWorksPage() {
               <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Home</Link>
               <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">About Us</Link>
               <Link href="/how-it-works" className="block px-3 py-2 bg-slate-50 text-slate-600 rounded-md font-semibold">How It Works</Link>
-              <Link href="/blog" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Resources</Link>
               <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-slate-50 hover:text-slate-600 rounded-md font-medium">Contact</Link>
             </div>
           </div>
@@ -255,13 +253,13 @@ export default function HowItWorksPage() {
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">Need Help Getting Started?</h3>
             <p className="text-gray-700 mb-6">
-              Our resources page provides helpful guides on funeral planning, understanding costs, and making important decisions during difficult times.
+              Our blog provides helpful guides on funeral planning, understanding costs, and making important decisions during difficult times.
             </p>
-            <Link 
+            <Link
               href="/blog"
               className="inline-block bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition"
             >
-              View Resources
+              View Blog
             </Link>
           </div>
 
@@ -316,7 +314,6 @@ export default function HowItWorksPage() {
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li><Link href="/how-it-works" className="text-gray-400 hover:text-white transition">How It Works</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition">Planning Resources</Link></li>
                 <li><Link href="/about" className="text-gray-400 hover:text-white transition">About Us</Link></li>
               </ul>
             </div>

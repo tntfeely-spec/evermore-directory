@@ -206,13 +206,13 @@ export default function ContactPage() {
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h3>
                 <p className="text-gray-600 mb-4">
-                  Looking for quick answers? Check out our resources page for helpful information.
+                  Looking for quick answers? Check out our blog for helpful guides and planning information.
                 </p>
                 <Link
                   href="/blog"
                   className="inline-block bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition"
                 >
-                  View Resources
+                  View Blog
                 </Link>
               </div>
             </div>
