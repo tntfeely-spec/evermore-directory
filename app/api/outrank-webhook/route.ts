@@ -9,19 +9,9 @@ const supabase = createClient(
 export async function POST(request: NextRequest) {
   console.log('Outrank webhook headers:', Object.fromEntries(request.headers.entries()))
 
-  const authHeader = request.headers.get('authorization')
-  const bearerToken = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null
-  const xToken = request.headers.get('x-outrank-token')
-  const queryToken = request.nextUrl.searchParams.get('token')
-
-  const receivedToken = bearerToken || xToken || queryToken
-
-  if (receivedToken !== process.env.OUTRANK_WEBHOOK_TOKEN) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
-
   try {
     const payload = await request.json()
+    console.log('Outrank webhook body:', JSON.stringify(payload).slice(0, 500))
 
     await supabase
       .from('outrank_articles')
