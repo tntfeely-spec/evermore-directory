@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  { q: 'What is the gathering after a funeral called?', a: 'The gathering after a funeral goes by many names: repast, reception, wake, mercy meal, or simply an after-funeral gathering. The term varies by region, culture, and religion, but the purpose is the same — a chance for family and friends to share food, memories, and support.' },
+  { q: 'What is the gathering after a funeral called?', a: 'The gathering after a funeral goes by many names: repast, reception, wake, mercy meal, or simply an after-funeral gathering. The term varies by region, culture, and religion, but the purpose is the same:a chance for family and friends to share food, memories, and support.' },
   { q: 'Who typically hosts the after-funeral gathering?', a: 'Close family members usually host, but friends, neighbors, church groups, or coworkers often help with food, setup, and logistics. Many families delegate planning to a trusted friend so they can focus on grieving and being present with guests.' },
   { q: 'How long does an after-funeral reception last?', a: 'Most after-funeral gatherings last 2 to 4 hours. There is no formal start or end time. Guests typically come and go as they are able, and the event naturally winds down as people leave.' },
-  { q: 'What should you bring to a funeral reception?', a: 'Food is the most appreciated contribution — casseroles, baked goods, fruit trays, or anything that can be served easily. If the family has requested no food, a sympathy card with a personal note is always welcome.' },
+  { q: 'What should you bring to a funeral reception?', a: 'Food is the most appreciated contribution:casseroles, baked goods, fruit trays, or anything that can be served easily. If the family has requested no food, a sympathy card with a personal note is always welcome.' },
 ];
 
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
@@ -34,7 +34,7 @@ export default function WhatToDoAfterFuneralPage() {
             </header>
 
             <section className="mb-10">
-              <p className="text-gray-700 leading-relaxed text-lg">The funeral is over, but the work is not. Most families host a gathering afterward where friends and family share food, memories, and support. In the days that follow, there are practical tasks that need attention — death certificates, accounts, notifications, and the beginning of a long process of adjustment.</p>
+              <p className="text-gray-700 leading-relaxed text-lg">The funeral is over, but the work is not. Most families host a gathering afterward where friends and family share food, memories, and support. In the days that follow, there are practical tasks that need attention:death certificates, accounts, notifications, and the beginning of a long process of adjustment.</p>
             </section>
 
             <section className="mb-10">
@@ -47,7 +47,7 @@ export default function WhatToDoAfterFuneralPage() {
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Expect at the Gathering</h2>
-              <p className="text-gray-600 leading-relaxed">The tone is usually informal and warm. People eat, talk, share stories, and check in on each other. Some families display photos or a memorial slideshow. There is no program or schedule — just presence. It is one of the most healing parts of the process for many families.</p>
+              <p className="text-gray-600 leading-relaxed">The tone is usually informal and warm. People eat, talk, share stories, and check in on each other. Some families display photos or a memorial slideshow. There is no program or schedule:just presence. It is one of the most healing parts of the process for many families.</p>
             </section>
 
             <section className="mb-10">

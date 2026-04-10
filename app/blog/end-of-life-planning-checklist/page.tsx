@@ -34,7 +34,7 @@ export default function EndOfLifePlanningChecklistPage() {
             </header>
 
             <section className="mb-10">
-              <p className="text-gray-700 leading-relaxed text-lg">Planning ahead is one of the most generous things you can do for the people you love. It means your family will never have to make difficult financial, medical, or funeral decisions under pressure without knowing what you wanted. This checklist covers the essentials — legal documents, finances, funeral preferences, digital assets, and how to share it all with your family.</p>
+              <p className="text-gray-700 leading-relaxed text-lg">Planning ahead is one of the most generous things you can do for the people you love. It means your family will never have to make difficult financial, medical, or funeral decisions under pressure without knowing what you wanted. This checklist covers the essentials: legal documents, finances, funeral preferences, digital assets, and how to share it all with your family.</p>
             </section>
 
             <section className="mb-10">

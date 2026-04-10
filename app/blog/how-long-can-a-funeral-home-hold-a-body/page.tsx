@@ -96,7 +96,7 @@ export default function HowLongCanFuneralHomeHoldBodyPage() {
                 <li>Most states require embalming or refrigeration within 24 to 72 hours of death.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-4">
-                If you&apos;re unsure of the rules in your state, the funeral director will know — and they&apos;re
+                If you&apos;re unsure of the rules in your state, the funeral director will know, and they&apos;re
                 required to follow them.
               </p>
             </section>

@@ -72,7 +72,7 @@ export default function BestPrepaidFuneralPlansPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Questions to Ask Before Signing Anything</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
                 <li>Is this plan irrevocable or revocable?</li>
-                <li>How are the funds held — in a trust, insurance policy, or directly by the funeral home?</li>
+                <li>How are the funds held: in a trust, insurance policy, or directly by the funeral home?</li>
                 <li>Can I transfer this plan to another funeral home if I move?</li>
                 <li>What is the cancellation policy and are there fees?</li>
                 <li>What happens if the cost of services exceeds what I prepaid?</li>

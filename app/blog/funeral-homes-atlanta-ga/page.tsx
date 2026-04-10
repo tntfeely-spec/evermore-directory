@@ -23,8 +23,8 @@ const funeralHomes = [
     name: 'Alfonso Dawson Mortuary',
     address: '3000 Martin Luther King Jr Dr, Atlanta, GA',
     phone: '404-691-3810',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, International Shipping, Memorial Services',
     url: '/funeral-homes/ga/atlanta/alfonso-dawson-mortuary-inc',
   },
@@ -32,8 +32,8 @@ const funeralHomes = [
     name: 'Goolsby Mortuary',
     address: '1375 Jonesboro Rd SE, Atlanta, GA',
     phone: '404-588-0128',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/goolsby-mortuary-inc-cremation-services',
   },
@@ -41,8 +41,8 @@ const funeralHomes = [
     name: "Gus Thornhill's Funeral Home",
     address: '1721 Robinson Ave SE, Atlanta, GA',
     phone: '404-622-0087',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/gus-thornhills-funeral-home',
   },
@@ -50,8 +50,8 @@ const funeralHomes = [
     name: 'H.M. Patterson & Son - Spring Hill Chapel',
     address: '1020 Spring Street NW, Atlanta, GA',
     phone: '404-876-1022',
-    cremation: '$3,000 – $6,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$3,000 to $6,000',
+    burial: '$7,000 to $12,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/hm-patterson-son-spring-hill-chapel',
   },
@@ -59,8 +59,8 @@ const funeralHomes = [
     name: 'H.M. Patterson & Son - Oglethorpe Hill',
     address: '4550 Peachtree Rd NE, Atlanta, GA',
     phone: '404-261-4586',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Veterans Services',
     url: '/funeral-homes/ga/atlanta/hm-patterson-son-oglethorpe-hill-chapel',
   },
@@ -68,8 +68,8 @@ const funeralHomes = [
     name: 'Legends Memorial Group',
     address: '650 Ponce De Leon Avenue, Atlanta, GA',
     phone: '800-489-6076',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/legends-memorial-group-and-funeral-homes',
   },
@@ -77,8 +77,8 @@ const funeralHomes = [
     name: 'Murray Brothers Funeral Home',
     address: '1199 Utoy Springs Rd SW, Atlanta, GA',
     phone: '404-349-3000',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/murray-brothers-funeral-home',
   },
@@ -86,8 +86,8 @@ const funeralHomes = [
     name: 'Speaks Funeral Home',
     address: '3490 Fairburn Rd SW, Atlanta, GA',
     phone: '404-349-7474',
-    cremation: '$2,500 – $5,000',
-    burial: '$6,000 – $10,500',
+    cremation: '$2,500 to $5,000',
+    burial: '$6,000 to $10,500',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/speaks-funeral-home',
   },
@@ -95,8 +95,8 @@ const funeralHomes = [
     name: 'William Gayleano Murray & Son',
     address: '923 McDaniel Street SW, Atlanta, GA',
     phone: '404-963-5634',
-    cremation: '$2,200 – $4,500',
-    burial: '$5,500 – $10,000',
+    cremation: '$2,200 to $4,500',
+    burial: '$5,500 to $10,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, International Shipping',
     url: '/funeral-homes/ga/atlanta/william-gayleano-murray-son-funeral-home',
   },
@@ -104,8 +104,8 @@ const funeralHomes = [
     name: 'Willie A Watkins Funeral Home',
     address: '1003 Ralph David Abernathy Blvd SW, Atlanta, GA',
     phone: '404-758-1731',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/ga/atlanta/willie-a-watkins-funeral-home',
   },
@@ -204,11 +204,11 @@ export default function FuneralHomesAtlantaPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,500 – $3,500</td></tr>
-                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$2,500 – $6,500</td></tr>
-                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$6,000 – $12,000</td></tr>
-                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$7,500 – $14,000+</td></tr>
-                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,000 – $4,500</td></tr>
+                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,500 to $3,500</td></tr>
+                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$2,500 to $6,500</td></tr>
+                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$6,000 to $12,000</td></tr>
+                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$7,500 to $14,000+</td></tr>
+                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,000 to $4,500</td></tr>
                   </tbody>
                 </table>
               </div>

@@ -23,8 +23,8 @@ const funeralHomes = [
     name: 'Canale Funeral Directors',
     address: '2700 Union Ave Extended, Memphis, TN',
     phone: '901-452-6400',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Funeral Services, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/tn/memphis/canale-funeral-directors',
   },
@@ -32,8 +32,8 @@ const funeralHomes = [
     name: 'E.H. Ford Mortuary',
     address: '2659 Chelsea Ave, Memphis, TN',
     phone: '901-345-9558',
-    cremation: '$3,000 – $5,500',
-    burial: '$5,500 – $10,000',
+    cremation: '$3,000 to $5,500',
+    burial: '$5,500 to $10,000',
     services: 'Funeral Services, Cremation, Memorial Services, Graveside Ceremonies',
     url: '/funeral-homes/tn/memphis/eh-ford-mortuary',
   },
@@ -41,8 +41,8 @@ const funeralHomes = [
     name: "Harrison's Memorial Chapel",
     address: '2621 Lamar Ave, Memphis, TN',
     phone: '901-452-7331',
-    cremation: '$3,000 – $5,500',
-    burial: '$5,500 – $10,000',
+    cremation: '$3,000 to $5,500',
+    burial: '$5,500 to $10,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Memorial Services',
     url: '/funeral-homes/tn/memphis/harrisons-memorial-chapel-inc',
   },
@@ -50,8 +50,8 @@ const funeralHomes = [
     name: 'Memorial Park Funeral Home',
     address: '5668 Poplar Avenue, Memphis, TN',
     phone: '901-767-8930',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Cemetery, Pre-Planning',
     url: '/funeral-homes/tn/memphis/memorial-park-funeral-home',
   },
@@ -59,8 +59,8 @@ const funeralHomes = [
     name: 'Memorial Park Funeral Home & Cemetery',
     address: '5668 Poplar Ave, Memphis, TN',
     phone: '901-302-9980',
-    cremation: '$4,000 – $7,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$4,000 to $7,000',
+    burial: '$7,000 to $12,000',
     services: 'Funeral Services, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/memphis/memorial-park-funeral-home-cemetery',
   },
@@ -68,8 +68,8 @@ const funeralHomes = [
     name: 'N.J. Ford and Sons',
     address: '3860 S Perkins Rd, Memphis, TN',
     phone: '901-948-7755',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Limousine Service',
     url: '/funeral-homes/tn/memphis/nj-ford-and-sons-funeral-home-inc',
   },
@@ -77,8 +77,8 @@ const funeralHomes = [
     name: 'R.S. Lewis & Sons Funeral Home',
     address: '3724 Lamar Ave, Memphis, TN',
     phone: '901-526-3264',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Limousine Services',
     url: '/funeral-homes/tn/memphis/rs-lewis-sons-funeral-home',
   },
@@ -86,8 +86,8 @@ const funeralHomes = [
     name: 'Serenity Funeral Home',
     address: '1638 Sycamore View Road, Memphis, TN',
     phone: '901-379-0861',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Funeral Services, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/tn/memphis/serenity-funeral-home',
   },
@@ -95,8 +95,8 @@ const funeralHomes = [
     name: 'Serenity Funeral Home and Cremation Society',
     address: '1632 Sycamore View Road, Memphis, TN',
     phone: '901-377-3543',
-    cremation: '$2,500 – $5,000',
-    burial: '$5,000 – $9,000',
+    cremation: '$2,500 to $5,000',
+    burial: '$5,000 to $9,000',
     services: 'Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/tn/memphis/serenity-funeral-home-and-cremation-society',
   },
@@ -104,8 +104,8 @@ const funeralHomes = [
     name: 'Superior Funeral Home',
     address: '1129 N Hollywood, Memphis, TN',
     phone: '901-323-7898',
-    cremation: '$3,000 – $5,500',
-    burial: '$5,500 – $10,000',
+    cremation: '$3,000 to $5,500',
+    burial: '$5,500 to $10,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Notary Services',
     url: '/funeral-homes/tn/memphis/superior-funeral-home-hollywood-chapel',
   },
@@ -204,11 +204,11 @@ export default function FuneralHomesMemphisPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,500 – $3,500</td></tr>
-                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$3,000 – $6,500</td></tr>
-                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$5,500 – $11,000</td></tr>
-                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$7,000 – $13,000+</td></tr>
-                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,000 – $4,500</td></tr>
+                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,500 to $3,500</td></tr>
+                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$3,000 to $6,500</td></tr>
+                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$5,500 to $11,000</td></tr>
+                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$7,000 to $13,000+</td></tr>
+                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,000 to $4,500</td></tr>
                   </tbody>
                 </table>
               </div>

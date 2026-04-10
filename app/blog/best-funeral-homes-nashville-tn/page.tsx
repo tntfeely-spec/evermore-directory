@@ -23,8 +23,8 @@ const funeralHomes = [
     name: 'Marshall-Donnelly-Combs Funeral Home',
     address: '109 3rd Avenue South, Nashville, TN',
     phone: '615-327-1111',
-    cremation: '$4,000 – $7,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$4,000 to $7,000',
+    burial: '$7,000 to $12,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, Pre-Planning',
     url: '/funeral-homes/tn/nashville/marshall-donnelly-combs-funeral-home',
   },
@@ -32,8 +32,8 @@ const funeralHomes = [
     name: 'Mount Olivet Funeral Home & Cemetery',
     address: '1101 Lebanon Pike, Nashville, TN',
     phone: '615-255-4193',
-    cremation: '$4,000 – $7,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$4,000 to $7,000',
+    burial: '$7,000 to $12,000',
     services: 'Funeral Services, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/mount-olivet-funeral-home-cemetery',
   },
@@ -41,8 +41,8 @@ const funeralHomes = [
     name: 'Patton Brothers Funeral Home',
     address: '1306 South Street, Nashville, TN',
     phone: '615-256-3608',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Memorial Services',
     url: '/funeral-homes/tn/nashville/patton-brothers-funeral-home',
   },
@@ -50,8 +50,8 @@ const funeralHomes = [
     name: 'Phillips-Robinson Funeral Home',
     address: '2707 Clarksville Pike, Nashville, TN',
     phone: '615-262-3312',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Natural Burial, Green Burial',
     url: '/funeral-homes/tn/nashville/phillips-robinson-funeral-home',
   },
@@ -59,8 +59,8 @@ const funeralHomes = [
     name: 'Smith Brothers Funeral Directors',
     address: '820 Dickerson Pike, Nashville, TN',
     phone: '615-726-1476',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Special Limousine Services',
     url: '/funeral-homes/tn/nashville/smith-brothers-funeral-directors-inc',
   },
@@ -68,8 +68,8 @@ const funeralHomes = [
     name: 'Spring Hill Funeral Home & Cemetery',
     address: '5110 Gallatin Pike, Nashville, TN',
     phone: '615-865-1101',
-    cremation: '$4,000 – $7,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$4,000 to $7,000',
+    burial: '$7,000 to $12,000',
     services: 'Traditional Funeral, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/spring-hill-funeral-home-cemetery',
   },
@@ -77,8 +77,8 @@ const funeralHomes = [
     name: 'Terrell Broady Funeral Home',
     address: '3855 Clarksville Pike, Nashville, TN',
     phone: '615-244-4755',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Pre-Planning, Notary Services, Limousine Services',
     url: '/funeral-homes/tn/nashville/terrell-broady-funeral-home',
   },
@@ -86,8 +86,8 @@ const funeralHomes = [
     name: 'Woodbine Funeral Home',
     address: '3620 Nolensville Rd, Nashville, TN',
     phone: '615-832-1948',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, Graveside Services',
     url: '/funeral-homes/tn/nashville/woodbine-funeral-home',
   },
@@ -95,8 +95,8 @@ const funeralHomes = [
     name: 'Woodlawn-Roesch-Patton Funeral Home',
     address: '660 Thompson Ln, Nashville, TN',
     phone: '615-383-4754',
-    cremation: '$4,000 – $7,000',
-    burial: '$7,000 – $12,000',
+    cremation: '$4,000 to $7,000',
+    burial: '$7,000 to $12,000',
     services: 'Traditional Funeral, Cremation, Cemetery, Pre-Planning, Veterans Services',
     url: '/funeral-homes/tn/nashville/woodlawn-roesch-patton-funeral-home-memorial-park',
   },
@@ -104,8 +104,8 @@ const funeralHomes = [
     name: 'Woodbine Funeral Home - Hickory Chapel',
     address: '5852 Nolensville Rd, Nashville, TN',
     phone: '615-331-1952',
-    cremation: '$3,500 – $6,500',
-    burial: '$6,500 – $11,000',
+    cremation: '$3,500 to $6,500',
+    burial: '$6,500 to $11,000',
     services: 'Traditional Funeral, Cremation, Memorial Services, Graveside Services',
     url: '/funeral-homes/tn/nashville/woodbine-funeral-home-hickory-chapel',
   },
@@ -204,11 +204,11 @@ export default function BestFuneralHomesNashvillePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,800 – $3,500</td></tr>
-                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$3,500 – $7,000</td></tr>
-                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$6,500 – $12,000</td></tr>
-                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$8,000 – $15,000+</td></tr>
-                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,500 – $5,000</td></tr>
+                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$1,800 to $3,500</td></tr>
+                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$3,500 to $7,000</td></tr>
+                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$6,500 to $12,000</td></tr>
+                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$8,000 to $15,000+</td></tr>
+                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$2,500 to $5,000</td></tr>
                   </tbody>
                 </table>
               </div>
