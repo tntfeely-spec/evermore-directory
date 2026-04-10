@@ -1,14 +1,39 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
-  title: 'Funeral Homes in Los Angeles: Prices, Services & How to Choose | Evermore Directory',
-  description: 'Compare funeral home prices in Los Angeles. See actual cremation and burial costs from LA funeral homes, plus tips for choosing the right provider for your family.',
+  title: 'Funeral Homes in Los Angeles, California (2026) | Compare Prices and Services',
+  description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info.',
   keywords: 'funeral homes los angeles, los angeles funeral homes, cremation los angeles, funeral services LA, los angeles cremation cost',
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: 'https://funeralhomedirectories.com/blog/funeral-homes-los-angeles',
+  },
+  openGraph: {
+    title: 'Funeral Homes in Los Angeles, California (2026) | Compare Prices and Services',
+    description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info.',
+    url: 'https://funeralhomedirectories.com/blog/funeral-homes-los-angeles',
+    type: 'article',
+  },
 };
 
-export default function FuneralHomesLosAngelesPage() {
+const slugify = (name: string) =>
+  name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+
+export default async function FuneralHomesLosAngelesPage() {
+  const { data: funeralHomes } = await supabase
+    .from('funeral_homes')
+    .select('id, business_name, address, city, state, zip, phone, website, services_offered, price_range_cremation, price_range_burial, special_features, is_featured')
+    .ilike('city', 'Los Angeles')
+    .eq('state', 'CA')
+    .order('is_featured', { ascending: false })
+    .order('business_name', { ascending: true });
+
+  const homes = funeralHomes || [];
+  const count = homes.length;
+
   return (
     <>
       <script
@@ -17,285 +42,201 @@ export default function FuneralHomesLosAngelesPage() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://funeralhomedirectories.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Blog",
-              "item": "https://funeralhomedirectories.com/blog"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Funeral Homes in Los Angeles"
-            }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://funeralhomedirectories.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "Funeral Homes in Los Angeles, CA" }
           ]
         }) }}
       />
-    <main className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <article>
-          <header className="mb-10">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Funeral Homes in Los Angeles: Prices, Services & How to Choose
-            </h1>
-            <p className="text-xl text-gray-600">
-              Compare actual funeral home prices in Los Angeles and find the right provider for your family&apos;s needs and budget.
-            </p>
-          </header>
-
-          <section className="mb-10">
-            <p className="text-gray-600 mb-4">
-              Los Angeles has over 300 funeral homes serving one of the most diverse populations in the country. With so many options, finding the right funeral home-at a fair price-can feel overwhelming, especially during an already difficult time.
-            </p>
-            <p className="text-gray-600">
-              This guide breaks down what funeral services actually cost in Los Angeles, what to look for in a provider, and how to avoid overpaying.
-            </p>
-          </section>
-
-          <section className="mb-10 bg-slate-50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Do Funeral Services Cost in Los Angeles?</h2>
-            <p className="text-gray-600 mb-4">
-              Funeral costs in Los Angeles vary dramatically-sometimes by <strong>200-300%</strong> for the same service. Here&apos;s what you can expect to pay:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border p-3 text-left">Service Type</th>
-                    <th className="border p-3 text-left">Los Angeles Price Range</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$995 - $3,500</td></tr>
-                  <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$2,500 - $6,000</td></tr>
-                  <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$7,000 - $15,000+</td></tr>
-                  <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$8,000 - $20,000+</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-sm text-gray-500 mt-3">
-              Prices based on Los Angeles funeral home data from the Evermore Directory. Cemetery plots, vaults, and headstones are additional costs not included above.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cremation vs. Burial Prices in Los Angeles</h2>
-            <p className="text-gray-600 mb-4">
-              Cremation has become the most popular choice in Los Angeles, with over 60% of families now choosing cremation over traditional burial. The primary reason? Cost.
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-slate-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Direct Cremation in LA</h3>
-                <p className="text-3xl font-bold text-slate-600 mb-2">$995 - $3,500</p>
-                <ul className="text-gray-600 text-sm space-y-1">
-                  <li>• No viewing or service required</li>
-                  <li>• Body cremated within 24-48 hours</li>
-                  <li>• Ashes returned in basic container</li>
-                  <li>• Memorial can be held separately</li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Traditional Burial in LA</h3>
-                <p className="text-3xl font-bold text-gray-600 mb-2">$7,000 - $15,000+</p>
-                <ul className="text-gray-600 text-sm space-y-1">
-                  <li>• Embalming and preparation</li>
-                  <li>• Viewing and funeral service</li>
-                  <li>• Casket (often $2,000-$10,000 alone)</li>
-                  <li>• Cemetery plot additional</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Los Angeles Funeral Homes by Neighborhood</h2>
-            <p className="text-gray-600 mb-4">
-              Los Angeles is massive, and you&apos;ll likely want a funeral home reasonably close to where family members live or where services will be held. Here are some areas we cover:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="bg-gray-50 p-3 rounded">Downtown LA</div>
-              <div className="bg-gray-50 p-3 rounded">Hollywood</div>
-              <div className="bg-gray-50 p-3 rounded">East Los Angeles</div>
-              <div className="bg-gray-50 p-3 rounded">South Los Angeles</div>
-              <div className="bg-gray-50 p-3 rounded">San Fernando Valley</div>
-              <div className="bg-gray-50 p-3 rounded">Westside</div>
-              <div className="bg-gray-50 p-3 rounded">Boyle Heights</div>
-              <div className="bg-gray-50 p-3 rounded">Koreatown</div>
-              <div className="bg-gray-50 p-3 rounded">Inglewood</div>
-            </div>
-            <p className="mt-4">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline font-semibold">
-                View all Los Angeles funeral homes with prices →
-              </Link>
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Look for in a Los Angeles Funeral Home</h2>
-            
-            <div className="space-y-4">
-              <div className="border-l-4 border-slate-400 pl-4">
-                <h3 className="font-semibold text-gray-800">Transparent Pricing</h3>
-                <p className="text-gray-600">
-                  By law, funeral homes must provide a General Price List (GPL). If a funeral home is evasive about costs or won&apos;t give you prices over the phone, that&apos;s a red flag. The Evermore Directory shows price ranges upfront so you can compare before calling.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-slate-400 pl-4">
-                <h3 className="font-semibold text-gray-800">Cultural & Religious Experience</h3>
-                <p className="text-gray-600">
-                  LA&apos;s diversity means you may need a funeral home experienced with specific traditions-Catholic, Jewish, Buddhist, Hindu, Muslim, or secular celebrations of life. Ask about their experience with your family&apos;s customs.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-slate-400 pl-4">
-                <h3 className="font-semibold text-gray-800">On-Site Crematory</h3>
-                <p className="text-gray-600">
-                  Some LA funeral homes have their own crematory, which can reduce costs and provide peace of mind that your loved one never leaves their care. Others outsource cremation to third parties.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-slate-400 pl-4">
-                <h3 className="font-semibold text-gray-800">Family-Owned vs. Corporate</h3>
-                <p className="text-gray-600">
-                  Many funeral homes are now owned by large corporations (like Service Corporation International). Family-owned funeral homes often provide more personalized service and competitive pricing, though this isn&apos;t always the case.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Questions to Ask Los Angeles Funeral Homes</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li>What is your total cost for direct cremation / traditional burial?</li>
-              <li>Are there any additional fees not on your price list?</li>
-              <li>Do you have an on-site crematory, or do you use a third party?</li>
-              <li>What experience do you have with [our religious/cultural traditions]?</li>
-              <li>Can we bring our own casket or urn?</li>
-              <li>Do you offer payment plans?</li>
-              <li>How long have you been serving Los Angeles families?</li>
-              <li>Can we see your facilities before making a decision?</li>
-            </ul>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Save Money on Funeral Services in LA</h2>
-            <p className="text-gray-600 mb-4">
-              Funeral costs add up quickly, but there are legitimate ways to reduce expenses:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li><strong>Compare prices from at least 3 funeral homes</strong> - prices vary significantly, even in the same neighborhood</li>
-              <li><strong>Consider direct cremation</strong> - you can still hold a meaningful memorial service separately</li>
-              <li><strong>Skip the casket for cremation</strong> - a simple container is all that&apos;s required by law</li>
-              <li><strong>Provide your own urn</strong> - funeral home urns are often marked up significantly</li>
-              <li><strong>Ask about package pricing</strong> - bundled services may cost less than à la carte</li>
-              <li><strong>Check for veteran benefits</strong> - eligible veterans may qualify for burial allowances and cemetery benefits</li>
-            </ul>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Compare Los Angeles Funeral Homes</h2>
-            <p className="text-gray-600 mb-4">
-              The Evermore Directory lists funeral homes throughout Los Angeles County with actual price ranges, services offered, and contact information. Compare providers before you call:
-            </p>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <Link href="/funeral-homes/ca/los-angeles" className="text-slate-600 hover:underline text-xl font-semibold">
-                View All Los Angeles Funeral Homes →
-              </Link>
-              <p className="text-gray-600 mt-2">
-                See cremation and burial prices, services, and contact info for funeral homes across LA County.
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": `${count} Funeral Homes in Los Angeles, CA (2026) | Prices & Services`,
+          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
+          "datePublished": "2026-04-07",
+          "dateModified": "2026-04-07",
+          "url": "https://funeralhomedirectories.com/blog/funeral-homes-los-angeles"
+        }) }}
+      />
+      <main className="min-h-screen bg-white">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <article>
+            <header className="mb-10">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                {count} Funeral Homes in Los Angeles, CA (2026) | Prices &amp; Services
+              </h1>
+              <p className="text-sm text-gray-500 mb-3">
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026
               </p>
-            </div>
-          </section>
+              <p className="text-xl text-gray-600">
+                Compare pricing, services, and contact information for Los Angeles&apos;s top funeral homes.
+              </p>
+            </header>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nearby Cities</h2>
-            <p className="text-gray-600 mb-4">
-              Looking for funeral homes outside Los Angeles city limits? Browse nearby areas:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link href="/funeral-homes/ca/long-beach" className="text-slate-600 hover:underline">Long Beach</Link>
-              <Link href="/funeral-homes/ca/glendale" className="text-slate-600 hover:underline">Glendale</Link>
-              <Link href="/funeral-homes/ca/pasadena" className="text-slate-600 hover:underline">Pasadena</Link>
-              <Link href="/funeral-homes/ca/burbank" className="text-slate-600 hover:underline">Burbank</Link>
-              <Link href="/funeral-homes/ca/santa-monica" className="text-slate-600 hover:underline">Santa Monica</Link>
-              <Link href="/funeral-homes/ca/torrance" className="text-slate-600 hover:underline">Torrance</Link>
-              <Link href="/funeral-homes/ca/pomona" className="text-slate-600 hover:underline">Pomona</Link>
-              <Link href="/funeral-homes/ca/san-diego" className="text-slate-600 hover:underline">San Diego</Link>
-            </div>
-          </section>
+            <section className="mb-10">
+              <p className="text-gray-600 mb-4">
+                Los Angeles, CA is served by a large number of funeral homes offering both cremation and traditional burial services. Cremation in Los Angeles typically costs between $995 and $6,000, while traditional burial ranges from $7,000 to $15,000 or more. With so many options across the city, comparing providers on price and services is one of the most important steps families can take.
+              </p>
+              <p className="text-gray-600">
+                Below is our complete list of {count} funeral homes in Los Angeles, with real pricing, addresses, and direct contact information so you can compare options and make the right choice for your family.
+              </p>
+            </section>
 
-          <section className="bg-slate-50 rounded-lg p-6 mb-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Planning Ahead in Los Angeles?</h2>
-            <p className="text-gray-600 mb-4">
-              Pre-planning funeral arrangements can lock in today&apos;s prices and spare your family from making difficult decisions during grief. Many Los Angeles funeral homes offer pre-need arrangements.
-            </p>
-            <p className="text-gray-600">
-              Download our free <strong>My Final Wishes Workbook</strong> to document your preferences and make things easier for your loved ones.
-            </p>
-          </section>
+            {homes.map((home, i) => (
+              <section key={home.id} className="mb-8 bg-slate-50 rounded-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-3">
+                  {i + 1}. {home.business_name}
+                </h2>
+                <div className="space-y-2 text-gray-600 mb-4">
+                  <p><strong>Address:</strong> {home.address}, {home.city}, {home.state} {home.zip}</p>
+                  {home.phone && (
+                    <p><strong>Phone:</strong>{' '}
+                      <a href={`tel:${home.phone.replace(/\D/g, '')}`} className="text-slate-600 hover:text-slate-800">
+                        {home.phone}
+                      </a>
+                    </p>
+                  )}
+                  {home.services_offered && (
+                    <p><strong>Services:</strong> {home.services_offered}</p>
+                  )}
+                  {home.price_range_cremation && (
+                    <p><strong>Cremation:</strong> {home.price_range_cremation}</p>
+                  )}
+                  {home.price_range_burial && (
+                    <p><strong>Burial:</strong> {home.price_range_burial}</p>
+                  )}
+                </div>
+                <Link
+                  href={`/funeral-homes/ca/los-angeles/${slugify(home.business_name)}`}
+                  className="inline-block text-slate-600 font-medium hover:text-slate-800"
+                >
+                  View full profile, services &amp; pricing &rarr;
+                </Link>
+              </section>
+            ))}
 
-          <section className="bg-gray-50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Bottom Line</h2>
-            <p className="text-gray-600 mb-4">
-              Los Angeles has hundreds of funeral homes with prices ranging from under $1,000 for direct cremation to $20,000+ for full funeral services. The key is knowing your options and comparing prices before making a decision.
-            </p>
-            <p className="text-gray-600">
-              Use the Evermore Directory to compare funeral home prices across Los Angeles, and don&apos;t hesitate to ask questions. Reputable funeral directors will be transparent about costs and never pressure you into services you don&apos;t need.
-            </p>
-          </section>
+            <section className="mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Average Funeral Costs in Los Angeles, CA
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Funeral costs in Los Angeles vary depending on the type of service, the funeral home, and additional options like viewings, flowers, and cemetery fees. Here are the average costs you can expect in 2026:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse bg-white rounded">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border p-3 text-left">Service Type</th>
+                      <th className="border p-3 text-left">Los Angeles Average Price Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td className="border p-3">Direct Cremation</td><td className="border p-3">$995 to $3,500</td></tr>
+                    <tr><td className="border p-3">Cremation with Memorial Service</td><td className="border p-3">$2,500 to $6,000</td></tr>
+                    <tr><td className="border p-3">Traditional Burial</td><td className="border p-3">$7,000 to $15,000+</td></tr>
+                    <tr><td className="border p-3">Full Funeral with Viewing</td><td className="border p-3">$8,000 to $20,000+</td></tr>
+                    <tr><td className="border p-3">Graveside Service Only</td><td className="border p-3">$3,000 to $6,000</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-gray-500 mt-3">
+                Prices are estimates based on Evermore Directory data and publicly available General Price Lists. Cemetery fees, flowers, and obituary costs are not included. Always request a current GPL from the funeral home.
+              </p>
+            </section>
 
-          {/* Related Articles */}
-          <section className="mt-12 border-t border-gray-200 pt-8">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link href="/blog/cremation-costs-2026" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">How Much Does Cremation Cost in 2026?</h3>
-                <p className="text-sm text-gray-600">State-by-state cremation price guide with average costs and money-saving tips.</p>
+            <section className="mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                How to Choose a Funeral Home in Los Angeles
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Choosing a funeral home is one of the most important decisions you will make during a difficult time. Here are the key factors to consider when comparing Los Angeles funeral homes:
+              </p>
+              <ul className="list-disc list-inside space-y-3 text-gray-600">
+                <li>
+                  <strong>Request the General Price List (GPL).</strong> Every funeral home is legally required to provide one under FTC law. Compare GPLs from at least two or three funeral homes before making a decision.
+                </li>
+                <li>
+                  <strong>Consider location.</strong> Los Angeles is spread out across dozens of neighborhoods. A funeral home close to the family or the cemetery can reduce stress and transportation costs.
+                </li>
+                <li>
+                  <strong>Ask about the services you need.</strong> Some families want a full traditional service with viewing. Others prefer a simple direct cremation. Make sure the funeral home offers what you are looking for at a price you can afford.
+                </li>
+                <li>
+                  <strong>Read reviews.</strong> Google reviews can give you a sense of how other families were treated. Look for mentions of compassion, transparency, and follow through.
+                </li>
+                <li>
+                  <strong>Ask about payment options.</strong> Many Los Angeles funeral homes offer payment plans or accept insurance assignments. Ask upfront so there are no surprises.
+                </li>
+                <li>
+                  <strong>Check for cultural or religious services.</strong> Los Angeles is one of the most diverse cities in the country. If your family has specific cultural or religious requirements, confirm the funeral home can accommodate them.
+                </li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Explore Funeral Homes in Nearby Cities
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Looking for options outside of Los Angeles? Browse funeral homes in these nearby California cities:
+              </p>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/funeral-homes/ca/long-beach" className="text-slate-600 hover:text-slate-800 font-medium">
+                    Funeral Homes in Long Beach, CA &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/funeral-homes/ca/glendale" className="text-slate-600 hover:text-slate-800 font-medium">
+                    Funeral Homes in Glendale, CA &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/funeral-homes/ca/pasadena" className="text-slate-600 hover:text-slate-800 font-medium">
+                    Funeral Homes in Pasadena, CA &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/funeral-homes/ca/burbank" className="text-slate-600 hover:text-slate-800 font-medium">
+                    Funeral Homes in Burbank, CA &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/funeral-homes/ca/santa-monica" className="text-slate-600 hover:text-slate-800 font-medium">
+                    Funeral Homes in Santa Monica, CA &rarr;
+                  </Link>
+                </li>
+                <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/ca" className="text-slate-600 hover:text-slate-800 font-medium">Browse All California Funeral Homes &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Related Reading
+              </h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step by Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
+              </ul>
+            </section>
+
+            <BlogFooterLinks />
+
+            <section className="text-center mt-12">
+              <Link
+                href="/funeral-homes/ca/los-angeles"
+                className="inline-block bg-slate-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors"
+              >
+                View All Los Angeles Funeral Homes
               </Link>
-              <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
-                <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>
-              </Link>
-              <Link href="/blog/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
-                <p className="text-sm text-gray-600">Compare costs, timelines, and services to help your family decide.</p>
-              </Link>
-              <Link href="/blog/cremation-cost-san-jose" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation Cost in San Jose: 2026 Price Guide</h3>
-                <p className="text-sm text-gray-600">Compare actual cremation prices from San Jose funeral homes.</p>
-              </Link>
-            </div>
-          </section>
-          <section className="mb-10 bg-slate-50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
-            <ul className="space-y-2">
-              <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? &rarr;</Link></li>
-              <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
-              <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
-            </ul>
-          </section>
-          <BlogFooterLinks />
-          {/* Find Funeral Homes CTA */}
-          <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>
-            <p className="text-slate-600 text-sm mb-5">Search 4,800+ funeral homes across all 50 states. Compare prices, services, and locations. Free for families. No referral fees.</p>
-            <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">
-              Browse Funeral Homes Near You
-            </Link>
-          </div>
-          <p className="text-sm text-gray-400 mt-8">Last updated: February 2026</p>
-        </article>
-      </div>
-    </main>
+            </section>
+          </article>
+        </div>
+      </main>
     </>
   );
 }
