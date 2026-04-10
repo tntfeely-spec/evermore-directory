@@ -50,6 +50,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'best-prepaid-funeral-plans',
     'what-to-do-after-a-funeral',
     'end-of-life-planning-checklist',
+    'what-happens-if-you-cant-afford-a-funeral',
+    'questions-to-ask-a-funeral-director',
+    'eulogy-for-friend-samples',
+    'what-to-do-with-ashes-after-cremation',
+    'bible-verses-for-funerals',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
