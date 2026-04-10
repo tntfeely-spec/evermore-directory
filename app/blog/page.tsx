@@ -11,6 +11,30 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'end-of-life-planning-checklist',
+    title: 'End of Life Planning Checklist: Everything to Do Before It Is Too Late',
+    description: 'Covers wills, advance directives, funeral preferences, financial accounts, digital assets, and what to share with your family.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'what-to-do-after-a-funeral',
+    title: 'What to Do After a Funeral: The Gathering and Next Steps',
+    description: 'How to plan the after-funeral gathering and handle death certificates, notifications, estate tasks, and self-care in the days that follow.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'best-prepaid-funeral-plans',
+    title: 'Best Prepaid Funeral Plans: What to Know Before You Buy (2026)',
+    description: 'Prepaid funeral plans lock in today\'s prices. How they work, irrevocable vs. revocable, risks to watch for, and alternatives.',
+    category: 'Planning Guide',
+  },
+  {
+    slug: 'what-is-a-celebration-of-life',
+    title: 'What Is a Celebration of Life Service? (2026 Guide)',
+    description: 'A celebration of life focuses on honoring who someone was. How it differs from a funeral, what to expect, and how to plan one.',
+    category: 'Planning Guide',
+  },
+  {
     slug: 'how-long-can-a-funeral-home-hold-a-body',
     title: 'How Long Can a Funeral Home Hold a Body? (2026 Guide)',
     description: 'Most funeral homes can hold a body for 1 to 2 weeks without embalming, and 4 to 6 weeks with embalming. State rules, daily storage fees, and questions to ask.',

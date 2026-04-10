@@ -3,17 +3,28 @@ import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
 
 export const metadata: Metadata = {
-  title: 'Burial vs Cremation: Costs, Process & How to Decide (2026) | Evermore Directory',
-  description: 'Compare burial and cremation side by side. See costs, process, timeline, and pros and cons to help your family make the right decision.',
-  keywords: 'burial vs cremation, cremation or burial, burial vs cremation cost, burial or cremation, is cremation cheaper than burial, cremation vs burial pros and cons',
+  title: 'Burial vs. Cremation: Pros and Cons (2026 Guide)',
+  description: 'Compare burial and cremation side by side. Costs, environmental impact, religious considerations, and what families need to know before deciding.',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog/burial-vs-cremation',
   },
 };
 
+const burialFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Is cremation cheaper than burial?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Direct cremation typically costs $1,500 to $3,500 compared to $7,000 to $12,000 for a traditional burial. However, cremation with a memorial service narrows the gap to $3,500 to $6,500.' } },
+    { '@type': 'Question', name: 'Can you have a funeral service with cremation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Many families hold a full funeral or memorial service before or after cremation. Some choose a viewing before cremation and a memorial service afterward with the urn present.' } },
+    { '@type': 'Question', name: 'Is burial or cremation more environmentally friendly?', acceptedAnswer: { '@type': 'Answer', text: 'Cremation has a smaller land footprint than traditional burial but does produce emissions. Green burial, which skips embalming and uses biodegradable materials, is considered the most environmentally friendly option.' } },
+    { '@type': 'Question', name: 'Does religion affect the choice between burial and cremation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Traditional Judaism and Islam generally require burial. The Catholic Church now permits cremation but prefers burial. Most Protestant and Buddhist traditions accept both. Hinduism traditionally requires cremation.' } },
+  ],
+};
+
 export default function BurialVsCremationPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(burialFaqSchema) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -46,6 +46,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'funeral-homes-chicago-il',
     'how-to-write-an-obituary',
     'how-long-can-a-funeral-home-hold-a-body',
+    'what-is-a-celebration-of-life',
+    'best-prepaid-funeral-plans',
+    'what-to-do-after-a-funeral',
+    'end-of-life-planning-checklist',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
