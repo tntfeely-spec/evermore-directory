@@ -4,16 +4,16 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
-  title: 'Funeral Homes in Los Angeles, California (2026) | Compare Prices and Services',
-  description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info.',
+  title: 'Funeral Homes in Los Angeles, CA (2026) | Prices and Services',
+  description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info. Updated 2026.',
   keywords: 'funeral homes los angeles, los angeles funeral homes, cremation los angeles, funeral services LA, los angeles cremation cost',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog/funeral-homes-los-angeles',
   },
   openGraph: {
-    title: 'Funeral Homes in Los Angeles, California (2026) | Compare Prices and Services',
-    description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info.',
+    title: 'Funeral Homes in Los Angeles, CA (2026) | Prices and Services',
+    description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info. Updated 2026.',
     url: 'https://funeralhomedirectories.com/blog/funeral-homes-los-angeles',
     type: 'article',
   },
@@ -53,7 +53,7 @@ export default async function FuneralHomesLosAngelesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": `${count} Funeral Homes in Los Angeles, CA (2026) | Prices & Services`,
+          "headline": `${count} Funeral Homes in Los Angeles, CA (2026)`,
           "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-04-07",
@@ -66,7 +66,7 @@ export default async function FuneralHomesLosAngelesPage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                {count} Funeral Homes in Los Angeles, CA (2026) | Prices &amp; Services
+                {count} Funeral Homes in Los Angeles, CA (2026)
               </h1>
               <p className="text-sm text-gray-500 mb-3">
                 By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026

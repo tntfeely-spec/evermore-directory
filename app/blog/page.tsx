@@ -120,7 +120,7 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'funeral-homes-houston-tx', title: '13 Funeral Homes in Houston, TX (2026)', description: 'Compare funeral homes in Houston with real pricing, services, and contact info.' },
       { slug: 'funeral-homes-memphis-tn', title: '10 Funeral Homes in Memphis, TN (2026)', description: 'Compare funeral homes in Memphis with real pricing, services, and contact info.' },
       { slug: 'funeral-homes-chicago-il', title: '13 Funeral Homes in Chicago, IL (2026)', description: 'Compare funeral homes in Chicago with real pricing, services, and contact info.' },
-      { slug: 'funeral-homes-los-angeles', title: 'Funeral Homes in Los Angeles: Prices and Services', description: 'Compare funeral home prices in Los Angeles with actual cremation and burial costs.' },
+      { slug: 'funeral-homes-los-angeles', title: 'Funeral Homes in Los Angeles, CA (2026)', description: 'Compare funeral homes in Los Angeles with real pricing, services, and contact info.' },
     ],
   },
 ];
