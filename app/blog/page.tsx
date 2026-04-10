@@ -22,6 +22,8 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'what-happens-if-you-cant-afford-a-funeral', title: "What Happens If You Can't Afford a Funeral?", description: 'Low cost options, government assistance, and what funeral homes are required to offer.' },
       { slug: 'how-to-choose-a-funeral-home', title: 'How to Choose a Funeral Home: What Families Need to Know', description: 'What to look for, what to ask, and how to compare your options.' },
       { slug: 'free-funeral-planning-guide', title: 'Free Funeral Planning Guide: Step by Step for Families', description: 'Every step of funeral planning in one guide so nothing gets missed.' },
+      { slug: 'death-certificate-guide', title: 'Death Certificates: How Many You Need and How to Get Them', description: 'How to order certified copies, what they cost, and where you will need them.' },
+      { slug: 'funeral-pre-planning-checklist', title: 'Funeral Pre-Planning Checklist: What to Decide Before It Is Needed', description: 'A complete checklist of what to decide and document so your family never has to guess.' },
     ],
   },
   {
@@ -44,6 +46,8 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'cremation-near-me', title: 'Cremation Near Me: How to Find Affordable Services', description: 'How to find and compare affordable cremation services in your area.' },
       { slug: 'what-happens-to-the-body-during-cremation', title: 'What Happens to the Body During Cremation?', description: 'A clear, respectful explanation of the cremation process from start to finish.' },
       { slug: 'green-burial-options', title: 'Green Burial Options: What They Are and How to Plan One', description: 'A natural, environmentally friendly alternative to traditional burial.' },
+      { slug: 'cremation-jewelry', title: 'Cremation Jewelry: Keeping a Loved One Close', description: 'Wearable keepsakes that hold a small portion of ashes. Types, costs, and how they work.' },
+      { slug: 'scattering-ashes-guide', title: 'Scattering Ashes: Laws, Locations, and What to Know', description: 'Legal rules for scattering at sea, on land, and in parks, plus how to plan a ceremony.' },
     ],
   },
   {
@@ -55,6 +59,8 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'obituary-examples', title: 'Obituary Examples: Good, Simple, and Meaningful Templates', description: 'Sample obituaries in short, traditional, and celebration of life styles.' },
       { slug: 'thank-you-notes-after-funeral', title: 'Thank You Notes After a Funeral: What to Write and When', description: 'What to write, when to send them, and examples for different situations.' },
       { slug: 'memorial-service-bulletins', title: 'Memorial Service Bulletins: What to Include', description: 'How to create a memorial service bulletin that guides guests and serves as a keepsake.' },
+      { slug: 'obituary-vs-death-notice', title: 'Obituary vs. Death Notice: What Is the Difference?', description: 'How they differ, when to use each, and how much they cost to publish.' },
+      { slug: 'how-to-write-a-eulogy', title: 'How to Write a Eulogy: A Step by Step Guide', description: 'Simple structure, example opening lines, and tips for delivering with confidence.' },
     ],
   },
   {
@@ -67,6 +73,12 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'jewish-funeral-etiquette', title: 'Jewish Funeral Etiquette for Non-Jews', description: 'What to expect, what to wear, and how to show respect at a Jewish funeral.' },
       { slug: 'pallbearer-guide', title: 'Pallbearer Guide: What to Wear, What to Do, and What to Expect', description: 'Everything you need to know about serving as a pallbearer.' },
       { slug: 'christian-funeral-songs', title: 'Modern Christian Funeral Songs', description: 'Meaningful modern and traditional Christian funeral songs to consider.' },
+      { slug: 'what-to-wear-to-a-funeral', title: 'What to Wear to a Funeral: Dress Code Guide', description: 'What to wear for men, women, and children across different service types.' },
+      { slug: 'how-long-does-a-funeral-last', title: 'How Long Does a Funeral Last?', description: 'Timing breakdown for traditional funerals, graveside services, memorials, and celebrations of life.' },
+      { slug: 'funeral-flowers-guide', title: 'Funeral Flowers: What to Send and What They Mean', description: 'Common funeral flowers, their meanings, and how to order appropriately.' },
+      { slug: 'catholic-funeral-traditions', title: 'Catholic Funeral Traditions: What to Expect', description: 'The vigil, funeral Mass, and rite of committal explained for guests and family.' },
+      { slug: 'muslim-funeral-traditions', title: 'Muslim Funeral Traditions: What to Expect', description: 'Islamic funeral customs, the funeral prayer, burial traditions, and how to show respect.' },
+      { slug: 'funeral-etiquette-guide', title: 'Funeral Etiquette: What to Do, Say, and Avoid', description: 'A practical guide to funeral etiquette from arrival through the reception.' },
     ],
   },
   {
@@ -77,6 +89,9 @@ const categories: { name: string; posts: Post[] }[] = [
       { slug: 'words-of-comfort-for-grieving-family', title: 'Words of Comfort for a Grieving Family', description: 'Sincere things to say, messages that bring comfort, and phrases to avoid.' },
       { slug: 'pet-loss-grief', title: 'Pet Loss: Poems, Quotes, and How to Cope', description: 'Comforting poems, meaningful quotes, and practical ways to honor your companion.' },
       { slug: 'what-happens-to-hsa-when-you-die', title: 'What Happens to Your HSA When You Die?', description: 'How HSA funds are handled, spouse vs. non-spouse inheritance, and estate planning tips.' },
+      { slug: 'grief-stages-explained', title: 'The 5 Stages of Grief Explained', description: 'What each stage looks like, why grief is not linear, and when to seek support.' },
+      { slug: 'how-to-support-a-grieving-friend', title: 'How to Support a Grieving Friend: What Actually Helps', description: 'What to say, what to do, and how to show up long after the funeral.' },
+      { slug: 'military-funeral-honors', title: 'Military Funeral Honors: What Veterans Are Entitled To', description: 'Flag ceremony, Taps, eligibility, and how to request honors for a veteran.' },
     ],
   },
   {
