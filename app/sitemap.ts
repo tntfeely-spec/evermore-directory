@@ -92,7 +92,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'average-cemetery-plot-cost',
     'funeral-insurance-guide',
     'social-security-death-benefit',
-    'fema-funeral-assistance',
     'what-happens-to-debt-when-you-die',
     'embalming-explained',
     'how-to-read-a-funeral-home-general-price-list',

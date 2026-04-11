@@ -43,7 +43,6 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'average-cemetery-plot-cost', title: 'How Much Does a Cemetery Plot Cost in 2026?', description: 'Costs range from $1,000 to over $25,000 depending on location and type.' },
       { slug: 'funeral-insurance-guide', title: 'Funeral Insurance: What It Is and Whether You Need It', description: 'How it works, what it costs, and whether it makes sense for your situation.' },
       { slug: 'social-security-death-benefit', title: 'Social Security Death Benefit: What Families Can Claim', description: 'The $255 payment, who qualifies, and survivor benefits beyond the lump sum.' },
-      { slug: 'fema-funeral-assistance', title: 'FEMA Funeral Assistance for COVID Related Deaths', description: 'Who qualifies, what is covered, and how to apply for up to $9,000.' },
       { slug: 'what-happens-to-debt-when-you-die', title: 'What Happens to Debt When You Die?', description: 'What happens to each type of debt and what your family is responsible for.' },
     ],
   },
