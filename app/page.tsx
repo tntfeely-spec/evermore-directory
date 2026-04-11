@@ -30,11 +30,11 @@ export default function HomePage() {
 
         <div className="relative z-10">
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Find and Compare Funeral Homes Nationwide
             </h1>
-            <p className="text-xl md:text-2xl text-gray-800 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-800 max-w-2xl mx-auto mb-5 leading-relaxed">
               Compare 4,800+ funeral homes and cremation services across all 50 states. Search by city or ZIP code to find and compare local funeral directors, burial options, direct cremation providers, and pricing near you. Free for families. No pressure.
             </p>
 
