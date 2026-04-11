@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import CalcScript from '@/components/CalcScript'
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -505,28 +506,15 @@ export default async function FuneralHomePage({
         </div>
       )}
 
-      {/* Calculator script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-const _prices_${calcId} = {
-  basic:2690,transport:395,viewing:495,ceremony:495,
-  graveside:395,hearse:295,embalm:750,directcrem:${parsePrice(listing.price_range_cremation, 1595)},
-  directbur:${parsePrice(listing.price_range_burial, 2500)},casket:2495,urn:295,burial:1395
-};
-function recalc(id) {
-  let total = 0;
-  Object.keys(_prices_${calcId}).forEach(k => {
-    const el = document.getElementById('chk-' + k + '-' + id);
-    if (el && el.checked) total += _prices_${calcId}[k];
-  });
-  const el = document.getElementById('total-' + id);
-  if (el) el.textContent = '$' + total.toLocaleString();
-}
-document.querySelectorAll('[id^="chk-"][id$="-${calcId}"]').forEach(el => {
-  if (!el.disabled) el.addEventListener('change', () => recalc('${calcId}'));
-});
-`,
+      {/* Calculator interactivity */}
+      <CalcScript
+        calcId={calcId}
+        prices={{
+          basic: 2690, transport: 395, viewing: 495, ceremony: 495,
+          graveside: 395, hearse: 295, embalm: 750,
+          directcrem: parsePrice(listing.price_range_cremation, 1595),
+          directbur: parsePrice(listing.price_range_burial, 2500),
+          casket: 2495, urn: 295, burial: 1395,
         }}
       />
 
