@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Navigation from '@/components/Navigation';
 import BlogIndex from '@/components/BlogIndex';
 
 export const metadata: Metadata = {
@@ -182,6 +183,7 @@ export default function BlogIndexPage() {
           }),
         }}
       />
+      <Navigation />
       <main className="min-h-screen relative">
         <div
           className="fixed inset-0 z-0"
