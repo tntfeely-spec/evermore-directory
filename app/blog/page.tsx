@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BlogIndex from '@/components/BlogIndex';
 
 export const metadata: Metadata = {
   title: 'Funeral & Cremation Planning Blog | Evermore Directory',
@@ -165,11 +166,6 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
   },
 ];
 
-function postHref(slug: string) {
-  if (slug.startsWith('/')) return slug;
-  return `/blog/${slug}`;
-}
-
 export default function BlogIndexPage() {
   return (
     <>
@@ -198,20 +194,7 @@ export default function BlogIndexPage() {
               <p className="text-xl text-gray-600">Guides, cost comparisons, and resources to help you make informed decisions about funeral and cremation services.</p>
             </header>
 
-            {categories.map((cat) => (
-              <section key={cat.name} className="mb-14">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 border-b border-gray-200 pb-2">{cat.name}</h2>
-                {cat.subtitle && <p className="text-sm text-gray-500 mb-6">{cat.subtitle}</p>}
-                <div className="grid md:grid-cols-2 gap-4">
-                  {cat.posts.map((post) => (
-                    <Link key={post.slug} href={postHref(post.slug)} className="block bg-white bg-opacity-90 border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1 hover:text-slate-600 transition-colors">{post.title}</h3>
-                      <p className="text-sm text-gray-600">{post.description}</p>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            ))}
+            <BlogIndex categories={categories} />
 
             <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">Find Funeral Homes Near You</h2>
