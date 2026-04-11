@@ -34,10 +34,6 @@ export default function HomePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Find and Compare Funeral Homes Nationwide
             </h1>
-            <p className="text-base md:text-lg text-gray-800 max-w-2xl mx-auto mb-5 leading-relaxed">
-              Compare 4,800+ funeral homes and cremation services across all 50 states. Search by city or ZIP code to find and compare local funeral directors, burial options, direct cremation providers, and pricing near you. Free for families. No pressure.
-            </p>
-
             <div className="max-w-2xl mx-auto mb-8">
               <SearchAutocomplete />
             </div>
@@ -166,6 +162,7 @@ export default function HomePage() {
             </div>
 
             <div className="mb-20">
+              <p className="text-center text-gray-600 text-base mb-4 max-w-2xl mx-auto">Compare 4,800+ funeral homes and cremation services across all 50 states. Search by city or ZIP code to find and compare local funeral directors, burial options, direct cremation providers, and pricing near you. Free for families. No pressure.</p>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Browse Top Cities</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
                 {[
