@@ -172,6 +172,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'tampa-obituaries',
     'fresno-obituaries',
     'miami-obituaries',
+    'funeral-flowers-delivery',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
