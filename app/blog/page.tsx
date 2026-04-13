@@ -46,6 +46,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'funeral-insurance-guide', title: 'Funeral Insurance: What It Is and Whether You Need It', description: 'How it works, what it costs, and whether it makes sense for your situation.' },
       { slug: 'social-security-death-benefit', title: 'Social Security Death Benefit: What Families Can Claim', description: 'The $255 payment, who qualifies, and survivor benefits beyond the lump sum.' },
       { slug: 'what-happens-to-debt-when-you-die', title: 'What Happens to Debt When You Die?', description: 'What happens to each type of debt and what your family is responsible for.' },
+      { slug: 'funeral-home-payment-plans', title: 'Funeral Home Payment Plans: What Families Need to Know', description: 'How to ask, what to expect, and what other options exist if you need help covering costs.' },
     ],
   },
   {
