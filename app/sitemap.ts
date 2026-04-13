@@ -133,6 +133,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'condolence-text-message',
     'funeral-home-payment-plans',
     'condolence-text-messages',
+    'hidden-funeral-costs-tennessee',
+    'what-affects-funeral-costs-tennessee',
+    'cremation-vs-burial-cost-tennessee',
+    'low-cost-funeral-options-nashville',
+    'funeral-financial-assistance-tennessee',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
