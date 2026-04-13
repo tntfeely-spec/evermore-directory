@@ -88,6 +88,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'what-to-say-at-a-funeral', title: 'What to Say at a Funeral: Words of Comfort That Help', description: 'Simple things to say and a few phrases to avoid.' },
       { slug: 'sample-eulogy-for-mother-from-daughter', title: 'Sample Eulogy for a Mother from a Daughter', description: 'Sample eulogies, a simple structure, and guidance for delivering it with love.' },
       { slug: 'poems-for-loss-of-father', title: 'Poems for the Loss of a Father: Comfort, Memory, and Farewell', description: 'Poems to read at a funeral, share in a card, or keep for yourself.' },
+      { slug: 'condolence-text-message', title: 'Condolence Text Messages: What to Write and What to Avoid', description: 'Simple, sincere examples and phrases to avoid when texting condolences.' },
     ],
   },
   {
@@ -106,6 +107,8 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'non-religious-funeral-options', title: 'Non-Religious Funeral Options: Planning a Secular Service', description: 'How to plan a meaningful service without religious content.' },
       { slug: 'food-for-funeral-reception', title: 'Food for a Funeral Reception: What to Serve and How to Plan', description: 'What to serve, how much to order, and how to keep it simple.' },
       { slug: 'donations-at-a-funeral', title: 'Donations at a Funeral: How to Request and Handle Them', description: 'How to request charitable donations in lieu of flowers.' },
+      { slug: 'what-is-a-funeral-service', title: 'What Is a Funeral Service? Types, Format, and What to Expect', description: 'What a funeral service involves, the different types, and how to plan one.' },
+      { slug: 'classical-music-for-funerals', title: 'Classical Music for Funerals: Meaningful Pieces for Any Service', description: 'The most appropriate and comforting classical pieces for a funeral.' },
     ],
   },
   {
@@ -135,6 +138,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'scripture-readings-for-funerals', title: 'Scripture Readings for Funerals: New and Old Testament Passages', description: 'A collection of New Testament and Old Testament passages for any service.' },
       { slug: 'prayer-of-the-faithful-funeral', title: 'Prayer of the Faithful at a Funeral: Examples and How It Works', description: 'What it is, how it works, and example petitions you can use.' },
       { slug: 'funeral-hymns', title: 'Funeral Hymns: Traditional and Uplifting Songs for a Service', description: 'The most meaningful and uplifting hymns for a funeral or memorial service.' },
+      { slug: 'amazing-grace-hymn', title: 'Amazing Grace: The History and Story Behind the Hymn', description: 'The story behind the song and why it resonates at memorial services.' },
     ],
   },
   {
