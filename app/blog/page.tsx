@@ -86,6 +86,8 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'how-to-write-a-condolence-card', title: 'How to Write a Condolence Card: What to Say and What to Avoid', description: 'Simple, sincere messages and examples that actually help.' },
       { slug: 'funeral-readings-and-poems', title: 'Funeral Readings and Poems: A Collection for Any Service', description: 'Religious and non-religious options for any ceremony.' },
       { slug: 'what-to-say-at-a-funeral', title: 'What to Say at a Funeral: Words of Comfort That Help', description: 'Simple things to say and a few phrases to avoid.' },
+      { slug: 'sample-eulogy-for-mother-from-daughter', title: 'Sample Eulogy for a Mother from a Daughter', description: 'Sample eulogies, a simple structure, and guidance for delivering it with love.' },
+      { slug: 'poems-for-loss-of-father', title: 'Poems for the Loss of a Father: Comfort, Memory, and Farewell', description: 'Poems to read at a funeral, share in a card, or keep for yourself.' },
     ],
   },
   {
@@ -102,6 +104,8 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'funeral-etiquette-guide', title: 'Funeral Etiquette: What to Do, Say, and Avoid', description: 'A practical guide to funeral etiquette from arrival through the reception.' },
       { slug: 'mausoleum-burial-guide', title: 'Mausoleum Burial: What It Is and What It Costs', description: 'What mausoleum burial involves, what it costs, and how to decide.' },
       { slug: 'non-religious-funeral-options', title: 'Non-Religious Funeral Options: Planning a Secular Service', description: 'How to plan a meaningful service without religious content.' },
+      { slug: 'food-for-funeral-reception', title: 'Food for a Funeral Reception: What to Serve and How to Plan', description: 'What to serve, how much to order, and how to keep it simple.' },
+      { slug: 'donations-at-a-funeral', title: 'Donations at a Funeral: How to Request and Handle Them', description: 'How to request charitable donations in lieu of flowers.' },
     ],
   },
   {
@@ -128,6 +132,9 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'christian-funeral-songs', title: 'Modern Christian Funeral Songs', description: 'Meaningful modern and traditional Christian funeral songs to consider.' },
       { slug: 'hindu-funeral-traditions', title: 'Hindu Funeral Traditions: What to Expect', description: 'Cremation within 24 hours, the mourning period, and how to show respect.' },
       { slug: 'buddhist-funeral-traditions', title: 'Buddhist Funeral Traditions: What to Expect', description: 'Chanting, meditation, and honoring the cycle of rebirth.' },
+      { slug: 'scripture-readings-for-funerals', title: 'Scripture Readings for Funerals: New and Old Testament Passages', description: 'A collection of New Testament and Old Testament passages for any service.' },
+      { slug: 'prayer-of-the-faithful-funeral', title: 'Prayer of the Faithful at a Funeral: Examples and How It Works', description: 'What it is, how it works, and example petitions you can use.' },
+      { slug: 'funeral-hymns', title: 'Funeral Hymns: Traditional and Uplifting Songs for a Service', description: 'The most meaningful and uplifting hymns for a funeral or memorial service.' },
     ],
   },
   {
@@ -152,6 +159,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'living-will-vs-advance-directive', title: 'Living Will vs. Advance Directive: What Is the Difference?', description: 'How they differ, what each covers, and why you need both.' },
       { slug: 'medicaid-funeral-assistance', title: 'Medicaid and Funeral Assistance for Low Income Families', description: 'What is available, how to apply, and what it covers.' },
       { slug: 'notifying-agencies-after-death', title: 'Who to Notify After a Death: A Complete Checklist', description: 'Every agency, institution, and organization that needs to know.' },
+      { slug: 'funeral-homes-that-offer-payment-plans', title: 'Funeral Homes That Offer Payment Plans', description: 'How payment plans work, what to ask, and other financial options.' },
     ],
   },
   {
