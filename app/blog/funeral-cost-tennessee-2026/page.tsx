@@ -29,6 +29,17 @@ export default function FuneralCostTennessee2026Page() {
             <section className="mb-10">
               <p className="text-gray-600 mb-4">Funeral costs in Tennessee vary widely depending on the type of service, the funeral home, and the county. A traditional funeral with burial in Nashville looks very different from a direct cremation in a rural county. This guide breaks down what Tennessee families can expect to pay in 2026.</p>
             </section>
+
+            <div className="mb-10 bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Facts</p>
+              <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+                <li>A traditional funeral in Tennessee costs between $7,152 and $8,159 on average in 2026.</li>
+                <li>Direct cremation in Tennessee starts at $1,170 and averages $1,800 to $2,850.</li>
+                <li>Memphis and Nashville funeral costs run 10 to 20 percent higher than smaller Tennessee cities.</li>
+                <li>Tennessee funeral homes are required by federal law to provide a General Price List on request at no charge.</li>
+              </ul>
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Traditional Funeral with Burial in Tennessee</h2>
               <p className="text-gray-600 mb-4">A traditional funeral with burial in Tennessee typically costs between $7,500 and $14,000, not including cemetery costs. The breakdown usually includes: funeral home basic services fee ($2,000 to $3,500), embalming and preparation ($400 to $800), use of facilities for viewing and service ($700 to $1,500), casket ($2,000 to $10,000), and transportation ($300 to $600). Cemetery costs -- plot, opening and closing, and liner -- add another $2,000 to $5,000.</p>
@@ -40,7 +51,33 @@ export default function FuneralCostTennessee2026Page() {
             </section>
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cost by Region</h2>
-              <p className="text-gray-600 mb-4">Funeral costs in Nashville and Knoxville tend to run higher than rural Tennessee. Every licensed funeral home is legally required to provide an itemized General Price List on request -- ask for it before deciding.</p>
+              <p className="text-gray-600 mb-4">Funeral costs in Nashville and Knoxville tend to run higher than rural Tennessee. Every licensed funeral home is legally required to provide an itemized General Price List on request. Ask for it before deciding.</p>
+              <div className="mt-6 overflow-x-auto">
+                <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <caption className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 text-left">Average Funeral Costs by City in Tennessee (2026)</caption>
+                  <thead className="bg-slate-100">
+                    <tr>
+                      <th className="text-left px-4 py-2 font-semibold text-gray-700">City</th>
+                      <th className="text-center px-4 py-2 font-semibold text-gray-700">Funeral Homes</th>
+                      <th className="text-left px-4 py-2 font-semibold text-gray-700">Cremation Range</th>
+                      <th className="text-left px-4 py-2 font-semibold text-gray-700">Burial Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-medium">Nashville</td><td className="px-4 py-2 text-center">11</td><td className="px-4 py-2">$3,500 to $7,000</td><td className="px-4 py-2">$6,500 to $12,000</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-medium">Knoxville</td><td className="px-4 py-2 text-center">11</td><td className="px-4 py-2">$1,800 to $6,500</td><td className="px-4 py-2">$5,000 to $13,000</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-medium">Memphis</td><td className="px-4 py-2 text-center">10</td><td className="px-4 py-2">$2,500 to $7,000</td><td className="px-4 py-2">$5,000 to $12,000</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-medium">Murfreesboro</td><td className="px-4 py-2 text-center">9</td><td className="px-4 py-2">$1,800 to $7,000</td><td className="px-4 py-2">$5,000 to $12,000</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-medium">Clarksville</td><td className="px-4 py-2 text-center">8</td><td className="px-4 py-2">$1,295 to $6,500</td><td className="px-4 py-2">$5,000 to $10,000</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-medium">Johnson City</td><td className="px-4 py-2 text-center">8</td><td className="px-4 py-2">$2,000 to $7,000</td><td className="px-4 py-2">$5,000 to $13,000</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-medium">Chattanooga</td><td className="px-4 py-2 text-center">7</td><td className="px-4 py-2">$2,000 to $6,500</td><td className="px-4 py-2">$5,500 to $11,000</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-medium">Jackson</td><td className="px-4 py-2 text-center">7</td><td className="px-4 py-2">$1,800 to $7,000</td><td className="px-4 py-2">$5,000 to $12,000</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-medium">Franklin</td><td className="px-4 py-2 text-center">4</td><td className="px-4 py-2">$2,500 to $6,500</td><td className="px-4 py-2">$5,500 to $13,000</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-medium">Kingsport</td><td className="px-4 py-2 text-center">3</td><td className="px-4 py-2">$1,500 to $6,000</td><td className="px-4 py-2">$4,500 to $13,000</td></tr>
+                  </tbody>
+                </table>
+                <p className="text-xs text-gray-400 mt-2">Source: General Price Lists from Tennessee funeral homes listed on Evermore Directory. Prices are approximate ranges and may vary by provider.</p>
+              </div>
             </section>
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Veteran Burial Benefits in Tennessee</h2>

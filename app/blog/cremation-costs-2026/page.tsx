@@ -58,6 +58,16 @@ export default function CremationCosts2026Page() {
             </p>
           </section>
 
+          <div className="mb-10 bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Facts</p>
+            <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+              <li>Direct cremation costs between $700 and $3,000 nationally as of 2026.</li>
+              <li>Cremation now accounts for more than 60% of all final dispositions in the United States.</li>
+              <li>A cremation with a full memorial service costs $3,000 to $7,000 on average.</li>
+              <li>Aquamation, also called alkaline hydrolysis, costs $2,000 to $3,000 and is available in 28 states.</li>
+            </ul>
+          </div>
+
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Answer: Cremation Costs in 2026</h2>
             <div className="grid md:grid-cols-2 gap-6">

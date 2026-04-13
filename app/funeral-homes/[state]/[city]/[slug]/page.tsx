@@ -348,6 +348,8 @@ export default async function FuneralHomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Person","name":"Terry Feely","jobTitle":"Directory Editor","description":"Former firefighter and paramedic with firsthand experience helping families navigate end-of-life decisions.","url":"https://funeralhomedirectories.com/about"}) }} />
+
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-[1100px] mx-auto px-6 py-2.5 text-xs text-gray-400">
@@ -441,6 +443,10 @@ export default async function FuneralHomePage({
           {/* Get in touch card */}
           <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 overflow-hidden">
             <ContactForm listing={listing} calcId={calcId} />
+          </div>
+
+          <div className="mb-6 text-center text-sm text-gray-400">
+            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 4,800+ funeral homes across all 50 states.</p>
           </div>
 
           {/* Helpful resources */}

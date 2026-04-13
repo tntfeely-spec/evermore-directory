@@ -61,6 +61,16 @@ export default function FuneralCosts2026Page() {
             </p>
           </section>
 
+          <div className="mb-10 bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Facts</p>
+            <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+              <li>The average traditional funeral in the United States costs $7,848 in 2026 including a casket and viewing.</li>
+              <li>Direct cremation is the least expensive funeral option, averaging $1,000 to $3,000 nationally.</li>
+              <li>Funeral costs have increased approximately 28% over the past decade, outpacing general inflation.</li>
+              <li>The FTC Funeral Rule requires all funeral homes to provide an itemized price list to anyone who asks, at no charge.</li>
+            </ul>
+          </div>
+
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Answer: Funeral Costs in 2026</h2>
             <div className="grid md:grid-cols-3 gap-6">

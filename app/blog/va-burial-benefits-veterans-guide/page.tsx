@@ -39,6 +39,16 @@ export default function VaBurialBenefitsVeteransGuidePage() {
               <p className="text-gray-600 mb-4">The VA provides several burial benefits for eligible veterans, and most of them cost the family nothing. Here is what is available and how to access it.</p>
             </section>
 
+            <div className="mb-10 bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Facts</p>
+              <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+                <li>The VA provides burial allowances of up to $796 for service connected deaths and $300 for non service connected deaths as of 2026.</li>
+                <li>Veterans buried in national cemeteries receive a free grave, opening and closing, liner, headstone or marker, and perpetual care at no cost.</li>
+                <li>There are 155 national cemeteries across the United States accepting veteran burials.</li>
+                <li>Surviving spouses of eligible veterans may also be buried in a national cemetery at no cost.</li>
+              </ul>
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Basic Burial Allowance</h2>
               <p className="text-gray-600 mb-4">For veterans who died on or after October 1, 2025, the VA pays up to <strong>$1,002</strong> for burial and funeral expenses. If the death was service-connected, the allowance increases to $2,000 regardless of when the death occurred. This is a reimbursement -- a funeral home must be paid first, then the family submits VA Form 21P-530EZ to request reimbursement. Amounts adjust annually based on the Consumer Price Index; check <a href="https://www.va.gov/burials-memorials/veterans-burial-allowance/" className="text-slate-600 hover:underline" target="_blank" rel="noopener noreferrer">va.gov</a> for the current rate.</p>

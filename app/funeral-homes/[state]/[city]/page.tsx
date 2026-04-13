@@ -283,6 +283,13 @@ export default async function CityPage({ params }: PageProps) {
             "item": `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${citySlug}`
           }
         ]
+      },
+      {
+        "@type": "Person",
+        "name": "Terry Feely",
+        "jobTitle": "Directory Editor",
+        "description": "Former firefighter and paramedic with firsthand experience helping families navigate end-of-life decisions.",
+        "url": "https://funeralhomedirectories.com/about"
       }
     ]
   };
@@ -566,6 +573,10 @@ All funeral homes in our {cityName} directory include contact information, addre
                 When contacting funeral homes in {cityName}, {stateName}, don&apos;t hesitate to ask detailed questions about their pricing, services, and experience with your specific needs. Reputable funeral directors in {cityName} will be transparent about costs and happy to explain all available options without pressure. Taking time to compare services from multiple {cityName} funeral homes ensures you make the best decision for your family during this difficult time.
               </p>
             </div>
+          </div>
+
+          <div className="mb-12 text-center text-sm text-gray-400">
+            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 4,800+ funeral homes across all 50 states.</p>
           </div>
 
           {/* FAQ Section */}

@@ -31,6 +31,17 @@ export default function WhatToDoWhenSomeoneDiesPage() {
               <p className="text-gray-600 mb-4">I responded to hundreds of deaths as a firefighter and paramedic. The moment a family realizes what has happened, everything stops. And then someone has to start making calls they do not want to make.</p>
               <p className="text-gray-600 mb-4">This guide covers what needs to happen in the first 72 hours -- in a workable order.</p>
             </section>
+
+            <div className="mb-10 bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Facts</p>
+              <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+                <li>The average family spends $9,000 to $12,000 on funeral arrangements in the United States.</li>
+                <li>Most funeral homes require at least a partial deposit before services begin.</li>
+                <li>Death certificates are needed for nearly every financial and legal task after a death. Most families need 8 to 12 certified copies.</li>
+                <li>A funeral home must release the remains to the next of kin within a reasonable time even if payment is disputed.</li>
+              </ul>
+            </div>
+
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">In the First Hour</h2>
               <p className="text-gray-600 mb-4">If the death was unexpected, call 911. If the death was expected -- a hospice patient at home -- call the hospice nurse first. They will guide you through the process and notify the appropriate parties. Do not call 911 for an expected death under hospice care unless the hospice directs you to.</p>
