@@ -90,6 +90,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'sample-eulogy-for-mother-from-daughter', title: 'Sample Eulogy for a Mother from a Daughter', description: 'Sample eulogies, a simple structure, and guidance for delivering it with love.' },
       { slug: 'poems-for-loss-of-father', title: 'Poems for the Loss of a Father: Comfort, Memory, and Farewell', description: 'Poems to read at a funeral, share in a card, or keep for yourself.' },
       { slug: 'condolence-text-message', title: 'Condolence Text Messages: What to Write and What to Avoid', description: 'Simple, sincere examples and phrases to avoid when texting condolences.' },
+      { slug: 'condolence-text-messages', title: 'Condolence Text Messages: What to Send and What to Avoid', description: 'Examples for close friends, coworkers, loss of parent, loss of spouse, and loss of child.' },
     ],
   },
   {

@@ -132,6 +132,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'classical-music-for-funerals',
     'condolence-text-message',
     'funeral-home-payment-plans',
+    'condolence-text-messages',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
