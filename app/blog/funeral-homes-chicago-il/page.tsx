@@ -281,11 +281,9 @@ export default function FuneralHomesChicagoPage() {
                 Looking for options outside of Chicago? Browse funeral homes in these nearby Illinois cities:
               </p>
               <ul className="space-y-2">
-                <li><Link href="/funeral-homes/il/evanston" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Evanston, IL &rarr;</Link></li>
-                <li><Link href="/funeral-homes/il/oak-park" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Oak Park, IL &rarr;</Link></li>
-                <li><Link href="/funeral-homes/il/naperville" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Naperville, IL &rarr;</Link></li>
-                <li><Link href="/funeral-homes/il/schaumburg" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Schaumburg, IL &rarr;</Link></li>
-                <li><Link href="/funeral-homes/il/joliet" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Joliet, IL &rarr;</Link></li>
+                <li><Link href="/funeral-homes/il/joliet" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Joliet, IL</Link></li>
+                <li><Link href="/funeral-homes/il/naperville" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Naperville, IL</Link></li>
+                <li><Link href="/funeral-homes/il/schaumburg" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Schaumburg, IL</Link></li>
                 <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/il" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Illinois Funeral Homes &rarr;</Link></li>
               </ul>
             </section>

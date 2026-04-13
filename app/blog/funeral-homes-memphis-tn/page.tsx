@@ -254,11 +254,9 @@ export default function FuneralHomesMemphisPage() {
                 Looking for options outside of Memphis? Browse funeral homes in these nearby cities:
               </p>
               <ul className="space-y-2">
-                <li><Link href="/funeral-homes/tn/germantown" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Germantown, TN &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tn/collierville" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Collierville, TN &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tn/bartlett" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Bartlett, TN &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tn/cordova" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Cordova, TN &rarr;</Link></li>
-                <li><Link href="/funeral-homes/ms/southaven" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Southaven, MS &rarr;</Link></li>
+                <li><Link href="/funeral-homes/tn/jackson" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Jackson, TN</Link></li>
+                <li><Link href="/funeral-homes/tn/knoxville" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Knoxville, TN</Link></li>
+                <li><Link href="/funeral-homes/tn/chattanooga" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Chattanooga, TN</Link></li>
                 <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/tn" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Tennessee Funeral Homes &rarr;</Link></li>
               </ul>
             </section>

@@ -281,11 +281,8 @@ export default function FuneralHomesHoustonPage() {
                 Looking for options outside of Houston? Browse funeral homes in these nearby Texas cities:
               </p>
               <ul className="space-y-2">
-                <li><Link href="/funeral-homes/tx/sugar-land" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Sugar Land, TX &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tx/pearland" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Pearland, TX &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tx/pasadena" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Pasadena, TX &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tx/katy" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Katy, TX &rarr;</Link></li>
-                <li><Link href="/funeral-homes/tx/the-woodlands" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in The Woodlands, TX &rarr;</Link></li>
+                <li><Link href="/funeral-homes/tx/pearland" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Pearland, TX</Link></li>
+                <li><Link href="/funeral-homes/tx/the-woodlands" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in The Woodlands, TX</Link></li>
                 <li className="pt-2 mt-2 border-t border-gray-200"><Link href="/funeral-homes/tx" className="text-slate-600 hover:text-slate-800 font-medium">Browse All Texas Funeral Homes &rarr;</Link></li>
               </ul>
             </section>
