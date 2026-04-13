@@ -157,8 +157,21 @@ export default async function CityPage({ params }: PageProps) {
 
   const cremLow = minCrem.toLocaleString();
   const cremHigh = allCremPrices.length > 0 ? Math.max(...allCremPrices).toLocaleString() : '3,500';
+  const burialLow = allBurialPrices.length > 0 ? Math.min(...allBurialPrices).toLocaleString() : '7,000';
+  const burialHigh = allBurialPrices.length > 0 ? Math.max(...allBurialPrices).toLocaleString() : '12,000';
   const costLow = minPrice.toLocaleString();
   const costHigh = maxPrice.toLocaleString();
+
+  // Aggregate services offered across all listings
+  const allServices = [...new Set(
+    funeralHomes.flatMap((h: FuneralHome) =>
+      (h.services_offered || '').split(',').map((s: string) => s.trim()).filter(Boolean)
+    )
+  )].slice(0, 6);
+  const servicesText = allServices.length > 0 ? allServices.join(', ') : 'Traditional Funerals, Cremation, Pre-Planning, and Memorial Services';
+
+  // Sample funeral home names for tips section
+  const sampleNames = funeralHomes.slice(0, 3).map((h: FuneralHome) => h.business_name);
 
   const faqSchemaData = {
     "@context": "https://schema.org",
@@ -437,13 +450,13 @@ All funeral homes in our {cityName} directory include contact information, addre
             </h2>
             <div className="prose max-w-none text-gray-600">
               <p className="mb-4 leading-relaxed">
-                Funeral homes in {cityName}, {stateName} specialize in providing compassionate end-of-life services to families during difficult times. Our directory connects you with both independent family-owned funeral directors and established memorial chapels throughout {cityName}. From local funeral homes to cremation providers and memorial service specialists, these trusted providers offer burial services, cremation options, memorial planning, pre-arrangement services, and grief support to help {cityName} families honor their loved ones.
+                {cityName} has {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} offering services including {servicesText}. {allCremPrices.length > 0 ? `Cremation costs in ${cityName} range from $${cremLow} to $${cremHigh}` : `Cremation is available through providers in ${cityName}`}{allBurialPrices.length > 0 ? ` and traditional burial ranges from $${burialLow} to $${burialHigh} based on current General Price Lists from local providers.` : '.'}
               </p>
               <p className="mb-4 leading-relaxed">
-                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, our directory provides access to funeral homes with detailed service information, contact details, and location data. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create meaningful services that reflect your family's wishes and values.
+                Whether you need immediate funeral services in {cityName}, are pre-planning arrangements, or seeking cremation options, our directory provides access to {funeralHomes.length} local funeral homes with service information, contact details, and pricing. {cityName} funeral directors are experienced with various cultural and religious traditions and can help create meaningful services that reflect your family&apos;s wishes.
               </p>
               <p className="leading-relaxed">
-                The funeral homes listed in {cityName} offer a full range of services including traditional funerals with viewing, graveside services, direct burial, cremation services with memorial options, celebration of life ceremonies, green burial alternatives, and comprehensive pre-planning services. Many {cityName} funeral homes also provide grief counseling, memorial products, and ongoing support to help families navigate the grieving process.
+                Compare all {funeralHomes.length} funeral homes in {cityName} above to find the right provider for your family. Each listing includes the address, phone number, and available services so you can contact them directly and request a General Price List.
               </p>
             </div>
           </div>
@@ -478,6 +491,12 @@ All funeral homes in our {cityName} directory include contact information, addre
                 <span className="text-slate-600 font-bold mr-3">•</span>
                 <span>Verify the funeral home&apos;s licensing in {stateName} and ask about their experience with specific cultural or religious traditions</span>
               </li>
+              {sampleNames.length >= 2 && (
+              <li className="flex items-start">
+                <span className="text-slate-600 font-bold mr-3">•</span>
+                <span>In {cityName}, providers like {sampleNames.slice(0, 3).join(', ')} offer consultations and will provide a General Price List on request</span>
+              </li>
+              )}
             </ul>
           </div>
 
