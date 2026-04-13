@@ -138,6 +138,28 @@ export default async function CityPage({ params }: PageProps) {
   // Generate JSON-LD Schema
   const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
 
+  // Calculate real pricing from listed funeral homes
+  function extractPrices(raw: string | null): number[] {
+    if (!raw) return [];
+    const matches = raw.match(/\$?([\d,]+)/g);
+    if (!matches) return [];
+    return matches.map(m => parseInt(m.replace(/[$,]/g, ''), 10)).filter(n => n > 0 && n < 100000);
+  }
+
+  const allCremPrices = funeralHomes.flatMap((h: FuneralHome) => extractPrices(h.price_range_cremation));
+  const allBurialPrices = funeralHomes.flatMap((h: FuneralHome) => extractPrices(h.price_range_burial));
+  const allPrices = [...allCremPrices, ...allBurialPrices];
+
+  const minCrem = allCremPrices.length > 0 ? Math.min(...allCremPrices) : 1500;
+  const maxBurial = allBurialPrices.length > 0 ? Math.max(...allBurialPrices) : 15000;
+  const minPrice = allPrices.length > 0 ? Math.min(...allPrices) : 1500;
+  const maxPrice = allPrices.length > 0 ? Math.max(...allPrices) : 15000;
+
+  const cremLow = minCrem.toLocaleString();
+  const cremHigh = allCremPrices.length > 0 ? Math.max(...allCremPrices).toLocaleString() : '3,500';
+  const costLow = minPrice.toLocaleString();
+  const costHigh = maxPrice.toLocaleString();
+
   const faqSchemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -147,7 +169,7 @@ export default async function CityPage({ params }: PageProps) {
         "name": `How much does a funeral cost in ${cityName}, ${stateName}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Funeral costs in ${cityName} typically range from $1,500 for direct cremation to $15,000 or more for a traditional funeral with burial. Request a General Price List from each funeral home to compare exact costs.`
+          "text": `Based on ${funeralHomes.length} funeral homes listed in ${cityName}, funeral costs range from $${costLow} for direct cremation to $${costHigh} or more for a traditional funeral with burial. Request a General Price List from each funeral home to compare exact costs.`
         }
       },
       {
@@ -163,7 +185,7 @@ export default async function CityPage({ params }: PageProps) {
         "name": `What is the cheapest funeral option in ${cityName}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Direct cremation is typically the least expensive option in ${cityName}, often ranging from $1,500 to $3,500. This includes transportation, cremation, and return of remains without a formal service.`
+          "text": `Direct cremation is typically the least expensive option in ${cityName}, ranging from $${cremLow} to $${cremHigh} based on local providers. This includes transportation, cremation, and return of remains without a formal service.`
         }
       },
       {
