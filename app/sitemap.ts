@@ -165,6 +165,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'bowling-green-ky-obituaries',
     'anchorage-obituaries',
     'winston-salem-obituaries',
+    'columbus-ohio-obituaries',
+    'st-louis-obituaries',
+    'indianapolis-obituaries',
+    'detroit-obituaries',
+    'tampa-obituaries',
+    'fresno-obituaries',
+    'miami-obituaries',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

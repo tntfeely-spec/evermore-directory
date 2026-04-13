@@ -209,6 +209,13 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'bowling-green-ky-obituaries', title: 'Bowling Green KY Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Bowling Green families.' },
       { slug: 'anchorage-obituaries', title: 'Anchorage Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Anchorage families.' },
       { slug: 'winston-salem-obituaries', title: 'Winston-Salem Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Winston-Salem families.' },
+      { slug: 'columbus-ohio-obituaries', title: 'Columbus Ohio Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Columbus families.' },
+      { slug: 'st-louis-obituaries', title: 'St. Louis Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for St. Louis families.' },
+      { slug: 'indianapolis-obituaries', title: 'Indianapolis Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Indianapolis families.' },
+      { slug: 'detroit-obituaries', title: 'Detroit Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Detroit families.' },
+      { slug: 'tampa-obituaries', title: 'Tampa Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Tampa families.' },
+      { slug: 'fresno-obituaries', title: 'Fresno Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Fresno families.' },
+      { slug: 'miami-obituaries', title: 'Miami Obituaries and Funeral Homes', description: 'Local obituary sources, funeral home listings, and resources for Miami families.' },
     ],
   },
 ];
