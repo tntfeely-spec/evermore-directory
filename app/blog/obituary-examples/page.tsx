@@ -36,6 +36,9 @@ export default function ObituaryExamplesPage() {
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">Writing an obituary for someone you love is one of the most difficult writing tasks you will ever face. It helps to see examples. Below are three complete sample obituaries in different styles, along with guidance on what makes each one work.</p>
             </section>
+            <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+              <p className="text-gray-700">Need to write an obituary right now? Our <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Obituary Maker</Link> generates a personalized draft in minutes based on details you provide.</p>
+            </div>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Makes a Good Obituary</h2>

@@ -57,6 +57,9 @@ export default function HowToWriteAnObituaryPage() {
             <section className="mb-10">
               <p className="text-gray-600 mb-4">Writing an obituary for someone you loved is one of the harder writing tasks you will ever face. You are trying to fit a whole person into a few paragraphs, often within days of losing them, often while running on no sleep. Here is a simple structure that works.</p>
             </section>
+            <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+              <p className="text-gray-700">Want to skip the blank page? Use our <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Obituary Maker</Link> to generate a complete draft in minutes, then personalize it with your own words.</p>
+            </div>
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Essential Information</h2>
               <p className="text-gray-600 mb-4">Every obituary should include the full name of the deceased, age at death, date and place of death, and date and place of birth. This information appears in the first sentence or two. It is the anchor that tells the reader who this is and when.</p>

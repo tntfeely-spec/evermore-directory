@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
 
           {/* Brand */}
           <div className="md:col-span-1">
@@ -66,9 +66,20 @@ export default function Footer() {
               <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
               <li><Link href="/funeral-costs" className="hover:text-white transition-colors">Funeral Costs by State</Link></li>
               <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
-              <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">Free AI Obituary Writer</Link></li>
+              <li><Link href="/obituary-maker" className="hover:text-white transition-colors">Free AI Obituary Maker</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Obituary Tools */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Obituary Tools</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/obituary-maker" className="hover:text-white transition-colors">Free AI Obituary Maker</Link></li>
+              <li><Link href="/blog/obituary-template" className="hover:text-white transition-colors">Free Obituary Templates</Link></li>
+              <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">How to Write an Obituary</Link></li>
+              <li><Link href="/blog/obituary-examples" className="hover:text-white transition-colors">Obituary Examples</Link></li>
             </ul>
           </div>
 
