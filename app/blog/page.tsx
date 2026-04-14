@@ -113,6 +113,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'eulogy-for-spouse', title: 'Eulogy for a Spouse: Examples for a Husband or Wife', description: 'Sample eulogies, structure, and tips for delivering when deeply grieving.' },
       { slug: 'eulogy-for-aunt-or-uncle', title: 'Eulogy for an Aunt or Uncle: Examples and Tips', description: 'Sample eulogies honoring that unique relationship.' },
       { slug: 'obituary-templates', title: 'Obituary Templates: Examples for Every Relationship', description: 'Templates for parents, spouses, young people, and more.' },
+      { slug: 'obituary-template', title: 'Free Obituary Template: Fill in the Blank', description: 'Short, standard, full length, veteran, and celebration of life templates you can copy and use.' },
       { slug: 'what-to-write-at-a-funeral', title: 'What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book', description: 'Sincere, simple examples for every situation.' },
     ],
   },

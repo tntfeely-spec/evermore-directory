@@ -257,6 +257,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'types-of-grief',
     'bellingham-wa-funeral-homes',
     'alameda-county-funeral-homes',
+    'obituary-template',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
