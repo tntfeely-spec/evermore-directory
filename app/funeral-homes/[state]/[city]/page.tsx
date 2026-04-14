@@ -116,7 +116,20 @@ export default async function CityPage({ params }: PageProps) {
   }
 
   if (!funeralHomes || funeralHomes.length === 0) {
-    notFound();
+    return (
+      <>
+        <Navigation />
+        <div className="min-h-screen bg-slate-50">
+          <div className="max-w-3xl mx-auto px-4 py-20 text-center">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Funeral Homes in {cityName}, {stateName}</h1>
+            <p className="text-lg text-gray-600 mb-8">We do not have funeral home listings for {cityName} yet. Browse all funeral homes in {stateName} to find services near you.</p>
+            <Link href={`/funeral-homes/${state.toLowerCase()}`} className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+              Browse All {stateName} Funeral Homes
+            </Link>
+          </div>
+        </div>
+      </>
+    );
   }
 
   // Get nearby cities in same state for interlinking
