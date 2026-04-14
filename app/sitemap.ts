@@ -243,6 +243,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'grief-brain-fog',
     'holidays-after-loss',
     'victorian-mourning-customs',
+    'are-funeral-expenses-tax-deductible',
+    'what-to-write-at-a-funeral',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

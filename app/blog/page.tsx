@@ -115,6 +115,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'eulogy-for-spouse', title: 'Eulogy for a Spouse: Examples for a Husband or Wife', description: 'Sample eulogies, structure, and tips for delivering when deeply grieving.' },
       { slug: 'eulogy-for-aunt-or-uncle', title: 'Eulogy for an Aunt or Uncle: Examples and Tips', description: 'Sample eulogies honoring that unique relationship.' },
       { slug: 'obituary-templates', title: 'Obituary Templates: Examples for Every Relationship', description: 'Templates for parents, spouses, young people, and more.' },
+      { slug: 'what-to-write-at-a-funeral', title: 'What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book', description: 'Sincere, simple examples for every situation.' },
       { slug: 'condolence-text-messages', title: 'Condolence Text Messages: What to Send and What to Avoid', description: 'Examples for close friends, coworkers, loss of parent, loss of spouse, and loss of child.' },
     ],
   },
@@ -242,6 +243,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'power-of-attorney-guide', title: 'Power of Attorney Guide: Types and How It Works', description: 'How each type works, how to set one up, and what happens after death.' },
       { slug: 'what-is-a-dnr', title: 'What Is a DNR? Do Not Resuscitate Orders Explained', description: 'What it means, how to get one, and how it fits into advance care planning.' },
       { slug: 'announcing-death-on-social-media', title: 'Announcing a Death on Social Media: What to Post', description: 'How to announce a death on Facebook, what to say, and how to memorialize accounts.' },
+      { slug: 'are-funeral-expenses-tax-deductible', title: 'Are Funeral Expenses Tax Deductible?', description: 'What is deductible, what is not, and how to claim it if you qualify.' },
     ],
   },
   {
