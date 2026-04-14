@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
+import CopyTemplateButton from '@/components/CopyTemplateButton';
 
 export const metadata: Metadata = {
   title: 'Free Obituary Template: Fill in the Blank (Word, PDF, and Plain Text)',
@@ -70,17 +71,31 @@ export default function ObituaryTemplatePage() {
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">A free obituary template gives grieving families a starting point so they are not facing a blank page. Fill in the name, dates, survivors, and a few personal details, then personalize it with your own words. Most obituaries are 150 to 250 words for newspaper publication. Online obituaries have no word limit.</p>
             </section>
+            <div className="mb-10 bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <p className="text-base font-bold text-gray-900 mb-3">How to use these templates:</p>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
+                <li>Pick the template that fits your situation (short, standard, full length, or veteran)</li>
+                <li>Click the <strong>Copy This Template</strong> button below the template</li>
+                <li>Paste it into a Word document, Google Doc, or Notes app</li>
+                <li>Replace every word in [brackets] with the real information</li>
+                <li>Add one or two sentences about who the person actually was</li>
+                <li>Have a family member check the survivor list before you submit</li>
+              </ol>
+            </div>
+
             <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
-              <p className="text-gray-700">Prefer to let AI do the first draft? Our <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Obituary Maker</Link> generates a complete personalized obituary in minutes based on details you provide about your loved one.</p>
+              <p className="text-gray-700">Prefer to skip the blank page entirely? Our <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Obituary Maker</Link> writes a complete personalized obituary in minutes based on details you provide. No templates to fill in.</p>
             </div>
 
             {/* Short Obituary Template */}
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Short Obituary Template (50 to 75 Words)</h2>
               <p className="text-gray-600 leading-relaxed mb-4">Use this template for a brief death notice or newspaper announcement where space is limited. It covers the essential facts in as few words as possible while still giving readers a sense of who the person was.</p>
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <p className="text-gray-700 leading-relaxed">[Full Name], [age], of [City, State], passed away on [date of death]. [He/She] was born on [date of birth] in [birthplace] and spent [his/her] life [one sentence about who they were]. [He/She] is survived by [list survivors]. A [service type] will be held on [date] at [location].</p>
               </div>
+              <CopyTemplateButton text="[Full Name], [age], of [City, State], passed away on [date of death]. [He/She] was born on [date of birth] in [birthplace] and spent [his/her] life [one sentence about who they were]. [He/She] is survived by [list survivors]. A [service type] will be held on [date] at [location]." />
+              <p className="text-xs text-gray-500 mt-2 mb-6">Best for: a brief death notice in a local newspaper or a quick announcement when time is short.</p>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Completed Example</h3>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <p className="text-gray-700 leading-relaxed">Margaret Ann Wilson, 82, of Nashville, Tennessee, passed away on April 8, 2026. She was born on September 14, 1943, in Knoxville, Tennessee, and spent her life as a devoted nurse and grandmother. She is survived by her daughter, Susan Wilson Clark, and four grandchildren. A graveside service will be held on April 12, 2026, at Woodlawn Memorial Park.</p>
@@ -99,6 +114,8 @@ export default function ObituaryTemplatePage() {
                 <p className="text-gray-700 leading-relaxed mb-4">A [funeral service/memorial service/celebration of life] will be held on [date] at [time] at [location with address]. Visitation will take place on [date] from [time] to [time] at [location].</p>
                 <p className="text-gray-700 leading-relaxed">In lieu of flowers, the family requests donations to [charity name and address or website].</p>
               </div>
+              <CopyTemplateButton text={"[Full Name], [age], of [City, State], passed away [peacefully/suddenly/after a long illness] on [date of death] at [location of death].\n\nBorn on [date of birth] in [birthplace] to [parents' names], [First Name] graduated from [high school/college] and went on to [career or life's work]. [He/She] worked as a [occupation] for [number] years at [employer or in what field].\n\n[First Name] was known for [personal description]. [He/She] enjoyed [hobbies or interests] and was a devoted [role].\n\n[He/She] is survived by [his/her] [spouse, Full Name]; children, [Name] ([Spouse]) of [City], [Name] ([Spouse]) of [City]; [number] grandchildren; [siblings]; and [parents if living]. [He/She] was preceded in death by [names and relationships].\n\nA [service type] will be held on [date] at [time] at [location with address]. Visitation will take place on [date] from [time] to [time] at [location].\n\nIn lieu of flowers, the family requests donations to [charity name and address or website]."} />
+              <p className="text-xs text-gray-500 mt-2 mb-6">Best for: most newspaper obituaries. Covers all the essentials in 150 to 200 words.</p>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Completed Example</h3>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <p className="text-gray-700 leading-relaxed mb-4">Robert James Mitchell, 74, of Memphis, Tennessee, passed away peacefully on April 5, 2026, at Baptist Memorial Hospital surrounded by his family.</p>
@@ -152,6 +169,8 @@ export default function ObituaryTemplatePage() {
                 <p className="text-gray-700 leading-relaxed mb-4">A celebration of life will be held on [date] at [time] at [location]. [Optional personal touch about the service: what to wear, what to bring, the tone the family wants].</p>
                 <p className="text-gray-700 leading-relaxed">In lieu of flowers, [First Name] would have wanted you to [something that reflects who they were: hug someone, go fishing, donate to a cause they cared about].</p>
               </div>
+              <CopyTemplateButton text={"If you ever [characteristic], then you knew [Full Name]. [First Name] was [the kind of person who...].\n\n[Full Name], [age], of [City, State], passed away on [date of death]. [He/She] was born on [date of birth] in [birthplace] and lived a life full of [what defined their life].\n\n[First Name] spent [his/her] career as a [occupation], but what [he/she] really was, was [a description beyond the job title]. [He/She] never met a [stranger/challenge] [he/she] did not [embrace/welcome].\n\n[He/She] loved [list of things they loved]. [One or two sentences capturing a specific memory].\n\n[First Name] is survived by [list of survivors]. [He/She] was preceded in death by [names].\n\nA celebration of life will be held on [date] at [time] at [location].\n\nIn lieu of flowers, [First Name] would have wanted you to [something that reflects who they were]."} />
+              <p className="text-xs text-gray-500 mt-2 mb-6">Best for: when you want to focus on how they lived rather than when they died. Works well for memorial services and online tributes.</p>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Completed Example</h3>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <p className="text-gray-700 leading-relaxed mb-4">If you ever heard a booming laugh from across a crowded room, followed by someone yelling &quot;That reminds me of a story,&quot; then you knew James &quot;Jimmy&quot; Cooper. Jimmy was the kind of person who made every room louder, warmer, and better just by walking in.</p>
@@ -177,6 +196,8 @@ export default function ObituaryTemplatePage() {
                 <p className="text-gray-700 leading-relaxed mb-4">A [funeral service with full military honors/memorial service] will be held on [date] at [time] at [location]. [Burial/interment] will follow at [VA national cemetery or other cemetery] with military honors including [flag folding, rifle salute, taps].</p>
                 <p className="text-gray-700 leading-relaxed">In lieu of flowers, donations may be made to [veterans&apos; charity or organization].</p>
               </div>
+              <CopyTemplateButton text={"[Rank] [Full Name], [branch of service] ([Ret./Honorably Discharged]), [age], of [City, State], passed away on [date of death] at [location].\n\nBorn on [date of birth] in [birthplace] to [parents' names], [First Name] enlisted in the [branch] in [year]. [He/She] served for [number] years, achieving the rank of [final rank]. [His/Her] service included deployments to [locations/conflicts]. [He/She] received [medals and awards]. [He/She] was honorably discharged in [year].\n\nAfter [his/her] military service, [First Name] [career or life after service]. [He/She] was a member of [VFW, American Legion].\n\n[First Name] was known for [personal qualities]. [Personal details about family life].\n\n[He/She] is survived by [list survivors]. [He/She] was preceded in death by [names].\n\nA [funeral service with full military honors] will be held on [date] at [time] at [location]. [Burial] will follow at [cemetery] with military honors.\n\nIn lieu of flowers, donations may be made to [veterans' charity]."} />
+              <p className="text-xs text-gray-500 mt-2 mb-6">Best for: honoring military service. Includes branch, rank, and service years alongside personal details.</p>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Completed Example</h3>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <p className="text-gray-700 leading-relaxed mb-4">Sergeant First Class Thomas Edward Brooks, United States Army (Ret.), 88, of Nashville, Tennessee, passed away on April 2, 2026, at the Tennessee Valley VA Medical Center.</p>
@@ -186,6 +207,33 @@ export default function ObituaryTemplatePage() {
                 <p className="text-gray-700 leading-relaxed mb-4">He is survived by his wife of 62 years, Helen Brooks; his children, Thomas Brooks Jr. (Catherine) of Murfreesboro, Linda Brooks Haynes (Robert) of Nashville, and Michael Brooks of Knoxville; nine grandchildren; seven great grandchildren; and his sister, Betty Brooks O&apos;Brien of Rural Retreat, Virginia. He was preceded in death by his parents, his brother James Brooks, and his grandson, Corporal Daniel Haynes, USMC, who was killed in action in Afghanistan in 2011.</p>
                 <p className="text-gray-700 leading-relaxed mb-4">A funeral service with full military honors will be held on April 7, 2026, at 10:00 AM at Calvary Baptist Church, 3200 Gallatin Pike, Nashville. Burial will follow at Nashville National Cemetery with military honors including a rifle salute, the playing of Taps, and the presentation of the American flag.</p>
                 <p className="text-gray-700 leading-relaxed">In lieu of flowers, donations may be made to the Wounded Warrior Project or the VFW Post 1970 Scholarship Fund.</p>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Put in Each Bracket</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">Here is a quick reference for every bracketed field in the templates above.</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                  <thead className="bg-slate-100">
+                    <tr>
+                      <th className="text-left px-4 py-2 font-semibold text-gray-700 w-1/3">Bracket</th>
+                      <th className="text-left px-4 py-2 font-semibold text-gray-700">What to write</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-mono text-sm">[Full Name]</td><td className="px-4 py-2 text-gray-600">Legal first, middle, last name. Include maiden name if applicable.</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-mono text-sm">[age]</td><td className="px-4 py-2 text-gray-600">Age at time of death.</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-mono text-sm">[City, State]</td><td className="px-4 py-2 text-gray-600">Where they lived, not necessarily where they died.</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-mono text-sm">[date]</td><td className="px-4 py-2 text-gray-600">Month, day, and year written out (April 10, 2026).</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-mono text-sm">[birth date]</td><td className="px-4 py-2 text-gray-600">Month, day, and year of birth.</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-mono text-sm">[birthplace]</td><td className="px-4 py-2 text-gray-600">City and state where they were born.</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-mono text-sm">[He/She]</td><td className="px-4 py-2 text-gray-600">Choose based on their pronouns.</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-mono text-sm">[family members]</td><td className="px-4 py-2 text-gray-600">Spouse first, then children, then grandchildren, then siblings.</td></tr>
+                    <tr className="border-t border-gray-100"><td className="px-4 py-2 font-mono text-sm">[service type]</td><td className="px-4 py-2 text-gray-600">Funeral service, memorial service, celebration of life, or graveside service.</td></tr>
+                    <tr className="border-t border-gray-100 bg-slate-50/40"><td className="px-4 py-2 font-mono text-sm">[location]</td><td className="px-4 py-2 text-gray-600">Full address including street, city, and state.</td></tr>
+                  </tbody>
+                </table>
               </div>
             </section>
 
