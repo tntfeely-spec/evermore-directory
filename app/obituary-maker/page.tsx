@@ -140,11 +140,14 @@ export default function ObituaryMakerPage() {
             </section>
 
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Resources</h2>
               <ul className="space-y-2">
                 <li><Link href="/blog/how-to-write-an-obituary" className="text-slate-600 hover:text-slate-800 font-medium">How to Write an Obituary: A Complete Guide</Link></li>
-                <li><Link href="/blog/obituary-examples" className="text-slate-600 hover:text-slate-800 font-medium">Obituary Examples: Good, Simple, and Meaningful Templates</Link></li>
-                <li><Link href="/blog/obituary-vs-death-notice" className="text-slate-600 hover:text-slate-800 font-medium">Obituary vs. Death Notice: What Is the Difference?</Link></li>
+                <li><Link href="/blog/obituary-template" className="text-slate-600 hover:text-slate-800 font-medium">Free Obituary Templates</Link></li>
+                <li><Link href="/blog/obituary-examples" className="text-slate-600 hover:text-slate-800 font-medium">Obituary Examples: Good, Simple, and Meaningful</Link></li>
+                <li><Link href="/blog/obituary-vs-death-notice" className="text-slate-600 hover:text-slate-800 font-medium">Obituary vs Death Notice: What Is the Difference</Link></li>
+                <li><Link href="/blog/how-to-write-a-eulogy" className="text-slate-600 hover:text-slate-800 font-medium">How to Write a Eulogy</Link></li>
+                <li><Link href="/blog/sample-eulogy-for-mother-from-daughter" className="text-slate-600 hover:text-slate-800 font-medium">Sample Eulogy for a Mother from a Daughter</Link></li>
               </ul>
             </section>
 

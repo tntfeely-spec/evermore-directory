@@ -70,6 +70,9 @@ export default function ObituaryTemplatePage() {
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">A free obituary template gives grieving families a starting point so they are not facing a blank page. Fill in the name, dates, survivors, and a few personal details, then personalize it with your own words. Most obituaries are 150 to 250 words for newspaper publication. Online obituaries have no word limit.</p>
             </section>
+            <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+              <p className="text-gray-700">Prefer to let AI do the first draft? Our <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Obituary Maker</Link> generates a complete personalized obituary in minutes based on details you provide about your loved one.</p>
+            </div>
 
             {/* Short Obituary Template */}
             <section className="mb-10">
