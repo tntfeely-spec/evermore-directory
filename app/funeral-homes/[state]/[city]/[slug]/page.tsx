@@ -445,6 +445,10 @@ export default async function FuneralHomePage({
             <ContactForm listing={listing} calcId={calcId} />
           </div>
 
+          <div className="mb-4 bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+            <p className="text-sm text-gray-700">Planning ahead? Our free <a href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">AI Obituary Maker</a> helps families write a meaningful tribute in minutes.</p>
+          </div>
+
           <div className="mb-6 text-center text-sm text-gray-400">
             <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 4,800+ funeral homes across all 50 states.</p>
           </div>

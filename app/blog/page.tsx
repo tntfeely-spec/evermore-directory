@@ -330,6 +330,20 @@ export default function BlogIndexPage() {
               <p className="text-xl text-gray-600">Guides, cost comparisons, and resources to help you make informed decisions about funeral and cremation services.</p>
             </header>
 
+            <div className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Free Obituary Tools</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <Link href="/obituary-maker" className="block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Free AI Obituary Maker</h3>
+                  <p className="text-sm text-gray-600">Generate a complete personalized obituary in minutes. No writing experience needed.</p>
+                </Link>
+                <Link href="/blog/obituary-template" className="block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Free Obituary Templates</h3>
+                  <p className="text-sm text-gray-600">Fill in the blank templates for any type of service. Short, standard, and full length.</p>
+                </Link>
+              </div>
+            </div>
+
             <BlogIndex categories={categories} />
 
             <section className="mt-12 bg-slate-50 rounded-lg p-8 text-center">

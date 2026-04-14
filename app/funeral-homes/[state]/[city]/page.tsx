@@ -588,6 +588,10 @@ All funeral homes in our {cityName} directory include contact information, addre
             </div>
           </div>
 
+          <div className="mb-8 bg-gray-50 border border-gray-200 rounded-lg p-5 text-center">
+            <p className="text-sm text-gray-700">Planning ahead? Our free <Link href="/obituary-maker" className="text-slate-700 font-semibold hover:text-slate-900 underline">AI Obituary Maker</Link> helps families write a meaningful tribute in minutes.</p>
+          </div>
+
           <div className="mb-12 text-center text-sm text-gray-400">
             <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 4,800+ funeral homes across all 50 states.</p>
           </div>
