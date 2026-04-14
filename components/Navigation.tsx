@@ -6,7 +6,7 @@ const resourceLinks = [
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/funeral-costs', label: 'Funeral Costs by State' },
   { href: '/veteran-burial-benefits', label: 'Veteran Burial Benefits' },
-  { href: '/blog/how-to-write-an-obituary', label: 'Free AI Obituary Writer' },
+  { href: '/obituary-maker', label: 'Free AI Obituary Maker' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];

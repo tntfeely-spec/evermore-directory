@@ -52,6 +52,8 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'cemetery-plot-cost', title: 'Cemetery Plot Cost: What to Expect and How to Buy One', description: 'Costs range from $1,000 to $25,000+ depending on location and type.' },
       { slug: 'cheapest-cremation-near-me', title: 'Cheapest Cremation Near Me: How to Find Low Cost Direct Cremation', description: 'How to find the cheapest cremation services near you and what the price includes.' },
       { slug: 'casket-guide', title: 'Casket Guide: Types, Costs, and What to Know Before You Buy', description: 'Casket vs coffin, types, costs, and your right to buy one elsewhere.' },
+      { slug: 'embalming-explained', title: 'Embalming: What It Is, What It Costs, and Whether It Is Required', description: 'What the process involves, when it makes sense, and alternatives.' },
+      { slug: 'how-to-read-a-funeral-home-general-price-list', title: 'How to Read a Funeral Home General Price List', description: 'What every line item means and how to use it to compare costs.' },
       { slug: 'hidden-funeral-costs-tennessee', title: 'Hidden Funeral Costs in Tennessee: What Families Are Not Told Upfront', description: 'Costs routinely omitted from initial quotes that can add $1,000 to $3,000 to the bill.' },
       { slug: 'what-affects-funeral-costs-tennessee', title: 'What Affects Funeral Costs in Tennessee? The 7 Biggest Price Factors', description: 'Service type, location, ownership, casket markup, and more.' },
       { slug: 'cremation-vs-burial-cost-tennessee', title: 'Cremation vs Burial Cost in Tennessee: 2026 Price Comparison', description: 'Direct cremation $1,170 to $3,500 vs traditional burial $8,000 to $14,000.' },
@@ -64,9 +66,6 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
     subtitle: 'What families need to know about how funeral homes work.',
     posts: [
       { slug: 'how-long-can-a-funeral-home-hold-a-body', title: 'How Long Can a Funeral Home Hold a Body?', description: '1 to 2 weeks without embalming, 4 to 6 weeks with embalming. State rules and daily storage fees.' },
-      { slug: 'embalming-explained', title: 'Embalming: What It Is, What It Costs, and Whether It Is Required', description: 'What the process involves, when it makes sense, and alternatives.' },
-      { slug: 'how-to-read-a-funeral-home-general-price-list', title: 'How to Read a Funeral Home General Price List', description: 'What every line item means and how to use it to compare costs.' },
-      { slug: 'ftc-funeral-rule-explained', title: 'The FTC Funeral Rule: Your Rights When Planning a Funeral', description: 'What it requires, what your rights are, and how to file a complaint.' },
       { slug: 'funeral-director-career', title: 'Funeral Director Career: Salary, Schooling, and How to Get Started', description: 'What the job involves, what funeral directors earn, and how to become one.' },
     ],
   },
@@ -249,6 +248,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'what-is-a-dnr', title: 'What Is a DNR? Do Not Resuscitate Orders Explained', description: 'What it means, how to get one, and how it fits into advance care planning.' },
       { slug: 'announcing-death-on-social-media', title: 'Announcing a Death on Social Media: What to Post', description: 'How to announce a death on Facebook, what to say, and how to memorialize accounts.' },
       { slug: 'are-funeral-expenses-tax-deductible', title: 'Are Funeral Expenses Tax Deductible?', description: 'What is deductible, what is not, and how to claim it if you qualify.' },
+      { slug: 'ftc-funeral-rule-explained', title: 'The FTC Funeral Rule: Your Rights When Planning a Funeral', description: 'What it requires, what your rights are, and how to file a complaint.' },
     ],
   },
   {
