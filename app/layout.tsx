@@ -35,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="color-scheme" content="light" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com","logo":"https://funeralhomedirectories.com/logo.png","description":"The most comprehensive funeral home directory in the United States. 4,800 plus funeral homes across all 50 states with real pricing data and planning resources for families.","founder":{"@type":"Person","name":"Terry Feely","jobTitle":"Founder","description":"Former firefighter and paramedic"},"address":{"@type":"PostalAddress","addressLocality":"Brentwood","addressRegion":"TN","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","email":"listings@funeralhomedirectories.com","contactType":"customer service"}}) }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

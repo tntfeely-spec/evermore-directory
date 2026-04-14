@@ -29,9 +29,7 @@ export default function AboutPage() {
               Built by Someone Who Has Been There
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Evermore Directory exists because families deserve honest, straightforward
-              help finding the right funeral home during one of the most difficult
-              times of their lives.
+              The most comprehensive funeral home directory in the United States. 4,800 plus funeral homes across all 50 states with real pricing data and planning resources for families.
             </p>
           </div>
         </div>
