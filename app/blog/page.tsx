@@ -115,6 +115,9 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'obituary-templates', title: 'Obituary Templates: Examples for Every Relationship', description: 'Templates for parents, spouses, young people, and more.' },
       { slug: 'obituary-template', title: 'Free Obituary Template: Fill in the Blank', description: 'Short, standard, full length, veteran, and celebration of life templates you can copy and use.' },
       { slug: 'what-to-write-at-a-funeral', title: 'What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book', description: 'Sincere, simple examples for every situation.' },
+      { slug: 'eulogy-examples', title: 'Eulogy Examples: Real Samples for Any Relationship', description: 'Full eulogy samples for mother, father, grandmother, friend, and more.' },
+      { slug: 'eulogy-template', title: 'Free Eulogy Template: Fill in the Blank for Any Service', description: 'Short, standard, celebration of life, and religious templates with copy buttons.' },
+      { slug: 'short-eulogy-examples', title: 'Short Eulogy Examples: Brief Tributes Under 3 Minutes', description: 'Under 100 words, under 200 words, and one paragraph versions.' },
     ],
   },
   {
@@ -340,6 +343,20 @@ export default function BlogIndexPage() {
                 <Link href="/blog/obituary-template" className="block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Free Obituary Templates</h3>
                   <p className="text-sm text-gray-600">Fill in the blank templates for any type of service. Short, standard, and full length.</p>
+                </Link>
+              </div>
+            </div>
+
+            <div className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Eulogy Resources</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <Link href="/blog/eulogy-examples" className="block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Eulogy Examples</h3>
+                  <p className="text-sm text-gray-600">Real eulogy samples for every relationship. Copy and adapt.</p>
+                </Link>
+                <Link href="/blog/eulogy-template" className="block bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Free Eulogy Template</h3>
+                  <p className="text-sm text-gray-600">Fill in the blank templates for any service type.</p>
                 </Link>
               </div>
             </div>

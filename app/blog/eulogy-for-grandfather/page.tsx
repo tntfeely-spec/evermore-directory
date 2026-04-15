@@ -3,91 +3,104 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Eulogy for a Grandfather: Examples, Tips, and How to Write One',
-  description: 'A eulogy for your grandfather is a chance to honor his wisdom, his stories, and the legacy he left behind. Here are sample eulogies and tips for writing and delivering one.',
+  title: 'Eulogy for a Grandfather: Examples, Templates, and What to Say',
+  description: 'Real eulogy examples for a grandfather including veteran and traditional versions. Fill in the blank templates and opening lines included.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/eulogy-for-grandfather' },
 };
 
 const faqs = [
-  { q: 'What do you say in a eulogy for a grandfather?', a: 'Talk about who he was as a person, not just his role as a grandfather. Share specific memories that capture his character, his values, and the way he treated people. Mention what he taught you, whether through direct advice or by example. Include a story that shows his personality and talk about the legacy he leaves behind in his family.' },
-  { q: 'How long should a grandfather\'s eulogy be?', a: 'Most eulogies run 3 to 7 minutes, or roughly 500 to 1,000 words. A focused, heartfelt 5 minute eulogy is far more effective than a long, unfocused one. If you are sharing the service with other speakers, aim for the shorter end. Ask the funeral director or officiant if there is a time limit.' },
-  { q: 'What memories work best in a grandfather\'s eulogy?', a: 'The best memories are specific and sensory. Instead of saying he was a great grandfather, describe the time he taught you to fish and you caught nothing but he acted like it was the best day of his life. Concrete details like what he smelled like, what he always had in his pockets, or what he said every time he answered the phone bring a eulogy to life.' },
-  { q: 'How do you start a eulogy for your grandpa?', a: 'Start with a specific detail or memory that captures who he was. Something like "My grandfather had the same routine every morning for 50 years" or "The first thing anyone noticed about my grandpa was his hands." A concrete, personal opening draws the audience in immediately and sets the tone for the rest of the eulogy.' },
+  { q: 'What do you say in a eulogy for a grandfather?', a: 'Talk about what he taught you, how he spent his time, and what made him uniquely himself. Grandfathers are often remembered for their routines, their stories, and their quiet presence.' },
+  { q: 'How long should a grandfather\'s eulogy be?', a: '3 to 5 minutes. If multiple grandchildren are sharing, 2 minutes each is fine.' },
+  { q: 'What memories work best?', a: 'His workshop, his garden, his fishing spot, the stories he told over and over, the phrases he used, the way he greeted you when you walked in. Specific details bring a eulogy to life.' },
+  { q: 'How do you start a eulogy for your grandpa?', a: 'Open with something he always did. For example: My grandfather, Earl, sat in the same chair every evening for 40 years. And every evening when I walked through the door, he said the same thing: Well, look who it is.' },
 ];
 
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+
+const speakableSchema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Eulogy for a Grandfather: Examples, Templates, and What to Say', speakable: { '@type': 'SpeakableSpecification', cssSelector: ['article > section:first-of-type'] } };
 
 export default function EulogyForGrandfatherPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
             <header className="mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">Eulogy for a Grandfather: Examples, Tips, and How to Write One</h1>
-              <p className="text-xl text-gray-600 mb-4">Sample eulogies, a practical structure, and honest advice for honoring your grandfather&apos;s memory.</p>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Eulogy for a Grandfather: Examples, Templates, and What to Say</h1>
+              <p className="text-xl text-gray-600 mb-4">Real eulogy examples for a grandfather including veteran and traditional versions with opening lines.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 
             <section className="mb-10">
-              <p className="text-gray-700 leading-relaxed text-lg">A grandfather holds a unique place in a family. He is the keeper of stories, the source of quiet wisdom, and often the steady presence that anchors everyone else. Writing a eulogy for your grandfather is a chance to honor that role and to share with others what he meant to you. You do not need to be a polished writer. You just need to tell the truth about who he was.</p>
+              <p className="text-gray-700 leading-relaxed text-lg">A eulogy for your grandfather should honor the full weight of who he was. Whether he was a veteran, a farmer, a businessman, or simply the person who showed up every Sunday, these examples give you real language to work from.</p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">What to Include</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">A good eulogy for a grandfather focuses on the qualities and moments that made him who he was. You do not need to cover his entire life. Pick two or three things that feel most important and build the eulogy around those.</p>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Full Eulogy Example for a Grandfather</h2>
+              <blockquote className="bg-gray-50 rounded-lg p-6 text-gray-700 leading-relaxed border-l-4 border-slate-300">
+                <p className="mb-4">My grandfather, Earl Pemberton, had a chair. It was a brown recliner with a permanent dip on the left side where he sat every evening after supper. The remote control lived on the right armrest. A glass of iced tea lived on the side table. And when you walked through the front door, no matter what time it was, he looked up from that chair and said, &quot;Well, look who it is.&quot;</p>
+                <p className="mb-4">He told the same stories over and over, and every single one of us let him, because they got better each time. The fish got bigger. The winters got colder. The walk to school got longer. He knew we knew, and he did not care. The telling was the point.</p>
+                <p className="mb-4">On Saturday mornings, he was in his workshop by six. He built birdhouses, shelves, cutting boards, and a rocking horse for my daughter that he sanded for three weekends straight because he said a child should never get a splinter from something made with love. He had sawdust in his hair more often than not, and his hands were rough in a way that made you feel safe when he held yours.</p>
+                <p className="mb-4">He grew tomatoes every summer in the same patch of yard, and he talked about those tomatoes like they were his greatest accomplishment. He gave them away to neighbors, to the mail carrier, to anyone who stood still long enough. He said a garden is only worth having if you share it.</p>
+                <p>That was his philosophy about everything, really. Share what you have. Show up when it matters. Sit in your chair at the end of the day and be glad for the people who walk through the door. I am going to miss that chair. I am going to miss him in it. And I am going to say &quot;Well, look who it is&quot; to my own grandchildren someday, because that is how he stays alive.</p>
+              </blockquote>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Short Eulogy Example for a Grandfather</h2>
+              <blockquote className="bg-gray-50 rounded-lg p-6 text-gray-700 leading-relaxed border-l-4 border-slate-300">
+                <p>My grandfather, Walter Novak, was a man of routine. Coffee at five thirty. Newspaper by six. Workshop by seven. He did the same things every day for decades, and there was something deeply comforting about that. You always knew where to find him. You always knew he would be there. The world felt steadier because Walter Novak was in it, doing the same quiet, good things he had always done. I will miss that steadiness more than I can say.</p>
+              </blockquote>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Eulogy for a Grandfather Who Was a Veteran</h2>
+              <blockquote className="bg-gray-50 rounded-lg p-6 text-gray-700 leading-relaxed border-l-4 border-slate-300">
+                <p className="mb-4">My grandfather, Staff Sergeant Henry Aldridge, enlisted at 19 and came home at 21 a different person than the one who left. He served in Korea during the winter of 1951, and he carried that winter with him for the rest of his life. He did not talk about it at the dinner table. He did not march in parades. But every Veterans Day, he put on his service pin and sat quietly on the porch, and we knew to leave him alone with whatever he was remembering.</p>
+                <p className="mb-4">The military made him precise. His lawn was always cut in straight lines. His shoes were always polished. He shook hands like he meant it and he expected you to do the same. But beneath that discipline was a tenderness that caught you off guard. He cried at every grandchild&apos;s baptism. He kept a photograph of my grandmother in his wallet from 1953 until the day he died.</p>
+                <p>He told me once that the thing about service is that it never really ends. You just find different ways to serve. He served his country, then he served his family, then he served his neighborhood by mowing the elderly widow&apos;s lawn next door every week for 15 years without being asked. That is the kind of man he was. Duty was not a word to him. It was a way of living.</p>
+              </blockquote>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Opening Lines for a Grandfather Eulogy</h2>
+              <ol className="list-decimal list-inside space-y-3 text-gray-600">
+                <li>&quot;My grandfather, Earl Pemberton, sat in the same chair every evening for 40 years. And every evening when I walked through the door, he said the same thing: Well, look who it is.&quot;</li>
+                <li>&quot;If you wanted to find my grandpa, you checked three places: the garden, the workshop, or his recliner. He was never anywhere else, and he never needed to be.&quot;</li>
+                <li>&quot;My grandfather told the same six stories for 30 years. I can tell every one of them by heart, and I plan to keep telling them.&quot;</li>
+                <li>&quot;Grandpa had hands like sandpaper and a voice like gravel, and he was the gentlest person I have ever known.&quot;</li>
+                <li>&quot;Walter Novak did not believe in wasting words. So I will try to keep this short, because he would appreciate that.&quot;</li>
+                <li>&quot;My grandfather taught me two things: how to bait a hook and how to be patient enough to use it. Those two lessons have carried me further than any degree.&quot;</li>
+                <li>&quot;The last time I saw my grandfather, he handed me a bag of tomatoes from his garden and said, give those to someone who needs them. That was his answer to everything.&quot;</li>
+                <li>&quot;Henry Aldridge was not a man who asked for much. A cup of coffee, a baseball game on the radio, and his family nearby. That was enough for him, and watching him be content with that taught me more than he will ever know.&quot;</li>
+              </ol>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Qualities and Stories Worth Including</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
-                <li>A specific memory or story that captures his personality</li>
-                <li>What he taught you, whether through words or by example</li>
-                <li>How he made you feel when you were around him</li>
-                <li>Something he said often, a phrase or piece of advice that was unmistakably his</li>
-                <li>The legacy he leaves in his children, grandchildren, and the people he touched</li>
+                <li>His daily routine, because grandfathers are often defined by the rhythms they kept</li>
+                <li>The stories he told repeatedly, and what those stories reveal about what mattered to him</li>
+                <li>A specific skill he had or hobby he loved, whether it was woodworking, fishing, gardening, or fixing engines</li>
+                <li>The phrases he used over and over, his greetings, his advice, his jokes</li>
+                <li>How he treated your grandmother, because that relationship often says more about a man than anything else</li>
+                <li>Something he built, grew, or made with his hands that still exists</li>
+                <li>The way he made you feel when you were a child, safe, important, seen</li>
+                <li>What he sacrificed for his family that he never talked about</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">The most powerful eulogies are specific. Instead of saying he was kind, describe the thing he did that showed his kindness. Instead of saying he loved his family, describe the way he showed it. Concrete details are what make a eulogy feel real.</p>
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sample Eulogy: Warm and Personal</h2>
-              <div className="bg-gray-50 rounded-lg p-6 text-gray-700 italic border-l-4 border-slate-300">
-                <p className="mb-4">&quot;My grandfather loved two things above everything else: fishing and telling stories. Luckily for us, he was much better at one than the other. He could spend six hours on a lake and come home with nothing, and somehow make it sound like the adventure of a lifetime. Every empty hook had a story. Every missed catch was the biggest fish anyone had ever seen.&quot;</p>
-                <p className="mb-4">&quot;He taught me that the point of fishing was never really about the fish. It was about being still. It was about paying attention. It was about sitting next to someone you love and letting the quiet do the talking. Some of the best conversations I ever had with my grandfather happened without either of us saying a word.&quot;</p>
-                <p className="mb-4">&quot;He had a way of making every grandchild feel like the favorite. I know this because every single one of us believed we were. That was his gift. He gave his full attention to whoever was in front of him, and when you had his attention, you felt like the most important person in the world.&quot;</p>
-                <p>&quot;I am going to miss his stories, his patience, and the way he always had a butterscotch candy in his shirt pocket. I am going to miss the sound of his voice on the phone, always starting with the same three words: &apos;Well, hello there.&apos; The lake will be quieter now. But every time I cast a line, he will be right there beside me.&quot;</p>
-              </div>
-            </section>
-
-            <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Sample Eulogy: Short and Simple</h2>
-              <div className="bg-gray-50 rounded-lg p-6 text-gray-700 italic border-l-4 border-slate-300">
-                <p className="mb-4">&quot;My grandfather was not a man of many words, but the words he chose mattered. He told me once that the measure of a person is what they do when nobody is watching. I did not fully understand that until I was older, but I have carried it with me every day since.&quot;</p>
-                <p className="mb-4">&quot;He worked hard his entire life. He showed up for his family without fail. He never asked for recognition and never complained about what he did not have. He was grateful, steady, and deeply good.&quot;</p>
-                <p>&quot;I will miss him more than I can say. But I see him in my father, I see him in my cousins, and I see him in myself when I remember to be patient and to listen more than I talk. That is his legacy, and it is a good one.&quot;</p>
-              </div>
-            </section>
-
-            <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Tips for Delivering</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">Delivering a eulogy for your grandfather can feel overwhelming, but preparation makes a significant difference. These tips will help you get through it with confidence.</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
-                <li>Print the eulogy in a large font and bring it to the podium. Do not rely on your phone or memory.</li>
-                <li>Practice reading it aloud at least twice before the service. Hearing the words helps you anticipate the emotional moments.</li>
-                <li>If you cry, pause and take a breath. No one will rush you. Everyone in the room understands.</li>
-                <li>Make eye contact with the audience when you can. It connects the words to the room.</li>
-                <li>Ask someone you trust to stand nearby as a backup reader in case you need a break.</li>
-                <li>Bring a glass of water. A sip gives you a natural pause when you need one.</li>
-              </ul>
-              <p className="text-gray-600 leading-relaxed">Nobody expects perfection. They expect love, and that is something you already have.</p>
-            </section>
-
-            <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Honor a Grandfather Who Was Hard to Know</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">Not every grandfather was warm and open. Some were quiet, distant, or hard to read. If your relationship with your grandfather was complicated or if you did not know him as well as you wished, you can still write a meaningful eulogy.</p>
-              <p className="text-gray-600 leading-relaxed mb-4">Focus on what you did know. Maybe he was a man of routine and discipline. Maybe he showed love through actions rather than words, keeping the house in perfect order or always making sure the car was running. Maybe the most honest thing you can say is that he was a product of his generation and expressed love in ways that were sometimes hard to recognize.</p>
-              <p className="text-gray-600 leading-relaxed">You do not have to pretend the relationship was something it was not. A eulogy that says &quot;I wish I had known him better, and here is what I did know&quot; can be just as powerful as one filled with close memories. Honesty is always more moving than a performance.</p>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Handle a Grandfather You Did Not Know Well</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">Not every grandchild grows up close to their grandfather. Distance, family dynamics, or simply the timing of generations can mean you did not know him as well as you wish you had. That does not disqualify you from delivering a meaningful eulogy. It just changes your approach.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Start by talking to the people who did know him well. Ask your parents, your aunts and uncles, his neighbors, his friends. Ask them for one specific story that captures who he was. You will be surprised how quickly a picture forms. People love to talk about the people they have lost, and they will give you more material than you need.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Be honest in the eulogy about your perspective. You can say, &quot;I did not get to spend as much time with my grandfather as I wish I had, but what I do know is this.&quot; Honesty is always more powerful than pretending. Share what you observed, what you were told, and what you wish you had asked him. That honesty will resonate with the room more than a fabricated closeness ever could.</p>
+              <p className="text-gray-600 leading-relaxed">You can also honor what he left behind in the people he raised. If your parent is kind, steady, or hardworking, talk about how those qualities trace back to him. A grandfather&apos;s legacy lives in his children and grandchildren whether or not you spent every Sunday together.</p>
             </section>
 
             <section className="mb-10 bg-white rounded-xl shadow-md p-8 border border-gray-200">
@@ -98,7 +111,8 @@ export default function EulogyForGrandfatherPage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/eulogy-for-grandmother" className="text-slate-600 hover:text-slate-800 font-medium">Eulogy for a Grandmother: Examples and Tips</Link></li>
+                <li><Link href="/blog/eulogy-examples" className="text-slate-600 hover:text-slate-800 font-medium">Eulogy Examples for Every Relationship</Link></li>
+                <li><Link href="/blog/eulogy-template" className="text-slate-600 hover:text-slate-800 font-medium">Eulogy Template: A Fill in the Blank Guide</Link></li>
                 <li><Link href="/blog/how-to-write-a-eulogy" className="text-slate-600 hover:text-slate-800 font-medium">How to Write a Eulogy: A Complete Guide</Link></li>
               </ul>
             </section>
