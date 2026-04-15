@@ -33,7 +33,8 @@ export default function HomeQuiz() {
   const [serviceType, setServiceType] = useState<string | null>(null);
   const [budget, setBudget] = useState<string | null>(null);
   const [zip, setZip] = useState('');
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
@@ -53,14 +54,15 @@ export default function HomeQuiz() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) return;
+    if (!firstName.trim() || !email.trim()) return;
     setStatus('sending');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: name.trim(),
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
           email: email.trim(),
           phone: phone.trim(),
           timeline: intent,
@@ -177,14 +179,24 @@ export default function HomeQuiz() {
       {step === 5 && status !== 'done' && (
         <form key="s5" onSubmit={submit} className="transition-opacity duration-300 opacity-100 space-y-3">
           <p className="text-base font-semibold text-gray-900 text-center">Where should we send your matches?</p>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Your name"
-            required
-            className={inputClass}
-          />
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="First name"
+              required
+              className={inputClass}
+            />
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Last name"
+              required
+              className={inputClass}
+            />
+          </div>
           <input
             type="email"
             value={email}

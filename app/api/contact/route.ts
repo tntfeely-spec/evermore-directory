@@ -8,7 +8,8 @@ export async function POST(request: Request) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        firstName: body.name,
+        firstName: body.firstName || body.name,
+        lastName: body.lastName || '',
         phone: body.phone,
         email: body.email,
         message: body.message,
