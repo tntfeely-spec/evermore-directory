@@ -19,7 +19,9 @@ export async function POST(request: Request) {
         funeralHome: body.funeralHomeName,
         city: body.city,
         state: body.state,
-        source: 'Evermore Contact Form'
+        source: body.source || 'Evermore Contact Form',
+        tags: body.tags || [],
+        serviceType: body.serviceType,
       })
     })
 

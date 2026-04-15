@@ -68,6 +68,7 @@ export default function HomeQuiz() {
           budget,
           zip: zip.trim(),
           source: 'homepage_quiz',
+          tags: ['homepage-quiz-lead'],
         }),
       });
       if (!res.ok) throw new Error('failed');
@@ -84,12 +85,14 @@ export default function HomeQuiz() {
             const stateSlug = stateAbbr.toLowerCase();
             try {
               const check = await fetch(`/api/check-city?state=${stateSlug}&city=${citySlug}`);
+              await new Promise(r => setTimeout(r, 2000));
               if (check.ok) {
                 router.push(`/funeral-homes/${stateSlug}/${citySlug}`);
               } else {
                 router.push(`/funeral-homes/${stateSlug}`);
               }
             } catch {
+              await new Promise(r => setTimeout(r, 2000));
               router.push(`/funeral-homes/${stateSlug}`);
             }
           }
@@ -205,7 +208,7 @@ export default function HomeQuiz() {
             disabled={status === 'sending'}
             className="w-full px-4 py-3 text-sm font-semibold text-white bg-slate-700 hover:bg-slate-800 disabled:bg-slate-400 rounded-lg transition-colors"
           >
-            {status === 'sending' ? 'Sending…' : 'Find funeral homes near me'}
+            {status === 'sending' ? 'Sending…' : 'Send Me Local Funeral Home Matches'}
           </button>
           {status === 'error' && (
             <button
@@ -225,7 +228,7 @@ export default function HomeQuiz() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
           </span>
           <p className="text-sm text-gray-700">
-            We&apos;ll help you find the right funeral home. Browse listings below or use the search above.
+            We found funeral homes near you. Redirecting you now...
           </p>
         </div>
       )}
