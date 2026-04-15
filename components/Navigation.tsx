@@ -8,6 +8,8 @@ const resourceLinks = [
   { href: '/veteran-burial-benefits', label: 'Veteran Burial Benefits' },
   { href: '/obituary-maker', label: 'Free AI Obituary Maker' },
   { href: '/blog/obituary-template', label: 'Free Obituary Templates' },
+  { href: '/blog/eulogy-examples', label: 'Eulogy Examples' },
+  { href: '/blog/eulogy-template', label: 'Free Eulogy Template' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];

@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
 
           {/* Brand */}
           <div className="md:col-span-1">
@@ -80,6 +80,17 @@ export default function Footer() {
               <li><Link href="/blog/obituary-template" className="hover:text-white transition-colors">Free Obituary Templates</Link></li>
               <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">How to Write an Obituary</Link></li>
               <li><Link href="/blog/obituary-examples" className="hover:text-white transition-colors">Obituary Examples</Link></li>
+            </ul>
+          </div>
+
+          {/* Eulogy Resources */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Eulogy Resources</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/blog/eulogy-examples" className="hover:text-white transition-colors">Eulogy Examples</Link></li>
+              <li><Link href="/blog/eulogy-template" className="hover:text-white transition-colors">Free Eulogy Template</Link></li>
+              <li><Link href="/blog/how-to-write-a-eulogy" className="hover:text-white transition-colors">How to Write a Eulogy</Link></li>
+              <li><Link href="/blog/short-eulogy-examples" className="hover:text-white transition-colors">Short Eulogy Examples</Link></li>
             </ul>
           </div>
 
