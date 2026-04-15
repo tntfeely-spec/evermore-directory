@@ -51,6 +51,9 @@ export default function EulogyExamplesPage() {
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">A eulogy is a short speech honoring someone who has died, typically delivered at a funeral or memorial service by someone who knew them well. These eulogy examples cover every major relationship and service type. Each one is written to be adapted, not copied word for word. The best eulogies replace the specific details with your own memories.</p>
             </section>
+            <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+              <p className="text-gray-700">Want to skip the blank page? Our <Link href="/eulogy-writer" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Eulogy Writer</Link> generates a complete personalized eulogy in minutes based on your memories.</p>
+            </div>
 
             {/* Eulogy Example for a Mother */}
             <section className="mb-10">

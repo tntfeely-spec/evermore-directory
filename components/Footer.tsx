@@ -87,6 +87,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Eulogy Resources</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/eulogy-writer" className="hover:text-white transition-colors">Free AI Eulogy Writer</Link></li>
               <li><Link href="/blog/eulogy-examples" className="hover:text-white transition-colors">Eulogy Examples</Link></li>
               <li><Link href="/blog/eulogy-template" className="hover:text-white transition-colors">Free Eulogy Template</Link></li>
               <li><Link href="/blog/how-to-write-a-eulogy" className="hover:text-white transition-colors">How to Write a Eulogy</Link></li>

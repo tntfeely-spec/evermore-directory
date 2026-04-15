@@ -127,7 +127,7 @@ export default function EulogyTemplatePage() {
             </div>
 
             <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
-              <p className="text-gray-700">Need help getting started? See our <Link href="/blog/eulogy-examples" className="text-slate-700 font-semibold hover:text-slate-900 underline">eulogy examples</Link> for real samples you can adapt, or try our step by step guide on <Link href="/blog/how-to-write-a-eulogy" className="text-slate-700 font-semibold hover:text-slate-900 underline">how to write a eulogy</Link>.</p>
+              <p className="text-gray-700">Prefer AI to handle the first draft? Our <Link href="/eulogy-writer" className="text-slate-700 font-semibold hover:text-slate-900 underline">Free AI Eulogy Writer</Link> generates a complete eulogy in minutes. Or see our <Link href="/blog/eulogy-examples" className="text-slate-700 font-semibold hover:text-slate-900 underline">eulogy examples</Link> for real samples you can adapt.</p>
             </div>
 
             {/* Short Eulogy Template */}
