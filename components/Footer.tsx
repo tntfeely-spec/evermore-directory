@@ -72,14 +72,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Obituary Tools */}
+          {/* Writing Tools */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Obituary Tools</h4>
+            <h4 className="text-white font-semibold mb-4">Writing Tools</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/obituary-maker" className="hover:text-white transition-colors">Free AI Obituary Maker</Link></li>
               <li><Link href="/blog/obituary-template" className="hover:text-white transition-colors">Free Obituary Templates</Link></li>
               <li><Link href="/blog/how-to-write-an-obituary" className="hover:text-white transition-colors">How to Write an Obituary</Link></li>
               <li><Link href="/blog/obituary-examples" className="hover:text-white transition-colors">Obituary Examples</Link></li>
+              <li><Link href="/eulogy-writer" className="hover:text-white transition-colors">Free AI Eulogy Writer</Link></li>
             </ul>
           </div>
 
