@@ -1,5 +1,8 @@
 export async function GET() {
-  return new Response(null, { status: 405, headers: { 'Allow': 'POST' } })
+  return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+    status: 405,
+    headers: { 'Allow': 'POST', 'Content-Type': 'application/json' }
+  })
 }
 
 export async function POST(request: Request) {
