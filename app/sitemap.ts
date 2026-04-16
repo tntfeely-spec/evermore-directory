@@ -262,6 +262,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'eulogy-examples',
     'eulogy-template',
     'short-eulogy-examples',
+    'when-cardinals-appear-angels-are-near',
+    'sympathy-gifts-that-last',
+    'what-to-plant-in-memory-of-someone',
+    'what-to-post-on-facebook-when-someone-dies',
+    'memorial-stepping-stones',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
