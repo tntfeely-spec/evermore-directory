@@ -267,6 +267,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'what-to-plant-in-memory-of-someone',
     'what-to-post-on-facebook-when-someone-dies',
     'memorial-stepping-stones',
+    'plants-instead-of-flowers-funeral',
+    'seeing-a-cardinal-after-someone-dies',
+    'cardinal-sign-from-heaven',
+    'memorial-wind-chimes',
+    'gifts-for-grieving-friends',
+    'personalized-sympathy-gifts',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

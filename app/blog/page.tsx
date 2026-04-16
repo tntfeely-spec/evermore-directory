@@ -205,6 +205,18 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
     ],
   },
   {
+    name: 'Grief Gifts and Memorial Ideas',
+    subtitle: 'Lasting sympathy gifts and memorial keepsakes that honor a specific person.',
+    posts: [
+      { slug: 'plants-instead-of-flowers-funeral', title: 'Plants Instead of Flowers for a Funeral: Why Families Keep Them for Years', description: 'The best plants to send instead of flowers, what to write on the card, and why living gifts last.' },
+      { slug: 'personalized-sympathy-gifts', title: 'Personalized Sympathy Gifts: What Families Actually Keep', description: 'Wind chimes, stepping stones, memorial jewelry, and personalized keepsakes families keep for decades.' },
+      { slug: 'gifts-for-grieving-friends', title: 'Gifts for Grieving Friends: What Actually Helps and What to Avoid', description: 'Practical, lasting, personal gifts that help. What families actually use and what to avoid.' },
+      { slug: 'memorial-wind-chimes', title: 'Memorial Wind Chimes: A Lasting Tribute That Families Keep for Years', description: 'What to look for, what to engrave, and why wind chimes outlast flowers as a sympathy gift.' },
+      { slug: 'seeing-a-cardinal-after-someone-dies', title: 'Seeing a Cardinal After Someone Dies: What It Means to Families', description: 'The history, what different faiths say, and why a cardinal sighting brings comfort to grieving families.' },
+      { slug: 'cardinal-sign-from-heaven', title: 'Cardinal Sign from Heaven: The Meaning Behind the Red Bird', description: 'The spiritual meaning, history, and why this belief comforts grieving families.' },
+    ],
+  },
+  {
     name: 'Religious and Cultural Traditions',
     posts: [
       { slug: 'jewish-funeral-etiquette', title: 'Jewish Funeral Etiquette for Non-Jews', description: 'What to expect, what to wear, and how to show respect at a Jewish funeral.' },
