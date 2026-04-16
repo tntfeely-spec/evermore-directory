@@ -12,7 +12,7 @@ const faqs = [
   { q: 'Is it appropriate to send a plant instead of flowers to a funeral?', a: 'Yes, sending a plant is completely appropriate and often more appreciated than cut flowers. A plant gives the family something living to care for long after the service is over. Unless the obituary specifies otherwise, a sympathy plant is a thoughtful and welcome gesture.' },
   { q: 'What is the best plant to send for a sympathy gift?', a: 'The peace lily is the most traditional sympathy plant because it symbolizes peace and rebirth and requires very little care. If the family does not have a green thumb, a snake plant, pothos, or ZZ plant will thrive with almost no attention and last for years.' },
   { q: 'What do you write on a card when sending a plant for a funeral?', a: 'Keep the message short and personal. Something like, &apos;Thinking of you and your family during this difficult time. This plant is a small reminder that love keeps growing.&apos; If you knew the person who passed, reference a specific memory or quality that made them who they were.' },
-  { q: 'How long do sympathy plants last compared to flowers?', a: 'Cut flowers typically last 5 to 10 days before wilting. A well cared for sympathy plant can last years, sometimes decades. I still have plants from my mother&apos;s funeral in 2008, which is 18 years of daily reminders that people showed up when it mattered.' },
+  { q: 'How long do sympathy plants last compared to flowers?', a: 'Cut flowers typically last 5 to 10 days before wilting. A well cared for sympathy plant can last years, sometimes decades. I still have plants from a funeral in 2008, which is 18 years of daily reminders that people showed up when it mattered.' },
 ];
 
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
@@ -37,13 +37,24 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
             </header>
 
             <section className="mb-10">
-              <p className="text-gray-700 leading-relaxed text-lg">I still have house plants from my mother&apos;s funeral in 2008. People sent them instead of flowers and they sit in my home every day eighteen years later. Cut flowers were beautiful for a week. The plants became part of my life. That is what the right sympathy gift does.</p>
+              <p className="text-gray-700 leading-relaxed text-lg mb-4">I still have house plants from a funeral in 2008. People sent them instead of flowers and they sit in my home every day eighteen years later. The flowers that came that week were beautiful. Within ten days most of them were gone. The plants stayed. They kept growing. That is what the right sympathy gift does.</p>
+              <p className="text-gray-700 leading-relaxed text-lg mb-4">I have a Dracaena by the stairs that has grown taller than I am. A Pothos trailing across the kitchen counter. A Peace Lily by the window that still pushes out new growth every spring. A Syngonium that has been repotted twice because it kept outgrowing its pot. None of them were expensive. All of them are still here.</p>
+              <p className="text-gray-700 leading-relaxed text-lg">That is eighteen years of daily presence from a single decision someone made at a difficult moment. That is what a plant does that flowers cannot.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">The Plants in My Home Right Now</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">After eighteen years, here is what still lives in my home from that time:</p>
+              <p className="text-gray-600 leading-relaxed mb-4">A Dracaena marginata, tall and well established, sitting by the front stairs in a grey ceramic pot. It has been repotted once and moved three times across the house as the light changed.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">A Pothos, trailing long vines across the kitchen counter, living in the same blue ceramic pot it came in. Pothos are nearly indestructible and this one has proved it.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">A Peace Lily in a square blue ceramic pot by a window. It still blooms. Some years it pushes out a single white flower in early spring that lasts for weeks.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">A Syngonium, compact and lush, on the kitchen counter beside the Pothos. Arrow-shaped leaves, minimal care required.</p>
+              <p className="text-gray-600 leading-relaxed">Not one of these plants required a green thumb. They required water when the soil felt dry. That is all.</p>
             </section>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Plants Outlast Flowers as a Sympathy Gift</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">The week after my mother died, our kitchen counter looked like a florist shop. There were lilies on the dining table, roses on the sideboard, carnations by the window. Within ten days almost all of them were in the trash. I remember bagging them up and feeling like I was throwing her away a second time.</p>
-              <p className="text-gray-600 leading-relaxed mb-4">The plants were different. My aunt sent a peace lily. A neighbor brought over a pothos in a small green pot. Someone from my mother&apos;s church dropped off a snake plant that was already bigger than I was comfortable carrying. I did not know it at the time, but those three plants would still be alive almost two decades later.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">The week after a funeral, most homes fill up with cut flowers. Arrangements arrive from florists, from neighbors, from coworkers. They are beautiful and they are genuinely appreciated. Within ten days most of them are in the trash. The plant that someone sent instead is still on the counter.</p>
               <p className="text-gray-600 leading-relaxed mb-4">When you lose someone, the hardest part is that the world keeps moving and you feel like nothing will ever grow again. A living plant argues with that feeling every single day. It keeps reaching for light. It puts out new leaves. It reminds you that life does not stop, even when yours feels like it has.</p>
               <p className="text-gray-600 leading-relaxed">That is why I tell people, when they ask me what to send to a grieving family, to skip the cut flowers and send something that will still be alive next Christmas. Not because flowers are wrong. They are beautiful, and funerals need beauty. But a plant is a slower kind of comfort. It shows up every morning for years.</p>
             </section>
@@ -52,14 +63,20 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Best Indoor Plants to Send</h2>
               <p className="text-gray-600 leading-relaxed mb-4">If you are choosing a sympathy plant, pick one the family can actually keep alive. Grieving people do not have extra energy to research light levels and watering schedules. These six plants are nearly indestructible, meaningful, and widely available.</p>
 
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Dracaena</h3>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Very easy. Tolerates low light and infrequent watering. Can live 10 to 20 years indoors. <strong>Symbolism:</strong> Steady growth and quiet strength. The Dracaena marginata is a tall, sculptural plant that becomes a permanent fixture in a home. Mine has grown taller than I am. It makes a generous, lasting sympathy gift that turns a corner of a room into a memorial without ever feeling sad.</p>
+
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Peace Lily</h3>
-              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Low. <strong>Symbolism:</strong> Peace, rebirth, and the return of the soul. The peace lily is the most traditional sympathy plant in the United States, and for good reason. It tolerates low light, tells you when it needs water by drooping dramatically, and bounces back within hours. The white flowers can bloom for weeks at a time. If I had to pick one plant to send to every funeral, this would be it.</p>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Easy. Tolerates low light. Tells you when it needs water by drooping slightly. <strong>Symbolism:</strong> Peace, rebirth, and the return of the soul. The peace lily is the most traditional sympathy plant in the United States, and for good reason. It bounces back within hours of a watering, and the white flowers can bloom for weeks at a time. If I had to pick one plant to send to every funeral, this would be it.</p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Pothos</h3>
-              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Very low. <strong>Symbolism:</strong> Resilience and long life. Pothos will grow in almost any condition. Forget to water it for two weeks and it forgives you. It trails beautifully from a shelf or a hanging basket, and cuttings root in plain water, so the family can propagate it and share it with others over time. Few plants send a clearer message about endurance.</p>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Extremely easy. Thrives in almost any light condition. Nearly impossible to kill. <strong>Symbolism:</strong> Resilience and long life. Forget to water it for two weeks and it forgives you. It trails beautifully from a shelf or a hanging basket, and cuttings root in plain water, so the family can propagate it and share it with others over time. Few plants send a clearer message about endurance.</p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Syngonium</h3>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Easy. Compact grower. Does well in moderate light. <strong>Symbolism:</strong> Gentle growth and adaptability. The Syngonium has soft arrow-shaped leaves and stays compact enough for a kitchen counter or side table. It is forgiving of beginner mistakes and adapts to the light it is given. A good fit for a household that wants something living without taking on a project.</p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Snake Plant</h3>
-              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Very low. <strong>Symbolism:</strong> Protection, strength, and steadiness. The snake plant stands tall on its own the way a steady friend stands next to you at a wake. It needs water maybe once a month. It filters the air while you sleep. It will outlive most of your furniture. I have one that was a gift and it is older than my youngest kid.</p>
+              <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Very low. <strong>Symbolism:</strong> Protection, strength, and steadiness. The snake plant stands tall on its own the way a steady friend stands next to you at a wake. It needs water maybe once a month. It filters the air while you sleep. It will outlive most of your furniture.</p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Orchid</h3>
               <p className="text-gray-600 leading-relaxed mb-4"><strong>Care level:</strong> Medium. <strong>Symbolism:</strong> Refined remembrance and lasting beauty. Phalaenopsis orchids are the most common sympathy orchid and they will rebloom for years if kept in indirect light with a few ice cubes of water once a week. They are elegant without being loud. A good choice for someone who appreciated quiet, beautiful things.</p>
@@ -125,7 +142,7 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
                 <li><strong>Seed plants.</strong> Coneflowers, black eyed Susans, and native grasses produce seeds cardinals eat all winter. Leave the seed heads standing through the cold months.</li>
                 <li><strong>Feeder plantings.</strong> A hopper feeder filled with black oil sunflower seeds, placed near dense shrubs that provide cover, will bring cardinals to a memorial garden within days.</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">The first time a cardinal showed up in our yard after my mother died, my sister called me crying. I do not know what I believe about that kind of thing. I know that my sister needed to believe it, and the bird was there, and that was enough.</p>
+              <p className="text-gray-600 leading-relaxed">The first time a cardinal showed up after the loss in 2008, it landed on a fence post outside the kitchen window and sat there long enough that it stopped feeling like a coincidence. I do not know what I believe about that kind of thing. I know the bird was there, and for the people who needed it to mean something, it did. That was enough.</p>
             </section>
 
             <section className="mb-10">
