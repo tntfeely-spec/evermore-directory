@@ -39,6 +39,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
   {
     name: 'Costs and Pricing',
     posts: [
+      { slug: 'funeral-cost-calculator', title: 'Funeral Cost Calculator: Estimate Costs by State (2026)', description: 'Real price ranges from 4,800+ funeral homes across all 50 states. Pick your state for instant estimates.' },
       { slug: 'funeral-costs-2026', title: 'How Much Does a Funeral Cost in 2026? Complete Price Guide', description: 'Funeral costs range from $7,000 to $15,000+ for a traditional service. Average prices by state and how to save.' },
       { slug: 'cremation-costs-2026', title: 'How Much Does Cremation Cost in 2026?', description: 'Cremation costs range from $500 to $7,000+ depending on location and services. Prices by state.' },
       { slug: 'direct-cremation-vs-traditional-funeral', title: 'Direct Cremation vs Traditional Funeral: How to Choose', description: 'Compare costs, timelines, and how to decide which is right for your family.' },
