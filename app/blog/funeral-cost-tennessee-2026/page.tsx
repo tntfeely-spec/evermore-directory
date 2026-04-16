@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide | Evermore Directory',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function FuneralCostTennessee2026Page() {
   return (
     <>
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

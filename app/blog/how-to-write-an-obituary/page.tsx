@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 import ObituaryGenerator from '@/components/ObituaryGenerator';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function HowToWriteAnObituaryPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Write an Obituary","description":"Step by step guide to writing an obituary that honors a loved one.","step":[{"@type":"HowToStep","position":1,"name":"Gather the essential facts","text":"Collect full name, age, date and place of birth, date and place of death, and names of surviving family members."},{"@type":"HowToStep","position":2,"name":"Write a strong opening sentence","text":"Lead with the person's name, age, and a defining characteristic. Example: John Smith, 78, a lifelong teacher and devoted grandfather, passed away peacefully on April 10, 2026."},{"@type":"HowToStep","position":3,"name":"Share their life story in 2 to 3 paragraphs","text":"Include career highlights, hobbies, passions, achievements, and what they meant to the people around them. Write in third person past tense."},{"@type":"HowToStep","position":4,"name":"List survivors and predeceased family","text":"Name surviving spouse, children, grandchildren, and siblings. Mention those who preceded them in death."},{"@type":"HowToStep","position":5,"name":"Include service details","text":"Add the date, time, and location of the funeral or memorial service. Include visitation hours and burial location if applicable."},{"@type":"HowToStep","position":6,"name":"Add a closing statement","text":"Close with a memorial donation request, a favorite quote, or a simple sentence that captures who they were."}]}) }} />
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

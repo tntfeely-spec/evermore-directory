@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'National Cemetery Burial: How to Bury a Veteran in a Federal Cemetery for Free | Evermore Directory',
@@ -12,6 +13,7 @@ export default function NationalCemeteryBurialVeteransFreePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Arrange Free Burial in a National Cemetery for a Veteran","description":"The steps to arrange burial in a VA national cemetery at no cost to the family.","step":[{"@type":"HowToStep","position":1,"name":"Contact the National Cemetery Scheduling Office","text":"Call 1-800-535-1117 as soon as possible after the veteran's death. The scheduling office is available 24 hours a day 7 days a week."},{"@type":"HowToStep","position":2,"name":"Provide the veteran's discharge papers","text":"Have the DD-214 ready. The scheduling office will verify eligibility using this document. If you cannot find it call the National Archives at 1-314-801-0800."},{"@type":"HowToStep","position":3,"name":"Select a national cemetery","text":"Choose from available national cemeteries. The scheduling office will tell you which cemeteries have availability. Not all national cemeteries are open to new burials."},{"@type":"HowToStep","position":4,"name":"Coordinate with the funeral home","text":"The funeral home handles transportation and preparation. Inform them that burial will be in a national cemetery so they can coordinate with the cemetery directly."},{"@type":"HowToStep","position":5,"name":"Request military funeral honors","text":"Ask the funeral home to request military funeral honors through the Department of Defense. This includes flag folding, Taps, and a burial flag at no cost."}]}) }} />
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

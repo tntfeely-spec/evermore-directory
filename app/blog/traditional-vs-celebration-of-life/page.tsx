@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Traditional Funeral vs. Celebration of Life: How to Choose (2026) | Evermore Directory',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function TraditionalVsCelebrationPage() {
   return (
     <>
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

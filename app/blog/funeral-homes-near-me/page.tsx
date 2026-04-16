@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Funeral Homes Near Me: How to Choose the Right One (2026) | Evermore Directory',
@@ -40,6 +41,7 @@ export default function FuneralHomesNearMePage() {
           ]
         }) }}
       />
+    <Navigation />
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <article>

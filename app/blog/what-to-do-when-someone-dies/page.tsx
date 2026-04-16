@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'What to Do When Someone Dies: A Step-by-Step Guide for the First 72 Hours | Evermore Directory',
@@ -12,6 +13,7 @@ export default function WhatToDoWhenSomeoneDiesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"What to Do When Someone Dies: First 72 Hours","description":"The exact steps to take in the first 72 hours after a death, in order.","totalTime":"PT72H","step":[{"@type":"HowToStep","position":1,"name":"Confirm the death and contact authorities","text":"If the death is at home and unexpected, call 911. If expected and under hospice care, call the hospice nurse. Do not move the body until authorized."},{"@type":"HowToStep","position":2,"name":"Contact a funeral home","text":"Call a funeral home to arrange transportation of the body. You do not need to decide on all services yet. The funeral home will hold the deceased while you make arrangements."},{"@type":"HowToStep","position":3,"name":"Notify immediate family","text":"Call immediate family members personally before posting anything publicly. Give people time to process the news before a public announcement."},{"@type":"HowToStep","position":4,"name":"Locate important documents","text":"Find the will, life insurance policies, Social Security card, birth certificate, and any pre-planning documents. These will be needed in the coming days."},{"@type":"HowToStep","position":5,"name":"Make funeral arrangements","text":"Meet with the funeral home to select services. Request the General Price List and compare costs. You have the legal right to choose only the services you want."},{"@type":"HowToStep","position":6,"name":"Write and publish the obituary","text":"Write the obituary and submit to local newspapers and online memorial sites. Include service details once they are confirmed."}]}) }} />
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

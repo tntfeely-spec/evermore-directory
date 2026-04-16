@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: '12 Funeral Homes in Atlanta, GA (2026) | Compare Prices & Services | Evermore Directory',
@@ -139,6 +140,7 @@ export default function FuneralHomesAtlantaPage() {
           "url": "https://funeralhomedirectories.com/blog/funeral-homes-atlanta-ga"
         }) }}
       />
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

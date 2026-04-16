@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import BlogFooterLinks from '@/components/BlogFooterLinks';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: '10 Funeral Homes in Nashville, TN (2026) | Prices & Services | Evermore Directory',
@@ -139,6 +140,7 @@ export default function BestFuneralHomesNashvillePage() {
           "url": "https://funeralhomedirectories.com/blog/best-funeral-homes-nashville-tn"
         }) }}
       />
+      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
