@@ -1,3 +1,7 @@
+export async function GET() {
+  return new Response(null, { status: 405, headers: { 'Allow': 'POST' } })
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
