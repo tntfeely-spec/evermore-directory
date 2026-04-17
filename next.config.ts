@@ -10,6 +10,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/pro',
+        destination: 'https://evermore-pro.vercel.app/pro',
+      },
+      {
+        source: '/pro/:path*',
+        destination: 'https://evermore-pro.vercel.app/pro/:path*',
+      },
+    ]
+  },
 };
 
 export default nextConfig;
