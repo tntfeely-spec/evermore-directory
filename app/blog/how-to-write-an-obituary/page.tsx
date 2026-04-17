@@ -93,6 +93,24 @@ export default function HowToWriteAnObituaryPage() {
               <ObituaryGenerator />
             </section>
 
+            <div className="mb-6 bg-gray-50 border border-gray-200 rounded-xl p-6 md:p-8 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">Need to write an obituary?</p>
+              <p className="text-sm text-gray-600 mb-5">Our free AI Obituary Maker generates a complete personalized tribute in minutes.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link href="/obituary-maker" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">Use the Free AI Obituary Maker</Link>
+                <Link href="/blog/obituary-template" className="inline-block bg-white hover:bg-gray-50 text-slate-700 font-semibold px-5 py-2.5 rounded-lg text-sm border border-slate-300 transition-colors">Browse Free Templates</Link>
+              </div>
+            </div>
+
+            <div className="mb-10 bg-gray-50 border border-gray-200 rounded-xl p-6 md:p-8 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">Need to write a eulogy?</p>
+              <p className="text-sm text-gray-600 mb-5">Our free AI Eulogy Writer helps you honor your loved one with the right words.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link href="/eulogy-writer" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors">Use the Free AI Eulogy Writer</Link>
+                <Link href="/blog/eulogy-examples" className="inline-block bg-white hover:bg-gray-50 text-slate-700 font-semibold px-5 py-2.5 rounded-lg text-sm border border-slate-300 transition-colors">Browse Eulogy Examples</Link>
+              </div>
+            </div>
+
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
