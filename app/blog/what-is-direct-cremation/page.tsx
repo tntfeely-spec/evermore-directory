@@ -371,9 +371,13 @@ export default function WhatIsDirectCremationPage() {
                   <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Choose a Direct Cremation Provider</h3>
                   <p className="text-sm text-gray-600">The 7-point checklist for finding a trustworthy cremation provider.</p>
                 </Link>
-                <Link href="/blog/how-direct-cremation-works" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-semibold text-slate-600 mb-1">How Direct Cremation Works: The 5 Step Process</h3>
-                  <p className="text-sm text-gray-600">A step-by-step walkthrough of what happens from the first call to receiving ashes.</p>
+                <Link href="/blog/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">Cremation vs Burial: Which Is Right for Your Family?</h3>
+                  <p className="text-sm text-gray-600">A complete comparison of cost, process, and considerations for each option.</p>
+                </Link>
+                <Link href="/blog/what-is-a-cremation-society" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-slate-600 mb-1">What Is a Cremation Society?</h3>
+                  <p className="text-sm text-gray-600">How cremation societies work, major national providers, and membership benefits.</p>
                 </Link>
                 <Link href="/direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                   <h3 className="text-lg font-semibold text-slate-600 mb-1">Browse Direct Cremation Providers</h3>
