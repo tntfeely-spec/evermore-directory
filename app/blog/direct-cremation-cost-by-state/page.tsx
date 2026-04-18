@@ -18,54 +18,64 @@ export const metadata: Metadata = {
   },
 };
 
+/*
+ * Data methodology:
+ * - Averages are shown only for states with 5+ price data points AND 30%+ pricing
+ *   coverage across providers. States below either threshold show the national
+ *   range ($1,000 to $3,500) and are flagged "limited" so readers contact
+ *   providers directly for quotes.
+ * - 21 states have valid calculated averages. 18 states are flagged limited.
+ *   7 states have providers but no published pricing. 5 states/territories have
+ *   no providers listed yet.
+ */
 const stateData = [
-  { state: 'Alabama', abbr: 'AL', providers: 0, range: '', avg: '', note: 'Contact providers' },
+  { state: 'Alabama', abbr: 'AL', providers: 0, range: '', avg: '', note: 'none' },
   { state: 'Alaska', abbr: 'AK', providers: 3, range: '$995 to $5,000', avg: '$2,630', note: '' },
-  { state: 'Arizona', abbr: 'AZ', providers: 20, range: '$595 to $4,000', avg: '$1,835', note: '' },
-  { state: 'Arkansas', abbr: 'AR', providers: 3, range: '$795 to $2,500', avg: '$1,430', note: 'Limited data' },
-  { state: 'California', abbr: 'CA', providers: 52, range: '$4,500 to $8,000', avg: '$6,250', note: 'Limited pricing data' },
+  { state: 'Arizona', abbr: 'AZ', providers: 20, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Arkansas', abbr: 'AR', providers: 3, range: '$795 to $2,500', avg: '$1,430', note: '' },
+  { state: 'California', abbr: 'CA', providers: 52, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'Colorado', abbr: 'CO', providers: 15, range: '$800 to $2,500', avg: '$1,708', note: '' },
-  { state: 'Connecticut', abbr: 'CT', providers: 1, range: '$995 to $3,000', avg: '$1,997', note: 'Limited data' },
-  { state: 'Delaware', abbr: 'DE', providers: 0, range: '', avg: '', note: 'Contact providers' },
-  { state: 'District of Columbia', abbr: 'DC', providers: 2, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Florida', abbr: 'FL', providers: 29, range: '$2,500 to $5,500', avg: '$4,016', note: '' },
-  { state: 'Georgia', abbr: 'GA', providers: 8, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Hawaii', abbr: 'HI', providers: 0, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Idaho', abbr: 'ID', providers: 3, range: '$1,900 to $6,400', avg: '$3,816', note: 'Limited data' },
-  { state: 'Illinois', abbr: 'IL', providers: 28, range: '$2,500 to $5,500', avg: '$3,750', note: '' },
-  { state: 'Indiana', abbr: 'IN', providers: 15, range: '$895 to $3,500', avg: '$2,222', note: '' },
-  { state: 'Iowa', abbr: 'IA', providers: 1, range: '$895 to $2,500', avg: '$1,697', note: 'Limited data' },
+  { state: 'Connecticut', abbr: 'CT', providers: 1, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Delaware', abbr: 'DE', providers: 0, range: '', avg: '', note: 'none' },
+  { state: 'District of Columbia', abbr: 'DC', providers: 2, range: '', avg: '', note: 'no_price' },
+  { state: 'Florida', abbr: 'FL', providers: 29, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Georgia', abbr: 'GA', providers: 8, range: '', avg: '', note: 'no_price' },
+  { state: 'Hawaii', abbr: 'HI', providers: 0, range: '', avg: '', note: 'none' },
+  { state: 'Idaho', abbr: 'ID', providers: 3, range: '$1,900 to $6,400', avg: '$3,816', note: '' },
+  { state: 'Illinois', abbr: 'IL', providers: 28, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Indiana', abbr: 'IN', providers: 15, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Iowa', abbr: 'IA', providers: 1, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'Kansas', abbr: 'KS', providers: 7, range: '$795 to $2,800', avg: '$1,672', note: '' },
-  { state: 'Kentucky', abbr: 'KY', providers: 5, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Louisiana', abbr: 'LA', providers: 1, range: '$995 to $3,500', avg: '$2,247', note: 'Limited data' },
+  { state: 'Kentucky', abbr: 'KY', providers: 5, range: '', avg: '', note: 'no_price' },
+  { state: 'Louisiana', abbr: 'LA', providers: 1, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'Maine', abbr: 'ME', providers: 14, range: '$1,000 to $5,600', avg: '$2,992', note: '' },
-  { state: 'Maryland', abbr: 'MD', providers: 7, range: '$995 to $3,000', avg: '$2,022', note: '' },
-  { state: 'Massachusetts', abbr: 'MA', providers: 4, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Michigan', abbr: 'MI', providers: 7, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Minnesota', abbr: 'MN', providers: 18, range: '$795 to $4,000', avg: '$1,938', note: '' },
-  { state: 'Mississippi', abbr: 'MS', providers: 0, range: '', avg: '', note: 'Contact providers' },
+  { state: 'Maryland', abbr: 'MD', providers: 7, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Massachusetts', abbr: 'MA', providers: 4, range: '', avg: '', note: 'no_price' },
+  { state: 'Michigan', abbr: 'MI', providers: 7, range: '', avg: '', note: 'no_price' },
+  { state: 'Minnesota', abbr: 'MN', providers: 18, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Mississippi', abbr: 'MS', providers: 0, range: '', avg: '', note: 'none' },
   { state: 'Missouri', abbr: 'MO', providers: 11, range: '$895 to $3,500', avg: '$1,997', note: '' },
   { state: 'Montana', abbr: 'MT', providers: 9, range: '$1,000 to $5,900', avg: '$3,255', note: '' },
   { state: 'Nebraska', abbr: 'NE', providers: 14, range: '$1,600 to $4,900', avg: '$3,290', note: '' },
   { state: 'Nevada', abbr: 'NV', providers: 24, range: '$695 to $3,500', avg: '$1,680', note: '' },
   { state: 'New Hampshire', abbr: 'NH', providers: 15, range: '$1,000 to $5,600', avg: '$2,914', note: '' },
-  { state: 'New Jersey', abbr: 'NJ', providers: 1, range: '$1,195 to $3,000', avg: '$2,097', note: 'Limited data' },
+  { state: 'New Jersey', abbr: 'NJ', providers: 1, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'New Mexico', abbr: 'NM', providers: 4, range: '$895 to $3,500', avg: '$1,848', note: '' },
-  { state: 'New York', abbr: 'NY', providers: 7, range: '$1,500 to $5,000', avg: '$3,250', note: 'Limited pricing data' },
-  { state: 'North Carolina', abbr: 'NC', providers: 15, range: '$895 to $6,900', avg: '$3,132', note: '' },
+  { state: 'New York', abbr: 'NY', providers: 7, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'North Carolina', abbr: 'NC', providers: 15, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'North Dakota', abbr: 'ND', providers: 12, range: '$1,100 to $5,400', avg: '$3,029', note: '' },
-  { state: 'Ohio', abbr: 'OH', providers: 2, range: '', avg: '', note: 'Contact providers' },
-  { state: 'Oklahoma', abbr: 'OK', providers: 12, range: '$795 to $3,000', avg: '$1,897', note: 'Limited pricing data' },
+  { state: 'Ohio', abbr: 'OH', providers: 2, range: '', avg: '', note: 'no_price' },
+  { state: 'Oklahoma', abbr: 'OK', providers: 12, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'Oregon', abbr: 'OR', providers: 8, range: '$795 to $3,500', avg: '$2,080', note: '' },
-  { state: 'Pennsylvania', abbr: 'PA', providers: 11, range: '$1,500 to $3,500', avg: '$2,500', note: '' },
+  { state: 'Pennsylvania', abbr: 'PA', providers: 11, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'Rhode Island', abbr: 'RI', providers: 10, range: '$1,200 to $5,900', avg: '$3,435', note: '' },
-  { state: 'South Carolina', abbr: 'SC', providers: 2, range: '$995 to $2,500', avg: '$1,622', note: 'Limited data' },
+  { state: 'South Carolina', abbr: 'SC', providers: 2, range: '$1,000 to $3,500', avg: '', note: 'limited' },
   { state: 'South Dakota', abbr: 'SD', providers: 9, range: '$1,100 to $5,700', avg: '$3,000', note: '' },
-  { state: 'Tennessee', abbr: 'TN', providers: 12, range: '$1,295 to $2,500', avg: '$1,897', note: 'Limited pricing data' },
-  { state: 'Texas', abbr: 'TX', providers: 32, range: '$1,500 to $3,500', avg: '$2,500', note: 'Limited pricing data' },
-  { state: 'Utah', abbr: 'UT', providers: 0, range: '', avg: '', note: 'Contact providers' },
+  { state: 'Tennessee', abbr: 'TN', providers: 12, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Texas', abbr: 'TX', providers: 32, range: '$1,000 to $3,500', avg: '', note: 'limited' },
+  { state: 'Utah', abbr: 'UT', providers: 0, range: '', avg: '', note: 'none' },
   { state: 'Vermont', abbr: 'VT', providers: 8, range: '$1,700 to $5,900', avg: '$3,487', note: '' },
-  { state: 'Virginia', abbr: 'VA', providers: 12, range: '', avg: '', note: 'Contact providers' },
+  { state: 'Virginia', abbr: 'VA', providers: 12, range: '', avg: '', note: 'no_price' },
   { state: 'Washington', abbr: 'WA', providers: 7, range: '$595 to $5,000', avg: '$1,898', note: '' },
   { state: 'West Virginia', abbr: 'WV', providers: 6, range: '$1,000 to $5,800', avg: '$3,116', note: '' },
   { state: 'Wisconsin', abbr: 'WI', providers: 17, range: '$750 to $3,500', avg: '$1,906', note: '' },
@@ -75,15 +85,15 @@ const stateData = [
 const faqs = [
   {
     q: 'What is the average cost of direct cremation in the United States?',
-    a: 'The national average for direct cremation is approximately $2,000 to $2,500. However, prices range from under $700 in the most competitive markets (Nevada, Arizona, Washington) to over $6,000 in high cost areas like California. Always request an itemized price list from providers in your area.',
+    a: 'Most families pay between $1,000 and $3,500 for direct cremation. The exact cost depends on your state, your city, and which provider you choose. Prices start under $700 in the most competitive markets like Nevada and Washington, and can exceed $5,000 in high cost areas. Always request an itemized price list from providers in your area.',
   },
   {
-    q: 'Which state has the cheapest direct cremation?',
-    a: 'Based on our directory data, Arkansas, South Carolina, and Kansas have the lowest average direct cremation costs, with averages under $1,700. Nevada and Iowa are also among the most affordable states for direct cremation. Low costs are typically driven by lower cost of living, more competition among providers, and proximity to crematories.',
+    q: 'Which states have the cheapest direct cremation?',
+    a: 'Among states with sufficient pricing data in our directory, Arkansas ($1,430 average), Kansas ($1,672 average), and Nevada ($1,680 average) have the lowest costs. Low prices are typically driven by lower cost of living, more competition among providers, and proximity to crematories.',
   },
   {
-    q: 'Which state has the most expensive direct cremation?',
-    a: 'California has the highest average direct cremation costs in our directory, followed by Florida, Illinois, and Idaho. Higher costs in these states are driven by higher cost of living, stricter regulatory requirements, and urban pricing in major metro areas.',
+    q: 'Which states have the most expensive direct cremation?',
+    a: 'Among states with sufficient pricing data, Vermont ($3,487 average), Idaho ($3,816 average), and Rhode Island ($3,435 average) have the highest averages. Higher costs in these states are driven by limited crematory infrastructure, rural transportation distances, or high cost of living.',
   },
   {
     q: 'Why does direct cremation cost more in some states?',
@@ -95,7 +105,7 @@ const faqs = [
   },
   {
     q: 'How can I find the cheapest direct cremation near me?',
-    a: 'Browse the Evermore Directory by state and city to compare direct cremation providers and pricing in your area. Request itemized price lists from at least 3 providers, ask exactly what is included, and check whether the provider is licensed in your state. Online-only cremation providers sometimes offer lower prices than traditional funeral homes.',
+    a: 'Browse the Evermore Directory by state and city to compare direct cremation providers in your area. Request itemized price lists from at least 3 providers, ask exactly what is included, and check whether the provider is licensed in your state. Online-only cremation providers sometimes offer lower prices than traditional funeral homes.',
   },
 ];
 
@@ -160,10 +170,21 @@ export default function DirectCremationCostByStatePage() {
             {/* AI-citable opening */}
             <section className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Direct cremation in the United States costs between $695 and $8,000, with most families paying $1,000 to $3,500 depending on their state and provider. The cheapest states for direct cremation are Arkansas (average $1,430), South Carolina (average $1,622), and Kansas (average $1,672). The most expensive states are California (average $6,250), Florida (average $4,016), and Illinois (average $3,750). Costs vary based on local regulations, crematory access, cost of living, and competition among providers.
+                Direct cremation in the United States typically costs between $1,000 and $3,500, with exact pricing depending on the state, the provider, and what is included in the package. Among states where our directory has sufficient pricing data, the most affordable include Arkansas (average $1,430), Kansas (average $1,672), and Nevada (average $1,680). States with higher averages include Vermont ($3,487), Idaho ($3,816), and Rhode Island ($3,435), where limited crematory infrastructure and rural geography drive costs up.
               </p>
               <p className="text-gray-600 mb-4">
-                This guide is based on pricing data from 513 direct cremation providers listed in the <Link href="/direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Evermore Directory</Link>. For a broader overview of what direct cremation is and how it works, see our <Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">complete guide to direct cremation</Link>.
+                This guide is based on published pricing from 513 direct cremation providers listed in the <Link href="/direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Evermore Directory</Link>. For a broader overview of what direct cremation is and how it works, see our <Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">complete guide to direct cremation</Link>.
+              </p>
+            </section>
+
+            {/* Data methodology note */}
+            <section className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+              <h3 className="font-semibold text-gray-800 mb-2">About this pricing data</h3>
+              <p className="text-gray-600 text-sm mb-2">
+                Direct cremation pricing varies widely by provider, package, and location. The averages in this guide are calculated from published price ranges where available. We only display a calculated average for states where at least 5 price data points exist and at least 30% of listed providers have published pricing. States that do not meet both thresholds show the national range ($1,000 to $3,500) instead, to avoid misleading readers with incomplete data.
+              </p>
+              <p className="text-gray-600 text-sm">
+                For accurate, current pricing, always contact providers directly and request an itemized General Price List. Prices in this guide reflect published ranges as of April 2026 and may not include all fees.
               </p>
             </section>
 
@@ -190,7 +211,7 @@ export default function DirectCremationCostByStatePage() {
                 </div>
                 <div className="bg-slate-50 rounded-lg p-5">
                   <h3 className="font-semibold text-gray-800 mb-1">Provider competition</h3>
-                  <p className="text-gray-600 text-sm">States with more direct cremation providers tend to have lower prices. Nevada (24 providers, $1,680 average) and Arizona (20 providers, $1,835 average) are good examples of competition driving prices down.</p>
+                  <p className="text-gray-600 text-sm">States with more direct cremation providers tend to have lower prices. Nevada (24 providers, $1,680 average) and Kansas (7 providers, $1,672 average) are good examples of competition driving prices down.</p>
                 </div>
               </div>
             </section>
@@ -201,7 +222,7 @@ export default function DirectCremationCostByStatePage() {
                 Direct Cremation Cost by State: Full 2026 Table
               </h2>
               <p className="text-gray-600 mb-6">
-                This table includes all 50 states and the District of Columbia. Provider counts and pricing are from the Evermore Directory database as of April 2026. States marked &quot;Contact providers&quot; have providers in our directory but no published pricing data yet.
+                This table includes all 50 states and the District of Columbia. Provider counts and pricing are from the Evermore Directory as of April 2026. States marked with a dagger (&dagger;) have limited pricing data; the national range is shown instead of a calculated average. See provider websites for actual quotes.
               </p>
 
               <div className="overflow-x-auto mb-6">
@@ -221,11 +242,14 @@ export default function DirectCremationCostByStatePage() {
                         <td className="px-3 py-2.5 text-gray-800 font-medium">{s.state}</td>
                         <td className="px-3 py-2.5 text-gray-600 text-center">{s.providers > 0 ? s.providers : 0}</td>
                         <td className="px-3 py-2.5 text-gray-600">
-                          {s.range || (s.providers > 0 ? 'Contact providers for pricing' : 'No providers listed yet')}
-                          {s.note === 'Limited data' && <span className="text-xs text-amber-600 ml-1">*</span>}
-                          {s.note === 'Limited pricing data' && <span className="text-xs text-amber-600 ml-1">*</span>}
+                          {s.note === 'none' && 'No providers listed yet'}
+                          {s.note === 'no_price' && 'Contact providers for pricing'}
+                          {s.note === 'limited' && <>{s.range} <span className="text-amber-600">&dagger;</span></>}
+                          {s.note === '' && s.range}
                         </td>
-                        <td className="px-3 py-2.5 text-gray-700 font-semibold">{s.avg || 'N/A'}</td>
+                        <td className="px-3 py-2.5 text-gray-700 font-semibold">
+                          {s.avg || (s.note === 'limited' ? <span className="text-gray-400 font-normal text-xs">See provider websites</span> : <span className="text-gray-400 font-normal">N/A</span>)}
+                        </td>
                         <td className="px-3 py-2.5 text-center">
                           {s.providers > 0 ? (
                             <Link href={`/direct-cremation/${s.abbr.toLowerCase()}`} className="text-slate-600 hover:text-slate-800 text-xs font-medium">
@@ -243,64 +267,66 @@ export default function DirectCremationCostByStatePage() {
                 </table>
               </div>
               <p className="text-xs text-gray-500 italic">
-                * Limited pricing data: fewer than 3 providers with published prices. Averages based on available data. Always contact providers directly for current pricing.
+                &dagger; Limited pricing data: fewer than 5 price data points or less than 30% of providers have published pricing. National range shown instead. Contact providers directly for current quotes.
               </p>
             </section>
 
-            {/* Top 5 cheapest */}
+            {/* Top 5 cheapest — only from VALID states */}
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                5 Cheapest States for Direct Cremation
+                5 Most Affordable States for Direct Cremation
               </h2>
+              <p className="text-gray-600 mb-4 text-sm">Based on states with sufficient pricing data in our directory (5+ price points, 30%+ provider coverage).</p>
               <div className="space-y-4">
                 <div className="bg-green-50 rounded-lg p-5">
                   <h3 className="font-semibold text-gray-800">1. Arkansas: $1,430 average</h3>
                   <p className="text-gray-600 text-sm mt-1">Low cost of living and minimal state regulations keep cremation affordable. Prices start as low as $795 in some markets.</p>
                 </div>
                 <div className="bg-green-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">2. South Carolina: $1,622 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">Competitive market with both local providers and national chains. Most providers offer all inclusive packages under $2,000.</p>
-                </div>
-                <div className="bg-green-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">3. Kansas: $1,672 average</h3>
+                  <h3 className="font-semibold text-gray-800">2. Kansas: $1,672 average</h3>
                   <p className="text-gray-600 text-sm mt-1">7 providers create healthy competition in the Kansas City metro area and statewide. Prices range from $795 to $2,800.</p>
                 </div>
                 <div className="bg-green-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">4. Nevada: $1,680 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">With 24 providers (the highest density in our directory relative to population), competition keeps Las Vegas and Reno prices low. Some providers start at $695.</p>
+                  <h3 className="font-semibold text-gray-800">3. Nevada: $1,680 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">With 24 providers, Nevada has strong competition that keeps Las Vegas and Reno prices low. Some providers start at $695.</p>
                 </div>
                 <div className="bg-green-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">5. Iowa: $1,697 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">Low overhead costs and a straightforward regulatory environment help keep prices under $2,500 statewide.</p>
+                  <h3 className="font-semibold text-gray-800">4. Colorado: $1,708 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">15 providers across the Denver metro and Colorado Springs offer prices from $800 to $2,500, keeping the statewide average well below the national midpoint.</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-5">
+                  <h3 className="font-semibold text-gray-800">5. New Mexico: $1,848 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">Low overhead costs and a straightforward regulatory environment help keep prices under $3,500 statewide. Prices start at $895.</p>
                 </div>
               </div>
             </section>
 
-            {/* Top 5 most expensive */}
+            {/* Top 5 most expensive — only from VALID states */}
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                5 Most Expensive States for Direct Cremation
+                5 Highest Cost States for Direct Cremation
               </h2>
+              <p className="text-gray-600 mb-4 text-sm">Based on states with sufficient pricing data in our directory.</p>
               <div className="space-y-4">
                 <div className="bg-red-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">1. California: $6,250 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">The highest cost of living in the country, strict environmental regulations, and high facility costs drive prices up. Note: our California average is based on limited pricing data and may not reflect the full market. Many CA providers offer direct cremation under $3,000.</p>
+                  <h3 className="font-semibold text-gray-800">1. Idaho: $3,816 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">Limited crematory access in rural areas means longer transportation distances. Only 3 providers in our directory, all with published pricing. Range: $1,900 to $6,400.</p>
                 </div>
                 <div className="bg-red-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">2. Florida: $4,016 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">High demand (large retiree population), urban pricing in Miami and Tampa, and facility costs push prices above the national average. Providers range from $2,500 to $5,500.</p>
-                </div>
-                <div className="bg-red-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">3. Idaho: $3,816 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">Limited crematory access in rural areas means longer transportation distances. Only 3 providers in our directory with pricing data. Actual costs may vary.</p>
-                </div>
-                <div className="bg-red-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">4. Illinois: $3,750 average</h3>
-                  <p className="text-gray-600 text-sm mt-1">Chicago metro pricing drives up the state average. Downstate Illinois providers are typically more affordable. Prices range from $2,500 to $5,500.</p>
-                </div>
-                <div className="bg-red-50 rounded-lg p-5">
-                  <h3 className="font-semibold text-gray-800">5. Vermont: $3,487 average</h3>
+                  <h3 className="font-semibold text-gray-800">2. Vermont: $3,487 average</h3>
                   <p className="text-gray-600 text-sm mt-1">Limited crematory infrastructure and a small, rural population mean fewer providers and less price competition. Prices range from $1,700 to $5,900.</p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-5">
+                  <h3 className="font-semibold text-gray-800">3. Rhode Island: $3,435 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">Despite having 10 providers, costs remain elevated due to the Northeast cost of living and regulatory environment. Range: $1,200 to $5,900.</p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-5">
+                  <h3 className="font-semibold text-gray-800">4. Wyoming: $3,295 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">Rural geography and limited crematory access drive transportation costs. 10 providers with pricing data, ranging from $1,100 to $6,100.</p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-5">
+                  <h3 className="font-semibold text-gray-800">5. Nebraska: $3,290 average</h3>
+                  <p className="text-gray-600 text-sm mt-1">14 providers across the state, with prices from $1,600 to $4,900. Urban Omaha and Lincoln prices tend to be lower than rural areas.</p>
                 </div>
               </div>
             </section>
@@ -343,27 +369,27 @@ export default function DirectCremationCostByStatePage() {
               <div className="space-y-6">
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">California (52 providers)</h3>
-                  <p className="text-gray-600">California has the most direct cremation providers in our directory but also the highest average pricing. The state&apos;s strict environmental regulations and high cost of living drive costs up, particularly in the LA, San Francisco, and San Diego metro areas. Families in rural Northern California and the Central Valley may find lower prices. <Link href="/direct-cremation/ca" className="text-slate-600 hover:text-slate-800 font-medium">Browse California providers</Link>.</p>
+                  <p className="text-gray-600">California has the most direct cremation providers in our directory but limited published pricing data (only 2% of providers list prices). The state&apos;s strict environmental regulations and high cost of living likely drive costs above the national average, particularly in the LA, San Francisco, and San Diego metro areas. Contact providers directly for current quotes. <Link href="/direct-cremation/ca" className="text-slate-600 hover:text-slate-800 font-medium">Browse California providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Texas (32 providers)</h3>
-                  <p className="text-gray-600">Texas offers moderate pricing with an average of $2,500, driven by competition in the Dallas/Fort Worth, Austin, and San Antonio metros. The state has minimal waiting period requirements, which helps keep costs lower. <Link href="/direct-cremation/tx" className="text-slate-600 hover:text-slate-800 font-medium">Browse Texas providers</Link>.</p>
+                  <p className="text-gray-600">Texas has the second most providers in our directory, concentrated in the Dallas/Fort Worth, Austin, and San Antonio metros. Published pricing data is limited (3% coverage), but the state&apos;s minimal waiting period requirements and competitive market suggest prices near the national range of $1,000 to $3,500. <Link href="/direct-cremation/tx" className="text-slate-600 hover:text-slate-800 font-medium">Browse Texas providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Florida (29 providers)</h3>
-                  <p className="text-gray-600">Florida&apos;s large retiree population creates high demand for cremation services. Prices range from $2,500 to $5,500, with the most competitive pricing in Jacksonville and Tampa. Miami and South Florida tend to be on the higher end. <Link href="/direct-cremation/fl" className="text-slate-600 hover:text-slate-800 font-medium">Browse Florida providers</Link>.</p>
+                  <p className="text-gray-600">Florida&apos;s large retiree population creates strong demand for cremation services. Our directory lists 29 providers across Jacksonville, Tampa, Miami, and other metros. Published pricing coverage is limited (10%), so families should contact providers directly for current quotes. <Link href="/direct-cremation/fl" className="text-slate-600 hover:text-slate-800 font-medium">Browse Florida providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">New York (7 providers)</h3>
-                  <p className="text-gray-600">New York has limited direct cremation provider coverage in our directory, with most concentrated in the NYC metro area. Prices range from $1,500 to $5,000. Upstate New York providers are typically more affordable than those in the five boroughs. <Link href="/direct-cremation/ny" className="text-slate-600 hover:text-slate-800 font-medium">Browse New York providers</Link>.</p>
+                  <p className="text-gray-600">New York has limited direct cremation provider coverage in our directory, with most concentrated in the NYC metro area. Published pricing data is limited. Upstate New York providers are typically more affordable than those in the five boroughs. <Link href="/direct-cremation/ny" className="text-slate-600 hover:text-slate-800 font-medium">Browse New York providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Pennsylvania (11 providers)</h3>
-                  <p className="text-gray-600">Pennsylvania&apos;s direct cremation market is centered around Philadelphia, with providers ranging from $1,500 to $3,500. The state average of $2,500 is right at the national midpoint. <Link href="/direct-cremation/pa" className="text-slate-600 hover:text-slate-800 font-medium">Browse Pennsylvania providers</Link>.</p>
+                  <p className="text-gray-600">Pennsylvania&apos;s direct cremation market is centered around Philadelphia, with published pricing data limited to a small number of providers. Contact providers directly for current quotes. <Link href="/direct-cremation/pa" className="text-slate-600 hover:text-slate-800 font-medium">Browse Pennsylvania providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Illinois (28 providers)</h3>
-                  <p className="text-gray-600">Illinois has strong provider coverage, particularly in the Chicago suburbs and Rockford area. The state average of $3,750 is elevated by Chicago metro pricing. Downstate providers in Peoria and Springfield are significantly cheaper. <Link href="/direct-cremation/il" className="text-slate-600 hover:text-slate-800 font-medium">Browse Illinois providers</Link>.</p>
+                  <p className="text-gray-600">Illinois has strong provider coverage, particularly in the Chicago suburbs and Rockford area. Published pricing data is limited (11% coverage), but the market is competitive. Downstate providers in Peoria and Springfield are typically more affordable than Chicago metro options. <Link href="/direct-cremation/il" className="text-slate-600 hover:text-slate-800 font-medium">Browse Illinois providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Ohio (2 providers)</h3>
@@ -371,15 +397,15 @@ export default function DirectCremationCostByStatePage() {
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Georgia (8 providers)</h3>
-                  <p className="text-gray-600">Georgia&apos;s direct cremation providers are concentrated in the Atlanta metro area, with coverage in Marietta, Duluth, Norcross, and Stone Mountain. Contact providers directly for current pricing. <Link href="/direct-cremation/ga" className="text-slate-600 hover:text-slate-800 font-medium">Browse Georgia providers</Link>.</p>
+                  <p className="text-gray-600">Georgia&apos;s direct cremation providers are concentrated in the Atlanta metro area, with coverage in Marietta, Duluth, Norcross, and Stone Mountain. No published pricing data is available. Contact providers directly. <Link href="/direct-cremation/ga" className="text-slate-600 hover:text-slate-800 font-medium">Browse Georgia providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">North Carolina (15 providers)</h3>
-                  <p className="text-gray-600">North Carolina has good statewide coverage with providers in Charlotte, Raleigh, Durham, Greensboro, and Wilmington. Prices range from $895 to $6,900, with an average of $3,132. <Link href="/direct-cremation/nc" className="text-slate-600 hover:text-slate-800 font-medium">Browse North Carolina providers</Link>.</p>
+                  <p className="text-gray-600">North Carolina has good statewide coverage with providers in Charlotte, Raleigh, Durham, Greensboro, and Wilmington. Published pricing data is limited (20% coverage). Contact providers for current quotes. <Link href="/direct-cremation/nc" className="text-slate-600 hover:text-slate-800 font-medium">Browse North Carolina providers</Link>.</p>
                 </div>
                 <div className="border-b border-gray-200 pb-5">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Michigan (7 providers)</h3>
-                  <p className="text-gray-600">Michigan&apos;s direct cremation providers are concentrated in the Detroit metro area, including Livonia, Southfield, and Bloomfield Hills. Contact providers directly for current pricing. <Link href="/direct-cremation/mi" className="text-slate-600 hover:text-slate-800 font-medium">Browse Michigan providers</Link>.</p>
+                  <p className="text-gray-600">Michigan&apos;s direct cremation providers are concentrated in the Detroit metro area, including Livonia, Southfield, and Bloomfield Hills. No published pricing data is available. Contact providers directly. <Link href="/direct-cremation/mi" className="text-slate-600 hover:text-slate-800 font-medium">Browse Michigan providers</Link>.</p>
                 </div>
               </div>
             </section>
@@ -427,7 +453,7 @@ export default function DirectCremationCostByStatePage() {
             </section>
 
             <div className="text-center text-sm text-gray-400 mt-12">
-              <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic. Pricing data sourced from provider listings in the Evermore Directory, April 2026. Always contact providers directly for current pricing.</p>
+              <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic. Pricing data sourced from provider listings in the Evermore Directory, April 2026. Averages shown only for states with sufficient data coverage. Always contact providers directly for current pricing.</p>
             </div>
           </article>
         </div>
