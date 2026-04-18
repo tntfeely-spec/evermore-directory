@@ -142,6 +142,9 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
   const featuredProviders = providers.filter((p: CremationProvider) => p.is_featured);
   const regularProviders = providers.filter((p: CremationProvider) => !p.is_featured);
 
+  const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+  const citySlugForUrl = city.toLowerCase().replace(/\s+/g, '-');
+
   // Extract pricing
   function extractPrices(raw: string | null): number[] {
     if (!raw) return [];
@@ -286,16 +289,23 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
                   <div key={p.id} className="relative bg-white rounded-xl shadow-sm p-6 border border-green-200">
                     <span className="absolute top-4 right-4 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">FEATURED</span>
                     <div className="flex items-center flex-wrap gap-2 mb-2 pr-24">
-                      <span className="text-2xl font-bold text-gray-900">{p.business_name}</span>
+                      <Link href={`/funeral-homes/${state.toLowerCase()}/${citySlugForUrl}/${slugify(p.business_name)}`} className="text-2xl font-bold text-gray-900 hover:text-slate-700">
+                        {p.business_name}
+                      </Link>
                     </div>
                     <p className="text-gray-600 text-sm mb-1">{p.address}, {p.city}, {p.state} {p.zip}</p>
                     {p.phone && <p className="text-sm mb-1 text-slate-600 font-semibold">{p.phone}</p>}
                     {p.price_range_cremation && <p className="text-sm text-green-700 font-semibold mb-2">Starting at {p.price_range_cremation}</p>}
-                    {p.website && (
-                      <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors mt-2">
-                        Visit Website
-                      </a>
-                    )}
+                    <div className="flex gap-3 mt-3">
+                      <Link href={`/funeral-homes/${state.toLowerCase()}/${citySlugForUrl}/${slugify(p.business_name)}`} className="inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+                        View Details
+                      </Link>
+                      {p.website && (
+                        <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+                          Visit Website
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -311,13 +321,18 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
               <div className="space-y-4">
                 {regularProviders.map((p: CremationProvider) => (
                   <div key={p.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
-                    <span className="text-xl font-bold text-gray-900">{p.business_name}</span>
+                    <Link href={`/funeral-homes/${state.toLowerCase()}/${citySlugForUrl}/${slugify(p.business_name)}`} className="text-xl font-bold text-gray-900 hover:text-slate-700">
+                      {p.business_name}
+                    </Link>
                     <p className="text-gray-600 text-sm mt-1 mb-1">{p.address}, {p.city}, {p.state} {p.zip}</p>
                     {p.phone && <p className="text-sm mb-1 text-slate-600 font-semibold">{p.phone}</p>}
                     {p.price_range_cremation && <p className="text-sm text-green-700 font-semibold mb-2">Starting at {p.price_range_cremation}</p>}
                     <div className="flex gap-3 mt-3">
+                      <Link href={`/funeral-homes/${state.toLowerCase()}/${citySlugForUrl}/${slugify(p.business_name)}`} className="inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+                        View Details
+                      </Link>
                       {p.website && (
-                        <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block bg-slate-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+                        <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
                           Visit Website
                         </a>
                       )}
