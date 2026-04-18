@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Funeral Cost Calculator: Estimate Costs by State (2026)',
-  description: 'Estimate funeral and cremation costs in your state. Real price ranges from 4,800+ funeral homes across all 50 states. Updated 2026.',
+  description: 'Estimate funeral and cremation costs in your state. Real price ranges from 5,100+ funeral homes and cremation providers across all 50 states. Updated 2026.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-cost-calculator' },
 };
 
@@ -122,7 +122,7 @@ export default async function FuneralCostCalculatorPage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Cost Calculator: Estimate Costs by State (2026)</h1>
-              <p className="text-xl text-gray-600 mb-4">Real price ranges from 4,800+ funeral homes across all 50 states.</p>
+              <p className="text-xl text-gray-600 mb-4">Real price ranges from 5,100+ funeral homes and cremation providers across all 50 states.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>Last Updated April 2026</span>
               </div>
@@ -189,7 +189,7 @@ export default async function FuneralCostCalculatorPage() {
 
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
               <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes in your area</p>
-              <p className="text-slate-600 text-sm mb-5">Search 4,800+ funeral homes across all 50 states. Compare prices, services, and locations. Free for families.</p>
+              <p className="text-slate-600 text-sm mb-5">Search 5,100+ funeral homes and cremation providers across all 50 states. Compare prices, services, and locations. Free for families.</p>
               <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Funeral Homes Near You</Link>
             </section>
           </article>

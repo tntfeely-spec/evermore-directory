@@ -59,7 +59,7 @@ export default function TrainingManualPage() {
 
           <p className="mb-4">Welcome to the Evermore sales team. This manual gives you everything you need to start making calls and closing deals today.</p>
 
-          <p className="mb-4">Evermore Funeral Home Directory (funeralhomedirectories.com) is a nationwide directory of 4,800+ funeral homes across all 50 states. Every funeral home already has a free listing live on the site. Your job is to call them, tell them their listing exists, and offer them an upgrade to a paid Featured Listing.</p>
+          <p className="mb-4">Evermore Funeral Home Directory (funeralhomedirectories.com) is a nationwide directory of 5,100+ funeral homes and cremation providers across all 50 states. Every funeral home already has a free listing live on the site. Your job is to call them, tell them their listing exists, and offer them an upgrade to a paid Featured Listing.</p>
 
           <Callout>This is not a cold pitch. Every prospect already has a free listing on the site. You are calling to tell them something they did not know and offer them a chance to be first in their city.</Callout>
 

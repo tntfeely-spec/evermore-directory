@@ -29,7 +29,7 @@ export default function AboutPage() {
               Built by Someone Who Has Been There
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              The most comprehensive funeral home directory in the United States. 4,800 plus funeral homes across all 50 states with real pricing data and planning resources for families.
+              The most comprehensive funeral home directory in the United States. 5,100 plus funeral homes and cremation providers across all 50 states with real pricing data and planning resources for families.
             </p>
           </div>
         </div>

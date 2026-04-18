@@ -450,7 +450,7 @@ export default async function FuneralHomePage({
           </div>
 
           <div className="mb-6 text-center text-sm text-gray-400">
-            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 4,800+ funeral homes across all 50 states.</p>
+            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 5,100+ funeral homes and cremation providers across all 50 states.</p>
           </div>
 
           {/* Helpful resources */}

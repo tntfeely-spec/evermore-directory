@@ -31,7 +31,7 @@ function SectionProduct() {
       <p>
         Evermore Directory is a nationwide funeral home directory at{' '}
         <span className="font-semibold text-gray-900">funeralhomedirectories.com</span> listing
-        4,800+ funeral homes across all 50 states. It is free for families. Revenue comes from
+        5,100+ funeral homes and cremation providers across all 50 states. It is free for families. Revenue comes from
         funeral homes paying for featured listings.
       </p>
 
