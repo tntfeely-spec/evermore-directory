@@ -43,13 +43,19 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
+              <Link
                 href="/states"
                 className="bg-slate-700 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
               >
                 Browse All States
               </Link>
-              <Link 
+              <Link
+                href="/direct-cremation"
+                className="bg-white hover:bg-gray-50 text-slate-700 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl border-2 border-slate-400"
+              >
+                Direct Cremation Providers
+              </Link>
+              <Link
                 href="/featured-listing"
                 className="bg-white hover:bg-gray-50 text-slate-600 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl border-2 border-slate-500"
               >

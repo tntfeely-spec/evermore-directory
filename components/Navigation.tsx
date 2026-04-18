@@ -40,6 +40,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Home</Link>
             <Link href="/states" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Browse States</Link>
+            <Link href="/direct-cremation" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Direct Cremation</Link>
             <Link href="/blog" className="text-gray-700 hover:text-slate-600 font-medium transition-colors">Blog</Link>
 
             {/* Resources Dropdown */}
@@ -97,6 +98,9 @@ export default function Navigation() {
             </Link>
             <Link href="/states" onClick={() => setMobileOpen(false)} className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors">
               Browse States
+            </Link>
+            <Link href="/direct-cremation" onClick={() => setMobileOpen(false)} className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors">
+              Direct Cremation
             </Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} className="block px-3 py-2 rounded-md text-gray-700 hover:text-slate-600 hover:bg-gray-50 font-medium transition-colors">
               Blog

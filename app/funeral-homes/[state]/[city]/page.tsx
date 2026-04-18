@@ -364,12 +364,18 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
             <div className="mt-4 text-lg text-gray-700 font-semibold">
               {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} found
             </div>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap gap-3 justify-center">
               <Link
                 href={`/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}/cremation`}
                 className="inline-block bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-5 py-2.5 rounded-lg font-semibold"
               >
                 Cremation Services in {cityName}
+              </Link>
+              <Link
+                href={`/direct-cremation/${state.toLowerCase()}/${city.toLowerCase()}`}
+                className="inline-block bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-5 py-2.5 rounded-lg font-semibold"
+              >
+                Direct Cremation in {cityName}
               </Link>
             </div>
           </div>
