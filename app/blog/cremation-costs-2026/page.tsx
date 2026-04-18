@@ -373,6 +373,10 @@ export default function CremationCosts2026Page() {
           <section className="mt-12 border-t border-gray-200 pt-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-4">
+              <Link href="/blog/what-is-direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">What Is Direct Cremation? The Complete 2026 Guide</h3>
+                <p className="text-sm text-gray-600">Everything you need to know about direct cremation, from process to pricing.</p>
+              </Link>
               <Link href="/blog/cremation-near-me" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Find Affordable Cremation Near You</h3>
                 <p className="text-sm text-gray-600">Compare cremation services, understand pricing, and choose the right provider.</p>

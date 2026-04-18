@@ -276,6 +276,7 @@ export default function CremationNearMePage() {
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
             <ul className="space-y-2">
+                <li><Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? The Complete 2026 Guide</Link></li>
               <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
               <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral &rarr;</Link></li>
               <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>

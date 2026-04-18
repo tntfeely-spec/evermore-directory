@@ -84,8 +84,12 @@ export default function ScatteringAshesGuidePage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
+                <li><Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? The Complete 2026 Guide</Link></li>
                 <li><Link href="/blog/what-to-do-with-ashes-after-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What to Do With Ashes After Cremation</Link></li>
                 <li><Link href="/blog/cremation-near-me" className="text-slate-600 hover:text-slate-800 font-medium">Cremation Near Me: How to Find Affordable Cremation Services</Link></li>
+                <li><Link href="/blog/cremation-and-religion" className="text-slate-600 hover:text-slate-800 font-medium">Cremation and Religion: What Every Major Faith Teaches</Link></li>
+                <li><Link href="/blog/memorial-service-ideas-no-body" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Service Ideas When There Is No Body</Link></li>
+                <li><Link href="/direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Browse Direct Cremation Providers by State</Link></li>
               </ul>
             </section>
 
