@@ -24,6 +24,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/veteran-burial-benefits`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${baseUrl}/obituary-maker`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${baseUrl}/eulogy-writer`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${baseUrl}/how-it-works`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: `${baseUrl}/featured-listing`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: `${baseUrl}/direct-cremation`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
       ];
 
   const funeralCostStatePages = allStateSlugs.map((slug) => ({
@@ -274,6 +280,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'gifts-for-grieving-friends',
     'personalized-sympathy-gifts',
     'funeral-cost-calculator',
+    'what-is-direct-cremation',
+    'direct-cremation-cost-by-state',
+    'why-direct-cremation-is-affordable',
+    'what-is-a-cremation-society',
+    'how-to-choose-direct-cremation-provider',
+    'how-long-does-cremation-take',
+    'cremation-and-religion',
+    'funeral-costs-and-estate-planning',
+    'funeral-homes-denver-co',
+    'funeral-homes-indianapolis-in',
+    'funeral-homes-san-diego-ca',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -311,5 +328,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages];
+  // Direct cremation state pages
+  const { data: dcHomes } = await supabase
+      .from('funeral_homes')
+      .select('state')
+      .eq('provider_type', 'direct_cremation');
+
+  const dcStateSet = new Set<string>();
+  dcHomes?.forEach((home) => {
+    if (home.state) dcStateSet.add(home.state.toLowerCase());
+  });
+
+  const dcStatePages = Array.from(dcStateSet).map((state) => ({
+    url: `${baseUrl}/direct-cremation/${state}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Direct cremation city pages
+  const { data: dcCityHomes } = await supabase
+      .from('funeral_homes')
+      .select('city, state')
+      .eq('provider_type', 'direct_cremation');
+
+  const dcCitySet = new Set<string>();
+  dcCityHomes?.forEach((home) => {
+    if (home.city && home.state) {
+      const citySlug = home.city.toLowerCase().replace(/\s+/g, '-');
+      const stateSlug = home.state.toLowerCase();
+      dcCitySet.add(`${stateSlug}/${citySlug}`);
+    }
+  });
+
+  const dcCityPages = Array.from(dcCitySet).map((cityState) => ({
+    url: `${baseUrl}/direct-cremation/${cityState}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...dcStatePages, ...dcCityPages];
 }
