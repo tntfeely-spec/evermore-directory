@@ -69,8 +69,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const currentYear = new Date().getFullYear();
 
   const title = homeCount > 0
-    ? `${homeCount} Funeral Homes in ${cityName}, ${stateName} (${currentYear}) | Compare Prices & Services`
-    : `Funeral Homes in ${cityName}, ${stateName} (${currentYear}) | Compare Prices & Services`;
+    ? `${homeCount} Funeral Homes in ${cityName}, ${stateName} (${currentYear})`
+    : `Funeral Homes in ${cityName}, ${stateName} (${currentYear})`;
 
   const description = homeCount > 0
     ? `Compare ${homeCount} funeral homes in ${cityName}, ${stateName}. See phone numbers, addresses & services. Funeral costs in ${cityName}: $7,000-$12,000. Cremation from $1,000.`

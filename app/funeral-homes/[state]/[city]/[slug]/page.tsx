@@ -78,13 +78,19 @@ export async function generateMetadata({
     .filter(Boolean)
     .join(', ')
 
-  const desc = `${listing.business_name} in ${listing.city}, ${listing.state}. View pricing, services, and contact information. ${listing.phone ? `Call ${listing.phone}.` : ''} Find compassionate funeral home services on Evermore Directory.`
+  const stateAbbr = listing.state.length === 2 ? listing.state : listing.state.slice(0, 2).toUpperCase()
+  const nameForTitle = listing.business_name.length > 40
+    ? listing.business_name.slice(0, 40).trim()
+    : listing.business_name
+  const pageTitle = `${nameForTitle} - ${listing.city}, ${stateAbbr} Funeral Home`
+
+  const desc = `${listing.business_name} is a funeral home in ${listing.city}, ${listing.state}. View services, contact information, and pricing. Compare with other local funeral homes.`
 
   const canonical = `https://funeralhomedirectories.com/funeral-homes/${stateSlug(listing.state)}/${citySlug(listing.city)}/${slugify(listing.business_name)}`
 
   return {
-    title: `${listing.business_name} | ${listing.city}, ${listing.state} | Evermore Directory`,
-    description: desc.slice(0, 160),
+    title: pageTitle,
+    description: desc.slice(0, 155),
     alternates: { canonical },
     openGraph: {
       title: `${listing.business_name} | ${listing.city}, ${listing.state}`,

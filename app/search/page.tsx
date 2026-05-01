@@ -390,6 +390,7 @@ export default function SearchPage() {
           </Link>
 
           <div className="flex-1 max-w-[600px]">
+            <h1 className="sr-only">Search Funeral Homes</h1>
             <input
               type="text"
               placeholder="Search by name, city, ZIP, or &quot;City, State&quot;..."

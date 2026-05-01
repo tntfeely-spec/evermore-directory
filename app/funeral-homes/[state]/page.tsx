@@ -47,13 +47,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = stateDesc?.meta_description || `Find trusted funeral homes and cremation services in ${stateName}. Browse compassionate funeral directors, memorial chapels, and burial services across all cities in ${stateName}.`;
 
   return {
-    title: `Funeral Homes in ${stateName} - Find Cremation Services & Funeral Directors | Evermore Directory`,
+    title: `Funeral Homes in ${stateName} | Evermore Directory`,
     description,
     alternates: {
       canonical: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`,
     },
     openGraph: {
-      title: `Funeral Homes in ${stateName} - Find Cremation Services & Funeral Directors | Evermore Directory`,
+      title: `Funeral Homes in ${stateName} | Evermore Directory`,
       description,
       url: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}`,
       siteName: 'Evermore Directory',
