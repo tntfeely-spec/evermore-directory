@@ -34,6 +34,7 @@ type FuneralHome = {
   is_featured: boolean | null
   latitude: string | null
   longitude: string | null
+  listing_description: string | null
 }
 
 // ─── Slug helpers ─────────────────────────────────────────────────────────────
@@ -476,6 +477,71 @@ export default async function FuneralHomePage({
               </li>
             </ul>
           </div>
+
+          {/* Listing description (populated from funeral_homes.listing_description) */}
+          {listing.listing_description && (
+            <div className="bg-white rounded-[10px] border border-gray-200 p-5 mb-4">
+              <h2 className="text-lg font-bold text-gray-900 mb-3">
+                About {listing.business_name}
+              </h2>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {listing.listing_description}
+              </p>
+
+              {/* FAQ for listings with descriptions */}
+              <div className="mt-6 border-t border-gray-100 pt-5">
+                <h3 className="text-base font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-800 mb-1">What services does {listing.business_name} offer?</p>
+                    <p className="text-sm text-gray-600">{listing.business_name} offers {listing.services_offered || 'funeral and cremation services'}. Contact them directly at {listing.phone || 'the number listed above'} for details on specific service packages and pricing.</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-800 mb-1">Where is {listing.business_name} located?</p>
+                    <p className="text-sm text-gray-600">{listing.business_name} is located at {listing.address}, {listing.city}, {listing.state} {listing.zip}.</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-800 mb-1">How do I contact {listing.business_name}?</p>
+                    <p className="text-sm text-gray-600">You can reach {listing.business_name} by phone at {listing.phone || 'the number listed above'}.{listing.website ? ` You can also visit their website for more information.` : ''}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* FAQPage schema for listings with descriptions */}
+          {listing.listing_description && (
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": `What services does ${listing.business_name} offer?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `${listing.business_name} offers ${listing.services_offered || 'funeral and cremation services'}. Contact them directly for details on specific service packages and pricing.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": `Where is ${listing.business_name} located?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `${listing.business_name} is located at ${listing.address}, ${listing.city}, ${listing.state} ${listing.zip}.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": `How do I contact ${listing.business_name}?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `You can reach ${listing.business_name} by phone at ${listing.phone || 'the number on their listing page'}.${listing.website ? ' You can also visit their website for more information.' : ''}`
+                  }
+                }
+              ]
+            }) }} />
+          )}
 
           {/* Nearby funeral homes */}
           {nearby.length > 0 && (

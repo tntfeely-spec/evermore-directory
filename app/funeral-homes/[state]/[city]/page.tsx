@@ -311,12 +311,13 @@ export default async function CityPage({ params }: PageProps) {
   // Fetch unique city description
   const { data: descData } = await supabase
     .from('city_descriptions')
-    .select('description')
+    .select('description, cost_content')
     .eq('city', cityName)
     .eq('state', state.toUpperCase())
     .single();
   const cityDescription = descData?.description ||
     `Find compassionate funeral homes and cremation services in ${cityName}. Compare trusted funeral directors offering burial, cremation, and memorial services.`;
+  const costContent = descData?.cost_content || null;
   return (
     <>
       <script
@@ -486,6 +487,18 @@ All funeral homes in our {cityName} directory include contact information, addre
               </p>
             </div>
           </div>
+
+          {/* City-specific cost content (populated from city_descriptions.cost_content) */}
+          {costContent && (
+            <div className="mb-20 bg-white rounded-xl shadow-md p-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Funeral Costs in {cityName}, {stateName}
+              </h2>
+              <div className="prose max-w-none text-gray-600">
+                <p className="leading-relaxed">{costContent}</p>
+              </div>
+            </div>
+          )}
 
           {/* Tips Section */}
           <div className="mb-20 bg-gradient-to-br from-slate-50 to-slate-50 rounded-xl shadow-md p-8">
