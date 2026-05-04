@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
+import InlineLeadForm from '@/components/InlineLeadForm'
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -442,6 +443,9 @@ export default async function FuneralHomePage({
           <div className="bg-white rounded-[10px] border border-gray-200 overflow-hidden mb-5"
             dangerouslySetInnerHTML={{ __html: buildSectionsHtml(listing, services, calcId, hasPricing, cityLabel) }}
           />
+
+          {/* Inline lead capture form (visible in main content flow, especially on mobile) */}
+          <InlineLeadForm listing={listing} />
         </div>
 
         {/* Right sidebar */}
