@@ -306,27 +306,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
   }));
 
-  // Get all cities from database
-  const { data: homes } = await supabase
-      .from('funeral_homes')
-      .select('city, state')
-      .range(0, 10000);
+  // Helper: slugify business name (matches listing page logic)
+  function slugify(name: string): string {
+    return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+  }
 
+  // Fetch all funeral homes (paginate through Supabase 1000-row limit)
+  const allHomes: { business_name: string; city: string; state: string }[] = [];
+  let offset = 0;
+  const pageSize = 1000;
+  while (true) {
+    const { data: batch } = await supabase
+      .from('funeral_homes')
+      .select('business_name, city, state')
+      .range(offset, offset + pageSize - 1);
+    if (!batch || batch.length === 0) break;
+    allHomes.push(...batch);
+    if (batch.length < pageSize) break;
+    offset += pageSize;
+  }
+
+  // City pages (unique city/state combos)
   const citySet = new Set<string>();
-    homes?.forEach((home) => {
-          if (home.city && home.state) {
-                  const citySlug = home.city.toLowerCase().replace(/\s+/g, '-');
-                  const stateSlug = home.state.toLowerCase();
-                  citySet.add(`${stateSlug}/${citySlug}`);
-          }
-    });
+  allHomes.forEach((home) => {
+    if (home.city && home.state) {
+      const cs = home.city.toLowerCase().replace(/\s+/g, '-');
+      const ss = home.state.toLowerCase();
+      citySet.add(`${ss}/${cs}`);
+    }
+  });
 
   const cityPages = Array.from(citySet).map((cityState) => ({
-        url: `${baseUrl}/funeral-homes/${cityState}`,
+    url: `${baseUrl}/funeral-homes/${cityState}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Individual listing pages
+  const listingPages = allHomes
+    .filter((home) => home.business_name && home.city && home.state)
+    .map((home) => {
+      const ss = home.state.toLowerCase();
+      const cs = home.city.toLowerCase().replace(/\s+/g, '-');
+      const bs = slugify(home.business_name);
+      return {
+        url: `${baseUrl}/funeral-homes/${ss}/${cs}/${bs}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
-        priority: 0.7,
-  }));
+        priority: 0.6,
+      };
+    });
 
   // Direct cremation state pages
   const { data: dcHomes } = await supabase
@@ -368,5 +398,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...dcStatePages, ...dcCityPages];
+  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
 }
