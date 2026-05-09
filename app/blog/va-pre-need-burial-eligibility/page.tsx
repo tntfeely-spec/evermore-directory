@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'VA Pre-Need Burial Eligibility: How to Apply Before You Need It | Evermore Directory',
+  title: 'VA Pre-Need Burial Eligibility: How to Apply Before You Need It',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/va-pre-need-burial-eligibility' },
 };

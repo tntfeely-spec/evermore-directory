@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options | Evermore Directory',
+  title: 'Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options',
   description: 'Tennessee families who cannot afford a funeral have several options including county indigent burial, Medicaid, VA benefits, FEMA assistance, and nonprofit grants.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-financial-assistance-tennessee' },
 };

@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'National Cemetery Burial: How to Bury a Veteran in a Federal Cemetery for Free | Evermore Directory',
+  title: 'National Cemetery Burial: How to Bury a Veteran in a Federal Cemetery for Free',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/national-cemetery-burial-veterans-free' },
 };

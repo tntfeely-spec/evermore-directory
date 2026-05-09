@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Cremation and Religion: What Every Major Faith Teaches (2026) | Evermore Directory',
+  title: 'Cremation and Religion: What Every Major Faith Teaches (2026)',
   description: 'Learn where every major religion stands on cremation. Catholic, Protestant, Jewish, Islamic, Hindu, Buddhist, and LDS positions explained clearly for families.',
   keywords: 'cremation and religion, can Catholics be cremated, is cremation allowed in Christianity, cremation Judaism, cremation Islam, Hindu cremation, Buddhist cremation, LDS cremation',
   robots: { index: true, follow: true },

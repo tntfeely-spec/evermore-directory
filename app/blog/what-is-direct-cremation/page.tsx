@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'What Is Direct Cremation? The Complete 2026 Guide | Evermore Directory',
+  title: 'What Is Direct Cremation? The Complete 2026 Guide',
   description: 'Direct cremation is cremation without a funeral service. Learn how it works, what it costs, what is included, and how to find a provider near you.',
   keywords: 'what is direct cremation, direct cremation definition, direct cremation cost, direct cremation process, cremation without funeral service',
   robots: { index: true, follow: true },

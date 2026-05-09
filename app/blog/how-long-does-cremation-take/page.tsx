@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Long Does Cremation Take? Timeline From Death to Ashes (2026) | Evermore Directory',
+  title: 'How Long Does Cremation Take? Timeline From Death to Ashes (2026)',
   description: 'The cremation process takes 2 to 3 hours, but total time from death to return of ashes is 5 to 10 business days. See the full cremation timeline here.',
   keywords: 'how long does cremation take, cremation timeline, cremation process time, how long to get ashes back, cremation waiting period, cremation duration',
   robots: { index: true, follow: true },

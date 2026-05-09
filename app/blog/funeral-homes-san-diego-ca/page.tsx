@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '10 Funeral Homes in San Diego, CA (2026) | Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in San Diego, CA (2026) | Prices & Services',
   description: 'Compare the top 10 funeral homes in San Diego with pricing, services, and contact information. Updated for 2026.',
   keywords: 'funeral homes san diego ca, san diego funeral homes, cremation san diego, funeral services san diego california',
   robots: { index: true, follow: true },

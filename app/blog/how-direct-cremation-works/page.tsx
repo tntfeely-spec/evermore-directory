@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Direct Cremation Works: Step by Step | Evermore Directory',
+  title: 'How Direct Cremation Works: Step by Step',
   description: 'A step-by-step explanation of the direct cremation process from time of death through return of ashes. What happens, who handles it, and what families can expect.',
   keywords: 'how direct cremation works, direct cremation process, direct cremation steps, what happens during direct cremation',
   robots: { index: true, follow: true },

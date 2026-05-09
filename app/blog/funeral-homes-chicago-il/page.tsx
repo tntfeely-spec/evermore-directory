@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '13 Funeral Homes in Chicago, IL (2026) | Compare Prices & Services | Evermore Directory',
+  title: '13 Funeral Homes in Chicago, IL (2026) | Compare Prices & Services',
   description: 'Compare funeral homes in Chicago, IL with real pricing, services, and contact info. Updated 2026.',
   keywords: 'funeral homes chicago il, chicago funeral homes, cremation chicago il, funeral services chicago, chicago cremation cost',
   robots: { index: true, follow: true },

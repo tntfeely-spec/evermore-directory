@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'What to Do When Someone Dies: A Step-by-Step Guide for the First 72 Hours | Evermore Directory',
+  title: 'What to Do When Someone Dies: A Step-by-Step Guide for the First 72 Hours',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/what-to-do-when-someone-dies' },
 };

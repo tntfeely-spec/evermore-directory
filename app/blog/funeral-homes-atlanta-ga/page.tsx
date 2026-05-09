@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '12 Funeral Homes in Atlanta, GA (2026) | Compare Prices & Services | Evermore Directory',
+  title: '12 Funeral Homes in Atlanta, GA (2026) | Compare Prices & Services',
   description: 'Compare funeral homes in Atlanta, GA with real pricing, services, and contact info. Updated 2026.',
   keywords: 'funeral homes atlanta ga, atlanta funeral homes, cremation atlanta ga, funeral services atlanta, atlanta cremation cost',
   robots: { index: true, follow: true },

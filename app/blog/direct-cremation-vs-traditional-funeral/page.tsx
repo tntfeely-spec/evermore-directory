@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Direct Cremation vs Traditional Funeral: How to Choose | Evermore Directory',
+  title: 'Direct Cremation vs Traditional Funeral: How to Choose',
   description: 'Compare direct cremation and traditional funeral options. Learn costs, timelines, and how to decide which is right for your family.',
 };
 

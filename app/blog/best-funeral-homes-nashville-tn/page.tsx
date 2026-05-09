@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '10 Funeral Homes in Nashville, TN (2026) | Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in Nashville, TN (2026) | Prices & Services',
   description: 'Looking for a funeral home in Nashville, TN? Compare the top 10 funeral homes in Nashville with pricing, services, and contact information. Updated for 2026.',
   keywords: 'best funeral homes nashville tn, nashville funeral homes, funeral homes nashville tennessee, cremation nashville tn, funeral services nashville',
   robots: { index: true, follow: true },

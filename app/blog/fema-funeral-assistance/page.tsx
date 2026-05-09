@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'FEMA Funeral Assistance: How to Apply and What It Covers | Evermore Directory',
+  title: 'FEMA Funeral Assistance: How to Apply and What It Covers',
   description: 'FEMA provides up to $9,000 in funeral assistance for COVID-19 related deaths. Learn who qualifies, what expenses are covered, and how to apply.',
   keywords: 'FEMA funeral assistance, FEMA COVID funeral, FEMA funeral reimbursement, FEMA burial assistance, FEMA cremation assistance',
   robots: { index: true, follow: true },

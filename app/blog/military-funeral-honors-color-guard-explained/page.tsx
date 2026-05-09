@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Military Funeral Honors: Color Guard, Rifle Salute, and Flag Folding Explained | Evermore Directory',
+  title: 'Military Funeral Honors: Color Guard, Rifle Salute, and Flag Folding Explained',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/military-funeral-honors-color-guard-explained' },
 };

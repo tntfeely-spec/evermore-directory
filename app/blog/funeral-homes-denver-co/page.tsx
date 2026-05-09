@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '10 Funeral Homes in Denver, CO (2026) | Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in Denver, CO (2026) | Prices & Services',
   description: 'Compare the top 10 funeral homes in Denver with pricing, services, and contact information. Updated for 2026.',
   keywords: 'funeral homes denver co, denver funeral homes, cremation denver, funeral services denver colorado',
   robots: { index: true, follow: true },

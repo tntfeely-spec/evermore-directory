@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'VA Burial Benefits: What Every Veteran\'s Family Needs to Know | Evermore Directory',
+  title: 'VA Burial Benefits: What Every Veteran\'s Family Needs to Know',
   description: 'A former firefighter and paramedic explains every VA burial benefit available -- burial allowance, free national cemetery burial, free headstone, and how to claim them.',
   keywords: 'va burial benefits, veterans burial benefits, va funeral benefits, national cemetery burial, veterans funeral benefits',
   alternates: {

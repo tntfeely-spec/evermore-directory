@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Funeral Costs and Estate Planning: What Families Need to Know (2026) | Evermore Directory',
+  title: 'Funeral Costs and Estate Planning: What Families Need to Know (2026)',
   description: 'Funeral costs are typically the first expense paid from an estate during probate. Learn who pays, how reimbursement works, and how pre-planning protects your family.',
   keywords: 'funeral costs estate planning, who pays for funeral, funeral expenses probate, estate pays for funeral, funeral reimbursement from estate',
   robots: { index: true, follow: true },

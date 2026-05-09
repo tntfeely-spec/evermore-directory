@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title:
-    'How to Choose a Direct Cremation Provider: 7 Point Checklist | Evermore Directory',
+    'How to Choose a Direct Cremation Provider: 7 Point Checklist',
   description:
     'Choose a direct cremation provider using this 7 point checklist: verify licensing, request a price list, check reviews, and evaluate communication and timeline.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'How to Choose a Direct Cremation Provider: 7 Point Checklist | Evermore Directory',
+      'How to Choose a Direct Cremation Provider: 7 Point Checklist',
     description:
       'Choose a direct cremation provider using this 7 point checklist: verify licensing, request a price list, check reviews, and evaluate communication and timeline.',
     url: 'https://evermore.com/blog/how-to-choose-direct-cremation-provider',

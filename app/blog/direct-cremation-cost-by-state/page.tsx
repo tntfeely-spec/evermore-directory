@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Direct Cremation Cost by State: 2026 Price Guide | Evermore Directory',
+  title: 'Direct Cremation Cost by State: 2026 Price Guide',
   description: 'Direct cremation costs $1,000 to $3,500 in most states. See average prices for all 50 states with provider counts and cost-saving tips. Updated 2026.',
   keywords: 'direct cremation cost by state, direct cremation price, cremation cost 2026, cheapest cremation by state, how much does direct cremation cost',
   robots: { index: true, follow: true },

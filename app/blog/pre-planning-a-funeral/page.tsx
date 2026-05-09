@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Pre-Planning a Funeral: Why It Matters and How to Do It | Evermore Directory',
+  title: 'Pre-Planning a Funeral: Why It Matters and How to Do It',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/pre-planning-a-funeral' },
 };

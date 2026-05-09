@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import BlogIndex from '@/components/BlogIndex';
 
 export const metadata: Metadata = {
-  title: 'Funeral & Cremation Planning Blog | Evermore Directory',
+  title: 'Funeral & Cremation Planning Blog',
   description: 'Guides and resources for funeral planning, cremation costs, veterans burial benefits, and choosing the right funeral home.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog' },
 };

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'What Affects Funeral Costs in Tennessee? The 7 Biggest Price Factors | Evermore Directory',
+  title: 'What Affects Funeral Costs in Tennessee? The 7 Biggest Price Factors',
   description: 'Funeral costs in Tennessee vary by thousands of dollars depending on seven key factors. Understanding them helps families make informed decisions.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/what-affects-funeral-costs-tennessee' },
 };

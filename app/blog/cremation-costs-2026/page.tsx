@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Much Does Cremation Cost in 2026? State-by-State Price Guide | Evermore Directory',
+  title: 'How Much Does Cremation Cost in 2026? State-by-State Price Guide',
   description: 'Cremation costs in 2026 range from $500 to $7,000+ depending on location and services. See average cremation prices by state and learn how to save money.',
   keywords: 'cremation cost, how much does cremation cost, cremation prices 2026, average cremation cost, direct cremation cost, cremation cost by state',
 };

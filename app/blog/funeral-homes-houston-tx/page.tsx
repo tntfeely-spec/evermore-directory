@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '13 Funeral Homes in Houston, TX (2026) | Compare Prices & Services | Evermore Directory',
+  title: '13 Funeral Homes in Houston, TX (2026) | Compare Prices & Services',
   description: 'Compare funeral homes in Houston, TX with real pricing, services, and contact info. Updated 2026.',
   keywords: 'funeral homes houston tx, houston funeral homes, cremation houston tx, funeral services houston, houston cremation cost',
   robots: { index: true, follow: true },

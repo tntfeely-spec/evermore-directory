@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Low Cost Funeral Options in Nashville, TN: Services Under $3,000 | Evermore Directory',
+  title: 'Low Cost Funeral Options in Nashville, TN: Services Under $3,000',
   description: 'Nashville families can access funeral services starting under $1,500. Direct cremation providers, county assistance, and donation programs are the most affordable options in 2026.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/low-cost-funeral-options-nashville' },
 };

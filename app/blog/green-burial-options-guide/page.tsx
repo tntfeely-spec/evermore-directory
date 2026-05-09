@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers | Evermore Directory',
+  title: 'Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/green-burial-options-guide' },
 };

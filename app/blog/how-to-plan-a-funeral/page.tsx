@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How to Plan a Funeral: Step-by-Step Guide (2026) | Evermore Directory',
+  title: 'How to Plan a Funeral: Step-by-Step Guide (2026)',
   description: 'A practical step-by-step guide to planning a funeral. What to do first, how to choose a funeral home, what decisions to make, and how to manage costs.',
   keywords: 'how to plan a funeral, funeral planning, planning a funeral, funeral checklist, funeral arrangements, what to do when someone dies, funeral planning guide',
   alternates: {

@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '10 Funeral Homes in Memphis, TN (2026) | Compare Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in Memphis, TN (2026) | Compare Prices & Services',
   description: 'Compare funeral homes in Memphis, TN with real pricing, services, and contact info. Updated 2026.',
   keywords: 'funeral homes memphis tn, memphis funeral homes, cremation memphis tn, funeral services memphis, memphis cremation cost',
   robots: { index: true, follow: true },

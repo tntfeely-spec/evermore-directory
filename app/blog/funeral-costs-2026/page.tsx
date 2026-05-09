@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Funeral Cost in 2026? Complete Price Guide | Evermore Directory',
+  title: 'How Much Does a Funeral Cost in 2026? Complete Price Guide',
   description: 'Funeral costs in 2026 range from $7,000 to $15,000+ for a traditional service. See average funeral prices by state, what is included, and how to save money.',
   keywords: 'funeral cost, how much does a funeral cost, funeral prices 2026, average funeral cost, funeral expenses, burial cost, funeral home prices',
   alternates: {

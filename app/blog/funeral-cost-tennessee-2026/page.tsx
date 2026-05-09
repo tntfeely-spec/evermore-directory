@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide | Evermore Directory',
+  title: 'How Much Does a Funeral Cost in Tennessee? 2026 Guide',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-cost-tennessee-2026' },
 };

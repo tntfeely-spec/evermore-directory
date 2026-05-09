@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title:
-    'What Is a Cremation Society? How They Work (2026) | Evermore Directory',
+    'What Is a Cremation Society? How They Work (2026)',
   description:
     'A cremation society provides cremation services to members at lower cost than funeral homes. Learn about Neptune Society, membership models, and how to choose.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'What Is a Cremation Society? How They Work (2026) | Evermore Directory',
+      'What Is a Cremation Society? How They Work (2026)',
     description:
       'A cremation society provides cremation services to members at lower cost than funeral homes. Learn about Neptune Society, membership models, and how to choose.',
     url: 'https://evermore.com/blog/what-is-a-cremation-society',

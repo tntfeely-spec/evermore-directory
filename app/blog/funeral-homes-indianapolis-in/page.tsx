@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: '10 Funeral Homes in Indianapolis, IN (2026) | Prices & Services | Evermore Directory',
+  title: '10 Funeral Homes in Indianapolis, IN (2026) | Prices & Services',
   description: 'Compare the top 10 funeral homes in Indianapolis with pricing, services, and contact information. Updated for 2026.',
   keywords: 'funeral homes indianapolis in, indianapolis funeral homes, cremation indianapolis, funeral services indianapolis indiana',
   robots: { index: true, follow: true },

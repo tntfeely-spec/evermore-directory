@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Hidden Funeral Costs in Tennessee: What Families Are Not Told Upfront | Evermore Directory',
+  title: 'Hidden Funeral Costs in Tennessee: What Families Are Not Told Upfront',
   description: 'Tennessee funeral homes are required to disclose prices, but many costs still catch families off guard. Here is what to watch for before signing anything.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/hidden-funeral-costs-tennessee' },
 };

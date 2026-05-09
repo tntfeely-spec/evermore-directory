@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Traditional Funeral vs. Celebration of Life: How to Choose (2026) | Evermore Directory',
+  title: 'Traditional Funeral vs. Celebration of Life: How to Choose (2026)',
   description: 'A former firefighter and paramedic explains the real difference between traditional funerals and celebrations of life -- emotionally, practically, and financially.',
   keywords: 'traditional funeral vs celebration of life, celebration of life vs funeral, what is a celebration of life, funeral service options, how to choose a funeral service',
   alternates: {

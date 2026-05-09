@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Funeral Home Red Flags: What to Watch Out For When Grieving | Evermore Directory',
+  title: 'Funeral Home Red Flags: What to Watch Out For When Grieving',
   description: '',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-home-red-flags' },
 };

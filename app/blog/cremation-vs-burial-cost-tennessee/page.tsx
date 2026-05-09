@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Cremation vs Burial Cost in Tennessee: 2026 Price Comparison | Evermore Directory',
+  title: 'Cremation vs Burial Cost in Tennessee: 2026 Price Comparison',
   description: 'Cremation in Tennessee costs $1,170 to $5,000. Traditional burial costs $7,000 to $14,000. A full breakdown of what drives the difference and how to decide.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/cremation-vs-burial-cost-tennessee' },
 };

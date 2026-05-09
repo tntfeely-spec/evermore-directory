@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Why Is Direct Cremation So Affordable? | Evermore Directory',
+  title: 'Why Is Direct Cremation So Affordable?',
   description:
     'Direct cremation costs $1,000 to $3,500 because it skips embalming, caskets, and ceremonies. Learn what drives the savings and how to avoid hidden fees.',
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://evermore.com/blog/why-direct-cremation-is-affordable',
   },
   openGraph: {
-    title: 'Why Is Direct Cremation So Affordable? | Evermore Directory',
+    title: 'Why Is Direct Cremation So Affordable?',
     description:
       'Direct cremation costs $1,000 to $3,500 because it skips embalming, caskets, and ceremonies. Learn what drives the savings and how to avoid hidden fees.',
     url: 'https://evermore.com/blog/why-direct-cremation-is-affordable',

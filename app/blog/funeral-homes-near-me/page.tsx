@@ -4,7 +4,7 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Funeral Homes Near Me: How to Choose the Right One (2026) | Evermore Directory',
+  title: 'Funeral Homes Near Me: How to Choose the Right One (2026)',
   description: 'How to find and compare funeral homes near you. What to look for, questions to ask, red flags to avoid, and how to get the best value for your family.',
   keywords: 'funeral homes near me, find funeral home, choose funeral home, funeral home near me, funeral directors near me, compare funeral homes, best funeral home',
   alternates: {
