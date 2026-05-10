@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
+import { WebsiteLink, PhoneLink } from '@/components/ListingTracker';
 
 export const revalidate = 0;
 export const dynamicParams = true;
@@ -301,9 +302,9 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
                         View Details
                       </Link>
                       {p.website && (
-                        <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+                        <WebsiteLink href={p.website} listing={{ business_name: p.business_name, state: p.state, city: p.city, provider_type: 'direct_cremation' }} className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
                           Visit Website
-                        </a>
+                        </WebsiteLink>
                       )}
                     </div>
                   </div>
@@ -332,14 +333,14 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
                         View Details
                       </Link>
                       {p.website && (
-                        <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+                        <WebsiteLink href={p.website} listing={{ business_name: p.business_name, state: p.state, city: p.city, provider_type: 'direct_cremation' }} className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
                           Visit Website
-                        </a>
+                        </WebsiteLink>
                       )}
                       {p.phone && (
-                        <a href={`tel:${p.phone}`} className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+                        <PhoneLink phone={p.phone} listing={{ business_name: p.business_name, state: p.state, city: p.city, provider_type: 'direct_cremation' }} className="inline-block border border-slate-300 text-slate-700 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors">
                           Call Now
-                        </a>
+                        </PhoneLink>
                       )}
                     </div>
                   </div>
