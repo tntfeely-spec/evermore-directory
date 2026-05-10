@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
 import InlineLeadForm from '@/components/InlineLeadForm'
+import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -36,6 +37,7 @@ type FuneralHome = {
   latitude: string | null
   longitude: string | null
   listing_description: string | null
+  provider_type: string | null
 }
 
 // ─── Slug helpers ─────────────────────────────────────────────────────────────
@@ -350,6 +352,7 @@ export default async function FuneralHomePage({
   return (
     <>
       <Navigation />
+      <ListingTracker listing={{ business_name: listing.business_name, state: listing.state, city: listing.city, provider_type: listing.provider_type || 'full_service' }} />
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -417,14 +420,13 @@ export default async function FuneralHomePage({
           {/* Right: Buttons */}
           <div className="flex flex-col gap-2.5 items-stretch">
             {listing.website && (
-              <a
+              <WebsiteLink
                 href={listing.website}
-                target="_blank"
-                rel="noopener noreferrer"
+                listing={{ business_name: listing.business_name, state: listing.state, city: listing.city, provider_type: listing.provider_type || 'full_service' }}
                 className="bg-white text-[#1a1a2e] border-[1.5px] border-[#1a1a2e] px-5 py-2 rounded-md text-xs font-semibold text-center no-underline block"
               >
                 Visit Website
-              </a>
+              </WebsiteLink>
             )}
             <p className="text-center text-[11px] text-green-700 font-medium">
               ● Open 24 hours
@@ -583,12 +585,13 @@ export default async function FuneralHomePage({
       {/* Call button - below contact form */}
       {listing.phone && (
         <div className="max-w-[1100px] mx-auto px-6 pb-6">
-          <a
-            href={`tel:${listing.phone.replace(/\D/g, '')}`}
+          <PhoneLink
+            phone={listing.phone}
+            listing={{ business_name: listing.business_name, state: listing.state, city: listing.city, provider_type: listing.provider_type || 'full_service' }}
             className="bg-[#1a1a2e] text-white border-none px-5 py-3 rounded-md text-sm font-semibold text-center no-underline block max-w-[400px]"
           >
             Call {listing.phone}
-          </a>
+          </PhoneLink>
         </div>
       )}
 
@@ -656,6 +659,16 @@ function submitContact(id) {
     })
   }).then(function(res) {
     if (res.ok) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'submit_contact_form', {
+          listing_name: home ? home.value : '',
+          listing_state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : '',
+          listing_city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
+          listing_provider_type: 'full_service',
+          form_message_length: msg ? msg.value.length : 0,
+          form_preference: prefVal
+        });
+      }
       form.innerHTML = '<div style="padding:24px;text-align:center;"><div style="font-size:28px;margin-bottom:10px;">✓</div><div style="font-size:1rem;font-weight:700;color:#2e7d32;margin-bottom:6px;">Message sent</div><div style="font-size:1rem;color:#555;line-height:1.6;">This funeral home has your contact info and will reach out your preferred way. You can also call them directly anytime.</div></div>';
     } else {
       if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }

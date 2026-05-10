@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { trackContactFormSubmit } from '@/lib/analytics';
 
 interface Props {
   listing: {
@@ -50,6 +51,11 @@ export default function InlineLeadForm({ listing }: Props) {
       });
 
       if (res.ok) {
+        trackContactFormSubmit(
+          { business_name: listing.business_name, state: listing.state, city: listing.city, provider_type: 'full_service' },
+          message.length,
+          'inline_form'
+        );
         setSubmitted(true);
       } else {
         setError('Something went wrong. Please try again or call the funeral home directly.');
