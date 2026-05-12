@@ -51,6 +51,25 @@ const STATE_NAMES: Record<string, string> = {
   wisconsin: "Wisconsin", wyoming: "Wyoming",
 };
 
+// Reverse mapping: abbreviation -> full state slug (for supporting both URL formats)
+const ABBR_TO_SLUG: Record<string, string> = {};
+for (const [slug, abbr] of Object.entries(STATE_ABBR)) {
+  ABBR_TO_SLUG[abbr.toLowerCase()] = slug;
+}
+
+function resolveState(param: string): { abbr: string; name: string; slug: string } | null {
+  // Try full name first (e.g. "georgia")
+  if (STATE_ABBR[param] && STATE_NAMES[param]) {
+    return { abbr: STATE_ABBR[param], name: STATE_NAMES[param], slug: param };
+  }
+  // Try abbreviation (e.g. "ga")
+  const fullSlug = ABBR_TO_SLUG[param.toLowerCase()];
+  if (fullSlug && STATE_ABBR[fullSlug] && STATE_NAMES[fullSlug]) {
+    return { abbr: STATE_ABBR[fullSlug], name: STATE_NAMES[fullSlug], slug: fullSlug };
+  }
+  return null;
+}
+
 // National reference averages
 const NAT_CREM_LOW = 1500;
 const NAT_CREM_HIGH = 3500;
@@ -90,79 +109,61 @@ function vsNational(low: number, high: number, natLow: number, natHigh: number):
 }
 
 export async function generateStaticParams() {
-  return [
-    { state: 'georgia', city: 'atlanta' },
-    { state: 'texas', city: 'houston' },
-    { state: 'california', city: 'los-angeles' },
-    { state: 'illinois', city: 'chicago' },
-    { state: 'arizona', city: 'phoenix' },
-    { state: 'texas', city: 'dallas' },
-    { state: 'pennsylvania', city: 'philadelphia' },
-    { state: 'california', city: 'san-diego' },
-    { state: 'texas', city: 'san-antonio' },
-    { state: 'florida', city: 'jacksonville' },
-    { state: 'new-york', city: 'new-york' },
-    { state: 'california', city: 'san-jose' },
-    { state: 'texas', city: 'austin' },
-    { state: 'ohio', city: 'columbus' },
-    { state: 'texas', city: 'fort-worth' },
-    { state: 'north-carolina', city: 'charlotte' },
-    { state: 'indiana', city: 'indianapolis' },
-    { state: 'california', city: 'san-francisco' },
-    { state: 'washington', city: 'seattle' },
-    { state: 'colorado', city: 'denver' },
-    { state: 'tennessee', city: 'nashville' },
-    { state: 'oklahoma', city: 'oklahoma-city' },
-    { state: 'texas', city: 'el-paso' },
-    { state: 'district-of-columbia', city: 'washington' },
-    { state: 'kentucky', city: 'louisville' },
-    { state: 'nevada', city: 'las-vegas' },
-    { state: 'tennessee', city: 'memphis' },
-    { state: 'oregon', city: 'portland' },
-    { state: 'maryland', city: 'baltimore' },
-    { state: 'wisconsin', city: 'milwaukee' },
-    { state: 'new-mexico', city: 'albuquerque' },
-    { state: 'arizona', city: 'tucson' },
-    { state: 'california', city: 'fresno' },
-    { state: 'california', city: 'sacramento' },
-    { state: 'missouri', city: 'kansas-city' },
-    { state: 'nebraska', city: 'omaha' },
-    { state: 'colorado', city: 'colorado-springs' },
-    { state: 'north-carolina', city: 'raleigh' },
-    { state: 'minnesota', city: 'minneapolis' },
-    { state: 'florida', city: 'tampa' },
-    { state: 'louisiana', city: 'new-orleans' },
-    { state: 'texas', city: 'arlington' },
-    { state: 'kansas', city: 'wichita' },
-    { state: 'california', city: 'anaheim' },
-    { state: 'virginia', city: 'virginia-beach' },
-    { state: 'colorado', city: 'aurora' },
-    { state: 'california', city: 'long-beach' },
-    { state: 'kentucky', city: 'lexington' },
-    { state: 'california', city: 'stockton' },
-    { state: 'pennsylvania', city: 'pittsburgh' },
+  // Generate params for both full-name and abbreviation formats
+  const cities = [
+    ['georgia', 'ga', 'atlanta'], ['texas', 'tx', 'houston'],
+    ['california', 'ca', 'los-angeles'], ['illinois', 'il', 'chicago'],
+    ['arizona', 'az', 'phoenix'], ['texas', 'tx', 'dallas'],
+    ['pennsylvania', 'pa', 'philadelphia'], ['california', 'ca', 'san-diego'],
+    ['texas', 'tx', 'san-antonio'], ['florida', 'fl', 'jacksonville'],
+    ['new-york', 'ny', 'new-york'], ['california', 'ca', 'san-jose'],
+    ['texas', 'tx', 'austin'], ['ohio', 'oh', 'columbus'],
+    ['texas', 'tx', 'fort-worth'], ['north-carolina', 'nc', 'charlotte'],
+    ['indiana', 'in', 'indianapolis'], ['california', 'ca', 'san-francisco'],
+    ['washington', 'wa', 'seattle'], ['colorado', 'co', 'denver'],
+    ['tennessee', 'tn', 'nashville'], ['oklahoma', 'ok', 'oklahoma-city'],
+    ['texas', 'tx', 'el-paso'], ['district-of-columbia', 'dc', 'washington'],
+    ['kentucky', 'ky', 'louisville'], ['nevada', 'nv', 'las-vegas'],
+    ['tennessee', 'tn', 'memphis'], ['oregon', 'or', 'portland'],
+    ['maryland', 'md', 'baltimore'], ['wisconsin', 'wi', 'milwaukee'],
+    ['new-mexico', 'nm', 'albuquerque'], ['arizona', 'az', 'tucson'],
+    ['california', 'ca', 'fresno'], ['california', 'ca', 'sacramento'],
+    ['missouri', 'mo', 'kansas-city'], ['nebraska', 'ne', 'omaha'],
+    ['colorado', 'co', 'colorado-springs'], ['north-carolina', 'nc', 'raleigh'],
+    ['minnesota', 'mn', 'minneapolis'], ['florida', 'fl', 'tampa'],
+    ['louisiana', 'la', 'new-orleans'], ['texas', 'tx', 'arlington'],
+    ['kansas', 'ks', 'wichita'], ['california', 'ca', 'anaheim'],
+    ['virginia', 'va', 'virginia-beach'], ['colorado', 'co', 'aurora'],
+    ['california', 'ca', 'long-beach'], ['kentucky', 'ky', 'lexington'],
+    ['california', 'ca', 'stockton'], ['pennsylvania', 'pa', 'pittsburgh'],
   ];
+  const params: { state: string; city: string }[] = [];
+  for (const [fullName, abbr, city] of cities) {
+    params.push({ state: fullName, city });
+    params.push({ state: abbr, city });
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state, city } = await params;
-  const stateAbbr = STATE_ABBR[state];
-  const stateName = STATE_NAMES[state];
-  if (!stateAbbr || !stateName) return { title: 'Not Found' };
+  const resolved = resolveState(state);
+  if (!resolved) return { title: 'Not Found' };
+  const { abbr: stateAbbr, name: stateName, slug: stateSlug } = resolved;
   const cityName = cityDisplay(city);
 
   return {
     title: `Funeral Costs in ${cityName}, ${stateName} (2026) | Evermore Directory`,
     description: `Average funeral costs in ${cityName}, ${stateName}. Based on real pricing from local funeral homes. Compare cremation and burial prices.`,
-    alternates: { canonical: `https://funeralhomedirectories.com/funeral-costs/${state}/${city}` },
+    alternates: { canonical: `https://funeralhomedirectories.com/funeral-costs/${stateSlug}/${city}` },
   };
 }
 
 export default async function CityCostPage({ params }: PageProps) {
   const { state, city } = await params;
-  const stateAbbr = STATE_ABBR[state];
-  const stateName = STATE_NAMES[state];
-  if (!stateAbbr || !stateName) notFound();
+  const resolved = resolveState(state);
+  if (!resolved) notFound();
+  const { abbr: stateAbbr, name: stateName, slug: stateSlug } = resolved;
   const cityName = cityDisplay(city);
 
   // Query listings with pricing for this city
@@ -248,7 +249,7 @@ export default async function CityCostPage({ params }: PageProps) {
     author: { '@type': 'Person', name: 'Terry Feely', url: 'https://funeralhomedirectories.com/about' },
     publisher: { '@type': 'Organization', name: 'Evermore Directory', url: 'https://funeralhomedirectories.com' },
     datePublished: '2026-05-13', dateModified: '2026-05-13',
-    url: `https://funeralhomedirectories.com/funeral-costs/${state}/${city}`,
+    url: `https://funeralhomedirectories.com/funeral-costs/${stateSlug}/${city}`,
   };
 
   const breadcrumbSchema = {
@@ -256,7 +257,7 @@ export default async function CityCostPage({ params }: PageProps) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://funeralhomedirectories.com' },
       { '@type': 'ListItem', position: 2, name: 'Funeral Costs by State', item: 'https://funeralhomedirectories.com/funeral-costs' },
-      { '@type': 'ListItem', position: 3, name: stateName, item: `https://funeralhomedirectories.com/funeral-costs/${state}` },
+      { '@type': 'ListItem', position: 3, name: stateName, item: `https://funeralhomedirectories.com/funeral-costs/${stateSlug}` },
       { '@type': 'ListItem', position: 4, name: cityName },
     ],
   };
@@ -274,7 +275,7 @@ export default async function CityCostPage({ params }: PageProps) {
             <span className="mx-2 text-gray-400">/</span>
             <Link href="/funeral-costs" className="text-slate-600 hover:text-slate-800">Funeral Costs by State</Link>
             <span className="mx-2 text-gray-400">/</span>
-            <Link href={`/funeral-costs/${state}`} className="text-slate-600 hover:text-slate-800">{stateName}</Link>
+            <Link href={`/funeral-costs/${stateSlug}`} className="text-slate-600 hover:text-slate-800">{stateName}</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">{cityName}</span>
           </nav>
@@ -372,7 +373,7 @@ export default async function CityCostPage({ params }: PageProps) {
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Cost Calculator</h3>
                 <p className="text-sm text-gray-600">Estimate costs by state with real pricing data.</p>
               </Link>
-              <Link href={`/funeral-costs/${state}`} className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+              <Link href={`/funeral-costs/${stateSlug}`} className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Costs in {stateName}</h3>
                 <p className="text-sm text-gray-600">Statewide cost overview and comparison.</p>
               </Link>
