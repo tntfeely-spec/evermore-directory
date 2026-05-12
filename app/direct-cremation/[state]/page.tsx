@@ -12,26 +12,15 @@ interface PageProps {
   params: Promise<{ state: string }>;
 }
 
-const stateNames: { [key: string]: string } = {
-  'al': 'Alabama', 'ak': 'Alaska', 'az': 'Arizona', 'ar': 'Arkansas',
-  'ca': 'California', 'co': 'Colorado', 'ct': 'Connecticut', 'dc': 'District of Columbia', 'de': 'Delaware',
-  'fl': 'Florida', 'ga': 'Georgia', 'hi': 'Hawaii', 'id': 'Idaho',
-  'il': 'Illinois', 'in': 'Indiana', 'ia': 'Iowa', 'ks': 'Kansas',
-  'ky': 'Kentucky', 'la': 'Louisiana', 'me': 'Maine', 'md': 'Maryland',
-  'ma': 'Massachusetts', 'mi': 'Michigan', 'mn': 'Minnesota', 'ms': 'Mississippi',
-  'mo': 'Missouri', 'mt': 'Montana', 'ne': 'Nebraska', 'nv': 'Nevada',
-  'nh': 'New Hampshire', 'nj': 'New Jersey', 'nm': 'New Mexico', 'ny': 'New York',
-  'nc': 'North Carolina', 'nd': 'North Dakota', 'oh': 'Ohio', 'ok': 'Oklahoma',
-  'or': 'Oregon', 'pa': 'Pennsylvania', 'ri': 'Rhode Island', 'sc': 'South Carolina',
-  'sd': 'South Dakota', 'tn': 'Tennessee', 'tx': 'Texas', 'ut': 'Utah',
-  'vt': 'Vermont', 'va': 'Virginia', 'wa': 'Washington', 'wv': 'West Virginia',
-  'wi': 'Wisconsin', 'wy': 'Wyoming',
-};
+export async function generateStaticParams() {
+  return allStateSlugs.map((state) => ({ state }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state } = await params;
-  const stateName = stateNames[state.toLowerCase()];
-  if (!stateName) return { title: 'Not Found' };
+  const meta = stateMeta[state.toLowerCase()];
+  if (!meta) return { title: 'Not Found' };
+  const stateName = meta.name;
   return {
     title: `Direct Cremation Costs in ${stateName} (2026)`,
     description: `Compare direct cremation costs in ${stateName}. Real pricing from local providers. Find the most affordable cremation option near you.`,
@@ -41,10 +30,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DirectCremationStatePage({ params }: PageProps) {
   const { state } = await params;
-  const stateName = stateNames[state.toLowerCase()];
-  if (!stateName) notFound();
-
-  const stateUpper = state.toUpperCase();
+  const meta = stateMeta[state.toLowerCase()];
+  if (!meta) notFound();
+  const stateName = meta.name;
+  const stateUpper = meta.abbr.toUpperCase();
 
   // Get real pricing data
   const allPricing = await getAllRealStatePricing();
