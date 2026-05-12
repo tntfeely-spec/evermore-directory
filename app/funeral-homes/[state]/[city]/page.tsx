@@ -143,6 +143,19 @@ export default async function CityPage({ params }: PageProps) {
     .sort()
     .slice(0, 12);
 
+  // Get last verified date from MAX(updated_at)
+  const { data: lastVerifiedData } = await supabase
+    .from('funeral_homes')
+    .select('updated_at')
+    .eq('state', state.toUpperCase())
+    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated2}`)
+    .order('updated_at', { ascending: false })
+    .limit(1);
+
+  const lastVerifiedDate = lastVerifiedData?.[0]?.updated_at
+    ? new Date(lastVerifiedData[0].updated_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    : null;
+
   const featuredHomes = funeralHomes.filter((home: FuneralHome) => home.is_featured);
   const regularHomes = funeralHomes.filter((home: FuneralHome) => !home.is_featured);
 
@@ -367,7 +380,10 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {cityDescription}
             </p>
-            <div className="mt-4 text-lg text-gray-700 font-semibold">
+            {lastVerifiedDate && (
+              <p className="mt-3 text-sm text-gray-400">Listings last verified: {lastVerifiedDate}</p>
+            )}
+            <div className="mt-3 text-lg text-gray-700 font-semibold">
               {funeralHomes.length} funeral home{funeralHomes.length !== 1 ? 's' : ''} found
             </div>
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
