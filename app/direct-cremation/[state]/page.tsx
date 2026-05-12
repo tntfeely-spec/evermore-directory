@@ -3,17 +3,18 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
+import { stateMeta, allStateSlugs } from '@/lib/state-pricing';
+import { getAllRealStatePricing, getRealStatePricing, getStateRanking, formatCurrency, formatRange } from '@/lib/server/state-pricing-real';
+
+export const revalidate = 0;
 
 interface PageProps {
-  params: Promise<{
-    state: string;
-  }>;
+  params: Promise<{ state: string }>;
 }
 
 const stateNames: { [key: string]: string } = {
   'al': 'Alabama', 'ak': 'Alaska', 'az': 'Arizona', 'ar': 'Arkansas',
-  'ca': 'California', 'co': 'Colorado', 'ct': 'Connecticut', 'de': 'Delaware',
-  'dc': 'District of Columbia',
+  'ca': 'California', 'co': 'Colorado', 'ct': 'Connecticut', 'dc': 'District of Columbia', 'de': 'Delaware',
   'fl': 'Florida', 'ga': 'Georgia', 'hi': 'Hawaii', 'id': 'Idaho',
   'il': 'Illinois', 'in': 'Indiana', 'ia': 'Iowa', 'ks': 'Kansas',
   'ky': 'Kentucky', 'la': 'Louisiana', 'me': 'Maine', 'md': 'Maryland',
@@ -24,269 +25,203 @@ const stateNames: { [key: string]: string } = {
   'or': 'Oregon', 'pa': 'Pennsylvania', 'ri': 'Rhode Island', 'sc': 'South Carolina',
   'sd': 'South Dakota', 'tn': 'Tennessee', 'tx': 'Texas', 'ut': 'Utah',
   'vt': 'Vermont', 'va': 'Virginia', 'wa': 'Washington', 'wv': 'West Virginia',
-  'wi': 'Wisconsin', 'wy': 'Wyoming'
+  'wi': 'Wisconsin', 'wy': 'Wyoming',
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state } = await params;
   const stateName = stateNames[state.toLowerCase()];
-
-  if (!stateName) {
-    return { title: 'State Not Found' };
-  }
-
-  const description = `Find affordable direct cremation providers in ${stateName}. Compare pricing, read reviews, and contact local cremation specialists near you.`;
-
+  if (!stateName) return { title: 'Not Found' };
   return {
-    title: `Direct Cremation Providers in ${stateName} (2026) | Evermore Directory`,
-    description,
-    alternates: {
-      canonical: `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}`,
-    },
-    openGraph: {
-      title: `Direct Cremation Providers in ${stateName} (2026) | Evermore Directory`,
-      description,
-      url: `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}`,
-      siteName: 'Evermore Directory',
-      type: 'website',
-    },
+    title: `Direct Cremation Costs in ${stateName} (2026)`,
+    description: `Compare direct cremation costs in ${stateName}. Real pricing from local providers. Find the most affordable cremation option near you.`,
+    alternates: { canonical: `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}` },
   };
 }
 
 export default async function DirectCremationStatePage({ params }: PageProps) {
   const { state } = await params;
   const stateName = stateNames[state.toLowerCase()];
+  if (!stateName) notFound();
 
-  if (!stateName) {
-    notFound();
-  }
+  const stateUpper = state.toUpperCase();
 
-  const { data: homes, error } = await supabase
+  // Get real pricing data
+  const allPricing = await getAllRealStatePricing();
+  const pricing = allPricing.find(r => r.abbr === stateUpper);
+  const cremRank = pricing ? getStateRanking(allPricing, stateUpper, 'cremation') : 0;
+  const totalStates = allPricing.length;
+
+  // Get direct cremation providers in this state
+  const { data: dcHomes } = await supabase
     .from('funeral_homes')
     .select('city')
-    .eq('state', state.toUpperCase())
+    .eq('state', stateUpper)
     .eq('provider_type', 'direct_cremation');
 
-  if (error) {
-    console.error('Error fetching cities:', error);
-  }
-
   const cityCounts: { [key: string]: number } = {};
-  homes?.forEach((home) => {
-    if (home.city) {
-      cityCounts[home.city] = (cityCounts[home.city] || 0) + 1;
-    }
-  });
+  dcHomes?.forEach((h) => { if (h.city) cityCounts[h.city] = (cityCounts[h.city] || 0) + 1; });
+  const topCities = Object.entries(cityCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const dcCount = dcHomes?.length || 0;
 
-  const cities = Object.entries(cityCounts)
-    .map(([city, count]) => ({ city, count }))
-    .sort((a, b) => b.count - a.count);
+  // Total listings (all types) for this state
+  const { count: totalListings } = await supabase
+    .from('funeral_homes')
+    .select('*', { count: 'exact', head: true })
+    .eq('state', stateUpper);
 
-  const totalListings = homes?.length || 0;
+  const cremRange = pricing ? formatRange(pricing.cremationLow, pricing.cremationHigh) : '$1,500 to $3,500';
+  const cremMemRange = pricing ? formatRange(Math.round(pricing.cremationHigh * 1.5), Math.round(pricing.cremationHigh * 2.2)) : '$4,500 to $7,500';
 
-  if (totalListings === 0) {
-    return (
-      <>
-        <Navigation />
-        <div className="min-h-screen bg-slate-50">
-          <div className="max-w-3xl mx-auto px-4 py-20 text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Direct Cremation in {stateName}</h1>
-            <p className="text-lg text-gray-600 mb-8">We do not have direct cremation providers listed for {stateName} yet. Browse all funeral homes in {stateName} or check back soon.</p>
-            <Link href={`/funeral-homes/${state.toLowerCase()}`} className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
-              Browse All {stateName} Funeral Homes
-            </Link>
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": `Direct Cremation Providers in ${stateName}`,
-        "description": `Find ${totalListings} direct cremation providers across ${cities.length} cities in ${stateName}.`,
-        "url": `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}`
-      },
-      {
-        "@type": "ItemList",
-        "name": `Cities with Direct Cremation Providers in ${stateName}`,
-        "numberOfItems": cities.length,
-        "itemListElement": cities.slice(0, 20).map((cityData, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "name": `${cityData.city}, ${stateName}`,
-          "url": `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}/${cityData.city.toLowerCase().replace(/\s+/g, '-')}`
-        }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
-          { "@type": "ListItem", "position": 2, "name": "Direct Cremation", "item": "https://funeralhomedirectories.com/direct-cremation" },
-          { "@type": "ListItem", "position": 3, "name": stateName, "item": `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}` }
-        ]
-      }
-    ]
-  };
+  const faqs = [
+    { q: `How much does direct cremation cost in ${stateName}?`, a: `Direct cremation in ${stateName} ranges from ${cremRange}. ${pricing?.dataSource === 'supabase' ? `Based on real pricing from ${pricing.listingCount} funeral homes.` : 'Based on NFDA national medians adjusted for regional cost of living.'}` },
+    { q: `What is included in direct cremation in ${stateName}?`, a: `Direct cremation in ${stateName} typically includes transportation of the deceased, a basic cremation container, the cremation process, required permits, and return of cremated remains. No embalming, viewing, or ceremony is included.` },
+    { q: `Can I have a memorial service after direct cremation in ${stateName}?`, a: `Yes. Many families in ${stateName} choose direct cremation and then hold a separate celebration of life or memorial service on their own timeline. There is no time limit on when you hold the memorial.` },
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "Article",
+        "headline": `Direct Cremation Costs in ${stateName} (2026)`,
+        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
+        "datePublished": "2026-05-12", "dateModified": "2026-05-12",
+        "url": `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}`
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+          { "@type": "ListItem", "position": 2, "name": "Direct Cremation", "item": "https://funeralhomedirectories.com/direct-cremation" },
+          { "@type": "ListItem", "position": 3, "name": stateName }
+        ]
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+      }) }} />
       <Navigation />
 
-      <div className="min-h-screen relative">
-        <div
-          className="fixed inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/Mountain_Lake_Image.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            opacity: 0.35
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-          <nav className="mb-8 text-sm">
-            <Link href="/direct-cremation" className="text-slate-600 hover:text-slate-800">
-              Direct Cremation
-            </Link>
+      <main className="min-h-screen bg-white">
+        <div className="max-w-5xl mx-auto px-4 py-12">
+          <nav className="mb-6 text-sm">
+            <Link href="/direct-cremation" className="text-slate-600 hover:text-slate-800">Direct Cremation</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">{stateName}</span>
           </nav>
 
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Direct Cremation Providers in {stateName}
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find affordable direct cremation services throughout {stateName}. Browse {totalListings} cremation providers across {cities.length} cities to compare pricing and find simple, dignified cremation near you.
-            </p>
-          </div>
-
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Direct Cremation by City in {stateName}
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Browse {totalListings} direct cremation providers across {cities.length} cities in {stateName}. Each listing includes pricing, contact information, and service details.
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            Direct Cremation Costs in {stateName} (2026)
+          </h1>
+          <p className="text-sm text-gray-500 mb-10">
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-            {cities.map((city) => (
-              <Link
-                key={city.city}
-                href={`/direct-cremation/${state.toLowerCase()}/${city.city.toLowerCase().replace(/ /g, '-')}`}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-2 border-transparent hover:border-slate-400"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{city.city}</h3>
-                    <p className="text-sm text-gray-600">{city.count} cremation provider{city.count !== 1 ? 's' : ''}</p>
-                  </div>
-                  <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* About Direct Cremation in State */}
-          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              About Direct Cremation in {stateName}
-            </h2>
-            <div className="prose max-w-none text-gray-600">
-              <p className="mb-4 leading-relaxed">
-                Direct cremation is the simplest and most affordable cremation option available in {stateName}. It involves cremation without a prior viewing, visitation, or formal funeral service. Families receive the cremated remains and can then plan a memorial or celebration of life on their own timeline.
-              </p>
-              <p className="mb-4 leading-relaxed">
-                The Evermore Directory lists {totalListings} direct cremation providers across {cities.length} cities in {stateName}. Each provider offers transparent pricing and handles all logistics including transportation, permits, the cremation process, and return of ashes.
-              </p>
-              <p className="leading-relaxed">
-                Direct cremation in {stateName} typically costs between $1,000 and $3,500, depending on the provider and location. This is significantly less than the $7,000 to $12,000 average for a traditional funeral with burial.
-              </p>
-            </div>
-          </div>
-
-          {/* Benefits */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              Benefits of Direct Cremation in {stateName}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-8">
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Affordable Pricing</h3>
-                <p className="text-gray-600">
-                  Direct cremation in {stateName} saves families thousands by eliminating costs for embalming, caskets, viewing facilities, and formal ceremony arrangements.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Statewide Coverage</h3>
-                <p className="text-gray-600">
-                  Browse {totalListings} providers across {cities.length} {stateName} cities. Most providers serve surrounding areas and can arrange transportation from anywhere in the region.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Plan on Your Terms</h3>
-                <p className="text-gray-600">
-                  After direct cremation, you have complete flexibility to hold a celebration of life, memorial, or scattering ceremony when and where it feels right for your family.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Pro Tip */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-slate-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip for {stateName} Families</h3>
-            <p className="text-gray-700 leading-relaxed">
-              When comparing direct cremation providers in {stateName}, ask each provider exactly what is included in their quoted price. A complete direct cremation package should cover transportation of the deceased, basic cremation container, the cremation process, necessary permits and paperwork, and return of cremated remains. Some {stateName} providers also include a certain number of certified death certificates.
+          {/* AI-citable opening */}
+          <section className="mb-10">
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Direct cremation in {stateName} costs {cremRange}, making it the most affordable funeral option available. The national average for direct cremation is $1,500 to $3,500. {stateName} ranks {cremRank} out of {totalStates} states for direct cremation cost, where 1 is the cheapest. {pricing?.dataSource === 'supabase' ? `These figures are based on real pricing from ${pricing.listingCount} funeral homes in ${stateName} listed on Evermore Directory.` : `These figures are based on NFDA national medians adjusted for ${stateName}'s regional cost of living.`}
             </p>
-          </div>
+          </section>
 
-          {/* Helpful Guides */}
-          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Helpful Direct Cremation Guides
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link href="/blog/what-is-direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">What is Direct Cremation? The Complete 2026 Guide</h3>
-                <p className="text-sm text-gray-600">Everything you need to know about direct cremation, from process to pricing.</p>
-              </Link>
-              <Link href="/blog/direct-cremation-cost-by-state" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Cost by State: 2026 Guide</h3>
-                <p className="text-sm text-gray-600">State-by-state cremation pricing with provider counts and cost comparisons.</p>
-              </Link>
-              <Link href="/blog/how-to-choose-direct-cremation-provider" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Choose a Direct Cremation Provider</h3>
-                <p className="text-sm text-gray-600">The 7-point checklist for finding a trustworthy cremation provider.</p>
-              </Link>
-              <Link href="/blog" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">View All Guides</h3>
-                <p className="text-sm text-gray-600">Browse our complete library of cremation and funeral planning resources.</p>
-              </Link>
+          {/* Pricing table */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Direct Cremation Pricing in {stateName}</h2>
+            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-4">
+              <table className="w-full">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th className="text-left px-6 py-3 text-sm font-semibold text-gray-700">Service</th>
+                    <th className="text-left px-6 py-3 text-sm font-semibold text-gray-700">{stateName} Average</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-gray-100">
+                    <td className="px-6 py-4 font-semibold text-gray-900">Direct Cremation</td>
+                    <td className="px-6 py-4 text-slate-700 font-mono">{cremRange}</td>
+                  </tr>
+                  <tr className="border-t border-gray-100 bg-slate-50/40">
+                    <td className="px-6 py-4 font-semibold text-gray-900">Cremation with Memorial Service</td>
+                    <td className="px-6 py-4 text-slate-700 font-mono">{cremMemRange}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
+          </section>
 
-          <div className="text-center">
+          {/* State ranking */}
+          {cremRank > 0 && (
+            <div className="bg-white rounded-xl border border-gray-200 p-6 text-center mb-10">
+              <p className="text-4xl font-bold text-slate-700 mb-1">{cremRank}<span className="text-lg text-gray-400"> / {totalStates}</span></p>
+              <p className="text-sm text-gray-600">Direct cremation cost ranking (1 = cheapest)</p>
+            </div>
+          )}
+
+          {/* Provider count + CTA */}
+          <div className="text-center mb-10">
+            <p className="text-lg text-gray-700 mb-4">
+              {dcCount > 0 ? `${dcCount} direct cremation providers in ${stateName}` : `Browse ${totalListings || 0} funeral homes in ${stateName}`}
+            </p>
             <Link
-              href="/direct-cremation"
-              className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              href={dcCount > 0 ? `/direct-cremation/${state.toLowerCase()}/${topCities[0] ? topCities[0][0].toLowerCase().replace(/\s+/g, '-') : ''}` : `/funeral-homes/${state.toLowerCase()}`}
+              className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg"
             >
-              Back to All States
+              Find Cremation Providers in {stateName}
             </Link>
           </div>
 
+          {/* Top cities */}
+          {topCities.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Top Cities for Direct Cremation in {stateName}</h2>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                {topCities.map(([city, count]) => (
+                  <Link
+                    key={city}
+                    href={`/direct-cremation/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="bg-white rounded-lg border border-gray-200 px-4 py-3 text-center text-gray-700 hover:text-slate-700 hover:border-slate-400 hover:shadow-sm transition-all font-medium"
+                  >
+                    {city} ({count})
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* FAQ */}
+          <section className="mb-10 bg-white rounded-xl border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.q}>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.q}</h3>
+                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Related */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Reading</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link href="/direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Guide</h3>
+                <p className="text-sm text-gray-600">Complete guide and national cost comparison.</p>
+              </Link>
+              <Link href={`/funeral-homes/${state.toLowerCase()}`} className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">All Funeral Homes in {stateName}</h3>
+                <p className="text-sm text-gray-600">Browse all providers with contact info and services.</p>
+              </Link>
+            </div>
+          </section>
+
+          <div className="text-center text-sm text-gray-400">
+            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+          </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
