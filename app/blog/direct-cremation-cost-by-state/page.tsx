@@ -271,7 +271,7 @@ export default function DirectCremationCostByStatePage() {
               </p>
             </section>
 
-            {/* Top 5 cheapest — only from VALID states */}
+            {/* Top 5 cheapest, only from VALID states */}
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 5 Most Affordable States for Direct Cremation
@@ -301,7 +301,7 @@ export default function DirectCremationCostByStatePage() {
               </div>
             </section>
 
-            {/* Top 5 most expensive — only from VALID states */}
+            {/* Top 5 most expensive, only from VALID states */}
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 5 Highest Cost States for Direct Cremation
