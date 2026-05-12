@@ -265,7 +265,7 @@ export default async function StateCostsPage({ params }: PageProps) {
                 {topCities.map((c) => (
                   <Link
                     key={c}
-                    href={`/funeral-homes/${meta.abbr}/${citySlug(c)}`}
+                    href={`/funeral-costs/${state}/${citySlug(c)}`}
                     className="bg-white rounded-lg border border-gray-200 px-4 py-3 text-center text-gray-700 hover:text-slate-700 hover:border-slate-400 hover:shadow-sm transition-all font-medium"
                   >
                     {c}
