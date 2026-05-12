@@ -48,9 +48,15 @@ export default async function Page() {
               <p className="text-xl text-gray-600">Real funeral and cremation cost ranges for Los Angeles, California.</p>
             </header>
 
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-4 my-6">
+              <p className="text-sm text-amber-900">
+                <strong>Note:</strong> Los Angeles-specific pricing data is currently limited in our directory. The figures below reflect California statewide averages from 114 funeral homes. As more Los Angeles funeral homes publish pricing, this page will update to show city-specific data.
+              </p>
+            </div>
+
             <section className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Funeral home costs in Los Angeles, California range from {cremRange} for direct cremation and from {burialRange} for a traditional funeral with burial. {dataNote}
+                Funeral home costs in Los Angeles, California are estimated using statewide California averages where city-specific data is limited. Direct cremation in California ranges from {cremRange} and traditional burial ranges from {burialRange}. These figures come from 114 funeral homes across California listed on Evermore Directory.
               </p>
               <p className="text-gray-600 mb-4">
                 As a former firefighter and paramedic, I saw families in Los Angeles face these costs during the worst moments of their lives. The price ranges below are here so you can plan with real numbers, not guesses.
@@ -61,7 +67,7 @@ export default async function Page() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Average Funeral Costs in Los Angeles (2026)</h2>
               <div className="overflow-x-auto mb-4">
                 <table className="w-full border-collapse">
-                  <thead><tr className="bg-gray-50 border-b border-gray-200"><th className="text-left px-4 py-3 font-semibold text-gray-700">Service Type</th><th className="text-left px-4 py-3 font-semibold text-gray-700">Los Angeles Average</th></tr></thead>
+                  <thead><tr className="bg-gray-50 border-b border-gray-200"><th className="text-left px-4 py-3 font-semibold text-gray-700">Service Type</th><th className="text-left px-4 py-3 font-semibold text-gray-700">California State Average</th></tr></thead>
                   <tbody>
                     <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Direct Cremation</td><td className="px-4 py-3 text-gray-700 font-mono">{cremRange}</td></tr>
                     <tr className="border-b border-gray-100"><td className="px-4 py-3 text-gray-700">Cremation with Memorial Service</td><td className="px-4 py-3 text-gray-700 font-mono">{cremMemRange}</td></tr>
