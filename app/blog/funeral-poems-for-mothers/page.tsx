@@ -79,15 +79,15 @@ And if thou wilt, forget.</p>
               </div>
 
               <div className="bg-slate-50 rounded-lg p-6 mb-4">
-                <p className="text-sm font-semibold text-gray-500 mb-2">3. &quot;She Is Gone&quot; (Original poem written for Evermore Directory)</p>
-                <p className="text-gray-700 leading-relaxed italic whitespace-pre-line">You can shed tears that she is gone,
-or you can smile because she lived.
-You can close your eyes and pray that she will come back,
-or you can open your eyes and see all that she left.
-Your heart can be empty because you cannot see her,
-or you can be full of the joy that you shared.
-You can remember only that she is gone,
-or you can cherish her memory and let it live on.</p>
+                <p className="text-sm font-semibold text-gray-500 mb-2">3. &quot;The Recipe Card&quot; (Original poem written for Evermore Directory)</p>
+                <p className="text-gray-700 leading-relaxed italic whitespace-pre-line">I found her recipe card in the drawer,
+handwriting faded, edges soft with flour.
+Chicken soup, it said. Two cups of broth.
+One bay leaf. Salt to taste.
+She never wrote down the last ingredient,
+the one that made it hers:
+standing at the stove on a Tuesday night,
+humming something none of us could name.</p>
               </div>
 
               <div className="bg-slate-50 rounded-lg p-6 mb-4">
