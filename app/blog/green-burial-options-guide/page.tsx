@@ -13,6 +13,8 @@ export default function GreenBurialOptionsGuidePage() {
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/green-burial-options-guide"}) }} />
+
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

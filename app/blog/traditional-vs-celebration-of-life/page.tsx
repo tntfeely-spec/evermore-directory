@@ -16,6 +16,8 @@ export default function TraditionalVsCelebrationPage() {
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Traditional Funeral vs. Celebration of Life: How to Choose (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-08","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/traditional-vs-celebration-of-life"}) }} />
+
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

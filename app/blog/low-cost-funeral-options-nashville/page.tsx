@@ -55,6 +55,8 @@ export default function LowCostFuneralOptionsNashvillePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Low Cost Funeral Options in Nashville, TN: Services Under $3,000","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/low-cost-funeral-options-nashville"}) }} />
+
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

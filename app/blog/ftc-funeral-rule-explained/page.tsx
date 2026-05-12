@@ -22,6 +22,8 @@ export default function FTCFuneralRuleExplainedPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"The FTC Funeral Rule: Your Rights When Planning a Funeral","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/ftc-funeral-rule-explained"}) }} />
+
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>

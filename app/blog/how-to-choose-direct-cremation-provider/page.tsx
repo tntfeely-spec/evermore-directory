@@ -127,6 +127,8 @@ export default function HowToChooseDirectCremationProvider() {
       />
 
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"How to Choose a Direct Cremation Provider: 7 Point Checklist","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-18","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/how-to-choose-direct-cremation-provider"}) }} />
+
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">

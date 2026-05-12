@@ -127,6 +127,8 @@ export default function WhatIsACremationSociety() {
       />
 
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"What Is a Cremation Society? How They Work (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-18","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/what-is-a-cremation-society"}) }} />
+
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
