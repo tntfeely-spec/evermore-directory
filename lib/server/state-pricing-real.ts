@@ -140,6 +140,84 @@ export function getStateRanking(all: RealStatePricing[], abbr: string, type: 'cr
   return idx >= 0 ? idx + 1 : 0;
 }
 
+export interface CityPricing {
+  city: string;
+  state: string;
+  cremationLow: number;
+  cremationHigh: number;
+  burialLow: number;
+  burialHigh: number;
+  listingCount: number;
+  dataSource: 'city_supabase' | 'state_fallback';
+}
+
+export async function getCityPricing(city: string, stateAbbr: string): Promise<CityPricing | null> {
+  const stateUpper = stateAbbr.toUpperCase();
+
+  const { data } = await supabase
+    .from('funeral_homes')
+    .select('price_range_cremation, price_range_burial')
+    .eq('state', stateUpper)
+    .ilike('city', city)
+    .not('price_range_cremation', 'is', null)
+    .not('price_range_burial', 'is', null);
+
+  const cremLows: number[] = [];
+  const cremHighs: number[] = [];
+  const burLows: number[] = [];
+  const burHighs: number[] = [];
+
+  for (const row of data ?? []) {
+    const crem = extractLowHigh(row.price_range_cremation);
+    const bur = extractLowHigh(row.price_range_burial);
+    if (crem.low === null || bur.low === null) continue;
+    cremLows.push(crem.low);
+    cremHighs.push(crem.high!);
+    burLows.push(bur.low);
+    burHighs.push(bur.high!);
+  }
+
+  const avg = (arr: number[]) => Math.round(arr.reduce((a, b) => a + b, 0) / arr.length);
+
+  // If 5+ listings with pricing, use city-level data
+  if (cremLows.length >= 5) {
+    return {
+      city,
+      state: stateUpper,
+      cremationLow: avg(cremLows),
+      cremationHigh: avg(cremHighs),
+      burialLow: avg(burLows),
+      burialHigh: avg(burHighs),
+      listingCount: cremLows.length,
+      dataSource: 'city_supabase',
+    };
+  }
+
+  // Fall back to state-level
+  const stateSlug = Object.entries(stateMeta).find(([, m]) => m.abbr.toUpperCase() === stateUpper)?.[0];
+  if (!stateSlug) return null;
+  const stateData = await getRealStatePricing(stateSlug);
+  if (!stateData) return null;
+
+  // Get total listing count for the city (even without pricing)
+  const { count } = await supabase
+    .from('funeral_homes')
+    .select('*', { count: 'exact', head: true })
+    .eq('state', stateUpper)
+    .ilike('city', city);
+
+  return {
+    city,
+    state: stateUpper,
+    cremationLow: stateData.cremationLow,
+    cremationHigh: stateData.cremationHigh,
+    burialLow: stateData.burialLow,
+    burialHigh: stateData.burialHigh,
+    listingCount: count || 0,
+    dataSource: 'state_fallback',
+  };
+}
+
 export function formatCurrency(n: number): string {
   return '$' + n.toLocaleString('en-US');
 }
