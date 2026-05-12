@@ -1,15 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'About Evermore Directory | Built by a Former Firefighter and Paramedic',
-  description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic from the Chicago area. Free for families. Funeral homes across all 50 states.',
-  alternates: {
-    canonical: 'https://funeralhomedirectories.com/about',
-  },
+  title: 'About Evermore Directory | Built by a Former First Responder',
+  description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic. Free funeral home directory covering 5,100+ providers across all 50 states.',
+  alternates: { canonical: 'https://funeralhomedirectories.com/about' },
   openGraph: {
-    title: 'About Evermore Directory | Built by a Former Firefighter and Paramedic',
-    description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic from the Chicago area. Free for families. Funeral homes across all 50 states.',
+    title: 'About Evermore Directory',
+    description: 'Built by Terry Feely, a former firefighter and paramedic. Free for families. 5,100+ funeral homes across all 50 states.',
     url: 'https://funeralhomedirectories.com/about',
     siteName: 'Evermore Directory',
     type: 'website',
@@ -19,142 +18,85 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-<div className="min-h-screen relative">
-  <div className="fixed inset-0 z-0" style={{ backgroundImage: 'url(/Mountain_Lake_Image.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.35 }} />
-  <div className="relative z-10">
-        {/* Hero */}
-        <div className="bg-white border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-              Built by Someone Who Has Been There
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              The most comprehensive funeral home directory in the United States. 5,100 plus funeral homes and cremation providers across all 50 states with real pricing data and planning resources for families.
-            </p>
-          </div>
-        </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Terry Feely",
+        "jobTitle": "Founder",
+        "description": "Former firefighter and paramedic with firsthand experience helping families navigate end of life decisions",
+        "url": "https://funeralhomedirectories.com/about",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Evermore Directory",
+          "url": "https://funeralhomedirectories.com"
+        }
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Evermore Funeral Home Directory",
+        "url": "https://funeralhomedirectories.com/about",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Evermore Directory",
+          "url": "https://funeralhomedirectories.com",
+          "founder": { "@type": "Person", "name": "Terry Feely" }
+        }
+      }) }} />
+      <Navigation />
+      <main className="min-h-screen bg-white">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-10">
+            About Evermore Funeral Home Directory
+          </h1>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-
-          {/* Founding Story */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              The Story Behind Evermore
-            </h2>
-            <div className="space-y-5 text-gray-700 leading-relaxed">
-              <p className="text-lg">
-                I spent most of my career as a firefighter and paramedic in the
-                Chicago area, working out of the suburbs just outside the city.
-                I had the profound responsibility of being present with families
-                during the most difficult moments of their lives, on emergency
-                scenes, in emergency rooms, and in the quiet moments after.
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Built by a First Responder</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Terry Feely is the founder of Evermore Funeral Home Directory. He spent years as a firefighter and paramedic, where he regularly helped families in the immediate aftermath of a death. He watched families make major financial decisions in the worst moments of their lives, often with no price transparency and no time to compare options.
               </p>
               <p>
-                What I witnessed, again and again, was families facing one of
-                the most important decisions they would ever make with almost no
-                real information to guide them. Grieving and exhausted, they had
-                no way to compare services, no idea what questions to ask, and
-                no one in their corner helping them find the right fit.
+                That experience is why Evermore exists.
               </p>
               <p>
-                I built Evermore Directory because that deserves to change.
+                Families in crisis should not have to navigate a $10,000 purchase with no information. They should not have to wonder whether they are being charged fairly. They should not have to call five funeral homes to find out what a direct cremation costs. The information should already be there, organized, clear, and free.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Evermore Is</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Evermore is a free directory of 5,100 plus funeral homes and cremation providers across all 50 states. It is built for families, not funeral homes. There is no cost to search, compare, or contact any provider listed in the directory.
               </p>
               <p>
-                Evermore lists funeral homes across all 50 states, organized by
-                city so families can find and compare local providers when it
-                matters most. It is completely free for families to use.
+                The directory is funded by funeral homes who pay $99 per month for a featured listing, which is placement only, not preferential treatment. Every listing in the directory, paid or unpaid, displays the same information the same way. Families pay nothing.
               </p>
-              <div className="pt-4 border-t border-gray-100">
-                <p className="font-semibold text-gray-900">Terry Feely, Founder</p>
-                <p className="text-sm text-gray-500">Former Firefighter and Paramedic</p>
-              </div>
+              <p>
+                No popups. No pressure. Built for families.
+              </p>
             </div>
-          </div>
+          </section>
 
-          {/* How It Works */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              How Evermore Works
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-slate-700">1</span>
-                </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">Free for Families</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Search and compare funeral homes in any city across all 50 states.
-                  No account required. No cost.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-slate-700">2</span>
-                </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">Supported by the Funeral Profession</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Funeral homes can claim their free listing or upgrade to a
-                  featured placement for $99 per month. Resources and partners
-                  on the site are chosen for their relevance to families
-                  navigating end-of-life decisions.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-slate-700">3</span>
-                </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">Families First, Always</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Every decision about how this directory works starts with one
-                  question: does this serve families well? That has been the
-                  guiding principle from day one.
-                </p>
-              </div>
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                The FTC Funeral Rule requires every funeral home in the United States to provide an itemized General Price List on request. Most families do not know this. Evermore helps families compare providers, understand their rights under federal law, and make informed decisions during one of the hardest moments of their lives.
+              </p>
+              <p>
+                Funeral planning should be as transparent as comparing hotel rooms. That is the standard Evermore is built to.
+              </p>
             </div>
-          </div>
+          </section>
 
-          {/* Commitment */}
-          <div className="bg-slate-800 rounded-xl shadow-md p-10 text-white">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Our Commitment to Families
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="font-bold text-xl mb-3">Honest Information</h3>
-                <p className="text-slate-200 text-sm leading-relaxed">
-                  Listings include contact details, services offered, and price
-                  ranges so families can make informed comparisons before making
-                  any calls.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-xl mb-3">Relevant Resources Only</h3>
-                <p className="text-slate-200 text-sm leading-relaxed">
-                  Any partners or resources on this site are chosen because they
-                  are genuinely useful to families during this time. Funeral
-                  planning, grief support, estate guidance. Nothing unrelated.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-xl mb-3">Built for This Moment</h3>
-                <p className="text-slate-200 text-sm leading-relaxed">
-                  We know families using this directory are often doing so under
-                  enormous stress. Everything about how this site is designed
-                  reflects that.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* By the Numbers */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Evermore by the Numbers
-            </h2>
+          <section className="mb-12 bg-slate-50 rounded-xl p-8">
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-slate-700 mb-1">2,082+</div>
-                <div className="text-gray-600 text-sm">Cities Covered</div>
+                <div className="text-4xl font-bold text-slate-700 mb-1">5,100+</div>
+                <div className="text-gray-600 text-sm">Providers Listed</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-slate-700 mb-1">50</div>
@@ -165,65 +107,34 @@ export default function AboutPage() {
                 <div className="text-gray-600 text-sm">Cost to Families</div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* For Funeral Homes */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              For Funeral Home Owners
-            </h2>
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Questions or feedback go to <a href="mailto:listings@funeralhomedirectories.com" className="text-slate-600 hover:text-slate-800 font-semibold">listings@funeralhomedirectories.com</a>. Terry reads every message. If something on the site does not match the promise of transparency and zero pressure, write him directly and he will fix it.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-12 bg-white rounded-xl border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">For Funeral Home Owners</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Your listing is already live. Claiming it takes 2 minutes and is
-              completely free. A featured listing gives you priority placement
-              and monthly analytics showing how many families viewed your listing.
+              Your listing is already live. Claiming it takes 2 minutes and is free. A featured listing gives you priority placement for $99 per month with no contract.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="https://claim.funeralhomedirectories.com/claim"
-                className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-lg transition-colors text-center"
-              >
-                Claim Your Free Listing
-              </Link>
-              <Link
-                href="/featured-listing"
-                className="inline-block bg-slate-800 hover:bg-slate-900 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center"
-              >
+              <Link href="/featured-listing" className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center">
                 Learn About Featured Listings
               </Link>
             </div>
-          </div>
+          </section>
 
-          {/* Get in Touch */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              Get in Touch
-            </h2>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              Have a question, a correction, or want to learn more about listing
-              your funeral home? We would love to hear from you.
-            </p>
-            <a
-              href="mailto:listings@funeralhomedirectories.com"
-              className="text-slate-700 hover:text-slate-800 font-semibold text-lg"
-            >
-              listings@funeralhomedirectories.com
-            </a>
+          <div className="text-sm text-gray-500">
+            <p>Evermore Directory is owned and operated by Colbridges Digital LLC, Nashville, Tennessee.</p>
           </div>
-
-          {/* Based in Nashville */}
-          <div className="bg-white rounded-xl shadow-md p-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              Based in Nashville, Tennessee
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Evermore Directory is owned and operated by Colbridges Digital LLC,
-              Nashville, Tennessee.
-            </p>
-          </div>
-
         </div>
-      </div>
-    </div>
+      </main>
     </>
   );
 }
