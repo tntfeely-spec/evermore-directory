@@ -1,266 +1,256 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
+import { getAllRealStatePricing, formatCurrency, formatRange, getStateRanking, type RealStatePricing } from '@/lib/server/state-pricing-real';
+
+export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Direct Cremation Providers by State (2026) | Evermore Directory',
-  description: 'Find affordable direct cremation providers across all 50 states. Compare pricing, reviews, and contact info for local cremation specialists near you.',
-  alternates: {
-    canonical: 'https://funeralhomedirectories.com/direct-cremation',
-  },
+  title: 'Direct Cremation: Complete Guide and Cost by State (2026)',
+  description: 'Direct cremation costs $1,500 to $3,500 nationally. Compare real pricing across all 50 states from 5,100+ providers. Updated 2026.',
+  alternates: { canonical: 'https://funeralhomedirectories.com/direct-cremation' },
   openGraph: {
-    title: 'Direct Cremation Providers by State (2026) | Evermore Directory',
-    description: 'Find affordable direct cremation providers across all 50 states. Compare pricing, reviews, and contact info for local cremation specialists near you.',
+    title: 'Direct Cremation: Complete Guide and Cost by State (2026)',
+    description: 'Direct cremation costs $1,500 to $3,500 nationally. Compare real pricing across all 50 states.',
     url: 'https://funeralhomedirectories.com/direct-cremation',
     siteName: 'Evermore Directory',
     type: 'website',
   },
 };
 
-const stateNames: { [key: string]: string } = {
-  'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas',
-  'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware',
-  'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho',
-  'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas',
-  'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
-  'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi',
-  'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
-  'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
-  'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma',
-  'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
-  'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah',
-  'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia',
-  'WI': 'Wisconsin', 'WY': 'Wyoming', 'DC': 'District of Columbia',
+const STATE_ABBR_TO_SLUG: Record<string, string> = {
+  AL: 'al', AK: 'ak', AZ: 'az', AR: 'ar', CA: 'ca', CO: 'co', CT: 'ct', DC: 'dc', DE: 'de',
+  FL: 'fl', GA: 'ga', HI: 'hi', ID: 'id', IL: 'il', IN: 'in', IA: 'ia', KS: 'ks', KY: 'ky',
+  LA: 'la', ME: 'me', MD: 'md', MA: 'ma', MI: 'mi', MN: 'mn', MS: 'ms', MO: 'mo', MT: 'mt',
+  NE: 'ne', NV: 'nv', NH: 'nh', NJ: 'nj', NM: 'nm', NY: 'ny', NC: 'nc', ND: 'nd', OH: 'oh',
+  OK: 'ok', OR: 'or', PA: 'pa', RI: 'ri', SC: 'sc', SD: 'sd', TN: 'tn', TX: 'tx', UT: 'ut',
+  VT: 'vt', VA: 'va', WA: 'wa', WV: 'wv', WI: 'wi', WY: 'wy',
 };
 
 export default async function DirectCremationHubPage() {
-  const { data: homes } = await supabase
-    .from('funeral_homes')
-    .select('state')
-    .eq('provider_type', 'direct_cremation');
+  const allPricing = await getAllRealStatePricing();
+  const sortedByName = [...allPricing].sort((a, b) => a.name.localeCompare(b.name));
+  const cheapest5 = [...allPricing].sort((a, b) => a.cremationLow - b.cremationLow).slice(0, 5);
+  const expensive5 = [...allPricing].sort((a, b) => b.cremationLow - a.cremationLow).slice(0, 5);
+  const totalProviders = allPricing.reduce((sum, s) => sum + s.listingCount, 0);
 
-  const stateCounts: { [key: string]: number } = {};
-  homes?.forEach((home) => {
-    if (home.state) {
-      stateCounts[home.state] = (stateCounts[home.state] || 0) + 1;
-    }
-  });
-
-  const states = Object.entries(stateCounts)
-    .filter(([abbr]) => stateNames[abbr])
-    .map(([abbr, count]) => ({ abbr, name: stateNames[abbr], count }))
-    .sort((a, b) => a.name.localeCompare(b.name));
-
-  const totalProviders = homes?.length || 0;
-
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": "Direct Cremation Providers by State",
-        "description": `Find ${totalProviders} direct cremation providers across ${states.length} states.`,
-        "url": "https://funeralhomedirectories.com/direct-cremation"
-      },
-      {
-        "@type": "ItemList",
-        "name": "States with Direct Cremation Providers",
-        "numberOfItems": states.length,
-        "itemListElement": states.map((s, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "name": s.name,
-          "url": `https://funeralhomedirectories.com/direct-cremation/${s.abbr.toLowerCase()}`
-        }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
-          { "@type": "ListItem", "position": 2, "name": "Direct Cremation", "item": "https://funeralhomedirectories.com/direct-cremation" }
-        ]
-      }
-    ]
-  };
+  const faqs = [
+    { q: 'What is direct cremation?', a: "Direct cremation is the cremation of a person's remains without a formal funeral service. It includes transportation of the deceased, the cremation process, and return of the ashes. No embalming, viewing, or casket is required. It is the most affordable cremation option available." },
+    { q: 'How much does direct cremation cost?', a: `Direct cremation in the United States costs between $1,500 and $3,500 in most states. The cheapest state is ${cheapest5[0]?.name} at around ${formatCurrency(cheapest5[0]?.cremationLow || 1200)}. The most expensive is ${expensive5[0]?.name} at around ${formatCurrency(expensive5[0]?.cremationLow || 3000)}.` },
+    { q: 'What is included in direct cremation?', a: 'A standard direct cremation package includes transportation of the deceased from the place of death, a basic cremation container, the cremation process, required permits and paperwork, and return of cremated remains. It does not include embalming, a viewing, a casket, or a formal ceremony.' },
+    { q: 'Can I have a memorial service after direct cremation?', a: 'Yes. Many families choose direct cremation specifically because it gives them the flexibility to hold a memorial service, celebration of life, or scattering ceremony on their own timeline. There is no requirement to hold a memorial immediately.' },
+    { q: 'How long does direct cremation take?', a: 'The entire process from death to return of ashes typically takes 5 to 10 business days. The cremation itself takes 2 to 3 hours. Additional time is needed for transportation, mandatory waiting periods, permits, and processing.' },
+    { q: 'Is direct cremation disrespectful?', a: 'No. Direct cremation is chosen by millions of American families each year. It is a dignified option that simply skips the formal ceremony before cremation. Families are free to honor their person through a memorial, celebration of life, or private remembrance at any time afterward.' },
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "Article",
+        "headline": "Direct Cremation: Complete Guide and Cost by State (2026)",
+        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
+        "datePublished": "2026-05-12", "dateModified": "2026-05-12",
+        "url": "https://funeralhomedirectories.com/direct-cremation"
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://funeralhomedirectories.com" },
+          { "@type": "ListItem", "position": 2, "name": "Direct Cremation" }
+        ]
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+      }) }} />
       <Navigation />
 
-      <div className="min-h-screen relative">
-        <div
-          className="fixed inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/Mountain_Lake_Image.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            opacity: 0.35
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-          <nav className="mb-8 text-sm">
+      <main className="min-h-screen bg-white">
+        <div className="max-w-5xl mx-auto px-4 py-12">
+          <nav className="mb-6 text-sm">
             <Link href="/" className="text-slate-600 hover:text-slate-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">Direct Cremation</span>
           </nav>
 
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Direct Cremation Providers by State
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Direct cremation is the most affordable option for families who want cremation without a formal funeral service. Browse {totalProviders} verified direct cremation providers across {states.length} states to compare pricing and contact local specialists.
-            </p>
-          </div>
-
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Find Direct Cremation Providers in Your State
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Browse {totalProviders} direct cremation providers across {states.length} states. Each listing includes pricing, contact information, and service details so you can compare options and find affordable cremation near you.
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            Direct Cremation: Complete Guide and Cost by State (2026)
+          </h1>
+          <p className="text-sm text-gray-500 mb-10">
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-            {states.map((s) => (
-              <Link
-                key={s.abbr}
-                href={`/direct-cremation/${s.abbr.toLowerCase()}`}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-2 border-transparent hover:border-slate-400"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{s.name}</h3>
-                    <p className="text-sm text-gray-600">{s.count} cremation provider{s.count !== 1 ? 's' : ''}</p>
-                  </div>
-                  <svg className="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+          {/* AI-citable opening */}
+          <section className="mb-10">
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              Direct cremation is the cremation of a person&apos;s remains without a formal funeral service, typically including transportation, cremation, and return of the remains. National direct cremation prices range from $1,500 to $3,500 with significant variation by state. Based on real pricing from {totalProviders.toLocaleString()} plus funeral homes listed on Evermore Directory.
+            </p>
+          </section>
+
+          {/* What is direct cremation */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Is Direct Cremation?</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Direct cremation is the simplest form of cremation available. After death, the body is transported to a crematory, cremated in a basic container, and the ashes are returned to the family. There is no embalming, no viewing, no visitation, and no formal ceremony before the cremation takes place. This makes it the most affordable option for families who want cremation without the cost of a traditional funeral service.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              More than 60 percent of Americans now choose cremation, and direct cremation is the fastest growing segment. Families choose it for three reasons: cost savings (typically $4,000 to $8,000 less than a traditional funeral), simplicity (the provider handles everything), and flexibility (families can hold a memorial or celebration of life on their own schedule, weeks or months later, rather than within days of the death). As a former firefighter and paramedic, I have been with families in the hours after a death. The pressure to arrange a funeral within 48 hours adds stress to an already overwhelming situation. Direct cremation removes that pressure entirely.
+            </p>
+          </section>
+
+          {/* National pricing overview */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Direct Cremation Cost: Cheapest and Most Expensive States</h2>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h3 className="text-xl font-bold text-green-800 mb-3">5 Cheapest States</h3>
+                <div className="bg-green-50 rounded-lg overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead><tr className="border-b border-green-200"><th className="text-left px-4 py-2 font-semibold text-gray-700">State</th><th className="text-left px-4 py-2 font-semibold text-gray-700">Starting From</th></tr></thead>
+                    <tbody>
+                      {cheapest5.map((s, i) => (
+                        <tr key={s.abbr} className={i % 2 === 0 ? '' : 'bg-green-100/30'}>
+                          <td className="px-4 py-2"><Link href={`/direct-cremation/${STATE_ABBR_TO_SLUG[s.abbr] || s.abbr.toLowerCase()}`} className="text-slate-600 hover:text-slate-800 font-medium">{s.name}</Link></td>
+                          <td className="px-4 py-2 font-mono">{formatCurrency(s.cremationLow)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* What is Direct Cremation */}
-          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              What is Direct Cremation?
-            </h2>
-            <div className="prose max-w-none text-gray-600">
-              <p className="mb-4 leading-relaxed">
-                Direct cremation is a simple, affordable alternative to a traditional funeral. The body is cremated shortly after death without embalming, a viewing, or a formal ceremony beforehand. Families receive the cremated remains and can then plan a memorial service, scattering, or celebration of life on their own schedule.
-              </p>
-              <p className="mb-4 leading-relaxed">
-                The national average cost for direct cremation ranges from $1,000 to $3,500, compared to $7,000 to $12,000 for a traditional funeral with burial. This makes it the most budget-friendly option for families who want to honor their loved one without the financial burden of a full funeral.
-              </p>
-              <p className="leading-relaxed">
-                Direct cremation providers handle transportation, necessary paperwork, the cremation itself, and return of ashes. Many families choose to hold a celebration of life weeks or months later, giving them time to grieve and plan a meaningful gathering without the pressure of immediate arrangements.
-              </p>
-            </div>
-          </div>
-
-          {/* Benefits */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              Why Families Choose Direct Cremation
-            </h2>
-            <p className="text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-              More than 60% of Americans now choose cremation, and direct cremation is the fastest growing option
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Significant Cost Savings
-                </h3>
-                <p className="text-gray-600">
-                  Direct cremation typically costs $1,000 to $3,500, saving families thousands compared to traditional funeral services. No embalming, casket, or facility rental fees.
-                </p>
               </div>
-
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Flexible Memorial Planning
-                </h3>
-                <p className="text-gray-600">
-                  Without the pressure of immediate funeral arrangements, families can take time to plan a meaningful memorial, celebration of life, or scattering ceremony on their own terms.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-slate-400">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Simple, Dignified Process
-                </h3>
-                <p className="text-gray-600">
-                  Direct cremation providers handle all logistics including transportation, permits, and cremation. The process is respectful, efficient, and completed within days.
-                </p>
+              <div>
+                <h3 className="text-xl font-bold text-red-800 mb-3">5 Most Expensive States</h3>
+                <div className="bg-red-50 rounded-lg overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead><tr className="border-b border-red-200"><th className="text-left px-4 py-2 font-semibold text-gray-700">State</th><th className="text-left px-4 py-2 font-semibold text-gray-700">Starting From</th></tr></thead>
+                    <tbody>
+                      {expensive5.map((s, i) => (
+                        <tr key={s.abbr} className={i % 2 === 0 ? '' : 'bg-red-100/30'}>
+                          <td className="px-4 py-2"><Link href={`/direct-cremation/${STATE_ABBR_TO_SLUG[s.abbr] || s.abbr.toLowerCase()}`} className="text-slate-600 hover:text-slate-800 font-medium">{s.name}</Link></td>
+                          <td className="px-4 py-2 font-mono">{formatCurrency(s.cremationLow)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* Pro Tip */}
-          <div className="mb-20 bg-gradient-to-r from-amber-50 to-slate-50 border-l-4 border-amber-500 rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Pro Tip</h3>
-            <p className="text-gray-700 leading-relaxed">
-              When comparing direct cremation providers, always request an itemized price list. The FTC Funeral Rule requires all providers to give you one. Look for the &quot;direct cremation&quot; line item specifically, and ask what is included (transportation, cremation container, return of ashes, death certificates). Some providers bundle everything into one price while others charge separately for each item.
+          {/* What's included */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Direct Cremation Includes (and What It Does Not)</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-50 rounded-lg p-6">
+                <h3 className="font-bold text-gray-800 mb-3">Typically included</h3>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li>Transportation from place of death to crematory</li>
+                  <li>Basic cremation container (cardboard or pressed wood)</li>
+                  <li>The cremation process</li>
+                  <li>Required permits and death certificate filing</li>
+                  <li>Return of cremated remains in a temporary container</li>
+                  <li>1 to 2 certified death certificates (varies by provider)</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 rounded-lg p-6">
+                <h3 className="font-bold text-gray-800 mb-3">Not included</h3>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li>Embalming</li>
+                  <li>Viewing or visitation</li>
+                  <li>Casket</li>
+                  <li>Funeral ceremony or chapel use</li>
+                  <li>Flowers, programs, or obituary placement</li>
+                  <li>Decorative urn (temporary container provided)</li>
+                  <li>Additional death certificates beyond what is included</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* State-by-state browser */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Browse Direct Cremation Providers by State</h2>
+            <p className="text-gray-600 mb-6">Select your state to see direct cremation providers, pricing, and city-level comparisons.</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {sortedByName.map((s) => (
+                <Link
+                  key={s.abbr}
+                  href={`/direct-cremation/${STATE_ABBR_TO_SLUG[s.abbr] || s.abbr.toLowerCase()}`}
+                  className="bg-white rounded-lg border border-gray-200 px-3 py-2.5 text-center text-gray-700 hover:text-slate-700 hover:border-slate-400 hover:shadow-sm transition-all text-sm font-medium"
+                >
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* How to choose */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How to Choose a Direct Cremation Provider</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Start by requesting the General Price List from at least three providers in your area. Under the FTC Funeral Rule, every cremation provider must give you this document on request, free of charge. Compare the total price, not just the headline number. Some providers bundle everything into one price while others charge separately for transportation, permits, and death certificates. Make sure you know exactly what is included before signing anything.
             </p>
-          </div>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Verify that the provider is licensed in your state. Most states require cremation providers to hold a funeral establishment license. Check your state&apos;s funeral board website for license verification. Look at online reviews, but focus on patterns rather than individual complaints. Every funeral home has a few negative reviews. What matters is whether the same issues (hidden fees, poor communication, delays) appear repeatedly.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Ask about chain of custody procedures. A reputable provider will explain how they track and identify remains throughout the process. Ask about timeline expectations. Most direct cremations are completed within 5 to 10 business days from death to return of ashes. If a provider cannot give you a clear timeline, consider that a red flag.
+            </p>
+          </section>
 
-          {/* Helpful Guides */}
-          <div className="mb-20 bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Helpful Direct Cremation Guides
-            </h2>
+          {/* FTC Funeral Rule */}
+          <section className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Rights Under the FTC Funeral Rule</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              The Federal Trade Commission&apos;s Funeral Rule protects every consumer purchasing funeral or cremation services in the United States. The rule requires providers to give you an itemized General Price List, allows you to choose only the services you want (you cannot be forced to purchase a package), and prohibits providers from requiring you to purchase a casket for cremation.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              If a cremation provider refuses to give you a price list, charges you for services you did not request, or requires a casket for direct cremation, they are violating federal law. You can file a complaint with the FTC at ftc.gov/complaint. For more detail, see our guide to <Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">the FTC Funeral Rule explained</Link>.
+            </p>
+          </section>
+
+          {/* FAQ */}
+          <section className="mb-10 bg-white rounded-xl border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.q}>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.q}</h3>
+                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Related Reading */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Reading</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link
-                href="/blog/what-is-direct-cremation"
-                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">What is Direct Cremation? The Complete 2026 Guide</h3>
-                <p className="text-sm text-gray-600">Everything you need to know about direct cremation, from process to pricing.</p>
+              <Link href="/blog/what-is-direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">What Is Direct Cremation? Complete 2026 Guide</h3>
+                <p className="text-sm text-gray-600">Everything you need to know about direct cremation.</p>
               </Link>
-              <Link
-                href="/blog/direct-cremation-cost-by-state"
-                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Cost by State: 2026 Guide</h3>
-                <p className="text-sm text-gray-600">State-by-state cremation pricing with provider counts and cost comparisons.</p>
+              <Link href="/funeral-costs" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Costs by State</h3>
+                <p className="text-sm text-gray-600">Compare funeral and cremation costs across all 50 states.</p>
               </Link>
-              <Link
-                href="/blog/how-to-choose-direct-cremation-provider"
-                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-              >
+              <Link href="/blog/how-to-choose-direct-cremation-provider" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">How to Choose a Direct Cremation Provider</h3>
-                <p className="text-sm text-gray-600">The 7-point checklist for finding a trustworthy cremation provider.</p>
+                <p className="text-sm text-gray-600">7 point checklist for finding a trustworthy provider.</p>
               </Link>
-              <Link
-                href="/blog"
-                className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-lg font-semibold text-slate-600 mb-1">View All Guides</h3>
-                <p className="text-sm text-gray-600">Browse our complete library of cremation and funeral planning resources.</p>
+              <Link href="/states" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-slate-600 mb-1">Browse All Funeral Homes</h3>
+                <p className="text-sm text-gray-600">5,100+ funeral homes and cremation providers across all 50 states.</p>
               </Link>
             </div>
-          </div>
+          </section>
 
-          <div className="text-center">
-            <Link
-              href="/states"
-              className="inline-block bg-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-            >
-              Browse All States
-            </Link>
+          <div className="text-center text-sm text-gray-400">
+            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
           </div>
-
         </div>
-      </div>
+      </main>
     </>
   );
 }
