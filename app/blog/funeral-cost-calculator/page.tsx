@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
-import { supabase } from '@/lib/supabase';
 import CostCalculator, { StatePricing } from './CostCalculator';
+import { getAllRealStatePricing } from '@/lib/server/state-pricing-real';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,75 +12,17 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-cost-calculator' },
 };
 
-const STATE_NAMES: Record<string, string> = {
-  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas',
-  CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware',
-  FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho',
-  IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas',
-  KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
-  MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi',
-  MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada',
-  NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York',
-  NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma',
-  OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
-  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah',
-  VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia',
-  WI: 'Wisconsin', WY: 'Wyoming',
-};
-
-function extractLowHigh(raw: string | null): { low: number | null; high: number | null } {
-  if (!raw) return { low: null, high: null };
-  const matches = raw.match(/\$?([\d,]+)/g);
-  if (!matches) return { low: null, high: null };
-  const nums = matches.map((m) => parseInt(m.replace(/[$,]/g, ''), 10)).filter((n) => n > 0 && n < 100000);
-  if (nums.length === 0) return { low: null, high: null };
-  if (nums.length === 1) return { low: nums[0], high: nums[0] };
-  return { low: Math.min(...nums), high: Math.max(...nums) };
-}
-
 async function getStatePricing(): Promise<StatePricing[]> {
-  const { data } = await supabase
-    .from('funeral_homes')
-    .select('state, price_range_cremation, price_range_burial')
-    .not('price_range_cremation', 'is', null)
-    .not('price_range_burial', 'is', null)
-    .range(0, 10000);
-
-  const buckets = new Map<string, { cremLows: number[]; cremHighs: number[]; burLows: number[]; burHighs: number[]; count: number }>();
-
-  for (const row of data ?? []) {
-    const state = (row.state || '').toUpperCase();
-    if (!STATE_NAMES[state]) continue;
-    const crem = extractLowHigh(row.price_range_cremation);
-    const bur = extractLowHigh(row.price_range_burial);
-    if (crem.low === null || bur.low === null) continue;
-    if (!buckets.has(state)) {
-      buckets.set(state, { cremLows: [], cremHighs: [], burLows: [], burHighs: [], count: 0 });
-    }
-    const b = buckets.get(state)!;
-    b.cremLows.push(crem.low);
-    b.cremHighs.push(crem.high!);
-    b.burLows.push(bur.low);
-    b.burHighs.push(bur.high!);
-    b.count++;
-  }
-
-  const avg = (arr: number[]) => Math.round(arr.reduce((a, b) => a + b, 0) / arr.length);
-
-  const result: StatePricing[] = [];
-  for (const [abbr, b] of buckets.entries()) {
-    if (b.count === 0) continue;
-    result.push({
-      abbr,
-      name: STATE_NAMES[abbr],
-      cremationLow: avg(b.cremLows),
-      cremationHigh: avg(b.cremHighs),
-      burialLow: avg(b.burLows),
-      burialHigh: avg(b.burHighs),
-      listingCount: b.count,
-    });
-  }
-  return result;
+  const all = await getAllRealStatePricing();
+  return all.map(r => ({
+    abbr: r.abbr,
+    name: r.name,
+    cremationLow: r.cremationLow,
+    cremationHigh: r.cremationHigh,
+    burialLow: r.burialLow,
+    burialHigh: r.burialHigh,
+    listingCount: r.listingCount,
+  }));
 }
 
 const faqs = [
