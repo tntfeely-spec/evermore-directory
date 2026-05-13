@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -35,6 +36,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="color-scheme" content="light" />
+        <Script
+          id="mediavine-grow"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTpkM2Y0YzhlMi05MzQzLTQzNDUtYmY2OS01NmFhNmNlM2U2Yzk=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();`,
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com","logo":"https://funeralhomedirectories.com/logo.png","description":"The most comprehensive funeral home directory in the United States. 5,100 plus funeral homes and cremation providers across all 50 states with real pricing data and planning resources for families.","founder":{"@type":"Person","name":"Terry Feely","jobTitle":"Founder","description":"Former firefighter and paramedic"},"address":{"@type":"PostalAddress","addressLocality":"Brentwood","addressRegion":"TN","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","email":"listings@funeralhomedirectories.com","contactType":"customer service"}}) }} />
       </head>
       <body
