@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
-import InlineLeadForm from '@/components/InlineLeadForm'
 import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
 
 export const revalidate = 0
@@ -446,8 +445,6 @@ export default async function FuneralHomePage({
             dangerouslySetInnerHTML={{ __html: buildSectionsHtml(listing, services, calcId, hasPricing, cityLabel) }}
           />
 
-          {/* Inline lead capture form (visible in main content flow, especially on mobile) */}
-          <InlineLeadForm listing={listing} />
         </div>
 
         {/* Right sidebar */}
