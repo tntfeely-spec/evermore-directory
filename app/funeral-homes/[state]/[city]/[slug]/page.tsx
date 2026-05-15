@@ -652,7 +652,9 @@ function submitContact(id) {
       zip: zip ? zip.value : '',
       funeralHomeName: home ? home.value : '',
       city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
-      state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : ''
+      state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : '',
+      source: 'listing_page',
+      tags: ['listing-inquiry']
     })
   }).then(function(res) {
     if (res.ok) {

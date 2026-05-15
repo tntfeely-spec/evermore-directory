@@ -298,6 +298,8 @@ export function ContactForm({ listing }: { listing: FuneralHome }) {
           funeralHomeName: listing.business_name,
           city: listing.city,
           state: listing.state,
+          source: 'listing_page',
+          tags: ['listing-inquiry'],
         }),
       })
       if (res.ok) {
