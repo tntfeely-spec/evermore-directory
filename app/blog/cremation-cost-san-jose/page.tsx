@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Cremation Cost in San Jose: 2026 Price Guide',
   description: 'How much does cremation cost in San Jose? Compare actual cremation prices from San Jose funeral homes. Direct cremation, cremation with services, and more.',
   keywords: 'cremation san jose, cremation cost san jose, san jose cremation prices, direct cremation san jose, affordable cremation san jose',
+  alternates: { canonical: 'https://funeralhomedirectories.com/blog/cremation-cost-san-jose' },
 };
 
 export default function CremationSanJosePage() {

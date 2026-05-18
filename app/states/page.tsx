@@ -9,6 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: 'Find Funeral Homes by State - Evermore Directory',
   description: 'Browse funeral homes and cremation services across all 50 states. Find trusted funeral directors, memorial chapels, and burial services nationwide.',
+  alternates: { canonical: 'https://funeralhomedirectories.com/states' },
 };
 
 const stateNames: { [key: string]: string } = {

@@ -8,6 +8,7 @@ import HomeQuiz from '@/components/HomeQuiz';
 export const metadata: Metadata = {
   title: 'Evermore Directory - Find Funeral Homes & Cremation Services Nationwide',
   description: 'Find compassionate funeral homes and cremation services across America.',
+  alternates: { canonical: 'https://funeralhomedirectories.com' },
 };
 
 export default function HomePage() {

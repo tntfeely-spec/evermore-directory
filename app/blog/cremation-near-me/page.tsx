@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Cremation Near Me: How to Find Affordable Cremation Services',
   description: 'Find affordable cremation services near you. Compare direct cremation costs, cremation with services, and learn what to look for when choosing a cremation provider.',
   keywords: 'cremation near me, affordable cremation, cremation services, direct cremation, cremation costs, local cremation',
+  alternates: { canonical: 'https://funeralhomedirectories.com/blog/cremation-near-me' },
 };
 
 export default function CremationNearMePage() {
