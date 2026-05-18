@@ -33,6 +33,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/glossary`, lastModified: new Date('2026-05-15'), changeFrequency: 'monthly' as const, priority: 0.7 },
       ];
 
+  // Bundle C: Veterans funeral benefits pages
+  const veteransPages = [
+    'veterans-funeral-benefits',
+    'va-burial-allowance-2026',
+    'national-cemetery-eligibility',
+    'military-funeral-honors',
+    'burial-flag-how-to-request',
+    'va-headstone-application',
+  ].map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date('2026-05-18'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Bundle B: What Is X pages
   const whatIsPages = [
     'what-is-direct-cremation',
@@ -442,5 +457,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
+  return [...staticPages, ...veteransPages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
 }

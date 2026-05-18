@@ -69,7 +69,7 @@ export default function Footer() {
               <li><Link href="/what-is-direct-cremation" className="hover:text-white transition-colors">What Is Direct Cremation?</Link></li>
               <li><Link href="/what-is-the-ftc-funeral-rule" className="hover:text-white transition-colors">FTC Funeral Rule</Link></li>
               <li><Link href="/vs/burial-vs-cremation" className="hover:text-white transition-colors">Burial vs Cremation</Link></li>
-              <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
+              <li><Link href="/veterans-funeral-benefits" className="hover:text-white transition-colors">Veterans Funeral Benefits</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>

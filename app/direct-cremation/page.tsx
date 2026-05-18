@@ -88,6 +88,13 @@ export default async function DirectCremationHubPage() {
             </p>
           </section>
 
+          {/* Veteran callout */}
+          <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <p className="text-gray-700 text-sm leading-relaxed">
+              <strong className="text-gray-900">Veteran or veteran&apos;s family?</strong> You may qualify for VA burial benefits worth up to $2,000, plus a free burial flag, headstone, and military honors. VA benefits apply equally to cremation and traditional burial. Read our <Link href="/veterans-funeral-benefits" className="text-slate-600 hover:text-slate-800 font-medium">complete guide to veterans funeral benefits</Link>.
+            </p>
+          </div>
+
           {/* What is direct cremation */}
           <section className="mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Is Direct Cremation?</h2>

@@ -25,6 +25,7 @@ export default function BlogFooterLinks() {
           Guides and Comparisons
         </h2>
         <ul className="space-y-2">
+          <li><Link href="/veterans-funeral-benefits" className="text-slate-600 hover:text-slate-800 font-medium">Veterans Funeral Benefits 2026: Complete Guide &rarr;</Link></li>
           <li><Link href="/glossary" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Industry Glossary: 115 Terms Explained &rarr;</Link></li>
           <li><Link href="/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? &rarr;</Link></li>
           <li><Link href="/vs/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Complete Comparison &rarr;</Link></li>
