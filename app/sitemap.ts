@@ -350,6 +350,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'funeral-homes-denver-co',
     'funeral-homes-indianapolis-in',
     'funeral-homes-san-diego-ca',
+    'best-funeral-home',
+    'best-funeral-homes-cedar-rapids-marion-ia',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
