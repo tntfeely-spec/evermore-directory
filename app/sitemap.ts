@@ -30,7 +30,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${baseUrl}/direct-cremation`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: `${baseUrl}/glossary`, lastModified: new Date('2026-05-15'), changeFrequency: 'monthly' as const, priority: 0.7 },
       ];
+
+  // Bundle B: What Is X pages
+  const whatIsPages = [
+    'what-is-direct-cremation',
+    'what-is-the-ftc-funeral-rule',
+    'what-is-aquamation',
+    'what-is-a-green-burial',
+    'what-is-embalming',
+    'what-is-a-celebration-of-life',
+    'what-is-a-memorial-service',
+    'what-is-a-cremation-society',
+    'what-is-a-graveside-service',
+    'what-is-a-wake-vs-visitation',
+    'what-is-pre-need-planning',
+    'what-is-a-funeral-procession',
+    'what-is-interment',
+    'what-is-a-pallbearer',
+    'what-is-a-general-price-list',
+  ].map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date('2026-05-15'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Bundle B: Comparison (vs) pages
+  const vsPages = [
+    'direct-cremation-vs-traditional-funeral',
+    'burial-vs-cremation',
+    'cremation-vs-aquamation',
+    'wake-vs-visitation',
+    'memorial-service-vs-celebration-of-life',
+    'funeral-service-vs-memorial-service',
+    'cremation-society-vs-funeral-home',
+    'pre-need-vs-at-need-planning',
+    'casket-vs-coffin',
+    'green-burial-vs-traditional-burial',
+  ].map((slug) => ({
+    url: `${baseUrl}/vs/${slug}`,
+    lastModified: new Date('2026-05-15'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   const funeralCostStatePages = allStateSlugs.map((slug) => ({
     url: `${baseUrl}/funeral-costs/${slug}`,
@@ -398,5 +442,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
+  return [...staticPages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
 }

@@ -246,6 +246,49 @@ export default async function DirectCremationHubPage() {
             </div>
           </section>
 
+          {/* Related Topics */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Topics</h2>
+            <div className="grid md:grid-cols-3 gap-3">
+              <Link href="/what-is-direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">What Is Direct Cremation?</h3>
+                <p className="text-xs text-gray-500">Definition, process, and legal requirements.</p>
+              </Link>
+              <Link href="/vs/direct-cremation-vs-traditional-funeral" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">Direct Cremation vs Traditional Funeral</h3>
+                <p className="text-xs text-gray-500">Side-by-side cost and service comparison.</p>
+              </Link>
+              <Link href="/vs/burial-vs-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">Burial vs Cremation</h3>
+                <p className="text-xs text-gray-500">Complete comparison of cost and process.</p>
+              </Link>
+              <Link href="/what-is-aquamation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">What Is Aquamation?</h3>
+                <p className="text-xs text-gray-500">Water-based cremation alternative explained.</p>
+              </Link>
+              <Link href="/what-is-the-ftc-funeral-rule" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">What Is the FTC Funeral Rule?</h3>
+                <p className="text-xs text-gray-500">Your rights when purchasing funeral services.</p>
+              </Link>
+              <Link href="/glossary" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">Funeral Industry Glossary</h3>
+                <p className="text-xs text-gray-500">115 terms explained in plain language.</p>
+              </Link>
+              <Link href="/vs/cremation-vs-aquamation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">Cremation vs Aquamation</h3>
+                <p className="text-xs text-gray-500">Environmental and cost comparison.</p>
+              </Link>
+              <Link href="/what-is-a-general-price-list" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">What Is a General Price List?</h3>
+                <p className="text-xs text-gray-500">The document every funeral home must provide.</p>
+              </Link>
+              <Link href="/what-is-pre-need-planning" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-slate-600 mb-1">What Is Pre-Need Planning?</h3>
+                <p className="text-xs text-gray-500">How to plan and save before you need to.</p>
+              </Link>
+            </div>
+          </section>
+
           <div className="text-center text-sm text-gray-400">
             <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
           </div>

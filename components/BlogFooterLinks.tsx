@@ -22,6 +22,20 @@ export default function BlogFooterLinks() {
 
       <section className="mb-10 bg-white border border-gray-200 rounded-lg p-6">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          Guides and Comparisons
+        </h2>
+        <ul className="space-y-2">
+          <li><Link href="/glossary" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Industry Glossary: 115 Terms Explained &rarr;</Link></li>
+          <li><Link href="/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? &rarr;</Link></li>
+          <li><Link href="/vs/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Complete Comparison &rarr;</Link></li>
+          <li><Link href="/vs/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral &rarr;</Link></li>
+          <li><Link href="/what-is-the-ftc-funeral-rule" className="text-slate-600 hover:text-slate-800 font-medium">What Is the FTC Funeral Rule? &rarr;</Link></li>
+          <li><Link href="/what-is-a-general-price-list" className="text-slate-600 hover:text-slate-800 font-medium">What Is a General Price List? &rarr;</Link></li>
+        </ul>
+      </section>
+
+      <section className="mb-10 bg-white border border-gray-200 rounded-lg p-6">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           Explore the Directory
         </h2>
         <ul className="space-y-2">

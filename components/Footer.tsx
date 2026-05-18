@@ -63,10 +63,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
+              <li><Link href="/glossary" className="hover:text-white transition-colors">Funeral Glossary</Link></li>
+              <li><Link href="/direct-cremation" className="hover:text-white transition-colors">Direct Cremation Guide</Link></li>
               <li><Link href="/funeral-costs" className="hover:text-white transition-colors">Funeral Costs by State</Link></li>
+              <li><Link href="/what-is-direct-cremation" className="hover:text-white transition-colors">What Is Direct Cremation?</Link></li>
+              <li><Link href="/what-is-the-ftc-funeral-rule" className="hover:text-white transition-colors">FTC Funeral Rule</Link></li>
+              <li><Link href="/vs/burial-vs-cremation" className="hover:text-white transition-colors">Burial vs Cremation</Link></li>
               <li><Link href="/veteran-burial-benefits" className="hover:text-white transition-colors">Veteran Burial Benefits</Link></li>
-              <li><Link href="/obituary-maker" className="hover:text-white transition-colors">Free AI Obituary Maker</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
