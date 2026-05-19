@@ -48,6 +48,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Bundle C Phase 2: 50 state veterans pages
+  const veteransStateSlugs = [
+    'alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado',
+    'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho',
+    'illinois', 'indiana', 'iowa', 'kansas', 'kentucky', 'louisiana',
+    'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi',
+    'missouri', 'montana', 'nebraska', 'nevada', 'new-hampshire', 'new-jersey',
+    'new-mexico', 'new-york', 'north-carolina', 'north-dakota', 'ohio', 'oklahoma',
+    'oregon', 'pennsylvania', 'rhode-island', 'south-carolina', 'south-dakota',
+    'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington',
+    'west-virginia', 'wisconsin', 'wyoming',
+  ];
+  const veteransStatePages = veteransStateSlugs.map((slug) => ({
+    url: `${baseUrl}/veterans-funeral-benefits/${slug}`,
+    lastModified: new Date('2026-05-19'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Bundle B: What Is X pages
   const whatIsPages = [
     'what-is-direct-cremation',
@@ -459,5 +478,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...veteransPages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
+  return [...staticPages, ...veteransPages, ...veteransStatePages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
 }
