@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         destination: '/funeral-homes/:state/:city',
         permanent: true,
       },
+      {
+        source: '/veteran-burial-benefits',
+        destination: '/veterans-funeral-benefits',
+        permanent: true,
+      },
     ];
   },
 

@@ -90,7 +90,7 @@ export default function MilitaryFuneralHonorsPage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/veteran-burial-benefits" className="text-slate-600 hover:text-slate-800 font-medium">Veteran Burial Benefits</Link></li>
+                <li><Link href="/veterans-funeral-benefits" className="text-slate-600 hover:text-slate-800 font-medium">Veterans Funeral Benefits 2026</Link></li>
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: Step-by-Step Guide</Link></li>
               </ul>
             </section>

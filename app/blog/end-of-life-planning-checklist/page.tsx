@@ -111,7 +111,7 @@ export default function EndOfLifePlanningChecklistPage() {
               <ul className="space-y-2">
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: Step-by-Step</Link></li>
                 <li><Link href="/blog/pre-planning-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Pre-Planning a Funeral: Why It Matters</Link></li>
-                <li><Link href="/veteran-burial-benefits" className="text-slate-600 hover:text-slate-800 font-medium">Veteran Burial Benefits</Link></li>
+                <li><Link href="/veterans-funeral-benefits" className="text-slate-600 hover:text-slate-800 font-medium">Veterans Funeral Benefits 2026</Link></li>
               </ul>
             </section>
 

@@ -92,7 +92,7 @@ export default function VeteranHeadstonesAndMarkersPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li><Link href="/veteran-burial-benefits" className="text-blue-600 hover:underline">Veteran Burial Benefits: What Every Family Should Know</Link></li>
+                <li><Link href="/veterans-funeral-benefits" className="text-blue-600 hover:underline">Veterans Funeral Benefits: Complete 2026 Guide</Link></li>
                 <li><Link href="/blog/military-funeral-honors" className="text-blue-600 hover:underline">Military Funeral Honors: What to Expect</Link></li>
               </ul>
             </section>

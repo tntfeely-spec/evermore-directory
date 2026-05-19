@@ -240,7 +240,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
   {
     name: 'Veterans and Military',
     posts: [
-      { slug: '/veteran-burial-benefits', title: 'Veteran Burial Benefits and Military Funeral Assistance', description: 'VA burial allowances, national cemetery eligibility, military funeral honors, and how to apply.' },
+      { slug: '/veterans-funeral-benefits', title: 'Veterans Funeral Benefits 2026: Complete Guide', description: 'VA burial allowances, national cemetery eligibility, military funeral honors, and how to apply. Updated with 2026 amounts.' },
       { slug: 'military-funeral-honors', title: 'Military Funeral Honors: What Veterans Are Entitled To', description: 'Flag ceremony, Taps, eligibility, and how to request honors for a veteran.' },
       { slug: 'veteran-headstones-and-markers', title: 'Veteran Headstones and Markers: How to Apply for a Free Gravemarker', description: 'What the VA provides, who is eligible, and how to apply.' },
       { slug: 'national-cemetery-guide', title: 'National Cemetery Burial: How to Bury a Veteran for Free', description: 'Who qualifies, how to apply, and what is provided at no cost.' },
