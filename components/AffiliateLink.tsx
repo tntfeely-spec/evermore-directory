@@ -5,9 +5,11 @@ interface AffiliateLinkProps {
   children: React.ReactNode;
   placeholder?: boolean;
   className?: string;
+  retailer?: string;
+  product?: string;
 }
 
-export default function AffiliateLink({ href, children, placeholder = false, className = '' }: AffiliateLinkProps) {
+export default function AffiliateLink({ href, children, placeholder = false, className = '', retailer, product }: AffiliateLinkProps) {
   if (placeholder) {
     const isProduction = process.env.NODE_ENV === 'production';
 
@@ -33,6 +35,8 @@ export default function AffiliateLink({ href, children, placeholder = false, cla
       target="_blank"
       rel="noopener noreferrer sponsored"
       className={className || 'text-slate-600 hover:text-slate-800 font-medium underline'}
+      data-retailer={retailer}
+      data-product={product}
     >
       {children}
     </a>
