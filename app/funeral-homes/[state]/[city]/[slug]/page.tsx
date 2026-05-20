@@ -107,11 +107,16 @@ async function getListing(
   cityParam: string,
   slugParam: string
 ): Promise<FuneralHome | null> {
+  // Try multiple city name formats to handle DB variations
+  const citySpaces = cityParam ? cityParam.replace(/-/g, ' ') : ''
+  const cityHyphenated = cityParam ? cityParam.replace(/\b\w/g, (l: string) => l.toUpperCase()) : ''
+  // Handle abbreviations with periods: St -> St., Ft -> Ft., Mt -> Mt.
+  const cityWithDots = citySpaces.replace(/\bst\b/gi, 'St.').replace(/\bft\b/gi, 'Ft.').replace(/\bmt\b/gi, 'Mt.')
   const { data, error } = await supabase
     .from('funeral_homes')
     .select('*')
     .ilike('state', stateParam)
-    .ilike('city', cityParam ? cityParam.replace(/-/g, ' ') : '')
+    .or(`city.ilike.${citySpaces},city.ilike.${cityHyphenated},city.ilike.${cityWithDots}`)
 
   if (error || !data) return null
 

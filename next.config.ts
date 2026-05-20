@@ -16,6 +16,21 @@ const nextConfig: NextConfig = {
         destination: '/veterans-funeral-benefits',
         permanent: true,
       },
+      {
+        source: '/blog/memorial-service-ideas-no-body',
+        destination: '/blog/memorial-service-ideas',
+        permanent: true,
+      },
+      {
+        source: '/blog/what-happens-during-cremation',
+        destination: '/blog/what-happens-to-the-body-during-cremation',
+        permanent: true,
+      },
+      {
+        source: '/resources',
+        destination: '/blog',
+        permanent: true,
+      },
     ];
   },
 

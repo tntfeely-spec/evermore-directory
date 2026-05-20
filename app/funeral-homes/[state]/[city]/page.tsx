@@ -57,13 +57,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   // Get funeral home count for dynamic meta tags
-  // Try spaces version first (e.g. "Sedro Woolley"), then hyphenated (e.g. "Sedro-Woolley")
+  // Try spaces, hyphenated, and dot-abbreviated versions
   const cityNameHyphenated = city.replace(/\b\w/g, (l: string) => l.toUpperCase());
+  const cityWithDotsM = cityName.replace(/\bSt\b/g, 'St.').replace(/\bFt\b/g, 'Ft.').replace(/\bMt\b/g, 'Mt.');
   const { count } = await supabase
     .from('funeral_homes')
     .select('*', { count: 'exact', head: true })
     .eq('state', state.toUpperCase())
-    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated}`);
+    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated},city.ilike.${cityWithDotsM}`);
 
   const homeCount = count || 0;
   const currentYear = new Date().getFullYear();
@@ -101,13 +102,14 @@ export default async function CityPage({ params }: PageProps) {
     notFound();
   }
 
-  // Try spaces version first (e.g. "Sedro Woolley"), then hyphenated (e.g. "Sedro-Woolley")
+  // Try spaces, hyphenated, and dot-abbreviated versions (St. Louis, Ft. Worth, Mt. Zion)
   const cityNameHyphenated2 = city.replace(/\b\w/g, (l: string) => l.toUpperCase());
+  const cityWithDots = cityName.replace(/\bSt\b/g, 'St.').replace(/\bFt\b/g, 'Ft.').replace(/\bMt\b/g, 'Mt.');
   const { data: funeralHomes, error } = await supabase
     .from('funeral_homes')
     .select('*')
     .eq('state', state.toUpperCase())
-    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated2}`)
+    .or(`city.ilike.${cityName},city.ilike.${cityNameHyphenated2},city.ilike.${cityWithDots}`)
     .order('is_featured', { ascending: false })
     .order('business_name');
 
