@@ -2,7 +2,8 @@
 
 | # | Slug | KD | TP | Research Done | Draft Built | Affiliates Filled | Live URL | Status |
 |---|------|----|----|---------------|-------------|-------------------|----------|--------|
-| 1 | best-prepaid-funeral-plans | - | - | No | No | No | - | Queued |
+| 1 | best-memorial-wind-chimes | 0 | 2.7K | Yes | Yes | No | - | Draft built, needs affiliate URLs |
+| 2 | best-prepaid-funeral-plans | - | - | No | No | No | - | Queued |
 | 2 | funeral-insurance-guide | - | - | No | No | No | - | Queued |
 | 3 | cremation-jewelry | - | - | No | No | No | - | Queued |
 | 4 | urns-guide | - | - | No | No | No | - | Queued |
