@@ -2,7 +2,7 @@
 
 | # | Slug | KD | TP | Research Done | Draft Built | Affiliates Filled | Live URL | Status |
 |---|------|----|----|---------------|-------------|-------------------|----------|--------|
-| 1 | best-memorial-wind-chimes | 0 | 2.7K | Yes | Yes | No | - | Draft built, needs affiliate URLs |
+| 1 | best-memorial-wind-chimes | 0 | 2.7K | Yes | Yes | Yes | https://funeralhomedirectories.com/blog/best-memorial-wind-chimes | LIVE, Amazon tag evermorefuner-20 active |
 | 2 | best-prepaid-funeral-plans | - | - | No | No | No | - | Queued |
 | 2 | funeral-insurance-guide | - | - | No | No | No | - | Queued |
 | 3 | cremation-jewelry | - | - | No | No | No | - | Queued |

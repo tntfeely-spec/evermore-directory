@@ -370,6 +370,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'funeral-homes-san-diego-ca',
     'best-funeral-home',
     'best-funeral-homes-cedar-rapids-marion-ia',
+    'best-memorial-wind-chimes',
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
