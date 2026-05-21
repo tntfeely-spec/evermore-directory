@@ -34,7 +34,7 @@ const faqs = [
 
 const quickPicks = [
   { bestFor: 'Best overall', product: 'Woodstock Amazing Grace Large Bronze', price: '$91.95', retailer: 'chimes.com', productSlug: 'woodstock-amazing-grace-large-bronze', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/aglbr' },
-  { bestFor: 'Best budget under $40', product: 'Mooncraftlogy Tree of Life 39"', price: '$29-$39', retailer: 'amazon', productSlug: 'mooncraftlogy-tree-of-life-39', cta: 'Check on Amazon', href: 'https://www.amazon.com/dp/B09QX8M6MX' },
+  { bestFor: 'Best budget under $40', product: 'Mooncraftlogy Tree of Life 39"', price: '$29-$39', retailer: 'amazon', productSlug: 'mooncraftlogy-tree-of-life-39', cta: 'Check on Amazon', href: 'https://www.amazon.com/dp/B09QX8M6MX?tag=evermorefuner-20' },
   { bestFor: 'Best personalized', product: 'Wind River In Loving Memory 30" Bronze', price: '$111.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-in-loving-memory-30-bronze', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/in-loving-memory%C2%AE-bronze-30-inch-windchime' },
   { bestFor: 'Best for loss of mother', product: 'Woodstock Personalize It! Cardinal', price: '$64.99', retailer: 'chimes.com', productSlug: 'woodstock-personalize-it-cardinal', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/p-agms22' },
   { bestFor: 'Best for loss of father', product: 'Wind River "I Hear You in the Wind" 27"', price: '$105.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-i-hear-you-in-the-wind-27', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/i-hear-you-in-the-wind-27-inch-wind-chime' },
@@ -212,7 +212,7 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Sound quality is adequate for the price. You will not get the sustained resonance of a $100 hand-tuned chime, but the tone is pleasant and avoids the harsh metallic clang common in the cheapest Amazon options. Best for budget-conscious sympathy gifts and general loss situations.
                 </p>
-                <AffiliateLink href="https://www.amazon.com/dp/B09QX8M6MX" retailer="amazon" product="mooncraftlogy-tree-of-life-39" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                <AffiliateLink href="https://www.amazon.com/dp/B09QX8M6MX?tag=evermorefuner-20" retailer="amazon" product="mooncraftlogy-tree-of-life-39" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
                   Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
@@ -234,7 +234,7 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   If weather resistance is your priority and you are shopping under $40, the anodized finish makes this a better long-term outdoor choice than non-anodized competitors at the same price.
                 </p>
-                <AffiliateLink href="https://www.amazon.com/dp/B0BG332PSD" retailer="amazon" product="ambobe-tree-of-life-32-rose-gold" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                <AffiliateLink href="https://www.amazon.com/dp/B0BG332PSD?tag=evermorefuner-20" retailer="amazon" product="ambobe-tree-of-life-32-rose-gold" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
                   Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
@@ -253,7 +253,7 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   The main advantage over the Mooncraftlogy and AMBOBE is options. Fabuday offers multiple sail designs and sizes, so you can choose the imagery that best fits the recipient. The gift box and included sympathy card make it ready to give. Sound quality is comparable to other aluminum chimes in this range.
                 </p>
-                <AffiliateLink href="https://www.amazon.com/stores/Fabuday/page/17FD2D67-DEA1-422B-9E9C-1BF20F1F82B4" retailer="amazon" product="fabuday-sympathy-wind-chimes" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                <AffiliateLink href="https://www.amazon.com/stores/Fabuday/page/17FD2D67-DEA1-422B-9E9C-1BF20F1F82B4?tag=evermorefuner-20" retailer="amazon" product="fabuday-sympathy-wind-chimes" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
                   Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
