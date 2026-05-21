@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import AffiliateLink from '@/components/AffiliateLink';
 
@@ -107,6 +106,42 @@ export default function BestMemorialWindChimesPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 The 15 Best Memorial Wind Chimes of 2026
               </h1>
+
+              <svg viewBox="0 0 800 300" className="w-full rounded-lg mb-6" aria-label="Memorial wind chime illustration" role="img">
+                <defs>
+                  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#FEF3C7" />
+                    <stop offset="100%" stopColor="#FDBA74" />
+                  </linearGradient>
+                </defs>
+                <rect width="800" height="300" fill="url(#sky)" />
+                {/* Horizon line */}
+                <ellipse cx="400" cy="290" rx="500" ry="40" fill="#F59E0B" opacity="0.2" />
+                {/* Hook and crossbar */}
+                <line x1="400" y1="30" x2="400" y2="60" stroke="#78350F" strokeWidth="3" />
+                <line x1="360" y1="60" x2="440" y2="60" stroke="#78350F" strokeWidth="4" strokeLinecap="round" />
+                {/* Tubes */}
+                <rect x="365" y="65" width="8" height="100" rx="4" fill="#92400E" />
+                <rect x="380" y="65" width="8" height="120" rx="4" fill="#92400E" />
+                <rect x="396" y="65" width="8" height="130" rx="4" fill="#92400E" />
+                <rect x="412" y="65" width="8" height="115" rx="4" fill="#92400E" />
+                <rect x="427" y="65" width="8" height="95" rx="4" fill="#92400E" />
+                {/* Wind sail */}
+                <path d="M390 210 L400 200 L410 210 L405 240 L395 240 Z" fill="#78350F" />
+                {/* Strings */}
+                <line x1="369" y1="60" x2="369" y2="65" stroke="#78350F" strokeWidth="1" />
+                <line x1="384" y1="60" x2="384" y2="65" stroke="#78350F" strokeWidth="1" />
+                <line x1="400" y1="60" x2="400" y2="65" stroke="#78350F" strokeWidth="1" />
+                <line x1="416" y1="60" x2="416" y2="65" stroke="#78350F" strokeWidth="1" />
+                <line x1="431" y1="60" x2="431" y2="65" stroke="#78350F" strokeWidth="1" />
+                <line x1="400" y1="60" x2="400" y2="200" stroke="#78350F" strokeWidth="1" />
+                {/* Sound waves */}
+                <circle cx="350" cy="130" r="15" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.3" />
+                <circle cx="350" cy="130" r="25" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.2" />
+                <circle cx="450" cy="120" r="15" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.3" />
+                <circle cx="450" cy="120" r="25" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.2" />
+              </svg>
+
               <p className="text-sm text-gray-500 mb-3">
                 By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
               </p>
@@ -115,22 +150,10 @@ export default function BestMemorialWindChimesPage() {
               </p>
             </header>
 
-            <Image
-              src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc"
-              alt="Memorial wind chime in a sunlit garden"
-              width={900}
-              height={500}
-              className="rounded-lg mb-8 w-full object-cover"
-              priority
-            />
-
             {/* Section 1: Hero Intro */}
             <section className="mb-10" id="intro">
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                In twenty-plus years as a paramedic, I sat with hundreds of families during the worst hours of their lives. I saw what happened in the weeks and months afterward, too. The sympathy cards slowed down. The casseroles stopped arriving. The flowers on the kitchen counter dried out and got thrown away. But one thing stayed. In household after household, it was the wind chime on the back porch that someone gave them in the first week. It rang every time the breeze picked up, and for that moment, the person they lost felt present again.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                A memorial wind chime is not a grand gesture. It does not fix grief. But it is one of the few sympathy gifts that families tell me, years later, still brings them comfort. The sound becomes a small daily ritual of remembrance without requiring any effort from the grieving person.
+                As a former firefighter and paramedic, I was there in the worst moments. The wrecks. The 3 AM calls. The wellness checks that turned into something else. I don&apos;t pretend to have followed families through the months that came after. But I learned this: support arrives fast in those first days, and it leaves faster. Cards stop coming. Casseroles run out. What remains in a grieving home are the small things that keep showing up, day after day, without being asked. A wind chime ringing on a quiet afternoon is one of those things.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
                 This guide reviews 15 memorial wind chimes across four price tiers, from $25 budget picks to $190 premium pieces. Every price was verified in May 2026. I cover sound quality, materials, engraving options, and which chime fits which situation, so you can make a confident choice without overpaying.
