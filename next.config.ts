@@ -36,6 +36,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/condolence-text-message',
         permanent: true,
       },
+      {
+        source: '/privacy-policy',
+        destination: '/privacy',
+        permanent: true,
+      },
     ];
   },
 

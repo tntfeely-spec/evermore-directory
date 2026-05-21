@@ -105,6 +105,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href="/affiliate-disclosure" className="hover:text-white transition-colors">Affiliate Disclosure</Link></li>
             </ul>
             <div className="mt-6">
               <p className="text-xs text-gray-500">For funeral home inquiries:</p>
@@ -119,9 +120,14 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
-          <p>© 2026 Evermore Directory. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">Built for families. Free to use.</p>
+        <div className="border-t border-gray-800 mt-10 pt-6">
+          <p className="text-xs text-gray-500 mb-4">
+            Evermore Directory is a participant in the Amazon Services LLC Associates Program and other affiliate programs. As an Amazon Associate, we earn from qualifying purchases. See our <Link href="/affiliate-disclosure" className="underline hover:text-gray-300">Affiliate Disclosure</Link>.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2026 Evermore Directory. All rights reserved.</p>
+            <p className="mt-2 sm:mt-0">Built for families. Free to use.</p>
+          </div>
         </div>
       </div>
     </footer>
