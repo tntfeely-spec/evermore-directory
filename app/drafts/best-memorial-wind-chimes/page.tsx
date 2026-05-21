@@ -33,16 +33,16 @@ const faqs = [
 ];
 
 const quickPicks = [
-  { bestFor: 'Best overall', product: 'Woodstock Amazing Grace Large Bronze', price: '$91.95', retailer: 'amazon', productSlug: 'woodstock-amazing-grace-large-bronze', cta: 'Check on Amazon' },
-  { bestFor: 'Best budget under $40', product: 'Mooncraftlogy Tree of Life 39"', price: '$29-$39', retailer: 'amazon', productSlug: 'mooncraftlogy-tree-of-life-39', cta: 'Check on Amazon' },
-  { bestFor: 'Best personalized', product: 'Wind River In Loving Memory 30" Bronze', price: '$111.00', retailer: 'amazon', productSlug: 'wind-river-in-loving-memory-30-bronze', cta: 'Check on Amazon' },
-  { bestFor: 'Best for loss of mother', product: 'Woodstock Personalize It! Cardinal', price: '$64.99', retailer: 'amazon', productSlug: 'woodstock-personalize-it-cardinal', cta: 'Check on Amazon' },
-  { bestFor: 'Best for loss of father', product: 'Wind River "I Hear You in the Wind" 27"', price: '$105.00', retailer: 'amazon', productSlug: 'wind-river-i-hear-you-in-the-wind-27', cta: 'Check on Amazon' },
-  { bestFor: 'Best Christian / faith-based', product: 'Wind River Psalm 23 Memorial Chime', price: '$105.00', retailer: 'amazon', productSlug: 'wind-river-psalm-23-memorial-chime', cta: 'Check on Amazon' },
-  { bestFor: 'Best for large garden', product: 'Wind River In Loving Memory 42" XL Bronze', price: '$160.00', retailer: 'amazon', productSlug: 'wind-river-in-loving-memory-42-xl-bronze', cta: 'Check on Amazon' },
-  { bestFor: 'Best small / indoor', product: 'Woodstock Amazing Grace Small Bronze', price: '$35.95', retailer: 'amazon', productSlug: 'woodstock-amazing-grace-small-bronze', cta: 'Check on Amazon' },
-  { bestFor: 'Best premium luxury', product: 'Woodstock Amazing Grace Heavenly XL', price: '$190.00', retailer: 'amazon', productSlug: 'woodstock-amazing-grace-heavenly-xl', cta: 'Check on Amazon' },
-  { bestFor: 'Best Etsy handmade', product: 'Browse personalized memorial chimes on Etsy', price: 'from $30', retailer: 'etsy', productSlug: 'etsy-memorial-wind-chimes', cta: 'Browse on Etsy' },
+  { bestFor: 'Best overall', product: 'Woodstock Amazing Grace Large Bronze', price: '$91.95', retailer: 'chimes.com', productSlug: 'woodstock-amazing-grace-large-bronze', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/aglbr' },
+  { bestFor: 'Best budget under $40', product: 'Mooncraftlogy Tree of Life 39"', price: '$29-$39', retailer: 'amazon', productSlug: 'mooncraftlogy-tree-of-life-39', cta: 'Check on Amazon', href: 'https://www.amazon.com/dp/B09QX8M6MX' },
+  { bestFor: 'Best personalized', product: 'Wind River In Loving Memory 30" Bronze', price: '$111.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-in-loving-memory-30-bronze', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/in-loving-memory%C2%AE-bronze-30-inch-windchime' },
+  { bestFor: 'Best for loss of mother', product: 'Woodstock Personalize It! Cardinal', price: '$64.99', retailer: 'chimes.com', productSlug: 'woodstock-personalize-it-cardinal', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/p-agms22' },
+  { bestFor: 'Best for loss of father', product: 'Wind River "I Hear You in the Wind" 27"', price: '$105.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-i-hear-you-in-the-wind-27', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/i-hear-you-in-the-wind-27-inch-wind-chime' },
+  { bestFor: 'Best Christian / faith-based', product: 'Wind River Psalm 23 Memorial Chime', price: '$105.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-psalm-23-memorial-chime', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/psalm-23-wind-chime-27-inch' },
+  { bestFor: 'Best for large garden', product: 'Wind River In Loving Memory 42" XL Bronze', price: '$160.00', retailer: 'windriverchimes.com', productSlug: 'wind-river-in-loving-memory-42-xl-bronze', cta: 'Check Price at Wind River', href: 'https://windriverchimes.com/products/in-loving-memory%C2%AE-bronze-42-inch-windchime' },
+  { bestFor: 'Best small / indoor', product: 'Woodstock Amazing Grace Small Bronze', price: '$35.95', retailer: 'chimes.com', productSlug: 'woodstock-amazing-grace-small-bronze', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/agsbr' },
+  { bestFor: 'Best premium luxury', product: 'Woodstock Amazing Grace Heavenly XL', price: '$190.00', retailer: 'chimes.com', productSlug: 'woodstock-amazing-grace-heavenly-xl', cta: 'Check Price at Woodstock', href: 'https://chimes.com/collections/memorial-wind-chimes-shop-all/products/agxls' },
+  { bestFor: 'Best Etsy handmade', product: 'Browse personalized memorial chimes on Etsy', price: 'from $30', retailer: 'etsy', productSlug: 'etsy-memorial-wind-chimes', cta: 'Browse on Etsy', href: 'https://www.etsy.com/search?q=personalized+memorial+wind+chime' },
 ];
 
 export default function BestMemorialWindChimesPage() {
@@ -177,8 +177,8 @@ export default function BestMemorialWindChimesPage() {
                         <td className="px-4 py-3">{p.product}</td>
                         <td className="px-4 py-3">{p.price}</td>
                         <td className="px-4 py-3">
-                          <AffiliateLink href="#" placeholder={true} retailer={p.retailer} product={p.productSlug}>
-                            {p.cta} &rarr;
+                          <AffiliateLink href={p.href} retailer={p.retailer} product={p.productSlug}>
+                            {p.cta}
                           </AffiliateLink>
                         </td>
                       </tr>
@@ -212,8 +212,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Sound quality is adequate for the price. You will not get the sustained resonance of a $100 hand-tuned chime, but the tone is pleasant and avoids the harsh metallic clang common in the cheapest Amazon options. Best for budget-conscious sympathy gifts and general loss situations.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="mooncraftlogy-tree-of-life-39" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://www.amazon.com/dp/B09QX8M6MX" retailer="amazon" product="mooncraftlogy-tree-of-life-39" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
 
@@ -234,8 +234,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   If weather resistance is your priority and you are shopping under $40, the anodized finish makes this a better long-term outdoor choice than non-anodized competitors at the same price.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="ambobe-tree-of-life-32-rose-gold" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://www.amazon.com/dp/B0BG332PSD" retailer="amazon" product="ambobe-tree-of-life-32-rose-gold" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
 
@@ -253,8 +253,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   The main advantage over the Mooncraftlogy and AMBOBE is options. Fabuday offers multiple sail designs and sizes, so you can choose the imagery that best fits the recipient. The gift box and included sympathy card make it ready to give. Sound quality is comparable to other aluminum chimes in this range.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="fabuday-sympathy-wind-chimes" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://www.amazon.com/stores/Fabuday/page/17FD2D67-DEA1-422B-9E9C-1BF20F1F82B4" retailer="amazon" product="fabuday-sympathy-wind-chimes" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check on Amazon &rarr;
                 </AffiliateLink>
               </div>
 
@@ -275,8 +275,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   At 18 inches, this is the smallest Amazing Grace option. It works well on a covered porch, near a window, or even indoors with a ceiling fan providing the breeze. The bronze finish is cosmetic (the tubes are aluminum), but the tone quality is noticeably better than the budget tier. If you want the Amazing Grace experience but have a small space or a modest budget, start here.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-amazing-grace-small-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/agsbr" retailer="chimes.com" product="woodstock-amazing-grace-small-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -294,8 +294,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   It is a good mid-size option for a medium garden or patio. The tone sits between the lightness of the Small Amazing Grace and the depth of the Large. If you want something purpose-built for comfort rather than a general chime with a memorial label, this is the one.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-chimes-of-comfort-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/wcoc" retailer="chimes.com" product="woodstock-chimes-of-comfort-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -313,8 +313,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   At 22 inches, it works well in smaller outdoor spaces. The silver finish is clean and neutral. A thoughtful choice when you know the family connects with Irish cultural traditions.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-irish-blessing-22-silver" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/wrib" retailer="chimes.com" product="woodstock-irish-blessing-22-silver" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -332,8 +332,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   The engravable sail allows a name, dates, and a short phrase. Allow 5 to 7 extra business days for engraved orders. This is our top pick for loss of a mother, where the combination of personalization and the cardinal motif tends to resonate most strongly.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-personalize-it-cardinal" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/p-agms22" retailer="chimes.com" product="woodstock-personalize-it-cardinal" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -351,8 +351,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   It is the right size for a standard backyard or garden without being so large that it overwhelms a smaller space. If you are choosing one chime and want the safest, most universally appreciated option, this is it. The Amazing Grace melody is immediately recognizable, and the bronze finish ages well outdoors.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-amazing-grace-large-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/aglbr" retailer="chimes.com" product="woodstock-amazing-grace-large-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -370,8 +370,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Best for deeply Christian families and sale-conscious shoppers who want a recognized brand at a budget-tier price. Check the current price, as the sale may not last.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-lords-prayer" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/wrlp" retailer="chimes.com" product="woodstock-lords-prayer" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -392,8 +392,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   The redwood sail comes with Psalm 23 pre-engraved on the front, and you can add a personal inscription on the back: 4 lines, 35 characters per line. That is enough for a name, dates, and a brief message. Best for Christian families who want a premium, heirloom-quality memorial that will last decades outdoors.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="wind-river-psalm-23-memorial-chime" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://windriverchimes.com/products/psalm-23-wind-chime-27-inch" retailer="windriverchimes.com" product="wind-river-psalm-23-memorial-chime" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Wind River &rarr;
                 </AffiliateLink>
               </div>
 
@@ -411,8 +411,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   The optional back engraving gives you personalization without requiring it. You can give it as-is (the pre-printed sentiment is complete on its own) or add a name and dates for a more personal touch. Best for premium gifts when the recipient&apos;s faith is unknown or deliberately secular memorials.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="wind-river-i-hear-you-in-the-wind-27" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://windriverchimes.com/products/i-hear-you-in-the-wind-27-inch-wind-chime" retailer="windriverchimes.com" product="wind-river-i-hear-you-in-the-wind-27" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Wind River &rarr;
                 </AffiliateLink>
               </div>
 
@@ -430,8 +430,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   At 30 inches, it is the mid-size sweet spot: large enough for a garden presence, small enough for a patio. The bronze finish and redwood sail give it a warm, natural aesthetic. This is our top pick for personalized memorial chimes because no other product combines this many customization options with hand-tuned sound quality.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="wind-river-in-loving-memory-30-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://windriverchimes.com/products/in-loving-memory%C2%AE-bronze-30-inch-windchime" retailer="windriverchimes.com" product="wind-river-in-loving-memory-30-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Wind River &rarr;
                 </AffiliateLink>
               </div>
 
@@ -449,8 +449,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   This is the chime for someone who prioritizes sound quality above all else. If the recipient is musical, lives in a quiet setting where the chime will be heard clearly, or if you simply want the best-sounding Amazing Grace option available, the Magical Mystery delivers something the standard line does not.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-magical-mystery-amazing-grace" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/mmag" retailer="chimes.com" product="woodstock-magical-mystery-amazing-grace" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
 
@@ -471,8 +471,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Same 9-saying customization and optional back engraving as the smaller sizes. Best for large gardens, dedicated memorial garden spaces, or when you want the chime to be a visible and audible centerpiece. This is a statement piece, not a subtle accent.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="wind-river-in-loving-memory-42-xl-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://windriverchimes.com/products/in-loving-memory%C2%AE-bronze-42-inch-windchime" retailer="windriverchimes.com" product="wind-river-in-loving-memory-42-xl-bronze" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Wind River &rarr;
                 </AffiliateLink>
               </div>
 
@@ -490,8 +490,8 @@ export default function BestMemorialWindChimesPage() {
                 <p className="text-gray-600 leading-relaxed mb-4">
                   At $190, this is the most expensive chime on this list. It is best suited for a dedicated memorial garden or a large property where the chime will be the focal point of an outdoor memorial space. If budget is not a constraint and you want the most impactful Amazing Grace chime money can buy, this is the top of the line.
                 </p>
-                <AffiliateLink href="#" placeholder={true} retailer="amazon" product="woodstock-amazing-grace-heavenly-xl" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
-                  Check Latest Price on Amazon &rarr;
+                <AffiliateLink href="https://chimes.com/collections/memorial-wind-chimes-shop-all/products/agxls" retailer="chimes.com" product="woodstock-amazing-grace-heavenly-xl" className="inline-block bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-slate-800 transition-colors">
+                  Check Price at Woodstock &rarr;
                 </AffiliateLink>
               </div>
             </section>
