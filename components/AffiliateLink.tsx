@@ -9,22 +9,21 @@ interface AffiliateLinkProps {
   product?: string;
 }
 
-export default function AffiliateLink({ href, children, placeholder = false, className = '', retailer, product }: AffiliateLinkProps) {
+export default function AffiliateLink({ href, children, placeholder = false, className, retailer, product }: AffiliateLinkProps) {
   if (placeholder) {
     const isProduction = process.env.NODE_ENV === 'production';
 
     if (isProduction) {
-      // In production, render as plain text with no link to prevent broken affiliate URLs
-      return <span className={className}>{children}</span>;
+      return null;
     }
 
-    // In development, render with yellow highlight so it is obvious the URL needs to be filled in
     return (
       <span
-        className={`bg-yellow-200 border border-yellow-400 px-1 rounded ${className}`}
+        className={className || 'inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 text-yellow-900 font-semibold text-sm rounded-md shadow-sm my-2 border-2 border-yellow-600 border-dashed'}
         title="PLACEHOLDER: Replace with real affiliate URL before publishing"
       >
-        {children} <span className="text-xs font-bold text-yellow-700">[PLACEHOLDER]</span>
+        {children}
+        <span className="text-xs uppercase tracking-wider opacity-80">[PLACEHOLDER]</span>
       </span>
     );
   }
@@ -33,12 +32,13 @@ export default function AffiliateLink({ href, children, placeholder = false, cla
     <a
       href={href}
       target="_blank"
-      rel="noopener noreferrer sponsored"
-      className={className || 'text-slate-600 hover:text-slate-800 font-medium underline'}
+      rel="sponsored noopener noreferrer"
+      className={className || 'inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline my-2'}
       data-retailer={retailer}
       data-product={product}
     >
       {children}
+      <span aria-hidden="true">&rarr;</span>
     </a>
   );
 }

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import AffiliateLink from '@/components/AffiliateLink';
 
@@ -56,7 +57,7 @@ export default function BestMemorialWindChimesPage() {
         "author": {
           "@type": "Person",
           "name": "Terry Feely",
-          "jobTitle": "Former Firefighter and Paramedic",
+          "jobTitle": "Founder, Evermore Directory",
           "url": "https://funeralhomedirectories.com/about"
         },
         "publisher": {
@@ -107,43 +108,19 @@ export default function BestMemorialWindChimesPage() {
                 The 15 Best Memorial Wind Chimes of 2026
               </h1>
 
-              <svg viewBox="0 0 800 300" className="w-full rounded-lg mb-6" aria-label="Memorial wind chime illustration" role="img">
-                <defs>
-                  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#FEF3C7" />
-                    <stop offset="100%" stopColor="#FDBA74" />
-                  </linearGradient>
-                </defs>
-                <rect width="800" height="300" fill="url(#sky)" />
-                {/* Horizon line */}
-                <ellipse cx="400" cy="290" rx="500" ry="40" fill="#F59E0B" opacity="0.2" />
-                {/* Hook and crossbar */}
-                <line x1="400" y1="30" x2="400" y2="60" stroke="#78350F" strokeWidth="3" />
-                <line x1="360" y1="60" x2="440" y2="60" stroke="#78350F" strokeWidth="4" strokeLinecap="round" />
-                {/* Tubes */}
-                <rect x="365" y="65" width="8" height="100" rx="4" fill="#92400E" />
-                <rect x="380" y="65" width="8" height="120" rx="4" fill="#92400E" />
-                <rect x="396" y="65" width="8" height="130" rx="4" fill="#92400E" />
-                <rect x="412" y="65" width="8" height="115" rx="4" fill="#92400E" />
-                <rect x="427" y="65" width="8" height="95" rx="4" fill="#92400E" />
-                {/* Wind sail */}
-                <path d="M390 210 L400 200 L410 210 L405 240 L395 240 Z" fill="#78350F" />
-                {/* Strings */}
-                <line x1="369" y1="60" x2="369" y2="65" stroke="#78350F" strokeWidth="1" />
-                <line x1="384" y1="60" x2="384" y2="65" stroke="#78350F" strokeWidth="1" />
-                <line x1="400" y1="60" x2="400" y2="65" stroke="#78350F" strokeWidth="1" />
-                <line x1="416" y1="60" x2="416" y2="65" stroke="#78350F" strokeWidth="1" />
-                <line x1="431" y1="60" x2="431" y2="65" stroke="#78350F" strokeWidth="1" />
-                <line x1="400" y1="60" x2="400" y2="200" stroke="#78350F" strokeWidth="1" />
-                {/* Sound waves */}
-                <circle cx="350" cy="130" r="15" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.3" />
-                <circle cx="350" cy="130" r="25" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.2" />
-                <circle cx="450" cy="120" r="15" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.3" />
-                <circle cx="450" cy="120" r="25" fill="none" stroke="#92400E" strokeWidth="1" opacity="0.2" />
-              </svg>
+              <div className="my-8 overflow-hidden rounded-lg shadow-md">
+                <Image
+                  src="/blog/best-memorial-wind-chimes/hero.jpg"
+                  alt="Memorial wind chime with bronze tubes hanging in a sunlit garden beside a white porch"
+                  width={1200}
+                  height={1200}
+                  priority
+                  className="w-full h-auto"
+                />
+              </div>
 
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
               </p>
               <p className="text-xl text-gray-600">
                 Honest reviews of memorial wind chimes from $25 to $190+. Compare sound quality, engraving options, and outdoor durability.
@@ -153,10 +130,16 @@ export default function BestMemorialWindChimesPage() {
             {/* Section 1: Hero Intro */}
             <section className="mb-10" id="intro">
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                As a former firefighter and paramedic, I was there in the worst moments. The wrecks. The 3 AM calls. The wellness checks that turned into something else. I don&apos;t pretend to have followed families through the months that came after. But I learned this: support arrives fast in those first days, and it leaves faster. Cards stop coming. Casseroles run out. What remains in a grieving home are the small things that keep showing up, day after day, without being asked. A wind chime ringing on a quiet afternoon is one of those things.
+                When someone you care about dies, support arrives fast and leaves faster. Cards stop coming after the first week. Casseroles run out. The phone goes quiet. What remains in a grieving home are the few things that keep showing up day after day, without being asked.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                This guide reviews 15 memorial wind chimes across four price tiers, from $25 budget picks to $190 premium pieces. Every price was verified in May 2026. I cover sound quality, materials, engraving options, and which chime fits which situation, so you can make a confident choice without overpaying.
+                A memorial wind chime is one of those things.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                Hung on a back porch or in a quiet corner of the garden, it rings every time the wind moves through it. For a grieving family, that sound becomes a small ritual, a moment to pause, to remember, to feel a little less alone. Months after the cards have stopped, the chime is still there.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                This guide covers 15 memorial wind chimes ranging from $25 budget-friendly Amazon picks to $190 premium hand-tuned heirlooms from Woodstock Chimes and Wind River. Real prices verified in May 2026. Honest reviews of what makes each one different, who it is best for, and what to know before you buy.
               </p>
               <p className="text-xs text-gray-400 italic mb-6">
                 Evermore is reader-supported. We may earn an affiliate commission when you buy through links on this page, at no extra cost to you. This never affects which products we recommend.
