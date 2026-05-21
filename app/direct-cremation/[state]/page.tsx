@@ -12,28 +12,47 @@ interface PageProps {
   params: Promise<{ state: string }>;
 }
 
+// Build reverse lookup: abbreviation -> full state key (e.g. "al" -> "alabama")
+const abbrToSlug: Record<string, string> = {};
+for (const [slug, m] of Object.entries(stateMeta)) {
+  abbrToSlug[m.abbr.toLowerCase()] = slug;
+}
+
+function resolveState(param: string): { slug: string; meta: { name: string; abbr: string } } | null {
+  const lower = param.toLowerCase();
+  // Try full name first (e.g. "alabama"), then abbreviation (e.g. "al")
+  if (stateMeta[lower]) return { slug: lower, meta: stateMeta[lower] };
+  const fullSlug = abbrToSlug[lower];
+  if (fullSlug && stateMeta[fullSlug]) return { slug: fullSlug, meta: stateMeta[fullSlug] };
+  return null;
+}
+
 export async function generateStaticParams() {
-  return allStateSlugs.map((state) => ({ state }));
+  // Generate params for both full names AND abbreviations
+  const fullNames = allStateSlugs.map((state) => ({ state }));
+  const abbreviations = Object.values(stateMeta).map((m) => ({ state: m.abbr.toLowerCase() }));
+  return [...fullNames, ...abbreviations];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state } = await params;
-  const meta = stateMeta[state.toLowerCase()];
-  if (!meta) return { title: 'Not Found' };
-  const stateName = meta.name;
+  const resolved = resolveState(state);
+  if (!resolved) return { title: 'Not Found' };
+  const stateName = resolved.meta.name;
+  const stateAbbr = resolved.meta.abbr.toLowerCase();
   return {
     title: `Direct Cremation Costs in ${stateName} (2026)`,
     description: `Compare direct cremation costs in ${stateName}. Real pricing from local providers. Find the most affordable cremation option near you.`,
-    alternates: { canonical: `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}` },
+    alternates: { canonical: `https://funeralhomedirectories.com/direct-cremation/${stateAbbr}` },
   };
 }
 
 export default async function DirectCremationStatePage({ params }: PageProps) {
   const { state } = await params;
-  const meta = stateMeta[state.toLowerCase()];
-  if (!meta) notFound();
-  const stateName = meta.name;
-  const stateUpper = meta.abbr.toUpperCase();
+  const resolved = resolveState(state);
+  if (!resolved) notFound();
+  const stateName = resolved.meta.name;
+  const stateUpper = resolved.meta.abbr.toUpperCase();
 
   // Get real pricing data
   const allPricing = await getAllRealStatePricing();

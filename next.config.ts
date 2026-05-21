@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/blog/condolence-text-messages',
+        destination: '/blog/condolence-text-message',
+        permanent: true,
+      },
     ];
   },
 
