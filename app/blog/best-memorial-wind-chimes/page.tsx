@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     description: 'Honest reviews of memorial wind chimes for honoring a loved one. Compare 15 options from $25 to $190+.',
     type: 'article',
     url: 'https://funeralhomedirectories.com/blog/best-memorial-wind-chimes',
-    publishedTime: '2026-05-20T00:00:00.000Z',
-    modifiedTime: '2026-05-20T00:00:00.000Z',
+    publishedTime: '2026-05-21T00:00:00.000Z',
+    modifiedTime: '2026-05-21T00:00:00.000Z',
     authors: ['Terry Feely'],
   },
 };
@@ -65,8 +65,8 @@ export default function BestMemorialWindChimesPage() {
           "name": "Evermore Directory",
           "url": "https://funeralhomedirectories.com"
         },
-        "datePublished": "2026-05-20",
-        "dateModified": "2026-05-20",
+        "datePublished": "2026-05-21",
+        "dateModified": "2026-05-21",
         "mainEntityOfPage": "https://funeralhomedirectories.com/blog/best-memorial-wind-chimes"
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
