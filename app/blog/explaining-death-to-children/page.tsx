@@ -108,7 +108,7 @@ export default function ExplainingDeathToChildrenPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
                 <li><Link href="/blog/children-and-grief" className="text-slate-600 hover:text-slate-800 font-medium">Children and Grief: How Kids Process Loss at Every Age</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-slate-600 hover:text-slate-800 font-medium">The Five Stages of Grief: What They Mean and What They Do Not</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The Five Stages of Grief: What They Mean and What They Do Not</Link></li>
               </ul>
             </section>
 

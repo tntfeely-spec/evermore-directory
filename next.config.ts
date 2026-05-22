@@ -41,6 +41,16 @@ const nextConfig: NextConfig = {
         destination: '/privacy',
         permanent: true,
       },
+      {
+        source: '/blog/funeral-outfit-ideas',
+        destination: '/blog/what-to-wear-to-a-funeral',
+        permanent: true,
+      },
+      {
+        source: '/blog/grief-stages-explained',
+        destination: '/blog/5-stages-of-grief',
+        permanent: true,
+      },
     ];
   },
 

@@ -94,7 +94,7 @@ export default function DisenfranchisedGriefPage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/grief-stages-explained" className="text-slate-600 hover:text-slate-800 font-medium">The 5 Stages of Grief Explained: What They Are and What to Expect</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The 5 Stages of Grief Explained: What They Are and What to Expect</Link></li>
                 <li><Link href="/blog/pet-loss-grief" className="text-slate-600 hover:text-slate-800 font-medium">Pet Loss: Poems, Quotes, and How to Cope with Losing a Pet</Link></li>
               </ul>
             </section>

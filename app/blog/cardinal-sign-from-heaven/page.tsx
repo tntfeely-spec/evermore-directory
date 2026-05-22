@@ -114,7 +114,7 @@ export default function CardinalSignFromHeavenPage() {
                 <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Gift That Keeps Speaking</Link></li>
                 <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts That Mean Something</Link></li>
                 <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last Longer Than Flowers</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief, Explained Without the Jargon</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief, Explained Without the Jargon</Link></li>
               </ul>
             </section>
 

@@ -95,7 +95,7 @@ export default function LossOfParentGuidePage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
                 <li><Link href="/blog/what-to-do-when-someone-dies" className="text-blue-600 hover:underline">What to Do When Someone Dies: A Complete Guide</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-600 hover:underline">The 5 Stages of Grief Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-600 hover:underline">The 5 Stages of Grief Explained</Link></li>
               </ul>
             </section>
 

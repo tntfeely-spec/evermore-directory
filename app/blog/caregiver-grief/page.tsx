@@ -107,7 +107,7 @@ export default function CaregiverGriefPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
                 <li><Link href="/blog/anticipatory-grief" className="text-blue-600 hover:underline">Anticipatory Grief: Grieving Before a Loss Happens</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-600 hover:underline">The Five Stages of Grief: What They Really Mean</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-600 hover:underline">The Five Stages of Grief: What They Really Mean</Link></li>
               </ul>
             </section>
 

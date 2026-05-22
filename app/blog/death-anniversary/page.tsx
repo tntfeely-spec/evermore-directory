@@ -109,7 +109,7 @@ export default function DeathAnniversaryPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
                 <li><Link href="/blog/how-long-does-grief-last" className="text-slate-600 hover:text-slate-800 font-medium">How Long Does Grief Last?</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-slate-600 hover:text-slate-800 font-medium">Grief Stages Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">Grief Stages Explained</Link></li>
               </ul>
             </section>
 

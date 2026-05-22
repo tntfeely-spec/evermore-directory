@@ -101,7 +101,7 @@ export default function GriefCounselingGuidePage() {
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-600 hover:underline">Grief Stages Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-600 hover:underline">Grief Stages Explained</Link></li>
                 <li><Link href="/blog/how-to-support-a-grieving-friend" className="text-blue-600 hover:underline">How to Support a Grieving Friend</Link></li>
               </ul>
             </section>

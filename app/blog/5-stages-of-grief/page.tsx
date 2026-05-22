@@ -5,7 +5,7 @@ import Navigation from '@/components/Navigation';
 export const metadata: Metadata = {
   title: 'The 5 Stages of Grief Explained: What They Are and What to Expect',
   description: 'The five stages of grief are denial, anger, bargaining, depression, and acceptance. Here is what each stage looks like and how to navigate them.',
-  alternates: { canonical: 'https://funeralhomedirectories.com/blog/grief-stages-explained' },
+  alternates: { canonical: 'https://funeralhomedirectories.com/blog/5-stages-of-grief' },
 };
 
 const faqs = [
@@ -22,7 +22,7 @@ export default function GriefStagesExplainedPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"The 5 Stages of Grief Explained: What They Are and What to Expect","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/grief-stages-explained"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"The 5 Stages of Grief Explained: What They Are and What to Expect","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/5-stages-of-grief"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">

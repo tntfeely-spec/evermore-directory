@@ -135,7 +135,7 @@ export default function GriefJournalPromptsPage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-3">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-700 hover:underline">The Five Stages of Grief Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-700 hover:underline">The Five Stages of Grief Explained</Link></li>
                 <li><Link href="/blog/how-to-support-a-grieving-friend" className="text-blue-700 hover:underline">How to Support a Grieving Friend</Link></li>
               </ul>
             </section>

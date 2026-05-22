@@ -99,7 +99,7 @@ export default function GriefExhaustionPage() {
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-600 hover:underline">Grief Stages Explained: What to Actually Expect</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-600 hover:underline">Grief Stages Explained: What to Actually Expect</Link></li>
                 <li><Link href="/blog/how-long-does-grief-last" className="text-blue-600 hover:underline">How Long Does Grief Last: What the Research Says</Link></li>
               </ul>
             </section>

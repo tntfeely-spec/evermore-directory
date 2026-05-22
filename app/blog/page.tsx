@@ -146,7 +146,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
       { slug: 'what-is-a-wake', title: 'What Is a Wake? What to Expect, What to Wear, and What to Say', description: 'What a wake is, how it differs from a visitation, and Irish wake traditions.' },
       { slug: 'what-is-a-repast', title: 'What Is a Repast After a Funeral?', description: 'The gathering after a funeral where family and friends share food and memories.' },
       { slug: 'funeral-procession-guide', title: 'Funeral Procession: Rules, Etiquette, and What to Do', description: 'How processions work, state rules, and what other drivers should do.' },
-      { slug: 'funeral-outfit-ideas', title: 'Funeral Outfit Ideas: What to Wear and What Colors Are Okay', description: 'What colors are acceptable, outfit ideas for men and women, and what to avoid.' },
+      { slug: 'what-to-wear-to-a-funeral', title: 'Funeral Outfit Ideas: What to Wear and What Colors Are Okay', description: 'What colors are acceptable, outfit ideas for men and women, and what to avoid.' },
       { slug: 'funeral-etiquette-guide', title: 'Funeral Etiquette: What to Do, Say, and Avoid', description: 'A practical guide to funeral etiquette from arrival through the reception.' },
       { slug: 'mausoleum-burial-guide', title: 'Mausoleum Burial: What It Is and What It Costs', description: 'What mausoleum burial involves, what it costs, and how to decide.' },
       { slug: 'non-religious-funeral-options', title: 'Non-Religious Funeral Options: Planning a Secular Service', description: 'How to plan a meaningful service without religious content.' },
@@ -159,7 +159,7 @@ const categories: { name: string; subtitle?: string; posts: Post[] }[] = [
   {
     name: 'Grief and Emotional Support',
     posts: [
-      { slug: 'grief-stages-explained', title: 'The 5 Stages of Grief Explained', description: 'What each stage looks like, why grief is not linear, and when to seek support.' },
+      { slug: '5-stages-of-grief', title: 'The 5 Stages of Grief Explained', description: 'What each stage looks like, why grief is not linear, and when to seek support.' },
       { slug: 'how-to-support-a-grieving-friend', title: 'How to Support a Grieving Friend: What Actually Helps', description: 'What to say, what to do, and how to show up long after the funeral.' },
       { slug: 'words-of-comfort-for-grieving-family', title: 'Words of Comfort for a Grieving Family', description: 'Sincere things to say, messages that bring comfort, and phrases to avoid.' },
       { slug: 'pet-loss-grief', title: 'Pet Loss: Poems, Quotes, and How to Cope', description: 'Comforting poems, meaningful quotes, and practical ways to honor your companion.' },

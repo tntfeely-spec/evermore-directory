@@ -161,7 +161,7 @@ export default function GiftsForGrievingFriendsPage() {
                 <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts</Link></li>
                 <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes</Link></li>
                 <li><Link href="/blog/plants-instead-of-flowers-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Plants Instead of Flowers at a Funeral</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief Explained</Link></li>
                 <li><Link href="/blog/what-to-plant-in-memory-of-someone" className="text-slate-600 hover:text-slate-800 font-medium">What to Plant in Memory of Someone</Link></li>
               </ul>
             </section>

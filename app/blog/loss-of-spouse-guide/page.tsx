@@ -97,7 +97,7 @@ export default function LossOfSpouseGuidePage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
                 <li><Link href="/blog/what-to-do-when-someone-dies" className="text-blue-600 hover:underline">What to Do When Someone Dies</Link></li>
-                <li><Link href="/blog/grief-stages-explained" className="text-blue-600 hover:underline">Grief Stages Explained</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-blue-600 hover:underline">Grief Stages Explained</Link></li>
               </ul>
             </section>
 
