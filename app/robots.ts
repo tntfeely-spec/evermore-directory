@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                       userAgent: '*',
                       allow: '/',
-                      disallow: ['/api/', '/drafts/'],
+                      disallow: ['/api/', '/drafts/', '/_next/static/', '/_next/data/'],
             },
                 ],
           sitemap: 'https://funeralhomedirectories.com/sitemap.xml',
