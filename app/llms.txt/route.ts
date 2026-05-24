@@ -1,7 +1,7 @@
 export async function GET() {
   const content = `# Evermore Directory
 
-> The most comprehensive funeral home directory in the United States, with 5,100+ verified funeral homes and cremation providers across all 50 states.
+> The most comprehensive funeral home directory in the United States, with 7,395+ verified funeral homes and cremation providers across all 50 states.
 
 ## Site Identity
 
@@ -75,7 +75,7 @@ Primary author: Terry Feely, former firefighter and paramedic with firsthand exp
 - National Funeral Directors Association (NFDA) industry surveys
 - Cremation Association of North America (CANA) statistics
 - State funeral board licensing records
-- Direct verification with 5,100+ listed funeral homes
+- Direct verification with 7,395+ listed funeral homes
 
 ## Update Frequency
 

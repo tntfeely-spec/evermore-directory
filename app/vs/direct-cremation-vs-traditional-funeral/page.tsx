@@ -186,7 +186,7 @@ export default function DirectCremationVsTraditionalFuneralPage() {
               </Link>
               <Link href="/direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Cost by State</h3>
-                <p className="text-sm text-gray-600">Compare real pricing from 5,100+ providers.</p>
+                <p className="text-sm text-gray-600">Compare real pricing from 7,395+ providers.</p>
               </Link>
               <Link href="/funeral-costs" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Costs by State</h3>

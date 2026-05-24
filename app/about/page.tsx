@@ -4,11 +4,11 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'About Evermore Directory | Built by a Former First Responder',
-  description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic. Free funeral home directory covering 5,100+ providers across all 50 states.',
+  description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic. Free funeral home directory covering 7,395+ providers across all 50 states.',
   alternates: { canonical: 'https://funeralhomedirectories.com/about' },
   openGraph: {
     title: 'About Evermore Directory',
-    description: 'Built by Terry Feely, a former firefighter and paramedic. Free for families. 5,100+ funeral homes across all 50 states.',
+    description: 'Built by Terry Feely, a former firefighter and paramedic. Free for families. 7,395+ funeral homes across all 50 states.',
     url: 'https://funeralhomedirectories.com/about',
     siteName: 'Evermore Directory',
     type: 'website',
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Evermore Is</h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Evermore is a free directory of 5,100 plus funeral homes and cremation providers across all 50 states. It is built for families, not funeral homes. There is no cost to search, compare, or contact any provider listed in the directory.
+                Evermore is a free directory of 7,395 plus funeral homes and cremation providers across all 50 states. It is built for families, not funeral homes. There is no cost to search, compare, or contact any provider listed in the directory.
               </p>
               <p>
                 The directory is funded by funeral homes who pay $99 per month for a featured listing, which is placement only, not preferential treatment. Every listing in the directory, paid or unpaid, displays the same information the same way. Families pay nothing.
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <section className="mb-12 bg-slate-50 rounded-xl p-8">
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-slate-700 mb-1">5,100+</div>
+                <div className="text-4xl font-bold text-slate-700 mb-1">7,395+</div>
                 <div className="text-gray-600 text-sm">Providers Listed</div>
               </div>
               <div>

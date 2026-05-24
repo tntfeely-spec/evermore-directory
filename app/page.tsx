@@ -120,7 +120,7 @@ export default function HomePage() {
                     <line x1="36" y1="40" x2="36" y2="44" stroke="#1e293b" strokeWidth=".75" opacity=".5"/>
                     <line x1="39" y1="40" x2="38" y2="44" stroke="#1e293b" strokeWidth=".75" opacity=".5"/>
                   </svg>
-                  <span className="text-3xl font-bold text-slate-800">5,100+</span>
+                  <span className="text-3xl font-bold text-slate-800">7,395+</span>
                   <span className="text-xs font-medium text-slate-500 uppercase tracking-widest text-center">Providers Listed</span>
                 </div>
 
@@ -187,7 +187,7 @@ export default function HomePage() {
             </div>
 
             <div className="mb-20">
-              <p className="text-center text-gray-600 text-base mb-4 max-w-2xl mx-auto">Compare 5,100+ funeral homes and cremation providers across all 50 states. Search by city or ZIP code to find and compare local funeral directors, burial options, direct cremation providers, and pricing near you. Free for families. No pressure.</p>
+              <p className="text-center text-gray-600 text-base mb-4 max-w-2xl mx-auto">Compare 7,395+ funeral homes and cremation providers across all 50 states. Search by city or ZIP code to find and compare local funeral directors, burial options, direct cremation providers, and pricing near you. Free for families. No pressure.</p>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Browse Top Cities</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
                 {[

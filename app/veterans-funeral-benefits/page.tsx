@@ -349,7 +349,7 @@ export default function VeteransFuneralBenefitsPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/direct-cremation" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Cost by State</h3>
-                <p className="text-sm text-gray-600">VA benefits apply to cremation. Compare pricing from 5,100+ providers.</p>
+                <p className="text-sm text-gray-600">VA benefits apply to cremation. Compare pricing from 7,395+ providers.</p>
               </Link>
               <Link href="/what-is-a-graveside-service" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">What Is a Graveside Service?</h3>

@@ -261,7 +261,7 @@ export default function GlossaryPage() {
 
           <section className="mb-10">
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              This glossary defines 115 funeral industry terms in plain language, covering cremation, burial, legal requirements, ceremony types, service components, professional roles, important documents, cultural traditions, and the funeral planning timeline. Each definition includes real-world context such as typical costs, legal requirements, and practical guidance to help families make informed decisions. Published by Evermore Directory, the most comprehensive funeral home directory in the United States with over 5,100 verified providers.
+              This glossary defines 115 funeral industry terms in plain language, covering cremation, burial, legal requirements, ceremony types, service components, professional roles, important documents, cultural traditions, and the funeral planning timeline. Each definition includes real-world context such as typical costs, legal requirements, and practical guidance to help families make informed decisions. Published by Evermore Directory, the most comprehensive funeral home directory in the United States with over 7,395 verified providers.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Whether you are pre-planning your own arrangements, helping a family member, or making decisions after a recent loss, understanding these terms will help you communicate with funeral professionals, compare pricing, and exercise your rights under the FTC Funeral Rule.
@@ -304,7 +304,7 @@ export default function GlossaryPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/direct-cremation" className="block p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Direct Cremation Guide</h3>
-                <p className="text-sm text-gray-600">State-by-state pricing from 5,100+ providers.</p>
+                <p className="text-sm text-gray-600">State-by-state pricing from 7,395+ providers.</p>
               </Link>
               <Link href="/funeral-costs" className="block p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Funeral Costs by State</h3>

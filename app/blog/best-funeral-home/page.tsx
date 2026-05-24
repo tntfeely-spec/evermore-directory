@@ -262,7 +262,7 @@ export default function BestFuneralHomePage() {
             <section className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Search</h2>
               <p className="text-gray-600 mb-4">
-                The best time to research funeral providers is before you need one. Even a few hours of comparison can save your family thousands of dollars and the stress of making rushed decisions during grief. Our directory includes over 5,100 funeral homes and cremation providers across all 50 states, with pricing information and service details for each listing.
+                The best time to research funeral providers is before you need one. Even a few hours of comparison can save your family thousands of dollars and the stress of making rushed decisions during grief. Our directory includes over 7,395 funeral homes and cremation providers across all 50 states, with pricing information and service details for each listing.
               </p>
               <p className="text-gray-600">
                 <Link href="/states" className="text-slate-600 hover:text-slate-800 font-medium">Browse funeral homes by state</Link> to start comparing providers in your area.
@@ -319,7 +319,7 @@ export default function BestFuneralHomePage() {
 
             <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">
               <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes near you</p>
-              <p className="text-slate-600 text-sm mb-5">Search 5,100+ funeral homes and cremation providers across all 50 states.</p>
+              <p className="text-slate-600 text-sm mb-5">Search 7,395+ funeral homes and cremation providers across all 50 states.</p>
               <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Funeral Homes Near You</Link>
             </div>
           </article>

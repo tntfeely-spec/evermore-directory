@@ -317,7 +317,7 @@ export default async function StateCostsPage({ params }: PageProps) {
 
           {/* Terry attribution */}
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 5,100+ funeral homes and cremation providers across all 50 states.</p>
+            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 7,395+ funeral homes and cremation providers across all 50 states.</p>
           </div>
         </div>
       </div>

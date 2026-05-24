@@ -126,7 +126,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
             <p>&copy; 2026 Evermore Directory. All rights reserved.</p>
-            <p className="mt-2 sm:mt-0">Built for families. Free to use.</p>
+            <p className="mt-2 sm:mt-0">No popups. No pressure. Built for families.</p>
           </div>
         </div>
       </div>

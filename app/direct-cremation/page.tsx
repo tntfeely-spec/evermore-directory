@@ -7,7 +7,7 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Direct Cremation: Complete Guide and Cost by State (2026)',
-  description: 'Direct cremation costs $1,500 to $3,500 nationally. Compare real pricing across all 50 states from 5,100+ providers. Updated 2026.',
+  description: 'Direct cremation costs $1,500 to $3,500 nationally. Compare real pricing across all 50 states from 7,395+ providers. Updated 2026.',
   alternates: { canonical: 'https://funeralhomedirectories.com/direct-cremation' },
   openGraph: {
     title: 'Direct Cremation: Complete Guide and Cost by State (2026)',
@@ -248,7 +248,7 @@ export default async function DirectCremationHubPage() {
               </Link>
               <Link href="/states" className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold text-slate-600 mb-1">Browse All Funeral Homes</h3>
-                <p className="text-sm text-gray-600">5,100+ funeral homes and cremation providers across all 50 states.</p>
+                <p className="text-sm text-gray-600">7,395+ funeral homes and cremation providers across all 50 states.</p>
               </Link>
             </div>
           </section>

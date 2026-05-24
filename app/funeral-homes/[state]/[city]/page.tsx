@@ -635,7 +635,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
 
           <div className="mb-12 text-center text-sm text-gray-400">
-            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 5,100+ funeral homes and cremation providers across all 50 states.</p>
+            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 7,395+ funeral homes and cremation providers across all 50 states.</p>
           </div>
 
           {/* FAQ Section */}

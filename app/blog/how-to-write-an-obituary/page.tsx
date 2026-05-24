@@ -64,7 +64,7 @@ export default function HowToWriteAnObituaryPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Write an Obituary: A Complete Guide + Free AI Obituary Writer</h1>
               <p className="text-xl text-gray-600 mb-4">What to include, how to structure it, and example opening lines that actually work.</p>
               <p className="text-sm text-gray-500">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
               </p>
             </header>
 
