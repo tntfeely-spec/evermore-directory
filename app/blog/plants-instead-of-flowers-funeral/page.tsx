@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
+import AffiliateLink from '@/components/AffiliateLink';
 
 export const metadata: Metadata = {
   title: 'Plants Instead of Flowers for a Funeral: Why Families Keep Them for Years',
@@ -42,6 +43,7 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
               <p className="text-gray-600 leading-relaxed mb-4">I still have house plants from my mom&apos;s funeral in 2008. People sent them instead of flowers and they sit in my home every day eighteen years later. The flowers that came that week were beautiful. Within ten days most of them were gone. The plants stayed. They kept growing. That is what the right sympathy gift does.</p>
               <p className="text-gray-600 leading-relaxed mb-4">I have a Dracaena by the stairs that has grown into a substantial plant over the years. A Pothos trailing across the kitchen counter. A Peace Lily by the window that still pushes out new growth every spring. A Syngonium that has been repotted twice because it kept outgrowing its pot. None of them were expensive. All of them are still here.</p>
               <p className="text-gray-600 leading-relaxed">That is eighteen years of daily presence from a single decision someone made at a difficult moment. That is what a plant does that flowers cannot.</p>
+              <p className="text-xs text-gray-400 italic mt-4">Evermore is reader-supported. We may earn an affiliate commission when you buy through links on this page, at no extra cost to you. This never affects which products we recommend.</p>
             </section>
 
             <section className="mb-10">
@@ -88,6 +90,131 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
 
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Succulents</h3>
               <p className="text-gray-600 leading-relaxed"><strong>Care level:</strong> Low. <strong>Symbolism:</strong> Lasting love and timeless memory. Succulent arrangements are popular sympathy gifts because they require almost no care and look good on a kitchen windowsill. The family can split the arrangement into individual pots later and share them with cousins, grandchildren, or friends, so one gift becomes many.</p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-6">Top Sympathy Plants You Can Order Now</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">These are the best-rated sympathy plants available online. All prices verified May 2026. Each ships directly to the family.</p>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Costa Farms Peace Lily, 15 Inch</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $25 to $35</p>
+                  <p><strong>Care:</strong> Low. Tolerates low light, droops when thirsty.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">The most popular sympathy plant on Amazon. Costa Farms ships healthy, well-rooted peace lilies in a decorative pot. The 15-inch size is substantial enough to feel generous without overwhelming a small home. Blooms white flowers that can last for weeks.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=costa+farms+peace+lily+sympathy&tag=evermorefuner-20" retailer="amazon" product="costa-farms-peace-lily">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Costa Farms Spathiphyllum Peace Lily in Sympathy Planter</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $40 to $55</p>
+                  <p><strong>Care:</strong> Low. Same easy peace lily in a premium ceramic pot.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">A larger peace lily in a gift-ready ceramic planter with a sympathy message. No need to repot on arrival. The family can display it immediately. This is the version to choose when you want the gift to look finished without any extra work from the recipient.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=peace+lily+sympathy+planter&tag=evermorefuner-20" retailer="amazon" product="peace-lily-sympathy-planter">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Just Add Ice White Orchid (Phalaenopsis), 5 Inch</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $30 to $45</p>
+                  <p><strong>Care:</strong> Medium. 3 ice cubes per week, indirect light.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">White phalaenopsis orchids are the most elegant sympathy plant you can send. The Just Add Ice brand simplifies care to a memorable instruction: three ice cubes per week. Orchids rebloom for years with minimal attention. A refined choice for someone who appreciated quiet beauty.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=just+add+ice+white+orchid+sympathy&tag=evermorefuner-20" retailer="amazon" product="just-add-ice-white-orchid">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Costa Farms Snake Plant (Sansevieria), 12 Inch</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $20 to $30</p>
+                  <p><strong>Care:</strong> Very low. Water once a month. Tolerates any light.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">The most forgiving plant on this list. A snake plant will survive in a dark corner, a sunny window, or anything in between. It filters indoor air and stands tall without support. For a family that has never kept a plant alive, this is the one to send. It will outlive the decade.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=costa+farms+snake+plant&tag=evermorefuner-20" retailer="amazon" product="costa-farms-snake-plant">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Brussel&apos;s Bonsai Live Juniper Bonsai Tree</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $35 to $55</p>
+                  <p><strong>Care:</strong> Medium. Needs outdoor light, regular watering.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">A bonsai tree represents patience, resilience, and the quiet passing of time. Brussel&apos;s is the most trusted bonsai seller on Amazon. The juniper variety works well outdoors on a patio or porch. It requires a bit more attention than a snake plant, but the visual presence is striking. A memorable sympathy gift for someone who appreciates living art.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=brussels+bonsai+juniper+tree&tag=evermorefuner-20" retailer="amazon" product="brussels-bonsai-juniper">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Brussel&apos;s Bonsai Live Chinese Elm Bonsai</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $40 to $60</p>
+                  <p><strong>Care:</strong> Medium. Indoor or outdoor. More forgiving than juniper.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">The Chinese elm is the best indoor bonsai option. It tolerates lower light than juniper and adapts to indoor conditions more readily. The trunk develops character over time, thickening and developing texture that makes the tree feel ancient even when young. A living memorial that ages gracefully.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=brussels+bonsai+chinese+elm&tag=evermorefuner-20" retailer="amazon" product="brussels-bonsai-chinese-elm">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Costa Farms ZZ Plant, 10 Inch</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $20 to $30</p>
+                  <p><strong>Care:</strong> Very low. Water every 2 to 3 weeks. Thrives in low light.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">The ZZ plant is the backup plan for families who worry about killing a peace lily. Its thick, waxy leaves store water in the stems, making it drought-tolerant to an extreme degree. Dark office corner with no natural light? The ZZ plant will do fine. Glossy dark green leaves give it a polished, modern look.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=costa+farms+zz+plant&tag=evermorefuner-20" retailer="amazon" product="costa-farms-zz-plant">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Shop Succulents Sympathy Succulent Collection (12-Pack)</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $30 to $45</p>
+                  <p><strong>Care:</strong> Low. Bright light, water every 1 to 2 weeks.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">A 12-pack of assorted succulents gives the family options. They can arrange them in a single planter, spread them across windowsills, or share individual plants with siblings and grandchildren. One gift becomes many. Succulents are hardy, colorful, and small enough to fit anywhere.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=sympathy+succulent+collection&tag=evermorefuner-20" retailer="amazon" product="shop-succulents-sympathy-collection">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Sympathy Orchid and Succulent Garden Arrangement</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $55 to $80</p>
+                  <p><strong>Care:</strong> Low to medium. Mixed planting, mostly low-maintenance.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">A curated arrangement combining an orchid with succulents and greenery in a single container. These mixed planters look like a professional florist arrangement but last for months instead of days. The orchid provides the elegance while the succulents provide the durability. Gift-ready with no repotting needed.</p>
+                <AffiliateLink href="https://www.amazon.com/s?k=sympathy+orchid+succulent+arrangement&tag=evermorefuner-20" retailer="amazon" product="orchid-succulent-sympathy-arrangement">
+                  Check on Amazon
+                </AffiliateLink>
+              </div>
+
+              <div className="mb-6 bg-slate-50 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">Memorial Tree Gift (Arbor Day Foundation)</h3>
+                <div className="text-sm text-gray-600 mb-3 space-y-1">
+                  <p><strong>Price:</strong> $80 to $100</p>
+                  <p><strong>Care:</strong> None required. Planted in a national forest by the foundation.</p>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">A tree planted in a national forest in the deceased&apos;s name. The family receives a certificate naming the honoree and the forest location. No maintenance, no shipping logistics, no risk of the plant dying. The tree grows for decades. One of the most meaningful sympathy gifts at any price point.</p>
+                <a href="https://shop.arborday.org/memorial-trees" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline my-2">
+                  Plant a Memorial Tree <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
             </section>
 
             <section className="mb-10">
