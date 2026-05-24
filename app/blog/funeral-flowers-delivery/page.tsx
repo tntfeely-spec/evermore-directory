@@ -119,12 +119,14 @@ export default function FuneralFlowersDeliveryPage() {
               <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes in your area</p>
               <p className="text-slate-600 text-sm mb-5">Search 7,395+ funeral homes and cremation providers across all 50 states. Compare prices, services, and locations. Free for families.</p>
 
+
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Like</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-flowers-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Flowers &rarr;</Link></li>
-                <li><Link href="/blog/what-to-plant-in-memory-of-someone" className="text-slate-600 hover:text-slate-800 font-medium">What to Plant in Memory of Someone &rarr;</Link></li>
-                <li><Link href="/blog/cardinal-sign-from-heaven" className="text-slate-600 hover:text-slate-800 font-medium">Cardinal Sign from Heaven &rarr;</Link></li>
+                <li><Link href="/blog/best-memorial-gifts" className="text-slate-600 hover:text-slate-800 font-medium">The 15 Best Memorial Gifts for Loss of a Loved One &rarr;</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">The 15 Best Memorial Wind Chimes of 2026 &rarr;</Link></li>
+                <li><Link href="/blog/plants-instead-of-flowers-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Plants Instead of Flowers for a Funeral &rarr;</Link></li>
+                <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts: What Families Actually Keep &rarr;</Link></li>
               </ul>
             </section>
 

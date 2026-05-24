@@ -563,6 +563,16 @@ export default function BestMemorialWindChimesPage() {
               <p className="text-sm text-gray-400 mt-6">No popups. No pressure. Built for families.</p>
             </section>
 
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Like</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/best-memorial-gifts" className="text-slate-600 hover:text-slate-800 font-medium">The 15 Best Memorial Gifts for Loss of a Loved One &rarr;</Link></li>
+                <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts: What Families Actually Keep &rarr;</Link></li>
+                <li><Link href="/blog/funeral-flowers-delivery" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Flowers Delivery: How to Order and What to Send &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

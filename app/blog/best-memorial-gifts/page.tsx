@@ -532,12 +532,12 @@ export default function BestRemembranceGiftsPage() {
 
 
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Like</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/what-is-a-celebration-of-life" className="text-slate-600 hover:text-slate-800 font-medium">What Is a Celebration of Life Service? (2026 Guide) &rarr;</Link></li>
-                <li><Link href="/blog/celebration-of-life-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Celebration of Life Ideas &rarr;</Link></li>
-                <li><Link href="/blog/memorial-keepsakes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Keepsakes &rarr;</Link></li>
-                <li><Link href="/blog/celebration-of-life-food-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Celebration of Life Food Ideas &rarr;</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">The 15 Best Memorial Wind Chimes of 2026 &rarr;</Link></li>
+                <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts: What Families Actually Keep &rarr;</Link></li>
+                <li><Link href="/blog/funeral-flowers-delivery" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Flowers Delivery: How to Order and What to Send &rarr;</Link></li>
+                <li><Link href="/blog/plants-instead-of-flowers-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Plants Instead of Flowers for a Funeral &rarr;</Link></li>
               </ul>
             </section>
 
