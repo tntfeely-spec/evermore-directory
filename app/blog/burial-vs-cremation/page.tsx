@@ -365,7 +365,9 @@ export default function BurialVsCremationPage() {
               <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
               <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral &rarr;</Link></li>
               <li><Link href="/blog/green-burial-options-guide" className="text-slate-600 hover:text-slate-800 font-medium">Green Burial Options Guide &rarr;</Link></li>
-            </ul>
+            
+                <li><Link href="/vs/casket-vs-coffin" className="text-slate-600 hover:text-slate-800 font-medium">Casket vs Coffin: Key Differences &rarr;</Link></li>
+              </ul>
           </section>
 
           <BlogFooterLinks />

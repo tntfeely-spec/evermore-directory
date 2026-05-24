@@ -293,6 +293,14 @@ export default function BestFuneralHomesNashvillePage() {
                 <li><Link href="/blog/funeral-cost-tennessee-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in Tennessee? 2026 Guide &rarr;</Link></li>
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
                 <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-indianapolis-in" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Indianapolis, IN &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-san-diego-ca" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in San Diego, CA &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-denver-co" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Denver, CO &rarr;</Link></li>
+              
+                <li><Link href="/blog/best-funeral-homes-cedar-rapids-marion-ia" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Cedar Rapids / Marion, IA &rarr;</Link></li>
               </ul>
             </section>
 

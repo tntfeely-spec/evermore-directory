@@ -108,6 +108,8 @@ export default function ProbateGuidePage() {
               <ul className="list-disc list-inside space-y-2 text-gray-600">
                 <li><Link href="/blog/end-of-life-planning-checklist" className="text-blue-600 hover:underline">End of Life Planning Checklist: Everything You Need to Prepare</Link></li>
                 <li><Link href="/blog/estate-executor-duties" className="text-blue-600 hover:underline">Estate Executor Duties: What You Are Responsible For</Link></li>
+              
+                <li><Link href="/blog/funeral-costs-and-estate-planning" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Costs and Estate Planning &rarr;</Link></li>
               </ul>
             </section>
 

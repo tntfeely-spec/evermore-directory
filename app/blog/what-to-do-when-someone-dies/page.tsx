@@ -118,6 +118,8 @@ export default function WhatToDoWhenSomeoneDiesPage() {
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
                 <li><Link href="/blog/funeral-home-red-flags" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Red Flags: What to Watch Out For When Grieving &rarr;</Link></li>
                 <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-costs-and-estate-planning" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Costs and Estate Planning &rarr;</Link></li>
               </ul>
             </section>
             <BlogFooterLinks />

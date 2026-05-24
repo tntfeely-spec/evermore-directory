@@ -122,6 +122,8 @@ export default function CasketGuidePage() {
                 <li><Link href="/blog/va-pre-need-burial-eligibility" className="text-slate-600 hover:text-slate-800 font-medium">VA Pre-Need Burial Eligibility &rarr;</Link></li>
                 <li><Link href="/blog/average-burial-cost" className="text-slate-600 hover:text-slate-800 font-medium">Average Burial Cost in 2026 &rarr;</Link></li>
                 <li><Link href="/blog/alternative-burial-methods" className="text-slate-600 hover:text-slate-800 font-medium">Alternative Burial Methods &rarr;</Link></li>
+              
+                <li><Link href="/vs/casket-vs-coffin" className="text-slate-600 hover:text-slate-800 font-medium">Casket vs Coffin: Complete Comparison &rarr;</Link></li>
               </ul>
             </section>
 

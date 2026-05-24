@@ -406,7 +406,9 @@ export default function CremationCosts2026Page() {
               <li><Link href="/blog/cremation-near-me" className="text-slate-600 hover:text-slate-800 font-medium">Cremation Near Me: How to Find Affordable Cremation Services &rarr;</Link></li>
               <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral: How to Choose &rarr;</Link></li>
               <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
-            </ul>
+            
+                <li><Link href="/blog/how-long-does-cremation-take" className="text-slate-600 hover:text-slate-800 font-medium">How Long Does Cremation Take? &rarr;</Link></li>
+              </ul>
           </section>
           <BlogFooterLinks />
           {/* Find Funeral Homes CTA */}

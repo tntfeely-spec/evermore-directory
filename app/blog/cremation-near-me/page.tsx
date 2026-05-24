@@ -283,7 +283,9 @@ export default function CremationNearMePage() {
               <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
               <li><Link href="/blog/direct-cremation-vs-traditional-funeral" className="text-slate-600 hover:text-slate-800 font-medium">Direct Cremation vs Traditional Funeral &rarr;</Link></li>
               <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
-            </ul>
+            
+                <li><Link href="/blog/how-long-does-cremation-take" className="text-slate-600 hover:text-slate-800 font-medium">How Long Does Cremation Take? &rarr;</Link></li>
+              </ul>
           </section>
 
           <BlogFooterLinks />

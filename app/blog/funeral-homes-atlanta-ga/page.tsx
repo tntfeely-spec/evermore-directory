@@ -273,6 +273,14 @@ export default function FuneralHomesAtlantaPage() {
                 <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Guide &rarr;</Link></li>
                 <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
                 <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? Complete Price Guide &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-indianapolis-in" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Indianapolis, IN &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-san-diego-ca" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in San Diego, CA &rarr;</Link></li>
+              
+                <li><Link href="/blog/funeral-homes-denver-co" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Denver, CO &rarr;</Link></li>
+              
+                <li><Link href="/blog/best-funeral-homes-cedar-rapids-marion-ia" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Cedar Rapids / Marion, IA &rarr;</Link></li>
               </ul>
             </section>
 
