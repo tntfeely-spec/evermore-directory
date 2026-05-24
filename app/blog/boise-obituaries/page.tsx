@@ -89,6 +89,17 @@ export default function BoiseObituariesPage() {
               <p className="text-slate-600 text-sm mb-5">Compare prices, services, and contact information for funeral homes in Boise, Idaho.</p>
               <Link href="/funeral-homes/id/boise" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Boise Funeral Homes</Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-homes-los-angeles" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes in Los Angeles, CA (2026) &rarr;</Link></li>
+                <li><Link href="/blog/best-funeral-homes-nashville-tn" className="text-slate-600 hover:text-slate-800 font-medium">10 Funeral Homes in Nashville, TN (2026) &rarr;</Link></li>
+                <li><Link href="/blog/funeral-homes-near-me" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Homes Near Me &rarr;</Link></li>
+                <li><Link href="/blog/anchorage-obituaries" className="text-slate-600 hover:text-slate-800 font-medium">Anchorage Obituaries and Funeral Homes &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

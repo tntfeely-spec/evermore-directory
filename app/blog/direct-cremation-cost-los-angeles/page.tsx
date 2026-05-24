@@ -145,6 +145,17 @@ export default async function Page() {
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
               <p className="text-lg font-semibold text-slate-700 mb-2">Find cremation providers in your area</p>
               <p className="text-slate-600 text-sm mb-5">Search 7,395+ funeral homes and cremation providers across all 50 states. No popups. No pressure. Built for families.</p>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? The Complete 2026 Guide &rarr;</Link></li>
+                <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? State-by-State Pric... &rarr;</Link></li>
+                <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs. Cremation &rarr;</Link></li>
+                <li><Link href="/blog/cheapest-cremation-near-me" className="text-slate-600 hover:text-slate-800 font-medium">Cheapest Cremation Near Me &rarr;</Link></li>
+              </ul>
+            </section>
+
               <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Funeral Homes Near You</Link>
             </section>
           </article>

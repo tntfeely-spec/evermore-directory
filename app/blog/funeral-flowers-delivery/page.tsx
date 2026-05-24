@@ -118,6 +118,16 @@ export default function FuneralFlowersDeliveryPage() {
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
               <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes in your area</p>
               <p className="text-slate-600 text-sm mb-5">Search 7,395+ funeral homes and cremation providers across all 50 states. Compare prices, services, and locations. Free for families.</p>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-flowers-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Flowers &rarr;</Link></li>
+                <li><Link href="/blog/what-to-plant-in-memory-of-someone" className="text-slate-600 hover:text-slate-800 font-medium">What to Plant in Memory of Someone &rarr;</Link></li>
+                <li><Link href="/blog/cardinal-sign-from-heaven" className="text-slate-600 hover:text-slate-800 font-medium">Cardinal Sign from Heaven &rarr;</Link></li>
+              </ul>
+            </section>
+
               <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Funeral Homes Near You</Link>
             </section>
           </article>

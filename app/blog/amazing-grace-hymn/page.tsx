@@ -174,6 +174,17 @@ export default function AmazingGraceHymn() {
                 href="/states"
                 className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium"
               >
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/bible-verses-for-funerals" className="text-slate-600 hover:text-slate-800 font-medium">Bible Verses for Funerals &rarr;</Link></li>
+                <li><Link href="/blog/catholic-funeral-traditions" className="text-slate-600 hover:text-slate-800 font-medium">Catholic Funeral Traditions &rarr;</Link></li>
+                <li><Link href="/blog/christian-funeral-songs" className="text-slate-600 hover:text-slate-800 font-medium">Modern Christian Funeral Songs &rarr;</Link></li>
+                <li><Link href="/blog/hindu-funeral-traditions" className="text-slate-600 hover:text-slate-800 font-medium">Hindu Funeral Traditions &rarr;</Link></li>
+              </ul>
+            </section>
+
                 Browse Funeral Homes Near You
               </Link>
             </section>

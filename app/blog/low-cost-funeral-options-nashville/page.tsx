@@ -166,6 +166,17 @@ export default function LowCostFuneralOptionsNashvillePage() {
                 Find Funeral Homes by State
               </Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/how-to-read-a-funeral-home-general-price-list" className="text-slate-600 hover:text-slate-800 font-medium">How to Read a Funeral Home General Price List &rarr;</Link></li>
+                <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Can &rarr;</Link></li>
+                <li><Link href="/blog/funeral-home-payment-plans" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Payment Plans &rarr;</Link></li>
+                <li><Link href="/blog/life-insurance-after-death" className="text-slate-600 hover:text-slate-800 font-medium">Life Insurance After Death &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

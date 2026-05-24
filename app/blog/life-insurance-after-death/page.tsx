@@ -109,6 +109,17 @@ export default function LifeInsuranceAfterDeathPage() {
               <p className="text-gray-600 mb-6">Browse trusted funeral homes and cremation providers in your state to find compassionate, affordable care during a difficult time.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">Browse All States</Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/how-to-read-a-funeral-home-general-price-list" className="text-slate-600 hover:text-slate-800 font-medium">How to Read a Funeral Home General Price List &rarr;</Link></li>
+                <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Can &rarr;</Link></li>
+                <li><Link href="/blog/funeral-home-payment-plans" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Payment Plans &rarr;</Link></li>
+                <li><Link href="/blog/low-cost-funeral-options-nashville" className="text-slate-600 hover:text-slate-800 font-medium">Low Cost Funeral Options in Nashville, TN &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

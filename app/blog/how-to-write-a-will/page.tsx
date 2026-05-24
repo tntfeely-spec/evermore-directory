@@ -120,6 +120,17 @@ export default function HowToWriteAWillPage() {
               <p className="text-gray-600 mb-6">Browse trusted funeral homes and cremation providers in your state to find compassionate, affordable care during a difficult time.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">Browse All States</Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/death-certificate-guide" className="text-slate-600 hover:text-slate-800 font-medium">Death Certificates &rarr;</Link></li>
+                <li><Link href="/blog/how-to-close-deceased-accounts" className="text-slate-600 hover:text-slate-800 font-medium">How to Close a Deceased Person&apos;s Accounts &rarr;</Link></li>
+                <li><Link href="/blog/living-will-vs-advance-directive" className="text-slate-600 hover:text-slate-800 font-medium">Living Will vs. Advance Directive &rarr;</Link></li>
+                <li><Link href="/blog/accessing-deceased-accounts" className="text-slate-600 hover:text-slate-800 font-medium">Accessing a Deceased Person\ &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

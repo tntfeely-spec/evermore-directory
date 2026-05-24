@@ -530,6 +530,17 @@ export default function BestRemembranceGiftsPage() {
               <p className="text-sm text-gray-400 mt-6">No popups. No pressure. Built for families.</p>
             </section>
 
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/what-is-a-celebration-of-life" className="text-slate-600 hover:text-slate-800 font-medium">What Is a Celebration of Life Service? (2026 Guide) &rarr;</Link></li>
+                <li><Link href="/blog/celebration-of-life-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Celebration of Life Ideas &rarr;</Link></li>
+                <li><Link href="/blog/memorial-keepsakes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Keepsakes &rarr;</Link></li>
+                <li><Link href="/blog/celebration-of-life-food-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Celebration of Life Food Ideas &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

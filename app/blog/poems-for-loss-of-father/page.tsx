@@ -134,6 +134,17 @@ export default function PoemsForLossOfFatherPage() {
             </section>
 
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The 5 Stages of Grief Explained &rarr;</Link></li>
+                <li><Link href="/blog/grief-counseling-guide" className="text-slate-600 hover:text-slate-800 font-medium">Grief Counseling &rarr;</Link></li>
+                <li><Link href="/blog/how-long-does-grief-last" className="text-slate-600 hover:text-slate-800 font-medium">How Long Does Grief Last? What to Expect Over Time &rarr;</Link></li>
+                <li><Link href="/blog/ambiguous-loss" className="text-slate-600 hover:text-slate-800 font-medium">Ambiguous Loss &rarr;</Link></li>
+              </ul>
+            </section>
+
               <h2 className="text-2xl font-bold text-gray-900 mb-3">Browse Funeral Homes Near You</h2>
               <p className="text-gray-600 mb-6">Find funeral homes in your area that can help plan a meaningful service for your father.</p>
               <Link href="/states" className="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition">Browse Funeral Homes Near You</Link>

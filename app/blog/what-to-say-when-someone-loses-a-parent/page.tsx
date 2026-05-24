@@ -135,6 +135,17 @@ export default function WhatToSayWhenSomeoneLosesAParentPage() {
             </section>
 
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/words-of-comfort-for-grieving-family" className="text-slate-600 hover:text-slate-800 font-medium">Words of Comfort for a Grieving Family &rarr;</Link></li>
+                <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last &rarr;</Link></li>
+                <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts &rarr;</Link></li>
+                <li><Link href="/blog/condolence-messages" className="text-slate-600 hover:text-slate-800 font-medium">Condolence Messages &rarr;</Link></li>
+              </ul>
+            </section>
+
               <h2 className="text-2xl font-bold text-gray-900 mb-3">Browse Funeral Homes Near You</h2>
               <p className="text-gray-600 mb-6">Find funeral homes in your area that can help with arrangements and grief support resources.</p>
               <Link href="/states" className="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition">Browse Funeral Homes Near You</Link>

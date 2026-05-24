@@ -180,6 +180,17 @@ export default function HiddenFuneralCostsTennesseePage() {
                 Find Funeral Homes by State
               </Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/what-to-do-when-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">What to Do When Someone Dies &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Guide &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-and-estate-planning" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Costs and Estate Planning &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>

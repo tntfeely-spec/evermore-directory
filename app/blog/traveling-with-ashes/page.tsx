@@ -120,6 +120,17 @@ export default function TravelingWithAshesPage() {
               <p className="text-gray-600 mb-6">Browse our directory to compare providers in your area and make an informed decision for your family.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Browse All States</Link>
             </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? The Complete 2026 Guide &rarr;</Link></li>
+                <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? State-by-State Pric... &rarr;</Link></li>
+                <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs. Cremation &rarr;</Link></li>
+                <li><Link href="/blog/cheapest-cremation-near-me" className="text-slate-600 hover:text-slate-800 font-medium">Cheapest Cremation Near Me &rarr;</Link></li>
+              </ul>
+            </section>
+
           </article>
         </div>
       </main>
