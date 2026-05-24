@@ -71,3 +71,18 @@ Blog posts are individual page files under `app/blog/[slug]/` (one directory per
 - State abbreviation ↔ full name mapping (`stateNames` object) is duplicated in each page file that needs it
 - Featured listings (`is_featured` flag) get visual priority in city pages
 - City name matching handles both spaces and hyphens (e.g., "Sedro Woolley" vs "Sedro-Woolley")
+
+### Blog Post Types
+Two distinct blog post types with different layout patterns:
+
+**Editorial posts** (guides, how-tos, explainers): Hero image is appropriate. Standard layout with H1, byline, hero image, then content.
+
+**Shopping/affiliate posts** (product roundups, "best of" lists): NO hero image. Layout jumps straight to value: H1, byline, intro paragraph, FTC affiliate disclosure, then first product. Shopping posts use `AffiliateLink` component with `rel="sponsored"`. Shopping posts link to other shopping posts in their "You Might Also Like" section (not to editorial content).
+
+Current shopping posts: `best-memorial-wind-chimes`, `best-memorial-gifts`, `personalized-sympathy-gifts`, `funeral-flowers-delivery`, `plants-instead-of-flowers-funeral`
+
+### Internal Linking Clusters
+- Shopping posts link to other shopping posts ("You Might Also Like")
+- Editorial posts link to topically related editorial posts ("You Might Also Find Helpful")
+- Grief posts link to grief posts, cremation to cremation, traditions to traditions, etc.
+- Avoid linking city/directory pages into editorial content sections

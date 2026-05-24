@@ -76,24 +76,6 @@ export default function BestRemembranceGiftsPage() {
                 The 15 Best Memorial Gifts for Loss of a Loved One (2026)
               </h1>
 
-              <svg viewBox="0 0 800 300" className="w-full rounded-lg mb-6" aria-label="Remembrance gifts illustration" role="img">
-                <defs>
-                  <linearGradient id="sky-rg" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#E0E7FF" />
-                    <stop offset="100%" stopColor="#C7D2FE" />
-                  </linearGradient>
-                </defs>
-                <rect width="800" height="300" fill="url(#sky-rg)" />
-                <rect x="320" y="80" width="160" height="120" rx="8" fill="#6366F1" opacity="0.15" />
-                <rect x="330" y="90" width="140" height="80" rx="4" fill="#818CF8" opacity="0.2" />
-                <circle cx="400" cy="130" r="25" fill="#A5B4FC" opacity="0.4" />
-                <rect x="370" y="180" width="60" height="10" rx="2" fill="#6366F1" opacity="0.2" />
-                <circle cx="200" cy="150" r="30" fill="#C4B5FD" opacity="0.3" />
-                <path d="M190 140 L200 125 L210 140" fill="none" stroke="#7C3AED" strokeWidth="2" opacity="0.4" />
-                <rect x="550" y="100" width="80" height="100" rx="6" fill="#A78BFA" opacity="0.15" />
-                <rect x="560" y="110" width="60" height="60" rx="3" fill="#C4B5FD" opacity="0.2" />
-              </svg>
-
               <p className="text-sm text-gray-500 mb-3">
                 By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
               </p>

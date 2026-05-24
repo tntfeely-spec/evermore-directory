@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import AffiliateLink from '@/components/AffiliateLink';
 
@@ -108,16 +107,7 @@ export default function BestMemorialWindChimesPage() {
                 The 15 Best Memorial Wind Chimes of 2026
               </h1>
 
-              <div className="my-8 overflow-hidden rounded-lg shadow-md">
-                <Image
-                  src="/blog/best-memorial-wind-chimes/hero.jpg"
-                  alt="Memorial wind chime with bronze tubes hanging in a sunlit garden beside a white porch"
-                  width={1200}
-                  height={1200}
-                  priority
-                  className="w-full h-auto"
-                />
-              </div>
+
 
               <p className="text-sm text-gray-500 mb-3">
                 By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
