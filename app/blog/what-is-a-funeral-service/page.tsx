@@ -186,17 +186,15 @@ export default function WhatIsAFuneralService() {
                 href="/states"
                 className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium"
               >
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: Step-by-Step Guide &rarr;</Link></li>
+                <li><Link href="/blog/what-to-wear-to-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What to Wear to a Funeral: Dress Code Guide for 2026 &rarr;</Link></li>
+                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette: What to Do, Say, and Avoid &rarr;</Link></li>
+                <li><Link href="/blog/pallbearer-guide" className="text-slate-600 hover:text-slate-800 font-medium">Pallbearer Guide: What to Wear, What to Do, and What to &rarr;</Link></li>
               </ul>
             </section>
-
                 Browse Funeral Homes Near You
               </Link>
             </section>

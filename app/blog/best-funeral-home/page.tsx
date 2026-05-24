@@ -314,18 +314,15 @@ export default function BestFuneralHomePage() {
                 <li><Link href="/funeral-costs" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Costs by State &rarr;</Link></li>
               </ul>
             </section>
-
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home: What Families Need to Kno &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Gu &rarr;</Link></li>
+                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule: Your Rights When Planning a Funer &rarr;</Link></li>
+                <li><Link href="/blog/best-prepaid-funeral-plans" className="text-slate-600 hover:text-slate-800 font-medium">Prepaid Funeral Plans: How to Compare and Choose the Ri &rarr;</Link></li>
               </ul>
             </section>
-
             <BlogFooterLinks />
 
             <div className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center">

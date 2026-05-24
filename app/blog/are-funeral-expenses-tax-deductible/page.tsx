@@ -120,17 +120,14 @@ export default function AreFuneralExpensesTaxDeductiblePage() {
               <p className="text-gray-600 mb-6">Browse trusted funeral homes and cremation providers in your state to find compassionate, affordable care during a difficult time.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">Browse All States</Link>
             </section>
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does a Funeral Cost in 2026? Complete Price Gu &rarr;</Link></li>
+                <li><Link href="/blog/funeral-cost-calculator" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Cost Calculator: Estimate Costs by State &rarr;</Link></li>
+                <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Can &rarr;</Link></li>
               </ul>
             </section>
-
           </article>
         </div>
       </main>

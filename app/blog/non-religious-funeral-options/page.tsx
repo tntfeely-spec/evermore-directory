@@ -106,17 +106,14 @@ export default function NonReligiousFuneralOptionsPage() {
               <p className="text-gray-600 mb-6">Browse our directory to compare providers in your area and make an informed decision for your family.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Browse All States</Link>
             </section>
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/celebration-of-life-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Celebration of Life Ideas: Meaningful Ways to Honor Som &rarr;</Link></li>
+                <li><Link href="/blog/memorial-service-ideas" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Service Ideas: How to Create a Meaningful Trib &rarr;</Link></li>
+                <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: Step-by-Step Guide &rarr;</Link></li>
               </ul>
             </section>
-
           </article>
         </div>
       </main>

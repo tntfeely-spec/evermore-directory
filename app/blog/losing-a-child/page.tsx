@@ -108,17 +108,15 @@ export default function LosingAChildPage() {
             <section className="mt-16 bg-slate-50 border-t border-slate-100 py-10 -mx-4 px-4 text-center">
               <p className="text-lg font-semibold text-slate-700 mb-2">Find funeral homes in your area</p>
               <p className="text-slate-600 text-sm mb-5">Search 7,395+ funeral homes and cremation providers across all 50 states. Compare prices, services, and locations. Free for families.</p>
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The 5 Stages of Grief Explained: What They Are and What &rarr;</Link></li>
+                <li><Link href="/blog/grief-counseling-guide" className="text-slate-600 hover:text-slate-800 font-medium">Grief Counseling: What It Is and When to Consider It &rarr;</Link></li>
+                <li><Link href="/blog/complicated-grief" className="text-slate-600 hover:text-slate-800 font-medium">Complicated Grief: Symptoms, Causes, and How to Get Hel &rarr;</Link></li>
+                <li><Link href="/blog/miscarriage-grief" className="text-slate-600 hover:text-slate-800 font-medium">Miscarriage Grief: What to Say and How to Support Someo &rarr;</Link></li>
               </ul>
             </section>
-
               <Link href="/states" className="inline-block bg-slate-700 text-white px-6 py-3 rounded hover:bg-slate-800 transition-colors font-medium">Browse Funeral Homes Near You</Link>
             </section>
           </article>

@@ -116,17 +116,15 @@ export default function WhatIsADnrPage() {
               <p className="text-gray-600 mb-6">Browse trusted funeral homes and cremation providers in your state to find compassionate, affordable care during a difficult time.</p>
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">Browse All States</Link>
             </section>
-
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/funeral-etiquette-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Etiquette &rarr;</Link></li>
-                <li><Link href="/blog/ftc-funeral-rule-explained" className="text-slate-600 hover:text-slate-800 font-medium">The FTC Funeral Rule &rarr;</Link></li>
-                <li><Link href="/blog/how-to-choose-a-funeral-home" className="text-slate-600 hover:text-slate-800 font-medium">How to Choose a Funeral Home &rarr;</Link></li>
-                <li><Link href="/blog/alameda-county-funeral-homes" className="text-slate-600 hover:text-slate-800 font-medium">Alameda County Funeral Homes &rarr;</Link></li>
+                <li><Link href="/blog/hospice-guide" className="text-slate-600 hover:text-slate-800 font-medium">Hospice Care: How It Works, What It Costs, and What to  &rarr;</Link></li>
+                <li><Link href="/blog/living-will-vs-advance-directive" className="text-slate-600 hover:text-slate-800 font-medium">Living Will vs. Advance Directive: What Is the Differen &rarr;</Link></li>
+                <li><Link href="/blog/end-of-life-planning-checklist" className="text-slate-600 hover:text-slate-800 font-medium">End of Life Planning Checklist: Everything to Do Before &rarr;</Link></li>
+                <li><Link href="/blog/power-of-attorney-guide" className="text-slate-600 hover:text-slate-800 font-medium">Power of Attorney Guide: Types, How It Works, and What  &rarr;</Link></li>
               </ul>
             </section>
-
           </article>
         </div>
       </main>
