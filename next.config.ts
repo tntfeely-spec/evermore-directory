@@ -51,6 +51,16 @@ const nextConfig: NextConfig = {
         destination: '/blog/5-stages-of-grief',
         permanent: true,
       },
+      {
+        source: '/drafts/best-remembrance-gifts',
+        destination: '/blog/best-memorial-gifts',
+        permanent: true,
+      },
+      {
+        source: '/blog/best-remembrance-gifts',
+        destination: '/blog/best-memorial-gifts',
+        permanent: true,
+      },
     ];
   },
 

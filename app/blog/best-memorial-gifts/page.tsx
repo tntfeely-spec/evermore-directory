@@ -4,16 +4,16 @@ import Navigation from '@/components/Navigation';
 import AffiliateLink from '@/components/AffiliateLink';
 
 export const metadata: Metadata = {
-  title: "The 15 Best Remembrance Gifts for 2026: A Buyer's Guide",
-  description: 'Honest reviews of 15 lasting remembrance gifts from $15 to $200+. Cremation jewelry, photo frames, custom keepsakes, memorial trees, and more. Real prices verified May 2026.',
-  alternates: { canonical: 'https://funeralhomedirectories.com/blog/best-remembrance-gifts' },
+  title: "The 15 Best Memorial Gifts for Loss of a Loved One (2026): A Buyer's Guide",
+  description: 'Compare 15 meaningful memorial gifts to honor a loved one. Personalized keepsakes, memorial trees, wind chimes, jewelry, and more. Updated 2026.',
+  alternates: { canonical: 'https://funeralhomedirectories.com/blog/best-memorial-gifts' },
   openGraph: {
-    title: 'The 15 Best Remembrance Gifts for 2026',
-    description: '15 lasting remembrance gifts honest reviews ($15-$200+). Cremation jewelry, photo frames, custom keepsakes, memorial trees.',
-    url: 'https://funeralhomedirectories.com/blog/best-remembrance-gifts',
+    title: 'The 15 Best Memorial Gifts for Loss of a Loved One (2026)',
+    description: 'Compare 15 meaningful memorial gifts to honor a loved one. Personalized keepsakes, memorial trees, wind chimes, jewelry, and more. Updated 2026.',
+    url: 'https://funeralhomedirectories.com/blog/best-memorial-gifts',
     type: 'article',
-    publishedTime: '2026-05-23T00:00:00.000Z',
-    modifiedTime: '2026-05-23T00:00:00.000Z',
+    publishedTime: '2026-05-24T00:00:00.000Z',
+    modifiedTime: '2026-05-24T00:00:00.000Z',
     authors: ['Terry Feely'],
   },
 };
@@ -47,12 +47,12 @@ export default function BestRemembranceGiftsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
-        "headline": "The 15 Best Remembrance Gifts for 2026: A Buyer's Guide",
-        "description": "Honest reviews of 15 lasting remembrance gifts from $15 to $200+.",
+        "headline": "The 15 Best Memorial Gifts for Loss of a Loved One (2026): A Buyer's Guide",
+        "description": "Compare 15 meaningful memorial gifts to honor a loved one.",
         "author": { "@type": "Person", "name": "Terry Feely", "jobTitle": "Founder, Evermore Directory", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-23", "dateModified": "2026-05-23",
-        "mainEntityOfPage": "https://funeralhomedirectories.com/blog/best-remembrance-gifts"
+        "mainEntityOfPage": "https://funeralhomedirectories.com/blog/best-memorial-gifts"
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "FAQPage",
@@ -60,7 +60,7 @@ export default function BestRemembranceGiftsPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "ItemList",
-        "name": "Best Remembrance Gifts of 2026", "numberOfItems": 15,
+        "name": "The 15 Best Memorial Gifts for 2026", "numberOfItems": 15,
         "itemListElement": quickPicks.map((p, i) => ({
           "@type": "ListItem", "position": i + 1,
           "item": { "@type": "Product", "name": p.product, "offers": { "@type": "Offer", "price": p.price.replace('$', '').split('-')[0], "priceCurrency": "USD", "availability": "https://schema.org/InStock" } }
@@ -73,7 +73,7 @@ export default function BestRemembranceGiftsPage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                The 15 Best Remembrance Gifts for 2026
+                The 15 Best Memorial Gifts for Loss of a Loved One (2026)
               </h1>
 
               <svg viewBox="0 0 800 300" className="w-full rounded-lg mb-6" aria-label="Remembrance gifts illustration" role="img">
@@ -95,10 +95,10 @@ export default function BestRemembranceGiftsPage() {
               </svg>
 
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
               </p>
               <p className="text-xl text-gray-600">
-                Honest reviews of lasting remembrance gifts from $15 to $200+. Cremation jewelry, photo frames, custom keepsakes, memorial trees, and more.
+                Compare 15 meaningful memorial gifts to honor a loved one. Personalized keepsakes, memorial trees, wind chimes, jewelry, and more.
               </p>
             </header>
 
@@ -108,10 +108,10 @@ export default function BestRemembranceGiftsPage() {
                 When someone you care about has lost a person they are close to, sending flowers or a card feels right in the first week. But flowers wilt. Cards get tucked away. The first month becomes the second month, and the rituals of support fade.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                A remembrance gift is different. It is chosen to last. A piece of jewelry worn against the skin. A framed photograph that earns a permanent spot on the mantle. A tree planted in a quiet corner of the yard. These are the gifts that show up for the bereaved months after the funeral, when the cards have stopped and the casseroles are gone.
+                A memorial gift is different. It is chosen to last. A piece of jewelry worn against the skin. A framed photograph that earns a permanent spot on the mantle. A tree planted in a quiet corner of the yard. These are the gifts that show up for the bereaved months after the funeral, when the cards have stopped and the casseroles are gone.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                This guide covers 15 of the best remembrance gifts available in 2026, from $15 budget-friendly options to $200+ premium heirlooms. Real prices verified in May 2026. Honest reviews of who each gift is best for, what makes it different, and what to know before you buy.
+                This guide covers 15 of the best memorial gifts available in 2026, from $15 budget-friendly options to $200+ premium heirlooms. Real prices verified in May 2026. Honest reviews of who each gift is best for, what makes it different, and what to know before you buy.
               </p>
               <p className="text-xs text-gray-400 italic mb-6">
                 Evermore is reader-supported. We may earn an affiliate commission when you buy through links on this page, at no extra cost to you. This never affects which products we recommend.
@@ -162,7 +162,7 @@ export default function BestRemembranceGiftsPage() {
 
             {/* Reviews */}
             <section className="mb-10" id="reviews">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">15 Remembrance Gifts Reviewed</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">15 Memorial Gifts Reviewed</h2>
 
               <h3 className="text-xl font-bold text-gray-800 mb-4 mt-8">Budget Tier ($15 to $40)</h3>
 
