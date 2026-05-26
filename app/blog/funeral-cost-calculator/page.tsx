@@ -58,6 +58,7 @@ export default async function FuneralCostCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Cost Calculator: Estimate Costs by State (2026)","description":"Estimate funeral and cremation costs in your state. Real price ranges from 7,395+ funeral homes and cremation providers across all 50 states.","datePublished":"2026-04-16","dateModified":"2026-05-26","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"mainEntityOfPage":"https://funeralhomedirectories.com/blog/funeral-cost-calculator"}) }} />
       <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
