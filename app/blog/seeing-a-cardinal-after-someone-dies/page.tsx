@@ -118,7 +118,7 @@ export default function SeeingACardinalAfterSomeoneDiesPage() {
               <ul className="space-y-2">
                 <li><Link href="/blog/when-cardinals-appear-angels-are-near" className="text-slate-600 hover:text-slate-800 font-medium">When Cardinals Appear, Angels Are Near: The Meaning Behind the Phrase</Link></li>
                 <li><Link href="/blog/cardinal-sign-from-heaven" className="text-slate-600 hover:text-slate-800 font-medium">Is a Cardinal a Sign from Heaven?</Link></li>
-                <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Guide for Families</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Guide for Families</Link></li>
                 <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts That Actually Mean Something</Link></li>
                 <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last Beyond the First Week</Link></li>
                 <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief, Explained Honestly</Link></li>

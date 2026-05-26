@@ -344,7 +344,7 @@ export default function PlantsInsteadOfFlowersFuneralPage() {
                 <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last: Thoughtful Ideas Beyond Flowers</Link></li>
                 <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts: What Families Actually Keep</Link></li>
                 <li><Link href="/blog/gifts-for-grieving-friends" className="text-slate-600 hover:text-slate-800 font-medium">Gifts for Grieving Friends: What Actually Helps</Link></li>
-                <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Lasting Tribute</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Lasting Tribute</Link></li>
                 <li><Link href="/blog/what-to-plant-in-memory-of-someone" className="text-slate-600 hover:text-slate-800 font-medium">What to Plant in Memory of Someone You Loved</Link></li>
                 <li><Link href="/blog/funeral-flowers-guide" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Flowers Guide: Meanings, Etiquette, and What to Send</Link></li>
               </ul>

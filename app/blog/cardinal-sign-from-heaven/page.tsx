@@ -111,7 +111,7 @@ export default function CardinalSignFromHeavenPage() {
               <ul className="space-y-2">
                 <li><Link href="/blog/when-cardinals-appear-angels-are-near" className="text-slate-600 hover:text-slate-800 font-medium">When Cardinals Appear, Angels Are Near: The Full Poem and Meaning</Link></li>
                 <li><Link href="/blog/seeing-a-cardinal-after-someone-dies" className="text-slate-600 hover:text-slate-800 font-medium">Seeing a Cardinal After Someone Dies: What Families Say It Means</Link></li>
-                <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Gift That Keeps Speaking</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Gift That Keeps Speaking</Link></li>
                 <li><Link href="/blog/personalized-sympathy-gifts" className="text-slate-600 hover:text-slate-800 font-medium">Personalized Sympathy Gifts That Mean Something</Link></li>
                 <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last Longer Than Flowers</Link></li>
                 <li><Link href="/blog/5-stages-of-grief" className="text-slate-600 hover:text-slate-800 font-medium">The Stages of Grief, Explained Without the Jargon</Link></li>

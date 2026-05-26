@@ -61,6 +61,16 @@ const nextConfig: NextConfig = {
         destination: '/blog/best-memorial-gifts',
         permanent: true,
       },
+      {
+        source: '/blog/obituary-templates',
+        destination: '/blog/obituary-template',
+        permanent: true,
+      },
+      {
+        source: '/blog/memorial-wind-chimes',
+        destination: '/blog/best-memorial-wind-chimes',
+        permanent: true,
+      },
     ];
   },
 

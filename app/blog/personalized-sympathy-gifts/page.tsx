@@ -129,7 +129,7 @@ export default function PersonalizedSympathyGiftsPage() {
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Guide for Families</Link></li>
+                <li><Link href="/blog/best-memorial-wind-chimes" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Wind Chimes: A Guide for Families</Link></li>
                 <li><Link href="/blog/memorial-stepping-stones" className="text-slate-600 hover:text-slate-800 font-medium">Memorial Stepping Stones: Engraving and Placement</Link></li>
                 <li><Link href="/blog/sympathy-gifts-that-last" className="text-slate-600 hover:text-slate-800 font-medium">Sympathy Gifts That Last</Link></li>
                 <li><Link href="/blog/gifts-for-grieving-friends" className="text-slate-600 hover:text-slate-800 font-medium">Gifts for Grieving Friends</Link></li>
