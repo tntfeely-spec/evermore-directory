@@ -4,8 +4,8 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Much Does Cremation Cost in 2026? State-by-State Price Guide',
-  description: 'Cremation costs in 2026 range from $500 to $7,000+ depending on location and services. See average cremation prices by state and learn how to save money.',
+  title: 'Cremation Costs in 2026: $1,500 Average (State-by-State Breakdown)',
+  description: 'Direct cremation costs $500-$3,500 in 2026 ($1,500 average). Cremation with service runs $2,000-$7,000. See prices by state and 7 ways to save thousands.',
   keywords: 'cremation cost, how much does cremation cost, cremation prices 2026, average cremation cost, direct cremation cost, cremation cost by state',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/cremation-costs-2026' },
 };
@@ -40,7 +40,7 @@ export default function CremationCosts2026Page() {
         }) }}
       />
     <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"How Much Does Cremation Cost in 2026? State-by-State Price Guide","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/cremation-costs-2026"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Cremation Costs in 2026: $1,500 Average (State-by-State Breakdown)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-26","url":"https://funeralhomedirectories.com/blog/cremation-costs-2026"}) }} />
 
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -71,6 +71,15 @@ export default function CremationCosts2026Page() {
               <li>A cremation with a full memorial service costs $3,000 to $7,000 on average.</li>
               <li>Aquamation, also called alkaline hydrolysis, costs $2,000 to $3,000 and is available in 28 states.</li>
             </ul>
+          </div>
+
+          <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Planning ahead protects your family</p>
+            <p className="text-sm text-gray-600 mb-3">A simple will and final wishes document costs less than the average urn and ensures your cremation preferences are followed exactly.</p>
+            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+              Create your will at LawDepot <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
           </div>
 
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
@@ -307,6 +316,15 @@ export default function CremationCosts2026Page() {
             </div>
           </section>
 
+          <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Save $200 to $400 on an urn</p>
+            <p className="text-sm text-gray-600 mb-3">Quality memorial urns are available online from $50 to $150 compared to $300 to $500+ at funeral homes. Funeral homes are legally required to accept urns purchased elsewhere.</p>
+            <a href="https://www.amazon.com/s?k=memorial+urn+for+ashes&tag=evermorefuner-20" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-700 hover:bg-slate-800 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+              Browse memorial urns on Amazon <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
+          </div>
+
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Find Affordable Cremation</h2>
             <p className="text-gray-600 mb-4">
@@ -372,6 +390,15 @@ export default function CremationCosts2026Page() {
             </p>
           </section>
 
+          <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">72% of adults do not have a will</p>
+            <p className="text-sm text-gray-600 mb-3">Do not leave your cremation wishes and final arrangements unclear. Document your preferences in 15 minutes with a free, attorney-reviewed template.</p>
+            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+              Start your will at LawDepot <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
+          </div>
+
           {/* Related Articles */}
           <section className="mt-12 border-t border-gray-200 pt-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Related Articles</h2>
@@ -419,7 +446,7 @@ export default function CremationCosts2026Page() {
               Browse Funeral Homes Near You
             </Link>
           </div>
-          <p className="text-sm text-gray-400 mt-8">Last updated: February 2026</p>
+          <p className="text-sm text-gray-400 mt-8">Last updated: May 2026</p>
         </article>
       </div>
     </main>
