@@ -4,8 +4,8 @@ import BlogFooterLinks from '@/components/BlogFooterLinks';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Funeral Cost in 2026? Complete Price Guide',
-  description: 'Funeral costs in 2026 range from $7,000 to $15,000+ for a traditional service. See average funeral prices by state, what is included, and how to save money.',
+  title: 'Funeral Costs in 2026: $7,848 Average (State-by-State Breakdown)',
+  description: 'The average U.S. funeral costs $7,848 in 2026. Direct cremation starts at $1,000. See prices by state, what drives costs up, and 7 ways to save thousands.',
   keywords: 'funeral cost, how much does a funeral cost, funeral prices 2026, average funeral cost, funeral expenses, burial cost, funeral home prices',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog/funeral-costs-2026',
@@ -42,7 +42,7 @@ export default function FuneralCosts2026Page() {
         }) }}
       />
     <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"How Much Does a Funeral Cost in 2026? Complete Price Guide","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-01","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/funeral-costs-2026"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Costs in 2026: $7,848 Average (State-by-State Breakdown)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-01","dateModified":"2026-05-26","url":"https://funeralhomedirectories.com/blog/funeral-costs-2026"}) }} />
 
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -73,6 +73,15 @@ export default function FuneralCosts2026Page() {
               <li>Funeral costs have increased approximately 28% over the past decade, outpacing general inflation.</li>
               <li>The FTC Funeral Rule requires all funeral homes to provide an itemized price list to anyone who asks, at no charge.</li>
             </ul>
+          </div>
+
+          <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Protect your family from unexpected funeral costs</p>
+            <p className="text-sm text-gray-600 mb-3">A will or estate plan ensures your wishes are documented and your family is not left guessing. LawDepot offers free, attorney-reviewed templates you can complete in minutes.</p>
+            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+              Create a Free Will <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
           </div>
 
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
@@ -281,6 +290,12 @@ export default function FuneralCosts2026Page() {
                 <h3 className="font-semibold text-gray-800 mb-2">Is it cheaper to be buried or cremated?</h3>
                 <p className="text-gray-600 text-sm">Cremation is significantly cheaper. Direct cremation averages $1,500 while a traditional funeral with burial averages $8,300+ (not including the cemetery plot). <Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:underline">See our full comparison →</Link></p>
               </div>
+              {/* Cremation society affiliate placeholder: add CJ or direct link when partnership confirmed */}
+              <div className="border border-amber-200 bg-amber-50 rounded-lg p-4">
+                <p className="text-sm text-gray-700 mb-1"><strong>Considering cremation?</strong> Direct cremation starts at $1,000 and is the most affordable option. Compare cremation providers in your state.</p>
+                <Link href="/direct-cremation" className="text-sm text-slate-600 hover:text-slate-800 font-medium">Browse Direct Cremation Providers by State &rarr;</Link>
+              </div>
+
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">How much does a cemetery plot cost?</h3>
                 <p className="text-gray-600 text-sm">Cemetery plots range from $1,000 in rural areas to $4,000+ in metropolitan areas. Premium locations (near landmarks, trees, or water features) can cost $10,000+. This cost is separate from the funeral home bill.</p>
@@ -303,6 +318,15 @@ export default function FuneralCosts2026Page() {
               If a funeral home refuses to provide a price list or pressures you into unwanted services, you can file a complaint with the Federal Trade Commission.
             </p>
           </section>
+
+          <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Have you documented your wishes?</p>
+            <p className="text-sm text-gray-600 mb-3">72% of American adults do not have a will. A basic will takes 15 minutes to create and can save your family thousands in legal fees and family disputes after your death.</p>
+            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+              Create a Free Will with LawDepot <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
+          </div>
 
           {/* Related Articles */}
           <section className="mt-12 border-t border-gray-200 pt-8">
@@ -344,7 +368,7 @@ export default function FuneralCosts2026Page() {
               Browse Funeral Homes Near You
             </Link>
           </div>
-          <p className="text-sm text-gray-400 mt-8">Last updated: March 2026</p>
+          <p className="text-sm text-gray-400 mt-8">Last updated: May 2026</p>
         </article>
       </div>
     </main>
