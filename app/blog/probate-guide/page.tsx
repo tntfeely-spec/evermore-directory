@@ -35,6 +35,8 @@ export default function ProbateGuidePage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Is Probate</h2>
               <p className="text-gray-600 leading-relaxed mb-4">Probate is the court supervised process of validating a deceased person&apos;s will, settling their debts, and distributing their assets to the proper beneficiaries. The process is designed to ensure that the deceased person&apos;s wishes are honored, that creditors are paid, and that assets are transferred in an orderly and legally recognized manner. A probate judge oversees the process and resolves any disputes that arise among heirs, creditors, or other interested parties.</p>
@@ -76,6 +78,13 @@ export default function ProbateGuidePage() {
               <p className="text-gray-600 leading-relaxed mb-4">Beneficiary designations are another powerful tool for avoiding probate. By naming beneficiaries on your bank accounts, retirement accounts, and life insurance policies, those assets pass directly to the named recipients upon your death. Payable on death designations on bank accounts and transfer on death designations on brokerage accounts and, in some states, real estate deeds accomplish the same result.</p>
               <p className="text-gray-600 leading-relaxed">Joint ownership with right of survivorship is a third common strategy. When property is held as joint tenants, it automatically passes to the surviving owner upon the first owner&apos;s death. However, this approach has drawbacks, including potential gift tax implications and the risk that the joint owner could access or sell the property during your lifetime. An estate planning attorney can help you evaluate which combination of strategies is best for your specific situation.</p>
             </section>
+
+            <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+              <p className="text-sm text-gray-700 mb-3">Many families going through probate realize they want their own affairs in order. <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">LawDepot offers state-specific wills, living trusts, and estate planning documents</a> you can create online in about 15 minutes.</p>
+              <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+                Create your estate plan <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">When Probate Cannot Be Avoided</h2>

@@ -35,6 +35,8 @@ export default function WhatHappensToDebtPage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">One of the most common concerns families have after a death is what happens to the deceased person&apos;s debts. Will they inherit the debt? Will creditors come after them? The short answer is that most debt does not transfer to family members, but it does not simply vanish either. Understanding how debt is handled after death can help families protect themselves and navigate the process with less anxiety.</p>
             </section>
@@ -82,6 +84,13 @@ export default function WhatHappensToDebtPage() {
               <p className="text-gray-600 leading-relaxed mb-4">You should also consult an attorney if you are being contacted by debt collectors who claim you are responsible for a deceased relative&apos;s debt. An attorney can review the specific circumstances and advise you on whether you have any legal obligation. In many cases, the answer is no, and the attorney can help you put a stop to improper collection attempts.</p>
               <p className="text-gray-600 leading-relaxed">Estate attorneys typically charge either a flat fee or an hourly rate for probate and estate administration work. Many offer free initial consultations. The cost of legal advice is often far less than the cost of paying debts you do not actually owe.</p>
             </section>
+
+            <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+              <p className="text-sm text-gray-700 mb-3">Making sure your estate plan addresses debts and beneficiaries protects your family from confusion and unnecessary liability. <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">LawDepot offers wills, trusts, and estate planning documents</a> you can create online.</p>
+              <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+                Create your estate plan <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
 
             <section className="mb-10 bg-white rounded-xl shadow-md p-8 border border-gray-200">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently asked questions</h2>

@@ -35,6 +35,8 @@ export default function WhatIsADnrPage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Is a DNR</h2>
               <p className="text-gray-600 leading-relaxed mb-4">A DNR, or do not resuscitate order, is a medical order signed by a physician that instructs healthcare providers not to perform cardiopulmonary resuscitation if your heart stops beating or if you stop breathing. Unlike a living will or advance directive, which are legal documents you create yourself, a DNR is a physician order that becomes part of your medical record. It carries the same weight as any other medical order in a hospital or care facility.</p>
@@ -76,6 +78,13 @@ export default function WhatIsADnrPage() {
               <p className="text-gray-600 leading-relaxed mb-4">POLST forms go by different names in different states. Some states call them MOLST (Medical Orders for Life Sustaining Treatment), others use MOST (Medical Orders for Scope of Treatment), and some use other variations. Regardless of the name, the concept is the same: a portable set of physician orders that travel with the patient and are honored across care settings.</p>
               <p className="text-gray-600 leading-relaxed">A POLST is generally recommended for people with serious advanced illness or frailty. If you only want to address CPR, a DNR may be sufficient. If you want to document preferences about a wider range of medical interventions, a POLST may be more appropriate. Your physician can help you determine which form best fits your situation and your goals of care.</p>
             </section>
+
+            <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+              <p className="text-sm text-gray-700 mb-3">If reading this has you thinking about your own wishes, you can <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">create a living will and health care directive through LawDepot</a>. Their online tools walk you through the process in about 15 minutes.</p>
+              <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+                Create your advance directive <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Happens Without a DNR</h2>
