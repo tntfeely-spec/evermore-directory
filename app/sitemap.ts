@@ -2,6 +2,9 @@ import { MetadataRoute } from 'next';
 import { supabase } from '@/lib/supabase';
 import { allStateSlugs } from '@/lib/state-pricing';
 
+// Regenerate sitemap every hour so new nightly listings appear
+export const revalidate = 3600;
+
 const stateAbbreviations = [
     'al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'fl', 'ga',
     'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md',
