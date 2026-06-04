@@ -222,7 +222,7 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
               "addressCountry": "US"
             },
             ...(p.phone && { "telephone": p.phone }),
-            ...(p.website && { "url": p.website }),
+            ...(p.website && { "url": p.website.startsWith('http') ? p.website : `https://${p.website}` }),
             "priceRange": p.price_range_cremation || "$$"
           }
         }))

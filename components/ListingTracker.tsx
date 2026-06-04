@@ -26,9 +26,10 @@ export function WebsiteLink({
   className?: string;
   children: React.ReactNode;
 }) {
+  const normalizedHref = href.startsWith('http') ? href : `https://${href}`;
   return (
     <a
-      href={href}
+      href={normalizedHref}
       target="_blank"
       rel="noopener noreferrer"
       className={className}

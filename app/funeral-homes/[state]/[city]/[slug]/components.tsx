@@ -116,7 +116,7 @@ export function TabSection({ listing, services }: { listing: FuneralHome; servic
                   📷 {listing.business_name}
                 </div>
                 {listing.website && (
-                  <a href={listing.website} target="_blank" rel="noopener noreferrer" style={{ color: '#2a6496', fontSize: 14, textDecoration: 'none' }}>
+                  <a href={listing.website.startsWith('http') ? listing.website : `https://${listing.website}`} target="_blank" rel="noopener noreferrer" style={{ color: '#2a6496', fontSize: 14, textDecoration: 'none' }}>
                     See more photos on their website →
                   </a>
                 )}

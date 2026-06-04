@@ -201,7 +201,7 @@ function buildSchema(listing: FuneralHome) {
       addressCountry: 'US',
     },
     ...(listing.phone ? { telephone: listing.phone.replace(/\D/g, '').replace(/^/, '+1') } : {}),
-    ...(listing.website ? { url: listing.website } : {}),
+    ...(listing.website ? { url: listing.website.startsWith('http') ? listing.website : `https://${listing.website}` } : {}),
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
