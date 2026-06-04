@@ -57,9 +57,11 @@ export default function FuneralCosts2026Page() {
             </p>
           </header>
 
+          <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
           <section className="mb-10">
             <p className="text-gray-600 mb-4">
-              Planning a funeral is one of the most difficult things a family faces-and the cost can make it even more stressful. The average funeral in the United States costs between $7,000 and $12,000, but prices vary dramatically depending on location, services chosen, and the funeral home you work with.
+              Planning a funeral is one of the most difficult things a family faces, and the cost can make it even more stressful. The average funeral in the United States costs between $7,000 and $12,000, but prices vary dramatically depending on location, services chosen, and the funeral home you work with.
             </p>
             <p className="text-gray-600">
               This guide breaks down exactly what funerals cost in 2026, what&apos;s included (and what isn&apos;t), and how to find affordable funeral homes near you without sacrificing quality or dignity.
@@ -78,11 +80,10 @@ export default function FuneralCosts2026Page() {
 
           <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
             <p className="text-sm font-semibold text-gray-800 mb-1">Protect your family from unexpected funeral costs</p>
-            <p className="text-sm text-gray-600 mb-3">A will or estate plan ensures your wishes are documented and your family is not left guessing. LawDepot offers free, attorney-reviewed templates you can complete in minutes.</p>
-            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+            <p className="text-sm text-gray-600 mb-3">A will or estate plan ensures your wishes are documented and your family is not left guessing. <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">LawDepot offers free, attorney-reviewed templates</a> you can complete in minutes.</p>
+            <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
               Create a Free Will <span aria-hidden="true">&rarr;</span>
             </a>
-            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
           </div>
 
           <section className="mb-10 bg-slate-50 rounded-lg p-6">
@@ -320,13 +321,12 @@ export default function FuneralCosts2026Page() {
             </p>
           </section>
 
-          <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
+          <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
             <p className="text-sm font-semibold text-gray-800 mb-1">Have you documented your wishes?</p>
-            <p className="text-sm text-gray-600 mb-3">72% of American adults do not have a will. A basic will takes 15 minutes to create and can save your family thousands in legal fees and family disputes after your death.</p>
-            <a href="https://www.lawdepot.com/contracts/last-will-and-testament/?pid=pg-EVERMORE01-lastWillForm" target="_blank" rel="noopener nofollow sponsored" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+            <p className="text-sm text-gray-600 mb-3">Beyond budgeting for the funeral itself, having your estate plan in place protects your family from additional financial burden. <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">LawDepot offers wills, living trusts, and estate documents</a> you can create online.</p>
+            <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
               Create a Free Will with LawDepot <span aria-hidden="true">&rarr;</span>
             </a>
-            <p className="text-xs text-gray-400 mt-2 italic">Affiliate link. Evermore may earn a commission at no cost to you.</p>
           </div>
 
           {/* Related Articles */}

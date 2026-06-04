@@ -35,6 +35,8 @@ export default function CelebrationOfLifeFoodIdeasPage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">Food has always been part of how we come together after a loss. It gives people something to do with their hands, a reason to gather around a table, and a way to show love when words are not enough. At a celebration of life, the food can also become part of the tribute itself, connecting guests to the person being remembered through shared flavors and family recipes.</p>
             </section>
@@ -97,6 +99,7 @@ export default function CelebrationOfLifeFoodIdeasPage() {
               <p className="text-gray-600 leading-relaxed mb-4">Getting the quantity right can be tricky. A good starting point is to plan for 60 to 75 percent of invited guests to actually eat. Not everyone will come to the reception, and some guests will only stay briefly. For those who do eat, here are the general guidelines.</p>
               <p className="text-gray-600 leading-relaxed mb-4">For an appetizer only reception, plan on 6 to 8 individual items per person. This means if you expect 50 people to eat, you need 300 to 400 total pieces of food across all your appetizer options. For a reception where the food replaces a full meal, increase that to 10 to 12 items per person. For a plated or buffet meal, plan standard dinner portions plus a dessert per guest.</p>
               <p className="text-gray-600 leading-relaxed mb-4">It is always better to have a little extra than to run out. Leftover food can be packed up for the family, sent home with close friends, or donated to a local shelter. Running out of food during a memorial gathering creates unnecessary stress for the people managing the event.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">If you are serving appetizers or buffet style, <a href="https://www.amazon.com/s?k=disposable+serving+trays+party&tag=evermorefuner-20" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">disposable serving trays</a> make setup and cleanup much easier, especially if the gathering is at a home or community space without commercial kitchen equipment.</p>
             </section>
 
             <section className="mb-10">

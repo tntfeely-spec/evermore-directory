@@ -72,6 +72,8 @@ export default function FuneralFinancialAssistanceTennesseePage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">Tennessee families who cannot afford funeral costs have access to several assistance programs. Davidson, Shelby, and Knox counties each operate indigent burial programs that cover direct cremation or basic burial for qualifying low income residents at no cost. Additional options include the Social Security $255 death benefit, VA burial benefits for veterans, and nonprofit funeral assistance organizations.</p>
             </section>
@@ -108,6 +110,13 @@ export default function FuneralFinancialAssistanceTennesseePage() {
               </div>
               <p className="text-gray-700 leading-relaxed text-lg">The entire process can take several days to a week. During this time, the funeral home will hold the body. If the application is denied, the family will need to make alternative arrangements, which is why it is wise to also explore the other options listed in this guide simultaneously.</p>
             </section>
+
+            <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+              <p className="text-sm text-gray-700 mb-3">If you are navigating financial assistance after a death, your own estate plan likely needs attention too. <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">LawDepot offers state-specific wills, living trusts, and estate planning documents</a> you can create online.</p>
+              <a href="https://www.dpbolvw.net/click-101760659-15906211" target="_blank" rel="sponsored nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-md shadow-sm transition-colors no-underline">
+                Create your estate plan <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Social Security $255 Death Benefit: Who Qualifies and How to Claim</h2>
