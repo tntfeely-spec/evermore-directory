@@ -356,7 +356,9 @@ export default function FuneralCosts2026Page() {
             <ul className="space-y-2">
                 <li><Link href="/blog/what-is-direct-cremation" className="text-slate-600 hover:text-slate-800 font-medium">What Is Direct Cremation? The Complete 2026 Guide</Link></li>
               <li><Link href="/blog/cremation-costs-2026" className="text-slate-600 hover:text-slate-800 font-medium">How Much Does Cremation Cost in 2026? &rarr;</Link></li>
-              <li><Link href="/blog/how-to-plan-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">How to Plan a Funeral: A Step-by-Step Guide &rarr;</Link></li>
+              <li><Link href="/blog/funeral-financial-assistance" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Financial Assistance: 2026 National Guide &rarr;</Link></li>
+              <li><Link href="/blog/fema-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">FEMA Funeral Assistance: How to Apply &rarr;</Link></li>
+              <li><Link href="/blog/medicaid-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">Medicaid Funeral and Burial Assistance &rarr;</Link></li>
               <li><Link href="/blog/burial-vs-cremation" className="text-slate-600 hover:text-slate-800 font-medium">Burial vs Cremation: Costs, Process &amp; How to Decide &rarr;</Link></li>
             </ul>
           </section>

@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Medicaid and Funeral Assistance: What Low-Income Families Can Access',
-  description: 'Medicaid and state-level programs offer limited funeral assistance to low-income families. Here is what is available, how to apply, and what it covers.',
+  title: 'Medicaid Funeral and Burial Assistance: 2026 State-by-State Guide',
+  description: 'Medicaid does not directly pay for funerals in most states, but burial fund exclusions, irrevocable funeral trusts, and county programs can help. Learn what your state offers and how to apply.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/medicaid-funeral-assistance' },
 };
 
@@ -22,13 +22,13 @@ export default function MedicaidFuneralAssistancePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Medicaid and Funeral Assistance: What Low-Income Families Can Access","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-10","url":"https://funeralhomedirectories.com/blog/medicaid-funeral-assistance"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Medicaid Funeral and Burial Assistance: 2026 State-by-State Guide","dateModified":"2026-06-04","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-10","url":"https://funeralhomedirectories.com/blog/medicaid-funeral-assistance"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
             <header className="mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">Medicaid and Funeral Assistance: What Low-Income Families Can Access</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Medicaid Funeral and Burial Assistance: 2026 State-by-State Guide</h1>
               <p className="text-xl text-gray-600 mb-4">When a family cannot afford funeral costs, government programs and community resources may be able to help. Here is a practical guide to what is available and how to access it.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
@@ -90,10 +90,19 @@ export default function MedicaidFuneralAssistancePage() {
             </section>
 
             <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">How Medicaid Burial Assistance Varies by State</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">Medicaid is a joint federal and state program, which means each state sets its own rules for burial fund exclusions, irrevocable funeral trusts, and any direct burial benefits. A few states, including Colorado, Indiana, Wisconsin, and Wyoming, offer small direct burial benefits through Medicaid. Most other states, including Texas, California, Florida, Ohio, and Georgia, do not pay for funerals through Medicaid but allow asset exclusions for funeral planning.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Because the rules differ so significantly, the best step is to contact your state Medicaid office or county Department of Social Services to learn what applies in your area. We have published detailed state-specific guides covering Medicaid provisions, county indigent burial programs, VA cemeteries, body donation options, and nonprofit resources for each state listed below.</p>
+              <p className="text-gray-600 leading-relaxed">For a broader overview of all federal, state, and local programs, see our <Link href="/blog/funeral-financial-assistance" className="text-slate-600 hover:text-slate-800 underline font-medium">national funeral financial assistance guide</Link>.</p>
+            </section>
+
+            <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
+                <li><Link href="/blog/funeral-financial-assistance" className="text-blue-600 hover:underline">Funeral Financial Assistance: 2026 National Guide</Link></li>
+                <li><Link href="/blog/fema-funeral-assistance" className="text-blue-600 hover:underline">FEMA Funeral Assistance: How to Apply</Link></li>
                 <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-blue-600 hover:underline">What Happens If You Cannot Afford a Funeral</Link></li>
-                <li><Link href="/blog/social-security-death-benefit" className="text-blue-600 hover:underline">Social Security Death Benefit: How to Claim the $255 Payment</Link></li>
+                <li><Link href="/blog/funeral-costs-2026" className="text-blue-600 hover:underline">How Much Does a Funeral Cost in 2026</Link></li>
               </ul>
             </section>
 
