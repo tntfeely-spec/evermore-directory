@@ -77,9 +77,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? `Compare ${homeCount} funeral homes in ${cityName}, ${stateName}. See phone numbers, addresses & services. Funeral costs in ${cityName}: $7,000-$12,000. Cremation from $1,000.`
     : `Find funeral homes and cremation services in ${cityName}, ${stateName}. Compare prices, services & contact info. Funeral costs: $7,000-$12,000. Cremation from $1,000.`;
 
+  // Noindex thin city pages with fewer than 3 listings to preserve crawl budget
+  const thinPage = homeCount < 3;
+
   return {
     title,
     description,
+    ...(thinPage ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: `https://funeralhomedirectories.com/funeral-homes/${state.toLowerCase()}/${city.toLowerCase()}`,
     },

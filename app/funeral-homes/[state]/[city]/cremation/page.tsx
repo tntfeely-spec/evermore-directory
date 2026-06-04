@@ -68,6 +68,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `Cremation Services in ${cityName}, ${stateName} (2026) | Compare Prices`,
     description: `Find and compare cremation services in ${cityName}, ${stateName}. Direct cremation from $${lowest.toLocaleString()}. Compare local cremation providers.`,
+    // Noindex all cremation sub-routes: thin filtered duplicates of parent city page
+    robots: { index: false, follow: true },
     alternates: { canonical },
     openGraph: { title: `Cremation Services in ${cityName}, ${stateName}`, url: canonical, type: 'website' },
   };

@@ -72,9 +72,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const description = `Find affordable direct cremation providers in ${cityName}, ${stateName}. Compare pricing, reviews, and contact info for ${homeCount} local cremation specialists.`;
 
+  // Noindex thin direct cremation city pages with fewer than 2 providers
+  const thinPage = homeCount < 2;
+
   return {
     title,
     description,
+    ...(thinPage ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}/${city.toLowerCase()}`,
     },
