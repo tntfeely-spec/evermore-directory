@@ -103,11 +103,22 @@ export default function MedicaidFuneralAssistancePage() {
               <Link href="/states" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">Browse All States</Link>
             </section>
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">State-Specific Funeral Assistance Guides</h2>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-financial-assistance-california" className="text-slate-600 hover:text-slate-800 font-medium">California Funeral Financial Assistance &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-florida" className="text-slate-600 hover:text-slate-800 font-medium">Florida Funeral Financial Assistance &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-georgia" className="text-slate-600 hover:text-slate-800 font-medium">Georgia Funeral Financial Assistance &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-ohio" className="text-slate-600 hover:text-slate-800 font-medium">Ohio Funeral Financial Assistance &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-tennessee" className="text-slate-600 hover:text-slate-800 font-medium">Tennessee Funeral Financial Assistance &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-texas" className="text-slate-600 hover:text-slate-800 font-medium">Texas Funeral Financial Assistance &rarr;</Link></li>
+              </ul>
+            </section>
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">You Might Also Find Helpful</h2>
               <ul className="space-y-2">
-                <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Can &rarr;</Link></li>
-                <li><Link href="/blog/funeral-financial-assistance-tennessee" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Financial Assistance in Tennessee: Programs, Gr &rarr;</Link></li>
-                <li><Link href="/blog/fema-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">FEMA Funeral Assistance: How to Apply and What It Cover &rarr;</Link></li>
+                <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Cannot Afford a Funeral &rarr;</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Financial Assistance: National Guide &rarr;</Link></li>
+                <li><Link href="/blog/fema-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">FEMA Funeral Assistance: How to Apply &rarr;</Link></li>
               </ul>
             </section>
           </article>

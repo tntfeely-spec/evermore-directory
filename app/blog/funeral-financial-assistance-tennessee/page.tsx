@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options',
-  description: 'Tennessee families who cannot afford a funeral have several options including county indigent burial, Medicaid, VA benefits, FEMA assistance, and nonprofit grants.',
+  title: 'Tennessee Funeral Financial Assistance: TennCare, County Programs, and VA Benefits (2026)',
+  description: 'Tennessee residents who cannot afford a funeral can access Davidson, Shelby, and Knox County indigent burial programs, TennCare-related assistance, VA burial benefits at Nashville and Chattanooga national cemeteries, and nonprofit grants.',
   alternates: { canonical: 'https://funeralhomedirectories.com/blog/funeral-financial-assistance-tennessee' },
 };
 
@@ -42,7 +42,7 @@ const schemas = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options',
+    name: 'Tennessee Funeral Financial Assistance: TennCare, County Programs, and VA Benefits (2026)',
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: ['article > section:first-of-type']
@@ -55,14 +55,14 @@ export default function FuneralFinancialAssistanceTennesseePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-tennessee"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Tennessee Funeral Financial Assistance: TennCare, County Programs, and VA Benefits (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-tennessee"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <article>
             <header className="mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Financial Assistance in Tennessee: Programs, Grants, and Free Options</h1>
-              <p className="text-xl text-gray-600 mb-4">Tennessee families who cannot afford a funeral have several options including county indigent burial, VA benefits, the Social Security death benefit, and nonprofit grants.</p>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Tennessee Funeral Financial Assistance: TennCare, County Programs, and VA Benefits (2026)</h1>
+              <p className="text-xl text-gray-600 mb-4">A guide for Tennessee residents who need help paying for a funeral, covering Davidson, Shelby, and Knox County indigent burial programs, TennCare-related eligibility, VA burial at Nashville and Chattanooga national cemeteries, and Tennessee nonprofit grants.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="font-medium text-gray-700">By Terry Feely</span>
                 <span>|</span>
@@ -75,7 +75,7 @@ export default function FuneralFinancialAssistanceTennesseePage() {
             <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
 
             <section className="mb-10">
-              <p className="text-gray-700 leading-relaxed text-lg">Tennessee families who cannot afford funeral costs have access to several assistance programs. Davidson, Shelby, and Knox counties each operate indigent burial programs that cover direct cremation or basic burial for qualifying low income residents at no cost. Additional options include the Social Security $255 death benefit, VA burial benefits for veterans, and nonprofit funeral assistance organizations.</p>
+              <p className="text-gray-700 leading-relaxed text-lg">If you are a Tennessee resident facing funeral costs you cannot afford, this guide covers every assistance program available to you in the state. Tennessee does not have a statewide funeral assistance fund, but Davidson County (Nashville), Shelby County (Memphis), and Knox County (Knoxville) each operate indigent burial programs. Tennessee veterans can access free burial at Nashville National Cemetery or Chattanooga National Cemetery. This page is specific to Tennessee programs, eligibility rules, and contacts. For national programs or other states, see our <Link href="/blog/funeral-financial-assistance" className="text-slate-600 hover:text-slate-800 underline">national funeral financial assistance guide</Link>.</p>
             </section>
 
             <section className="mb-10">

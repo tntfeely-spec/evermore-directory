@@ -101,10 +101,25 @@ export default function FuneralFinancialAssistancePage() {
             </section>
 
             <section className="mb-10 bg-slate-50 rounded-lg p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">State-Specific Funeral Assistance Guides</h2>
+              <p className="text-sm text-gray-600 mb-3">Each state has different programs, eligibility rules, and contacts. Select your state for a detailed guide.</p>
+              <ul className="space-y-2">
+                <li><Link href="/blog/funeral-financial-assistance-california" className="text-slate-600 hover:text-slate-800 font-medium">California Funeral Financial Assistance</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-florida" className="text-slate-600 hover:text-slate-800 font-medium">Florida Funeral Financial Assistance</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-georgia" className="text-slate-600 hover:text-slate-800 font-medium">Georgia Funeral Financial Assistance</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-ohio" className="text-slate-600 hover:text-slate-800 font-medium">Ohio Funeral Financial Assistance</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-tennessee" className="text-slate-600 hover:text-slate-800 font-medium">Tennessee Funeral Financial Assistance</Link></li>
+                <li><Link href="/blog/funeral-financial-assistance-texas" className="text-slate-600 hover:text-slate-800 font-medium">Texas Funeral Financial Assistance</Link></li>
+              </ul>
+            </section>
+
+            <section className="mb-10 bg-slate-50 rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Related Reading</h2>
               <ul className="space-y-2">
                 <li><Link href="/blog/what-happens-if-you-cant-afford-a-funeral" className="text-slate-600 hover:text-slate-800 font-medium">What Happens If You Cannot Afford a Funeral?</Link></li>
                 <li><Link href="/blog/funeral-home-payment-plans" className="text-slate-600 hover:text-slate-800 font-medium">Funeral Home Payment Plans: What to Know</Link></li>
+                <li><Link href="/blog/medicaid-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">Medicaid Funeral Assistance</Link></li>
+                <li><Link href="/blog/fema-funeral-assistance" className="text-slate-600 hover:text-slate-800 font-medium">FEMA Funeral Assistance</Link></li>
               </ul>
             </section>
 
