@@ -282,8 +282,7 @@ export default async function CityPage({ params }: PageProps) {
               "addressCountry": "US"
             },
             ...(home.phone && { "telephone": home.phone }),
-            ...(home.website && { "url": home.website.startsWith('http') ? home.website : `https://${home.website}` }),
-            "priceRange": home.price_range_cremation || "$$"
+            ...(home.website && { "url": home.website.startsWith('http') ? home.website : `https://${home.website}` })
           }
         }))
       },
