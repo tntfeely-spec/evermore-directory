@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'About Evermore Directory | Built by a Former First Responder',
@@ -43,7 +42,6 @@ export default function AboutPage() {
           "founder": { "@type": "Person", "name": "Terry Feely" }
         }
       }) }} />
-      <Navigation />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-10">
