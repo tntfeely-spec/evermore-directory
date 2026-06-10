@@ -35,7 +35,6 @@ const ALLOWED_BOTS = [
 
 // Known bad bots and scrapers to block
 const BLOCKED_BOTS = [
-  'ahrefsbot',
   'semrushbot',
   'mj12bot',
   'dotbot',
