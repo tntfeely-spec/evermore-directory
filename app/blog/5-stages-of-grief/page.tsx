@@ -50,7 +50,7 @@ export default function GriefStagesExplainedPage() {
                 <li><strong>Depression:</strong> Deep sadness as the full weight of the loss becomes clear.</li>
                 <li><strong>Acceptance:</strong> Not happiness about the loss, but acknowledgment that it is real and permanent.</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">It is important to note that Kubler-Ross herself later clarified that the stages were never meant to be a rigid sequence. They are tools for identifying common emotional responses, not a prescription for how grief should unfold.</p>
+              <p className="text-gray-600 leading-relaxed">Kubler-Ross herself later clarified that the stages were never meant to be a rigid sequence. They are tools for identifying common emotional responses, not a prescription for how grief should unfold.</p>
             </section>
 
             <section className="mb-10">
@@ -71,14 +71,14 @@ export default function GriefStagesExplainedPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Stage 3: Bargaining</h2>
               <p className="text-gray-600 leading-relaxed mb-4">Bargaining is the mind&apos;s attempt to regain control in a situation where control has been lost. It often takes the form of &quot;what if&quot; and &quot;if only&quot; statements: &quot;If only I had taken them to the doctor sooner.&quot; &quot;What if I had been there that night?&quot; &quot;If I could just have one more day.&quot;</p>
               <p className="text-gray-600 leading-relaxed mb-4">This stage can also involve making deals with a higher power: &quot;If you bring them back, I will never take anything for granted again.&quot; These thoughts are not rational, and most grieving people know that. But the emotional mind is not governed by logic, and bargaining is its way of trying to undo the unbearable.</p>
-              <p className="text-gray-600 leading-relaxed">Bargaining can lead to intense feelings of guilt, particularly when the &quot;if only&quot; statements focus on things you could have done differently. It is important to recognize that these thoughts, while painful, are a normal part of grief and not evidence that you are responsible for the loss.</p>
+              <p className="text-gray-600 leading-relaxed">Bargaining can lead to intense feelings of guilt, particularly when the &quot;if only&quot; statements focus on things you could have done differently. These thoughts, while painful, are a normal part of grief and not evidence that you are responsible for the loss.</p>
             </section>
 
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Stage 4: Depression</h2>
               <p className="text-gray-600 leading-relaxed mb-4">Depression in grief is not a mental illness. It is a natural and appropriate response to a significant loss. When the bargaining fades and the full reality of the absence settles in, deep sadness often follows. You may withdraw from social activities, lose interest in things you once enjoyed, have difficulty sleeping, or feel a heaviness that makes even basic tasks feel exhausting.</p>
               <p className="text-gray-600 leading-relaxed mb-4">This stage can be the longest and the most painful. The world may feel empty, and the future may seem pointless without the person you lost. Some people describe it as a fog that never lifts or a weight on their chest that never eases.</p>
-              <p className="text-gray-600 leading-relaxed">It is important to allow yourself to feel this sadness rather than pushing it away. Well meaning friends and family may try to cheer you up or encourage you to &quot;stay busy,&quot; but grief demands to be felt. Sitting with the sadness, while painful, is how healing eventually begins.</p>
+              <p className="text-gray-600 leading-relaxed">Allow yourself to feel this sadness rather than pushing it away. Well meaning friends and family may try to cheer you up or encourage you to &quot;stay busy,&quot; but grief demands to be felt. Sitting with the sadness, while painful, is how healing eventually begins.</p>
             </section>
 
             <section className="mb-10">
