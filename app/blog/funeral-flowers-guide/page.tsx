@@ -35,6 +35,8 @@ export default function FuneralFlowersGuidePage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-600 leading-relaxed mb-4">Sending flowers to a funeral is one of the oldest and most widely recognized ways to express sympathy. The right arrangement communicates care and respect without requiring words. But choosing the right flowers, the right arrangement style, and the right delivery timing involves more thought than many people realize.</p>
               <p className="text-gray-600 leading-relaxed">This guide covers the most common funeral flowers and their meanings, the types of arrangements available, when to send flowers versus a donation, and the mistakes to avoid. Whether you are sending flowers on behalf of yourself, your family, or your workplace, this will help you make the right choice.</p>
@@ -78,7 +80,8 @@ export default function FuneralFlowersGuidePage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">How to Order and When to Deliver</h2>
               <p className="text-gray-600 leading-relaxed mb-4">The easiest way to send funeral flowers is through a local florist who works with the funeral home directly. When you call, provide the name of the deceased, the name of the funeral home, and the date and time of the service. The florist will handle the delivery and placement.</p>
               <p className="text-gray-600 leading-relaxed mb-4">If you are ordering online, place the order at least 24 hours before the service. Many online services partner with local florists, but timing is less reliable than ordering directly. Always include a sympathy card with a brief, sincere message. Something as simple as &quot;With deepest sympathy&quot; or &quot;In loving memory&quot; is perfectly appropriate.</p>
-              <p className="text-gray-600 leading-relaxed">Flowers should arrive at the funeral home before the viewing begins, typically by early morning on the day of the service. If you miss the window, you can send flowers to the family&apos;s home in the days following the funeral. This is actually a thoughtful gesture because the family is often overwhelmed the day of the service and may appreciate the gesture more when things quiet down.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Flowers should arrive at the funeral home before the viewing begins, typically by early morning on the day of the service. If you miss the window, you can send flowers to the family&apos;s home in the days following the funeral. This is actually a thoughtful gesture because the family is often overwhelmed the day of the service and may appreciate the gesture more when things quiet down.</p>
+              <p className="text-gray-600 leading-relaxed">If you need to order remotely, <a href="https://www.tkqlhce.com/click-101760659-5387741" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">Flowers Fast offers same-day delivery on sympathy arrangements</a> through their network of local florists nationwide.</p>
             </section>
 
             <section className="mb-10 bg-white rounded-xl shadow-md p-8 border border-gray-200">

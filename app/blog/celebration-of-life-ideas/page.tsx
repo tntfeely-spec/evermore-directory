@@ -35,6 +35,8 @@ export default function CelebrationOfLifeIdeasPage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">A celebration of life puts the focus on how someone lived rather than how they died. It is a chance to gather the people who loved them, share stories, and honor the qualities that made them who they were.</p>
             </section>
@@ -95,7 +97,8 @@ export default function CelebrationOfLifeIdeasPage() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Decoration Ideas</h2>
               <p className="text-gray-600 leading-relaxed mb-4">Decorations at a celebration of life should reflect the person, not a generic event template. Use their favorite colors, display their photographs, and incorporate items that represent their interests. A memory table with personal objects, awards, hobby equipment, or handwritten notes can serve as a visual tribute that guests gather around throughout the event.</p>
               <p className="text-gray-600 leading-relaxed mb-4">Flowers are always appropriate, but consider choosing their favorite blooms rather than standard funeral arrangements. Wildflower bouquets, sunflowers, or simple greenery can feel more personal and less formal than traditional sympathy flowers.</p>
-              <p className="text-gray-600 leading-relaxed">Create a photo display with images from every chapter of their life. You can arrange them chronologically on a timeline, pin them to a string with clothespins, or display them in frames on a dedicated table. Guests will naturally be drawn to the photographs and will often share stories prompted by the images they see.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Create a photo display with images from every chapter of their life. You can arrange them chronologically on a timeline, pin them to a string with clothespins, or display them in frames on a dedicated table. Guests will naturally be drawn to the photographs and will often share stories prompted by the images they see.</p>
+              <p className="text-gray-600 leading-relaxed">For fresh flower arrangements that match the tone of a celebration rather than a formal funeral, <a href="https://www.tkqlhce.com/click-101760659-5387741" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">Flowers Fast delivers same-day sympathy and celebration arrangements</a> through local florists.</p>
             </section>
 
             <section className="mb-10">

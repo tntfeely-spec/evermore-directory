@@ -35,6 +35,8 @@ export default function MemorialTableIdeasPage() {
               </div>
             </header>
 
+            <p className="text-xs text-gray-400 italic mb-8">This article contains affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you. We only recommend products and services we believe genuinely help families.</p>
+
             <section className="mb-10">
               <p className="text-gray-700 leading-relaxed text-lg">A memorial table is one of the most personal elements of any funeral or memorial service. It gives guests something tangible to connect with and provides a visual representation of who the person was. Setting one up does not require special skills or a large budget. It just requires a few meaningful items and a little thought about arrangement.</p>
             </section>
@@ -107,6 +109,7 @@ export default function MemorialTableIdeasPage() {
                 <li>Potted plants that guests can take home after the service as a living memory</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mb-4">Keep the floral elements in proportion to the table. A few small arrangements work better than one large arrangement that overwhelms the personal items.</p>
+              <p className="text-gray-600 leading-relaxed">If you need fresh flowers delivered for the memorial table, <a href="https://www.tkqlhce.com/click-101760659-5387741" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">Flowers Fast offers same-day delivery on sympathy arrangements</a> through local florists.</p>
             </section>
 
             <section className="mb-10">
