@@ -63,6 +63,9 @@ export default function HomePage() {
                 List Your Funeral Home
               </Link>
             </div>
+            <p className="text-center text-sm text-gray-500 mt-6">
+              Planning ahead? Start with our free <Link href="/blog/funeral-pre-planning-checklist" className="text-slate-600 hover:text-slate-800 underline">pre-planning checklist</Link>
+            </p>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
