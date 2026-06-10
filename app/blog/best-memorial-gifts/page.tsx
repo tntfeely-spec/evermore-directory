@@ -60,10 +60,10 @@ export default function BestRemembranceGiftsPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "ItemList",
-        "name": "The 15 Best Memorial Gifts for 2026", "numberOfItems": 15,
+        "name": "The 15 Best Memorial Gifts for 2026", "numberOfItems": quickPicks.length,
         "itemListElement": quickPicks.map((p, i) => ({
           "@type": "ListItem", "position": i + 1,
-          "item": { "@type": "Product", "name": p.product, "offers": { "@type": "Offer", "price": p.price.replace('$', '').split('-')[0], "priceCurrency": "USD", "availability": "https://schema.org/InStock" } }
+          "name": p.product, "url": p.href
         }))
       }) }} />
       <Navigation />
