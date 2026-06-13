@@ -85,7 +85,8 @@ export default function GiftsForGrievingFriendsPage() {
                 <li>A stocked freezer delivery of soups, stews, casseroles, and breakfast sandwiches</li>
                 <li>A coffee shop gift card for the mornings when getting out of the house is the only win they need</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">If you know the family well, drop off a meal in a disposable container so there is no dish to return. If you do not know them well, a gift card is always a safe bet.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">If you know the family well, drop off a meal in a disposable container so there is no dish to return. If you do not know them well, a gift card is always a safe bet.</p>
+              <p className="text-gray-600 leading-relaxed">For a quiet comfort gift that works alongside food, a <a href="https://www.amazon.com/dp/B0FWXJPFJD?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">candle warmer lamp with timer</a> lets someone fill the house with a warm scent without worrying about an open flame on the hard nights when they fall asleep on the couch.</p>
             </section>
 
             <section className="mb-10">

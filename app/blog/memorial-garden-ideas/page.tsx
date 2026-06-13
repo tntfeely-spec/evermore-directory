@@ -97,7 +97,7 @@ export default function MemorialGardenIdeasPage() {
                 <li>A window box planted with herbs or flowers the person loved</li>
                 <li>A miniature garden in a large pot or planter, complete with a small figurine or stone</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed mb-4">The size of the garden does not determine its meaning. A single potted plant tended with love and intention is every bit as meaningful as a landscaped garden.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">The size of the garden does not determine its meaning. A single potted plant tended with love and intention is every bit as meaningful as a landscaped garden. For a patio or balcony setup, <a href="https://www.amazon.com/dp/B0DFBWQN34?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">self watering hanging planters</a> reduce the daily upkeep, and a <a href="https://www.amazon.com/dp/B0CGY9M5G1?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">Mayne Nantucket square planter</a> gives a container garden a clean, finished look that holds up through the seasons.</p>
             </section>
 
             <section className="mb-10">

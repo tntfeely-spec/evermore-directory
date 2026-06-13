@@ -74,6 +74,7 @@ export default function SympathyGiftsThatLastPage() {
                 <li><strong className="text-gray-800">Photo book.</strong> Gather photos from family and friends and print a bound book. This is a significant time commitment on your part, which is part of what makes it meaningful.</li>
                 <li><strong className="text-gray-800">Ornament.</strong> A personalized ornament for a Christmas tree or year round display. The first holiday after a loss is hard, and an ornament with the loved one&apos;s name gives the recipient a way to include them.</li>
               </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">Two keepsakes that hold up well over time: the <a href="https://www.amazon.com/dp/B0CLBB4GL3?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">Woodstock Zenergy hand chime</a>, which produces a clear, sustained tone when struck, and a <a href="https://www.amazon.com/dp/B09ZL5M8NG?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">glass keepsake box with hinged lid</a> for storing small mementos like rings, notes, or a lock of hair.</p>
             </section>
 
             <section className="mb-10">

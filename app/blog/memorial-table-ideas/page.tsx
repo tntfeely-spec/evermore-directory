@@ -70,7 +70,7 @@ export default function MemorialTableIdeasPage() {
                 <li>Use a photo collage board or a string of photos clipped to a line for a more casual look</li>
                 <li>Print one large portrait as the anchor and surround it with smaller candid shots</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed mb-4">Choose photos that show the person at their most natural. A candid shot of someone laughing at a family gathering is often more meaningful than a formal studio portrait.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Choose photos that show the person at their most natural. A candid shot of someone laughing at a family gathering is often more meaningful than a formal studio portrait. A <a href="https://www.amazon.com/dp/B0D82CRJJW?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">wood picture frame with mat</a> gives the anchor portrait a clean, finished look without competing with the other items on the table.</p>
             </section>
 
             <section className="mb-10">
@@ -108,7 +108,7 @@ export default function MemorialTableIdeasPage() {
                 <li>A single pillar candle next to the main photo for a simple, elegant look</li>
                 <li>Potted plants that guests can take home after the service as a living memory</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed mb-4">Keep the floral elements in proportion to the table. A few small arrangements work better than one large arrangement that overwhelms the personal items.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">Keep the floral elements in proportion to the table. A few small arrangements work better than one large arrangement that overwhelms the personal items. For the candle elements, <a href="https://www.amazon.com/dp/B0G62VBQTZ?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">clear glass votive holders</a> let the light show through without adding visual clutter, and <a href="https://www.amazon.com/dp/B0FRF3NHYN?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">flameless floating candles</a> work well in a shallow bowl of water as a centerpiece if the venue restricts open flames.</p>
               <p className="text-gray-600 leading-relaxed">If you need fresh flowers delivered for the memorial table, <a href="https://www.tkqlhce.com/click-101760659-5387741" target="_blank" rel="sponsored nofollow noopener" className="text-amber-700 hover:text-amber-800 font-medium">Flowers Fast offers same-day delivery on sympathy arrangements</a> through local florists.</p>
             </section>
 
