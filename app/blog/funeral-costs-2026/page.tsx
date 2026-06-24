@@ -246,6 +246,11 @@ export default function FuneralCosts2026Page() {
             </div>
           </section>
 
+          <div className="mb-10 bg-amber-50 border border-amber-200 rounded-lg p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Tip: Keep your wishes documented in one place</p>
+            <p className="text-sm text-gray-600">A simple planner like the &ldquo;I&apos;m Dead, Now What?&rdquo; book gives your family a single place to find your accounts, passwords, funeral preferences, and important contacts. It&apos;s the kind of small thing that saves hours of confusion during an already difficult time.{' '}<a href="https://www.amazon.com/dp/B00OK0VRWS/?tag=evermorefuner-20" target="_blank" rel="sponsored nofollow" className="text-amber-700 hover:text-amber-800 font-medium">View on Amazon &rarr;</a></p>
+          </div>
+
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Financial Assistance for Funeral Costs</h2>
             <p className="text-gray-600 mb-4">If funeral costs are a hardship, several resources may help:</p>
