@@ -437,22 +437,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     offset += pageSize;
   }
 
-  // City pages (unique city/state combos)
-  const citySet = new Set<string>();
+  // City pages: only include combos with >= 3 listings (matches noindex threshold in city page template)
+  const cityCountMap = new Map<string, number>();
   allHomes.forEach((home) => {
     if (home.city && home.state) {
       const cs = home.city.toLowerCase().replace(/\s+/g, '-');
       const ss = home.state.toLowerCase();
-      citySet.add(`${ss}/${cs}`);
+      const key = `${ss}/${cs}`;
+      cityCountMap.set(key, (cityCountMap.get(key) || 0) + 1);
     }
   });
 
-  const cityPages = Array.from(citySet).map((cityState) => ({
-    url: `${baseUrl}/funeral-homes/${cityState}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  const cityPages = Array.from(cityCountMap.entries())
+    .filter(([, count]) => count >= 3)
+    .map(([cityState]) => ({
+      url: `${baseUrl}/funeral-homes/${cityState}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
 
   // Individual listing pages
   const listingPages = allHomes
@@ -493,21 +496,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .select('city, state')
       .eq('provider_type', 'direct_cremation');
 
-  const dcCitySet = new Set<string>();
+  // DC city pages: only include combos with >= 2 providers (matches noindex threshold in DC city page template)
+  const dcCityCountMap = new Map<string, number>();
   dcCityHomes?.forEach((home) => {
     if (home.city && home.state) {
       const citySlug = home.city.toLowerCase().replace(/\s+/g, '-');
       const stateSlug = home.state.toLowerCase();
-      dcCitySet.add(`${stateSlug}/${citySlug}`);
+      const key = `${stateSlug}/${citySlug}`;
+      dcCityCountMap.set(key, (dcCityCountMap.get(key) || 0) + 1);
     }
   });
 
-  const dcCityPages = Array.from(dcCitySet).map((cityState) => ({
-    url: `${baseUrl}/direct-cremation/${cityState}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
+  const dcCityPages = Array.from(dcCityCountMap.entries())
+    .filter(([, count]) => count >= 2)
+    .map(([cityState]) => ({
+      url: `${baseUrl}/direct-cremation/${cityState}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }));
 
   return [...staticPages, ...veteransPages, ...veteransStatePages, ...whatIsPages, ...vsPages, ...blogPosts, ...statePages, ...funeralCostStatePages, ...cityPages, ...listingPages, ...dcStatePages, ...dcCityPages];
 }
