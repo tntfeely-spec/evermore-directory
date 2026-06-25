@@ -57,21 +57,25 @@ export default function HomeQuiz() {
     if (!firstName.trim() || !email.trim()) return;
     setStatus('sending');
     try {
+      const payload = {
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        timeline: intent,
+        serviceType,
+        budget,
+        zip: zip.trim(),
+        source: 'homepage_quiz',
+        tags: ['homepage-quiz-lead'],
+      };
+      // DIAGNOSTIC LOG — remove after test
+      console.log('[HomeQuiz] submitted serviceType:', serviceType);
+      console.log('[HomeQuiz] full payload:', payload);
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: firstName.trim(),
-          lastName: lastName.trim(),
-          email: email.trim(),
-          phone: phone.trim(),
-          timeline: intent,
-          serviceType,
-          budget,
-          zip: zip.trim(),
-          source: 'homepage_quiz',
-          tags: ['homepage-quiz-lead'],
-        }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
