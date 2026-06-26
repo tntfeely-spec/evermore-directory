@@ -31,6 +31,8 @@ const ALLOWED_BOTS = [
   'gtmetrix',
   'uptimerobot',
   'vercel',
+  'ahrefsbot',
+  'ahrefssiteaudit',
 ];
 
 // Known bad bots and scrapers to block
