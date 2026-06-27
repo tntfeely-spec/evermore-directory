@@ -116,23 +116,26 @@ export function middleware(request: NextRequest) {
 
   // 2. Block known bad bots
   if (BLOCKED_BOTS.some(bot => userAgent.includes(bot))) {
+    console.log('[middleware-403]', JSON.stringify({ reason: 'blocked_bot', ua: userAgent.slice(0, 200), country: country || 'unknown', path: pathname, ts: new Date().toISOString() }));
     return new NextResponse('Forbidden', { status: 403 });
   }
 
   // 3. Block empty or suspiciously short user agents (likely bots)
   if (userAgent.length < 15 && userAgent.length > 0) {
+    console.log('[middleware-403]', JSON.stringify({ reason: 'short_ua', ua: userAgent.slice(0, 200), country: country || 'unknown', path: pathname, ts: new Date().toISOString() }));
     return new NextResponse('Forbidden', { status: 403 });
   }
 
   // 4. Block empty user agent entirely
   if (!userAgent || userAgent.trim() === '') {
+    console.log('[middleware-403]', JSON.stringify({ reason: 'empty_ua', ua: userAgent.slice(0, 200), country: country || 'unknown', path: pathname, ts: new Date().toISOString() }));
     return new NextResponse('Forbidden', { status: 403 });
   }
 
   // 5. Block traffic from high-bot countries (non-bot user agents from these regions)
   //    Real users from these countries are extremely unlikely for a US funeral home directory
   if (SUSPICIOUS_COUNTRIES.has(country)) {
-    // Add a header so GA4 can also filter if the request somehow gets through
+    console.log('[middleware-403]', JSON.stringify({ reason: 'suspicious_country', ua: userAgent.slice(0, 200), country: country || 'unknown', path: pathname, ts: new Date().toISOString() }));
     const response = new NextResponse('Forbidden', { status: 403 });
     return response;
   }
