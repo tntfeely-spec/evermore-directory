@@ -1,11 +1,22 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import LeadModal from '@/components/LeadModal';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 
+function detectSource(pathname: string): Source {
+  if (pathname === '/') return 'homepage';
+  if (pathname === '/contact') return 'contact';
+  if (pathname.startsWith('/blog')) return 'blog';
+  if (/\/funeral-homes\/[^/]+\/[^/]+\/[^/]+/.test(pathname)) return 'listing_page';
+  if (/\/funeral-homes\/[^/]+\/[^/]+/.test(pathname)) return 'city_page';
+  if (/\/funeral-homes\/[^/]+/.test(pathname)) return 'state_page';
+  return 'general';
+}
+
 interface Props {
-  source: Source;
+  source?: Source;
   funeralHomeName?: string;
   city?: string;
   state?: string;
@@ -13,21 +24,24 @@ interface Props {
 }
 
 export default function StickyLeadButton({
-  source,
+  source: propSource,
   funeralHomeName,
   city,
   state,
   defaultZip,
 }: Props) {
+  const pathname = usePathname();
+  const source = propSource ?? detectSource(pathname);
+
   const [isOpen, setIsOpen] = useState(false);
-  // Lazy initializer reads localStorage once on mount (client only)
+  // Lazy initializer: runs once on client mount, reads localStorage without triggering
+  // the setState-in-effect lint rule and without needing a separate useEffect
   const [submitted, setSubmitted] = useState(
     () => typeof window !== 'undefined' && localStorage.getItem('lcf_submitted') === 'true'
   );
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // Allow any element on the page to open this modal via a custom event
     function handleOpenEvent() {
       setIsOpen(true);
     }
@@ -48,7 +62,6 @@ export default function StickyLeadButton({
   return (
     <>
       {submitted ? (
-        // Low-prominence fallback after submission
         <div className="fixed bottom-4 right-4 z-40">
           <button
             onClick={() => setIsOpen(true)}
@@ -58,7 +71,6 @@ export default function StickyLeadButton({
           </button>
         </div>
       ) : (
-        // Prominent sticky CTA
         <div className="fixed bottom-0 inset-x-0 z-40 flex justify-center pb-5 px-4 pointer-events-none">
           <button
             ref={triggerRef}

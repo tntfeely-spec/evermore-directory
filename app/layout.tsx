@@ -47,7 +47,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
-        <StickyLeadButton source="general" />
+        <StickyLeadButton />
         <Analytics />
         <GoogleAnalytics gaId="G-S3GRCTG9CF" />
       </body>

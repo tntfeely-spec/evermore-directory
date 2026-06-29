@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 
-type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact';
+type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 
 interface Props {
   isOpen: boolean;
