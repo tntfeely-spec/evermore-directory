@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 
-import SearchAutocomplete from '@/components/SearchAutocomplete';
+import HomepageSearch from '@/components/HomepageSearch';
 import HomeQuiz from '@/components/HomeQuiz';
+import StickyLeadButton from '@/components/StickyLeadButton';
 
 export const metadata: Metadata = {
   title: 'Evermore Directory - Find Funeral Homes & Cremation Services Nationwide',
@@ -36,7 +37,7 @@ export default function HomePage() {
               Find and Compare Funeral Homes Nationwide
             </h1>
             <div className="max-w-2xl mx-auto mb-8">
-              <SearchAutocomplete />
+              <HomepageSearch />
             </div>
 
             <div className="max-w-2xl mx-auto mb-10">
@@ -225,6 +226,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <StickyLeadButton source="homepage" />
     </>
   );
 }

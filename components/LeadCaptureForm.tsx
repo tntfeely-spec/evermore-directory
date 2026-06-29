@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact';
@@ -11,6 +11,7 @@ interface Props {
   city?: string;
   state?: string;
   defaultZip?: string;
+  onSuccess?: () => void;
 }
 
 const TAGS_BY_SOURCE: Record<Source, string[]> = {
@@ -30,8 +31,8 @@ export default function LeadCaptureForm({
   city,
   state,
   defaultZip = '',
+  onSuccess,
 }: Props) {
-  const [dismissed, setDismissed] = useState(false);
   const [step, setStep] = useState(1);
   const [timeline, setTimeline] = useState('');
   const [serviceType, setServiceType] = useState('');
@@ -41,29 +42,6 @@ export default function LeadCaptureForm({
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
-  const [variant, setVariant] = useState<'soft' | 'open' | null>(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('lcf_variant');
-    if (stored === 'soft' || stored === 'open') {
-      setVariant(stored);
-    } else {
-      const assigned: 'soft' | 'open' = Math.random() < 0.5 ? 'soft' : 'open';
-      localStorage.setItem('lcf_variant', assigned);
-      setVariant(assigned);
-    }
-  }, []);
-
-  if (dismissed && variant === 'soft') {
-    return (
-      <button
-        onClick={() => setDismissed(false)}
-        className="w-full text-sm text-slate-600 hover:text-slate-800 font-medium py-2 px-4 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 transition-colors text-left"
-      >
-        Get connected with a local funeral home
-      </button>
-    );
-  }
 
   const inputClass =
     'w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500';
@@ -93,11 +71,13 @@ export default function LeadCaptureForm({
           city,
           state,
           pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-          tags: [...TAGS_BY_SOURCE[source], ...(variant ? [`gate-${variant}`] : [])],
+          tags: TAGS_BY_SOURCE[source],
         }),
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
+      // Show success state for 1.5 s, then let parent close the modal
+      setTimeout(() => onSuccess?.(), 1500);
     } catch {
       setStatus('error');
     }
@@ -127,29 +107,6 @@ export default function LeadCaptureForm({
               style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
             />
           </div>
-          {variant === 'soft' && (
-            <button
-              type="button"
-              onClick={() => setDismissed(true)}
-              className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded focus:outline-none focus:ring-1 focus:ring-slate-500"
-              aria-label="Dismiss"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          )}
         </div>
       )}
 
@@ -232,7 +189,7 @@ export default function LeadCaptureForm({
 
       {step === 3 && (
         <form
-          onSubmit={(e) => {
+          onSubmit={e => {
             e.preventDefault();
             if (zip.trim().length >= 5) setStep(4);
           }}
@@ -249,7 +206,7 @@ export default function LeadCaptureForm({
             inputMode="numeric"
             maxLength={5}
             value={zip}
-            onChange={(e) => setZip(e.target.value.replace(/\D/g, ''))}
+            onChange={e => setZip(e.target.value.replace(/\D/g, ''))}
             placeholder="Enter your ZIP code"
             required
             autoComplete="postal-code"
@@ -281,7 +238,7 @@ export default function LeadCaptureForm({
                 id="lcf-firstname"
                 type="text"
                 value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                onChange={e => setFirstName(e.target.value)}
                 placeholder="First name"
                 required
                 autoComplete="given-name"
@@ -296,7 +253,7 @@ export default function LeadCaptureForm({
                 id="lcf-lastname"
                 type="text"
                 value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
+                onChange={e => setLastName(e.target.value)}
                 placeholder="Last name"
                 autoComplete="family-name"
                 className={inputClass}
@@ -311,7 +268,7 @@ export default function LeadCaptureForm({
               id="lcf-email"
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
               placeholder="Your email address"
               required
               autoComplete="email"
@@ -326,7 +283,7 @@ export default function LeadCaptureForm({
               id="lcf-phone"
               type="tel"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={e => setPhone(e.target.value)}
               placeholder="Your phone number (optional)"
               autoComplete="tel"
               className={inputClass}

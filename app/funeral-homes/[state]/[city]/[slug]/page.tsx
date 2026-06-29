@@ -5,7 +5,8 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
 import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
-import LeadCaptureForm from '@/components/LeadCaptureForm'
+import StickyLeadButton from '@/components/StickyLeadButton';
+import ModalTriggerButton from '@/components/ModalTriggerButton';
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -455,13 +456,14 @@ export default async function FuneralHomePage({
         <div>
 
           {/* Get in touch card */}
-          <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 overflow-hidden">
-            <LeadCaptureForm
-              source="listing_page"
-              funeralHomeName={listing.business_name}
-              city={listing.city}
-              state={listing.state}
-              defaultZip={listing.zip || ''}
+          <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 p-5">
+            <p className="text-sm font-semibold text-gray-800 mb-1">Request information</p>
+            <p className="text-xs text-gray-500 mb-3">
+              Get matched with this provider and others nearby.
+            </p>
+            <ModalTriggerButton
+              label="Get matched with funeral homes"
+              className="w-full px-4 py-3 text-sm font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-lg transition-colors"
             />
           </div>
 
@@ -614,6 +616,13 @@ export default async function FuneralHomePage({
         }}
       />
 
+      <StickyLeadButton
+        source="listing_page"
+        funeralHomeName={listing.business_name}
+        city={listing.city}
+        state={listing.state}
+        defaultZip={listing.zip || ''}
+      />
     </>
   )
 }

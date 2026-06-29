@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import LeadCaptureForm from '@/components/LeadCaptureForm';
+import StickyLeadButton from '@/components/StickyLeadButton';
 
 
 interface PageProps {
@@ -200,17 +200,6 @@ export default async function StateCitiesPage({ params }: PageProps) {
             ))}
           </div>
 
-          {/* Lead capture */}
-          <div className="mb-20 max-w-xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-              Get connected with a funeral home in {stateName}
-            </h2>
-            <p className="text-gray-600 text-center mb-6 text-sm">
-              Answer a few quick questions to get connected with local providers.
-            </p>
-            <LeadCaptureForm source="state_page" state={state.toUpperCase()} />
-          </div>
-
           {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
@@ -368,6 +357,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
 
         </div>
       </div>
+      <StickyLeadButton source="state_page" state={state.toUpperCase()} />
     </>
   );
 }

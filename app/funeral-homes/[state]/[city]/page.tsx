@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import LeadCaptureForm from '@/components/LeadCaptureForm';
+import StickyLeadButton from '@/components/StickyLeadButton';
 
 
 export const revalidate = 0
@@ -462,17 +462,6 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
             </div>
           )}
 
-          {/* Lead capture */}
-          <div className="mb-20 max-w-xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-              Get personalized help finding a funeral home in {cityName}
-            </h2>
-            <p className="text-gray-600 text-center mb-6 text-sm">
-              Answer a few quick questions to get connected with local providers.
-            </p>
-            <LeadCaptureForm source="city_page" city={cityName} state={state.toUpperCase()} />
-          </div>
-
           {/* Benefits Section */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
@@ -808,6 +797,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
         </div>
       </div>
+      <StickyLeadButton source="city_page" city={cityName} state={state.toUpperCase()} />
     </>
   );
 }

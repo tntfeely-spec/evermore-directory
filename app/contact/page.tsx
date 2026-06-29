@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import LeadCaptureForm from '@/components/LeadCaptureForm';
+import ModalTriggerButton from '@/components/ModalTriggerButton';
+import StickyLeadButton from '@/components/StickyLeadButton';
 
 export default function ContactPage() {
   return (
@@ -25,15 +26,19 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Lead capture form */}
+            {/* Lead capture CTA */}
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 Find a Funeral Home Near You
               </h2>
               <p className="text-gray-600 mb-6 text-sm">
-                Answer a few quick questions to get connected with local providers.
+                Answer a few quick questions to get connected with local providers. Takes less than
+                two minutes.
               </p>
-              <LeadCaptureForm source="contact" />
+              <ModalTriggerButton
+                label="Get matched with local funeral homes"
+                className="w-full px-6 py-4 text-base font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-xl transition-colors"
+              />
             </div>
 
             {/* Contact information */}
@@ -144,6 +149,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <StickyLeadButton source="contact" />
     </div>
   );
 }

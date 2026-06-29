@@ -16,7 +16,7 @@ interface SearchResult {
   sublabel: string;
 }
 
-export default function SearchAutocomplete() {
+export default function SearchAutocomplete({ onSearch }: { onSearch?: () => void } = {}) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -75,6 +75,7 @@ export default function SearchAutocomplete() {
   function handleSelect(result: SearchResult) {
     setQuery(result.label);
     setOpen(false);
+    onSearch?.();
     router.push(result.url);
   }
 
