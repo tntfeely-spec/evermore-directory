@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
 import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
+import LeadCaptureForm from '@/components/LeadCaptureForm'
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -455,7 +456,13 @@ export default async function FuneralHomePage({
 
           {/* Get in touch card */}
           <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 overflow-hidden">
-            <ContactForm listing={listing} calcId={calcId} />
+            <LeadCaptureForm
+              source="listing_page"
+              funeralHomeName={listing.business_name}
+              city={listing.city}
+              state={listing.state}
+              defaultZip={listing.zip || ''}
+            />
           </div>
 
           <div className="mb-4 bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
@@ -607,141 +614,7 @@ export default async function FuneralHomePage({
         }}
       />
 
-      {/* Contact form toggle, preference selector */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-function selectPref(type, id) {
-  ['call','text','email'].forEach(function(t) {
-    var el = document.getElementById('pref-' + t + '-' + id);
-    if (el) {
-      el.style.border = t === type ? '1.5px solid #2a6496' : '1.5px solid #d0d9e5';
-      el.style.background = t === type ? '#f0f6ff' : '#fff';
-    }
-  });
-  var phoneField = document.getElementById('field-phone-' + id);
-  var emailField = document.getElementById('field-email-' + id);
-  if (phoneField) phoneField.style.display = type === 'email' ? 'none' : 'block';
-  if (emailField) emailField.style.display = type === 'email' ? 'block' : 'none';
-}
-function submitContact(id) {
-  var form = document.getElementById('contact-form-' + id);
-  var btn = document.getElementById('contact-btn-' + id);
-  if (!form) return;
-  var name = document.getElementById('contact-name-' + id);
-  var phone = document.getElementById('contact-phone-' + id);
-  var email = document.getElementById('contact-email-' + id);
-  var msg = document.getElementById('contact-message-' + id);
-  var home = document.getElementById('contact-home-' + id);
-  var nameVal = name ? name.value.trim() : '';
-  if (!nameVal) { if (name) name.style.border = '1px solid #e53e3e'; return; }
-  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; btn.style.background = '#7aa5c4'; }
-  var activePref = document.querySelector('[id^="pref-"][style*="solid #2a6496"]');
-  var prefVal = activePref ? activePref.id.replace('pref-','').replace('-' + id,'') : 'text';
-  var timeline = document.getElementById('contact-timeline-' + id);
-  var budget = document.getElementById('contact-budget-' + id);
-  var zip = document.getElementById('contact-zip-' + id);
-  fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: nameVal,
-      phone: phone ? phone.value : '',
-      email: email ? email.value : '',
-      message: msg ? msg.value : '',
-      preference: prefVal,
-      timeline: timeline ? timeline.value : '',
-      budget: budget ? budget.value : '',
-      zip: zip ? zip.value : '',
-      funeralHomeName: home ? home.value : '',
-      city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
-      state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : '',
-      source: 'listing_page',
-      tags: ['listing-inquiry']
-    })
-  }).then(function(res) {
-    if (res.ok) {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'submit_contact_form', {
-          listing_name: home ? home.value : '',
-          listing_state: document.getElementById('contact-state-' + id) ? document.getElementById('contact-state-' + id).value : '',
-          listing_city: document.getElementById('contact-city-' + id) ? document.getElementById('contact-city-' + id).value : '',
-          listing_provider_type: 'full_service',
-          form_message_length: msg ? msg.value.length : 0,
-          form_preference: prefVal
-        });
-      }
-      form.innerHTML = '<div style="padding:24px;text-align:center;"><div style="font-size:28px;margin-bottom:10px;">✓</div><div style="font-size:1rem;font-weight:700;color:#2e7d32;margin-bottom:6px;">Message sent</div><div style="font-size:1rem;color:#555;line-height:1.6;">This funeral home has your contact info and will reach out your preferred way. You can also call them directly anytime.</div></div>';
-    } else {
-      if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }
-    }
-  }).catch(function() {
-    if (btn) { btn.textContent = 'Retry →'; btn.disabled = false; btn.style.background = '#e53e3e'; }
-  });
-}
-`,
-        }}
-      />
     </>
   )
 }
 
-// ─── Contact Form (sidebar) ───────────────────────────────────────────────────
-function ContactForm({ listing, calcId }: { listing: FuneralHome; calcId: string }) {
-  const shortName = listing.business_name.split(' ').slice(0, 2).join(' ');
-  const firstName = listing.business_name.split(' ')[0];
-  const escapedName = listing.business_name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-  const escapedCity = listing.city.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-  const escapedState = listing.state.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-  return (
-    <div dangerouslySetInnerHTML={{ __html: `
-<div id="contact-form-${calcId}" style="padding:16px;">
-  <div style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:2px;">Contact ${shortName}</div>
-  <div style="font-size:1rem;color:#777;margin-bottom:12px;">How would you like them to reach you?</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
-    <label id="pref-call-${calcId}" onclick="selectPref('call','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
-      <div style="font-weight:600;">Call me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Within the hour</div>
-    </label>
-    <label id="pref-text-${calcId}" onclick="selectPref('text','${calcId}')" style="border:1.5px solid #2a6496;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#f0f6ff;">
-      <div style="font-weight:600;">Text me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">Reply when ready</div>
-    </label>
-    <label id="pref-email-${calcId}" onclick="selectPref('email','${calcId}')" style="border:1.5px solid #d0d9e5;border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;font-size:1rem;color:#374151;background:#fff;">
-      <div style="font-weight:600;">Email me</div><div style="font-size:10px;color:#9ca3af;margin-top:2px;">No pressure</div>
-    </label>
-  </div>
-  <input id="contact-name-${calcId}" type="text" placeholder="Your name" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
-  <div id="field-phone-${calcId}">
-    <input id="contact-phone-${calcId}" type="tel" placeholder="Best phone number" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
-  </div>
-  <div id="field-email-${calcId}" style="display:none;">
-    <input id="contact-email-${calcId}" type="email" placeholder="Your email address" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
-  </div>
-  <label for="contact-timeline-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">Timeline</label>
-  <select id="contact-timeline-${calcId}" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;background:#fff;">
-    <option value="">Select timeline...</option>
-    <option value="immediate">Immediate need (within 24-48 hours)</option>
-    <option value="week">Within the next week</option>
-    <option value="month">Within the next month</option>
-    <option value="preplanning">Pre-planning for the future</option>
-  </select>
-  <label for="contact-budget-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">Budget</label>
-  <select id="contact-budget-${calcId}" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;background:#fff;">
-    <option value="">Select budget range...</option>
-    <option value="under5k">Under $5,000</option>
-    <option value="5k-10k">$5,000 to $10,000</option>
-    <option value="10k-15k">$10,000 to $15,000</option>
-    <option value="15k+">$15,000 or more</option>
-    <option value="unsure">Not sure yet</option>
-  </select>
-  <label for="contact-zip-${calcId}" style="display:block;font-size:0.875rem;font-weight:600;color:#374151;margin-bottom:4px;">ZIP code</label>
-  <input id="contact-zip-${calcId}" type="text" placeholder="Your ZIP code" maxlength="5" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;color:#1a1a2e;" />
-  <textarea id="contact-message-${calcId}" placeholder="Tell us about your needs (optional)" rows="3" style="width:100%;padding:9px 10px;font-size:1rem;border:1px solid #94a3b8;border-radius:6px;margin-bottom:8px;display:block;box-sizing:border-box;resize:vertical;font-family:inherit;color:#1a1a2e;"></textarea>
-  <input type="hidden" id="contact-home-${calcId}" value="${escapedName}" />
-  <input type="hidden" id="contact-city-${calcId}" value="${escapedCity}" />
-  <input type="hidden" id="contact-state-${calcId}" value="${escapedState}" />
-  <button id="contact-btn-${calcId}" onclick="submitContact('${calcId}')" style="width:100%;padding:11px;background:#2a6496;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;">Send my request</button>
-  <p style="font-size:11px;color:#9ca3af;margin-top:8px;text-align:center;line-height:1.5;">Goes directly to ${firstName}. We never share your info.</p>
-</div>
-` }} />
-  )
-}
