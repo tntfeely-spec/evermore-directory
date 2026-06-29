@@ -5,7 +5,8 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
 import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
-import ModalTriggerButton from '@/components/ModalTriggerButton';
+import SidebarLeadForm from '@/components/SidebarLeadForm';
+import ScrollModal from '@/components/ScrollModal';
 
 export const revalidate = 0
 export const dynamicParams = true
@@ -456,13 +457,10 @@ export default async function FuneralHomePage({
 
           {/* Get in touch card */}
           <div id="tab-contact" className="bg-white rounded-[10px] border border-gray-200 mb-4 p-5">
-            <p className="text-sm font-semibold text-gray-800 mb-1">Request information</p>
-            <p className="text-xs text-gray-500 mb-3">
-              Get matched with this provider and others nearby.
-            </p>
-            <ModalTriggerButton
-              label="Get matched with funeral homes"
-              className="w-full px-4 py-3 text-sm font-semibold text-white bg-slate-700 hover:bg-slate-800 rounded-lg transition-colors"
+            <SidebarLeadForm
+              funeralHomeName={listing.business_name}
+              city={listing.city}
+              state={listing.state}
             />
           </div>
 
@@ -614,6 +612,7 @@ export default async function FuneralHomePage({
           casket: 2495, urn: 295, burial: 1395,
         }}
       />
+      <ScrollModal source="listing_page" />
 
     </>
   )

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
+import InlineLeadSection from '@/components/InlineLeadSection';
+import ScrollModal from '@/components/ScrollModal';
 
 
 export const revalidate = 0
@@ -407,6 +409,8 @@ backgroundImage: 'url(/Mountain_Lake_Image.webp)',
             </div>
           </div>
 
+          <InlineLeadSection source="city_page" city={cityName} state={state.toUpperCase()} />
+
           {/* Featured Listings */}
           {featuredHomes.length > 0 && (
             <div className="mb-12">
@@ -796,6 +800,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
         </div>
       </div>
+      <ScrollModal source="city_page" />
     </>
   );
 }
