@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact';
@@ -41,8 +41,20 @@ export default function LeadCaptureForm({
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
+  const [variant, setVariant] = useState<'soft' | 'open' | null>(null);
 
-  if (dismissed) {
+  useEffect(() => {
+    const stored = localStorage.getItem('lcf_variant');
+    if (stored === 'soft' || stored === 'open') {
+      setVariant(stored);
+    } else {
+      const assigned: 'soft' | 'open' = Math.random() < 0.5 ? 'soft' : 'open';
+      localStorage.setItem('lcf_variant', assigned);
+      setVariant(assigned);
+    }
+  }, []);
+
+  if (dismissed && variant === 'soft') {
     return (
       <button
         onClick={() => setDismissed(false)}
@@ -81,7 +93,7 @@ export default function LeadCaptureForm({
           city,
           state,
           pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-          tags: TAGS_BY_SOURCE[source],
+          tags: [...TAGS_BY_SOURCE[source], ...(variant ? [`gate-${variant}`] : [])],
         }),
       });
       if (!res.ok) throw new Error('failed');
@@ -115,27 +127,29 @@ export default function LeadCaptureForm({
               style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
             />
           </div>
-          <button
-            type="button"
-            onClick={() => setDismissed(true)}
-            className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded focus:outline-none focus:ring-1 focus:ring-slate-500"
-            aria-label="Dismiss"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+          {variant === 'soft' && (
+            <button
+              type="button"
+              onClick={() => setDismissed(true)}
+              className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded focus:outline-none focus:ring-1 focus:ring-slate-500"
+              aria-label="Dismiss"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
         </div>
       )}
 
