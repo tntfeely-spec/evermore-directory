@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import CalcScript from '@/components/CalcScript'
 import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTracker'
-import StickyLeadButton from '@/components/StickyLeadButton';
 import ModalTriggerButton from '@/components/ModalTriggerButton';
 
 export const revalidate = 0
@@ -616,13 +615,6 @@ export default async function FuneralHomePage({
         }}
       />
 
-      <StickyLeadButton
-        source="listing_page"
-        funeralHomeName={listing.business_name}
-        city={listing.city}
-        state={listing.state}
-        defaultZip={listing.zip || ''}
-      />
     </>
   )
 }

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import StickyLeadButton from '@/components/StickyLeadButton';
 
 
 interface PageProps {
@@ -357,7 +356,6 @@ export default async function StateCitiesPage({ params }: PageProps) {
 
         </div>
       </div>
-      <StickyLeadButton source="state_page" state={state.toUpperCase()} />
     </>
   );
 }

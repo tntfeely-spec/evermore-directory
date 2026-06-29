@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
-import StickyLeadButton from '@/components/StickyLeadButton';
 
 
 export const revalidate = 0
@@ -797,7 +796,6 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
         </div>
       </div>
-      <StickyLeadButton source="city_page" city={cityName} state={state.toUpperCase()} />
     </>
   );
 }

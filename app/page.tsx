@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 
 import HomepageSearch from '@/components/HomepageSearch';
-import HomeQuiz from '@/components/HomeQuiz';
-import StickyLeadButton from '@/components/StickyLeadButton';
 
 export const metadata: Metadata = {
   title: 'Evermore Directory - Find Funeral Homes & Cremation Services Nationwide',
@@ -38,10 +36,6 @@ export default function HomePage() {
             </h1>
             <div className="max-w-2xl mx-auto mb-8">
               <HomepageSearch />
-            </div>
-
-            <div className="max-w-2xl mx-auto mb-10">
-              <HomeQuiz />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -226,7 +220,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <StickyLeadButton source="homepage" />
     </>
   );
 }

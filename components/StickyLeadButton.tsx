@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import LeadModal from '@/components/LeadModal';
 
-type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact';
+type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 
 interface Props {
   source: Source;

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact';
+type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 type Status = 'idle' | 'sending' | 'done' | 'error';
 
 interface Props {
@@ -21,6 +21,7 @@ const TAGS_BY_SOURCE: Record<Source, string[]> = {
   state_page: ['state-page-lead'],
   blog: ['blog-lead'],
   contact: ['contact-form-lead'],
+  general: ['website-lead'],
 };
 
 const TOTAL_STEPS = 4;

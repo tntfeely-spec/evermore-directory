@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import ModalTriggerButton from '@/components/ModalTriggerButton';
-import StickyLeadButton from '@/components/StickyLeadButton';
 
 export default function ContactPage() {
   return (
@@ -149,7 +148,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <StickyLeadButton source="contact" />
     </div>
   );
 }
