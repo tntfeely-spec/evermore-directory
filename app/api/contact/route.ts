@@ -50,7 +50,7 @@ export async function POST(request: Request) {
         state: body.state,
         source: body.source || 'Evermore Contact Form',
         tags: body.tags || [],
-        serviceType: body.serviceType,
+        survey_service_type: body.serviceType,
         city_page_url: cityPageUrl,
       })
     })
