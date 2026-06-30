@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { stateMeta, allStateSlugs } from '@/lib/state-pricing';
+import InlineLeadSection from '@/components/InlineLeadSection';
+import ScrollModal from '@/components/ScrollModal';
 
 export const metadata: Metadata = {
   title: 'Average Funeral Costs by State (2026) | Evermore Directory',
@@ -24,6 +26,7 @@ export default function FuneralCostsIndex() {
             Compare average funeral and cremation costs in every US state. Based on the NFDA 2024 Cremation and Burial Report,
             adjusted for regional cost of living.
           </p>
+          <InlineLeadSection source="general" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {sorted.map((slug) => (
               <Link
@@ -37,6 +40,7 @@ export default function FuneralCostsIndex() {
           </div>
         </div>
       </div>
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }

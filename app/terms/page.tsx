@@ -62,7 +62,7 @@ export default function TermsPage() {
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Terms of Service</h1>
           <p className="text-gray-600 mb-8">
-            <strong>Last Updated:</strong> November 7, 2024
+            <strong>Last Updated:</strong> June 29, 2026
           </p>
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
@@ -72,7 +72,7 @@ export default function TermsPage() {
                 Welcome to Evermore Directory. By accessing or using our website, mobile application, or services (collectively, the "Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Services.
               </p>
               <p>
-                These Terms constitute a legally binding agreement between you and Evermore Directory ("Company," "we," "us," or "our"). We reserve the right to modify these Terms at any time. Your continued use of the Services after changes are posted constitutes acceptance of the modified Terms.
+                These Terms constitute a legally binding agreement between you and Colbridges Digital LLC, operating as Evermore Directory ("Company," "we," "us," or "our"). We reserve the right to modify these Terms at any time. Your continued use of the Services after changes are posted constitutes acceptance of the modified Terms.
               </p>
             </section>
 
@@ -235,7 +235,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-bold text-gray-800 mb-4">9. Limitation of Liability</h2>
               
               <p className="uppercase font-semibold">
-                TO THE MAXIMUM EXTENT PERMITTED BY LAW, EVERMORE DIRECTORY AND ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR:
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, COLBRIDGES DIGITAL LLC AND ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Any indirect, incidental, special, consequential, or punitive damages</li>
@@ -310,7 +310,7 @@ export default function TermsPage() {
               
               <h3 className="text-xl font-semibold text-gray-800 mb-3">14.1 Informal Resolution</h3>
               <p>
-                Before filing a claim, you agree to contact us to attempt to resolve the dispute informally. Contact us at legal@evermoredirectory.com with a description of your claim.
+                Before filing a claim, you agree to contact us to attempt to resolve the dispute informally. Contact us at listings@funeralhomedirectories.com with a description of your claim.
               </p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-4">14.2 Arbitration</h3>
@@ -325,7 +325,7 @@ export default function TermsPage() {
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-4">14.4 Governing Law</h3>
               <p>
-                These Terms are governed by the laws of [Your State], without regard to conflict of law principles.
+                These Terms are governed by the laws of Tennessee, without regard to conflict of law principles.
               </p>
             </section>
 
@@ -359,7 +359,7 @@ export default function TermsPage() {
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-4">15.6 Notices</h3>
               <p>
-                Notices to you may be made via email or through the Services. Notices to us should be sent to legal@evermoredirectory.com.
+                Notices to you may be made via email or through the Services. Notices to us should be sent to listings@funeralhomedirectories.com.
               </p>
             </section>
 
@@ -369,10 +369,9 @@ export default function TermsPage() {
                 If you have questions about these Terms, please contact us:
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-4">
-                <p className="font-semibold text-gray-800 mb-2">Evermore Directory</p>
-                <p>Email: legal@evermoredirectory.com</p>
-                <p>Phone: 1-800-EVERMORE</p>
-                <p>Mailing Address: [Company Address]</p>
+                <p className="font-semibold text-gray-800 mb-2">Colbridges Digital LLC</p>
+                <p>Email: listings@funeralhomedirectories.com</p>
+                <p>Mailing Address: Nashville, Tennessee</p>
               </div>
             </section>
 
@@ -437,7 +436,7 @@ export default function TermsPage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Evermore Directory. All rights reserved.</p>
+            <p>&copy; 2026 Evermore Directory. All rights reserved.</p>
           </div>
         </div>
       </footer>

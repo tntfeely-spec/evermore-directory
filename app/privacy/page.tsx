@@ -62,14 +62,14 @@ export default function PrivacyPage() {
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Privacy Policy</h1>
           <p className="text-gray-600 mb-8">
-            <strong>Last Updated:</strong> November 7, 2024
+            <strong>Last Updated:</strong> June 29, 2026
           </p>
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <section>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">1. Introduction</h2>
               <p>
-                Evermore Directory ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                Colbridges Digital LLC, operating as Evermore Directory ("we," "our," or "us"), respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
               <p>
                 By using Evermore Directory, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">7.3 Exercising Your Rights</h3>
               <p>
-                To exercise any of these rights, please contact us at privacy@evermoredirectory.com. We will respond to your request within the timeframe required by applicable law (typically 30-45 days).
+                To exercise any of these rights, please contact us at listings@funeralhomedirectories.com. We will respond to your request within the timeframe required by applicable law (typically 30-45 days).
               </p>
             </section>
 
@@ -279,10 +279,9 @@ export default function PrivacyPage() {
                 If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-4">
-                <p className="font-semibold text-gray-800 mb-2">Evermore Directory</p>
-                <p>Email: privacy@evermoredirectory.com</p>
-                <p>Phone: 1-800-EVERMORE</p>
-                <p>Mailing Address: [Company Address]</p>
+                <p className="font-semibold text-gray-800 mb-2">Colbridges Digital LLC</p>
+                <p>Email: listings@funeralhomedirectories.com</p>
+                <p>Mailing Address: Nashville, Tennessee</p>
               </div>
             </section>
           </div>
@@ -340,7 +339,7 @@ export default function PrivacyPage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Evermore Directory. All rights reserved.</p>
+            <p>&copy; 2026 Evermore Directory. All rights reserved.</p>
           </div>
         </div>
       </footer>

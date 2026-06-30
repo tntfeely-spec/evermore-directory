@@ -2,17 +2,15 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const Q1 = [
-  'I need to arrange a funeral soon',
-  'Planning ahead for the future',
-  'Researching options and pricing',
+const Q1: { label: string; value: string }[] = [
+  { label: 'Immediately', value: 'immediate' },
+  { label: 'Within the next few weeks', value: 'weeks' },
+  { label: 'Planning ahead for the future', value: 'preplanning' },
 ];
 
-const Q2 = [
-  'Traditional funeral service',
-  'Cremation only',
-  'Graveside service only',
-  'Not sure yet',
+const Q2: { label: string; value: string }[] = [
+  { label: 'Burial', value: 'burial' },
+  { label: 'Cremation', value: 'cremation' },
 ];
 
 const Q3 = [
@@ -69,8 +67,8 @@ export default function HomeQuiz() {
           serviceType,
           budget,
           zip: zip.trim(),
-          source: 'homepage_quiz',
-          tags: ['homepage-quiz-lead'],
+          source: 'homepage',
+          tags: ['homepage-lead'],
         }),
       });
       if (!res.ok) throw new Error('failed');
@@ -126,10 +124,10 @@ export default function HomeQuiz() {
 
       {step === 1 && (
         <div key="s1" className="transition-opacity duration-300 opacity-100">
-          <p className="text-base font-semibold text-gray-900 mb-3 text-center">What brings you here today?</p>
+          <p className="text-base font-semibold text-gray-900 mb-3 text-center">When will you require services?</p>
           <div className="flex flex-col gap-2">
-            {Q1.map((opt) => (
-              <button key={opt} onClick={() => pick(setIntent, 2)(opt)} className={optionClass}>{opt}</button>
+            {Q1.map(({ label, value }) => (
+              <button key={value} onClick={() => pick(setIntent, 2)(value)} className={optionClass}>{label}</button>
             ))}
           </div>
         </div>
@@ -137,10 +135,10 @@ export default function HomeQuiz() {
 
       {step === 2 && (
         <div key="s2" className="transition-opacity duration-300 opacity-100">
-          <p className="text-base font-semibold text-gray-900 mb-3 text-center">What type of service are you looking for?</p>
+          <p className="text-base font-semibold text-gray-900 mb-3 text-center">Which do you prefer?</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {Q2.map((opt) => (
-              <button key={opt} onClick={() => pick(setServiceType, 3)(opt)} className={optionClass}>{opt}</button>
+            {Q2.map(({ label, value }) => (
+              <button key={value} onClick={() => pick(setServiceType, 3)(value)} className={optionClass}>{label}</button>
             ))}
           </div>
         </div>

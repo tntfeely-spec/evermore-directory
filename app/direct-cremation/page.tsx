@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllRealStatePricing, formatCurrency, formatRange, getStateRanking, type RealStatePricing } from '@/lib/server/state-pricing-real';
+import InlineLeadSection from '@/components/InlineLeadSection';
+import ScrollModal from '@/components/ScrollModal';
 
 export const revalidate = 0;
 
@@ -87,6 +89,8 @@ export default async function DirectCremationHubPage() {
               Direct cremation is the cremation of a person&apos;s remains without a formal funeral service, typically including transportation, cremation, and return of the remains. National direct cremation prices range from $1,500 to $3,500 with significant variation by state. Based on real pricing from {totalProviders.toLocaleString()} plus funeral homes listed on Evermore Directory.
             </p>
           </section>
+
+          <InlineLeadSection source="general" />
 
           {/* Veteran callout */}
           <div className="mb-10 bg-slate-50 border border-slate-200 rounded-lg p-5">
@@ -301,6 +305,7 @@ export default async function DirectCremationHubPage() {
           </div>
         </div>
       </main>
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }

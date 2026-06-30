@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/components/Footer';
+import StickyLeadButton from '@/components/StickyLeadButton';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,6 +47,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        <StickyLeadButton />
         <Analytics />
         <GoogleAnalytics gaId="G-S3GRCTG9CF" />
       </body>

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
+import InlineLeadSection from '@/components/InlineLeadSection';
+import ScrollModal from '@/components/ScrollModal';
 
 
 interface PageProps {
@@ -170,6 +172,8 @@ export default async function StateCitiesPage({ params }: PageProps) {
               {stateDesc?.intro_text || `Find compassionate funeral homes and cremation services throughout ${stateName}. Browse trusted funeral directors, memorial chapels, and burial services in cities across the state.`}
             </p>
           </div>
+
+          <InlineLeadSection source="state_page" state={state.toUpperCase()} />
 
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Funeral Homes by City in {stateName}
@@ -356,6 +360,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
 
         </div>
       </div>
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }
