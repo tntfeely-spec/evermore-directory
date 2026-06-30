@@ -1,7 +1,21 @@
 'use client';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import LeadModal from '@/components/LeadModal';
 
 const SESSION_KEY = 'lcf_modal_shown';
+
+type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
+
+function detectSource(pathname: string): Source {
+  if (pathname === '/') return 'homepage';
+  if (pathname === '/contact') return 'contact';
+  if (pathname.startsWith('/blog')) return 'blog';
+  if (/\/funeral-homes\/[^/]+\/[^/]+\/[^/]+/.test(pathname)) return 'listing_page';
+  if (/\/funeral-homes\/[^/]+\/[^/]+/.test(pathname)) return 'city_page';
+  if (/\/funeral-homes\/[^/]+/.test(pathname)) return 'state_page';
+  return 'general';
+}
 
 interface Props {
   threshold?: number;
@@ -9,6 +23,10 @@ interface Props {
 }
 
 export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const source = detectSource(pathname);
+
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY) === 'true') return;
     if (localStorage.getItem('lcf_submitted') === 'true') return;
@@ -20,7 +38,7 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
       fired = true;
       sessionStorage.setItem(SESSION_KEY, 'true');
       window.removeEventListener('scroll', handleScroll);
-      window.dispatchEvent(new CustomEvent('open-lead-modal'));
+      setIsOpen(true);
     }
 
     function handleScroll() {
@@ -41,5 +59,22 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
     };
   }, [threshold, delayMs]);
 
-  return null;
+  function handleClose() {
+    setIsOpen(false);
+  }
+
+  function handleSuccess() {
+    localStorage.setItem('lcf_submitted', 'true');
+    window.dispatchEvent(new CustomEvent('lcf-submitted'));
+    setIsOpen(false);
+  }
+
+  return (
+    <LeadModal
+      isOpen={isOpen}
+      onClose={handleClose}
+      onSuccess={handleSuccess}
+      source={source}
+    />
+  );
 }

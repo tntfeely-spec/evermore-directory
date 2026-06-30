@@ -49,6 +49,14 @@ export default function StickyLeadButton({
     return () => window.removeEventListener('open-lead-modal', handleOpenEvent);
   }, []);
 
+  useEffect(() => {
+    function handleLcfSubmitted() {
+      setSubmitted(true);
+    }
+    window.addEventListener('lcf-submitted', handleLcfSubmitted);
+    return () => window.removeEventListener('lcf-submitted', handleLcfSubmitted);
+  }, []);
+
   function handleClose() {
     setIsOpen(false);
   }
