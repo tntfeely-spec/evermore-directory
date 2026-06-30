@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import InlineLeadSection from '@/components/InlineLeadSection';
+import ScrollModal from '@/components/ScrollModal';
 
 export const metadata: Metadata = {
   title: 'Veterans Funeral Benefits 2026: Complete Guide to VA Burial Allowance, National Cemeteries, and Military Honors',
@@ -103,6 +105,8 @@ export default function VeteransFuneralBenefitsPage() {
               As a former firefighter and paramedic, I responded to veteran deaths where the family had no idea the VA would cover burial costs. This guide covers every benefit available in 2026, with current dollar amounts, eligibility rules, application instructions, and links to the actual VA forms. If you are planning a funeral for a veteran, or if you are a veteran pre-planning your own arrangements, this page covers what you need to know.
             </p>
           </section>
+
+          <InlineLeadSection source="general" />
 
           {/* VA Burial Allowance */}
           <section className="mb-10">
@@ -371,6 +375,7 @@ export default function VeteransFuneralBenefitsPage() {
           </div>
         </div>
       </main>
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }

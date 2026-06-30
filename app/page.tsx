@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-
 import HomepageSearch from '@/components/HomepageSearch';
+import ScrollModal from '@/components/ScrollModal';
 
 export const metadata: Metadata = {
   title: 'Evermore Directory - Find Funeral Homes & Cremation Services Nationwide',
@@ -220,6 +220,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <ScrollModal threshold={0.50} delayMs={20000} />
     </>
   );
 }

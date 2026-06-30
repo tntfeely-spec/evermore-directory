@@ -55,6 +55,7 @@ export default function StickyLeadButton({
 
   function handleSuccess() {
     localStorage.setItem('lcf_submitted', 'true');
+    window.dispatchEvent(new CustomEvent('lcf-submitted'));
     setSubmitted(true);
     setIsOpen(false);
   }

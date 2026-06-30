@@ -612,7 +612,7 @@ export default async function FuneralHomePage({
           casket: 2495, urn: 295, burial: 1395,
         }}
       />
-      <ScrollModal source="listing_page" />
+      <ScrollModal threshold={0.30} delayMs={20000} />
 
     </>
   )

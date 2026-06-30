@@ -360,7 +360,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
 
         </div>
       </div>
-      <ScrollModal source="state_page" />
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }

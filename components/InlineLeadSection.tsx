@@ -1,7 +1,8 @@
 'use client';
+import { useState, useEffect } from 'react';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 
-type Source = 'blog' | 'city_page' | 'state_page';
+type Source = 'blog' | 'city_page' | 'state_page' | 'general';
 
 interface Props {
   source: Source;
@@ -10,9 +11,24 @@ interface Props {
 }
 
 export default function InlineLeadSection({ source, city, state }: Props) {
+  const [hidden, setHidden] = useState(
+    () => typeof window !== 'undefined' && localStorage.getItem('lcf_submitted') === 'true'
+  );
+
+  useEffect(() => {
+    function handleSubmitted() {
+      setHidden(true);
+    }
+    window.addEventListener('lcf-submitted', handleSubmitted);
+    return () => window.removeEventListener('lcf-submitted', handleSubmitted);
+  }, []);
+
   function handleSuccess() {
     localStorage.setItem('lcf_submitted', 'true');
+    window.dispatchEvent(new CustomEvent('lcf-submitted'));
   }
+
+  if (hidden) return null;
 
   return (
     <div className="my-10 bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden max-w-xl mx-auto">

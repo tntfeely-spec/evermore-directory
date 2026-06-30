@@ -800,7 +800,7 @@ All funeral homes in our {cityName} directory include contact information, addre
           </div>
         </div>
       </div>
-      <ScrollModal source="city_page" />
+      <ScrollModal threshold={0.30} delayMs={20000} />
     </>
   );
 }
