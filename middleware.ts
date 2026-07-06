@@ -33,6 +33,9 @@ const ALLOWED_BOTS = [
   'vercel',
   'ahrefsbot',
   'ahrefssiteaudit',
+  'mediapartners-google',
+  'adsbot-google',
+  'google-adsense',
 ];
 
 // Known bad bots and scrapers to block

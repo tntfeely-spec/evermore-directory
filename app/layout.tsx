@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -37,11 +36,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="color-scheme" content="light" />
-        <Script
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3385961270726886"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         <script data-grow-initializer="" dangerouslySetInnerHTML={{
           __html: `!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTpkM2Y0YzhlMi05MzQzLTQzNDUtYmY2OS01NmFhNmNlM2U2Yzk=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();`,
