@@ -35,6 +35,7 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
 
     function fire() {
       if (fired) return;
+      if (localStorage.getItem('lcf_submitted') === 'true') return;
       fired = true;
       sessionStorage.setItem(SESSION_KEY, 'true');
       window.removeEventListener('scroll', handleScroll);
