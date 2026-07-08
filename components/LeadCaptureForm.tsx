@@ -12,6 +12,7 @@ interface Props {
   state?: string;
   defaultZip?: string;
   onSuccess?: () => void;
+  onFormDone?: () => void;
 }
 
 const TAGS_BY_SOURCE: Record<Source, string[]> = {
@@ -33,6 +34,7 @@ export default function LeadCaptureForm({
   state,
   defaultZip = '',
   onSuccess,
+  onFormDone,
 }: Props) {
   const [step, setStep] = useState(1);
   const [timeline, setTimeline] = useState('');
@@ -77,8 +79,8 @@ export default function LeadCaptureForm({
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
-      // Show success state for 1.5 s, then let parent close the modal
-      setTimeout(() => onSuccess?.(), 1500);
+      onFormDone?.();
+      setTimeout(() => onSuccess?.(), 2000);
     } catch {
       setStatus('error');
     }

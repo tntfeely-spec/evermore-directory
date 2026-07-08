@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
@@ -27,6 +27,12 @@ export default function LeadModal({
 }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+  const [isDone, setIsDone] = useState(false);
+
+  // Reset done-lock when modal closes so it's fresh on next open
+  useEffect(() => {
+    if (!isOpen) setIsDone(false);
+  }, [isOpen]);
 
   // Focus management: move into modal on open, restore on close
   useEffect(() => {
@@ -54,7 +60,7 @@ export default function LeadModal({
 
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        onClose();
+        if (!isDone) onClose();
         return;
       }
       if (e.key !== 'Tab' || !dialogRef.current) return;
@@ -85,15 +91,15 @@ export default function LeadModal({
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, isDone]);
 
   if (!isOpen) return null;
 
   return (
-    // Outer div: covers viewport, click backdrop to close
+    // Outer div: covers viewport, click backdrop to close (disabled during success)
     <div
       className="fixed inset-0 z-[60] flex items-center justify-center p-4"
-      onClick={onClose}
+      onClick={isDone ? undefined : onClose}
     >
       {/* Backdrop */}
       <div
@@ -111,8 +117,8 @@ export default function LeadModal({
         className="relative z-10 w-full max-w-md bg-white rounded-2xl shadow-2xl outline-none"
         onClick={e => e.stopPropagation()}
       >
-        {/* Close X */}
-        <button
+        {/* Close X — hidden during success window so users can read confirmation */}
+        {!isDone && <button
           type="button"
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors rounded-full p-1.5 focus:outline-none focus:ring-2 focus:ring-slate-500"
@@ -132,7 +138,7 @@ export default function LeadModal({
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        </button>
+        </button>}
 
         <div className="p-6 pt-10">
           <h2 id="lead-modal-heading" className="sr-only">
@@ -145,6 +151,7 @@ export default function LeadModal({
             state={state}
             defaultZip={defaultZip}
             onSuccess={onSuccess}
+            onFormDone={() => setIsDone(true)}
           />
         </div>
       </div>

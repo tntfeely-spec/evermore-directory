@@ -50,12 +50,21 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
       if (pct >= threshold) fire();
     }
 
+    // Cancel the pending timer and scroll listener when any form on the page is submitted
+    let timer: ReturnType<typeof setTimeout> | null = delayMs != null ? setTimeout(fire, delayMs) : null;
+
+    function handleLcfSubmitted() {
+      if (timer !== null) clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    const timer = delayMs != null ? setTimeout(fire, delayMs) : null;
+    window.addEventListener('lcf-submitted', handleLcfSubmitted);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (timer != null) clearTimeout(timer);
+      window.removeEventListener('lcf-submitted', handleLcfSubmitted);
+      if (timer !== null) clearTimeout(timer);
     };
   }, [threshold, delayMs]);
 
