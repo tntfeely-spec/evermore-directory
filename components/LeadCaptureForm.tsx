@@ -77,7 +77,8 @@ export default function LeadCaptureForm({
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
-      setTimeout(() => onSuccess?.(), 4000);
+      // Show success state for 1.5 s, then let parent close the modal
+      setTimeout(() => onSuccess?.(), 1500);
     } catch {
       setStatus('error');
     }
