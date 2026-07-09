@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { trackLeadForm } from '@/lib/analytics';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 type Status = 'idle' | 'sending' | 'done' | 'error';
@@ -46,6 +47,10 @@ export default function LeadCaptureForm({
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<Status>('idle');
 
+  useEffect(() => {
+    trackLeadForm('form_step', { form_source: source, step_number: step });
+  }, [step, source]);
+
   const inputClass =
     'w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500';
   const optionClass =
@@ -56,6 +61,7 @@ export default function LeadCaptureForm({
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!firstName.trim() || !email.trim()) return;
+    trackLeadForm('form_submit_attempt', { form_source: source });
     setStatus('sending');
     try {
       const res = await fetch('/api/contact', {
@@ -79,9 +85,12 @@ export default function LeadCaptureForm({
       });
       if (!res.ok) throw new Error('failed');
       setStatus('done');
+      trackLeadForm('form_submit_success', { form_source: source });
+      trackLeadForm('generate_lead', { form_source: source });
       onFormDone?.();
       setTimeout(() => onSuccess?.(), 2000);
     } catch {
+      trackLeadForm('form_submit_error', { form_source: source });
       setStatus('error');
     }
   }

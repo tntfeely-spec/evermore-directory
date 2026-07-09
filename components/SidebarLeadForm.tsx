@@ -1,5 +1,7 @@
 'use client';
+import { useEffect } from 'react';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import { trackLeadForm } from '@/lib/analytics';
 
 interface Props {
   funeralHomeName?: string;
@@ -8,6 +10,10 @@ interface Props {
 }
 
 export default function SidebarLeadForm({ funeralHomeName, city, state }: Props) {
+  useEffect(() => {
+    trackLeadForm('form_open', { form_source: 'listing_page', form_type: 'sidebar_form' });
+  }, []);
+
   function handleSuccess() {
     localStorage.setItem('lcf_submitted', 'true');
   }

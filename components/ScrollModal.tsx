@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import LeadModal from '@/components/LeadModal';
+import { trackLeadForm } from '@/lib/analytics';
 
 const SESSION_KEY = 'lcf_modal_shown';
 
@@ -39,6 +40,7 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
       sessionStorage.setItem(SESSION_KEY, 'true');
       window.removeEventListener('scroll', handleScroll);
       setIsOpen(true);
+      trackLeadForm('form_open', { form_source: source, form_type: 'scroll_modal' });
     }
 
     function handleScroll() {
@@ -51,7 +53,7 @@ export default function ScrollModal({ threshold = 0.30, delayMs }: Props) {
     }
 
     // Cancel the pending timer and scroll listener when any form on the page is submitted
-    let timer: ReturnType<typeof setTimeout> | null = delayMs != null ? setTimeout(fire, delayMs) : null;
+    const timer: ReturnType<typeof setTimeout> | null = delayMs != null ? setTimeout(fire, delayMs) : null;
 
     function handleLcfSubmitted() {
       if (timer !== null) clearTimeout(timer);

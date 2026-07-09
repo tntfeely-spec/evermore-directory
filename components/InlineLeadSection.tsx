@@ -1,6 +1,7 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import { trackLeadForm } from '@/lib/analytics';
 
 type Source = 'blog' | 'city_page' | 'state_page' | 'general';
 
@@ -14,6 +15,7 @@ export default function InlineLeadSection({ source, city, state }: Props) {
   const [hidden, setHidden] = useState(
     () => typeof window !== 'undefined' && localStorage.getItem('lcf_submitted') === 'true'
   );
+  const openFiredRef = useRef(false);
 
   useEffect(() => {
     function handleSubmitted() {
@@ -22,6 +24,13 @@ export default function InlineLeadSection({ source, city, state }: Props) {
     window.addEventListener('lcf-submitted', handleSubmitted);
     return () => window.removeEventListener('lcf-submitted', handleSubmitted);
   }, []);
+
+  useEffect(() => {
+    if (!hidden && !openFiredRef.current) {
+      openFiredRef.current = true;
+      trackLeadForm('form_open', { form_source: source, form_type: 'inline_section' });
+    }
+  }, [hidden, source]);
 
   function handleSuccess() {
     localStorage.setItem('lcf_submitted', 'true');

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import LeadModal from '@/components/LeadModal';
+import { trackLeadForm } from '@/lib/analytics';
 
 type Source = 'homepage' | 'listing_page' | 'city_page' | 'state_page' | 'blog' | 'contact' | 'general';
 
@@ -41,12 +42,18 @@ export default function StickyLeadButton({
   );
   const triggerRef = useRef<HTMLButtonElement>(null);
 
+  function openModal() {
+    setIsOpen(true);
+    trackLeadForm('form_open', { form_source: source, form_type: 'sticky_button' });
+  }
+
   useEffect(() => {
     function handleOpenEvent() {
-      setIsOpen(true);
+      openModal();
     }
     window.addEventListener('open-lead-modal', handleOpenEvent);
     return () => window.removeEventListener('open-lead-modal', handleOpenEvent);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -73,7 +80,7 @@ export default function StickyLeadButton({
       {submitted ? (
         <div className="fixed bottom-4 right-4 z-40">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={openModal}
             className="text-xs text-gray-400 hover:text-gray-500 underline transition-colors bg-white/90 backdrop-blur-sm px-2 py-1 rounded shadow-sm"
           >
             Get matched again
@@ -83,7 +90,7 @@ export default function StickyLeadButton({
         <div className="fixed bottom-0 inset-x-0 z-40 flex justify-center pb-5 px-4 pointer-events-none">
           <button
             ref={triggerRef}
-            onClick={() => setIsOpen(true)}
+            onClick={openModal}
             className="pointer-events-auto bg-slate-700 hover:bg-slate-800 active:bg-slate-900 text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-xl transition-colors focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
           >
             Get matched with local funeral homes
