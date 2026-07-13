@@ -27,6 +27,12 @@ const TAGS_BY_SOURCE: Record<Source, string[]> = {
 };
 
 const TOTAL_STEPS = 4;
+const STEP_NAMES: Record<number, string> = {
+  1: 'timeline',
+  2: 'service_type',
+  3: 'zip',
+  4: 'contact',
+};
 
 export default function LeadCaptureForm({
   source,
@@ -48,7 +54,7 @@ export default function LeadCaptureForm({
   const [status, setStatus] = useState<Status>('idle');
 
   useEffect(() => {
-    trackLeadForm('form_step', { form_source: source, step_number: step });
+    trackLeadForm('form_step', { form_source: source, step_number: step, step_name: STEP_NAMES[step] });
   }, [step, source]);
 
   const inputClass =
