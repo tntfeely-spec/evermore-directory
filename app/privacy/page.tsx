@@ -62,7 +62,7 @@ export default function PrivacyPage() {
         <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Privacy Policy</h1>
           <p className="text-gray-600 mb-8">
-            <strong>Last Updated:</strong> June 29, 2026
+            <strong>Last Updated:</strong> July 27, 2026
           </p>
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
@@ -155,6 +155,11 @@ export default function PrivacyPage() {
               <p>
                 We may share information with third parties when you provide explicit consent for us to do so.
               </p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-4">4.6 With Partners</h3>
+              <p>
+                We may share your information with funeral service providers and marketing partners who may contact you about relevant services.
+              </p>
             </section>
 
             <section>
@@ -201,14 +206,16 @@ export default function PrivacyPage() {
                 <li>Opt-out of marketing communications</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">7.2 California Privacy Rights (CCPA)</h3>
-              <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act:</p>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">7.2 California Privacy Rights (CCPA/CPRA)</h3>
+              <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act, as amended by the CPRA:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Right to Know:</strong> You can request information about the categories and specific pieces of personal information we've collected</li>
-                <li><strong>Right to Delete:</strong> You can request deletion of your personal information</li>
-                <li><strong>Right to Opt-Out:</strong> You can opt-out of the sale of personal information (we do not sell personal information)</li>
-                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights</li>
+                <li><strong>Right to Know:</strong> You can request information about the categories and specific pieces of personal information we have collected, the sources of that information, the purposes for collecting it, and the categories of third parties with whom we share it.</li>
+                <li><strong>Right to Delete:</strong> You can request deletion of the personal information we have collected from you, subject to certain legal exceptions.</li>
+                <li><strong>Right to Opt-Out of Sale or Sharing:</strong> We may share the personal information you provide, such as your contact details and stated preferences, with third-party partners including funeral service providers and marketing partners. To the extent any such sharing constitutes a &quot;sale&quot; or &quot;sharing&quot; under California law, you have the right to opt out at any time by contacting us at listings@funeralhomedirectories.com.</li>
+                <li><strong>Right to Correct:</strong> You can request that we correct inaccurate personal information we maintain about you.</li>
+                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your privacy rights.</li>
               </ul>
+              <p className="mt-4">To exercise any of these rights, contact us at listings@funeralhomedirectories.com.</p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">7.3 Exercising Your Rights</h3>
               <p>
