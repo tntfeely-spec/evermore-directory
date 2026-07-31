@@ -334,7 +334,7 @@ export default async function CityPage({ params }: PageProps) {
     .select('description, cost_content')
     .eq('city', cityName)
     .eq('state', state.toUpperCase())
-    .single();
+    .maybeSingle();
   // Strip hardcoded number-word counts from DB descriptions (e.g. "eleven established funeral homes")
   const numberWords = /\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty-one|twenty-two|twenty-three|twenty-four|twenty-five|thirty|forty|fifty|several|numerous|multiple|a number of|a handful of)\b/gi;
   const rawDescription = descData?.description || '';

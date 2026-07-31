@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .from('state_descriptions')
     .select('meta_description')
     .eq('state_code', state.toUpperCase())
-    .single();
+    .maybeSingle();
 
   const description = stateDesc?.meta_description || `Find trusted funeral homes and cremation services in ${stateName}. Browse compassionate funeral directors, memorial chapels, and burial services across all cities in ${stateName}.`;
 
@@ -87,7 +87,7 @@ export default async function StateCitiesPage({ params }: PageProps) {
     .from('state_descriptions')
     .select('intro_text')
     .eq('state_code', state.toUpperCase())
-    .single();
+    .maybeSingle();
 
   const cityCounts: { [key: string]: number } = {};
   homes?.forEach((home) => {
