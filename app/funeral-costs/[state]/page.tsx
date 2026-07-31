@@ -13,7 +13,7 @@ import {
   type RealStatePricing,
 } from '@/lib/server/state-pricing-real';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 interface PageProps {
   params: Promise<{ state: string }>;
