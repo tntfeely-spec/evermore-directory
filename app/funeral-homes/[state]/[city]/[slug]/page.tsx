@@ -8,7 +8,7 @@ import ListingTracker, { WebsiteLink, PhoneLink } from '@/components/ListingTrac
 import SidebarLeadForm from '@/components/SidebarLeadForm';
 import ScrollModal from '@/components/ScrollModal';
 
-export const revalidate = 0
+export const revalidate = 3600
 export const dynamicParams = true
 
 // ─── Supabase client (server-side) ───────────────────────────────────────────

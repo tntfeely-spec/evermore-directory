@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase';
 import Navigation from '@/components/Navigation';
 import { WebsiteLink, PhoneLink } from '@/components/ListingTracker';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 export const dynamicParams = true;
 
 interface PageProps {

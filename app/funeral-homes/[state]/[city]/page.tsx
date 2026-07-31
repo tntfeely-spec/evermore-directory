@@ -7,7 +7,7 @@ import InlineLeadSection from '@/components/InlineLeadSection';
 import ScrollModal from '@/components/ScrollModal';
 
 
-export const revalidate = 0
+export const revalidate = 3600
 
 interface PageProps {
   params: Promise<{
