@@ -39,6 +39,7 @@ type FuneralHome = {
   longitude: string | null
   listing_description: string | null
   provider_type: string | null
+  canonical_path: string | null
 }
 
 // ─── Slug helpers ─────────────────────────────────────────────────────────────
@@ -88,7 +89,9 @@ export async function generateMetadata({
   const phoneSnippet = listing.phone ? ` Call ${listing.phone} or get` : ' Get'
   const desc = `Compare ${listing.business_name} prices for burial, cremation & memorial services in ${listing.city}, ${stateAbbr}.${phoneSnippet} free cost estimates. Updated 2026.`
 
-  const canonical = `https://funeralhomedirectories.com/funeral-homes/${stateSlug(listing.state)}/${citySlug(listing.city)}/${slugify(listing.business_name)}`
+  const canonical = listing.canonical_path
+    ? `https://funeralhomedirectories.com${listing.canonical_path}`
+    : `https://funeralhomedirectories.com/funeral-homes/${stateSlug(listing.state)}/${citySlug(listing.city)}/${slugify(listing.business_name)}`
 
   return {
     title: pageTitle,
