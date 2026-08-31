@@ -110,7 +110,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Questions or feedback go to <a href="mailto:listings@funeralhomedirectories.com" className="text-slate-600 hover:text-slate-800 font-semibold">listings@funeralhomedirectories.com</a>. Terry reads every message. If something on the site does not match the promise of transparency and zero pressure, write him directly and he will fix it.
+                Questions or feedback go to <a href="mailto:listings@funeralhomedirectories.com" className="text-slate-600 hover:text-slate-800 font-semibold">listings@funeralhomedirectories.com</a>. Every message is read. If something on the site does not match the promise of transparency and zero pressure, write to us directly and we will fix it.
               </p>
             </div>
           </section>
