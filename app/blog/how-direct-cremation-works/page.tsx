@@ -70,7 +70,7 @@ export default function HowDirectCremationWorksPage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "How Direct Cremation Works: Step by Step",
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-05-07",
           "dateModified": "2026-05-07",
@@ -112,7 +112,7 @@ export default function HowDirectCremationWorksPage() {
                 How Direct Cremation Works: Step by Step
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: May 2026
               </p>
               <p className="text-xl text-gray-600">
                 A complete walkthrough of the direct cremation process, from the first phone call through return of ashes.

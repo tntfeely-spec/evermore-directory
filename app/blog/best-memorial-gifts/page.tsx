@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-05-24T00:00:00.000Z',
     modifiedTime: '2026-05-24T00:00:00.000Z',
-    authors: ['Terry Feely'],
+    authors: ['Terry'],
   },
 };
 
@@ -49,7 +49,7 @@ export default function BestRemembranceGiftsPage() {
         "@context": "https://schema.org", "@type": "Article",
         "headline": "The 15 Best Memorial Gifts for Loss of a Loved One (2026): A Buyer's Guide",
         "description": "Compare 15 meaningful memorial gifts to honor a loved one.",
-        "author": { "@type": "Person", "name": "Terry Feely", "jobTitle": "Founder, Evermore Directory", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "jobTitle": "Founder, Evermore Directory", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-23", "dateModified": "2026-05-23",
         "mainEntityOfPage": "https://funeralhomedirectories.com/blog/best-memorial-gifts"
@@ -77,7 +77,7 @@ export default function BestRemembranceGiftsPage() {
               </h1>
 
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
               </p>
               <p className="text-xl text-gray-600">
                 Compare 15 meaningful memorial gifts to honor a loved one. Personalized keepsakes, memorial trees, wind chimes, jewelry, and more.

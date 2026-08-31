@@ -22,7 +22,7 @@ export default function PrayerOfTheFaithfulFuneralPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Prayer of the Faithful at a Funeral: Examples and How It Works","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/prayer-of-the-faithful-funeral"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Prayer of the Faithful at a Funeral: Examples and How It Works","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/prayer-of-the-faithful-funeral"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function PrayerOfTheFaithfulFuneralPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Prayer of the Faithful at a Funeral: Examples and How It Works</h1>
               <p className="text-xl text-gray-600 mb-4">A guide to understanding, writing, and delivering the Prayer of the Faithful at a Catholic funeral Mass.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

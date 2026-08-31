@@ -13,7 +13,7 @@ export default function FuneralHomeRedFlagsPage() {
   return (
     <>
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Home Red Flags: What to Watch Out For When Grieving","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/funeral-home-red-flags"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Home Red Flags: What to Watch Out For When Grieving","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/funeral-home-red-flags"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -22,9 +22,7 @@ export default function FuneralHomeRedFlagsPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Home Red Flags: What to Watch Out For When Grieving</h1>
               <p className="text-xl text-gray-600 mb-4">The warning signs that matter most -- from a former paramedic who has seen what happens when families are not protected.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>March 2026</span>
               </div>

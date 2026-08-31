@@ -5,7 +5,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Traditional Funeral vs. Celebration of Life: How to Choose (2026)',
-  description: 'A former firefighter and paramedic explains the real difference between traditional funerals and celebrations of life -- emotionally, practically, and financially.',
+  description: 'Evermore Directory explains the real difference between traditional funerals and celebrations of life -- emotionally, practically, and financially.',
   keywords: 'traditional funeral vs celebration of life, celebration of life vs funeral, what is a celebration of life, funeral service options, how to choose a funeral service',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog/traditional-vs-celebration-of-life',
@@ -17,7 +17,7 @@ export default function TraditionalVsCelebrationPage() {
     <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What did the person want?","acceptedAnswer":{"@type":"Answer","text":"If they expressed any preference, start there. A lot of people mention it in passing without writing it down. Ask around -- sometimes a sibling or close friend heard something the immediate family did not."}},{"@type":"Question","name":"2. What does the family need?","acceptedAnswer":{"@type":"Answer","text":"Not what is cheapest, not what is most impressive, but what will help the people who loved this person begin to grieve. Sometimes a formal structure is exactly what a family in grief needs."}},{"@type":"Question","name":"3. What honors who they were?","acceptedAnswer":{"@type":"Answer","text":"The service should feel like the person. If it could have been for anyone, it probably is not serving its purpose."}},{"@type":"Question","name":"How Much Does a Funeral Cost in 2026?","acceptedAnswer":{"@type":"Answer","text":"Complete price guide for funeral services across the U.S."}}]}) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Traditional Funeral vs. Celebration of Life: How to Choose (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-08","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/traditional-vs-celebration-of-life"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Traditional Funeral vs. Celebration of Life: How to Choose (2026)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-08","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/traditional-vs-celebration-of-life"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -30,9 +30,7 @@ export default function TraditionalVsCelebrationPage() {
                 Both can bring real comfort when done with intention. Here is how to know which one fits your family.
               </p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>March 2026</span>
               </div>
@@ -40,7 +38,7 @@ export default function TraditionalVsCelebrationPage() {
 
             <section className="mb-10">
               <p className="text-gray-600 mb-4">
-                When I had a family member pass away a few years ago, our family faced a decision I had watched other families navigate from the other side. I had spent years as a firefighter and paramedic in the Chicago suburbs, arriving at homes in the worst moments, helping families take those first impossible steps. I thought that experience would make it easier when it was my own family.
+                When I had a family member pass away a few years ago, our family faced a decision I had watched other families navigate from the other side. I had sat with other families through that same decision more times than I could count. I thought that experience would make it easier when it was my own family.
               </p>
               <p className="text-gray-600 mb-4">It did not.</p>
               <p className="text-gray-600 mb-4">

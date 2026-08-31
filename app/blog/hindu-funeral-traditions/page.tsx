@@ -22,7 +22,7 @@ export default function HinduFuneralTraditionsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Hindu Funeral Traditions: What to Expect and How to Show Respect","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-10","url":"https://funeralhomedirectories.com/blog/hindu-funeral-traditions"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Hindu Funeral Traditions: What to Expect and How to Show Respect","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-10","dateModified":"2026-04-10","url":"https://funeralhomedirectories.com/blog/hindu-funeral-traditions"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function HinduFuneralTraditionsPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Hindu Funeral Traditions: What to Expect and How to Show Respect</h1>
               <p className="text-xl text-gray-600 mb-4">Hindu funeral traditions reflect a deep belief in the cycle of life, death, and rebirth. Here is what happens at a Hindu funeral and how to show respect whether you are a family member or a guest.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

@@ -64,7 +64,7 @@ export default function VeteransFuneralBenefitsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Veterans Funeral Benefits 2026: Complete Guide to VA Burial Allowance, National Cemeteries, and Military Honors",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-18", "dateModified": "2026-05-18",
         "url": "https://funeralhomedirectories.com/veterans-funeral-benefits"
@@ -94,7 +94,7 @@ export default function VeteransFuneralBenefitsPage() {
             Veterans Funeral Benefits 2026: Complete Guide
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           <section className="mb-10">
@@ -102,7 +102,7 @@ export default function VeteransFuneralBenefitsPage() {
               The U.S. Department of Veterans Affairs provides burial benefits to eligible veterans that can cover up to $2,000 of funeral and burial costs for service-connected deaths, free burial in any of 131 VA national cemeteries, a government headstone or marker, a burial flag, and military funeral honors. VA paid burial benefits to more than 84,000 veteran families in 2024, yet thousands of eligible families never file a claim because they do not know these benefits exist.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              As a former firefighter and paramedic, I responded to veteran deaths where the family had no idea the VA would cover burial costs. This guide covers every benefit available in 2026, with current dollar amounts, eligibility rules, application instructions, and links to the actual VA forms. If you are planning a funeral for a veteran, or if you are a veteran pre-planning your own arrangements, this page covers what you need to know.
+              We have seen families of veterans who had no idea the VA would cover burial costs. This guide covers every benefit available in 2026, with current dollar amounts, eligibility rules, application instructions, and links to the actual VA forms. If you are planning a funeral for a veteran, or if you are a veteran pre-planning your own arrangements, this page covers what you need to know.
             </p>
           </section>
 

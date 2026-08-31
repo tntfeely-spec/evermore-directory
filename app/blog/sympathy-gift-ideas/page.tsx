@@ -22,7 +22,7 @@ export default function SympathyGiftIdeasPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Sympathy Gift Ideas: What to Send a Grieving Family","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/sympathy-gift-ideas"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Sympathy Gift Ideas: What to Send a Grieving Family","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/sympathy-gift-ideas"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function SympathyGiftIdeasPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Sympathy Gift Ideas: What to Send a Grieving Family</h1>
               <p className="text-xl text-gray-600 mb-4">Sending a sympathy gift shows you care without needing to find the perfect words. Here are meaningful gift ideas for grieving families at every budget.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

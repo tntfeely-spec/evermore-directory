@@ -22,7 +22,7 @@ export default function SuicideLossGriefPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Grief After Suicide Loss: What Survivors Experience and How to Cope","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/suicide-loss-grief"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Grief After Suicide Loss: What Survivors Experience and How to Cope","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/suicide-loss-grief"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function SuicideLossGriefPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Grief After Suicide Loss: What Survivors Experience and How to Cope</h1>
               <p className="text-xl text-gray-600 mb-4">Suicide loss grief is one of the most isolating and stigmatized forms of bereavement. Here is what survivors experience, how to cope, and where to find people who understand.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

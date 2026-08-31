@@ -28,7 +28,7 @@ export default function DirectCremationVsTraditionalFuneralPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Direct Cremation vs Traditional Funeral: Complete Comparison",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-15", "dateModified": "2026-05-15",
         "url": "https://funeralhomedirectories.com/vs/direct-cremation-vs-traditional-funeral"
@@ -59,7 +59,7 @@ export default function DirectCremationVsTraditionalFuneralPage() {
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Direct Cremation vs Traditional Funeral: Complete Comparison</h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           <section className="mb-10">

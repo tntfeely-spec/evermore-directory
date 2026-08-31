@@ -55,7 +55,7 @@ export default function FuneralFinancialAssistanceTexasPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Texas Funeral Financial Assistance: Medicaid, County Indigent Burial, and VA Benefits (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-06-04","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-texas"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Texas Funeral Financial Assistance: Medicaid, County Indigent Burial, and VA Benefits (2026)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-06-04","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-texas"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -64,9 +64,7 @@ export default function FuneralFinancialAssistanceTexasPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Texas Funeral Financial Assistance: Medicaid, County Indigent Burial, and VA Benefits (2026)</h1>
               <p className="text-xl text-gray-600 mb-4">A guide for Texas residents who need help paying for a funeral, covering Harris, Bexar, Dallas, and Travis County indigent burial programs, HHSC burial assistance resources, VA burial at six national cemeteries, and Texas nonprofit grants.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>June 2026</span>
               </div>

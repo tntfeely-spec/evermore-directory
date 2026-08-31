@@ -25,7 +25,7 @@ export default function SeeingACardinalAfterSomeoneDiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Seeing a Cardinal After Someone Dies: What It Means to Families","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-16","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/seeing-a-cardinal-after-someone-dies"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Seeing a Cardinal After Someone Dies: What It Means to Families","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-16","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/seeing-a-cardinal-after-someone-dies"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -34,7 +34,7 @@ export default function SeeingACardinalAfterSomeoneDiesPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Seeing a Cardinal After Someone Dies: What It Means to Families</h1>
               <p className="text-xl text-gray-600 mb-4">The history behind the belief, what different faiths say, and why a single red bird can bring so much comfort to a grieving family.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 
@@ -102,8 +102,8 @@ export default function SeeingACardinalAfterSomeoneDiesPage() {
             </section>
 
             <section className="mb-10 bg-gray-50 rounded-lg p-6 border-l-4 border-slate-300">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">A Personal Note from Terry Feely</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">In my years as a firefighter and paramedic, I was in the room for hundreds of the worst moments a family will ever have. I sat with people in living rooms, on front steps, and in hospital hallways right after they got the news. I watched them try to figure out how to stand up again.</p>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">A Personal Note from Terry</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">I have sat with more grieving families than I can count, in living rooms, on front steps, and in hospital hallways right after they got the news. I watched them try to figure out how to stand up again.</p>
               <p className="text-gray-700 leading-relaxed mb-4">What I noticed, over and over, was that the families who held onto small signs tended to cope better than the ones who did not. A cardinal at the window. A song on the radio at the exact right moment. A dream that felt too real to forget. These things did not fix anything. Nothing fixes it. But they gave people something to hold onto on the days when holding onto anything felt impossible.</p>
               <p className="text-gray-700 leading-relaxed">I think of it as the brain&apos;s way of finding meaning when meaning is hardest to find. Whether the cardinal is a literal message or just a red bird that happened to land on the railing, the comfort it brings is not fake. The comfort is the point.</p>
             </section>

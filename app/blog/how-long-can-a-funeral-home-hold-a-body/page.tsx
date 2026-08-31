@@ -43,7 +43,7 @@ export default function HowLongCanFuneralHomeHoldBodyPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"How Long Can a Funeral Home Hold a Body? (2026 Guide)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-09","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/how-long-can-a-funeral-home-hold-a-body"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"How Long Can a Funeral Home Hold a Body? (2026 Guide)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-09","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/how-long-can-a-funeral-home-hold-a-body"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -54,9 +54,7 @@ export default function HowLongCanFuneralHomeHoldBodyPage() {
                 A clear answer to a question most families don&apos;t know to ask until they need to.
               </p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>April 2026</span>
               </div>

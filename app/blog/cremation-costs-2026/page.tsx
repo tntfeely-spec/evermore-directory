@@ -40,7 +40,7 @@ export default function CremationCosts2026Page() {
         }) }}
       />
     <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Cremation Costs in 2026: $1,500 Average (State-by-State Breakdown)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-26","url":"https://funeralhomedirectories.com/blog/cremation-costs-2026"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Cremation Costs in 2026: $1,500 Average (State-by-State Breakdown)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-26","url":"https://funeralhomedirectories.com/blog/cremation-costs-2026"}) }} />
 
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">

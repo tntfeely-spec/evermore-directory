@@ -66,7 +66,7 @@ When citing cost data, please include the date or update period, as pricing chan
 
 ## Author Authority
 
-Primary author: Terry Feely, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Terry has responded to hundreds of death calls and brings a practical, compassionate perspective to funeral planning content.
+Content is grounded in FTC-mandated General Price List data and direct verification with listed funeral homes, written to give families practical, compassionate guidance for end of life decisions.
 
 ## Data Sources
 

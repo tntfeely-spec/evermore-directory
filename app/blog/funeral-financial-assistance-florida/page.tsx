@@ -55,7 +55,7 @@ export default function FuneralFinancialAssistanceFloridaPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Florida Funeral Financial Assistance: Medicaid, County Programs, and VA Benefits (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-06-04","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-florida"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Florida Funeral Financial Assistance: Medicaid, County Programs, and VA Benefits (2026)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-06-04","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance-florida"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -64,9 +64,7 @@ export default function FuneralFinancialAssistanceFloridaPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Florida Funeral Financial Assistance: Medicaid, County Programs, and VA Benefits (2026)</h1>
               <p className="text-xl text-gray-600 mb-4">A guide for Florida residents who need help paying for a funeral, covering Miami-Dade, Broward, Palm Beach, Orange, and Duval County indigent burial programs, Medicaid asset exclusions, VA burial at nine national cemeteries, and body donation through the Florida Anatomical Board.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>June 2026</span>
               </div>

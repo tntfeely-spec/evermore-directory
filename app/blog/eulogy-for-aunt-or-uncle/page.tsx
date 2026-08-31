@@ -22,7 +22,7 @@ export default function EulogyForAuntOrUnclePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Eulogy for an Aunt or Uncle: Examples and How to Write One","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/eulogy-for-aunt-or-uncle"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Eulogy for an Aunt or Uncle: Examples and How to Write One","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/eulogy-for-aunt-or-uncle"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function EulogyForAuntOrUnclePage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Eulogy for an Aunt or Uncle: Examples and How to Write One</h1>
               <p className="text-xl text-gray-600 mb-4">Sample eulogies, a practical structure, and honest advice for honoring an aunt or uncle who mattered deeply.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

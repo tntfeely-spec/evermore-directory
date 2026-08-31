@@ -62,7 +62,7 @@ export default function WhatIsDirectCremationPage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "What Is Direct Cremation? The Complete 2026 Guide",
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-04-18",
           "dateModified": "2026-04-18",
@@ -107,7 +107,7 @@ export default function WhatIsDirectCremationPage() {
                 What Is Direct Cremation? The Complete 2026 Guide
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: April 2026
               </p>
               <p className="text-xl text-gray-600">
                 Everything you need to know about direct cremation: how it works, what it costs, what is included, and how to find a provider near you.
@@ -123,7 +123,7 @@ export default function WhatIsDirectCremationPage() {
                 More than 60% of Americans now choose cremation over burial, and direct cremation is the fastest growing segment. Families choose it for its simplicity, its affordability, and the flexibility it offers to plan a memorial or celebration of life on their own timeline rather than within days of the death.
               </p>
               <p className="text-gray-600 mb-4">
-                As a former firefighter and paramedic, I have been with families in some of the most difficult moments of their lives. I have seen firsthand how the pressure of arranging a funeral within 48 hours adds stress to an already overwhelming situation. Direct cremation removes that pressure. It gives families time to grieve, to gather, and to plan something meaningful when they are ready.
+                Families often reach out to us in some of the most difficult moments of their lives. The pressure of arranging a funeral within 48 hours adds stress to an already overwhelming situation. Direct cremation removes that pressure. It gives families time to grieve, to gather, and to plan something meaningful when they are ready.
               </p>
             </section>
 
@@ -387,7 +387,7 @@ export default function WhatIsDirectCremationPage() {
             </section>
 
             <div className="text-center text-sm text-gray-400 mt-12">
-              <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic. Terry has firsthand experience helping families navigate end of life decisions and founded Evermore Directory to make funeral planning more transparent.</p>
+              <p>Written by <strong className="text-gray-500">Terry</strong>. Terry has firsthand experience helping families navigate end of life decisions and founded Evermore Directory to make funeral planning more transparent.</p>
             </div>
 
           </article>

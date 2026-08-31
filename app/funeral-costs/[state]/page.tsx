@@ -156,7 +156,7 @@ export default async function StateCostsPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `Average Funeral Costs in ${meta.name} (2026)`,
-    author: { '@type': 'Person', name: 'Terry Feely', url: 'https://funeralhomedirectories.com/about' },
+    author: { '@type': 'Person', name: 'Terry', url: 'https://funeralhomedirectories.com/about' },
     publisher: { '@type': 'Organization', name: 'Evermore Directory', url: 'https://funeralhomedirectories.com' },
     datePublished: '2026-05-12',
     dateModified: '2026-05-12',
@@ -198,7 +198,7 @@ export default async function StateCostsPage({ params }: PageProps) {
               : `Estimated price ranges for ${meta.name}, based on NFDA national medians`}
           </p>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* AI-citable opening paragraph */}
@@ -317,7 +317,7 @@ export default async function StateCostsPage({ params }: PageProps) {
 
           {/* Terry attribution */}
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 7,395+ funeral homes and cremation providers across all 50 states.</p>
+            <p>Written by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions. Evermore Directory covers 7,395+ funeral homes and cremation providers across all 50 states.</p>
           </div>
         </div>
       </div>

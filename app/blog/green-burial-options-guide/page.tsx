@@ -13,7 +13,7 @@ export default function GreenBurialOptionsGuidePage() {
   return (
     <>
             <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/green-burial-options-guide"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/green-burial-options-guide"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -22,9 +22,7 @@ export default function GreenBurialOptionsGuidePage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Green Burial Options: What It Is, How Much It Costs, and Where to Find Providers</h1>
               <p className="text-xl text-gray-600 mb-4">What green burial actually involves, how much it costs, and how to find a certified provider.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>March 2026</span>
               </div>

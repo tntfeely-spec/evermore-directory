@@ -44,7 +44,7 @@ export default function NationalCemeteryEligibilityPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "National Cemetery Eligibility 2026: Who Qualifies for VA Burial",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-18", "dateModified": "2026-05-18",
         "url": "https://funeralhomedirectories.com/national-cemetery-eligibility"
@@ -77,7 +77,7 @@ export default function NationalCemeteryEligibilityPage() {
             National Cemetery Eligibility: Who Qualifies for VA Burial
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           <section className="mb-10">

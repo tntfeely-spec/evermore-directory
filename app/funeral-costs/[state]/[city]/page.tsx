@@ -246,7 +246,7 @@ export default async function CityCostPage({ params }: PageProps) {
   const articleSchema = {
     '@context': 'https://schema.org', '@type': 'Article',
     headline: `Average Funeral Costs in ${cityName}, ${stateName} (2026)`,
-    author: { '@type': 'Person', name: 'Terry Feely', url: 'https://funeralhomedirectories.com/about' },
+    author: { '@type': 'Person', name: 'Terry', url: 'https://funeralhomedirectories.com/about' },
     publisher: { '@type': 'Organization', name: 'Evermore Directory', url: 'https://funeralhomedirectories.com' },
     datePublished: '2026-05-13', dateModified: '2026-05-13',
     url: `https://funeralhomedirectories.com/funeral-costs/${stateSlug}/${city}`,
@@ -287,7 +287,7 @@ export default async function CityCostPage({ params }: PageProps) {
             Real price ranges from {totalInCity || listingCount} funeral homes in {cityName}
           </p>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* Opening paragraph */}
@@ -390,7 +390,7 @@ export default async function CityCostPage({ params }: PageProps) {
 
           {/* Attribution */}
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+            <p>Written by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions.</p>
           </div>
         </div>
       </div>

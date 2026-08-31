@@ -221,7 +221,7 @@ export default function GlossaryPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Funeral Industry Glossary: 115 Terms Explained in Plain Language",
-    "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+    "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
     "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
     "datePublished": "2026-05-15",
     "dateModified": "2026-05-15",
@@ -256,7 +256,7 @@ export default function GlossaryPage() {
             Funeral Industry Glossary: 115 Terms Explained
           </h1>
           <p className="text-sm text-gray-500 mb-8">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           <section className="mb-10">
@@ -325,7 +325,7 @@ export default function GlossaryPage() {
             <p>No popups. No pressure. Built for families.</p>
           </div>
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+            <p>Written by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions.</p>
           </div>
         </div>
       </main>

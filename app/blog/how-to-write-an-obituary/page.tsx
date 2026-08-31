@@ -34,7 +34,7 @@ export default function HowToWriteAnObituaryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "How to Write an Obituary: A Complete Guide + Free AI Obituary Writer",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-03-14", "dateModified": "2026-05-23",
         "url": "https://funeralhomedirectories.com/blog/how-to-write-an-obituary"
@@ -64,7 +64,7 @@ export default function HowToWriteAnObituaryPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Write an Obituary: A Complete Guide + Free AI Obituary Writer</h1>
               <p className="text-xl text-gray-600 mb-4">What to include, how to structure it, and example opening lines that actually work.</p>
               <p className="text-sm text-gray-500">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
               </p>
             </header>
 

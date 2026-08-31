@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://funeralhomedirectories.com/blog/best-memorial-wind-chimes',
     publishedTime: '2026-05-21T00:00:00.000Z',
     modifiedTime: '2026-05-21T00:00:00.000Z',
-    authors: ['Terry Feely'],
+    authors: ['Terry'],
   },
 };
 
@@ -55,7 +55,7 @@ export default function BestMemorialWindChimesPage() {
         "image": "https://funeralhomedirectories.com/og-images/best-memorial-wind-chimes.jpg",
         "author": {
           "@type": "Person",
-          "name": "Terry Feely",
+          "name": "Terry",
           "jobTitle": "Founder, Evermore Directory",
           "url": "https://funeralhomedirectories.com/about"
         },
@@ -110,7 +110,7 @@ export default function BestMemorialWindChimesPage() {
 
 
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
               </p>
               <p className="text-xl text-gray-600">
                 Honest reviews of memorial wind chimes from $25 to $190+. Compare sound quality, engraving options, and outdoor durability.

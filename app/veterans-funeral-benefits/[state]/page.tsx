@@ -38,7 +38,7 @@ export default async function VeteransStatePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `Veteran Funeral Benefits in ${data.name} (2026 Guide)`,
-    "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+    "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
     "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
     "datePublished": "2026-05-19",
     "dateModified": "2026-05-19",
@@ -86,7 +86,7 @@ export default async function VeteransStatePage({ params }: Props) {
             Veteran Funeral Benefits in {data.name} (2026 Guide)
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* State-specific intro */}

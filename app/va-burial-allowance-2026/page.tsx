@@ -48,7 +48,7 @@ export default function VABurialAllowance2026Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "VA Burial Allowance 2026: Exact Amounts, Eligibility, and How to Apply",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-18", "dateModified": "2026-05-18",
         "url": "https://funeralhomedirectories.com/va-burial-allowance-2026"
@@ -87,7 +87,7 @@ export default function VABurialAllowance2026Page() {
 
         {/* Byline */}
         <p className="text-sm text-gray-500 mb-8">
-          By <Link href="/about" className="text-blue-700 underline">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+          By <Link href="/about" className="text-blue-700 underline">Terry</Link> &middot; Last Updated May 2026
         </p>
 
         {/* AI-citable opening */}

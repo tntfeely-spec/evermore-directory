@@ -21,8 +21,8 @@ export default function AffiliateDisclosurePage() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-800">The basics</h2>
               <p>
-                Evermore Directory (funeralhomedirectories.com), operated by Colbridges Digital
-                LLC, participates in affiliate programs. When you click certain links on our
+                Evermore Directory (funeralhomedirectories.com) participates in affiliate
+                programs. When you click certain links on our
                 site and make a purchase, we may earn a small commission at no additional cost
                 to you.
               </p>

@@ -14,7 +14,7 @@ export default function PrePlanningAFuneralPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Pre-Plan a Funeral","description":"How to pre-plan your own funeral or a loved one's arrangements in advance.","step":[{"@type":"HowToStep","position":1,"name":"Document your wishes","text":"Write down your preferences for burial or cremation, type of service, music, readings, and any specific requests. Store this document where family can find it."},{"@type":"HowToStep","position":2,"name":"Choose a funeral home","text":"Research local funeral homes, request price lists, and visit facilities. Choose a provider that aligns with your wishes and budget."},{"@type":"HowToStep","position":3,"name":"Select your services","text":"Work with the funeral home to select specific services, merchandise, and any cemetery arrangements. Get everything in writing."},{"@type":"HowToStep","position":4,"name":"Decide how to pay","text":"Choose between a pre-need funeral contract, funeral trust, or funeral insurance policy. Understand the difference between irrevocable and revocable plans."},{"@type":"HowToStep","position":5,"name":"Tell your family","text":"Tell at least one trusted family member where your pre-planning documents are stored and which funeral home you have selected. Do not keep this private."}]}) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Pre-Planning a Funeral: Why It Matters and How to Do It","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/pre-planning-a-funeral"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Pre-Planning a Funeral: Why It Matters and How to Do It","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/pre-planning-a-funeral"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -23,9 +23,7 @@ export default function PrePlanningAFuneralPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Pre-Planning a Funeral: Why It Matters and How to Do It</h1>
               <p className="text-xl text-gray-600 mb-4">One of the most generous things you can do for the people who will grieve you.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>March 2026</span>
               </div>

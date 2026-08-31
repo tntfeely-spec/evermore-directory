@@ -30,7 +30,7 @@ export default function CremationVsAquamationPage() {
     dateModified: '2026-05-15',
     author: {
       '@type': 'Person',
-      name: 'Terry Feely',
+      name: 'Terry',
     },
     publisher: {
       '@type': 'Organization',
@@ -160,9 +160,9 @@ export default function CremationVsAquamationPage() {
         <p className="text-sm text-gray-500 mb-10">
           By{' '}
           <Link href="/about" className="text-blue-700 underline">
-            Terry Feely
+            Terry
           </Link>
-          , Former Firefighter and Paramedic &middot; Last Updated May 2026
+           &middot; Last Updated May 2026
         </p>
 
         {/* Quick Comparison Table */}

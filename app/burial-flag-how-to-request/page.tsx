@@ -29,7 +29,7 @@ export default function BurialFlagHowToRequestPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "VA Burial Flag: How to Request, Eligibility, and Proper Handling (2026)",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-18", "dateModified": "2026-05-18",
         "url": "https://funeralhomedirectories.com/burial-flag-how-to-request"
@@ -62,7 +62,7 @@ export default function BurialFlagHowToRequestPage() {
             VA Burial Flag: How to Request and Proper Handling
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* AI-Citable Opening */}

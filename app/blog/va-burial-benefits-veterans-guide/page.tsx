@@ -5,7 +5,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'VA Burial Benefits: What Every Veteran\'s Family Needs to Know',
-  description: 'A former firefighter and paramedic explains every VA burial benefit available -- burial allowance, free national cemetery burial, free headstone, and how to claim them.',
+  description: 'Evermore Directory explains every VA burial benefit available -- burial allowance, free national cemetery burial, free headstone, and how to claim them.',
   keywords: 'va burial benefits, veterans burial benefits, va funeral benefits, national cemetery burial, veterans funeral benefits',
   alternates: {
     canonical: 'https://funeralhomedirectories.com/blog/va-burial-benefits-veterans-guide',
@@ -17,7 +17,7 @@ export default function VaBurialBenefitsVeteransGuidePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Claim VA Burial Benefits for a Veteran","description":"Step by step process to claim VA burial allowances and benefits for an eligible veteran.","step":[{"@type":"HowToStep","position":1,"name":"Confirm eligibility","text":"The veteran must have been discharged under conditions other than dishonorable. Most veterans who served any length of time are eligible for at least basic burial benefits."},{"@type":"HowToStep","position":2,"name":"File VA Form 21P-530","text":"Submit VA Form 21P-530 Application for Burial Benefits within 2 years of the veteran's burial or cremation. You can submit online at va.gov or by mail."},{"@type":"HowToStep","position":3,"name":"Gather required documents","text":"You will need the veteran's discharge papers (DD-214), death certificate, funeral home receipts, and proof of your relationship to the veteran."},{"@type":"HowToStep","position":4,"name":"Apply for a free headstone or marker","text":"Submit VA Form 40-1330 to request a free government headstone, marker, or medallion. This is available for veterans buried in any cemetery, not just national cemeteries."},{"@type":"HowToStep","position":5,"name":"Request burial in a national cemetery","text":"Contact the National Cemetery Scheduling Office at 1-800-535-1117 to schedule burial in a national cemetery. Eligible veterans and their spouses receive this benefit at no cost."}]}) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"VA Burial Benefits: What Every Veteran's Family Needs to Know","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/va-burial-benefits-veterans-guide"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"VA Burial Benefits: What Every Veteran's Family Needs to Know","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-03-14","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/va-burial-benefits-veterans-guide"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -30,9 +30,7 @@ export default function VaBurialBenefitsVeteransGuidePage() {
                 Every benefit available to veterans&#39; families -- and how to claim each one before the moment you need it.
               </p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>March 2026</span>
               </div>

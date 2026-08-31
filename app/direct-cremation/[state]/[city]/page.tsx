@@ -441,7 +441,7 @@ export default async function DirectCremationCityPage({ params }: PageProps) {
           </div>
 
           <div className="mb-8 text-center text-sm text-gray-400">
-            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+            <p>Directory information compiled and maintained by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions.</p>
           </div>
 
           {/* Nearby Cities */}

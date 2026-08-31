@@ -92,7 +92,7 @@ export default async function DirectCremationStatePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": `Direct Cremation Costs in ${stateName} (2026)`,
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-12", "dateModified": "2026-05-12",
         "url": `https://funeralhomedirectories.com/direct-cremation/${state.toLowerCase()}`
@@ -123,7 +123,7 @@ export default async function DirectCremationStatePage({ params }: PageProps) {
             Direct Cremation Costs in {stateName} (2026)
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* AI-citable opening */}
@@ -226,7 +226,7 @@ export default async function DirectCremationStatePage({ params }: PageProps) {
           </section>
 
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+            <p>Written by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions.</p>
           </div>
         </div>
       </main>

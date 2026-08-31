@@ -22,7 +22,7 @@ export default function WhatToWriteAtAFuneralPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-14","dateModified":"2026-04-14","url":"https://funeralhomedirectories.com/blog/what-to-write-at-a-funeral"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-14","dateModified":"2026-04-14","url":"https://funeralhomedirectories.com/blog/what-to-write-at-a-funeral"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function WhatToWriteAtAFuneralPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">What to Write at a Funeral: Guest Book, Memorial Card, and Memory Book</h1>
               <p className="text-xl text-gray-600 mb-4">Knowing what to write in a funeral guest book or on a memorial card is harder than it sounds. Here are sincere, simple examples for every situation.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

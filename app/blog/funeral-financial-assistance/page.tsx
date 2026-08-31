@@ -79,7 +79,7 @@ export default function FuneralFinancialAssistancePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Financial Assistance: Federal, State, and Local Programs (2026 National Guide)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Financial Assistance: Federal, State, and Local Programs (2026 National Guide)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-06-04","url":"https://funeralhomedirectories.com/blog/funeral-financial-assistance"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -88,9 +88,7 @@ export default function FuneralFinancialAssistancePage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Financial Assistance: Federal, State, and Local Programs (2026 National Guide)</h1>
               <p className="text-xl text-gray-600 mb-4">The complete national guide to government programs, county assistance, nonprofits, and low cost alternatives for families who need help paying for a funeral.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span>
-                <span>|</span>
-                <span>Former Firefighter and Paramedic</span>
+                <span className="font-medium text-gray-700">By Terry</span>
                 <span>|</span>
                 <span>June 2026</span>
               </div>

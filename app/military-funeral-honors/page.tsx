@@ -29,7 +29,7 @@ export default function MilitaryFuneralHonorsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Military Funeral Honors 2026: What They Include and How to Request",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-18", "dateModified": "2026-05-18",
         "url": "https://funeralhomedirectories.com/military-funeral-honors"
@@ -63,7 +63,7 @@ export default function MilitaryFuneralHonorsPage() {
         </h1>
 
         <p className="text-sm text-gray-500 mb-8">
-          By Terry Feely &middot; Updated May 18, 2026
+          By Terry &middot; Updated May 18, 2026
         </p>
 
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">

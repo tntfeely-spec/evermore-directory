@@ -70,7 +70,7 @@ export default function FemaFuneralAssistancePage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "FEMA Funeral Assistance: How to Apply and What It Covers",
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-05-07",
           "dateModified": "2026-05-07",
@@ -112,7 +112,7 @@ export default function FemaFuneralAssistancePage() {
                 FEMA Funeral Assistance: How to Apply and What It Covers
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: May 2026
               </p>
               <p className="text-xl text-gray-600">
                 A complete guide to FEMA&apos;s COVID-19 funeral assistance program, including eligibility, covered expenses, and step-by-step application instructions.

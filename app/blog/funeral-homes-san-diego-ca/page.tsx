@@ -43,7 +43,7 @@ export default function FuneralHomesSanDiegoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "10 Funeral Homes in San Diego, CA (2026) | Prices & Services",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-04-22", "dateModified": "2026-04-22",
         "url": "https://funeralhomedirectories.com/blog/funeral-homes-san-diego-ca"
@@ -54,7 +54,7 @@ export default function FuneralHomesSanDiegoPage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">10 Funeral Homes in San Diego, CA (2026) | Prices &amp; Services</h1>
-              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026</p>
+              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: April 2026</p>
               <p className="text-xl text-gray-600">Compare pricing, services, and contact information for San Diego&apos;s top funeral homes.</p>
             </header>
 

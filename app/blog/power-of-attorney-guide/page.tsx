@@ -22,7 +22,7 @@ export default function PowerOfAttorneyGuidePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Power of Attorney Guide: Types, How It Works, and What Happens After Death","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/power-of-attorney-guide"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Power of Attorney Guide: Types, How It Works, and What Happens After Death","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-13","url":"https://funeralhomedirectories.com/blog/power-of-attorney-guide"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function PowerOfAttorneyGuidePage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Power of Attorney Guide: Types, How It Works, and What Happens After Death</h1>
               <p className="text-xl text-gray-600 mb-4">A power of attorney is one of the most important legal documents you can have in place. Here is what it does, how each type works, and why it matters for your family.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

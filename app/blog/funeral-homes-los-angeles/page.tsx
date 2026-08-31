@@ -55,7 +55,7 @@ export default async function FuneralHomesLosAngelesPage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": `${count} Funeral Homes in Los Angeles, CA (2026)`,
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-04-07",
           "dateModified": "2026-04-07",
@@ -71,7 +71,7 @@ export default async function FuneralHomesLosAngelesPage() {
                 {count} Funeral Homes in Los Angeles, CA (2026)
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: April 2026
               </p>
               <p className="text-xl text-gray-600">
                 Compare pricing, services, and contact information for Los Angeles&apos;s top funeral homes.

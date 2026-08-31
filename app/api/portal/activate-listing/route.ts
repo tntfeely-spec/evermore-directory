@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       ok: false,
       not_found: true,
-      error: `Funeral home "${business_name}" not found in ${city}, ${state}. Contact Terry to add manually.`,
+      error: `Funeral home "${business_name}" not found in ${city}, ${state}. Contact support to add manually.`,
     })
   }
 

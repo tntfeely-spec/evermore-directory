@@ -35,7 +35,7 @@ export default async function Page() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Home Costs in Houston, Texas (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-05-12","dateModified":"2026-05-12","url":"https://funeralhomedirectories.com/blog/funeral-home-costs-houston"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Funeral Home Costs in Houston, Texas (2026)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-05-12","dateModified":"2026-05-12","url":"https://funeralhomedirectories.com/blog/funeral-home-costs-houston"}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://funeralhomedirectories.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://funeralhomedirectories.com/blog"},{"@type":"ListItem","position":3,"name":"Funeral Home Costs in Houston, Texas"}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqs.map(f => ({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}})) }) }} />
       <Navigation />
@@ -44,7 +44,7 @@ export default async function Page() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Home Costs in Houston, Texas (2026)</h1>
-              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026</p>
+              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026</p>
               <p className="text-xl text-gray-600">Real funeral and cremation cost ranges for Houston, Texas.</p>
             </header>
 
@@ -53,7 +53,7 @@ export default async function Page() {
                 Funeral home costs in Houston, Texas range from {cremRange} for direct cremation and from {burialRange} for a traditional funeral with burial. {dataNote}
               </p>
               <p className="text-gray-600 mb-4">
-                As a former firefighter and paramedic, I saw families in Houston face these costs during the worst moments of their lives. The price ranges below are here so you can plan with real numbers, not guesses.
+                At Evermore Directory, we have seen families in Houston face these costs during the worst moments of their lives. The price ranges below are here so you can plan with real numbers, not guesses.
               </p>
             </section>
 

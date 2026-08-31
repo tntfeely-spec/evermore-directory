@@ -22,7 +22,7 @@ const faqs = [
 export default function GoFundMeFuneralTemplatePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: "GoFundMe for Funeral Costs: Templates, Examples, and What Works", author: { "@type": "Person", name: "Terry Feely", url: "https://funeralhomedirectories.com/about" }, publisher: { "@type": "Organization", name: "Evermore Directory", url: "https://funeralhomedirectories.com" }, datePublished: "2026-05-12", dateModified: "2026-05-12", url: "https://funeralhomedirectories.com/blog/gofundme-funeral-template" }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: "GoFundMe for Funeral Costs: Templates, Examples, and What Works", author: { "@type": "Person", name: "Terry", url: "https://funeralhomedirectories.com/about" }, publisher: { "@type": "Organization", name: "Evermore Directory", url: "https://funeralhomedirectories.com" }, datePublished: "2026-05-12", dateModified: "2026-05-12", url: "https://funeralhomedirectories.com/blog/gofundme-funeral-template" }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://funeralhomedirectories.com" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://funeralhomedirectories.com/blog" }, { "@type": "ListItem", position: 3, name: "GoFundMe Funeral Template" }] }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }) }} />
       <Navigation />
@@ -31,7 +31,7 @@ export default function GoFundMeFuneralTemplatePage() {
           <article>
             <header className="mb-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">GoFundMe for Funeral Costs: Templates, Examples, and What Works</h1>
-              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026</p>
+              <p className="text-sm text-gray-500 mb-3">By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026</p>
               <p className="text-xl text-gray-600">Five ready-to-use GoFundMe templates for funeral costs, with guidance on goals, sharing, and what makes campaigns successful.</p>
             </header>
 

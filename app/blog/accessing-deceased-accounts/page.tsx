@@ -22,7 +22,7 @@ export default function AccessingDeceasedAccountsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Accessing a Deceased Person's Accounts: Bank, Car, and More","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/accessing-deceased-accounts"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Accessing a Deceased Person's Accounts: Bank, Car, and More","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-13","dateModified":"2026-04-18","url":"https://funeralhomedirectories.com/blog/accessing-deceased-accounts"}) }} />
 
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -31,7 +31,7 @@ export default function AccessingDeceasedAccountsPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Accessing a Deceased Person&apos;s Accounts: Bank, Car, and More</h1>
               <p className="text-xl text-gray-600 mb-4">A practical guide to accessing financial accounts, transferring vehicles, and handling property after someone dies.</p>
               <div className="flex items-center gap-3 text-sm text-gray-500">
-                <span className="font-medium text-gray-700">By Terry Feely</span><span>|</span><span>Former Firefighter and Paramedic</span><span>|</span><span>April 2026</span>
+                <span className="font-medium text-gray-700">By Terry</span><span>|</span><span>April 2026</span>
               </div>
             </header>
 

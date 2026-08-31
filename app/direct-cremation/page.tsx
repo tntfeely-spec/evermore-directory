@@ -50,7 +50,7 @@ export default async function DirectCremationHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Direct Cremation: Complete Guide and Cost by State (2026)",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-05-12", "dateModified": "2026-05-12",
         "url": "https://funeralhomedirectories.com/direct-cremation"
@@ -80,7 +80,7 @@ export default async function DirectCremationHubPage() {
             Direct Cremation: Complete Guide and Cost by State (2026)
           </h1>
           <p className="text-sm text-gray-500 mb-10">
-            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic &middot; Last Updated May 2026
+            By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> &middot; Last Updated May 2026
           </p>
 
           {/* AI-citable opening */}
@@ -106,7 +106,7 @@ export default async function DirectCremationHubPage() {
               Direct cremation is the simplest form of cremation available. After death, the body is transported to a crematory, cremated in a basic container, and the ashes are returned to the family. There is no embalming, no viewing, no visitation, and no formal ceremony before the cremation takes place. This makes it the most affordable option for families who want cremation without the cost of a traditional funeral service.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              More than 60 percent of Americans now choose cremation, and direct cremation is the fastest growing segment. Families choose it for three reasons: cost savings (typically $4,000 to $8,000 less than a traditional funeral), simplicity (the provider handles everything), and flexibility (families can hold a memorial or celebration of life on their own schedule, weeks or months later, rather than within days of the death). As a former firefighter and paramedic, I have been with families in the hours after a death. The pressure to arrange a funeral within 48 hours adds stress to an already overwhelming situation. Direct cremation removes that pressure entirely.
+              More than 60 percent of Americans now choose cremation, and direct cremation is the fastest growing segment. Families choose it for three reasons: cost savings (typically $4,000 to $8,000 less than a traditional funeral), simplicity (the provider handles everything), and flexibility (families can hold a memorial or celebration of life on their own schedule, weeks or months later, rather than within days of the death). Families often reach out to us in the hours after a death. The pressure to arrange a funeral within 48 hours adds stress to an already overwhelming situation. Direct cremation removes that pressure entirely.
             </p>
           </section>
 
@@ -301,7 +301,7 @@ export default async function DirectCremationHubPage() {
           </section>
 
           <div className="text-center text-sm text-gray-400">
-            <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic with firsthand experience helping families navigate end of life decisions.</p>
+            <p>Written by <strong className="text-gray-500">Terry</strong>, with firsthand experience helping families navigate end of life decisions.</p>
           </div>
         </div>
       </main>

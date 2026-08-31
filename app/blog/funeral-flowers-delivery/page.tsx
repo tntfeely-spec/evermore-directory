@@ -33,7 +33,7 @@ export default function FuneralFlowersDeliveryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Article",
         "headline": "Funeral Flowers Delivery: How to Order, What to Send, and Same-Day Options",
-        "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+        "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
         "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
         "datePublished": "2026-04-16", "dateModified": "2026-05-24",
         "url": "https://funeralhomedirectories.com/blog/funeral-flowers-delivery"
@@ -50,7 +50,7 @@ export default function FuneralFlowersDeliveryPage() {
             <header className="mb-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Funeral Flowers Delivery: How to Order, What to Send, and Same-Day Options</h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link>, Founder of Evermore Directory &middot; Last Updated May 2026
               </p>
             </header>
 

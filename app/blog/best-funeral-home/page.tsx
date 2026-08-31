@@ -24,7 +24,7 @@ export default function BestFuneralHomePage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "The 6 Best Funeral Home Options for Your Family (2026)",
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-05-18",
           "dateModified": "2026-05-18",
@@ -101,7 +101,7 @@ export default function BestFuneralHomePage() {
                 The 6 Best Funeral Home Options for Your Family
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: May 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: May 2026
               </p>
               <p className="text-xl text-gray-600">
                 Not all funeral homes are created equal. Here are the six types of providers you should know about before making a decision.

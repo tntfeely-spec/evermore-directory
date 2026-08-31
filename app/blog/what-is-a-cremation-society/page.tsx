@@ -66,7 +66,7 @@ export default function WhatIsACremationSociety() {
               'What Is a Cremation Society? How They Work (2026)',
             author: {
               '@type': 'Person',
-              name: 'Terry Feely',
+              name: 'Terry',
             },
             publisher: {
               '@type': 'Organization',
@@ -127,7 +127,7 @@ export default function WhatIsACremationSociety() {
       />
 
       <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"What Is a Cremation Society? How They Work (2026)","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-18","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/what-is-a-cremation-society"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"What Is a Cremation Society? How They Work (2026)","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-04-18","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/what-is-a-cremation-society"}) }} />
 
 
       <main className="min-h-screen bg-white">
@@ -138,7 +138,7 @@ export default function WhatIsACremationSociety() {
                 What Is a Cremation Society? How They Work (2026)
               </h1>
               <p className="text-sm text-gray-500 mb-4">
-                By Terry Feely, Former Firefighter and Paramedic | Evermore
+                By Terry | Evermore
                 Directory · Last updated: April 2026
               </p>
               <p className="text-lg text-gray-700">
@@ -169,9 +169,9 @@ export default function WhatIsACremationSociety() {
                   what direct cremation is
                 </Link>{' '}
                 first. That will give you the foundation to understand how
-                cremation societies fit into the broader landscape. As a former
-                firefighter and paramedic, I have seen how families benefit from
-                having these plans in place before a crisis hits.
+                cremation societies fit into the broader landscape. Families
+                consistently benefit from having these plans in place before a
+                crisis hits.
               </p>
             </section>
 
@@ -520,7 +520,7 @@ export default function WhatIsACremationSociety() {
 
             <footer className="border-t border-gray-200 pt-6 mt-10">
               <p className="text-sm text-gray-500">
-                Written by Terry Feely for Evermore Directory. Information is
+                Written by Terry for Evermore Directory. Information is
                 current as of April 2026 and is intended for general guidance
                 only.
               </p>

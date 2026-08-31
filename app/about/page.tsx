@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Evermore Directory | Built by a Former First Responder',
-  description: 'Evermore Directory was built by Terry Feely, a former firefighter and paramedic. Free funeral home directory covering 7,395+ providers across all 50 states.',
+  title: 'About Evermore Directory | Free Funeral Home Directory',
+  description: 'Evermore Directory is a free directory of 7,395+ funeral homes and cremation providers across all 50 states, built for families who deserve price transparency.',
   alternates: { canonical: 'https://funeralhomedirectories.com/about' },
   openGraph: {
     title: 'About Evermore Directory',
-    description: 'Built by Terry Feely, a former firefighter and paramedic. Free for families. 7,395+ funeral homes across all 50 states.',
+    description: 'A free, transparent funeral home directory covering 7,395+ providers across all 50 states. Built for families, not funeral homes.',
     url: 'https://funeralhomedirectories.com/about',
     siteName: 'Evermore Directory',
     type: 'website',
@@ -20,9 +20,8 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Terry Feely",
+        "name": "Terry",
         "jobTitle": "Founder",
-        "description": "Former firefighter and paramedic with firsthand experience helping families navigate end of life decisions",
         "url": "https://funeralhomedirectories.com/about",
         "worksFor": {
           "@type": "Organization",
@@ -39,7 +38,7 @@ export default function AboutPage() {
           "@type": "Organization",
           "name": "Evermore Directory",
           "url": "https://funeralhomedirectories.com",
-          "founder": { "@type": "Person", "name": "Terry Feely" }
+          "founder": { "@type": "Person", "name": "Terry" }
         }
       }) }} />
       <main className="min-h-screen bg-white">
@@ -49,10 +48,10 @@ export default function AboutPage() {
           </h1>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Built by a First Responder</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Evermore Exists</h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                Terry Feely is the founder of Evermore Funeral Home Directory. He spent years as a firefighter and paramedic, where he regularly helped families in the immediate aftermath of a death. He watched families make major financial decisions in the worst moments of their lives, often with no price transparency and no time to compare options.
+                Evermore Directory was built after watching families make major financial decisions in the worst moments of their lives, often with no price transparency and no time to compare options.
               </p>
               <p>
                 That experience is why Evermore exists.
@@ -129,7 +128,7 @@ export default function AboutPage() {
           </section>
 
           <div className="text-sm text-gray-500">
-            <p>Evermore Directory is owned and operated by Colbridges Digital LLC, Nashville, Tennessee.</p>
+            <p>Evermore Directory is based in Nashville, Tennessee.</p>
           </div>
         </div>
       </main>

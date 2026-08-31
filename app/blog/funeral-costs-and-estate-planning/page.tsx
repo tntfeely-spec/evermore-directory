@@ -62,7 +62,7 @@ export default function FuneralCostsAndEstatePlanningPage() {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "Funeral Costs and Estate Planning: What Families Need to Know in 2026",
-          "author": { "@type": "Person", "name": "Terry Feely", "url": "https://funeralhomedirectories.com/about" },
+          "author": { "@type": "Person", "name": "Terry", "url": "https://funeralhomedirectories.com/about" },
           "publisher": { "@type": "Organization", "name": "Evermore Directory", "url": "https://funeralhomedirectories.com" },
           "datePublished": "2026-04-19",
           "dateModified": "2026-04-19",
@@ -104,7 +104,7 @@ export default function FuneralCostsAndEstatePlanningPage() {
                 Funeral Costs and Estate Planning: What Families Need to Know in 2026
               </h1>
               <p className="text-sm text-gray-500 mb-3">
-                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry Feely</Link>, Former Firefighter and Paramedic | Evermore Directory &middot; Last updated: April 2026
+                By <Link href="/about" className="text-slate-600 hover:text-slate-800">Terry</Link> | Evermore Directory &middot; Last updated: April 2026
               </p>
               <p className="text-xl text-gray-600">
                 How funeral costs interact with estates, probate, and family finances, and what you can do now to protect your family from financial stress after a death.
@@ -117,7 +117,7 @@ export default function FuneralCostsAndEstatePlanningPage() {
                 Funeral costs in the United States are typically the first expense paid from a deceased person&apos;s estate during probate. In most states, funeral and burial expenses hold the highest or second highest priority among estate claims, meaning they are paid before credit card debt, medical bills, and other unsecured obligations. The average funeral costs $7,848 for burial and $6,971 for cremation with a service, according to the National Funeral Directors Association. When a family member pays these costs out of pocket, the estate can reimburse them, but the process typically takes 3 to 12 months depending on the complexity of probate.
               </p>
               <p className="text-gray-600 mb-4">
-                As a former firefighter and paramedic, I have been with families in the immediate aftermath of a death. The financial questions come fast: Who pays for the funeral? Can we access the bank account? Will the estate cover this? This guide answers those questions clearly so you can make informed decisions during a difficult time.
+                Families face financial questions in the immediate aftermath of a death. Who pays for the funeral? Can we access the bank account? Will the estate cover this? This guide answers those questions clearly so you can make informed decisions during a difficult time.
               </p>
             </section>
 
@@ -394,7 +394,7 @@ export default function FuneralCostsAndEstatePlanningPage() {
             </section>
 
             <div className="text-center text-sm text-gray-400 mt-12">
-              <p>Written by <strong className="text-gray-500">Terry Feely</strong>, former firefighter and paramedic. This guide provides general information about funeral costs and estate administration. It is not legal advice. Consult an estate attorney for guidance specific to your state and situation.</p>
+              <p>Written by <strong className="text-gray-500">Terry</strong>. This guide provides general information about funeral costs and estate administration. It is not legal advice. Consult an estate attorney for guidance specific to your state and situation.</p>
             </div>
           </article>
         </div>

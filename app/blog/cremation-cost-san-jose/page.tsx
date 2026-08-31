@@ -40,7 +40,7 @@ export default function CremationSanJosePage() {
         }) }}
       />
     <Navigation />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Cremation Cost in San Jose: 2026 Price Guide","author":{"@type":"Person","name":"Terry Feely","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/cremation-cost-san-jose"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"Cremation Cost in San Jose: 2026 Price Guide","author":{"@type":"Person","name":"Terry","url":"https://funeralhomedirectories.com/about"},"publisher":{"@type":"Organization","name":"Evermore Directory","url":"https://funeralhomedirectories.com"},"datePublished":"2026-02-13","dateModified":"2026-05-09","url":"https://funeralhomedirectories.com/blog/cremation-cost-san-jose"}) }} />
 
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
