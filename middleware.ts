@@ -92,6 +92,8 @@ const SKIP_PATHS = [
   '/robots.txt',
   '/sitemap.xml',
   '/ads.txt',
+  '/llms.txt',
+  '/.well-known/',
   '/IndexNow',
   '/api/',
   '/pro/',
